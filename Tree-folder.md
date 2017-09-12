@@ -82,7 +82,7 @@
 
 ├── **[UI/UX]**
 
-│   ├── [UI UX](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/ui-ux.md)
+│   ├── [UI UX](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Ui-ux.md)
 
 ├── **[KeyWork Plugin]**
 
