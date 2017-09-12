@@ -13,9 +13,9 @@
 
 │   ├── **[HTML]**
 
-│   ├── [XHTML](xhtml)
+│   ├── [XHTML](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Xhtml)
 
-│   └── [HTML5](html5)
+│   └── [HTML5](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Html5)
 
 │   ├── **[JavaScript]**
 
