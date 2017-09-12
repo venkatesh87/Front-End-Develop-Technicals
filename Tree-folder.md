@@ -37,14 +37,6 @@
 
 │   │   ├── [Wordpress basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Wordpress-basic.md)
 
-├── **[Feature]**
-
-│   ├── [Angular Feature](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Angular-feature.md)
-
-│   ├── [React Feature](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/React-feature.md)
-
-│   └── [Blog Feature](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/coding.md)
-
 ├── **[Required]**
 
 │   ├── [Environment](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Environment.md)
