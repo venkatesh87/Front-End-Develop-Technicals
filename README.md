@@ -16,5 +16,3 @@ Welcome to the Front-End-Develop-Technical wiki!
 # Setup Project
 
 -  [Set Up](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Set-up.md)
-
-
