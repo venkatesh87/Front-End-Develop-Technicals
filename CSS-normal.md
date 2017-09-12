@@ -37,7 +37,3 @@ body:not(.ja) {
      - visibility: hidden;
      - backface-visibility: hidden;
      - -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */  
-
-
-
-     
