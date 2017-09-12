@@ -1,7 +1,7 @@
 ### I. Plugin:
 
-- [Codyhouse](https://codyhouse.co/)
-- [Codepen](http://codepen.io/)
+1. [Codyhouse](https://codyhouse.co/)
+1. [Codepen](http://codepen.io/)
 - [Tutorialzine](http://tutorialzine.com/posts/page/2/)
 - [Cssauthor](http://www.cssauthor.com/jquery-css3-hover-effects/#Logo)
 - [jQueryrain](http://www.jqueryrain.com/)
