@@ -78,7 +78,7 @@
 
 │   ├── [Front End Plugin](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/front-end-plugin.md)
 
-│   └── [Front End Tracker](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/front-end-tracker.md)
+│   └── [Front End Tracker](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Front-end-tracker.md)
 
 ├── **[UI/UX]**
 
