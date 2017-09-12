@@ -3,7 +3,7 @@
 
 │   ├── [CSS]
 
-│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
+│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-normal.md)
 
 │   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
 
