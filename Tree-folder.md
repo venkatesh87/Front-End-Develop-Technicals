@@ -5,11 +5,11 @@
 
 │   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
 
-│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post)
+│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
 
-│   │   ├── [CSS3](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/css3)
+│   │   ├── [CSS3](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/css3.md)
 
-│   │   └── [SCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/scss)
+│   │   └── [SCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/scss.md)
 
 │   ├── **[HTML]**
 
