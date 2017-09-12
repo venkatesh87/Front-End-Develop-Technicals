@@ -11,9 +11,8 @@
 1. [codyhouse](https://codyhouse.co/courses-library/?utm_content=bufferd79e7&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)
 1. [cssdb](http://cssdb.co/)
 1. [hugogiraudel](http://hugogiraudel.com/about/)
-1. [Css-tricks](https://www.codecademy.com/learn/all)
-1. [Css-tricks](https://www.syncfusion.com/resources/techportal/ebooks)
-1. [Css-tricks](https://www.syncfusion.com/resources/techportal/ebooks)
+1. [Css tricks learn](https://www.codecademy.com/learn/all)
+1. [Css tricks ebooks](https://www.syncfusion.com/resources/techportal/ebooks)
 
 ### II. Freelancer
 
