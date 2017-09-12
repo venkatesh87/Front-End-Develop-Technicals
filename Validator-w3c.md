@@ -1,0 +1,1 @@
+Vui lòng dán code HTML vào địa chỉ này để check lỗi : https://validator.w3.org/#validate_by_input

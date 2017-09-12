@@ -1,0 +1,17 @@
+### Popup
+
+1. [Magnific Popup](http://dimsemenov.com/plugins/magnific-popup/)
+2. [Magnific Popup Animate](http://codepen.io/dimsemenov/pen/GAIkt)
+3. [Photoswipe](http://photoswipe.com/)
+4. [Fancybox](http://fancybox.net/)
+5. [Fancybox 2](http://fancyapps.com/fancybox/)
+6. [Photoswipe](http://photoswipe.com/)
+7. [Lightbox 1](https://formstone.it/components/lightbox/demo/)
+8. [Lightbox 2](http://lokeshdhakar.com/projects/lightbox2/)
+9. [izimodal](http://izimodal.marcelodolce.com/#modal-alert2)
+10. [tingle](http://robinparisi.github.io/tingle/)
+11. [lightGallery](http://sachinchoolur.github.io/lightGallery/)
+12. [izimodal](http://izimodal.marcelodolce.com/#modal-custom)
+13. [izitoast](http://izitoast.marcelodolce.com/)
+14. [Colorbox](http://www.jacklmoore.com/colorbox/)
+15. [Prettyphoto](http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/)

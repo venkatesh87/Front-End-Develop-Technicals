@@ -1,0 +1,1 @@
+### Sử dụng tool PerfectPixel để kiểm tra giống với Design hay không. Ở mức tương đối, không phải nhất thiết là 100%.
