@@ -6,7 +6,7 @@
 
 │   │   ├── [Object Oriented CSS (OOCSS)](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Object-oriented-css.md)
 
-│   │   ├── [SMACSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Smass.md)
+│   │   ├── [SMACSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Smacss.md)
 
 │   │   ├── [BEM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Bem.md)
 
