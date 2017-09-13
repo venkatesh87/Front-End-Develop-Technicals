@@ -30,7 +30,7 @@
 
 1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
 
-1. [JavaScript Of mostly-adequate-guide](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-on-mostly-adequate-guide.md)
+1. [JavaScript Of mostly-adequate-guide](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-mostly-adequate-guide.md)
 
 1. [Media Queries](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Media-queries.md)
 
@@ -40,4 +40,4 @@
 
 1. [Javascript Document](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-document.md)
 
-1. [Truthy and Falsy: When All is Not Equal in JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/When-all-is-Not-equal-in-javascript.md)
+1. [Truthy and Falsy: When All is Not Equal in JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/When-all-is-not-equal-in-javascript.md)
