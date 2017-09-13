@@ -8,7 +8,7 @@
 
 │   │   ├── [SMACSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/Smass)
 
-│   │   ├── [BEM](http://github.com/daodc/Front-End-Develop-Technical/wiki/BEM)
+│   │   ├── [BEM](http://github.com/daodc/Front-End-Develop-Technical/wiki/B)
 
 │   │   ├── [Atomit](http://github.com/daodc/Front-End-Develop-Technical/wiki/Atomit)
 
