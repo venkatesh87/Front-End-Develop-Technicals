@@ -1,7 +1,7 @@
 ### jQuery
 
-[FUNCTION JQUERY](http://github.com/daodc/Front-End-Develop-Technical/wiki/function-jquery)
+[Function jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Function-jquery.md)
 
-[TIPS AND TRICKS JQUERY](http://github.com/daodc/Front-End-Develop-Technical/wiki/tips-tricks-jquery)
+[Tips and tricks jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-jquery.md)
 
-[Breakdown of Bootstrap Plugin](http://github.com/daodc/Front-End-Develop-Technical/wiki/Breakdown-of-Bootstrap-Plugin)
+[Breakdown of Bootstrap Plugin](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Breakdown-of-bootstrap-plugin.md)
