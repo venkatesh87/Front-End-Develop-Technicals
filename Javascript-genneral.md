@@ -24,7 +24,7 @@
 
 1. [Prototypes in Javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Prototypes-in-javascript.md)
 
-1. [Link study Javascript basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Link-study-Javascript-basic.md)
+1. [Link study Javascript basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Link-study-javascript-basic.md)
 
 1. [Hieu Code](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Read-understand-code.md)
 
