@@ -22,7 +22,7 @@
 
 1. [You Might Not Need jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Convert-form-jquery-to-javascript.md)
 
-1. [Prototypes in Javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Prototypes-in-Javascript.md)
+1. [Prototypes in Javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Prototypes-in-javascript.md)
 
 1. [Link study Javascript basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Link-study-Javascript-basic.md)
 
