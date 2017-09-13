@@ -1,1 +1,1 @@
-[Regular Expression (Regex)](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Page-slug)
+[Regular Expression (Regex)](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Page-slug.md)
