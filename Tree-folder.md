@@ -19,7 +19,7 @@
 
 │   ├── **[JavaScript]**
 
-│   │   ├── [JavaScript Basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-genneral.md)
+│   │   ├── [JavaScript Basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-genneral.md)
 
 │   │   ├── [jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/jQuery.md)
 
