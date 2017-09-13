@@ -1,17 +1,17 @@
 │   ├── [List POST]
 
-│   │   ├── [Linting HTML Using CSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/Linting-HTML-Using-CSS)
+│   │   ├── [Linting HTML Using CSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Linting-html-using-css.md)
 
-│   │   ├── [Css-Module](http://github.com/daodc/Front-End-Develop-Technical/wiki/Css-Module)
+│   │   ├── [Css-Module](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-module.md)
 
-│   │   ├── [Object Oriented CSS (OOCSS)](http://github.com/daodc/Front-End-Develop-Technical/wiki/Object-Oriented-CSS)
+│   │   ├── [Object Oriented CSS (OOCSS)](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Object-oriented-css.md)
 
-│   │   ├── [SMACSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/Smass)
+│   │   ├── [SMACSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Smass.md)
 
-│   │   ├── [BEM](http://github.com/daodc/Front-End-Develop-Technical/wiki/BEM)
+│   │   ├── [BEM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Bem.md)
 
-│   │   ├── [Atomit](http://github.com/daodc/Front-End-Develop-Technical/wiki/Atomit)
+│   │   ├── [Atomit](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Atomit.md)
 
-│   │   ├── [SUITCSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/SUITCSS)
+│   │   ├── [SUITCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Suitcss.md)
 
-│   │   └── [ITCSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/ITCSS)
+│   │   └── [ITCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Itcss.md)
