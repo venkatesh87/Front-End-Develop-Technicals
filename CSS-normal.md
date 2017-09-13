@@ -1,10 +1,7 @@
-1. [Pseudo-classes](pseudo-classes)
+1. [Pseudo-classes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Pseudo-classes.md)
 
-2. [Show Hidden](show-hidden)
+2. [Tips and Tricks](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-and-tricks.md)
 
-3. [Tips and Tricks](tips-and-Tricks)
-
-4. [IE-67891011-Chrome-Firefox-Safari-Css-Hacks](ie-67891011-chrome-firefox-safari-css-hacks)
 
 ```javascripts 
 forgot~p 
