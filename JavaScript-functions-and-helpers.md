@@ -1,19 +1,19 @@
 Reference: https://plainjs.com/javascript/
 
-1. [Selecting](Selecting-DOM-elements)
+1. [Selecting](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Selecting-dom-elements.md)
 
-1. [DOM Traversing](DOM-traversing)
+1. [DOM Traversing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DOM-traversing.md)
 
-1. [Manipulating DOM Elements](Manipulating-DOM-Elements)
+1. [Manipulating DOM Elements](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Manipulating-dom-elements.md)
 
-1. [Element Attributes](Element-Attributes)
+1. [Element Attributes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Element-attributes.md)
 
-1. [Element Styles](Element-Styles)
+1. [Element Styles](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Element-styles.md)
 
-1. [Ajax Helpers](Ajax-Helpers)
+1. [Ajax Helpers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Ajax-helpers.md)
 
-1. [Binding and Unbinding Events](Binding-and-Unbinding-Events)
+1. [Binding and Unbinding Events](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Binding-and-unbinding-events.md)
 
-1. [Animations and Effects](Animations-and-Effects)
+1. [Animations and Effects](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Animations-and-effects.md)
 
-1. [Helpers and Utilities](Helpers-and-Utilities)
+1. [Helpers and Utilities](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Helpers-and-utilities.md)
