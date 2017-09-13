@@ -28,7 +28,7 @@
 
 1. [Hieu Code](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Read-understand-code.md)
 
-1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-on-youtube.md)
+1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
 
 1. [JavaScript Of mostly-adequate-guide](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-on-mostly-adequate-guide.md)
 
