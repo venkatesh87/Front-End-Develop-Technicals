@@ -88,9 +88,9 @@
 
 ├── **[Skill]**
 
-│   ├── [Photoshop]
+│   ├── [Photoshop](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Photoshop-skill.md)
 
-│   ├── [Sublimetext]
+│   ├── [Sublimetext](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Sublimetext-skill.md)
 
 
 ├── **[Audio, Mp4, Video]**
