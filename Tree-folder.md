@@ -74,9 +74,9 @@
 
 ├── **[API]**
 
-│   ├── [API Facebook](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-facebook.md)
+│   ├── [API Facebook](https://developers.facebook.com/tools-and-support/)
 
-│   ├── [API Google](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-google.md)
+│   ├── [API Google](https://developers.google.com/maps/documentation/javascript)
 
 ├── **[UI/UX]**
 
