@@ -1,4 +1,4 @@
-#### Unlock layer
+#### 1. Unlock layer
 
 ```javascript
 Ctrl + Alt + /
