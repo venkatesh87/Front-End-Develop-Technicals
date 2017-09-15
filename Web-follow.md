@@ -50,6 +50,18 @@
 
 1.  http://dothtml5.com/
 
-III. Web bookmarks
+#### III. Web bookmarks
 
 1. http://usepanda.com/
+
+#### IV. Beautiful web
+
+1.  http://bymattlee.com/
+
+1.  http://trowel.github.io/
+
+1.  https://www.blimp.gr/
+
+1.  
+
+1.  
