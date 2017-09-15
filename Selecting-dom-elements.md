@@ -2,8 +2,33 @@
 
 #### I. Select DOM elements by CSS selector
 
+- ```querySelector()```: The querySelector() method returns the first element that matches a specified CSS selector(s) in the document.
+
+```javascript
+function myFunction() {
+    document.querySelector(".example").style.backgroundColor = "red";
+}
+```
 - ```querySelectorAll``` - a CSS selector method like the one provided by jQuery.
-- ```querySelectorAll()``` returns a list of DOM elements that match a given CSS selector. If you have ever used jQuery to select an element, you know how to make use of this method:
+- ```querySelectorAll()``` - The querySelectorAll() method returns all elements in the document that matches a specified CSS selector(s), as a static NodeList object:
+
+```javascript
+<h2 class="example">A heading with class="example"</h2>
+<p class="example">A paragraph with class="example".</p> 
+
+<p>Click the button to add a background color to the first element in the document with class="example" (index 0).</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p><strong>Note:</strong> The querySelectorAll() method is not supported in Internet Explorer 8 and earlier versions.</p>
+```
+
+```javascript
+function myFunction() {
+  var x = document.querySelectorAll(".example");
+  x[0].style.backgroundColor = "red";
+}
+```
 
 ```javascript
 var matches = document.querySelectorAll('div.foo');
