@@ -38,6 +38,8 @@
 
 1.  https://onepagelove.com/tag/timeline
 
+1. http://usatoday.geex-arts.com/
+
 1.  https://medium.muz.li/muzli-choices-in-design-for-2016-f7777541f8c3#.anrvhvigx
 
 #### II. Hệ Technique
