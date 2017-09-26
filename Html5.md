@@ -29,3 +29,12 @@
     <p><strong>Chú ý:</strong> Thẻ video không hỗ trợ Internet Explorer 8 và các phiên bản cũ hơn.</p>
 </div>
 ```
+
+- autoplay: Xác định trạng thái tự động chạy của video.
+- controls: Hiển thị bộ điều khiển của video.
+- height: Xác định chiều cao của video.
+- width: Xác định chiều rộng của video.
+- loop: Xác định video có được lặp lại hay không.
+- muted: Tắt âm thanh khi mở video.
+- poster: Xác định hình đại diện cho video.
+- preload: Xác định việc tải video khi tải trang.
