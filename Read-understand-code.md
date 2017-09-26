@@ -1,5 +1,6 @@
  1. Select change():
 
+```javascript
 var CLOCK = (function() {
     var drawClock = function() {
         var initial = 250;
@@ -21,3 +22,4 @@ var CLOCK = (function() {
     };
 })();
 CLOCK.init();
+```
