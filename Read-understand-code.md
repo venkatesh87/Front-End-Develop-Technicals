@@ -36,4 +36,4 @@ var CLOCK = (function() {
 CLOCK.init();
 ```
 
-- Chú ý document.getElementById("change_value").value: là nó lấy tất cả các attribute ```value=""``` của thẻ ```<option>```, dù ```id``` ằm trong thẻ ```<select>```
+- Chú ý ```document.getElementById("change_value").value```: là nó lấy tất cả các attribute ```value=""``` của thẻ ```<option>```, dù ```id``` nằm trong thẻ ```<select>```
