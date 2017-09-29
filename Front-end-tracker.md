@@ -26,3 +26,9 @@
 
 1. [frontendmasters](https://frontendmasters.gitbooks.io/front-end-handbook/content/index.html?utm_content=buffer50663&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)
 1. [UsePanda](http://usepanda.com/)
+
+### IV. Template
+
+1. [Template Monster](https://www.templatemonster.com/joomla-templates.php?utm_source=facebook_cpc&utm_medium=remjoo&utm_campaign=joom)
+1. [Themeforest](https://themeforest.net/category/site-templates/creative)
+
