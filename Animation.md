@@ -29,3 +29,5 @@
 16. [Animista](http://animista.net/)
 
 17. [TweenMax.min.js](https://greensock.com/beziertweens)
+
+18. [erictreacy](https://github.com/erictreacy/mimic.css)
