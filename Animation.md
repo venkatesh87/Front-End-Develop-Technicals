@@ -31,3 +31,5 @@
 17. [TweenMax.min.js](https://greensock.com/beziertweens)
 
 18. [erictreacy](https://github.com/erictreacy/mimic.css)
+
+19. [Animejs](http://animejs.com/)
