@@ -113,7 +113,11 @@
 
 │   ├── [Plunker](http://plnkr.co/)
 
-│   └── [Liveweave](http://liveweave.com/)
+│   ├── [Liveweave](http://liveweave.com/)
+
+│   ├── [toidicodedao](https://toidicodedao.com/2017/10/10/async-await-trong-javascript/)
+
+│   └── [Viblo](https://viblo.asia/tags/javascript)
 
 ├── **[Intended to be included]**
 
