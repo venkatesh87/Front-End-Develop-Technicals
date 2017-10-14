@@ -65,6 +65,8 @@
 
 │   ├── [Tooltip](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tooltip.md)
 
+│   ├── [Swipper](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Swipper.md)
+
 │   └── [DataTable](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DataTable.md)
 
 
