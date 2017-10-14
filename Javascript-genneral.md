@@ -1,5 +1,7 @@
 1. [JavaScript Functions and Helpers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-functions-and-helpers.md)
 
+1. [JavaScript study](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-study.md)
+
 1. [JavaScript basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-basic.md)
 
 1. [Shorthand JavaScript Techniques](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Shorthand-javascript-techniques.md)
