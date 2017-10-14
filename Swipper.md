@@ -221,7 +221,7 @@ var View = {
             onInit: function(swiper) {
                 owner.swiperAry.push(swiper);
                 swiper.onResize();
-                swiper.stopAutoplay();
+                //swiper.stopAutoplay();
             },
             onImagesReady: function(swiper) {
                 swiper.onResize();
