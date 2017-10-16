@@ -20,6 +20,7 @@
 1. [CodyhouseCo](https://plus.google.com/+CodyhouseCo)
 1. [Pinterest](https://www.pinterest.com/source/codepen.io/)
 1. [codemyui](https://codemyui.com/tag/hover-animation/page/3/)
+1. [codemyui](https://codemyui.com/tag/navigation-menu/)
 
 
 ### II. UI/UX/Template:
