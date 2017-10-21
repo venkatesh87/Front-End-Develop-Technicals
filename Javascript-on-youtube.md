@@ -350,6 +350,15 @@ console.log(person.firstName + ' ' + person.lastName);
   date.toUTCString(); // UTC format
 ```
 
+```javascript
+toLocaleString(): Chuyển đổi đối tượng Date sang chuỗi. Theo qui ước dưới local.
+
+var d = new Date();
+var n = d.toLocaleString();
+
+The result of n will be: 10/21/2017, 11:25:56 PM
+```
+
 #### 8. Array co 2 kieu kho tao, khoi tao kieu Literal va Constructor
 
 #### 8.1 Array  Literal
