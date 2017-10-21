@@ -182,7 +182,10 @@ var res = str.substring(11, 12);
 ```javascript
   //toFixed(fractionDigits);
   //valueOf(); // lay value cua 1 object 
-  //toString();
+  //toString(); // Chuyển đổi số thành chuỗi.
+  var num = 15;
+  var n = num.toString();
+  ==> Result n: 15
   var str1 = "abc";
   //console.log(isNaN(str1)); // tra ve true
   //isNaN() để kiểm tra dữ liệu có phải là số hay ko?
