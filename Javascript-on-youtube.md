@@ -410,7 +410,31 @@ The result of n will be: 10/21/2017, 11:25:56 PM
 #### 8.5 Array method reference
 
   > **forEach()**;
+  
+  ```javascript
+  <p>Click the button to list all the items in the array.</p>
+  <button onclick="numbers.forEach(myFunction)">Try it</button>
+  <p id="demo"></p>
 
+  <script>
+  demoP = document.getElementById("demo");
+  var numbers = [4, 9, 16, 25];
+  function myFunction(item, index) {
+      demoP.innerHTML = demoP.innerHTML + "index[" + index + "]: " + item + "<br>"; 
+  }
+ 
+  ==> Result: 
+  index[0]: 4
+  index[1]: 9
+  index[2]: 16
+  index[3]: 25
+  ```
+  - ```Syntax```: ```javascript array.forEach(function(currentValue, index, arr), thisValue)  ```
+  - ```currentValue```:	Required(Cần thiết) The value of the current element
+  - ```index```: Optional(Không bắt buộc) The array index of the current element(Chỉ số mảng của phần tử hiện tại)
+  - ```arr```:	Optional(Không bắt buộc). The array object the current element belongs to(Mảng đối tượng của phần tử hiện tại)
+  - ```thisValue```: Không bắt buộc. Một giá trị được chuyển đến hàm được sử dụng làm giá trị "này". Nếu tham số này rỗng, giá trị "không xác định" sẽ được chuyển thành giá trị "this"
+  
   > **indexOf();** // Hàm indexOf sẽ tìm kiếm một phần tử trong mảng dựa vào giá trị của phần tử, hàm sẽ trả về vị trị( khóa) của phần tử nếu tìm thấy và trả về -1 nếu không tìm thấy. array.indexOf(item, start)
 
   > **join();** // Hàm join() sẽ nối các phân tử của mảng lại thành một chuỗi, hàm sẽ trả về chuỗi bao gồm các phần tử của mảng được ngăn cách bằng một kí tự nào đó được truyền vào.
