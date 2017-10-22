@@ -447,10 +447,17 @@ The result of n will be: 10/21/2017, 11:25:56 PM
 
     - echo join('-', $array);
 
-  > **lastIndexOf(); // Hàm lastIndexOf sẽ tìm kiếm một phần tử trong mảng dựa vào giá trị của phần tử, hàm sẽ trả về vị trị( khóa) của phần tử nếu tìm thấy và trả về -1 nếu không tìm thấy.
+  > **lastIndexOf();** // Hàm lastIndexOf sẽ tìm kiếm một phần tử trong mảng dựa vào giá trị của phần tử, hàm sẽ trả về vị trị( khóa) của phần tử nếu tìm thấy và trả về -1 nếu không tìm thấy.
 
   > **map();** // Hàm map() trong Javascript là một hàm dành cho đối tượng array, hàm này có công dụng tương tự như vòng lăp forEach. có lệnh return.
-
+  ```javascript
+  let animal_names = animals.map((animal, index, animals) => {
+    return animal.name
+  })
+  ```
+  - Phần tử hiện tại của mảng.
+  - Chỉ số của phần tử hiện tại trong mảng.
+  - Mảng ban đầu.
   > **pop();** // Hàm array.pop() có chức năng xóa bỏ phần tử cuối cùng của mảng, hàm sẽ trả về phần tử bị xóa.
 
   > **push();** // Hàm push() sẽ thêm mới một hoặc nhiều phần tử vào cuối mảng, hàm trả về chiều dài mảng mới.
