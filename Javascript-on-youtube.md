@@ -607,6 +607,52 @@ var a = 12;
   }
 ```
 
+
+```javascript
+var day;
+switch (new Date().getDay()) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case  6:
+        day = "Saturday";
+}
+document.getElementById("demo").innerHTML = "Today is " + day;
+```
+
+```javascript
+var text;
+var fruits = document.getElementById("myInput").value;
+
+switch(fruits) {
+    case "Banana":
+        text = "Banana is good!";
+        break;
+    case "Orange":
+        text = "I am not a fan of orange.";
+        break;
+    case "Apple":
+        text = "How you like them apples?";
+        break;
+    default:
+        text = "I have never heard of that fruit...";
+}
+```
 #### 13. For loop in javascript
 
 ```javascript for (initializer; condition; iteration){}```
