@@ -43,3 +43,5 @@
 1. [Javascript Document](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-document.md)
 
 1. [Truthy and Falsy: When All is Not Equal in JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/When-all-is-not-equal-in-javascript.md)
+
+1. [Javascript function declare and constructor](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function-constructor-concept.md)
