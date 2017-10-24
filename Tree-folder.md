@@ -129,6 +129,8 @@
 
 │   ├── [Kipalog](https://kipalog.com/) Cool
 
+│   ├── [thefullsnack](https://thefullsnack.com/posts/frontend-algorithm-002.html)
+
 │   └── [Viblo AngularJS](https://viblo.asia/tags/angularjs)
 
 ├── **[Intended to be included]**
