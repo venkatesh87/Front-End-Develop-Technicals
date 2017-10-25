@@ -131,6 +131,8 @@
 
 │   ├── [thefullsnack](https://thefullsnack.com/)
 
+│   ├── [devhints ES6](https://devhints.io/es6)
+
 │   └── [Viblo AngularJS](https://viblo.asia/tags/angularjs)
 
 ├── **[Intended to be included]**
