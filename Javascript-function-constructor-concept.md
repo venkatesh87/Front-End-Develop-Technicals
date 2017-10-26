@@ -32,3 +32,15 @@ var myIIFE = function() {
 })();
 ```
 
+**- Case 3: function for jQuery**
+
+```javascript
+(function($) {
+  
+
+  $(function() {
+
+  });
+
+})(jQuery);
+```
