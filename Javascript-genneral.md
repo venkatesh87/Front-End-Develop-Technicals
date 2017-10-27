@@ -45,3 +45,5 @@
 1. [Truthy and Falsy: When All is Not Equal in JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/When-all-is-not-equal-in-javascript.md)
 
 1. [Javascript function declare and constructor](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function-constructor-concept.md)
+
+1. [Javascript types of data types in javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-types-of-data-types-in-javascript.md)
