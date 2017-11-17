@@ -22,10 +22,7 @@
 
 │   │   ├── [JapanDesk](http://jp.investdanang.gov.vn/)
 
-│   │   ├── [HTML5 Kyoto](http://kyoto-landing.globaldesignit.vn/landing_top.html)
-
-│   │   ├── ID: kyoto-landing ; Pass: MBGzzP^K
-    
+│   │   ├── [HTML5 Kyoto](http://kyoto-landing.globaldesignit.vn/landing_top.html) [ID: kyoto-landing ; Pass: MBGzzP^K]
 
 │   │   ├── [Nerima]()
 
