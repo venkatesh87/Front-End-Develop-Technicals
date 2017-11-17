@@ -67,6 +67,8 @@
 
 │   ├── [Swipper](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Swipper.md)
 
+│   ├── [Image Hover](http://photoshopvip.net/88174)
+
 │   └── [DataTable](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DataTable.md)
 
 
