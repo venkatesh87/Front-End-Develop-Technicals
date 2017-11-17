@@ -49,3 +49,5 @@
 1. [Javascript types of data types in javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-types-of-data-types-in-javascript.md)
 
 1. [Javascript callback](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-callback.md)
+
+1. [Gdit web](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Gdit-web.md)
