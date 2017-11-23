@@ -64,6 +64,50 @@ $('selector').find('a').click(function() {
 });
 ```
 
+#### 3. Index and active index
+
+- Get index of tag ```<a>```.
+  ```this_index = selectors.navigation.find('a').index(this);```
+  
+- Assign the variable to the ```<a>``` tag containing the active class.
+  ```var active_selector = selectors.navigation.find('.active');```
+  
+- Get index of active class.
+  ```active_index = selectors.navigation.find('a').index(active_selector);```
+  
+```javascript
+var this_index = '';
+var active_index = '';
+var selectors = {
+  navigation: $('.nav-tabs'),
+  content: $('.tab_panel')
+}
+var tabs = {
+  showContent: function(index) {
+    selectors.content.eq(active_index).hide();
+    selectors.content.eq(index).show();
+  }
+}
+var eachItem = function(this_index) {
+  if ($('.tab_panel').hasClass('active')) {
+    tabs.showContent(this_index);
+  }
+};
+$(document).ready(function() {
+  selectors.navigation.on('click', 'a', function(e) {
+    e.preventDefault();
+    this_index = selectors.navigation.find('a').index(this);
+    var active_selector = selectors.navigation.find('.active');
+    active_index = selectors.navigation.find('a').index(active_selector);
+
+    active_selector.removeClass('active');
+    $(this).addClass('active');
+    
+    // If the element is not found, index() will return -1.
+    eachItem(this_index);
+  });
+});
+```
 #### 2. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
