@@ -1,3 +1,106 @@
+##### 1. Code JavaScript Flag :
+
+**- Case 1:**
+```javascript
+  window.DEBUG = true;
+
+  function log(a, b, c, d) {
+       if(DEBUG) {
+           console.log(a, b, c, d);
+       }
+  } 
+
+  if(DEBUG) {
+      // Do dev stuff
+  } else {
+     // Do produection stuff
+  }
+
+  log("foobar") // Does not need to be wrapper, as log() itself is functional only in debug mode    
+```
+
+**- Case 2:** 
+
+```javascript
+var is_playing = true;
+if (is_playing) {
+  player.pauseVideo();
+  playButton.className += " disable";
+} else {
+  player.playVideo();
+  playButton.className = playButton.className.replace('disable', '');
+}
+```     
+
+##### 2. Check length element :
+
+**- Case 1: length-of-a-javascript-string**
+```javascript
+var str = "Hello World!";
+var n = str.length;
+```
+
+**- Case 2: length-of-a-javascript-object** 
+
+```javascript
+Object.size = function(obj) {
+  var size = 0,
+    key;
+  for (key in obj) {
+    if (obj.hasOwnProperty(key)) size++;
+  }
+  return size;
+};
+
+// Get the size of an object
+var size = Object.size(myArray);
+
+```     
+
+```javascript
+Object.keys(myObject).length
+```  
+
+
+##### 3. Object :
+
+**Length of a JavaScript object (or associative array)**
+
+**- The most robust answer:**
+```javascript
+var myArray = new Object();
+myArray["firstname"] = "Gareth";
+myArray["lastname"] = "Simpson";
+myArray["age"] = 21;
+
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
+// Get the size of an object
+var size = Object.size(myArray);
+```
+**- Here's an update as of 2016 and widespread deployment of ES5 and beyond. For IE9+ and all other modern ES5+ capable browsers, you can use Object.keys() so the above code just becomes:**
+
+```javascript
+var size = Object.keys(myObj).length;
+```
+**- If you know you don't have to worry about hasOwnProperty checks, you can do this very simply:**
+
+```javascript
+Object.keys(myArray).length
+```
+
+**Use something as simple as:**
+
+```javascript
+Object.keys(obj).length
+```
+##### 4. Keyboard
+
 **Disable F12 Key in a Page**
 
 ```javascript
@@ -55,7 +158,7 @@ document.onkeydown = function (e) {
 };
 ```
 
-** Rendering a simple list of products with jQuery:**
+**Rendering a simple list of products with jQuery:**
 
 ```javascript
 var products = [
