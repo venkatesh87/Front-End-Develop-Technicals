@@ -149,7 +149,8 @@ $(document).ready(function() {
 #### 4. Allow show/hide, fadeIn/fadeOut, slideUp/slideDown block:
 
 <hr />
-> **Case 1:** 
+
+>**Case 1:** 
 
 ```javascript
 $(".click").bind('click', function(e) {
