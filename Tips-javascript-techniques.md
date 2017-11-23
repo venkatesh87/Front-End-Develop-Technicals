@@ -75,6 +75,8 @@ $('selector').find('a').click(function() {
 - Get index of active class.
   ```active_index = selectors.navigation.find('a').index(active_selector);```
   
+- Từ ```index``` của ```this_index``` và ```index``` của ```active```, chúng ta có thể lấy nó và gán lên ```function()``` xử lý tab để ẩn hiện ```eachItem(this_index)```
+  
 ```javascript
 var this_index = '';
 var active_index = '';
