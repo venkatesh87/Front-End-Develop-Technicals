@@ -1,7 +1,7 @@
 #### 1. Scroll:
 <hr />
 
-> ** Back Top **
+> **Back Top**
 
 ```javascript
 ////////////////////////////////
