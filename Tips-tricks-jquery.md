@@ -93,8 +93,55 @@ removeClassFromElem('.someclass', 'active');
 
 ```javascript
 $('ul.wd-information li a').click(function(){
-  $('ul.wd-information li a').removeClass('wd-current');
-  $(this).addClass('wd-current');
+  $('ul.wd-information li a').removeClass('current');
+  $(this).addClass('current');
+});
+```
+
+> **Case 5:** 
+
+- Get index of tag ```<a>```.
+  ```this_index = selectors.navigation.find('a').index(this);```
+  
+- Assign the variable to the ```<a>``` tag containing the active class.
+  ```var active_selector = selectors.navigation.find('.active');```
+  
+- Get index of active class.
+  ```active_index = selectors.navigation.find('a').index(active_selector);```
+  
+- Từ ```index``` của ```this_index``` và ```index``` của ```active```, chúng ta có thể lấy nó và gán lên ```function()``` xử lý tab để ẩn hiện ```eachItem(this_index)```
+  
+```javascript
+var this_index = '';
+var active_index = '';
+var selectors = {
+  navigation: $('.nav-tabs'),
+  content: $('.tab_panel')
+}
+var tabs = {
+  showContent: function(index) {
+    selectors.content.eq(active_index).hide();
+    selectors.content.eq(index).show();
+  }
+}
+var eachItem = function(this_index) {
+  if ($('.tab_panel').hasClass('active')) {
+    tabs.showContent(this_index);
+  }
+};
+$(document).ready(function() {
+  selectors.navigation.on('click', 'a', function(e) {
+    e.preventDefault();
+    this_index = selectors.navigation.find('a').index(this);
+    var active_selector = selectors.navigation.find('.active');
+    active_index = selectors.navigation.find('a').index(active_selector);
+
+    active_selector.removeClass('active');
+    $(this).addClass('active');
+    
+    // If the element is not found, index() will return -1.
+    eachItem(this_index);
+  });
 });
 ```
 
