@@ -50,6 +50,7 @@ $('.back_top').click(function() {
 
 #### 3. Check active:
 <hr />
+
 > **Case 1:** 
       
 ```javascript
