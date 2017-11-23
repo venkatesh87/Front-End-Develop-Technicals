@@ -1,4 +1,4 @@
-##### 1. Code JavaScript Flag :
+#### 1. Code JavaScript Flag :
 
 **- Case 1:**
 ```javascript
@@ -32,7 +32,7 @@ if (is_playing) {
 }
 ```     
 
-##### 2. Check length element :
+#### 2. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
 ```javascript
@@ -62,7 +62,7 @@ Object.keys(myObject).length
 ```  
 
 
-##### 3. Object :
+#### 3. Object :
 
 **Length of a JavaScript object (or associative array)**
 
@@ -99,7 +99,7 @@ Object.keys(myArray).length
 ```javascript
 Object.keys(obj).length
 ```
-##### 4. Keyboard
+#### 4. Keyboard
 
 **Disable F12 Key in a Page**
 
