@@ -32,6 +32,38 @@ if (is_playing) {
 }
 ```     
 
+#### 2. Check active:
+
+**Switch active**
+
+```javascript
+$('selector').on('click', function(){
+  $('selector').removeClass('active');
+  $(this).addClass('active');
+});
+```
+
+**Switch class active:**
+
+**- Case 1**
+```javascript
+$('selector').on('click', function(){
+  $('selector').removeClass('active');
+  $(this).addClass('active');
+});
+```
+
+**- Case 2**
+
+```javascript
+$('selector').find('a').click(function() {
+  var iscurrent = $(this).parent().hasClass('active');
+  $('selector').find('li').removeClass('active');
+  $(this).parent().addClass('active');
+  return false;
+});
+```
+
 #### 2. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
