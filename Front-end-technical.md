@@ -3,19 +3,19 @@
 
 │   ├── [CSS]
 
-│   │   ├── [CSS-Nomal](http://github.com/daodc/Front-End-Develop-Technical/wiki/CSS)
+│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS.md)
 
-│   │   ├── [CSS-Post](http://github.com/daodc/Front-End-Develop-Technical/wiki/CSS-post.md)
+│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
 
-│   │   ├── [CSS3](http://github.com/daodc/Front-End-Develop-Technical/wiki/css3)
+│   │   ├── [CSS3](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/css3.md)
 
-│   │   └── [SCSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/scss)
+│   │   └── [SCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Scss.md)
 
 │   ├── **[HTML]**
 
-│   ├── [XHTML](xhtml)
+│   ├── [XHTML](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Xhtml.md)
 
-│   └── [HTML5](html5)
+│   └── [HTML5](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/html5.md)
 
 │   ├── **[JavaScript]**
 
