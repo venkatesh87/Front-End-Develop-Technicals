@@ -3,9 +3,9 @@
 
 │   ├── [CSS]
 
-│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-normal.md)
+│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS.md)
 
-│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS.md)
+│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
 
 │   │   ├── [CSS3](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/css3.md)
 
