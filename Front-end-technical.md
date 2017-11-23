@@ -3,86 +3,92 @@
 
 │   ├── [CSS]
 
-│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS.md)
+│   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-normal.md)
 
-│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
+│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS.md)
 
 │   │   ├── [CSS3](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/css3.md)
 
-│   │   └── [SCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Scss.md)
+│   │   └── [SCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Bulid_scss.md)
 
 │   ├── **[HTML]**
 
 │   ├── [XHTML](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Xhtml.md)
 
-│   └── [HTML5](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/html5.md)
+│   └── [HTML5](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Html5.md)
 
 │   ├── **[JavaScript]**
 
-│   │   ├── [JavaScript](http://github.com/daodc/Front-End-Develop-Technical/wiki/Javascript)
+│   │   ├── [JavaScript Basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript.md)
 
-│   │   ├── [jQuery](http://github.com/daodc/Front-End-Develop-Technical/wiki/jQuery)
+│   │   ├── [jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/jQuery.md)
 
-│   │   ├── [Angular](http://github.com/daodc/Front-End-Develop-Technical/wiki/Angular)
+│   │   ├── [Angular](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Angular.md)
 
-│   │   ├── [ReactJS](http://github.com/daodc/Front-End-Develop-Technical/wiki/React)
+│   │   ├── [ReactJS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/React.md)
 
-│   │   ├── [NodeJS](http://github.com/daodc/Front-End-Develop-Technical/wiki/NodeJS)
+│   │   ├── [NodeJS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Nodejs.md)
 
-│   │   ├── [ES5](http://github.com/daodc/Front-End-Develop-Technical/wiki/ES5)
+│   │   ├── [ES5](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/ES5.md)
 
-│   │   └── [ES6](http://github.com/daodc/Front-End-Develop-Technical/wiki/ES6)
+│   │   └── [ES6](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/ES6.md)
 
 │   ├── **[Wordpress]**
 
-│   │   ├── [Wordpress basic](http://github.com/daodc/Front-End-Develop-Technical/wiki/wordpress-basic)
-
-├── **[Feature]**
-
-│   ├── [Angular Feature](http://github.com/daodc/Front-End-Develop-Technical/wiki/Angular-Feature)
-
-│   ├── [React Feature](http://github.com/daodc/Front-End-Develop-Technical/wiki/React-Feature)
-
-│   └── [Blog Feature](http://github.com/daodc/Front-End-Develop-Technical/wiki/coding)
+│   │   ├── [Wordpress basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Wordpress-basic.md)
 
 ├── **[Required]**
 
-│   ├── [Environment](http://github.com/daodc/Front-End-Develop-Technical/wiki/Environment)
+│   ├── [Environment](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Environment.md)
 
-│   └── [Document](http://github.com/daodc/Front-End-Develop-Technical/wiki/Document)
+│   └── [Document](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Document.md)
 
 ├── **[Plugin]**
 
-│   ├── [Carousel](http://github.com/daodc/Front-End-Develop-Technical/wiki/Carousel)
+│   ├── [Carousel](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Carousel.md)
 
-│   ├── [Slideshow](http://github.com/daodc/Front-End-Develop-Technical/wiki/Slideshow)
+│   ├── [Slideshow](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Slideshow.md)
 
-│   ├── [Popup](http://github.com/daodc/Front-End-Develop-Technical/wiki/Popup)
+│   ├── [Popup](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Popup.md)
 
-│   ├── [Animation](http://github.com/daodc/Front-End-Develop-Technical/wiki/Animation)
+│   ├── [Animation](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Animation.md)
 
-│   ├── [Scroll](http://github.com/daodc/Front-End-Develop-Technical/wiki/Scroll)
+│   ├── [Scroll](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Scroll.md)
 
-│   ├── [Portfolio](http://github.com/daodc/Front-End-Develop-Technical/wiki/portfolio)
+│   ├── [Portfolio](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/portfolio.md)
 
-│   ├── [Menu Responsive](http://github.com/daodc/Front-End-Develop-Technical/wiki/Menu-Responsive)
+│   ├── [Menu Responsive](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Menu-responsive.md)
 
-│   ├── [FrameWork CSS](http://github.com/daodc/Front-End-Develop-Technical/wiki/FrameWork-CSS)
+│   ├── [FrameWork CSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Framework-css.md)
 
 │   ├── [Plugin General zxcvbnmnbvcxz](https://zxcvbnmnbvcxz.com/)
 
-│   └── [DataTable](http://github.com/daodc/Front-End-Develop-Technical/wiki/DataTable)
+│   ├── [Tooltip](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tooltip.md)
+
+│   ├── [Swipper](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Swipper.md)
+
+│   ├── [Image Hover](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Image-effect.md)
+
+│   └── [DataTable](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DataTable.md)
 
 
 ├── **[Front End Follow]**
 
-│   ├── [Front End Plugin](front-end-plugin)
+│   ├── [Front End Plugin](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/front-end-plugin.md)
 
-│   └── [Front End Tracker](front-end-tracker)
+│   └── [Front End Tracker](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Front-end-tracker.md)
+
+├── **[API]**
+
+│   ├── [API Facebook](https://developers.facebook.com/tools-and-support/)
+
+│   ├── [API Google](https://developers.google.com/maps/documentation/javascript)
 
 ├── **[UI/UX]**
 
-│   ├── [UI UX](http://github.com/daodc/Front-End-Develop-Technical/wiki/ui-ux)
+│   ├── [UI UX](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Ui-ux.md)
+
+│   └── [UI UX Design Front End Eperience](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/UI-UX-Design-Front-End.md)
 
 ├── **[KeyWork Plugin]**
 
@@ -90,9 +96,9 @@
 
 ├── **[Skill]**
 
-│   ├── [Photoshop]
+│   ├── [Photoshop](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Photoshop-skill.md)
 
-│   ├── [Sublimetext]
+│   ├── [Sublimetext](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Sublimetext-skill.md)
 
 
 ├── **[Audio, Mp4, Video]**
@@ -113,5 +119,31 @@
 
 │   ├── [Plunker](http://plnkr.co/)
 
-│   └── [Liveweave](http://liveweave.com/)
+│   ├── [Liveweave](http://liveweave.com/)
+
+│   ├── [toidicodedao](https://toidicodedao.com/2017/10/10/async-await-trong-javascript/)
+
+│   ├── [Viblo javascript](https://viblo.asia/tags/javascript)
+
+│   ├── [Viblo html](https://viblo.asia/tags/html)
+
+│   ├── [Viblo nodejs](https://viblo.asia/tags/nodejs/questions)
+
+│   ├── [Kipalog](https://kipalog.com/) Cool
+
+│   ├── [thefullsnack](https://thefullsnack.com/)
+
+│   ├── [devhints ES6](https://devhints.io/es6)
+
+│   └── [Viblo AngularJS](https://viblo.asia/tags/angularjs)
+
+├── **[Intended to be included]**
+
+│   ├── [JSFiddle](http://fizzy.school/?utm_content=bufferc44ac&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)
+
+│   ├── [toidicodedao](https://toidicodedao.com/2015/02/03/viet-va-chia-se-code-online-voi-fiddle/)
+
+├── **[Bug]**
+
+│   ├── [Apple](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Apple.md)
 

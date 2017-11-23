@@ -5,7 +5,7 @@
 
 │   │   ├── [CSS-Nomal](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-normal.md)
 
-│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-post.md)
+│   │   ├── [CSS-Post](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS.md)
 
 │   │   ├── [CSS3](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/css3.md)
 
@@ -19,7 +19,7 @@
 
 │   ├── **[JavaScript]**
 
-│   │   ├── [JavaScript Basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-genneral.md)
+│   │   ├── [JavaScript Basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript.md)
 
 │   │   ├── [jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/jQuery.md)
 
