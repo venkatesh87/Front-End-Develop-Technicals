@@ -1,7 +1,30 @@
-### kiểu dữ liệu trong javascript
+### CallBack trong javascript
 
-[callback trong javascrip](https://toidicodedao.com/2015/02/05/callback-trong-javascript/)
+#### I.Basic Principles when Implementing Callback Functions: Các nguyên tắc cơ bản khi thực hiện Callback Functions.
 
-[js tim hieu ve callback trong javascript](http://saysua.com/2013/08/28/js-tim-hieu-ve-callback-trong-javascript/)
+##### 1. Use Named OR Anonymous Functions as Callbacks
+***
 
-[callback function la gi callback trong javascript](http://c-sharp.vn/javascript/callback-function-la-gi-callback-trong-javascript-888e33)
+```javascript
+// global variable​
+​
+var allUserData = [];​​ // generic logStuff function that prints to console​
+​
+function logStuff(userData) {
+  if (typeof userData === "string") {
+    console.log(userData);
+  } else if (typeof userData === "object") {
+    for (var item in userData) {
+      console.log(item + ": " + userData[item]);
+    }​
+  }​
+}​​ // A function that takes two parameters, the last one a callback function​
+​
+function getInput(options, callback) {
+  allUserData.push(options);
+  callback(options);​
+}​​ // When we call the getInput function, we pass logStuff as a parameter.​
+​ // So logStuff will be the function that will called back (or executed) inside the getInput function​
+getInput({ name: "Rich", speciality: "JavaScript" }, logStuff);​ //  name: Rich​
+​ // speciality: JavaScript
+```
