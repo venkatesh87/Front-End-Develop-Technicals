@@ -1,10 +1,10 @@
 ### Some attention when code ReactJS:
 ---
 
-**Tag ```<img>```**: HTML Self-Closing Tags
+**1. Tag ```<img>```**: HTML Self-Closing Tags
 
 ```javascript
 <img />
 ```
 
-**Wrap element**:
+**2. Wrap element**:
