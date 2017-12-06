@@ -20,10 +20,8 @@ slide: function(direction, index, url){
 }
 ```
 
-
 **JS**
 
-```javascript
 ```javascript
 //CMS-8341用JS
 
@@ -202,7 +200,6 @@ slide: function(direction, index, url){
   });
 
 })(jQuery);
-```
 ```
 
 **HTML**
