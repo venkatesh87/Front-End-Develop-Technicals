@@ -147,3 +147,7 @@
 
 │   ├── [Apple](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Apple.md)
 
+├── **[Projects]**
+
+│   ├── [Global Design IT](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Project-gdit.md)
+
