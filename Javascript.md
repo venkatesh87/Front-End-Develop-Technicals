@@ -53,3 +53,5 @@
 1. [Javascript callback](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-callback.md)
 
 1. [Gdit web](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Gdit-web.md)
+
+1. [Javascript DOM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-dom.md)
