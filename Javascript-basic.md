@@ -30,8 +30,27 @@ if (is_playing) {
   player.playVideo();
   playButton.className = playButton.className.replace('disable', '');
 }
-```     
+```
 
+**- Case 3:** 
+
+```javascript
+stopBodyScrolling(true);
+
+stopBodyScrolling(false);
+
+function stopBodyScrolling (bool) {
+    if (bool === true) {
+        document.body.addEventListener("touchmove", freezeVp, false);
+    } else {
+        document.body.removeEventListener("touchmove", freezeVp, false);
+    }
+}
+
+var freezeVp = function(e) {
+    e.preventDefault();
+};
+```
 ## I. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
@@ -285,4 +304,3 @@ function shuffle(array) {
     return array;
 }
 ```
-
