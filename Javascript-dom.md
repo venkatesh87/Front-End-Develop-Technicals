@@ -1,10 +1,18 @@
-### I. JavaScript HTML DOM
+## I. JavaScript HTML DOM
 
+  - In the DOM, all HTML elements are defined as objects.
+  - The programming interface is the properties and methods of each object.
+  - A **property** is a value that you can get or set (like changing the content of an HTML element).
+  - A **method** is an action you can do (like add or deleting an HTML element).
+   
 ### 1. DOM Methods
 
 ```javascript
-a
+<p id="demo"></p>
+document.getElementById('demo').innerHTML() = "Hello World";
 ```
+- **Method: ** ```getElementById()```
+- **Property: ** ```innerHTML```
 
 ### 2. DOM Document
 
