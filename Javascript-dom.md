@@ -57,7 +57,38 @@ a
 - **document.anchors** -->	Returns all <a> elements that have a name attribute	1
 - **document.applets** -->	Returns all <applet> elements (Deprecated in HTML5)	1
 - **document.baseURI** -->	Returns the absolute base URI of the document	3
+  
+  ```
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  ```
+  
+  ```
+  function myFunction() {
+    var x = document.baseURI;
+    document.getElementById("demo").innerHTML = x;
+  }
+  ```
+    ==> Result: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_doc_baseuri
+  
 - **document.body** -->	Returns the <body> element	1
+  
+  ```
+  <body>
+  <p>Click the button to display the HTML content of the document.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  <script>
+  function myFunction() {
+      var x = document.body.innerHTML;
+      document.getElementById("demo").innerHTML = x;
+  }
+  </script>
+  </body>
+  ```
+  - Return the body property: ```document.body```
+  - Set the body property: ```document.body = newContent```
+
 - **document.cookie** -->	Returns the document's cookie	1
 - **document.doctype** -->	Returns the document's doctype	3
 - **document.documentElement** -->	Returns the <html> element	3
