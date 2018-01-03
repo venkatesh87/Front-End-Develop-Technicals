@@ -11,8 +11,10 @@
 <p id="demo"></p>
 document.getElementById('demo').innerHTML() = "Hello World";
 ```
-- **Method: ** ```getElementById()```
-- **Property: ** ```innerHTML```
+- **Method: **  
+   ```javascriptgetElementById()```
+- **Property: ** 
+  ```javascriptinnerHTML```
 
 ### 2. DOM Document
 
