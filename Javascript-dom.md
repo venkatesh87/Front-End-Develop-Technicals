@@ -24,7 +24,32 @@ document.getElementById('demo').innerHTML() = "Hello World";
 
 - **document.getElementById(id)** -->	Find an element by element id
 - **document.getElementsByTagName(name)** -->	Find elements by tag name
+
+    ```
+    <ul>
+      <li>Coffee</li>
+      <li>Tea</li>
+      <li>Milk</li>
+    </ul>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    function myFunction() {
+      var x = document.getElementsByTagName("LI");
+      document.getElementById("demo").innerHTML = x[1].innerHTML;
+    }
+    ```
+    **Result** ==> Tea
 - **document.getElementsByClassName(name)** -->	Find elements by class name
+
+  ```
+  <div class="example">First div element with class="example".</div>
+  <div class="example">Second div element with class="example".</div>
+  <button onclick="myFunction()">Try it</button>
+  function myFunction() {
+    var x = document.getElementsByClassName("example");
+    x[0].innerHTML = "Hello World!";
+  }
+  ```
 
 **2.2 Changing HTML Elements**
 ---
