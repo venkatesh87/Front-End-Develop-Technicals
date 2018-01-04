@@ -65,7 +65,27 @@ document.getElementById('demo').innerHTML() = "Hello World";
   }
   ```
 - **element.setAttribute(attribute, value)** --> Change the attribute value of an HTML element
+
+  ```
+  .democlass { color: red;}
+  <h1>Hello World</h1>
+  <p>Click the button to add a class attribute with the value of "democlass" to the h1 element.</p>
+  <button onclick="myFunction()">Try it</button>
+  
+  function myFunction() {
+    document.getElementsByTagName("H1")[0].setAttribute("class", "democlass"); 
+  }
+  ```
 - **element.style.property = new style** --> Change the style of an HTML element
+
+  ```
+  <h1>Hello World!</h1>
+  <button type="button" onclick="myFunction()">Set background color</button>
+  
+  function myFunction() {
+    document.body.style.backgroundColor = "red";
+  }
+  ```
 
 **2.3 Adding and Deleting Elements**
 ---
