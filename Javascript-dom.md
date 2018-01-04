@@ -31,6 +31,14 @@ document.getElementById('demo').innerHTML() = "Hello World";
 
 - **element.innerHTML =  new html content** -->	Change the inner HTML of an element
 - **element.attribute = new value** -->	Change the attribute value of an HTML element
+  ```
+  <button id="myBtn" onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  function myFunction() {
+    var x = document.getElementById("myBtn").attributes[0].name;
+    document.getElementById("demo").innerHTML = x;
+  }
+  ```
 - **element.setAttribute(attribute, value)** --> Change the attribute value of an HTML element
 - **element.style.property = new style** --> Change the style of an HTML element
 
