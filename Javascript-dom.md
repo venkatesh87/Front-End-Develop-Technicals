@@ -64,6 +64,16 @@ document.getElementById('demo').innerHTML() = "Hello World";
     document.getElementById("demo").innerHTML = x;
   }
   ```
+  **Result** ==> onclick
+  
+  ```
+  function myFunction() {
+    var x = document.getElementById("myBtn").attributes.length;
+    document.getElementById("demo").innerHTML = x;
+  }
+  ```
+    **Result** ==> 2
+    
 - **element.setAttribute(attribute, value)** --> Change the attribute value of an HTML element
 
   ```
@@ -91,11 +101,85 @@ document.getElementById('demo').innerHTML() = "Hello World";
 ---
 
 - **document.createElement(element)** -->	Create an HTML element
+
+  ```
+  <p>Click the button to make a BUTTON element.</p>
+  <button onclick="myFunction()">Try it</button>
+  
+  function myFunction(){
+      var btn = document.createElement("BUTTON");
+      document.body.appendChild(btn);
+  }
+  
+  function myFunction(){
+      var btn = document.createElement("BUTTON");
+      var txt = document.createTextNode("Click Me");
+      btn.appendChild(txt);
+      document.body.appendChild(btn);
+  }
+  ```
+   
 - **document.removeChild(element)** -->	Remove an HTML element
+
+  ```
+  <ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+  <p>Click the button to remove the first item from the list.</p>
+  <button onclick="myFunction()">Try it</button>
+  
+  function myFunction(){
+    var list = document.getElementById('myList');
+    list.removeChild(list.childNodes[[0]]);
+  }
+  ```
+  **Result** ==> ```Tea, Milk```
+   
 - **document.appendChild(element)** -->	Add an HTML element
+
+  ```
+  <ul id="myList">
+    <li>Coffee</li>
+    <li>Tea</li>
+  </ul>
+  <p>Click the button to append an item to the end of the list.</p>
+  <button onclick="myFunction()">Try it</button>
+  
+  function myFunction(){
+    var node = document.createElement('li');
+		var textnode = document.createTextNode('Water');
+		node.appendChild(textnode);
+		document.getElementById('myList').appendChild(node);
+  }
+  ```
+  **Result** ==> ```Tea, Milk, Water```
+  
 - **document.replaceChild(element)** -->	Replace an HTML element
+
+  ```
+  <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
+	<p>Click the button to append an item to the end of the list.</p>
+	<button onclick="myFunction()">Try it</button>
+  
+  function myFunction(){
+			var textnode = document.createTextNode("Water");
+		  var item = document.getElementById("myList").childNodes[0];
+		  console.log(item);
+		  item.replaceChild(textnode, item.childNodes[0]);
+	}
+  ```
+  **Result** ==> ```Water```
+   
+   
 - **document.write(text)** -->	Write into the HTML output stream
 
+  ```
+
+  ```
+  **Result** ==> 2
+   
 **2.4 Adding Events Handlers**
 ---
 
