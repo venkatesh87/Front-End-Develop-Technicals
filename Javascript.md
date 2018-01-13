@@ -1,3 +1,5 @@
+1. [Javascript Rất Hay](https://sabe.io/classes/javascript)
+
 1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
 1. [JavaScript Functions and Helpers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-functions-and-helpers.md)
