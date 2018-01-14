@@ -241,8 +241,16 @@ document.getElementById('demo').innerHTML() = "Hello World";
   - Set the body property: ```document.body = newContent```
 
 - **document.cookie** -->	Returns the document's cookie  ==> 1
-  ```
   
+   document.cookie = newCookie
+   - expires=date: Không bắt buộc. Chỉ định ngày theo định dạng GMT (Xem phương thức Date.toUTCString). Nếu không được chỉ định, cookie sẽ bị xóa khi trình duyệt đóng.
+   - path=path: Không bắt buộc. Thông báo cho trình duyệt biết đường dẫn đến thư mục thuộc về cookie, (ví dụ: '/', '/ dir'). Lưu ý: Đường dẫn phải tuyệt đối. Nếu không được chỉ định, cookie thuộc về trang hiện tại
+   - domain=domainname: Không bắt buộc. Chỉ định tên miền của trang web của bạn (ví dụ: 'example.com', '.example.com' (bao gồm tất cả các tên miền phụ), 'subdomain.example.com'). Nếu không được chỉ định, tên miền của tài liệu hiện tại sẽ được sử dụng
+   - secure: Không bắt buộc. Thông báo cho trình duyệt sử dụng một giao thức an toàn (https) để gửi cookie đến máy chủ
+   - An example of creating a cookie:
+   
+  ```
+  document.cookie="username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
   ```
 - **document.doctype** -->	Returns the document's doctype	==> 3
 - **document.documentElement** -->	Returns the <html> element  ==> 3
@@ -263,8 +271,39 @@ document.getElementById('demo').innerHTML() = "Hello World";
 - **document.scripts** -->	Returns all <script> elements  ==> 3
 - **document.strictErrorChecking** -->	Returns if error checking is enforced  ==> 3
 - **document.title** -->	Returns the <title> element  ==> 1
-- **document.URL** -->	Returns the complete URL of the document  ==> 1
+	
+  ```
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>My title</title>
+  </head>
+  <body>
+  <p>Click the button to display the title of the document.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  <script>
+  function myFunction() {
+      var x = document.title;
+      document.getElementById("demo").innerHTML = x;
+  }
+  </script>
 
+  </body>
+  </html>
+  ```
+  ==> Result: My title
+  
+- **document.URL** -->	Returns the complete URL of the document  ==> 1
+  ```
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  function myFunction() {
+    var x = document.URL;
+    document.getElementById("demo").innerHTML = x;
+  }
+  ```
+  ==> Result: https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Javascript-dom.md
 ### 3. DOM Elements
 
 ```javascript
