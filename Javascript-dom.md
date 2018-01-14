@@ -305,10 +305,75 @@ document.getElementById('demo').innerHTML() = "Hello World";
   ```
   ==> Result: https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Javascript-dom.md
 ### 3. DOM Elements
+**Finding HTML Elements**
+  **- Finding HTML elements by id**: ```document.getElementById()```
+  ```
+  var myElement = document.getElementById("intro");
+  ```
+  **- Finding HTML elements by tag name**: ```document.getELementByTagName('p')```
+  ```
+  <p>Hello World!</p>
+  <p>The DOM is very useful.</p>
+  <p>This example demonstrates the <b>getElementsByTagName</b> method</p>
+  <p id="demo"></p>
+  
+  var x = document.getElementsByTagName("p");
+  document.getElementById("demo").innerHTML = 'The first paragraph (index 0) is: ' + x[0].innerHTML;
+  ```
+  
+  **- Finding HTML elements by class name**: ```document.getElementsByClassName('intro')```
+  ```
+  <p>Hello World!</p>
+  <p class="intro">The DOM is very useful.</p>
+  <p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p>
+  <p id="demo"></p>
+  
+  var x = document.getElementsByClassName("intro");
+  document.getElementById("demo").innerHTML = 'The first paragraph (index 0) with class="intro": ' + x[0].innerHTML;
+  ```
+  **- Finding HTML elements by CSS selectors**: ```document.querySelectorAll('p.intro"')```
+  ```
+  <p>Hello World!</p>
+  <p class="intro">The DOM is very useful.</p>
+  <p class="intro">This example demonstrates the <b>querySelectorAll</b> method.</p>
+  <p id="demo"></p>
+  
+  var x = document.querySelectorAll("p.intro");
+  document.getElementById("demo").innerHTML = The first paragraph (index 0) with class="intro": ' + x[0].innerHTML;
+  ```
+  **- Finding HTML elements by HTML object collections**: 
+    
+    - ```document.anchors```
+    - ```document.body```
+    - ```document.documentElement```
+    - ```document.embeds```
+    - ```document.forms```
+    - ```document.head```
+    - ```document.images```
+    - ```document.links```
+    - ```document.scripts```
+    - ```document.title```
 
-```javascript
-a
-```
+  ```javascript
+  <form id="frm1" action="/action_page.php">
+    First name: <input type="text" name="fname" value="Donald"><br>
+    Last name: <input type="text" name="lname" value="Duck"><br><br>
+  <input type="submit" value="Submit">
+  </form> 
+  <p>Click "Try it" to display the value of each element in the form.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  
+  function myFunction() {
+    var x = document.forms["frm1"];
+    var text = "";
+    var i;
+    for (i = 0; i < x.length ;i++) {
+        text += x.elements[i].value + "<br>";
+    }
+    document.getElementById("demo").innerHTML = text;
+  }
+  ```
 
 ### 4. DOM - Changing HTML
 
