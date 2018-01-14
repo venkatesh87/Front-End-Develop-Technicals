@@ -160,15 +160,14 @@ document.getElementById('demo').innerHTML() = "Hello World";
 
   ```
   <ul id="myList"><li>Coffee</li><li>Tea</li><li>Milk</li></ul>
-	<p>Click the button to append an item to the end of the list.</p>
-	<button onclick="myFunction()">Try it</button>
+  <p>Click the button to append an item to the end of the list.</p>
+  <button onclick="myFunction()">Try it</button>
   
   function myFunction(){
-			var textnode = document.createTextNode("Water");
-		  var item = document.getElementById("myList").childNodes[0];
-		  console.log(item);
-		  item.replaceChild(textnode, item.childNodes[0]);
-	}
+    var textnode = document.createTextNode("Water");
+    var item = document.getElementById("myList").childNodes[0];
+    item.replaceChild(textnode, item.childNodes[0]);
+  }
   ```
   **Result** ==> ```Water```
    
@@ -176,9 +175,10 @@ document.getElementById('demo').innerHTML() = "Hello World";
 - **document.write(text)** -->	Write into the HTML output stream
 
   ```
-
+  document.write("Hello World");
+  document.write("<h1>Title</h1>");
+  document.write(Date());
   ```
-  **Result** ==> 2
    
 **2.4 Adding Events Handlers**
 ---
