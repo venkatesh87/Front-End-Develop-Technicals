@@ -8,7 +8,7 @@
 
 1. [JavaScript study](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-study.md)
 
-1. [JavaScript basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-basic.md)
+1. [Javascript technical writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
 
 1. [Shorthand JavaScript Techniques](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Shorthand-javascript-techniques.md)
 
