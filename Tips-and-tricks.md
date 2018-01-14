@@ -1,4 +1,4 @@
-# 1 .Five Ways to Hide Elements in CSS
+# 1. Five Ways to Hide Elements in CSS
 
   1a. Opacity
   ---
@@ -256,3 +256,12 @@
 
   3 . Centering CSS
   ---
+
+  4 . CSS Property: background-image
+  ---
+  - You can specify more than one background image by separating each value using a comma. The image you set first will be displayed on the top layer.
+  ```javascript
+  background-image:
+    url("https://preview.ibb.co/iaBzBm/butterflies.png"),
+    url("https://preview.ibb.co/eaasWm/grey.png");
+  ```
