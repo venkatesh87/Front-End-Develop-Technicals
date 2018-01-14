@@ -77,3 +77,7 @@
 1.  https://usepanda.com/app/#/
 
 1. http://www.qumeshtorja-vita.com/
+
+1. http://dff.mitsugutakahashi.com/
+
+1. https://droledemonsieur.com/
