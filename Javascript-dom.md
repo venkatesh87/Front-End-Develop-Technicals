@@ -377,9 +377,20 @@ document.getElementById('demo').innerHTML() = "Hello World";
 
 ### 4. DOM - Changing HTML
 
-```javascript
-a
-```
+  **- Changing the HTML Output Stream**
+  ```document.write(Date());```
+  
+  **- Changing HTML Content**
+  ```
+  <p id="p1">Hello World!</p>
+  document.getElementById("p1").innerHTML = "New text!";
+  ```
+  
+  **- Changing the Value of an Attribute**: ```document.getElementById(id).attribute = new value```
+  ```javascript
+  <img id="myImage" src="smiley.gif">
+  document.getElementById("myImage").src = "landscape.jpg";
+  ```
 
 ### 5. DOM - Changing CSS
 
