@@ -1,6 +1,6 @@
-1. [Sabe Javascript Rất Hay](https://sabe.io/classes/javascript)
+1. [Sabe Javascript **Rất Hay**](https://sabe.io/classes/javascript)
 
-1. [Awesome Coding Videos Javascript Rất Hay](https://www.awesomecodingvideos.com/)
+1. [Awesome Coding Videos Javascript **Rất Hay**](https://www.awesomecodingvideos.com/)
 
 1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
