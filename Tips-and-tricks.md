@@ -265,3 +265,9 @@
     url("https://preview.ibb.co/iaBzBm/butterflies.png"),
     url("https://preview.ibb.co/eaasWm/grey.png");
   ```
+  5. Không nên nhầm lẫn giữa <b> với các thẻ <strong>, <em> hay <mark>
+  ---
+  - **```<b>```**: Đơn thuần chỉ là để làm đậm văn bản mà không truyền đạt thêm thông tin ngữ nghĩa nào
+  - **```<strong>```**: Dùng để thể hiện tầm quan trọng của đoạn văn bản đặt trong nó.
+  - **```<em>```**: Đặt một mức độ nhấn mạnh nào đó vào văn bản trong nó.
+  - **```<mark>```**: Dùng để thể hiện phần văn bản liên quan trong nó.
