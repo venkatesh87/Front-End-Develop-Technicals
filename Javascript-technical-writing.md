@@ -52,6 +52,8 @@ var freezeVp = function(e) {
 };
 ```
 
+**- Case 4:**
+
 ```
 #container {
   width: 400px;
