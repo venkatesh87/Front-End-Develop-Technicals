@@ -6,8 +6,6 @@
 
 1. [JavaScript Functions and Helpers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-functions-and-helpers.md)
 
-1. [Javascript function structure](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function-structure.md)
-
 1. [JavaScript study](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-study.md)
 
 1. [Javascript technical writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
