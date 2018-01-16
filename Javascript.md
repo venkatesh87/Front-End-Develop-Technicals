@@ -57,3 +57,7 @@
 1. [Gdit web](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Gdit-web.md)
 
 1. [Javascript DOM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-dom.md)
+
+1. [Javascript Ajax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-ajax.md)
+
+1. [Javascript JSON](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-json.md)

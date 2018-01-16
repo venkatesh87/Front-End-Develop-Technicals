@@ -14,4 +14,8 @@
 
 1. [JQuery Object Plugin Nerima](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-object-plugin-nerima.md)
 
+1. [JQuery Ajax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-ajax.md)
+
+1. [JQuery JSON](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-json.md)
+
 
