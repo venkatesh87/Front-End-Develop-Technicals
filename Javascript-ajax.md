@@ -35,7 +35,6 @@ abort()  | Cancels the current request
 getAllResponseHeaders()  | Returns header information
 getResponseHeader()  | Returns specific header information(Trả về thông tin tiêu đề cụ thể)
 open(method, url, async, user, psw)  | Specifies the request
-
 method: the request type GET or POST
 url: the file location
 async: true (asynchronous) or false (synchronous)
