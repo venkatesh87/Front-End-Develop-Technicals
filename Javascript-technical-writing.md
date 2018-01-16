@@ -90,6 +90,15 @@ function checkCookies() {
 }
 ```
 
+**- Case 6:** Khi gọi một function trong function thì hãy bỏ cặp dấu ngoặc này () đi, ```displayDate```, ```frame```.
+
+```
+document.getElementById("myBtn").addEventListener("click", displayDate);
+function displayDate(){
+	 document.getElementById('demo').innerHTML = Date();
+}
+```
+
 ## I. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
