@@ -20,8 +20,8 @@ function loadDoc() {
 
 ### AJAX Works
 ---
-![AJAX Works][image]
-!image]: https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/pic_ajax.gif
+
+![Image of Yaktocat](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/pic_ajax.gif)
 
 ### Create an XMLHttpRequest Object
 ---
