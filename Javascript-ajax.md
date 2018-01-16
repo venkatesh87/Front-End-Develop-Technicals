@@ -21,7 +21,7 @@ function loadDoc() {
 ### AJAX Works
 ---
 
-![Image of Yaktocat](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/pic_ajax.gif)
+![Image of Yaktocat](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/pic_ajax.gif  "Image of Yaktocat w3c")
 
 ### Create an XMLHttpRequest Object
 ---
