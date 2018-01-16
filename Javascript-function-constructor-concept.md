@@ -32,42 +32,4 @@ var myIIFE = function() {
 })();
 ```
 
-**- Case 3: function for jQuery**
 
-```javascript
-(function($) {
-  
-
-  $(function() {
-
-  });
-
-})(jQuery);
-```
-
-**- Case 4: function for jQuery**
-
-```javascript
-//function to fix height of iframe!
-  var calcHeight = function() {
-    var headerDimensions = $('#mainlivedemo').height();
-    var selector = ($('.stretched').length > 0) ? '#iframelive' : '#iframelive iframe';
-    $(selector).height($(window).height() - headerDimensions);
-  }
-  $(document).ready(function() {
-    calcHeight();
-  });
-  $(window).resize(function() {
-    calcHeight();
-  }).load(function() {
-    calcHeight();
-  });
-  ```
-  
-**- Case 5: function for jQuery**
-
-```javascript
-$( window ).load(function() {
-  // Run code
-});
-```
