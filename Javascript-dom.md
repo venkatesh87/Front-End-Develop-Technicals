@@ -449,8 +449,52 @@ function myMove() {
 
 ### 7. DOM Events
 
+>**onclick()**:
+---
 ```javascript
-a
+  <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+  <h1 onclick="changeText(this)">Click on this text!</h1>
+  function changeText(id){
+    id.innerHTML = 'Ooops!';
+  }
+```
+  
+>**onload:** Sự kiện onload và onunload được kích hoạt khi người dùng nhập hoặc thoát khỏi trang.
+---
+```javascript
+<body onload="checkCookies()">
+  <p id="demo"></p>
+</body>
+function checkCookies(){
+  var text = '';
+  if(navigator.cookieEnabled == true){
+    text = 'Cookies are Enable';
+  }
+  else{
+    text = 'Cookies are Disable';
+  }
+  document.getElementById('demo') = text;
+}
+```
+
+>**onchange**: Sự kiện onchange thường được sử dụng kết hợp với xác nhận các input fields.
+```javascript
+<input type="text" id="fname" onchange="myFunction()">
+myFunction(){
+  var x = document.getElementById('fname');
+  x.value = x.value.toUpperCase();
+}
+```
+
+>**The onmouseover and onmouseout Events**
+```javascript
+<div onmouseover="mOver(this) onmouseout="mOut(this)">Mouse Over Me</div>
+function mOver(obj){
+  obj.innerHTML = 'Mouse Out Me'
+}
+function mOut(obj){
+  obj.innerHTML = 'Mouse Over Me'
+}
 ```
 
 ### 8. DOM EventListener
