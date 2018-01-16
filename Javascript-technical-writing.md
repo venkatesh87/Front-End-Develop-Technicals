@@ -55,23 +55,11 @@ var freezeVp = function(e) {
 **- Case 4:**
 
 ```
-#container {
-  width: 400px;
-  height: 400px;
-  position: relative;
-  background: yellow;
-}
-#animate {
-  width: 50px;
-  height: 50px;
-  position: absolute;
-  background-color: red;
-}
-
+#container {width: 400px;height: 400px;position: relative;background: yellow;}
+#animate {width: 50px;height: 50px;position: absolute; background-color: red;}
 <button onclick="myMove()">Click Me</button>
 <div id ="container">
 <div id ="animate"></div>
-
 
 function myMove() {
   var elem = document.getElementById("animate");   
@@ -86,6 +74,19 @@ function myMove() {
       elem.style.left = pos + 'px'; 
     }
   }
+}
+```
+**- Case 5:**
+
+```
+function checkCookies() {
+    var text = "";
+    if (navigator.cookieEnabled == true) {
+      text = "Cookies are enabled.";
+    } else {
+      text = "Cookies are not enabled.";
+    }
+    document.getElementById("demo").innerHTML = text;
 }
 ```
 
