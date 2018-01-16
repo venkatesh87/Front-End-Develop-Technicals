@@ -35,15 +35,14 @@ abort()  | Cancels the current request
 getAllResponseHeaders()  | Returns header information
 getResponseHeader()  | Returns specific header information(Trả về thông tin tiêu đề cụ thể)
 open(method, url, async, user, psw)  | Specifies the request
-                                     | method: the request type GET or POST
-                                     | url: the file location
-                                     | async: true (asynchronous) or false (synchronous)
-                                     | user: optional user name
-                                     | psw: optional password
-Content  | Content
-Content  | Content
-Content  | Content
-Content  | Content
+open(method, url, async, user, psw)  | method: the request type GET or POST
+open(method, url, async, user, psw)  | url: the file location
+open(method, url, async, user, psw)  | async: true (asynchronous) or false (synchronous)
+open(method, url, async, user, psw)  | user: optional user name
+open(method, url, async, user, psw)  | psw: optional password
+send()  | Sends the request to the server, Used for GET requests
+send(string)  | Sends the request to the server, Used for POST requests
+setRequestHeader()  | Adds a label/value pair to the header to be sent
 
 ### XMLHttpRequest Object Properties
 ---
