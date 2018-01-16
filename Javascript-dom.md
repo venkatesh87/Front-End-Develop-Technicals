@@ -497,6 +497,22 @@ function mOut(obj){
 }
 ```
 
+>**The onmousedown**: Click xong nhả chuột
+```javascript
+<p id="p1" onmousedown="mouseDown()" >Click the text!</p>
+function mouseDown(){
+  document.getElementById('').style.color = 'red';
+}
+```
+
+>**The onmouseup**:  Click giữ chuột mới có tác dụng
+```javascript
+<p id="p1" onmouseup="mouseDown()" >Click the text!</p>
+function mouseUp(){
+  document.getElementById('').style.color = 'green';
+}
+```
+
 ### 8. DOM EventListener
 
 ```javascript
