@@ -6,6 +6,7 @@
   - A **method** is an action you can do (like add or deleting an HTML element).
    
 ### 1. DOM Methods
+---
 
 ```javascript
 <p id="demo"></p>
@@ -327,6 +328,7 @@ document.getElementById('demo').innerHTML() = "Hello World";
   ==> **Result:** https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Javascript-dom.md
   
 ### 3. DOM Elements
+---
 
 **Finding HTML Elements**
   **- Finding HTML elements by id**: ```document.getElementById()```
@@ -399,6 +401,7 @@ document.getElementById('demo').innerHTML() = "Hello World";
   ```
 
 ### 4. DOM - Changing HTML
+---
 
   **- Changing the HTML Output Stream**
   ```document.write(Date());```
@@ -416,12 +419,14 @@ document.getElementById('demo').innerHTML() = "Hello World";
   ```
 
 ### 5. DOM - Changing CSS
+---
 
 ```javascript
 document.getElementById('id').style.color = "red";
 ```
 
 ### 6. DOM Animation
+---
 
 ```javascript
 <!DOCTYPE html>
@@ -471,9 +476,10 @@ function myMove() {
 ```
 
 ### 7. DOM Events
+---
 
 >**onclick()**:
----
+
 ```javascript
   <h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
   <h1 onclick="changeText(this)">Click on this text!</h1>
@@ -483,7 +489,6 @@ function myMove() {
 ```
   
 >**onload:** Sự kiện onload và onunload được kích hoạt khi người dùng nhập hoặc thoát khỏi trang.
----
 
 ```javascript
 <body onload="checkCookies()">
@@ -502,6 +507,7 @@ function checkCookies(){
 ```
 
 >**onchange**: Sự kiện onchange thường được sử dụng kết hợp với xác nhận các input fields.
+
 ```javascript
 <input type="text" id="fname" onchange="myFunction()">
 myFunction(){
@@ -511,6 +517,7 @@ myFunction(){
 ```
 
 >**The onmouseover and onmouseout Events**
+
 ```javascript
 <div onmouseover="mOver(this) onmouseout="mOut(this)">Mouse Over Me</div>
 function mOver(obj){
@@ -522,6 +529,7 @@ function mOut(obj){
 ```
 
 >**The onmousedown**: Click xong nhả chuột
+
 ```javascript
 <p id="p1" onmousedown="mouseDown()" >Click the text!</p>
 function mouseDown(){
@@ -530,6 +538,7 @@ function mouseDown(){
 ```
 
 >**The onmouseup**:  Click giữ chuột mới có tác dụng
+
 ```javascript
 <p id="p1" onmouseup="mouseDown()" >Click the text!</p>
 function mouseUp(){
@@ -538,6 +547,7 @@ function mouseUp(){
 ```
 
 >**The mousemove**:  Click giữ chuột mới có tác dụng
+
 ```javascript
 document.getElementById("myDIV").addEventListener("mousemove", myFunction);
 function myFunction() {
@@ -547,6 +557,7 @@ function myFunction() {
 ```
 
 >**Add an Event Handler to the Window Object**:
+
 ```javascript
 <p id="demo"></p>
 
@@ -556,6 +567,7 @@ window.addEventListener("resize", function(){
 ```
 
 ### 8. DOM EventListener
+---
 
 >**Syntax**: ```element.addEventListener(event, function, useCapture);```
 - ```event```: "click" or "mouseover", "onmouseout", "mousedown", "mouseup".
@@ -594,6 +606,7 @@ function removeHandler() {
 ```
 
 ### 9. DOM Navigation
+---
 
 ```javascript
 <h1 id="id01">My First Page</h1>
@@ -618,6 +631,7 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 ==> **Result:** H1
 
 ### 10. DOM Elements (Nodes)
+---
 
 >**Creating New HTML Elements (Nodes)**:
 
@@ -660,12 +674,14 @@ element.insertBefore(para,child);
 </div>
 ```
 ### 11. DOM Collections
+---
 
 ```javascript
 a
 ```
 
 ### 12. DOM Node Lists
+---
 
 ```javascript
 a
