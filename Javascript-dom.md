@@ -16,6 +16,7 @@ document.getElementById('demo').innerHTML() = "Hello World";
 - **Property:** ```javascriptinnerHTML()```
 
 ### 2. DOM Document
+---
 
 - The document object represents your web page.
 - If you want to access any element in an HTML page, you always start with accessing the document object.
