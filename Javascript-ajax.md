@@ -35,7 +35,7 @@ new XMLHttpRequest()  | 	Creates a new XMLHttpRequest object
 abort()  | Cancels the current request
 getAllResponseHeaders()  | Returns header information
 getResponseHeader()  | Returns specific header information(Trả về thông tin tiêu đề cụ thể)
-open(method, url, async, user, psw)  | Specifies the request; method: the request type GET or POST; url: the file location; async: true (asynchronous) or false (synchronous); user: optional user name; psw: optional password.
+open(method, url, async, user, psw)  | Specifies the request **;** method: the request type GET or POST **;** url: the file location **;** async: true (asynchronous) or false (synchronous) **;** user: optional user name **;** psw: optional password.
 send()  | Sends the request to the server, Used for GET requests
 send(string)  | Sends the request to the server, Used for POST requests
 setRequestHeader()  | Adds a label/value pair to the header to be sent
