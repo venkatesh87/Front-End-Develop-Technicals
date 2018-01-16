@@ -151,3 +151,9 @@
 
 │   ├── [Global Design IT](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Project-gdit.md)
 
+├── **[Tool Cut Image]**
+
+│   ├── [Snipping Tool]
+
+│   ├── [Screen Presso, Screen Capture]
+
