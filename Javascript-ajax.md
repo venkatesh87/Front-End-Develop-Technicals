@@ -9,4 +9,7 @@ Một đối tượng XMLHttpRequest được xây dựng trong trình duyệt (
 
 ```
 
+### AJAX Works
+---
+![AJAX Works](https://github.com/daodc/Front-End-Develop-Technicals/images/pic_ajax.gif)
 
