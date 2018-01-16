@@ -313,7 +313,7 @@ document.getElementById('demo').innerHTML() = "Hello World";
   </body>
   </html>
   ```
-  ==> Result: My title
+  ==> **Result:** My title
   
 - **document.URL** -->	Returns the complete URL of the document  ==> 1
   ```
@@ -324,7 +324,7 @@ document.getElementById('demo').innerHTML() = "Hello World";
     document.getElementById("demo").innerHTML = x;
   }
   ```
-  ==> Result: https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Javascript-dom.md
+  ==> **Result:** https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Javascript-dom.md
   
 ### 3. DOM Elements
 
@@ -484,6 +484,7 @@ function myMove() {
   
 >**onload:** Sự kiện onload và onunload được kích hoạt khi người dùng nhập hoặc thoát khỏi trang.
 ---
+
 ```javascript
 <body onload="checkCookies()">
   <p id="demo"></p>
@@ -536,24 +537,128 @@ function mouseUp(){
 }
 ```
 
+>**The mousemove**:  Click giữ chuột mới có tác dụng
+```javascript
+document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+function myFunction() {
+    document.getElementById("demo").innerHTML = Math.random();
+}
+
+```
+
+>**Add an Event Handler to the Window Object**:
+```javascript
+<p id="demo"></p>
+
+window.addEventListener("resize", function(){
+  document.getElementById("demo").innerHTML = Math.random();
+});
+```
+
 ### 8. DOM EventListener
 
+>**Syntax**: ```element.addEventListener(event, function, useCapture);```
+- ```event```: "click" or "mouseover", "onmouseout", "mousedown", "mouseup".
+- ```function```: function chúng ta muốn gọi khi sự kiện xảy ra.
+- ```useCapture```: là một giá trị boolean chỉ định sử dụng event bubbling hoặc event capturing.
+
+```
+document.getElementById("myP").addEventListener("click", myFunction, true);
+document.getElementById("myDiv").addEventListener("click", myFunction, true);
+```
+
+>**addEventListener()**:
 ```javascript
-a
+<button id="myBtn">Try it</button>
+<p id="demo"></p>
+
+document.getElementById('myBtn').addEventListener('click', );
+function displayDate(){
+  document.getElementById('demo').innerHTML = Date();
+}
+```
+
+>**The removeEventListener() method**:
+```javascript
+<div id="myDIV">This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.
+  <p>Click the button to remove the DIV's event handler.</p>
+  <button onclick="removeHandler()" id="myBtn">Try it</button>
+</div>
+document.getElementById("myDIV").addEventListener("mousemove", myFunction);
+function myFunction() {
+    document.getElementById("demo").innerHTML = Math.random();
+}
+function removeHandler() {
+    document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
+}
 ```
 
 ### 9. DOM Navigation
 
 ```javascript
-a
+<h1 id="id01">My First Page</h1>
+<p id="id02">a</p>
+document.getElementById("id02").innerHTML = document.getElementById("id01").firstChild.nodeValue;
 ```
+==> **Result:** My First Page
+
+
+```javascript
+<h1 id="id01">My First Page</h1>
+<p id="id02">a</p>
+document.getElementById("id02").innerHTML = document.getElementById("id01").childNodes[0].nodeValue;
+```
+==> **Result:** My First Page
+
+```javascript
+<h1 id="id01">My First Page</h1>
+<p id="id02">a</p>
+document.getElementById("id02").innerHTML = document.getElementById("id01").nodeName;
+```
+==> **Result:** H1
 
 ### 10. DOM Elements (Nodes)
 
-```javascript
-a
-```
+>**Creating New HTML Elements (Nodes)**:
 
+```javascript
+<div id="div1">
+  <p id="p1">This is a paragraph.</p>
+  <p id="p2">This is another paragraph.</p>
+</div>
+
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+var element = document.getElementById("div1");
+element.appendChild(para);
+```
+==> **Result:** ```<p id="p1">This is new.</p>```
+
+>**Creating new HTML Elements** ```insertBefore()```
+
+```javascript
+<div id="div1">
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+var para = document.createElement("p");
+var node = document.createTextNode("This is new.");
+para.appendChild(node);
+
+var element = document.getElementById("div1");
+var child = document.getElementById("p1");
+element.insertBefore(para,child);
+```
+==> **Result:**
+```
+<div id="div1">
+<p>This is new.</p>
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+```
 ### 11. DOM Collections
 
 ```javascript
