@@ -76,6 +76,121 @@ statusText  | Returns the status-text (e.g. "OK" or "Not Found")
 
 ### IV. AJAX - Send a Request To a Server
 ---
+>**Send a Request To a Server**: To send a request to a server, we use the open() and send() methods of the XMLHttpRequest object:
+
+```javascript
+xhttp.open('GET', 'ajax_info.txt', true);
+xhttp.send();
+```
+
+First Header | Second Header
+------------ | -------------
+
+Method	Description open(method, url, async)  | Specifies the type of request
+
+Method	Description open(method, url, async)  | ```method```: the type of request: GET or POST
+Method	Description open(method, url, async)  | ```url```: the server (file) location
+Method	Description open(method, url, async)  | ```async```: ```true``` (asynchronous) or ```false``` (synchronous)
+send()  | Sends the request to the server (used for GET)
+send(string)  | Sends the request to the server (used for POST)
+
+>**1. GET requests**
+
+**A simple GET request:**
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "demo_get.asp", true);
+  xhttp.send();
+}
+```
+
+**In the example above, you may get a cached result. To avoid this, add a unique ID to the URL:**
+
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange=function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "demo_get.asp?t=" + Math.random(), true);
+  xhttp.send();
+}
+```
+
+**If you want to send information with the GET method, add the information to the URL:**
+
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "demo_get2.asp?fname=Henry&lname=Ford", true);
+  xhttp.send();
+}
+```
+
+>**2. POST Requests**
+
+**A simple POST request:**
+
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "demo_post.asp", true);
+  xhttp.send();
+}
+```
+
+**To POST data like an HTML form, add an HTTP header with setRequestHeader(). Specify the data you want to send in the send() method:**
+
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "demo_post2.asp", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("fname=Henry&lname=Ford");
+}
+```
+
+```setRequestHeader(header, value)```: 
+   - Adds HTTP headers to the request
+   - ```header```: specifies the header name
+   - ```value```: specifies the header value
+
+**The url - A File On a Server**
+  - The url parameter of the open() method, is an address to a file on a server:
+  - The file can be any kind of file, like .txt and .xml, or server scripting files like .asp and .php (which can perform actions on the server before sending the response back).
+
+```javascript
+xhttp.open("GET", "ajax_test.asp", true);
+```
+
+****
+
+```javascript
+
+```
 
 ### V. AJAX - Server Response
 ---
