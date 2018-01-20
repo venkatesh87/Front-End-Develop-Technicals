@@ -304,6 +304,17 @@ function myFunction(xhttp) {
 }
 ```
 
+>**Server Response Properties**
+
+- responseText	get the response data as a string
+  ```document.getElementById("demo").innerHTML = xhttp.responseText;```
+- responseXML	get the response data as XML data
+
+>**Server Response Methods**
+
+- getResponseHeader()	Returns specific header information from the server resource
+- getAllResponseHeaders()	Returns all the header information from the server resource
+
 ### VI. AJAX XML Example
 ---
 
