@@ -13,6 +13,7 @@
 1. [hugogiraudel](http://hugogiraudel.com/about/)
 1. [Css tricks learn](https://www.codecademy.com/learn/all)
 1. [Css tricks ebooks](https://www.syncfusion.com/resources/techportal/ebooks)
+1. [Uijar](https://uijar.com/)
 
 ### II. Freelancer
 
