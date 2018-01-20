@@ -186,14 +186,123 @@ function loadDoc() {
 xhttp.open("GET", "ajax_test.asp", true);
 ```
 
-****
+**Asynchronous(bất đồng bộ) - True or False?**
+- Server requests should be sent asynchronously.
+- The async parameter of the open() method should be set to true:
 
 ```javascript
+xhttp.open("GET", "ajax_test.asp", true);
+```
+- By sending asynchronously, the JavaScript does not have to wait for the server response, but can instead:
 
+  + execute other scripts while waiting for server response
+  + deal with the response after the response is ready
+  
+**The onreadystatechange Property**
+
+- With the XMLHttpRequest object you can define a function to be executed when the request receives an answer.
+- The function is defined in the onreadystatechange property of the XMLHttpResponse object:
+
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+```
+**Synchronous Request(đồng bộ) - True or False?**
+- To execute a synchronous request, change the third parameter in the open() method to false:
+
+```
+xhttp.open("GET", "ajax_info.txt", false);
+```
+
+- Since the code will wait for server completion, there is no need for an ```onreadystatechange``` function:
+```
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("GET", "ajax_info.txt", false);
+  xhttp.send();
+  document.getElementById("demo").innerHTML = xhttp.responseText;
+}
 ```
 
 ### V. AJAX - Server Response
 ---
+>**The onreadystatechange Property**
+- The ```readyState``` property holds the status of the XMLHttpRequest.
+- The ```onreadystatechange``` property defines a function to be executed when the readyState changes.
+- The ```status``` property and the ```statusText``` property holds the status of the XMLHttpRequest object.
+- The ```onreadystatechange``` function is called every time the ```readyState``` changes.
+- When readyState is 4 and status is 200, the response is ready:
+
+```javascript
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+```
+
+>**Using a Callback Function**: Chú ý khi Callback function thì gọi ko có dấu ngoặc đơn ```loadDoc('ajax_info.txt', myFunction)```
+
+```
+loadDoc("url-1", myFunction1);
+
+loadDoc("url-2", myFunction2);
+
+function loadDoc(url, cFunction) {
+  var xhttp;
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+
+function myFunction1(xhttp) {
+  // action goes here
+} 
+function myFunction2(xhttp) {
+  // action goes here
+}
+```
+
+```javascript
+<div id="demo">
+<button type="button" onclick="loadDoc('ajax_info.txt', myFunction)">Change Content</button>
+
+function loadDoc(url, cFunction) {
+  var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      cFunction(this);
+    }
+  };
+  xhttp.open("GET", url, true);
+  xhttp.send();
+}
+function myFunction(xhttp) {
+  document.getElementById("demo").innerHTML =
+  xhttp.responseText;
+}
+```
 
 ### VI. AJAX XML Example
 ---
