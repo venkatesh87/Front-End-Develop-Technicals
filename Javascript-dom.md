@@ -554,9 +554,17 @@ document.getElementById("myDIV").addEventListener("mousemove", myFunction);
 function myFunction() {
     document.getElementById("demo").innerHTML = Math.random();
 }
-
 ```
 
+```javascript
+document.getElementById("myDIV").onmousemove = function(event) { myFunction(event) };
+function myFunction(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var coor = "Coordinates: (" + x + "," + y + ")";
+  document.getElementById("demo").innerHTML = coor;
+}
+```
 >**Add an Event Handler to the Window Object**:
 
 ```javascript
