@@ -310,10 +310,64 @@ function myFunction(xhttp) {
   ```document.getElementById("demo").innerHTML = xhttp.responseText;```
 - responseXML	get the response data as XML data
 
+  ```javascript
+  <button type="button" onclick="loadXMLDoc()">Get my CD collection</button>
+  <p id="demo"></p>
+  function loadXMLDoc() {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+      }
+    };
+    xmlhttp.open("GET", "cd_catalog.xml", true);
+    xmlhttp.send();
+  }
+
+  function myFunction(xml) {
+    var x, i, xmlDoc, txt;
+    xmlDoc = xml.responseXML;
+    txt = "";
+    x = xmlDoc.getElementsByTagName("ARTIST");
+    for (i = 0; i< x.length; i++) {
+      txt += x[i].childNodes[0].nodeValue + "<br>";
+    }
+    document.getElementById("demo").innerHTML = txt;
+  }
+  ```
+
 >**Server Response Methods**
 
-- getResponseHeader()	Returns specific header information from the server resource
-- getAllResponseHeaders()	Returns all the header information from the server resource
+- ```getResponseHeader()```	Returns specific header information from the server resource
+  - The getResponseHeader() function is used to return specific header information from a resource, like length, server-type, content-type, last-modified, etc.
+  
+```
+function loadXMLDoc(url) {
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      "Last modified: " + this.getResponseHeader('Last-Modified');
+    }
+  };
+  xmlhttp.open("GET", url, true);
+  xmlhttp.send();
+}
+```
+- ```getAllResponseHeaders()```	Returns all the header information from the server resource
+     -The getAllResponseHeaders() function returns the header information of a resource, like length, server-type, content-type, last-modified, etc
+```
+<p id="demo"></p>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange=function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("demo").innerHTML =
+    this.getAllResponseHeaders();
+  }
+};
+xmlhttp.open("GET", "xmlhttp_info.txt", true);
+xmlhttp.send();
+```
 
 ### VI. AJAX XML Example
 ---
