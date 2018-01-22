@@ -369,6 +369,40 @@ xmlhttp.open("GET", "xmlhttp_info.txt", true);
 xmlhttp.send();
 ```
 
+>**The responseText Property**
+- The responseText property returns the server response as a JavaScript string, and you can use it accordingly:
+```
+document.getElementById("demo").innerHTML = xhttp.responseText;
+```
+
+>**The getAllResponseHeaders() Method**
+- The ```getAllResponseHeaders()``` method returns all header information from the server response.
+
+```
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("demo").innerHTML =
+    this.getAllResponseHeaders();
+  }
+};
+xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();
+```
+
+>**The getResponseHeader() Method**
+- The getResponseHeader() method returns specific header information from the server response.
+```
+var xhttp=new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    document.getElementById("demo").innerHTML =
+    this.getResponseHeader("Last-Modified");
+  }
+};
+xhttp.open("GET", "ajax_info.txt", true);
+xhttp.send();
+```
 ### VI. AJAX XML Example
 ---
 
