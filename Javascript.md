@@ -66,3 +66,5 @@
 
 1. [Javascript variable scope and hoisting](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/javaScript-variable-scope-and-hoisting.md)
 
+1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc)
+
