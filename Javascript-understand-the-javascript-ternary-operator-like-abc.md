@@ -1,8 +1,8 @@
 ### Understand The JavaScript Ternary Operator like the ABCs
-
+---
 - Don’t Repeat Yourself
 
-**1. Operators in JavaScript**
+>**1. Operators in JavaScript**
 ---
 - In the JavaScript theatre, various operations require operators, which are basically denoted with symbols ```+ - / = * %```. For the various operations like arithmetic and assignment operations, various symbols are used. These operators in their usage are split into 3 types:
   + **Unary Operators** - Requires one operand either before or after the operator.
@@ -16,7 +16,7 @@ a ? 'hello' : 'world' //Ternary/Conditional operator
 ```
 - We will focus on the ternary operator as earlier stated.
 
-**2. Ternary Operator**
+>**2. Ternary Operator**
 ---
 - The ternary operator has been around for a while now, but isn’t widely used, maybe because of the syntax or some form of ambiguity I’m unaware of. The ternary operator is a conditional operator and can effectively and efficiently replace several lines of IF statements. It simply verifies if a condition is true or false and returns an expression or carry out an operation based on the state of the condition, in probably one line of code. Using an IF statement we have:
 
@@ -48,7 +48,7 @@ alert(day ? 'It is day-time' : 'It is night-time') // It is day-time
 
 - Let’s get to more details.
 
-**3. Variable Assignment**
+>**3. Variable Assignment**
 ---
 - As stated earlier, the result of the condition evaluation can be an expression or an operation, and in this case a variable assignment.
 
@@ -61,7 +61,7 @@ console.log(message)
 
 - Notice we assigned the result of a ternary operation first to a global variable ```message```, and later on, reassigned it when the condition changed. Notice the reassignment of the global variable ```age``` in the condition of the ternary operator. Reassignment operations can occur in a ternary operation - so much done in one line yeah? The ```ELSE``` part of the operation can also be an expression or an operation on its own, just like it’s done in conventional ```IF``` statements.
 
-**4. Usage in Functions**
+>**4. Usage in Functions**
 ---
 
 - Usually, the next use case for IF statements are in functions, basically ternary operations make a function ‘syntactically sweet’. Same way variables are assigned the result of ternary operations is the same way functions return the result of ternary operations. With IF statements we have:
@@ -90,7 +90,7 @@ console.log(myPet()) // Get me a dog!
 
 - Imagine if we had quite a number of IF statements, with a host of ```return``` expressions in them, now think of how these can be shortened using ternary operators. Next, we will see how we can chain multiple conditions together, you can have the conditions in functions as well!
 
-**5. Multiple Conditions**
+>**5. Multiple Conditions**
 ---
 
 - Just like in good old IF statement with IF/ELSE IF, multiple conditions can be chained in ternary operations to give one robust operation. Normally we would write:
@@ -131,7 +131,7 @@ console.log(message) //Thanks for reaching out to us
 
 - Here we simply have multiple conditions chained to one another, and if a condition doesn’t pass, another condition is put forward, and if it still doesn’t pass, (now you cannot be offered any further assistance, lol) an expression is returned.
 
-**6. Multiple Operations per Condition**
+>**6. Multiple Operations per Condition**
 ---
 
 - A friend of mine would say “in code, you read A + B but later you are required to pull B from a remote server, make A a ninja, minify B, before they can be added together”. So far we have seen multiple conditions chained together, what about expressions or conditions per condition? Say we would like to make a request to an API if a condition passes as true. Just like in IF statements, here’s a simple one:
@@ -170,7 +170,7 @@ myLocation = home ? ('Brussels', 'london', 'Rio de Janero', 'Newark' ) : 'Kinsha
 console.log(myLocation) // Newark
 ```
 
-**7. Multiple Conditions**
+>**7. Multiple Conditions**
 
 - So far, you have seen how invaluable using ternary operators to write conditional statements make code plain and effortless, from writing simple lines of conditional statements to writing large chunks of chained operations in or out of functions. Using ternary operators, keep writing better code, …and DRY(Don’t Repeat Yourself) code.
 
