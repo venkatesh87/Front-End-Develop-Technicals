@@ -2,6 +2,10 @@
 
 1. [Awesome Coding Videos Javascript **Rất Hay**](https://www.awesomecodingvideos.com/)
 
+1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
+
+1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
+
 1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
 1. [JavaScript Functions and Helpers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-functions-and-helpers.md)
@@ -33,8 +37,6 @@
 1. [Link study Javascript basic](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Link-study-javascript-basic.md)
 
 1. [Hieu Code](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Read-understand-code.md)
-
-1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
 
 1. [JavaScript Of mostly-adequate-guide](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-mostly-adequate-guide.md)
 
