@@ -135,6 +135,10 @@
 
 │   ├── [devhints ES6](https://devhints.io/es6)
 
+│   ├── [Scotch io](https://scotch.io/courses/10-need-to-know-javascript-concepts)
+
+│   ├── [Medium](https://medium.com/dev-bits/tagged/javascript)
+
 │   └── [Viblo AngularJS](https://viblo.asia/tags/angularjs)
 
 ├── **[Intended to be included]**
