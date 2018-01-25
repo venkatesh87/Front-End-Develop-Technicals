@@ -25,13 +25,30 @@ alert('myJSON');
 **3. Receiving Data**
 ---
 ```javascript
-
+var myJSON = '{ "name":"John", "age":31, "city":"New York" }';
+var myObj = JSON.parse(myJSON);
+document.getElementById("demo").innerHTML = myObj.name;
 ```
 
 **4. Storing Data**
 ---
-```javascript
+- When storing data, the data has to be a certain format, and regardless of where you choose to store it, text is always one of the legal formats.
+- JSON makes it possible to store JavaScript objects as text.
+- ```localStorage.setItem()```, ```localStorage.getItem()```
+```<p id="demo"></p>```
 
+```javascript
+var myObj, myJSON, text, obj;
+
+//Storing data:
+myObj = { "name":"John", "age":31, "city":"New York" };
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name;
 ```
 
 **5. Exchanging Data**
