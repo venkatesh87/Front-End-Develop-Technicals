@@ -1,5 +1,6 @@
 ### I. Follow :
 
+1. [Designmodo](https://designmodo.com/inspiration/)
 1. [frontendrescue](https://uptodate.frontendrescue.org/)
 1. [Smashingmagazine](https://www.smashingmagazine.com/)
 1. [Sitepoint](https://www.sitepoint.com/)
