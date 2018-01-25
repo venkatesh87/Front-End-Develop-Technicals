@@ -1,4 +1,4 @@
-### Document Link Local
+#### I.Document Link Local
 ---
 
 1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
@@ -69,7 +69,7 @@
 
 1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc.md)
 
-### Document Link Outsite
+#### II.Document Link Outsite
 ---
 
 1. [Sabe Javascript **Rất Hay**](https://sabe.io/classes/javascript)
@@ -79,3 +79,5 @@
 1. [Scotch io](https://scotch.io/courses/10-need-to-know-javascript-concepts)
 
 1. [Medium](https://medium.com/dev-bits/tagged/javascript)
+
+1. [Designmodo](https://designmodo.com/coding/)
