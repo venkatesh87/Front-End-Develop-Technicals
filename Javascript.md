@@ -14,6 +14,10 @@
 
 1. [Javascript technical writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
 
+1. [Scotch io](https://scotch.io/courses/10-need-to-know-javascript-concepts)
+
+1. [Medium](https://medium.com/dev-bits/tagged/javascript)
+
 1. [Shorthand JavaScript Techniques](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Shorthand-javascript-techniques.md)
 
 1. [Function JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Function-javascript.md)
