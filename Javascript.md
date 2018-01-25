@@ -1,6 +1,5 @@
-1. [Sabe Javascript **Rất Hay**](https://sabe.io/classes/javascript)
-
-1. [Awesome Coding Videos Javascript **Rất Hay**](https://www.awesomecodingvideos.com/)
+### Document Link Local
+---
 
 1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
 
@@ -13,10 +12,6 @@
 1. [JavaScript study](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-study.md)
 
 1. [Javascript technical writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
-
-1. [Scotch io](https://scotch.io/courses/10-need-to-know-javascript-concepts)
-
-1. [Medium](https://medium.com/dev-bits/tagged/javascript)
 
 1. [Shorthand JavaScript Techniques](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Shorthand-javascript-techniques.md)
 
@@ -74,3 +69,13 @@
 
 1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc.md)
 
+### Document Link Outsite
+---
+
+1. [Sabe Javascript **Rất Hay**](https://sabe.io/classes/javascript)
+
+1. [Awesome Coding Videos Javascript **Rất Hay**](https://www.awesomecodingvideos.com/)
+
+1. [Scotch io](https://scotch.io/courses/10-need-to-know-javascript-concepts)
+
+1. [Medium](https://medium.com/dev-bits/tagged/javascript)
