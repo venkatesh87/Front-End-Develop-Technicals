@@ -143,7 +143,11 @@ let legalIncluded = people.map((person) => {
 
 - If you check, all the values are correct and our new array has all the information we need. This is of course a simple example of what the map function actually does, if you can run a function for every element in an array you can literally do anything, so if you wanted add 10 years to each person you could simply do:
 ```javascript
-
+let increaseAge = people.map((person) => {
+    // set the age key equal it plus 10
+    person.age = person.age + 10;
+    return person;
+});
 ```
 
 **6. reduce() the Array**
