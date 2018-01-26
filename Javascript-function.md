@@ -170,7 +170,7 @@ sumAll(1, 2, 3, 4, 5, 6);
 ```
 ### III. Function Invocation
 ---
->**1. Invoking a Function as a Function**
+**1. Invoking a Function as a Function**
 ---
 ```javascript
 function myFunction(a, b) {
@@ -188,18 +188,18 @@ function myFunction(a, b) {
 window.myFunction(10, 2);
 ```
 
->**2. The this Keyword**
+**2. The this Keyword**
 ---
 - In JavaScript, the thing called **this**, is the object that "owns" the current code.
 - The value of **this**, when used in a function, is the object that "owns" the function.
 - Note that **this** is not a variable. It is a keyword. You cannot change the value of **this**.
 
->**3. The Global Object**
+**3. The Global Object**
 - When a function is called without an owner object, the value of this becomes the global object.
 - In a web browser the global object is the browser window.
 - This example returns the window object as the value of this
 
->**4. Invoking a Function as a Method**
+**4. Invoking a Function as a Method**
 - In JavaScript you can define function as object methods.
 - The following example creates an object (myObject), with two properties (firstName and lastName), and a method (fullName):
 
@@ -228,8 +228,8 @@ var myObject = {
 myObject.fullName(); 
 ```
 
->**5. Invoking a Function with a Function Constructor**
-
+**5. Invoking a Function with a Function Constructor**
+---
 ```
 // This is a function constructor:
 function myFunction(arg1, arg2) {
@@ -242,7 +242,7 @@ x.firstName;
 ```
 ### IV. Function Call
 ---
->**1. Functions are Object Methods**
+**1. Functions are Object Methods**
 ---
 ```javascript
 var person = {
@@ -255,7 +255,7 @@ var person = {
 person.fullName();         // Will return "John Doe"
 ```
 
->**2. The JavaScript call() Method**
+**2. The JavaScript call() Method**
 ---
 - With call(), you can use a method belonging to another object.
 ```javascript
@@ -276,7 +276,7 @@ person.fullName.call(myObject);  // Will return "Mary Doe"
 ### V. Function Apply
 ---
 
->**1. The ```apply()``` method is similar to the ```call()``` method:**
+**1. The ```apply()``` method is similar to the ```call()``` method:**
 ---
 ```javascript
 var person = {
@@ -293,7 +293,7 @@ var myObject = {
 person.fullName.apply(myObject);  // Will return "Mary Doe"
 ```
 
->**2. The Difference Between ```call()``` and ```apply()```**
+**2. The Difference Between ```call()``` and ```apply()```**
 ---
 - ```call()``` takes any function arguments separately.
 - ```apply()``` takes any function arguments as an array.
@@ -331,12 +331,12 @@ function myFunction() {
 }
 ```
 
->**2. Variable Lifetime**
+**2. Variable Lifetime**
 ---
 - Global variables live as long as your application (your window / your web page) lives.
 - Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
 
->**3.A Counter Dilemma**
+**3.A Counter Dilemma**
 ---
 - Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
 - You could use a global variable, and a function to increase the counter:
@@ -368,7 +368,7 @@ function myFunction(){
 }
 ```
 
->**4.JavaScript Nested Functions**
+**4.JavaScript Nested Functions**
 ---
 ```javascript
 document.getElementById("demo").innerHTML = add();
@@ -380,7 +380,7 @@ function add() {
 }
 ```
 
->**5. self-invoking functions**
+**5. self-invoking functions**
 ---
 ```javascript
 var add = (function () {
