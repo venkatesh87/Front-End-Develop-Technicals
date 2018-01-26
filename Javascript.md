@@ -1,7 +1,7 @@
 #### I.Document Link Local
 ---
 
-1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
+1. [Flex Those JavaScript Array Muscles](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-flex-those-javaScript-array-muscles.md)
 
 1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
 
@@ -74,6 +74,8 @@
 
 #### II.Document Link Outsite
 ---
+
+1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
 
 1. [Sabe Javascript **Rất Hay**](https://sabe.io/classes/javascript)
 
