@@ -112,21 +112,21 @@ document.getElementById("demo").innerHTML = myFunction.toString();
 - Function parameters are the names listed in the function definition.
 - Function arguments are the real values passed to (and received by) the function.
 
->**1. Function Parameters**
+**1. Function Parameters**
 ---
 ```javascript
 functionName(parameter1, parameter2, parameter3) {
     code to be executed
 }
 ```
->**2. Parameter Rules**
+**2. Parameter Rules**
 ---
 
 - JavaScript function definitions do not specify data types for parameters.
 - JavaScript functions do not perform type checking on the passed arguments.
 - JavaScript functions do not check the number of arguments received.
 
->**3. Parameter Defaults**
+**3. Parameter Defaults**
 ---
 - If a function is called with missing arguments (less than declared), the missing values are set to: undefined
 - Sometimes this is acceptable, but sometimes it is better to assign a default value to the parameter:
@@ -141,7 +141,7 @@ function myFunction(x, y) {
 document.getElementById("demo").innerHTML = myFunction(4);
 ```
 
->**4. The Arguments Object**
+**4. The Arguments Object**
 ---
 ```javascript
 function findMax() {
