@@ -303,7 +303,81 @@ Math.max.apply(null,[1,2,3]); // Will also return 3
 ### V. JavaScript Closures
 ---
 
->****
+- JavaScript variables can belong to the local or global scope.
+- Global variables can be made local (private) with closures.
+
+
+>**1. **Global Variables**
+- A function can access all variables defined inside the function, like this
+```javascript
+function myFunction() {
+    var a = 4;
+    return a * a;
+}
+```
+- But a function can also access variables defined outside the function, like this:
+```javascript
+var a = 4;
+function myFunction() {
+    return a * a;
+}
+```
+
+>**2. **Variable Lifetime**
+- Global variables live as long as your application (your window / your web page) lives.
+- Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
 ```javascript
 
+```
+
+>**3. **A Counter Dilemma**
+- Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
+- You could use a global variable, and a function to increase the counter:
+
+**Increase one unit on click**
+```javascript
+var counter = 0;
+
+function add() {
+    return counter += 1;
+}
+
+function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+}
+// Increase one unit on click
+```
+
+**Increases only 1**
+```javascript
+function add() {
+    var counter = 0;
+    return counter += 1;
+}
+function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+}
+```
+
+>**4. **JavaScript Nested Functions**
+```javascript
+document.getElementById("demo").innerHTML = add();
+function add() {
+    var counter = 0;
+    function plus() {counter += 1;}
+    plus();    
+    return counter; // 1
+}
+```
+
+>**5. **self-invoking functions**
+```javascript
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+function myFunction(){
+    document.getElementById("demo").innerHTML = add();
+}
 ```
