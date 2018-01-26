@@ -24,6 +24,7 @@ alert('myJSON');
 
 **3. Receiving Data**
 ---
+- If you receive data in JSON format, you can convert it into a JavaScript object:
 ```javascript
 var myJSON = '{ "name":"John", "age":31, "city":"New York" }';
 var myObj = JSON.parse(myJSON);
@@ -59,55 +60,57 @@ document.getElementById("demo").innerHTML = obj.name;
 
 ### II. JSON Syntax
 
->****
-```javascript
+>**JSON Data - A Name and a Value**
+```"name":"John"```
+>**JSON**
+```{ "name":"John" }```
 
+>**JavaScript**
+```{ name:"John" }```
+
+>**JSON Values**:
+- **In JSON**, values must be one of the following data types: 
+ + a string
+ + a number
+ + an object (JSON object)
+ + an array
+ + a boolean
+ + null
+- **In JavaScript** values can be all of the above, plus any other valid JavaScript expression, including:
+ + a function
+ + a date
+ + undefined
+>**JSON Uses JavaScript Syntax**
+
+**You can access a JavaScript object like this:**
+```javascript
+var myObj, x;
+myObj = { "name":"John", "age":30, "city":"New York" };
+x = myObj.name;
+document.getElementById('demo').innerHTML = x;
 ```
 
-### III. JSON vs XML
->****
+**It can also be accessed like this:**
 ```javascript
-
+var myObj, x;
+myObj = { "name":"John", "age":30, "city":"New York" };
+x = myObj[name];
+document.getElementById('demo').innerHTML = x;
 ```
 
-### IV. JSON Data Types
->****
+**Data can be modified like this:**
 ```javascript
-
+var myObj;
+myObj = { "name":"John", "age":30, "city":"New York" };
+myObj.name = "Dao";
+document.getElementById('demo').innerHTML = myObj.name;
 ```
 
-### V. JSON Objects
->****
+**It can also be modified like this:**
 ```javascript
-
+var myObj;
+myObj = { "name":"John", "age":30, "city":"New York" };
+myObj[name] = "Dao";
+document.getElementById('demo').innerHTML = myObj[name];
 ```
 
-### VI. JSON Arrays
->****
-```javascript
-
-```
-
-### VII. JSON.parse()
->****
-```javascript
-
-```
-
-### VIII. JSON.stringify()
->****
-```javascript
-
-```
-
-### IX. JSON HTML
->****
-```javascript
-
-```
-
-### X. JSON HTML
->****
-```javascript
-
-```
