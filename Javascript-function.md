@@ -307,7 +307,7 @@ Math.max.apply(null,[1,2,3]); // Will also return 3
 - Global variables can be made local (private) with closures.
 
 
->**1. **Global Variables**
+>**1.Global Variables**
 - A function can access all variables defined inside the function, like this
 ```javascript
 function myFunction() {
@@ -323,14 +323,14 @@ function myFunction() {
 }
 ```
 
->**2. **Variable Lifetime**
+>**2. Variable Lifetime**
 - Global variables live as long as your application (your window / your web page) lives.
 - Local variables have short lives. They are created when the function is invoked, and deleted when the function is finished.
 ```javascript
 
 ```
 
->**3. **A Counter Dilemma**
+>**3.A Counter Dilemma**
 - Suppose you want to use a variable for counting something, and you want this counter to be available to all functions.
 - You could use a global variable, and a function to increase the counter:
 
@@ -359,7 +359,7 @@ function myFunction(){
 }
 ```
 
->**4. **JavaScript Nested Functions**
+>**4.JavaScript Nested Functions**
 ```javascript
 document.getElementById("demo").innerHTML = add();
 function add() {
@@ -370,7 +370,7 @@ function add() {
 }
 ```
 
->**5. **self-invoking functions**
+>**5. self-invoking functions**
 ```javascript
 var add = (function () {
     var counter = 0;
