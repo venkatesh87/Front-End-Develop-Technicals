@@ -59,8 +59,9 @@
 
 1. [Javascript DOM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-dom.md)
 
-
 1. [Javascript Function](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function.md)
+
+1. [Javascript MATH](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-math.md)
 
 1. [Javascript Ajax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-ajax.md)
 
