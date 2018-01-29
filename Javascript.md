@@ -88,3 +88,10 @@
 1. [Designmodo](https://designmodo.com/coding/)
 
 1. [W3resource](https://www.w3resource.com/javascript-exercises/)
+
+#### III. Tool Code Javascript Online
+---
+
+1. [Jsbin](https://jsbin.com/?html,css,js,console)
+
+1. [Codepen](https://codepen.io/pen/)
