@@ -86,3 +86,5 @@
 1. [Medium](https://medium.com/dev-bits/tagged/javascript)
 
 1. [Designmodo](https://designmodo.com/coding/)
+
+1. [W3resource](https://www.w3resource.com/javascript-exercises/)
