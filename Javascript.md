@@ -90,6 +90,8 @@
 
 1. [W3resource](https://www.w3resource.com/javascript-exercises/)
 
+1. [Eloquent Javascript](https://eloquentjavascript.net/index.html)
+
 #### III. Tool Code Javascript Online
 ---
 
