@@ -1,7 +1,7 @@
 #### I. JavaScript basic - Exercises, Practice, Solution
 ---
 
-**1. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar. **
+**1. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.**
 
 ```javascript
 year = window.prompt("Input a Year : ");
@@ -29,4 +29,4 @@ function leapYear() {
   }
 }
 ```
-**1. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar. **
+**1. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.**
