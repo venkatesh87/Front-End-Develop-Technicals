@@ -31,6 +31,7 @@ function leapYear() {
 ```
 **2. Write a JavaScript program to find which 1st January is being a Sunday between 2014 and 2050.**
 
+>JavaScript Code:
 ```javascript
 for (let year = 2014; year <= 2050; year++) {
   const date = new Date(year, 0, 1);
@@ -38,6 +39,17 @@ for (let year = 2014; year <= 2050; year++) {
     console.log("1st January is being a Sunday  " + year);
   }
 }
+```
+
+>ES6 Version:
+```javascript
+console.log('--------------------');
+for (let year = 2014; year <= 2050; year++){
+  const d = new Date(year, 0, 1);
+  if ( d.getDay() === 0 )
+     console.log(`1st January is being a Sunday  ${year}`);
+}
+console.log('--------------------');
 ```
 
 **3. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".**
@@ -65,36 +77,558 @@ else
 
 **4. Write a JavaScript program to calculate number of days left until next Christmas.**
 
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
 ```javascript
 
 ```
 
 **5. **
 
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
 ```javascript
 
 ```
 
 **6. **
 
+>JavaScript Code:
 ```javascript
 
 ```
 
+>ES6 Version:
+```javascript
+
+```
 **7. **
 
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
 ```javascript
 
 ```
 
 **8. **
 
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
 ```javascript
 
 ```
 
 **9. **
 
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**10. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+**11. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**12. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**13. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**14. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**15. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**16. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**17. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**18. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+**19. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**20. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**21. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**22. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**23. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**24. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**25. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**26. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**27. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**28. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+**29. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**30. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**31. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**32. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**33. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**34. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**35. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**36. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**37. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**38. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+**39. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**40. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**41. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**42. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**43. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**44. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**45. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**46. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**47. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**48. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+**49. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+**50. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
 ```javascript
 
 ```
