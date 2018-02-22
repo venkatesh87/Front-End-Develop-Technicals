@@ -29,4 +29,11 @@ function leapYear() {
   }
 }
 ```
-**2. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.**
+**2. **
+**3. **
+**4. **
+**5. **
+**6. **
+**7. **
+**8. **
+**9. **
