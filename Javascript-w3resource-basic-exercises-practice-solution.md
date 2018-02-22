@@ -154,16 +154,16 @@ function divideBy() {
 }
 ```
 
-**6. **
+**6. Write a JavaScript program to get the website URL (loading page).**
 
 >JavaScript Code:
 ```javascript
-
+alert(document.URL);
 ```
 
 >ES6 Version:
 ```javascript
-
+alert(document.URL);
 ```
 **7. **
 
