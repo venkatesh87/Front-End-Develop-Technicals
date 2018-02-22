@@ -1,9 +1,9 @@
 #### I. JavaScript - Exercises, Practice, Solution
 ---
 
-1. [JavaScript basic - Exercises, Practice, Solution](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
+1. [Javascript technical writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
 
-1. [JavaScript functions - Exercises, Practice, Solution](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-w3resource-basic-exercises-practice-solution.md)
+1. [JavaScript basic - Exercises, Practice, Solution](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-w3resource-basic-exercises-practice-solution.md)
 
 1. [JavaScript functions - Exercises, Practice, Solution](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-w3resource-function-exercises-practice-solution.md)
 
