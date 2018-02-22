@@ -3,6 +3,7 @@
 
 **1. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.**
 
+>JavaScript Code:
 ```javascript
 year = window.prompt("Input a Year : ");
 x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
@@ -28,6 +29,13 @@ function leapYear() {
     document.getElementById('demo').innerHTML = 'Năm ' + this.value + ' Không Phải Là Năm Nhuận';
   }
 }
+```
+
+>ES6 Version:
+```javascript
+year = window.prompt("Input a Year : ");
+x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+console.log(x);
 ```
 **2. Write a JavaScript program to find which 1st January is being a Sunday between 2014 and 2050.**
 
@@ -79,12 +87,26 @@ else
 
 >JavaScript Code:
 ```javascript
-
+today=new Date();
+var cmas=new Date(today.getFullYear(), 11, 25);
+if (today.getMonth()==11 && today.getDate()>25) {
+  cmas.setFullYear(cmas.getFullYear()+1); 
+}
+// convert to milliseconds for a day
+var one_day=1000*60*60*24;
+console.log(Math.ceil((cmas.getTime()-today.getTime())/(one_day))+" days left until Christmas!");
 ```
 
 >ES6 Version:
 ```javascript
-
+today=new Date();
+const cmas=new Date(today.getFullYear(), 11, 25);
+if (today.getMonth()==11 && today.getDate()>25) {
+  cmas.setFullYear(cmas.getFullYear()+1); 
+}
+// convert to milliseconds for a day
+const one_day=1000*60*60*24;
+console.log(`${Math.ceil((cmas.getTime()-today.getTime())/(one_day))} days left until Christmas!`);
 ```
 
 **5. **
