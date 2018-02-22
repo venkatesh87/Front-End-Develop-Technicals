@@ -109,7 +109,7 @@ const one_day=1000*60*60*24;
 console.log(`${Math.ceil((cmas.getTime()-today.getTime())/(one_day))} days left until Christmas!`);
 ```
 
-**5. **
+**5. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).**
 
 >JavaScript Code:
 ```javascript
