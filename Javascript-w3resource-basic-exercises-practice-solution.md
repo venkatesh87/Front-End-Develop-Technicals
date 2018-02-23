@@ -370,16 +370,38 @@ true
 false
 false
 ```
-**14. **
+**14. Write a JavaScript program to check from two given integers, if one is positive and one is negative**
 
 >JavaScript Code:
 ```javascript
-
+function positive_negative(x, y){
+  if ((x < 0 && y > 0) || x > 0 && y < 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(positive_negative(2, 2));
+console.log(positive_negative(-2, 2));
+console.log(positive_negative(2, -2));
+console.log(positive_negative(-2, -2));
 ```
 
 >ES6 Version:
 ```javascript
-
+function positive_negative(x, y){
+  if ((x < 0 && y > 0) || x > 0 && y < 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+console.log(positive_negative(2, 2));
+console.log(positive_negative(-2, 2));
+console.log(positive_negative(2, -2));
+console.log(positive_negative(-2, -2));
 ```
 
 **15. **
