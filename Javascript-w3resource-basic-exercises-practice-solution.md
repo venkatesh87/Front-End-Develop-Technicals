@@ -294,7 +294,7 @@ console.log(diff_num(19));
 console.log(diff_num(22));
 ```
 
-**12. **
+**12. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.**
 
 >JavaScript Code:
 ```javascript
@@ -333,18 +333,43 @@ console.log(test50(20, 20))
 console.log(test50(20, 30))
 ```
 
-**13. **
+**13. Write a JavaScript program to check a given integer is within 20 of 100 or 400**
 
 >JavaScript Code:
 ```javascript
+function testhundred(x) {
+  return ((Math.abs(100 - x) <= 20) ||
+	 (Math.abs(400 - x) <= 20));
+}
 
+console.log(testhundred(10));
+console.log(testhundred(90));
+console.log(testhundred(99));
+console.log(testhundred(199));
+console.log(testhundred(200));
 ```
 
 >ES6 Version:
 ```javascript
+function testhundred(x) {
+  return ((Math.abs(100 - x) <= 20) ||
+	 (Math.abs(400 - x) <= 20));
+}
 
+console.log(testhundred(10));
+console.log(testhundred(90));
+console.log(testhundred(99));
+console.log(testhundred(199));
+console.log(testhundred(200));
 ```
 
+```javascript
+false
+true
+true
+false
+false
+```
 **14. **
 
 >JavaScript Code:
