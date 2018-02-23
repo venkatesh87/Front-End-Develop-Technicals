@@ -165,40 +165,69 @@ alert(document.URL);
 ```javascript
 alert(document.URL);
 ```
-**7. **
+**7. Write a JavaScript exercise to create a variable using a user-defined name.**
 
 >JavaScript Code:
 ```javascript
-
+var var_name = 'abcd';
+var n = 120;
+this[var_name] = n;
+console.log(this[var_name])
 ```
 
 >ES6 Version:
 ```javascript
-
+const var_name = 'abcd';
+const n = 120;
+this[var_name] = n;
+console.log(this[var_name])
 ```
 
-**8. **
+**8. Write a JavaScript exercise to get the extension of a filename.**
+- The ```split()``` method is used to split a string into an array of substrings, and returns the new array.
+- The ```pop()``` method removes the last element of an array, and returns that element.
 
 >JavaScript Code:
 ```javascript
-
+filename = "system.php"
+console.log(filename.split('.').pop());
+filename = "abc.js"
+console.log(filename.split('.').pop());
 ```
 
 >ES6 Version:
 ```javascript
-
+filename = "system.php"
+console.log(filename.split('.').pop());
+filename = "abc.js"
+console.log(filename.split('.').pop());
 ```
 
-**9. **
+**9. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.**
 
 >JavaScript Code:
 ```javascript
-
+function difference(n)
+ {
+    if (n <= 13)
+        return 13 - n;
+    else
+        return (n - 13) * 2;
+ }
+console.log(difference(50))
+console.log(difference(10))
 ```
 
 >ES6 Version:
 ```javascript
-
+function difference(n){
+    if (n <= 13)
+        return 13 - n;
+    else
+        return (n - 13) * 2;
+ }
+console.log(difference(50))
+console.log(difference(10))
 ```
 
 **10. **
