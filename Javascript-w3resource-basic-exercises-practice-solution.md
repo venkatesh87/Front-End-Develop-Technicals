@@ -1,7 +1,204 @@
 #### I. JavaScript basic - Exercises, Practice, Solution
 ---
+**1. Write a JavaScript program to display the current day and time in the following format.**
+- Today is : Friday. 
+- Current time is : 4 PM : 50 : 22
 
-**1. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.**
+>JavaScript Code:
+```javascript
+var today = new Date();
+var day = today.getDay();
+var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+console.log("Today is : " + daylist[day] + ".");
+var hour = today.getHours();
+var minute = today.getMinutes();
+var second = today.getSeconds();
+var prepand = (hour >= 12) ? " PM " : " AM ";
+hour = (hour >= 12) ? hour - 12 : hour;
+if (hour === 0 && prepand === ' PM ') {
+  if (minute === 0 && second === 0) {
+    hour = 12;
+    prepand = ' Noon';
+  } else {
+    hour = 12;
+    prepand = ' PM';
+  }
+}
+if (hour === 0 && prepand === ' AM ') {
+  if (minute === 0 && second === 0) {
+    hour = 12;
+    prepand = ' Midnight';
+  } else {
+    hour = 12;
+    prepand = ' AM';
+  }
+}
+console.log("Current Time : " + hour + prepand + " : " + minute + " : " + second);
+```
+
+>ES6 Version:
+```javascript
+const today = new Date();
+const day = today.getDay();
+const daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+console.log(`Today is : ${daylist[day]}.`);
+let hour = today.getHours();
+const minute = today.getMinutes();
+const second = today.getSeconds();
+let prepand = (hour >= 12) ? " PM " : " AM ";
+hour = (hour >= 12) ? hour - 12 : hour;
+if (hour === 0 && prepand === ' PM ') {
+  if (minute === 0 && second === 0) {
+    hour = 12;
+    prepand = ' Noon';
+  } else {
+    hour = 12;
+    prepand = ' PM';
+  }
+}
+if (hour === 0 && prepand === ' AM ') {
+  if (minute === 0 && second === 0) {
+    hour = 12;
+    prepand = ' Midnight';
+  } else {
+    hour = 12;
+    prepand = ' AM';
+  }
+}
+console.log(`Current Time : ${hour}${prepand} : ${minute} : ${second}`);
+```
+
+>Result:
+```javascript
+Today is : Tuesday.
+Current Time : 5 PM  : 51 : 20
+```
+
+**2. Write a JavaScript function to print the contents of the current window**
+
+>JavaScript Code:
+```javascript
+function print_current_page(){
+  window.print();
+}
+```
+
+>ES6 Version:
+```javascript
+function print_current_page(){
+  window.print();
+}
+```
+
+**3. Write a JavaScript program to get the current date.**
+**Expected Output :**
+- mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy
+
+>JavaScript Code:
+```javascript
+var today = new Date();
+var dd = today.getDate();
+
+var mm = today.getMonth() + 1;
+var yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = '0' + dd;
+}
+
+if (mm < 10) {
+  mm = '0' + mm;
+}
+today = mm + '-' + dd + '-' + yyyy;
+console.log(today);
+today = mm + '/' + dd + '/' + yyyy;
+console.log(today);
+today = dd + '-' + mm + '-' + yyyy;
+console.log(today);
+today = dd + '/' + mm + '/' + yyyy;
+console.log(today);
+```
+
+>ES6 Version:
+```javascript
+let today = new Date();
+let dd = today.getDate();
+
+let mm = today.getMonth() + 1;
+const yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = `0${dd}`;
+}
+
+if (mm < 10) {
+  mm = `0${mm}`;
+}
+today = `${mm}-${dd}-${yyyy}`;
+console.log(today);
+today = `${mm}/${dd}/${yyyy}`;
+console.log(today);
+today = `${dd}-${mm}-${yyyy}`;
+console.log(today);
+today = `${dd}/${mm}/${yyyy}`;
+console.log(today);
+```
+
+**4. Write a JavaScript function to find the area of a triangle where lengths of the three of its sides are 5, 6, 7**
+
+>JavaScript Code:
+```javascript
+var side1 = 5; 
+var side2 = 6; 
+var side3 = 7; 
+var perimeter = (side1 + side2 + side3)/2;
+var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+console.log(area);
+```
+
+>ES6 Version:
+```javascript
+const side1 = 5; 
+const side2 = 6; 
+const side3 = 7; 
+const perimeter = (side1 + side2 + side3)/2;
+const area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+console.log(area);
+```
+>Result:
+```javascript
+14.696938456699069
+```
+
+**5. Rotate the string 'w3resource' in right direction by periodically removing one letter from the end of the string and attaching it to the front**
+
+>JavaScript Code:
+```javascript
+function animate_string(id) {
+  var element = document.getElementById(id);
+  var textNode = element.childNodes[0]; // assuming no other children
+  var text = textNode.data;
+
+  setInterval(function() {
+    text = text[text.length - 1] + text.substring(0, text.length - 1);
+    textNode.data = text;
+  }, 100);
+}
+```
+
+>ES6 Version:
+```javascript
+function animate_string(id) {
+  const element = document.getElementById(id);
+  const textNode = element.childNodes[0]; // assuming no other children
+  let text = textNode.data;
+
+  setInterval(() => {
+    text = text[text.length - 1] + text.substring(0, text.length - 1);
+    textNode.data = text;
+  }, 100);
+}
+```
+
+**6. Write a JavaScript program to determine whether a given year is a leap year in the Gregorian calendar.**
 
 >JavaScript Code:
 ```javascript
@@ -37,7 +234,7 @@ year = window.prompt("Input a Year : ");
 x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 console.log(x);
 ```
-**2. Write a JavaScript program to find which 1st January is being a Sunday between 2014 and 2050.**
+**7. Write a JavaScript program to find which 1st January is being a Sunday between 2014 and 2050.**
 
 >JavaScript Code:
 ```javascript
@@ -60,7 +257,7 @@ for (let year = 2014; year <= 2050; year++){
 console.log('--------------------');
 ```
 
-**3. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".**
+**8. Write a JavaScript program where the program takes a random integer between 1 to 10, the user is then prompted to input a guess number. If the user input matches with guess number, the program will display a message "Good Work" otherwise display a message "Not matched".**
 
 >JavaScript Code:
 ```javascript
@@ -83,7 +280,7 @@ else
   alert('Not matched, the number was ${num}');
 ```
 
-**4. Write a JavaScript program to calculate number of days left until next Christmas.**
+**9. Write a JavaScript program to calculate number of days left until next Christmas.**
 
 >JavaScript Code:
 ```javascript
@@ -109,7 +306,7 @@ const one_day=1000*60*60*24;
 console.log(`${Math.ceil((cmas.getTime()-today.getTime())/(one_day))} days left until Christmas!`);
 ```
 
-**5. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).**
+**10. Write a JavaScript program to calculate multiplication and division of two numbers (input from user).**
 
 >HTML:
 ```javascript
@@ -154,7 +351,7 @@ function divideBy() {
 }
 ```
 
-**6. Write a JavaScript program to get the website URL (loading page).**
+**11. Write a JavaScript program to get the website URL (loading page).**
 
 >JavaScript Code:
 ```javascript
@@ -165,7 +362,7 @@ alert(document.URL);
 ```javascript
 alert(document.URL);
 ```
-**7. Write a JavaScript exercise to create a variable using a user-defined name.**
+**12. Write a JavaScript exercise to create a variable using a user-defined name.**
 
 >JavaScript Code:
 ```javascript
@@ -183,7 +380,7 @@ this[var_name] = n;
 console.log(this[var_name])
 ```
 
-**8. Write a JavaScript exercise to get the extension of a filename.**
+**13. Write a JavaScript exercise to get the extension of a filename.**
 - The ```split()``` method is used to split a string into an array of substrings, and returns the new array.
 - The ```pop()``` method removes the last element of an array, and returns that element.
 
@@ -203,7 +400,7 @@ filename = "abc.js"
 console.log(filename.split('.').pop());
 ```
 
-**9. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.**
+**14. Write a JavaScript program to get the difference between a given number and 13, if the number is greater than 13 return double the absolute difference.**
 
 >JavaScript Code:
 ```javascript
@@ -230,7 +427,7 @@ console.log(difference(50))
 console.log(difference(10))
 ```
 
-**10. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.**
+**15. Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.**
 
 >JavaScript Code:
 ```javascript
@@ -260,7 +457,7 @@ function sumTriple (x, y) {
 console.log(sumTriple(10, 20));
 console.log(sumTriple(10, 10));
 ```
-**11. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19.**
+**16. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19.**
 
 >JavaScript Code:
 ```javascript
@@ -294,7 +491,7 @@ console.log(diff_num(19));
 console.log(diff_num(22));
 ```
 
-**12. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.**
+**17. Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50.**
 
 >JavaScript Code:
 ```javascript
@@ -333,7 +530,7 @@ console.log(test50(20, 20))
 console.log(test50(20, 30))
 ```
 
-**13. Write a JavaScript program to check a given integer is within 20 of 100 or 400**
+**18. Write a JavaScript program to check a given integer is within 20 of 100 or 400**
 
 >JavaScript Code:
 ```javascript
@@ -370,7 +567,7 @@ true
 false
 false
 ```
-**14. Write a JavaScript program to check from two given integers, if one is positive and one is negative**
+**19. Write a JavaScript program to check from two given integers, if one is positive and one is negative**
 
 >JavaScript Code:
 ```javascript
@@ -404,7 +601,7 @@ console.log(positive_negative(2, -2));
 console.log(positive_negative(-2, -2));
 ```
 
-**15. Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" then return the original string.**
+**20. Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" then return the original string.**
 
 >JavaScript Code:
 ```javascript
@@ -436,7 +633,7 @@ console.log(string_check(""));
 console.log(string_check());
 ```
 
-**16. Write a JavaScript program to remove a character at the specified position of a given string and return the new string**
+**21. Write a JavaScript program to remove a character at the specified position of a given string and return the new string**
 
 >JavaScript Code:
 ```javascript
@@ -469,7 +666,7 @@ console.log(remove_character("Python",5));
 "Pytho"
 ```
 
-**17. Write a JavaScript program to create a new string from a given string changing the position of first and last characters. The string length must be greater than or equal to 1**
+**22. Write a JavaScript program to create a new string from a given string changing the position of first and last characters. The string length must be greater than or equal to 1**
 - The ```charAt()``` method returns the character at the specified index in a string.
 - The ```index``` of the first character is ```0```, the second character is ```1```, and so on.
 - Return the first character of a string: ```var str = "HELLO WORLD"; str.charAt(0)```
@@ -509,82 +706,6 @@ ba
 cba
 ```
 
-**18. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
->Result:
-```javascript
-
-```
-**19. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
->Result:
-```javascript
-
-```
-**20. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
->Result:
-```javascript
-
-```
-**21. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
->Result:
-```javascript
-
-```
-**22. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
->Result:
-```javascript
-
-```
-
 **23. **
 
 >JavaScript Code:
@@ -593,6 +714,10 @@ cba
 ```
 
 >ES6 Version:
+```javascript
+
+```
+>Result:
 ```javascript
 
 ```
@@ -612,7 +737,6 @@ cba
 ```javascript
 
 ```
-
 **25. **
 
 >JavaScript Code:
@@ -628,7 +752,6 @@ cba
 ```javascript
 
 ```
-
 **26. **
 
 >JavaScript Code:
@@ -644,7 +767,6 @@ cba
 ```javascript
 
 ```
-
 **27. **
 
 >JavaScript Code:
@@ -672,6 +794,7 @@ cba
 ```javascript
 
 ```
+
 **29. **
 
 >JavaScript Code:
@@ -715,6 +838,10 @@ cba
 ```javascript
 
 ```
+>Result:
+```javascript
+
+```
 
 **32. **
 
@@ -727,7 +854,6 @@ cba
 ```javascript
 
 ```
-
 >Result:
 ```javascript
 
@@ -744,12 +870,6 @@ cba
 ```javascript
 
 ```
-
->Result:
-```javascript
-
-```
-
 **34. **
 
 >JavaScript Code:
@@ -761,7 +881,6 @@ cba
 ```javascript
 
 ```
-
 >Result:
 ```javascript
 
@@ -778,7 +897,6 @@ cba
 ```javascript
 
 ```
-
 >Result:
 ```javascript
 
@@ -792,11 +910,6 @@ cba
 ```
 
 >ES6 Version:
-```javascript
-
-```
-
->Result:
 ```javascript
 
 ```
@@ -1023,6 +1136,91 @@ cba
 ```
 
 **50. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+>Result:
+```javascript
+
+```
+
+**51. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+>Result:
+```javascript
+
+```
+
+**52. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+>Result:
+```javascript
+
+```
+
+**53. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+>Result:
+```javascript
+
+```
+
+**54. **
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+```javascript
+
+```
+
+>Result:
+```javascript
+
+```
+
+**55. **
 
 >JavaScript Code:
 ```javascript
