@@ -462,17 +462,51 @@ console.log(remove_character("Python",0));
 console.log(remove_character("Python",3));
 console.log(remove_character("Python",5));
 ```
+>Result:
+```javascript
+"ython"
+"Pyton"
+"Pytho"
+```
 
-**17. **
+**17. Write a JavaScript program to create a new string from a given string changing the position of first and last characters. The string length must be greater than or equal to 1**
+- The ```charAt()``` method returns the character at the specified index in a string.
+- The ```index``` of the first character is ```0```, the second character is ```1```, and so on.
+- Return the first character of a string: ```var str = "HELLO WORLD"; str.charAt(0)```
 
 >JavaScript Code:
 ```javascript
-
+function first_last(str1) {
+  if (str1.length <= 1){
+    return str1;
+  }
+  mid_char = str1.substring(1, str1.length - 1);
+  return (str1.charAt(str1.length - 1)) + mid_char + str1.charAt(0);
+}
+console.log(first_last('a'));
+console.log(first_last('ab'));
+console.log(first_last('abc'));
 ```
 
 >ES6 Version:
 ```javascript
+function first_last(str1) {
+  if (str1.length <= 1){
+    return str1;
+  }
+  mid_char = str1.substring(1, str1.length - 1);
+  return (str1.charAt(str1.length - 1)) + mid_char + str1.charAt(0);
+}
+console.log(first_last('a'));
+console.log(first_last('ab'));
+console.log(first_last('abc'));
+```
 
+>Result:
+```javascript
+a
+ba
+cba
 ```
 
 **18. **
@@ -483,6 +517,10 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+>Result:
 ```javascript
 
 ```
@@ -497,7 +535,10 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+>Result:
+```javascript
 
+```
 **20. **
 
 >JavaScript Code:
@@ -509,7 +550,10 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+>Result:
+```javascript
 
+```
 **21. **
 
 >JavaScript Code:
@@ -521,7 +565,10 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+>Result:
+```javascript
 
+```
 **22. **
 
 >JavaScript Code:
@@ -530,6 +577,10 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+>Result:
 ```javascript
 
 ```
@@ -557,6 +608,10 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+>Result:
+```javascript
+
+```
 
 **25. **
 
@@ -566,6 +621,10 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+>Result:
 ```javascript
 
 ```
@@ -581,6 +640,10 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+>Result:
+```javascript
+
+```
 
 **27. **
 
@@ -590,6 +653,10 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+>Result:
 ```javascript
 
 ```
@@ -616,6 +683,10 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+>Result:
+```javascript
+
+```
 
 **30. **
 
@@ -625,6 +696,10 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+>Result:
 ```javascript
 
 ```
@@ -653,6 +728,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **33. **
 
 >JavaScript Code:
@@ -661,6 +741,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -677,6 +762,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **35. **
 
 >JavaScript Code:
@@ -685,6 +775,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -701,6 +796,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **37. **
 
 >JavaScript Code:
@@ -709,6 +809,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -724,6 +829,12 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+
+>Result:
+```javascript
+
+```
+
 **39. **
 
 >JavaScript Code:
@@ -732,6 +843,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -748,6 +864,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **41. **
 
 >JavaScript Code:
@@ -756,6 +877,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -772,6 +898,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **43. **
 
 >JavaScript Code:
@@ -780,6 +911,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -796,6 +932,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **45. **
 
 >JavaScript Code:
@@ -804,6 +945,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -820,6 +966,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **47. **
 
 >JavaScript Code:
@@ -828,6 +979,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
@@ -843,6 +999,12 @@ console.log(remove_character("Python",5));
 ```javascript
 
 ```
+
+>Result:
+```javascript
+
+```
+
 **49. **
 
 >JavaScript Code:
@@ -855,6 +1017,11 @@ console.log(remove_character("Python",5));
 
 ```
 
+>Result:
+```javascript
+
+```
+
 **50. **
 
 >JavaScript Code:
@@ -863,6 +1030,11 @@ console.log(remove_character("Python",5));
 ```
 
 >ES6 Version:
+```javascript
+
+```
+
+>Result:
 ```javascript
 
 ```
