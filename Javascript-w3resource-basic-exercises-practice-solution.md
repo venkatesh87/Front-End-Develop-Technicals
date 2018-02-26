@@ -741,35 +741,85 @@ aaba
 aabca
 ```
 
-**24. **
+**24. Write a JavaScript program check if a given positive number is a multiple of 3 or a multiple of 7**
 
 >JavaScript Code:
 ```javascript
+function test37(x) {
+  if (x % 3 == 0 || x % 7 == 0) {
+    return true;
+  } 
+  else {
+    return false;
+  }
+}
+
+console.log(test37(12));
+console.log(test37(14));
+console.log(test37(10));
+console.log(test37(11));
+```
+
+>ES6 Version:
+```javascript
+function test37(x) {
+  if (x % 3 == 0 || x % 7 == 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(test37(12));
+console.log(test37(14));
+console.log(test37(10));
+console.log(test37(11));
+```
+>Result:
+```javascript
+true
+true
+false
+false
+```
+**25. Write a JavaScript program to create a new string from a given string taking the last 3 characters and added at both the front and back. The string length must be 3 or more.**
+
+>JavaScript Code:
+```javascript
+function front_back3(str){
+  if (str.length>=3){
+   back = str.substring(str.length-3);
+   return back + str + back;
+  }
+  else
+   return false;
+ }
+console.log(front_back3("abc"));
+console.log(front_back3("ab"));
+console.log(front_back3("abcd"));
 
 ```
 
 >ES6 Version:
 ```javascript
+function front_back3(str) {
+  if (str.length >= 3) {
+    str_len = 3;
 
+    back = str.substring(str.length - 3);
+    return back + str + back;
+  } else
+    return false;
+}
+console.log(front_back3("abc"));
+console.log(front_back3("ab"));
+console.log(front_back3("abcd"));
 ```
 >Result:
 ```javascript
-
-```
-**25. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
->Result:
-```javascript
-
+abcabcabc
+false
+bcdabcdbcd
 ```
 **26. **
 
