@@ -234,6 +234,7 @@ year = window.prompt("Input a Year : ");
 x = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
 console.log(x);
 ```
+
 **7. Write a JavaScript program to find which 1st January is being a Sunday between 2014 and 2050.**
 
 >JavaScript Code:
@@ -362,6 +363,7 @@ alert(document.URL);
 ```javascript
 alert(document.URL);
 ```
+
 **12. Write a JavaScript exercise to create a variable using a user-defined name.**
 
 >JavaScript Code:
@@ -457,6 +459,7 @@ function sumTriple (x, y) {
 console.log(sumTriple(10, 20));
 console.log(sumTriple(10, 10));
 ```
+
 **16. Write a JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their absolute difference if the specified number is greater than 19.**
 
 >JavaScript Code:
@@ -567,6 +570,7 @@ true
 false
 false
 ```
+
 **19. Write a JavaScript program to check from two given integers, if one is positive and one is negative**
 
 >JavaScript Code:
@@ -706,20 +710,35 @@ ba
 cba
 ```
 
-**23. **
+**23. Write a JavaScript program to create a new string from a given string with the first character of the given string added at the front and back**
 
 >JavaScript Code:
 ```javascript
-
+function front_back(str){
+  first = str.substring(0,1);
+  return first + str + first;
+}
+console.log(front_back('a'));
+console.log(front_back('ab'));
+console.log(front_back('abc'));
 ```
 
 >ES6 Version:
 ```javascript
-
+function front_back(str){
+  first = str.substring(0,1);
+  return first + str + first;
+}
+console.log(front_back('a'));
+console.log(front_back('ab'));
+console.log(front_back('abc'));
 ```
+
 >Result:
 ```javascript
-
+aaa
+aaba
+aabca
 ```
 
 **24. **
