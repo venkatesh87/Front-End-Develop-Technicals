@@ -866,32 +866,74 @@ true
 true
 false
 ```
-**27. **
+**27. Write a JavaScript program to check if two given integer values are in the range 50..99 (inclusive). Return true if either of them are in the said range.**
 
 >JavaScript Code:
 ```javascript
+function check_numbers(x, y) {
+  if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(check_numbers(12, 101));
+console.log(check_numbers(52, 80));
+console.log(check_numbers(15, 99));
+```
+
+```
+function check_numbers(x, y){
+  return (x >= 50 && x <= 99) || y >= 50 && y <= 99
+}
 ```
 
 >ES6 Version:
 ```javascript
+function check_numbers(x, y) {
+  if ((x >= 50 && x <= 99) || (y >= 50 && y <= 99)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(check_numbers(12, 101));
+console.log(check_numbers(52, 80));
+console.log(check_numbers(15, 99));
 ```
 >Result:
 ```javascript
-
+false
+true
+true
 ```
 
-**28. **
+**28. Write a JavaScript program to check if three given integer values are in the range 50..99 (inclusive). Return true if one or more of them are in the said range.**
 
 >JavaScript Code:
 ```javascript
+function check_three_nums(x, y, z) {
+  return (x >= 50 && x <= 99) || (y >= 50 && y <= 99) || (z >= 50 && z <= 99);
+}
 
+console.log(check_three_nums(50, 90, 99));
+console.log(check_three_nums(5, 9, 199));
+console.log(check_three_nums(65, 89, 199));
+console.log(check_three_nums(65, 9, 199));
 ```
 
 >ES6 Version:
 ```javascript
+function check_three_nums(x, y, z) {
+  return (x >= 50 && x <= 99) || (y >= 50 && y <= 99) || (z >= 50 && z <= 99);
+}
 
+console.log(check_three_nums(50, 90, 99));
+console.log(check_three_nums(5, 9, 199));
+console.log(check_three_nums(65, 89, 199));
+console.log(check_three_nums(65, 9, 199));
 ```
 
 **29. **
