@@ -821,20 +821,50 @@ abcabcabc
 false
 bcdabcdbcd
 ```
-**26. **
+**26. Write a JavaScript program to check if a string starts with 'Java' and false otherwise.**
 
 >JavaScript Code:
 ```javascript
+function start_spec_str(str) {
+  if (str.length < 4) {
+    return false;
+  }
+  front = str.substring(0, 4);
+  if (front == 'Java') {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(start_spec_str("JavaScript"));
+console.log(start_spec_str("Java"));
+console.log(start_spec_str("Python"));
 ```
 
 >ES6 Version:
 ```javascript
+function start_spec_str(str) {
+  if (str.length < 4) {
+    return false;
+  }
+  front = str.substring(0, 4);
+  if (front == 'Java') {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(start_spec_str("JavaScript"));
+console.log(start_spec_str("Java"));
+console.log(start_spec_str("Python"));
 ```
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 **27. **
 
