@@ -2,6 +2,8 @@
 
 1. [Pseudo-classes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Pseudo-classes.md)
 
+2. [CSS Variables](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-variables.md)
+
 
 ```javascripts 
 forgot~p 
