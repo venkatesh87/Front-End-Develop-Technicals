@@ -936,36 +936,92 @@ console.log(check_three_nums(65, 89, 199));
 console.log(check_three_nums(65, 9, 199));
 ```
 
-**29. **
+**29. Write a JavaScript program to check if a string "Script" presents at 5th (index 4) position in a given string, if "Script" presents in the string return the string without "Script" otherwise return the original one**
 
 >JavaScript Code:
 ```javascript
-
+function check_script(str) {
+  if (str.length < 6) {
+    return str;
+  }
+  let result_str = str;
+  if (str.substring(10, 4) == 'Script') {
+    result_str = str.substring(0, 4) + str.substring(10, str.length);
+  }
+  return result_str;
+}
+console.log(check_script("JavaScript"));
+console.log(check_script("CoffeeScript"));
 ```
 
 >ES6 Version:
 ```javascript
+function check_script(str) {
+  if (str.length < 6) {
+    return str;
+  }
+  let result_str = str;
+  if (str.substring(10, 4) == 'Script') {
+    result_str = str.substring(0, 4) + str.substring(10, str.length);
+  }
+  return result_str;
+}
 
+console.log(check_script("JavaScript"));
+console.log(check_script("CoffeeScript"));
 ```
 >Result:
 ```javascript
-
+Java
+CoffeeScript
 ```
 
-**30. **
+**30. Write a JavaScript program to find the largest of three given integers**
 
 >JavaScript Code:
 ```javascript
+function max_of_three(x, y, z) {
+  max_val = 0;
+  if (x > y) {
+    max_val = x;
+  } else {
+    max_val = y;
+  }
+  if (z > max_val) {
+    max_val = z;
+  }
+  return max_val;
+}
 
+console.log(max_of_three(1, 0, 1));
+console.log(max_of_three(0, -10, -20));
+console.log(max_of_three(1000, 510, 440));
 ```
 
 >ES6 Version:
 ```javascript
+function max_of_three(x, y, z) {
+  max_val = 0;
+  if (x > y) {
+    max_val = x;
+  } else {
+    max_val = y;
+  }
+  if (z > max_val) {
+    max_val = z;
+  }
+  return max_val;
+}
 
+console.log(max_of_three(1, 0, 1));
+console.log(max_of_three(0, -10, -20));
+console.log(max_of_three(1000, 510, 440));
 ```
 >Result:
 ```javascript
-
+1
+0
+1000
 ```
 
 **31. **
