@@ -1226,84 +1226,207 @@ false
 false
 ```
 
-**36. **
+**36. Write a JavaScript program to create a new string with first 3 characters are in lower case from a given string. If the string length is less than 3 convert all the characters in uppercase**
 
 >JavaScript Code:
 ```javascript
-
+function upper_lower(str) {
+  if (str.length < 3) {
+    return str.toUpperCase();
+  }
+  front_part = (str.substring(0, 3)).toLowerCase();
+  back_part = str.substring(3, str.length);
+  return front_part + back_part;
+}
+console.log(upper_lower("Python"));
+console.log(upper_lower("JAVAScript"));
 ```
 
 >ES6 Version:
 ```javascript
-
-```
-
-**37. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
+function upper_lower(str) {
+  if (str.length <= 3) {
+    return str.toUpperCase();
+  }
+  front_part = (str.substring(0, 3)).toLowerCase();
+  back_part = str.substring(3, str.length);  
+  return front_part + back_part;
+}
+console.log(upper_lower("Python"));
+console.log(upper_lower("JAVAScript"));
 ```
 
 >Result:
 ```javascript
-
+python
+javAScript
 ```
 
-**38. **
+**37. Write a JavaScript program to check the total marks of a student in various examinations. The student will get A+ grade if the total marks are in the range 89..100 inclusive, if the examination is "Final-exam." the student will get A+ grade where total marks must be greater than or equal to 90. Return true if the student get A+ grade or false otherwise**
+- Viết một chương trình JavaScript để kiểm tra tổng số điểm của một học sinh trong các kỳ thi khác nhau. Học sinh sẽ nhận được điểm A + nếu tổng số điểm trong phạm vi 89..100 bao gồm, nếu kỳ thi là "Kỳ Thi Cuối Cùng". học sinh sẽ đạt điểm A + và tổng số điểm phải lớn hơn hoặc bằng 90. Trả lại đúng nếu học sinh đạt điểm A + hoặc sai nếu không
 
 >JavaScript Code:
 ```javascript
+function exam_status(totmarks, is_exam) {
+  if (is_exam) {
+    return totmarks >= 90;
+  }
+  return (totmarks >= 89 && totmarks <= 100);
+}
 
+console.log(exam_status("78", " "));
+console.log(exam_status("89", "true "));
+console.log(exam_status("99", "true "));
 ```
 
 >ES6 Version:
 ```javascript
+function exam_status(totmarks,is_exam)
+  {
+  if (is_exam) {
+    return totmarks >= 90;
+  }
+ return (totmarks >= 89 && totmarks <= 100);
+ }
 
+console.log(exam_status("78", " "));
+console.log(exam_status("89", "true "));
+console.log(exam_status("99", "true "));
 ```
 
 >Result:
 ```javascript
-
+false
+false
+true
 ```
 
-**39. **
+**38. Write a JavaScript program to compute the sum of the two given integers, If the sum is in the range 50..80 return 65 other wise return 80**
 
 >JavaScript Code:
 ```javascript
+function sortaSum(x, y) {
+  const sum_nums = x + y;
+  if (sum_nums >= 50 && sum_nums <= 80) {
+    return 65;
+  }
+  return 80;
+}
 
+console.log(sortaSum(30, 20));
+console.log(sortaSum(90, 80));
 ```
 
 >ES6 Version:
 ```javascript
+function sortaSum(x, y) {
+  const sum_nums = x + y;
+  if (sum_nums >= 50 && sum_nums <= 80) {
+    return 65;
+  }
+  return 80;
+}
 
+console.log(sortaSum(30, 20));
+console.log(sortaSum(90, 80));
 ```
 
 >Result:
 ```javascript
-
+65
+80
 ```
 
-**40. **
+**39. Write a JavaScript program to check from two given integers if either one is 8 or their sum or difference is 8.**
 
 >JavaScript Code:
 ```javascript
+function check8(x, y) {
+  if (x == 8 || y == 8) {
+    return true;
+  }
 
+  if (x + y == 8 || Math.abs(x - y) == 8) {
+    return true;
+  }
+
+  return false;
+}
+
+console.log(check8(7, 8));
+console.log(check8(16, 8));
+console.log(check8(24, 32));
+console.log(check8(17, 18));
 ```
 
 >ES6 Version:
 ```javascript
+function check8(x, y) {
+  if (x == 8 || y == 8) {
+    return true;
+  }
 
+  if (x + y == 8 || Math.abs(x - y) == 8) {
+    return true;
+  }
+
+  return false;
+}
+
+console.log(check8(7, 8));
+console.log(check8(16, 8));
+console.log(check8(24, 32));
+console.log(check8(17, 18));
 ```
 
 >Result:
 ```javascript
+true
+true
+true
+false
+```
 
+**40. Write a JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and if two numbers are same return 40**
+
+>JavaScript Code:
+```javascript
+function three_numbers(x, y, z) {
+  if (x == y && y == z) {
+    return 30;
+  }
+  if (x == y || y == z || z == x) {
+    return 40;
+  }
+  return 20;
+}
+console.log(three_numbers(8, 8, 8));
+console.log(three_numbers(8, 8, 18));
+console.log(three_numbers(8, 7, 18));
+```
+
+>ES6 Version:
+```javascript
+function three_numbers(x, y, z) {
+  if (x == y && y == z) {
+    return 30;
+  }
+
+  if (x == y || y == z || z == x) {
+    return 40;
+  }
+  return 20;
+}
+console.log(three_numbers(8, 8, 8));
+console.log(three_numbers(8, 8, 18));
+console.log(three_numbers(8, 7, 18));
+```
+
+>Result:
+```javascript
+30
+40
+20
 ```
 
 **41. **
