@@ -1,38 +1,16 @@
-1. [Tips and Tricks](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-and-tricks.md)
+##CSS Variables
 
-1. [Pseudo-classes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Pseudo-classes.md)
+**What's In It?**
+1. Build 3 Real Applications (learning without doing is ...)
+2. The Need for Variables
+3. Scoping CSS Variables
+4. Defining CSS Variables
+5. CSS Variables Gotchas you should be aware of
+6. Dealing with Browser Support
 
-2. [CSS Variables](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-variables.md)
+#### Reference
+
+1. [CSS Variables](https://atomiks.github.io/30-seconds-of-css/)
 
 
-```javascripts 
-forgot~p 
-```
 
-```javascripts
-body:not(.ja) {
-    font-family: "Myriad Pro",Helvetica,Arial,sans-serif;
-}
-```
-##I. Show or Hide with CSS:
-
-#### 1. Show:
-
-     - display: block;
-     - display: inline-block;
-     - opacity: 1;
-     - transform: translateY(0);
-     - transform: translateX(0);
-     - visibility: visible;
-     - backface-visibility: visible;
-     - -webkit-backface-visibility: visible; /* Chrome, Safari, Opera */
-
-#### 2. Hidden:
-
-     - display: none;
-     - opacity: 0;
-     - transform: translateY(100%);
-     - transform: translateX(100%);
-     - visibility: hidden;
-     - backface-visibility: hidden;
-     - -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */  
