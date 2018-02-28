@@ -9,7 +9,7 @@
 
 │   │   └── [SCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Bulid_scss.md)
 
-│   │   ├── [CSS standard](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-standard.md)
+│   │   ├── [CSS standard](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-standard.md)
 
 │   ├── **[HTML]**
 
