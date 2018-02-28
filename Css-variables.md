@@ -11,6 +11,8 @@
 #### Reference
 
 1. [CSS Variables](https://atomiks.github.io/30-seconds-of-css/)
+1. [rauldronca](https://codepen.io/rauldronca/pen/WMayrP)
+1. [stunning-hover-effects-with-css-variables](https://blog.prototypr.io/stunning-hover-effects-with-css-variables-f855e7b95330)
 
 
 
