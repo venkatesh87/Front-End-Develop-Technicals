@@ -1078,47 +1078,113 @@ console.log(near_100(90, 90));
 false
 ```
 
-**32. **
+**32. Write a JavaScript program to check if two numbers are in range 40..60 or in the range 70..100 inclusive.**
 
 >JavaScript Code:
 ```javascript
+function numbers_ranges(x, y) {
+  if ((x >= 40 && x <= 60 && y >= 40 && y <= 60) || (x >= 70 && x <= 100 && y >= 70 && y <= 100)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(numbers_ranges(44, 56));
+console.log(numbers_ranges(70, 95));
+console.log(numbers_ranges(50, 89));
 ```
 
 >ES6 Version:
 ```javascript
+function numbers_ranges(x, y) {
+  if ((x >= 40 && x <= 60 && y >= 40 && y <= 60) || (x >= 70 && x <= 100 && y >= 70 && y <= 100)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(numbers_ranges(44, 56));
+console.log(numbers_ranges(70, 95));
+console.log(numbers_ranges(50, 89));
 ```
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
-**33. **
+**33. Write a JavaScript program to find the larger number from the two given positive integers, the two numbers are in the range 40..60 inclusive.**
 
 >JavaScript Code:
 ```javascript
+function max_townums_range(x, y) {
+  if (x >= 40 && y <= 60) {
+    let max_val = 0
+    if (x > y) {
+      max_val = x;
+    } else
+      max_val = y;
+    return max_val;
+  } else
+    return false;
+}
 
+console.log(max_townums_range(45, 60));
+console.log(max_townums_range(25, 60));
+console.log(max_townums_range(45, 80));
+```
+
+>Result:
+```javascript
+60
+60
+false
+```
+**34. Write a JavaScript program to check a given string contains 2 to 4 numbers of a specified character.**
+
+- The ```charAt()``` method returns the character at the specified index in a string.
+
+>JavaScript Code:
+```javascript
+function check_char(str, char) {
+  ctr = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) == char) {
+      ctr++;
+    }
+  }
+  return (ctr >= 2 && ctr <= 4);
+}
+
+console.log(check_char("Python", "y"));
+console.log(check_char("JavaScript", "a"));
+console.log(check_char("Console", "o"));
 ```
 
 >ES6 Version:
 ```javascript
+function check_char(str, char) {
+  ctr = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str.charAt(i) == char) {
+      ctr++;
+    }
+  }
+  return (ctr >= 2 && ctr <= 4);
+}
 
-```
-**34. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
+console.log(check_char("Python", "y"));
+console.log(check_char("JavaScript", "a"));
+console.log(check_char("Console", "o"));
 ```
 >Result:
 ```javascript
-
+false
+true
+true
 ```
 
 **35. **
