@@ -1654,68 +1654,163 @@ false
 
 >JavaScript Code:
 ```javascript
+function string_reverse(str) {
+  return str.split("").reverse().join("");
+}
 
+console.log(string_reverse("w3resource"));
+console.log(string_reverse("www"));
+console.log(string_reverse("JavaScript"));
 ```
 
 >ES6 Version:
 ```javascript
+function string_reverse(str) {
+  return str.split("").reverse().join("");
+}
 
+console.log(string_reverse("w3resource"));
+console.log(string_reverse("www"));
+console.log(string_reverse("JavaScript"));
 ```
 
 >Result:
 ```javascript
-
+ecruoser3w
+www
+tpircSavaJ
 ```
 
-**48. **
+**48. Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.**
+- The ```fromCharCode()``` method converts Unicode values into characters
 
 >JavaScript Code:
 ```javascript
+function LetterChanges(text) {
+  //https://goo.gl/R8gn7u
+  var s = text.split('');
+  for (var i = 0; i < s.length; i++) {
+    // Caesar cipher
+    switch (s[i]) {
+      case ' ':
+        break;
+      case 'z':
+        s[i] = 'a';
+        break;
+      case 'Z':
+        s[i] = 'A';
+        break;
+      default:
+        s[i] = String.fromCharCode(1 + s[i].charCodeAt(0));
+    }
 
+    // Upper-case vowels
+    switch (s[i]) {
+      case 'a':
+      case 'e':
+      case 'i':
+      case 'o':
+      case 'u':
+        s[i] = s[i].toUpperCase();
+    }
+  }
+  return s.join('');
+}
+console.log(LetterChanges("PYTHON"));
+console.log(LetterChanges("W3R"));
+console.log(LetterChanges("php"));
 ```
-
->ES6 Version:
-```javascript
-
-```
-
 >Result:
 ```javascript
-
+QZUIPO
+X4S
+qIq
 ```
 
-**49. **
+**49. Write a JavaScript program to capitalize the first letter of each word of a given string.**
+The ```substr()```; ```substr(start, length)``` method extracts parts of a string, beginning at the character at the specified position, and returns the specified number of characters. Phương thức substr () trích ra các phần của một chuỗi, bắt đầu từ ký tự tại vị trí đã chỉ định và trả về số ký tự được chỉ định. 
+
+```
+var str = "Hello world!"; 
+var res = str.substr(0, 1);
+Result --> H
+```
+```
+var str = "Hello world!";
+var res = str.substr(2);
+Result --> llo world!
+```
 
 >JavaScript Code:
 ```javascript
+function capital_letter(str) {
+  str = str.split(" ");
 
+  for (var i = 0, x = str.length; i < x; i++) {
+    str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+  }
+
+  return str.join(" ");
+}
+
+console.log(capital_letter("Write a JavaScript program to capitalize the first letter of each word of a given string."));
 ```
 
 >ES6 Version:
 ```javascript
+function capital_letter(str) {
+  str = str.split(" ");
 
+  for (let i = 0, x = str.length; i < x; i++) {
+    str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+  }
+
+  return str.join(" ");
+}
+
+console.log(capital_letter("Write a JavaScript program to capitalize the first letter of each word of a given string."));
 ```
 
 >Result:
 ```javascript
-
+Write A JavaScript Program To Capitalize The First Letter Of Each Word Of A Given String.
 ```
 
-**50. **
+**50. Write a JavaScript program to convert a given number to hours and minutes.**
+- The ```floor()``` method rounds a number DOWNWARDS to the nearest integer, and returns the result.
+- Phương thức ```floor ()``` làm tròn một số DOWNWARDS tới số nguyên gần nhất, và trả về kết quả.
 
 >JavaScript Code:
 ```javascript
+function time_convert(num) {
+  var hours = Math.floor(num / 60);
+  var minutes = num % 60;
+  return hours + ":" + minutes;
+}
 
+console.log(time_convert(71));
+console.log(time_convert(450));
+console.log(time_convert(1441));
 ```
 
 >ES6 Version:
 ```javascript
+function time_convert(num) {
+  const hours = Math.floor(num / 60);
+  const minutes = num % 60;
+  return `${hours}:${minutes}`;
+}
 
+console.log(time_convert(71));
+console.log(time_convert(450));
+console.log(time_convert(1441));
 ```
 
 >Result:
 ```javascript
-
+1:11
+7:30
+24:1
 ```
 
 **51. **
