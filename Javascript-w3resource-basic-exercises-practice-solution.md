@@ -1604,24 +1604,53 @@ false
 false
 ```
 
-**46. **
+**46. Write a JavaScript program to check if a number in the range 40..10000 presents in two number (in same range)**
+- For example 40 presents in 400 and 4000.
 
 >JavaScript Code:
 ```javascript
+function test_digit(x, y) {
+  let x_div = parseInt(x / 40),
+    x_mod = x % 40,
+    y_div = parseInt(y / 40),
+    y_mod = y % 40;
+  return x_div === y_div || x_mod === y_mod ||
+    x_div === y_mod || x_mod === y_div;
+}
 
+console.log(test_digit(40, 4000));
+console.log(test_digit(80, 320));
+console.log(test_digit(89, 4000));
 ```
 
 >ES6 Version:
 ```javascript
+function test_digit(x, y) {
+  let x_div = parseInt(x / 40);
+  let x_mod = x % 40;
+  let y_div = parseInt(y / 40);
+  let y_mod = y % 40;
+  return x_div === y_div || x_mod === y_mod ||
+    x_div === y_mod || x_mod === y_div;
+}
 
+console.log(test_digit(40, 4000));
+console.log(test_digit(80, 320));
+console.log(test_digit(89, 4000));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
-**47. **
+**47. Write a JavaScript program to reverse a given string**
+
+- The ```split()``` method is used to split **(phân chia)** a string into an array of substrings, and returns the new array.
+- The ```reverse()``` method reverses **(đảo ngược)** the order of the elements in an array.
+- The ```join()``` method joins **(Kết hợp)** the elements of an array into a string, and returns the string.
 
 >JavaScript Code:
 ```javascript
