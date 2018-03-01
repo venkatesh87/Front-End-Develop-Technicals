@@ -1429,89 +1429,179 @@ console.log(three_numbers(8, 7, 18));
 20
 ```
 
-**41. **
+**41. Write a JavaScript program to check if three given numbers are increasing in strict mode or in soft mode.
+Note: ```Strict mode``` -> 10, 15, 31 : ```Soft mode``` -> 24, 22, 31 or 22, 22, 31**
 
 >JavaScript Code:
 ```javascript
+function number_order(x, y, z) {
+  if (y > x && z > y) {
+    return "strict mode";
+  } else if (z > y)
+    return "Soft mode";
+  else
+    return "Undefinded";
+}
 
+console.log(number_order(10, 15, 31));
+console.log(number_order(24, 22, 31));
+console.log(number_order(50, 21, 15));
 ```
 
 >ES6 Version:
 ```javascript
+function number_order(x, y, z) {
+  if (y > x && z > y) {
+    return "strict mode";
+  } else if (z > y)
+    return "Soft mode";
+  else
+    return "Undefinded";
+}
 
+console.log(number_order(10, 15, 31));
+console.log(number_order(24, 22, 31));
+console.log(number_order(50, 21, 15));
 ```
 
 >Result:
 ```javascript
-
+strict mode
+Soft mode
+Undefinded
 ```
 
-**42. **
+**42. Write a JavaScript program to check from three given numbers (non negative integers) that two or all of them have the same rightmost digit.**
 
 >JavaScript Code:
 ```javascript
+function same_last_digit(p, q, r) {
+  return (p % 10 === q % 10) ||
+    (p % 10 === r % 10) ||
+    (q % 10 === r % 10);
 
+}
+
+console.log(same_last_digit(22, 32, 42));
+console.log(same_last_digit(102, 302, 2));
+console.log(same_last_digit(20, 22, 45));
 ```
 
 >ES6 Version:
 ```javascript
+function same_last_digit(p, q, r) {
+  return (p % 10 === q % 10) ||
+    (p % 10 === r % 10) ||
+    (q % 10 === r % 10);
 
+}
+
+console.log(same_last_digit(22, 32, 42));
+console.log(same_last_digit(102, 302, 2));
+console.log(same_last_digit(20, 22, 45));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
-**43. **
+**43. Write a JavaScript program to check from three given integers that if a number is greater than or equal to 20 and less than one of the others**
 
 >JavaScript Code:
 ```javascript
+function lessby20_others(x, y, z) {
+  return (x >= 20 && (x < y || x < z)) ||
+    (y >= 20 && (y < x || y < z)) ||
+    (z >= 20 && (z < y || z < x));
+}
+console.log(lessby20_others(23, 45, 10));
+console.log(lessby20_others(23, 23, 10));
+console.log(lessby20_others(21, 66, 75));
+```
 
+>Result:
+```javascript
+true
+false
+true
+```
+
+**44. Write a JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15.**
+
+>JavaScript Code:
+```javascript
+function test_nmuber(x, y) {
+  return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
+}
+
+console.log(test_nmuber(15, 9));
+console.log(test_nmuber(25, 15));
+console.log(test_nmuber(7, 8));
+console.log(test_nmuber(25, 10));
+console.log(test_nmuber(5, 9));
+console.log(test_nmuber(7, 9));
+console.log(test_nmuber(9, 25));
 ```
 
 >ES6 Version:
 ```javascript
+function test_nmuber(x, y) {
+  return (x === 15 || y === 15 || x + y === 15 || Math.abs(x - y) === 15);
+}
 
+console.log(test_nmuber(15, 9));
+console.log(test_nmuber(25, 15));
+console.log(test_nmuber(7, 8));
+console.log(test_nmuber(25, 10));
+console.log(test_nmuber(5, 9));
+console.log(test_nmuber(7, 9));
+console.log(test_nmuber(9, 25));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+true
+true
+false
+false
+false
 ```
 
-**44. **
+**45. Write a JavaScript program to check two given non-negative integers and if one of the number (not both) is multiple of 7 or 11**
 
 >JavaScript Code:
 ```javascript
-
+function check_numbers(x) {
+  return ((x % 7 === 0 || x % 11 === 0) && (x % 7 !== x % 11));
+}
+console.log(check_numbers(14));
+console.log(check_numbers(22));
+console.log(check_numbers(17));
+console.log(check_numbers(120));
 ```
 
 >ES6 Version:
 ```javascript
-
+function check_numbers(x) {
+  return ((x % 7 === 0 || x % 11 === 0) && (x % 7 !== x % 11));
+}
+console.log(check_numbers(14));
+console.log(check_numbers(22));
+console.log(check_numbers(17));
+console.log(check_numbers(120));
 ```
 
 >Result:
 ```javascript
-
-```
-
-**45. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
-
->Result:
-```javascript
-
+true
+true
+false
+false
 ```
 
 **46. **
