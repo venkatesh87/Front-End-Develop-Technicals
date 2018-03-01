@@ -1813,38 +1813,66 @@ console.log(time_convert(1441));
 24:1
 ```
 
-**51. **
+**51. Write a JavaScript program to convert the letters of a given string in alphabetical order.**
+- The ```sort()``` method sorts the items of an array.
+- The sort order can be either alphabetic or numeric, and either ascending (up) or descending (down).
 
 >JavaScript Code:
 ```javascript
+function alphabet_Soup(str) {
+  return str.split("").sort().join("");
+}
 
+console.log(alphabet_Soup("Python"));
+console.log(alphabet_Soup("Exercises"));
 ```
 
 >ES6 Version:
 ```javascript
+function alphabet_Soup(str) {
+  return str.split("").sort().join("");
+}
 
+console.log(alphabet_Soup("Python"));
+console.log(alphabet_Soup("Exercises"));
 ```
 
 >Result:
 ```javascript
-
+Phnoty
+Eceeirssx
 ```
 
-**52. **
-
+**52. Write a JavaScript program to check if the characters a and b are separated by exactly 3 places anywhere (at least once) in a given string.**
+- The ```test(string)``` method tests for a match in a string.
+- The ```string``` to be searched
 >JavaScript Code:
 ```javascript
+function ab_Check(str) {
+  return (/a...b/).test(str) || (/b...a/).test(str);
+}
 
+console.log(ab_Check("Chainsbreak"));
+console.log(ab_Check("pane borrowed"));
+console.log(ab_Check("abCheck"));
 ```
 
 >ES6 Version:
 ```javascript
+function ab_Check(str) {
+  return (/a...b/).test(str) || (/b...a/).test(str);
+}
 
+console.log(ab_Check("Chainsbreak"));
+console.log(ab_Check("pane borrowed"));
+console.log(ab_Check("abCheck"));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
 **53. **
