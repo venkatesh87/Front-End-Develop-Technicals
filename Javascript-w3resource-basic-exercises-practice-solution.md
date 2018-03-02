@@ -1937,6 +1937,31 @@ false
 ```
 
 **55. Write a JavaScript program to divide two positive numbers and return a string with properly formatted commas**
+- Viết một chương trình JavaScript để chia hai số dương và trả về một chuỗi với các dấu phẩy được định dạng chính xác.
+- The ```toString()``` method converts a number to a string.
+- The ```splice()``` method adds/removes items to/from an array, and returns the removed item(s).
+
+>JavaScript Code:
+```javascript
+n1 = 80;
+n2 = 6;
+var div = Math.round(n1 / n2).toString(),
+  result_array = div.split("");
+if (div >= 1000) {
+  for (var i = div.length - 3; i > 0; i -= 3) {
+    result_array.splice(i, 0, ",");
+  }
+  result_array;
+}
+console.log(result_array);
+```
+>Result:
+```javascript
+["1","3"]
+```
+
+**56.**
+
 
 >JavaScript Code:
 ```javascript
@@ -1944,7 +1969,686 @@ false
 ```
 
 >ES6 Version:
+
+```
+
+>Result:
 ```javascript
+
+```
+
+**57.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**58.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**59.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**60.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**61.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**62.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**63.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**64.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**65.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**66.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**67.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**68.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**69.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**70.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**71.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**72.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**73.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**74.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**75.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**76.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**77.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**78.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**79.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**80.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**81.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**82.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**83.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**84.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**85.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**86.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**87.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**88.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**89.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**90.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**91.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**92.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**93.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**94.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**95.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
+
+```
+
+>Result:
+```javascript
+
+```
+
+**96.**
+
+
+>JavaScript Code:
+```javascript
+
+```
+
+>ES6 Version:
 
 ```
 
