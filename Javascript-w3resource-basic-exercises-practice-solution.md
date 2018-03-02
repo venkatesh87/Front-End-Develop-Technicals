@@ -1969,6 +1969,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -1986,6 +1987,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2003,6 +2005,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2020,6 +2023,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2037,6 +2041,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2054,6 +2059,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2071,6 +2077,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2088,6 +2095,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2105,6 +2113,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2122,6 +2131,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2139,6 +2149,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2156,6 +2167,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2173,6 +2185,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2190,6 +2203,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2207,6 +2221,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2224,6 +2239,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2241,6 +2257,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2258,6 +2275,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2275,6 +2293,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2292,6 +2311,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2309,6 +2329,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2326,6 +2347,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2343,6 +2365,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2360,6 +2383,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2377,6 +2401,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2394,6 +2419,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2411,6 +2437,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2428,6 +2455,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2445,6 +2473,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2462,6 +2491,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2479,6 +2509,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2496,6 +2527,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2513,6 +2545,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2530,6 +2563,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2547,6 +2581,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2564,6 +2599,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2581,6 +2617,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2598,6 +2635,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2615,6 +2653,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2632,6 +2671,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -2649,6 +2689,7 @@ console.log(result_array);
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
