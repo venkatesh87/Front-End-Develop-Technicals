@@ -606,6 +606,7 @@ console.log(positive_negative(-2, -2));
 ```
 
 **20. Write a JavaScript program to create a new string adding "Py" in front of a given string. If the given string begins with "Py" then return the original string.**
+- ```substring(-5)```: If "start" is less than 0, it will start extraction from index position 0
 
 >JavaScript Code:
 ```javascript
@@ -2100,25 +2101,7 @@ avaScrip
 H
 ```
 
-**60.**
-
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
-
->Result:
-```javascript
-
-```
-
-**61. Write a JavaScript program to concatenate two strings except their first character.**
+**60. Write a JavaScript program to concatenate two strings except their first character.**
 - Viết một chương trình JavaScript để nối hai chuỗi trừ nhân vật đầu tiên của họ.
 
 >JavaScript Code:
@@ -2154,7 +2137,7 @@ HPS
 AB
 ```
 
-**62.Write a JavaScript program to move last three character to the start of a given string. The string length must be greater or equal to three**
+**61.Write a JavaScript program to move last three character to the start of a given string. The string length must be greater or equal to three**
 - Viết một chương trình JavaScript để di chuyển ba ký tự cuối cùng đến đầu của một chuỗi nhất định. Chiều dài chuỗi phải lớn hơn hoặc bằng ba
 - The ```slice()``` method returns the selected elements in an array, as a new array object.
 - Use negative numbers to select from the end of an array(Sử dụng số âm để chọn từ cuối mảng).
@@ -2192,40 +2175,118 @@ iptJavaScr
 Hi
 ```
 
-**63.**
-
+**62.Write a JavaScript program to create a string using the middle three characters of a given string of odd length. The string length must be greater or equal to three.**
+- Viết một chương trình JavaScript để tạo ra một chuỗi bằng cách sử dụng ba ký tự giữa của một chuỗi cho trước có độ dài lẻ. Chiều dài chuỗi phải lớn hơn hoặc bằng ba.
 
 >JavaScript Code:
 ```javascript
-
+function middle_three(str) {
+  if (str.length % 2 != 0) {
+    mid = (str.length + 1) / 2;
+    return str.slice(mid - 2, mid + 1);
+  }
+  return str;
+}
+console.log(middle_three('abcdefg'));
+console.log(middle_three('HTML5'));
+console.log(middle_three('Python'));
+console.log(middle_three('PHP'));
+console.log(middle_three('Exercises'));
 ```
 
 >ES6 Version:
 ```javascript
-
+function middle_three(str) {
+  if (str.length % 2 != 0) {
+    mid = (str.length + 1) / 2;
+    return str.slice(mid - 2, mid + 1);
+  }
+  return str;
+}
+console.log(middle_three('abcdefg'));
+console.log(middle_three('HTML5'));
+console.log(middle_three('Python'));
+console.log(middle_three('PHP'));
+console.log(middle_three('Exercises'));
 ```
 
 >Result:
 ```javascript
-
+cde
+TML
+Python
+PHP
+rci
 ```
 
-**64.**
-
+**63. Write a JavaScript program to concatenate two strings and return the result. If the length of the strings are not same then remove the characters from the longer string**
+- Viết một chương trình JavaScript để nối hai chuỗi và trả về kết quả. Nếu độ dài của các chuỗi không giống nhau sau đó loại bỏ các ký tự từ chuỗi dài hơn
+- ```Math.min(n1, n2, n3, ..., nX)```: One or more numbers to compare
 
 >JavaScript Code:
 ```javascript
+function str_con_cat(str1, str2) {
+  const m = Math.min(str1.length, str2.length);
+  return str1.substring(str1.length - m) + str2.substring(str2.length - m);
+}
 
+console.log(str_con_cat("Python", "JS"));
+console.log(str_con_cat("ab", "cdef"));
 ```
 
 >ES6 Version:
 ```javascript
+function str_con_cat(str1, str2) {
+  const m = Math.min(str1.length, str2.length);
+  return str1.substring(str1.length - m) + str2.substring(str2.length - m);
+}
 
+console.log(str_con_cat("Python", "JS"));
+console.log(str_con_cat("ab", "cdef"));
 ```
 
 >Result:
 ```javascript
+onJS
+abef
+```
 
+**64.Write a JavaScript program to test if a string end with "Script". The string length must be greater or equal to 6**
+- Viết một chương trình JavaScript để kiểm tra nếu một chuỗi kết thúc bằng "Script". Chiều dài chuỗi phải lớn hơn hoặc bằng 6
+
+>JavaScript Code:
+```javascript
+function end_script(str) {
+  if (str.substring(str.length - 6, str.length) == 'Script') {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(end_script("JavaScript"));
+console.log(end_script("Java Script"));
+console.log(end_script("Java Scripts"));
+```
+
+>ES6 Version:
+```javascript
+function end_script(str) {
+  if (str.substring(str.length - 6, str.length) == 'Script') {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(end_script("JavaScript"));
+console.log(end_script("Java Script"));
+console.log(end_script("Java Scripts"));
+```
+
+>Result:
+```javascript
+true
+true
+false
 ```
 
 **65.**
