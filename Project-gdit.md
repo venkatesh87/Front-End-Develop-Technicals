@@ -32,10 +32,7 @@
 
 1. FuJiSan: https://www.fujisan-3776.jp/index.html
 
-1. Minoh_City: 
-```
- Old: http://www.city.minoh.lg.jp/
-```
+1. Minoh_City: http://www.city.minoh.lg.jp/
 
 1. Hiroshima: 
 
