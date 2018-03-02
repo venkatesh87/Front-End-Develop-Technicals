@@ -38,7 +38,7 @@
 
 1. Kinutoh: http://www.kinutoh.jp/index.html
 
-1. Niigata Tourism
+1. Niigata Tourism: https://www.niigata-kankou.or.jp/
 
 1. Booking System: 
 
