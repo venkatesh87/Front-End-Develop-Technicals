@@ -1960,58 +1960,114 @@ console.log(result_array);
 ["1","3"]
 ```
 
-**56.**
-
+**56.Write a JavaScript program to create a new string of specified copies (positive number) of a given string.**
+- The ```repeat()``` method returns a new string with a specified number of copies of the string it was called on.
 
 >JavaScript Code:
 ```javascript
-
+function string_copies(str, n) {
+  if (n < 0)
+    return false;
+  else
+    return str.repeat(n);
+}
+console.log(string_copies("abc", 5));
+console.log(string_copies("abc", 0));
+console.log(string_copies("abc", -2));
 ```
 
 >ES6 Version:
 ```javascript
-
+function string_copies(str, n) {
+  if (n < 0)
+    return false;
+  else
+    return str.repeat(n);
+}
+console.log(string_copies("abc", 5));
+console.log(string_copies("abc", 0));
+console.log(string_copies("abc", -2));
 ```
 
 >Result:
 ```javascript
+abcabcabcabcabc
 
+false
 ```
 
-**57.**
+**57.Write a JavaScript program to create a new string of 4 copies of the last 3 characters of a given original string. The length of the given string must be 3 and above.**
 
 
 >JavaScript Code:
 ```javascript
-
+function newstring(str) {
+  if (str.length >= 3) {
+    result_str = str.substring(str.length - 3);
+    return result_str + result_str + result_str + result_str;
+  } else
+    return false;
+}
+console.log(newstring("Python 3.0"));
+console.log(newstring("JS"));
+console.log(newstring("JavaScript"));
 ```
 
 >ES6 Version:
 ```javascript
-
+function newstring(str) {
+  if (str.length >= 3) {
+    result_str = str.substring(str.length - 3);
+    return result_str + result_str + result_str + result_str;
+  } else
+    return false;
+}
+console.log(newstring("Python 3.0"));
+console.log(newstring("JS"));
+console.log(newstring("JavaScript"));
 ```
 
 >Result:
 ```javascript
-
+3.03.03.03.0
+false
+iptiptiptipt
 ```
 
-**58.**
-
+**58.Write a JavaScript program to extract the first half of a string of even length.**
+- Viết một chương trình JavaScript để trích xuất nửa đầu của một chuỗi thậm chí là chiều dài.
 
 >JavaScript Code:
 ```javascript
-
+function first_half(str) {
+  if (str.length % 2 == 0) {
+    return str.slice(0, str.length / 2);
+  }
+  return str;
+}
+console.log(first_half("Python"));
+console.log(first_half("JavaScript"));
+console.log(first_half("PHP"));
 ```
 
 >ES6 Version:
 ```javascript
-
+function first_half(str) {
+  if (str.length % 2 == 0) {
+    return str.slice(0, str.length / 2);
+  }
+  return str;
+}
+console.log(first_half("Python"));
+console.log(first_half("JavaScript"));
+console.log(first_half("PHP"));
 ```
 
 >Result:
 ```javascript
-
+Pyt
+JavaS
+PHP
 ```
 
 **59.**
