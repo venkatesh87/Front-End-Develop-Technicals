@@ -2070,22 +2070,34 @@ JavaS
 PHP
 ```
 
-**59.**
-
+**59.Write a JavaScript program to create a new string without the first and last character of a given string**
+- Viết một chương trình JavaScript để tạo một chuỗi mới mà không có ký tự đầu tiên và cuối cùng của một chuỗi nhất định
 
 >JavaScript Code:
 ```javascript
-
+function without_first_end(str) {
+  return str.substring(1, str.length - 1);
+}
+console.log(without_first_end('JavaScript'));
+console.log(without_first_end('JS'));
+console.log(without_first_end('PHP'));
 ```
 
 >ES6 Version:
 ```javascript
-
+function without_first_end(str) {
+  return str.substring(1, str.length - 1);
+}
+console.log(without_first_end('JavaScript'));
+console.log(without_first_end('JS'));
+console.log(without_first_end('PHP'));
 ```
 
 >Result:
 ```javascript
+avaScrip
 
+H
 ```
 
 **60.**
