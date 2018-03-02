@@ -34,7 +34,7 @@
 
 1. Minoh_City: http://www.city.minoh.lg.jp/
 
-1. Hiroshima: 
+1. Hiroshima: http://www.pref.hiroshima.lg.jp/
 
 1. Chiba Kun’s Hiroba: 
 ```
