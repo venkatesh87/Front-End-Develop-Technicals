@@ -2118,40 +2118,78 @@ H
 
 ```
 
-**61.**
-
+**61. Write a JavaScript program to concatenate two strings except their first character.**
+- Viết một chương trình JavaScript để nối hai chuỗi trừ nhân vật đầu tiên của họ.
 
 >JavaScript Code:
 ```javascript
+function concatenate(str1, str2) {
+  str1 = str1.substring(1, str1.length);
+  str2 = str2.substring(1, str2.length);
+  return str1 + str2;
+}
 
+console.log(concatenate("PHP", "JS"));
+console.log(concatenate("A", "B"));
+console.log(concatenate("AA", "BB"));
 ```
 
 >ES6 Version:
 ```javascript
+function concatenate(str1, str2) {
+  str1 = str1.substring(1, str1.length);
+  str2 = str2.substring(1, str2.length);
+  return str1 + str2;
+}
 
+console.log(concatenate("PHP","JS"));
+console.log(concatenate("A","B"));
+console.log(concatenate("AA","BB"));
 ```
 
 >Result:
 ```javascript
+HPS
 
+AB
 ```
 
-**62.**
-
+**62.Write a JavaScript program to move last three character to the start of a given string. The string length must be greater or equal to three**
+- Viết một chương trình JavaScript để di chuyển ba ký tự cuối cùng đến đầu của một chuỗi nhất định. Chiều dài chuỗi phải lớn hơn hoặc bằng ba
+- The ```slice()``` method returns the selected elements in an array, as a new array object.
+- Use negative numbers to select from the end of an array(Sử dụng số âm để chọn từ cuối mảng).
 
 >JavaScript Code:
 ```javascript
-
+function right_three(str) {
+  if (str.length > 1) {
+    return str.slice(-3) + str.slice(0, -3);
+  }
+  return str;
+}
+console.log(right_three("Python"));
+console.log(right_three("JavaScript"));
+console.log(right_three("Hi"));
 ```
 
 >ES6 Version:
 ```javascript
-
+function right_three(str) {
+  if (str.length > 1) {
+    return str.slice(-3) + str.slice(0, -3);
+  }
+  return str;
+}
+console.log(right_three("Python"));
+console.log(right_three("JavaScript"));
+console.log(right_three("Hi"));
 ```
 
 >Result:
 ```javascript
-
+honPyt
+iptJavaScr
+Hi
 ```
 
 **63.**
