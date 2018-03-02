@@ -1,5 +1,3 @@
-### Project
-
 1. Yamanashi: http://www.yamanashi-kankou.jp/rekitabi/index.html
 
 1. Yamanashi Sports: http://www.sports-camp.pref.yamanashi.jp/index.html
@@ -34,8 +32,15 @@
 
 1. Minoh_City: http://www.city.minoh.lg.jp/
 
-1. Hiroshima: http://www.pref.hiroshima.lg.jp/
+1. Hiroshima:  http://www.pref.hiroshima.lg.jp/
 
 1. Chiba Kun’s Hiroba: https://www.pref.chiba.lg.jp/kouhou/miryoku/chi-ba-kun/index.html
 
-1. Booking: 
+1. Kinutoh: http://www.kinutoh.jp/index.html
+
+1. Niigata Tourism
+
+1. Booking System: 
+
+1. Booking System Admin: 
+
