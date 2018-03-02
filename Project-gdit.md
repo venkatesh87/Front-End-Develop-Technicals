@@ -36,9 +36,6 @@
 
 1. Hiroshima: http://www.pref.hiroshima.lg.jp/
 
-1. Chiba Kun’s Hiroba: 
-```
-Old:  https://www.pref.chiba.lg.jp/moji/index.html
-```
+1. Chiba Kun’s Hiroba: https://www.pref.chiba.lg.jp/kouhou/miryoku/chi-ba-kun/index.html
 
 1. Booking: 
