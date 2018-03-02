@@ -18,7 +18,7 @@
 
 1. Koufu: http://www.kofu500.com
 
-1. Tochigi: 
+1. Tochigi: http://www.pref.tochigi.lg.jp/culture/
 
 1. JapanDesk: http://jp.investdanang.gov.vn/
 
