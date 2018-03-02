@@ -1875,41 +1875,68 @@ true
 false
 ```
 
-**53. **
+**53. Write a JavaScript program to count the number of vowels of a given string.**
+- The ```replace()``` method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.
 
 >JavaScript Code:
 ```javascript
-
+function vowel_Count(str) {
+  return str.replace(/[^aeiou]/g, "").length;
+}
+console.log(vowel_Count("Python"));
+console.log(vowel_Count("w3resource.com"));
 ```
 
 >ES6 Version:
 ```javascript
-
+function vowel_Count(str) {
+  return str.replace(/[^aeiou]/g, "").length;
+}
+console.log(vowel_Count("Python"));
+console.log(vowel_Count("w3resource.com"));
 ```
 
 >Result:
 ```javascript
-
+1
+5
 ```
 
-**54. **
+**54. Write a JavaScript program to check if a given string contains equal number of p's and t's present.**
 
 >JavaScript Code:
 ```javascript
-
+function equal_pt(str) {
+  var str_p = str.replace(/[^p]/g, "");
+  var str_s = str.replace(/[^s]/g, "");
+  var p_num = str_p.length;
+  var s_num = str_s.length;
+  return p_num === s_num;
+}
+console.log(equal_pt("paatpss"));
+console.log(equal_pt("paatps"));
 ```
 
 >ES6 Version:
 ```javascript
-
+function equal_pt(str) {
+  const str_p = str.replace(/[^p]/g, "");
+  const str_s = str.replace(/[^s]/g, "");
+  const p_num = str_p.length;
+  const s_num = str_s.length;
+  return p_num === s_num;
+}
+console.log(equal_pt("paatpss"));
+console.log(equal_pt("paatps"));
 ```
 
 >Result:
 ```javascript
-
+true
+false
 ```
 
-**55. **
+**55. Write a JavaScript program to divide two positive numbers and return a string with properly formatted commas**
 
 >JavaScript Code:
 ```javascript
