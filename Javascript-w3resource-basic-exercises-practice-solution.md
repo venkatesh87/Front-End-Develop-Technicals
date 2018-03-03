@@ -2289,40 +2289,89 @@ true
 false
 ```
 
-**65.**
-
+**65.Write a JavaScript program to display the city name if the string begins with "Los" or "New" otherwise return blank.**
+- Viết một chương trình JavaScript để hiển thị tên thành phố nếu chuỗi bắt đầu bằng "Los" hoặc "New" nếu không sẽ trở lại trạng thái trống.
 
 >JavaScript Code:
 ```javascript
-
+function city_name(str) {
+  if (str.length >= 3 && ((str.substring(0, 3) == 'Los') || (str.substring(0, 3) == 'New'))){
+    return str;
+  }
+  return '';
+}
+console.log(city_name("New York"));
+console.log(city_name("Los Angeles"));
+console.log(city_name("London"));
 ```
 
 >ES6 Version:
 ```javascript
-
+function city_name(str) {
+  if (str.length >= 3 && ((str.substring(0, 3) == 'Los') || (str.substring(0, 3) == 'New'))){
+    return str;
+  }
+  return '';
+}
+console.log(city_name("New York"));
+console.log(city_name("Los Angeles"));
+console.log(city_name("London"));
 ```
 
 >Result:
 ```javascript
-
+New York
+Los Angeles
+""
 ```
 
-**66.**
-
+**66.Write a JavaScript program to create a new string from a given string, removing the first and last characters of the string if the first or last character are 'P'. Return the original string if the condition is not satisfied.**
+- Viết một chương trình JavaScript để tạo ra một chuỗi mới từ một chuỗi nhất định, loại bỏ các ký tự đầu tiên và cuối của chuỗi nếu ký tự đầu tiên hoặc cuối là 'P'. Trả về chuỗi ban đầu nếu tình trạng không hài lòng.
+- ```str.length```: độ dài các phần tử trong chuỗi.
+- ```str.length - 1```: độ dài các phần tử trong chuỗi trừ ký tự cuối cùng.
 
 >JavaScript Code:
 ```javascript
-
+function nop(str) {
+  let start_pos = 0;
+  let end_pos = str.length;
+  if (str.length > 0 && str.charAt(0) == 'P') {
+    start_pos = 1;
+  }
+  if (str.length > 1 && str.charAt(str.length - 1) == 'P') {
+    end_pos--;
+  }
+  return str.substring(start_pos, end_pos);
+}
+console.log(nop("PythonP"));
+console.log(nop("Python"));
+console.log(nop("JavaScript"));
 ```
 
 >ES6 Version:
 ```javascript
+function nop(str) {
+  let start_pos = 0;
+  let end_pos = str.length;
+  if (str.length > 0 && str.charAt(0) == 'P') {
+    start_pos = 1;
+  }
+  if (str.length > 1 && str.charAt(str.length - 1) == 'P') {
+    end_pos--;
+  }
+  return str.substring(start_pos, end_pos);
+}
 
+console.log(nop("PythonP"));
+console.log(nop("Python"));
+console.log(nop("JavaScript"));
 ```
 
 >Result:
 ```javascript
-
+ython
+ython
+JavaScript
 ```
 
 **67.**
