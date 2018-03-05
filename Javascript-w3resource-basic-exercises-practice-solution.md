@@ -2504,41 +2504,83 @@ true
 true
 false
 ```
+**71. Write a JavaScript program to check if the first and last elements are equal of a given array of integers length 3**
+- Viết một chương trình JavaScript để kiểm tra xem các phần tử đầu tiên và cuối cùng có bằng nhau không, một mảng các số nguyên có độ dài 3.
 
-**71.Write a JavaScript program to reverse the elements of a given array of integers length 3**
-- Viết một chương trình JavaScript để đảo các phần tử của một mảng các số nguyên dài nhất 3
-- ```map(currentValue, index, arr)```: The ```map()``` method creates a new array with the results of calling a function for every array element.
 >JavaScript Code:
 ```javascript
+function first_last_same(nums) {
+  var end = nums.length - 1;
+  if (nums.length >= 1) {
+    return nums[0] == nums[end];
+  } else { return false; }
+}
 
+console.log(first_last_same([10, 20, 30]));
+console.log(first_last_same([10, 20, 30, 10]));
+console.log(first_last_same([20, 20, 20]));
 ```
 
 >ES6 Version:
 ```javascript
+function first_last_same(nums) {
+  const end = nums.length - 1;
+  if (nums.length >= 1) {
+    return nums[0] == nums[end];
+  } else { return false; }
+}
 
+console.log(first_last_same([10, 20, 30]));
+console.log(first_last_same([10, 20, 30, 10]));
+console.log(first_last_same([20, 20, 20]));
 ```
 
 >Result:
 ```javascript
-
+false
+true
+true
 ```
 
-**72.**
+**72.Write a JavaScript program to reverse the elements of a given array of integers length 3.**
 
+- Viết một chương trình JavaScript để đảo các phần tử của một mảng các số nguyên dài nhất 3.
+- ```map(currentValue, index, arr)```: The ```map()``` method creates a new array with the results of calling a function for every array element--> Phương thức ```map ()``` tạo một mảng mới với kết quả gọi một hàm cho mỗi phần tử mảng
+- The ```map()``` method calls the provided function once for each element in an array, in order.
+--> Phương thức ```map()``` gọi hàm đã cung cấp một lần cho mỗi phần tử trong một mảng theo thứ tự.
+- ```currentValue```: The value of the current element
+- ```index```: The array index of the current element
+- ```arr```: The array object the current element belongs to(Mảng đối tượng phần tử hiện tại thuộc về)
 
 >JavaScript Code:
 ```javascript
+function reverse3(array) {
+    return array.map((element, idx, arr) => arr[(arr.length - 1) - idx]);
+}
 
+console.log(reverse3([5, 4, 3])); 
+console.log(reverse3([1, 0, -1]));  
+console.log(reverse3([2, 3, 1]));
 ```
 
 >ES6 Version:
 ```javascript
+function reverse3(array) {
+    return array.map((element, idx, arr) => arr[(arr.length - 1) - idx]);
+}
 
+console.log(reverse3([5, 4, 3])); 
+console.log(reverse3([1, 0, -1]));  
+console.log(reverse3([2, 3, 1]));
+Copy
+Live Demo:
 ```
 
 >Result:
 ```javascript
-
+false
+true
+true
 ```
 
 **73.**
