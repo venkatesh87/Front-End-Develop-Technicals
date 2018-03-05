@@ -2737,80 +2737,145 @@ true
 false
 ```
 
-**77.**
-
-
+**77. Write a JavaScript program to test if an array of integers of length 2 does not contain 1 or a 3.**
+- Viết một chương trình JavaScript để kiểm tra xem một dãy các số nguyên có độ dài 2 không chứa 1 hoặc số 3.
+- ```indexOf()```: dùng cho mảng
 >JavaScript Code:
 ```javascript
-
+function is13(nums) {
+  if (nums.indexOf(1) == -1 && nums.indexOf(3) == -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(is13([7, 8]));
+console.log(is13([3, 2]));
+console.log(is13([0, 1]));
 ```
 
 >ES6 Version:
 ```javascript
+function is13(nums) {
+  if (!nums.includes(1) && !nums.includes(3)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+console.log(is13([7, 8]));
+console.log(is13([3, 2]));
+console.log(is13([0, 1]));
 ```
 
 >Result:
 ```javascript
-
+true
+false
+false
 ```
 
-**78.**
-
+**78. Write a JavaScript program to test if a given array of integers contains 30 and 40 twice. The array length should be 0, 1, or 2.**
+- Viết một chương trình JavaScript để kiểm tra xem một mảng các số nguyên đã cho có chứa 30 và 40 hai lần. Chiều dài của mảng là 0, 1, hoặc 2.
 
 >JavaScript Code:
 ```javascript
+function twice3040(arra1) {
+  let a = arra1[0],
+    b = arra1[1];
+  return (a === 30 && a === 30) || (b === 40 && b === 40);
+}
 
+console.log(twice3040([30, 30]));
+console.log(twice3040([40, 40]));
+console.log(twice3040([20, 20]));
+console.log(twice3040([30]));
 ```
 
 >ES6 Version:
 ```javascript
+function twice3040(arra1) {
+  let a = arra1[0];
+  let b = arra1[1];
+  return (a === 30 && a === 30) || (b === 40 && b === 40);
+}
 
+console.log(twice3040([30, 30]));
+console.log(twice3040([40, 40]));
+console.log(twice3040([20, 20]));
+console.log(twice3040([30]));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
+true
 ```
 
-**79.**
-
+**79. Write a JavaScript program to swap the first and last elements of a given array of integers. The array length should be at least 1.**
+- Viết một chương trình JavaScript để hoán đổi các phần tử đầu tiên và cuối cùng của một mảng số nguyên. Chiều dài của mảng ít nhất phải là 1.
 
 >JavaScript Code:
 ```javascript
-
+function swap(arra) {
+  [arra[0], arra[arra.length - 1]] = [arra[arra.length - 1], arra[0]];
+  return arra;
+}
+console.log(swap([1, 2, 3, 4]));
+console.log(swap([0, 2, 1]));
+console.log(swap([3]));
 ```
 
 >ES6 Version:
 ```javascript
-
+function swap(arra) {
+  [arra[0], arra[arra.length - 1]] = [arra[arra.length - 1], arra[0]];
+  return arra;
+}
+console.log(swap([1, 2, 3, 4]));
+console.log(swap([0, 2, 1]));
+console.log(swap([3]));
 ```
 
 >Result:
 ```javascript
-
+[4,2,3,1]
+[1,2,0]
+[3]
 ```
 
-**80.**
-
+**80. Write a JavaScript program to add two digits of a given positive integer of length two.**
+- Viết một chương trình JavaScript để thêm hai chữ số của một số nguyên dương dương nhất định có chiều dài hai.
 
 >JavaScript Code:
 ```javascript
-
+function add_two_digits(n) {
+  return n % 10 + Math.floor(n / 10);
+}
+console.log(add_two_digits(25))
+console.log(add_two_digits(50))
 ```
 
 >ES6 Version:
 ```javascript
-
+function add_two_digits(n) {
+  return n % 10 + Math.floor(n / 10);
+}
+console.log(add_two_digits(25))
+console.log(add_two_digits(50))
 ```
 
 >Result:
 ```javascript
-
+7
+5
 ```
 
-**81.**
-
+**81. Write a JavaScript to add two positive integers without carry**
+- Viết một JavaScript để thêm hai số nguyên dương mà không mang
 
 >JavaScript Code:
 ```javascript
