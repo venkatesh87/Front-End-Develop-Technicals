@@ -2374,81 +2374,140 @@ ython
 JavaScript
 ```
 
-**67.**
-
+**67.Write a JavaScript program to create a new string taking the first and last n characters from a given string. The string length must be greater or equal to n**
+- Viết một chương trình JavaScript để tạo một chuỗi mới lấy các ký tự n đầu tiên và cuối cùng từ một chuỗi nhất định. Chiều dài chuỗi phải lớn hơn hoặc bằng n
 
 >JavaScript Code:
 ```javascript
+function two_string(str, n) {
+  first_part = str.substring(0, n);
+  last_part = str.substring(str.length - n);
+  return first_part + last_part;
+}
 
+console.log(two_string("JavaScript", 2));
+console.log(two_string("JavaScript", 3));
 ```
 
 >ES6 Version:
 ```javascript
+function two_string(str, n) {
+  first_part = str.substring(0, n);
+  last_part = str.substring(str.length - n);
+  return first_part + last_part;
+}
 
+console.log(two_string("JavaScript", 2));
+console.log(two_string("JavaScript", 3));
 ```
 
 >Result:
 ```javascript
-
+Japt
+Javipt
 ```
 
-**68.**
-
+**68.Write a JavaScript program to compute the sum of three elements of a given array of integers of length 3**
+- Viết một chương trình JavaScript để tính tổng của ba phần tử của một mảng các số nguyên có độ dài 3.
 
 >JavaScript Code:
 ```javascript
+function sum_three(nums) {
+  return nums[0] + nums[1] + nums[2];
+}
 
+console.log(sum_three([10, 32, 20]));
+console.log(sum_three([5, 7, 9]));
+console.log(sum_three([0, 8, -11]));
 ```
 
 >ES6 Version:
 ```javascript
+function sum_three(nums) {
+  return nums[0] + nums[1] + nums[2];
+}
 
+console.log(sum_three([10, 32, 20]));
+console.log(sum_three([5, 7, 9]));
+console.log(sum_three([0, 8, -11]));
 ```
 
 >Result:
 ```javascript
-
+62
+21
+-3
 ```
 
-**69.**
-
+**69.Write a JavaScript program to rotate the elements left of a given array of integers of length 3**
+- Viết một chương trình JavaScript để xoay các phần tử bên trái của một mảng các số nguyên có độ dài 3
 
 >JavaScript Code:
 ```javascript
-
+function rotate_elements_left(array) {
+  return [array[1], array[2], array[0]];
+}
+console.log(rotate_elements_left([3, 4, 5]));
+console.log(rotate_elements_left([0, -1, 2]));
+console.log(rotate_elements_left([7, 6, 5]));
 ```
 
 >ES6 Version:
 ```javascript
-
+function rotate_elements_left(array) {
+  return [array[1], array[2], array[0]];
+}
+console.log(rotate_elements_left([3, 4, 5]));
+console.log(rotate_elements_left([0, -1, 2]));
+console.log(rotate_elements_left([7, 6, 5]));
 ```
 
 >Result:
 ```javascript
-
+[4,5,3]
+[-1,2,0]
+[6,5,7]
 ```
 
-**70.**
-
+**70.Write a JavaScript program to check if 1 appears in first or last position of a given array of integers. The array length must be greater or equal to 1**
+- Viết một chương trình JavaScript để kiểm tra nếu 1 xuất hiện ở vị trí đầu tiên hoặc vị trí cuối cùng của một mảng số nguyên. Chiều dài mảng phải lớn hơn hoặc bằng 1
 
 >JavaScript Code:
 ```javascript
+function first_last_1(nums) {
+  var end_pos = nums.length - 1;
+  return nums[0] == 1 || nums[end_pos] == 1;
+}
 
+
+console.log(first_last_1([1, 3, 5]));
+console.log(first_last_1([1, 3, 5, 1]));
+console.log(first_last_1([2, 4, 6]));
 ```
 
 >ES6 Version:
 ```javascript
+function first_last_1(nums) {
+  const end_pos = nums.length - 1;
+  return nums[0] == 1 || nums[end_pos] == 1;
+}
 
+
+console.log(first_last_1([1, 3, 5]));
+console.log(first_last_1([1, 3, 5, 1]));
+console.log(first_last_1([2, 4, 6]));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
-**71.**
-
-
+**71.Write a JavaScript program to reverse the elements of a given array of integers length 3**
+- Viết một chương trình JavaScript để đảo các phần tử của một mảng các số nguyên dài nhất 3
+- ```map(currentValue, index, arr)```: The ```map()``` method creates a new array with the results of calling a function for every array element.
 >JavaScript Code:
 ```javascript
 
