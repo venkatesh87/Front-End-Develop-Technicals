@@ -96,7 +96,17 @@
 
 1. [Overapi](http://overapi.com/javascript)
 
-1. [JSbooks Revolunet](https://jsbooks.revolunet.com/)
+1. [JSbooks Revolunet](https://jsbooks.revolunet.com/) 
+
+1. [Eloquent Javascript](https://eloquentjavascript.net/)
+
+1. [earthlink](http://home.earthlink.net/~gowings130/newgeorgewebsite/Nerd%20Central/JS-%20t1.html)
+
+1. [PDF Eloquent Javascript](http://eloquentjavascript.net/Eloquent_JavaScript.pdf)
+
+1. [Javascript Info](http://javascript.info/)
+
+1. []()
 
 #### III. Tool Code Javascript Online
 ---
