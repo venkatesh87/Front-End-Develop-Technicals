@@ -2583,40 +2583,77 @@ true
 true
 ```
 
-**73.**
-
+**73. Write a JavaScript program to find the larger value between the first or last and set all the other elements with that value. Display the new array.**
+- Viết một chương trình JavaScript để tìm giá trị lớn hơn giữa đầu tiên hoặc cuối cùng và đặt tất cả các phần tử khác có giá trị đó. Hiển thị mảng mới.
 
 >JavaScript Code:
 ```javascript
-
+function all_max(nums) {
+  var max_val = nums[0] > nums[2] ? nums[0] : nums[2];
+  nums[0] = max_val;
+  nums[1] = max_val;
+  nums[2] = max_val;
+  return nums;
+}
+console.log(all_max([20, 30, 40]));
+console.log(all_max([-7, -9, 0]));
+console.log(all_max([12, 10, 3]));
 ```
 
 >ES6 Version:
 ```javascript
-
+function all_max(nums) {
+  const max_val = nums[0] > nums[2] ? nums[0] : nums[2];
+  nums[0] = max_val;
+  nums[1] = max_val;
+  nums[2] = max_val;
+  return nums;
+}
+console.log(all_max([20, 30, 40]));
+console.log(all_max([-7, -9, 0]));
+console.log(all_max([12, 10, 3]));
 ```
 
 >Result:
 ```javascript
-
+[40,40,40]
+[0,0,0]
+[12,12,12]
 ```
 
-**74.**
-
+**74. Write a JavaScript program to create a new array taking the middle elements of the two arrays of integer and each length 3.**
+- Viết một chương trình JavaScript để tạo một mảng mới lấy các phần tử trung gian của hai mảng số nguyên và mỗi chiều dài 3.
 
 >JavaScript Code:
 ```javascript
-
+function middle_elements(a, b) {
+  var new_array = []
+  new_array.push(a[1], b[1]);
+  return new_array;
+}
+console.log(middle_elements([1, 2, 3], [1, 5, 6]));
+console.log(middle_elements([3, 3, 3], [2, 8, 0]));
+console.log(middle_elements([4, 2, 7], [2, 4, 5]));
 ```
 
 >ES6 Version:
 ```javascript
+function middle_elements(a, b) {
+  const new_array = [];
+  new_array.push(a[1], b[1]);
 
+  return new_array;
+}
+console.log(middle_elements([1, 2, 3], [1, 5, 6]));
+console.log(middle_elements([3, 3, 3], [2, 8, 0]));
+console.log(middle_elements([4, 2, 7], [2, 4, 5]));
 ```
 
 >Result:
 ```javascript
-
+[2,5]
+[3,8]
+[2,4]
 ```
 
 **75.**
