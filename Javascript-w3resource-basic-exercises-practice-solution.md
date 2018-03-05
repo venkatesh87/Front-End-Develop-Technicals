@@ -2656,40 +2656,85 @@ console.log(middle_elements([4, 2, 7], [2, 4, 5]));
 [2,4]
 ```
 
-**75.**
-
+**75. Write a JavaScript program to create a new array taking the first and last elements from a given array of integers and length must be greater or equal to 1.**
+- Viết một chương trình JavaScript để tạo một mảng mới lấy các phần tử đầu tiên và cuối cùng từ một mảng số nguyên và chiều dài cho trước phải lớn hơn hoặc bằng 1.
 
 >JavaScript Code:
 ```javascript
+function started(nums) {
+  var array1 = [];
+  array1.push(nums[0], nums[nums.length - 1]);
 
+  return array1;
+}
+console.log(started([20, 20, 30]));
+console.log(started([5, 2, 7, 8]));
+console.log(started([17, 12, 34, 78]));
 ```
 
 >ES6 Version:
 ```javascript
+function started(nums) {
+  const array1 = [];
+  array1.push(nums[0], nums[nums.length - 1]);
 
+  return array1;
+}
+console.log(started([20, 20, 30]));
+console.log(started([5, 2, 7, 8]));
+console.log(started([17, 12, 34, 78]));
 ```
 
 >Result:
 ```javascript
-
+[20,30]
+[5,8]
+[17,78]
 ```
 
-**76.**
-
+**76. Write a JavaScript program to test if an array of integers of length 2 contains 1 or a 3.**
+- Viết một chương trình JavaScript để kiểm tra nếu một mảng các số nguyên có độ dài 2 chứa 1 hoặc số 3.
+- ```string.indexOf(searchValue[, fromIndex])```: 
+  + The ```indexOf()``` method returns the position of the first occurrence of a specified value in a string(Phương thức indexOf () trả về vị trí của sự xuất hiện đầu tiên của một giá trị được chỉ định trong một chuỗi.).
+  + This method returns -1 if the value to search for never occurs.
+  + ```searchValue``` − Một chuỗi biểu diễn giá trị để tìm kiếm.
+  + ```fromIndex``` − Vị trí trong chuỗi đang gọi để bắt đầu tìm kiếm. Nó có thể là bất kỳ giá trị integer nào giữa 0 và độ dài chuỗi. Giá trị mặc định là 0.
 
 >JavaScript Code:
 ```javascript
+function contins13(nums) {
+  if (nums.indexOf(1) != -1 || nums.indexOf(3) != -1) {
+    return true
+  } else {
+    return false
+  }
+}
 
+console.log(contins13([1, 5]));
+console.log(contins13([2, 3]));
+console.log(contins13([7, 5]));
 ```
 
 >ES6 Version:
 ```javascript
+function contins13(nums) {
+  if (nums.includes(1) || nums.includes(3)) {
+    return true
+  } else {
+    return false
+  }
+}
 
+console.log(contins13([1, 5]));
+console.log(contins13([2, 3]));
+console.log(contins13([7, 5]));
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
 **77.**
