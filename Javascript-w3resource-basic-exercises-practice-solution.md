@@ -3387,92 +3387,166 @@ console.log(max_difference([13, 2, 3, 8, 9]))
 11
 ```
 
-**92.**
-
+**92. Write a JavaScript program to find the maximal difference among all possible pairs of a given array of integers.**
+- Viết một chương trình JavaScript để tìm sự khác biệt tối đa giữa tất cả các cặp có thể của một mảng số nguyên.
 
 >JavaScript Code:
 ```javascript
-
+function array_max_diff(arr) {
+  var max_result = 0;
+  for (var i = 0; i < arr.length; i++) {
+    for (var k = 0; k != i && k < arr.length; k++) {
+      var diff = Math.abs(arr[i] - arr[k]);
+      max_result = Math.max(max_result, diff);
+    }
+  }
+  return max_result;
+}
+console.log(array_max_diff([1, 2, 3, 8, 9]))
+console.log(array_max_diff([1, 2, 3, 18, 9]))
+console.log(array_max_diff([13, 2, 3, 8, 9]))
 ```
 
 >ES6 Version:
 ```javascript
-
+function array_max_diff(arr) {
+  let max_result = 0;
+  for (let i = 0; i < arr.length; i++) {
+    for (let k = 0; k != i && k < arr.length; k++) {
+      const diff = Math.abs(arr[i] - arr[k]);
+      max_result = Math.max(max_result, diff);
+    }
+  }
+  return max_result;
+}
+console.log(array_max_diff([1, 2, 3, 8, 9]))
+console.log(array_max_diff([1, 2, 3, 18, 9]))
+console.log(array_max_diff([13, 2, 3, 8, 9]))
 ```
 
 >Result:
 ```javascript
-
+8
+17
+11
 ```
 
-**93.**
-
+**93. Write a JavaScript program to find the number which appears most in a given array of integers.**
+- Viết một chương trình JavaScript để tìm số xuất hiện nhiều nhất trong một mảng số nguyên.
 
 >JavaScript Code:
 ```javascript
-
+function array_element_mode(arr) {
+  var ctr = [],
+      ans = 0;
+  for (var i = 0; i < 10; i++) {
+    ctr.push(0);
+  }
+  for (var i = 0; i < arr.length; i++) {
+    ctr[arr[i] - 1]++;
+    if (ctr[arr[i] - 1] > ctr[ans]) {
+      ans = arr[i] - 1;
+    }
+  }
+  return ans + 1;
+}
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
 ```
 
 >ES6 Version:
 ```javascript
+function array_element_mode(arr) {
+  const ctr = [];
+  let ans = 0;
 
+  for (var i = 0; i < 10; i++) {
+    ctr.push(0);
+  }
+  for (var i = 0; i < arr.length; i++) {
+    ctr[arr[i] - 1]++;
+    if (ctr[arr[i] - 1] > ctr[ans]) {
+      ans = arr[i] - 1;
+    }
+  }
+  return ans + 1;
+}
+console.log(array_element_mode([1, 2, 3, 2, 2, 8, 1, 9]))
 ```
 
 >Result:
 ```javascript
-
+2
 ```
 
-**94.**
-
+**94. Write a JavaScript program to replace all the numbers with a specified number of a given array of integers.**
+- Viết một chương trình JavaScript để thay thế tất cả các con số với một số lượng quy định của một mảng cho số nguyên.
 
 >JavaScript Code:
 ```javascript
-
+function array_element_replace(arr, old_value, new_value) {
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] === old_value) {
+      arr[i] = new_value;
+    }
+  }
+  return arr;
+}
+num = [1, 2, 3, 2, 2, 8, 1, 9];
+console.log("Original Array: " + num);
+console.log(array_element_replace(num, 2, 5));
 ```
 
 >ES6 Version:
 ```javascript
-
+function array_element_replace(arr, old_value, new_value) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === old_value) {
+      arr[i] = new_value;
+    }
+  }
+  return arr;
+}
+num = [1, 2, 3, 2, 2, 8, 1, 9];
+console.log(`Original Array: ${num}`);
+console.log(array_element_replace(num, 2, 5));
 ```
 
 >Result:
 ```javascript
-
+Original Array: 1,2,3,2,2,8,1,9
+[1,5,3,5,5,8,1,9]
 ```
 
-**95.**
-
+**95. Write a JavaScript program to compute the sum of absolute differences of consecutive numbers of a given array of integers.**
+- Viết một chương trình JavaScript để tính tổng của sự khác biệt tuyệt đối của các số liên tiếp của một mảng các số nguyên đã cho.
 
 >JavaScript Code:
 ```javascript
+function sum_adjacent_difference(arr) {
+  var result = 0;
+  for (var i = 1; i < arr.length; i++) {
+    result += Math.abs(arr[i] - arr[i - 1]);
+  }
+  return result;
+}
 
+console.log(sum_adjacent_difference([1, 2, 3, 2, -5]));
 ```
 
 >ES6 Version:
 ```javascript
+function sum_adjacent_difference(arr) {
+  let result = 0;
+  for (let i = 1; i < arr.length; i++) {
+    result += Math.abs(arr[i] - arr[i - 1]);
+  }
+  return result;
+}
 
+console.log(sum_adjacent_difference([1, 2, 3, 2, -5]));
 ```
 
 >Result:
 ```javascript
-
-```
-
-**96.**
-
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-```javascript
-
-```
-
->Result:
-```javascript
-
+10
 ```
