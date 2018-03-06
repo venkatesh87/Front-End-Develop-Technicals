@@ -2911,100 +2911,249 @@ console.log(add_two_int_without_carrying(222, 911))
 console.log(add_two_int_without_carrying(200, 900))
 ```
 
->​Result​:
+>Result:
 ```javascript
 133
 100
 ```
 
 **82. Write a JavaScript to find the longest string from an given array of strings.**
-- Viết một JavaScript để tìm chuỗi dài nhất từ ​​một mảng các chuỗi.
+- Viết một JavaScript để tìm chuỗi dài nhất từ một mảng các chuỗi.
+- ```filter()```: The filter() method creates an array filled with all array elements that pass a test (provided as a function). Phương thức filter () tạo ra một mảng chứa đầy các phần tử mảng đi qua một bài kiểm tra (cung cấp như một hàm).
+- ```filter()```:  does not execute the function for array elements without values.(Không thực thi function khi các phần tử array ko có giá trị)
+- ```array.filter(function(currentValue, index, arr), thisValue)```: 
+  + ```currentValue```: The value of the current element(Gía trị của phần tử hiện tại)
+  + ```index```: The array index of the current element(Chỉ số mảng của phần tử hiện tại)
+  + ```arr```: The array object the current element belongs to(Mảng đối tượng của phần tử hiện tại)
+  + ```thisValue```: A value to be passed to the function to be used as its "this" value. If this parameter is empty, the value "undefined" will be passed as its "this" value(Một giá trị được chuyển đến hàm được sử dụng làm giá trị "này". Nếu tham số này rỗng, giá trị "không xác định" sẽ được chuyển thành giá trị "this")
+- The ```max()``` method returns the number with the highest value.
 
 >JavaScript Code:
 ```javascript
-
+function longest_string(str_ara) {
+  var max = str_ara[0].length;
+  str_ara.map(v => max = Math.max(max, v.length));
+  result = str_ara.filter(v => v.length == max);
+  return result;
+}
+console.log(longest_string(['a', 'aa', 'aaa', 'aaaaa', 'aaaa']))
 ```
 
 >ES6 Version:
 ```javascript
-
+function longest_string(str_ara) {
+  let max = str_ara[0].length;
+  str_ara.map(v => max = Math.max(max, v.length));
+  result = str_ara.filter(v => v.length == max);
+  return result;
+}
+console.log(longest_string(['a', 'aa', 'aaa', 'aaaaa','aaaa']))
 ```
 
 >Result:
 ```javascript
-
+["aaaaa"]
 ```
 
-**83.**
-
-
+**83. Write a JavaScript to replace each character of a given string by the next one in the English alphabet.**
+- Viết mã JavaScript để thay thế mỗi ký tự của một chuỗi cho trước bằng một chữ cái tiếp theo trong bảng chữ cái tiếng Anh.
+- ```charCodeAt```: The charCodeAt() method returns the Unicode of the character at the specified index in a string. (Phương thức charCodeAt () trả về Unicode của ký tự tại index được chỉ định trong một chuỗi.)
 >JavaScript Code:
 ```javascript
-
+function alphabet_char_Shift(str) {
+  var all_chars = str.split("");
+  for (var i = 0; i < all_chars.length; i++) {
+    var n = all_chars[i].charCodeAt() - 'a'.charCodeAt();
+    n = (n + 1) % 26;
+    all_chars[i] = String.fromCharCode(n + 'a'.charCodeAt());
+  }
+  return all_chars.join("");
+}
+console.log(alphabet_char_Shift("abcdxyz"))
 ```
 
 >ES6 Version:
 ```javascript
-
+function alphabet_char_Shift(str) {
+  const all_chars = str.split("");
+  for (let i = 0; i < all_chars.length; i++) {
+    let n = all_chars[i].charCodeAt() - 'a'.charCodeAt();
+    n = (n + 1) % 26;
+    all_chars[i] = String.fromCharCode(n + 'a'.charCodeAt());
+  }
+  return all_chars.join("");
+}
+console.log(alphabet_char_Shift("abcdxyz"))
 ```
 
 >Result:
 ```javascript
-
+bcdeyza
 ```
 
-**84.**
-
+**84. Write a JavaScript code to divide an given array of positive integers into two parts. First element goes to first part, second element goes to second part, and third element goes to first part and so on. Now compute the sum of two parts and store into an array of size two.**
+- Viết mã JavaScript để chia một mảng các số nguyên dương cho hai mảng. Phần tử thứ nhất đi đến phần thứ nhất, phần thứ hai đi đến phần thứ hai, và phần thứ ba đi đến phần đầu tiên và vân vân. Bây giờ tính tổng của hai phần và lưu trữ vào một mảng của kích thước hai.
 
 >JavaScript Code:
 ```javascript
+function alternate_Sums(arr) {
+  var result = [0, 0];
+  for (var i = 0; i < arr.length; i++) {
+    if (i % 2) result[1] += arr[i];
+    else
+      result[0] += arr[i];
+  }
+  return result
+}
 
+console.log(alternate_Sums([1, 2, 3, 4, 5, 6]))
 ```
 
 >ES6 Version:
 ```javascript
+function alternate_Sums(arr) {
+  const result = [0, 0];
+  for (let i = 0; i < arr.length; i++) {
+    if (i % 2) result[1] += arr[i];
+    else
+      result[0] += arr[i];
+  }
+  return result
+}
 
+console.log(alternate_Sums([1, 2, 3, 4, 5, 6]))
 ```
 
 >Result:
 ```javascript
-
+[9,12]
 ```
 
-**85.**
+**85. Write a JavaScript program to find the types of a given array.**
+- Viết một chương trình JavaScript để tìm các kiểu của mảng.
+Types of angles:
+• Acute angle: An angle between 0 and 90 degrees. - Góc cấp: Một góc từ 0 đến 90 độ.
+• Right angle: An 90 degree angle. - Góc phải: Góc 90 độ.
+• Obtuse angle: An angle between 90 and 180 degrees. - Góc nghiêng: góc 90 đến 180 độ.
+• Straight angle: A 180 degree angle. Góc thẳng: - Góc 180 độ.
 
 
 >JavaScript Code:
 ```javascript
+function angle_Type(angle) {
+  if (angle < 90) {
+    return "Acute angle.";
+  }
+  if (angle === 90) {
+    return "Right angle.";
+  }
+  if (angle < 180) {
+    return "Obtuse angle.";
+  }
+  return "Straight angle.";
+}
 
+console.log(angle_Type(47))
+console.log(angle_Type(90))
+console.log(angle_Type(145))
+console.log(angle_Type(180))
 ```
 
 >ES6 Version:
 ```javascript
+function angle_Type(angle) {
+  if (angle < 90) {
+    return "Acute angle.";
+  }
+  if (angle === 90) {
+    return "Right angle.";
+  }
+  if (angle < 180) {
+    return "Obtuse angle.";
+  }
+  return "Straight angle.";
+}
 
+console.log(angle_Type(47))
+console.log(angle_Type(90))
+console.log(angle_Type(145))
+console.log(angle_Type(180))
 ```
 
 >Result:
 ```javascript
-
+Acute angle.
+Right angle.
+Obtuse angle.
+Straight angle.
 ```
 
-**86.**
-
+**86. Write a JavaScript program to check whether two arrays of integers and same length are similar or not. The arrays will be similar if one array can be obtained from another array by swapping at most one pair of elements.**
+- Viết một chương trình JavaScript để kiểm tra xem hai mảng số nguyên và cùng độ dài có tương tự hay không. Các mảng sẽ giống nhau nếu một mảng có thể được lấy từ mảng khác bằng cách trao đổi nhiều nhất một cặp phần tử.
 
 >JavaScript Code:
 ```javascript
-
+function array_checking(arra1, arra2) {
+  for (var i = 0; i < arra1.length; i++) {
+    for (var j = i; j < arra1.length; j++) {
+      var result = true,
+        temp = arra1[i];
+      arra1[i] = arra1[j];
+      arra1[j] = temp;
+      for (var k = 0; k < arra1.length; k++) {
+        if (arra1[k] !== arra2[k]) {
+          result = false;
+          break;
+        }
+      }
+      if (result) {
+        return true;
+      }
+      arra1[j] = arra1[i];
+      arra1[i] = temp;
+    }
+  }
+  return false;
+}
+console.log(array_checking([10, 20, 30], [10, 20, 30]))
+console.log(array_checking([10, 20, 30], [30, 10, 20]))
+console.log(array_checking([10, 20, 30, 40], [10, 30, 20, 40]))
 ```
 
 >ES6 Version:
 ```javascript
-
+function array_checking(arra1, arra2) {
+  for (let i = 0; i < arra1.length; i++) {
+    for (let j = i; j < arra1.length; j++) {
+      let result = true;
+      const temp = arra1[i];
+      arra1[i] = arra1[j];
+      arra1[j] = temp;
+      for (let k = 0; k < arra1.length; k++) {
+        if (arra1[k] !== arra2[k]) {
+          result = false;
+          break;
+        }
+      }
+      if (result) {
+        return true;
+      }
+      arra1[j] = arra1[i];
+      arra1[i] = temp;
+    }
+  }
+  return false;
+}
+console.log(array_checking([10, 20, 30], [10, 20, 30]))
+console.log(array_checking([10, 20, 30], [30, 10, 20]))
+console.log(array_checking([10, 20, 30, 40], [10, 30, 20, 40]))
 ```
 
 >Result:
 ```javascript
-
+true
+false
+true
 ```
 
 **87.**
