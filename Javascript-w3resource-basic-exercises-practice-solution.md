@@ -2875,25 +2875,50 @@ console.log(add_two_digits(50))
 ```
 
 **81. Write a JavaScript to add two positive integers without carry**
-- Viết một JavaScript để thêm hai số nguyên dương mà không mang
+- Viết một JavaScript để thêm hai số nguyên dương mà không mang theo.
 
 >JavaScript Code:
 ```javascript
-
+function add_two_int_without_carrying(n1, n2) {
+  var result = 0,
+    x = 1;
+  while (n1 > 0 && n2 > 0) {
+    result += x * ((n1 + n2) % 10);
+    n1 = Math.floor(n1 / 10);
+    n2 = Math.floor(n2 / 10);
+    x *= 10;
+  }
+  return result;
+}
+console.log(add_two_int_without_carrying(222, 911))
+console.log(add_two_int_without_carrying(200, 900))
 ```
 
 >ES6 Version:
 ```javascript
-
+function add_two_int_without_carrying(n1, n2) {
+  let result = 0;
+  let x = 1;
+  while (n1 > 0 && n2 > 0) {
+    result += x * ((n1 + n2) % 10);
+    n1 = Math.floor(n1 / 10);
+    n2 = Math.floor(n2 / 10);
+    x *= 10;
+  }
+  return result;
+}
+console.log(add_two_int_without_carrying(222, 911))
+console.log(add_two_int_without_carrying(200, 900))
 ```
 
->Result:
+>​Result​:
 ```javascript
-
+133
+100
 ```
 
-**82.**
-
+**82. Write a JavaScript to find the longest string from an given array of strings.**
+- Viết một JavaScript để tìm chuỗi dài nhất từ ​​một mảng các chuỗi.
 
 >JavaScript Code:
 ```javascript
