@@ -3156,94 +3156,235 @@ false
 true
 ```
 
-**87.**
-
+**87. Write a JavaScript program to check whether two given integers are similar or not, if a given divisor divides both integers and it does not divide either.**
+- Viết một chương trình JavaScript để kiểm tra xem có hai số nguyên tương đương hay không, nếu một ước số chia cho cả hai số nguyên và nó không phân chia hai.
 
 >JavaScript Code:
 ```javascript
-
+function checking_numbers(x, y, divisor) {
+  if (x % divisor === 0 && y % divisor === 0 || x % divisor !== 0 && y % divisor !==
+    0) {
+    return true;
+  }
+  return false;
+}
+console.log(checking_numbers(10, 25, 5))
+console.log(checking_numbers(10, 20, 5))
+console.log(checking_numbers(10, 20, 4))
 ```
 
 >ES6 Version:
 ```javascript
-
+function checking_numbers(x, y, divisor) {
+  if (x % divisor === 0 && y % divisor === 0 || x % divisor !== 0 && y % divisor !==
+    0) {
+    return true;
+  }
+  return false;
+}
+console.log(checking_numbers(10, 25, 5))
+console.log(checking_numbers(10, 20, 5))
+console.log(checking_numbers(10, 20, 4))
 ```
 
 >Result:
 ```javascript
-
+true
+true
+false
 ```
 
-**88.**
-
+**88. Write a JavaScript program to check whether it is possible to replace $ in a given expression x $ y = z with one of the four signs +, -, * or / to obtain a correct expression. For example x = 10, y = 30 and z = 300, we can replace $ with a multiple operator (*) to obtain x * y = z**
+- Viết một chương trình JavaScript để kiểm tra xem có thể thay thế $ trong một biểu thức nhất định x $ y = z bằng một trong bốn dấu +, -, * hoặc / để có được một biểu thức chính xác. Ví dụ x = 10, y = 30 và z = 300, chúng ta có thể thay thế $ với một toán tử nhiều (*) để lấy x * y = z
 
 >JavaScript Code:
 ```javascript
-
+function check_arithmetic_Expression(x, y, z) {
+  return x + y == z || x * y == z || x / y == z || x - y == z;
+}
+console.log(check_arithmetic_Expression(10, 25, 35))
+console.log(check_arithmetic_Expression(10, 25, 250))
+console.log(check_arithmetic_Expression(30, 25, 5))
+console.log(check_arithmetic_Expression(100, 25, 4.0))
+console.log(check_arithmetic_Expression(100, 25, 25))
 ```
 
 >ES6 Version:
 ```javascript
-
+function check_arithmetic_Expression(x, y, z) {
+  return x + y == z || x * y == z || x / y == z || x - y == z;
+}
+console.log(check_arithmetic_Expression(10, 25, 35))
+console.log(check_arithmetic_Expression(10, 25, 250))
+console.log(check_arithmetic_Expression(30, 25, 5))
+console.log(check_arithmetic_Expression(100, 25, 4.0))
+console.log(check_arithmetic_Expression(100, 25, 25))
 ```
 
 >Result:
 ```javascript
-
+true
+true
+true
+true
+false
 ```
 
-**89.**
-
+**89. Write a JavaScript program to find the kth greatest element of a given array of integers.**
+- Viết một chương trình JavaScript để tìm ra phần tử lớn thứ k của một mảng số nguyên.
 
 >JavaScript Code:
 ```javascript
+function Kth_greatest_in_array(arr, k) {
+  for (var i = 0; i < k; i++) {
+    var max_index = i,
+        tmp = arr[i];
 
+    for (var j = i + 1; j < arr.length; j++) {
+      if (arr[j] > arr[max_index]) {
+        max_index = j;
+      }
+    }
+
+    arr[i] = arr[max_index];
+    arr[max_index] = tmp;
+  }
+
+  return arr[k - 1];
+}
+
+console.log(Kth_greatest_in_array([1, 2, 3, 4, 5], 3))
+console.log(Kth_greatest_in_array([-10, -25, -47, -36, 0], 1))
 ```
 
 >ES6 Version:
 ```javascript
+function Kth_greatest_in_array(arr, k) {
 
+  for (let i = 0; i < k; i++) {
+    let max_index = i;
+    const tmp = arr[i];
+
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] > arr[max_index]) {
+        max_index = j;
+      }
+    }
+
+    arr[i] = arr[max_index];
+    arr[max_index] = tmp;
+  }
+
+  return arr[k - 1];
+}
+
+console.log(Kth_greatest_in_array([1, 2, 3, 4, 5], 3))
+console.log(Kth_greatest_in_array([-10, -25, -47, -36, 0], 1))
 ```
 
 >Result:
 ```javascript
-
+3
+0
 ```
 
-**90.**
-
+**90. Write a JavaScript program to find the maximum possible sum of some of its k consecutive numbers (numbers that follow each other in order.) of a given array of positive integers.**
+- Viết một chương trình JavaScript để tìm tổng số tối đa có thể của một số số k liên tiếp của nó (số theo thứ tự theo thứ tự.) Của một mảng cho số nguyên dương.
 
 >JavaScript Code:
 ```javascript
+function array_max_consecutive_sum(nums, k) {
+  let result = 0;
+  let temp_sum = 0;
+  for (var i = 0; i < k - 1; i++) {
+    temp_sum += nums[i];
+  }
+  for (var i = k - 1; i < nums.length; i++) {
+    temp_sum += nums[i];
+    if (temp_sum > result) {
+      result = temp_sum;
+    }
+    temp_sum -= nums[i - k + 1];
+  }
+  return result;
+}
 
+console.log(array_max_consecutive_sum([1, 2, 3, 14, 5], 2))
+console.log(array_max_consecutive_sum([2, 3, 5, 1, 6], 3))
+console.log(array_max_consecutive_sum([9, 3, 5, 1, 7], 2))
 ```
 
 >ES6 Version:
 ```javascript
+function array_max_consecutive_sum(nums, k) {
+  let result = 0;
+  let temp_sum = 0;
+  for (var i = 0; i < k - 1; i++) {
+    temp_sum += nums[i];
+  }
+  for (var i = k - 1; i < nums.length; i++) {
+    temp_sum += nums[i];
+    if (temp_sum > result) {
+      result = temp_sum;
+    }
+    temp_sum -= nums[i - k + 1];
+  }
+  return result;
+}
 
+console.log(array_max_consecutive_sum([1, 2, 3, 14, 5], 2))
+console.log(array_max_consecutive_sum([2, 3, 5, 1, 6], 3))
+console.log(array_max_consecutive_sum([9, 3, 5, 1, 7], 2))
 ```
 
 >Result:
 ```javascript
-
+19
+12
+12
 ```
 
-**91.**
-
+**91. Write a JavaScript program to find the maximal difference between any two adjacent elements of a given array of integers.**
+- Viết một chương trình JavaScript để tìm sự khác biệt tối đa giữa hai phần tử liền kề của một mảng các số nguyên.
 
 >JavaScript Code:
 ```javascript
-
+function max_difference(arr) {
+  var max = -1;
+  var temp;
+  for (var i = 0; i < arr.length - 1; i++) {
+    temp = Math.abs(arr[i] - arr[i + 1]);
+    max = Math.max(max, temp);
+  }
+  return max;
+}
+console.log(max_difference([1, 2, 3, 8, 9]))
+console.log(max_difference([1, 2, 3, 18, 9]))
+console.log(max_difference([13, 2, 3, 8, 9]))
 ```
 
 >ES6 Version:
 ```javascript
+function max_difference(arr) {
+  let max = -1;
+  let temp;
+  for (let i = 0; i < arr.length - 1; i++) {
+    temp = Math.abs(arr[i] - arr[i + 1]);
+    max = Math.max(max, temp);
+  }
+  return max;
+}
 
+console.log(max_difference([1, 2, 3, 8, 9]))
+console.log(max_difference([1, 2, 3, 18, 9]))
+console.log(max_difference([13, 2, 3, 8, 9]))
 ```
 
 >Result:
 ```javascript
-
+5
+15
+11
 ```
 
 **92.**
