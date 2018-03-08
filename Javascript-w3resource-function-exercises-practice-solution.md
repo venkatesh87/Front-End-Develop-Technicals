@@ -42,7 +42,11 @@ console.log(reverse_a_number(32243));
 ```
 
 **2. Write a JavaScript function that checks whether a passed string is palindrome or not?**
-- Viết một hàm JavaScript để kiểm tra xem chuỗi đã qua có phải là palindrome hay không?
+- Viết một hàm JavaScript để kiểm tra xem chuỗi đã qua có phải là palindrome hay không? 
+- Một chuỗi được gọi là Palindrome nếu sau khi đảo ngược các ký tự của nó, ta nhận được chuỗi ban đầu. Ví dụ: chuỗi "MADAM" là Palindrome.
+- The ```toLowerCase()``` method converts a string to lowercase letters.
+- The ```replace()``` method searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced.(Phương thức ```replace()``` tìm kiếm một chuỗi cho một giá trị được chỉ định, hoặc một biểu thức chính quy, và trả về một chuỗi mới mà các giá trị được chỉ định được thay thế.)
+
 - **Note:** A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run. (Lưu ý: Một palindrome là từ, cụm từ hoặc trình tự đọc ngược lại tương tự như chuyển tiếp, ví dụ: madam hoặc các y tá chạy.)
 >JavaScript Code:
 ```javascript
