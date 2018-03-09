@@ -102,7 +102,8 @@ check_Palindrome('fox');
 - Viết một hàm JavaScript tạo ra tất cả các kết hợp của một chuỗi.
 - Example string: 'dog' 
 - Expected Output: d,o,do,g,dg,og,dog
-
+- The ```pow(x, y)``` method returns the value of x to the power of y (x mũ y). 
+- ```Math.pow(2, 3);``` ==> ```8```; ```Math.pow(4, 3);``` ==> ```64```
 >JavaScript Code:
 ```javascript
 //Write a JavaScript function that generates all combinations of a string.
