@@ -49,6 +49,14 @@ console.log(reverse_a_number(32243));
 - ```array.slice(start, end)```: The ```slice()``` method returns the selected elements in an array, as a new array object. Phương thức slice () trả về các phần tử đã chọn trong một mảng, như một đối tượng mảng mới.
 - Use negative numbers to select from the end of an array(Sử dụng số âm để chọn từ cuối mảng)
 - **Note:** A palindrome is word, phrase, or sequence that reads the same backward as forward, e.g., madam or nurses run. (Lưu ý: Một palindrome là từ, cụm từ hoặc trình tự đọc ngược lại tương tự như chuyển tiếp, ví dụ: madam hoặc các y tá chạy.)
+- Thay đổi chuỗi thành chữ thường và loại bỏ tất cả các ký tự không phải là chữ và số
+- Kiểm tra xem chuỗi có rỗng hay không
+- Kiểm tra xem chiều dài của chuỗi có bằng nhau hay không
+- Nếu chiều dài của chuỗi là 1 sau đó nó sẽ trở thành một palindrome
+- Nếu chiều dài của chuỗi là lẻ bỏ qua nhân vật trung gian
+- Lặp qua để kiểm tra ký tự đầu tiên cho nhân vật cuối cùng và sau đó di chuyển tiếp theo
+
+// So sánh các ký tự và thả chúng nếu chúng không khớp
 >JavaScript Code:
 ```javascript
 // Write a JavaScript function that checks whether a passed string is palindrome or not? 
