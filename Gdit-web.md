@@ -12,37 +12,39 @@
 
 │   │   ├── [Kyoto](http://www.kyototourism.org/)
 
-│   │   ├── [NaritaKanko]()
+│   │   ├── [NaritaKanko](http://www.nrtk.jp/top.html)
 
 │   │   ├── [Saitama-Womenomic](https://www.pref.saitama.lg.jp/womenomics/)
 
 │   │   ├── [Koufu](http://www.kofu500.com)
 
-│   │   ├── [Tochigi]()
+│   │   ├── [Tochigi](http://www.pref.tochigi.lg.jp/culture/)
 
 │   │   ├── [JapanDesk](http://jp.investdanang.gov.vn/)
 
 │   │   ├── [HTML5 Kyoto](http://kyoto-landing.globaldesignit.vn/landing_top.html) [ID: kyoto-landing ; Pass: MBGzzP^K]
 
-│   │   ├── [Nerima]()
+│   │   ├── [Nerima](http://nerima-demo.globaldesignit.vn/top.html) [ID: nerima-demo ; Pass: Qr92cxDq]
 
-│   │   ├── [FuJiSan]()
+│   │   ├── [Pattern Global Design IT](http://pattern.globaldesignit.vn/) [ID: pattern ; Pass: b=?4VvD,]
 
-│   │   ├── [Minoh_City]()
+│   │   ├── [FuJiSan](https://www.fujisan-3776.jp/index.html)
 
-│   │   ├── [Minoh_City Old](http://www.city.minoh.lg.jp/)
+│   │   ├── [Minoh_City](http://www.city.minoh.lg.jp/)
 
-│   │   ├── [Hiroshima]()
+│   │   ├── [Hiroshima](http://www.pref.hiroshima.lg.jp/)
 
-│   │   ├── [Chiba Kun’s Hiroba]()
+│   │   ├── [Chiba Kun’s Hiroba](https://www.pref.chiba.lg.jp/kouhou/miryoku/chi-ba-kun/index.html)
 
 │   │   ├── [Chiba Kun’s Hiroba Old](https://www.pref.chiba.lg.jp/moji/index.html) 
 
-│   │   ├── [Kinutoh]()
+│   │   ├── [Kinutoh](http://www.kinutoh.jp/index.html)
 
-│   │   ├── [Niigata Tourism]()
+│   │   ├── [Niigata Tourism](https://www.niigata-kankou.or.jp/)
 
 │   │   ├── [Booking System]()
 
 │   │   └── [Booking System Admin]()
+
+
 
