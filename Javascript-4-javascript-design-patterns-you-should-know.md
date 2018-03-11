@@ -33,8 +33,8 @@
   1. **Implementation:** What does the implementation look like?
   
 <a name="case1"></a><a name="I"></a>
-## [I](#case1).Module Design Pattern
----
+### [I](#case1).Module Design Pattern
+
 - JavaScript modules are the most prevalently used design patterns for keeping particular pieces of code independent of other components. This provides loose coupling to support well-structured code.
 - For those that are familiar with object-oriented languages, modules are JavaScript "classes". One of the many advantages of classes is encapsulation - protecting states and behaviors from being accessed from other classes. The module pattern allows for public and private (plus the lesser-know protected and privileged) access levels.
 - Modules should be Immediately-Invoked-Function-Expressions (IIFE) to allow for private scopes - that is, a closure that protect variables and methods (however, it will return an object instead of a function). This is what it looks like:
@@ -76,8 +76,8 @@ console.log(HTMLChanger.contents);  // undefined
 ```
 - Notice that ```callChangeHTML``` binds to the returned object and can be referenced within the ```HTMLChanger``` namespace. However, when outside the module, contents are unable to be referenced.
 
-## Revealing Module Pattern
----
+### Revealing Module Pattern
+
 - A variation of the module pattern is called the **Revealing Module Pattern**. The purpose is to maintain encapsulation and reveal certain variables and methods returned in an object literal. The direct implementation looks like this:
 
 >JavaScript Code:
@@ -157,7 +157,8 @@ TeslaModelS.prototype = {
   }
 }
 ```
-## Revealing Prototype Pattern
+### Revealing Prototype Pattern
+
 - Similar to Module pattern, the Prototype pattern also has a revealing variation. The Revealing Prototype Pattern provides encapsulation with public and private members since it returns an object literal.
 - Since we are returning an object, we will prefix the prototype object with a function. By extending our example above, we can choose what we want to expose in the current prototype to preserve their access levels:
 
@@ -189,8 +190,8 @@ TeslaModelS.prototype = function() {
 - Note how the functions stop and go will be shielded from the returning object due to being outside of returned object's scope. Since JavaScript natively supports prototypical inheritance, there is no need to rewrite underlying features.
 
 <a name="case3"></a><a name="III"></a>
-## [III](#case3). Observer Design Pattern
----
+### [III](#case3). Observer Design Pattern
+
 - There are many times when one part of the application changes, other parts needs to be updated. In AngularJS, if the ```$scope``` object updates, an event can be triggered to notify another component. The observer pattern incorporates just that - if an object is modified it **broadcasts** to dependent objects that a change has occurred.
 - Another prime example is the model-view-controller (MVC) architecture; The view updates when the model changes. One benefit is decoupling the view from the model to reduce dependencies.
 
@@ -284,8 +285,8 @@ subject.notifyAllObservers();
 - In AngularJS, a subscriber 'subscribes' to an event using $on('event', callback), and a publisher 'publishes' an event using $emit('event', args) or $broadcast('event', args).
 
 <a name="case4"></a><a name="IV"></a>
-## [IV](#case4). Singleton
----
+### [IV](#case4). Singleton
+
 - A Singleton only allows for a single instantiation, but many instances of the same object. The Singleton restricts clients from creating multiple objects, after the first object created, it will return instances of itself.
 - Finding use cases for Singletons is difficult for most who have not yet used it prior. One example is using an office printer. If there are ten people in an office, and they all use one printer, ten computers share one printer (instance). By sharing one printer, they share the same resources.
 
@@ -342,7 +343,7 @@ var officePrinter = printer.getInstance();
 - Race conditions occur in multi-threaded applications when more than one thread tries to access the same resource. Singletons are susceptible to race conditions, such that if no instance were initialized first, two threads could then create two objects instead of returning and instance. This defeats the purpose of a singleton. Therefore, developers must be privy to synchronization when implementing singletons in multithreaded applications.
 
 <a name="case5"></a><a name="V"></a>
-## [V](#case4). Conclusion
-----
+### [V](#case4). Conclusion
+
 - Design patterns are frequently used in larger applications, though to understand where one might be advantageous over another, comes with practice.
 - Before building any application, you should thoroughly think about each actor and how they interact with one another. After reviewing the ```Module```, ```Prototype```, ```Observer```, and ```Singleton``` design patterns, you should be able to identify these patterns and use them in the wild.
