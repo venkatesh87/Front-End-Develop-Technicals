@@ -73,7 +73,11 @@
 
 1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc.md)
 
-#### II.Document Link Outsite
+#### II.JavaScript Design Patterns You Should Know
+---
+1. [4 JavaScript Design Patterns You Should Know](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/javaScript-4-javascript-design-patterns-you-should-know.md)
+
+#### III.Document Link Outsite
 ---
 
 1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
@@ -112,7 +116,7 @@
 
 1. [W3schools](https://www.w3schools.com/js/)
 
-#### III. Tool Code Javascript Online
+#### IV. Tool Code Javascript Online
 ---
 
 1. [Jsbin](https://jsbin.com/?html,css,js,console)
