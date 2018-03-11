@@ -4,6 +4,7 @@
 - JavaScript web developers frequently interact with design patterns, even unknowingly, when creating applications.
 
 >**Table of Contents**
+
    I.Module Design Pattern
    II.Prototype Design Pattern
    III.Observer Design Pattern
