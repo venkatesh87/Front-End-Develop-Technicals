@@ -5,15 +5,15 @@
 
 >**Table of Contents**
 
-     I.Module Design Pattern
+     [I.Module Design Pattern](#case1) 
    
-     II.Prototype Design Pattern
+     [II.Prototype Design Pattern](#case2) 
    
-     III.Observer Design Pattern
+     [III.Observer Design Pattern](#case3) 
    
-     IV.Singleton
+     [IV.Singleton](#case4) 
    
-     V.Conclusion
+     [V.Conclusion](#case5) 
    
 - Although there is a diverse list of design patterns used in certain circumstances, JavaScript developers tend to use some patterns customarily more than others.
 
@@ -32,7 +32,8 @@
   1. **Solution:** How does using this pattern solve our proposed problem?
   1. **Implementation:** What does the implementation look like?
   
-#### I.Module Design Pattern
+<a name="case1"></a><a name="I"></a>
+#### I(#case1).Module Design Pattern
 ---
 - JavaScript modules are the most prevalently used design patterns for keeping particular pieces of code independent of other components. This provides loose coupling to support well-structured code.
 - For those that are familiar with object-oriented languages, modules are JavaScript "classes". One of the many advantages of classes is encapsulation - protecting states and behaviors from being accessed from other classes. The module pattern allows for public and private (plus the lesser-know protected and privileged) access levels.
