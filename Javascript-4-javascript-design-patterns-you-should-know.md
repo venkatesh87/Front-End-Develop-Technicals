@@ -1,9 +1,10 @@
 # Four JavaScript Design Patterns You Should Know
----
+
 - Every developer strives to write maintainable, readable, and reusable code. Code structuring becomes more important as applications become larger. Design patterns prove crucial to solving this challenge - providing an organization structure for common issues in a particular circumstance.
 - JavaScript web developers frequently interact with design patterns, even unknowingly, when creating applications.
 
-## Table of Contents
+### Table of Contents
+---
 
    [I.Module Design Pattern](#case1)
    
@@ -34,7 +35,7 @@
   
 <a name="case1"></a><a name="I"></a>
 ### [I](#case1).Module Design Pattern
-
+---
 - JavaScript modules are the most prevalently used design patterns for keeping particular pieces of code independent of other components. This provides loose coupling to support well-structured code.
 - For those that are familiar with object-oriented languages, modules are JavaScript "classes". One of the many advantages of classes is encapsulation - protecting states and behaviors from being accessed from other classes. The module pattern allows for public and private (plus the lesser-know protected and privileged) access levels.
 - Modules should be Immediately-Invoked-Function-Expressions (IIFE) to allow for private scopes - that is, a closure that protect variables and methods (however, it will return an object instead of a function). This is what it looks like:
@@ -77,7 +78,7 @@ console.log(HTMLChanger.contents);  // undefined
 - Notice that ```callChangeHTML``` binds to the returned object and can be referenced within the ```HTMLChanger``` namespace. However, when outside the module, contents are unable to be referenced.
 
 ### Revealing Module Pattern
-
+---
 - A variation of the module pattern is called the **Revealing Module Pattern**. The purpose is to maintain encapsulation and reveal certain variables and methods returned in an object literal. The direct implementation looks like this:
 
 >JavaScript Code:
@@ -111,8 +112,8 @@ Exposer.methodToExpose; // undefined
 - Although this looks much cleaner, an obvious disadvantage is unable to reference the private methods. This can pose unit testing challenges. Similarly, the public behaviors are non-overridable.
 
 <a name="case2"></a><a name="II"></a>
-## [II](#case2). Prototype Design Pattern
-
+### [II](#case2). Prototype Design Pattern
+---
 - Any JavaScript developer has either seen the keyword prototype, confused by the prototypical inheritance, or implemented prototypes in their code. The Prototype design pattern relies on the [JavaScript prototypical inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain). The prototype model is used mainly for creating objects in performance-intensive situations.
 
 - The objects created are clones (shallow clones) of the original object that are passed around. One use case of the prototype pattern is performing an extensive database operation to create an object used for other parts of the application. If another process needs to use this object, instead of having to perform this substantial database operation, it would be advantageous to clone the previously created object.
@@ -158,7 +159,7 @@ TeslaModelS.prototype = {
 }
 ```
 ### Revealing Prototype Pattern
-
+---
 - Similar to Module pattern, the Prototype pattern also has a revealing variation. The Revealing Prototype Pattern provides encapsulation with public and private members since it returns an object literal.
 - Since we are returning an object, we will prefix the prototype object with a function. By extending our example above, we can choose what we want to expose in the current prototype to preserve their access levels:
 
@@ -191,7 +192,7 @@ TeslaModelS.prototype = function() {
 
 <a name="case3"></a><a name="III"></a>
 ### [III](#case3). Observer Design Pattern
-
+---
 - There are many times when one part of the application changes, other parts needs to be updated. In AngularJS, if the ```$scope``` object updates, an event can be triggered to notify another component. The observer pattern incorporates just that - if an object is modified it **broadcasts** to dependent objects that a change has occurred.
 - Another prime example is the model-view-controller (MVC) architecture; The view updates when the model changes. One benefit is decoupling the view from the model to reduce dependencies.
 
@@ -286,7 +287,7 @@ subject.notifyAllObservers();
 
 <a name="case4"></a><a name="IV"></a>
 ### [IV](#case4). Singleton
-
+---
 - A Singleton only allows for a single instantiation, but many instances of the same object. The Singleton restricts clients from creating multiple objects, after the first object created, it will return instances of itself.
 - Finding use cases for Singletons is difficult for most who have not yet used it prior. One example is using an office printer. If there are ten people in an office, and they all use one printer, ten computers share one printer (instance). By sharing one printer, they share the same resources.
 
@@ -344,6 +345,6 @@ var officePrinter = printer.getInstance();
 
 <a name="case5"></a><a name="V"></a>
 ### [V](#case4). Conclusion
-
+---
 - Design patterns are frequently used in larger applications, though to understand where one might be advantageous over another, comes with practice.
 - Before building any application, you should thoroughly think about each actor and how they interact with one another. After reviewing the ```Module```, ```Prototype```, ```Observer```, and ```Singleton``` design patterns, you should be able to identify these patterns and use them in the wild.
