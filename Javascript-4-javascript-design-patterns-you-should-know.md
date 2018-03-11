@@ -3,13 +3,13 @@
 - Every developer strives to write maintainable, readable, and reusable code. Code structuring becomes more important as applications become larger. Design patterns prove crucial to solving this challenge - providing an organization structure for common issues in a particular circumstance.
 - JavaScript web developers frequently interact with design patterns, even unknowingly, when creating applications.
 
->**Table of Contents**
----
-     [I.Module Design Pattern](#case1)
-     [II.Prototype Design Pattern](#case2) 
-     [III.Observer Design Pattern](#case3) 
-     [IV.Singleton](#case4) 
-     [V.Conclusion](#case5) 
+## Table of Contents
+
+   [I.Module Design Pattern](#case1)
+   [II.Prototype Design Pattern](#case2) 
+   [III.Observer Design Pattern](#case3) 
+   [IV.Singleton](#case4) 
+   [V.Conclusion](#case5) 
    
 - Although there is a diverse list of design patterns used in certain circumstances, JavaScript developers tend to use some patterns customarily more than others.
 
