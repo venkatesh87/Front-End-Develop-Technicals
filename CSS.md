@@ -2,6 +2,8 @@
 
 1. [Pseudo-classes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Pseudo-classes.md)
 
+1. [CSS Gradient](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-gradient.md)
+
 2. [CSS Variables](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-variables.md)
 
 
