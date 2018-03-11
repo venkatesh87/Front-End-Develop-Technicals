@@ -106,7 +106,11 @@
 
 1. [Javascript Info](http://javascript.info/)
 
-1. []()
+1. [Tutorialspoint](https://www.tutorialspoint.com/javascript/index.htm)
+
+1. [Javatpoint](https://www.javatpoint.com/javascript-tutorial)
+
+1. [W3schools](https://www.w3schools.com/js/)
 
 #### III. Tool Code Javascript Online
 ---
