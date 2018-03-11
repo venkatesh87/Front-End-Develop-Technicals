@@ -6,9 +6,13 @@
 >**Table of Contents**
 
    I.Module Design Pattern
+   
    II.Prototype Design Pattern
+   
    III.Observer Design Pattern
+   
    IV.Singleton
+   
    V.Conclusion
    
 - Although there is a diverse list of design patterns used in certain circumstances, JavaScript developers tend to use some patterns customarily more than others.
