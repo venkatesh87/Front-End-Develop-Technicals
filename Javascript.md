@@ -69,13 +69,13 @@
 
 1. [Javascript introduction to functional](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-introduction-to-functional.md)
 
-1. [Javascript variable scope and hoisting](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/javaScript-variable-scope-and-hoisting.md)
+1. [Javascript variable scope and hoisting](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/javascript-variable-scope-and-hoisting.md)
 
 1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc.md)
 
 #### II.JavaScript Design Patterns You Should Know
 ---
-1. [4 JavaScript Design Patterns You Should Know](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/javaScript-4-javascript-design-patterns-you-should-know.md)
+1. [4 JavaScript Design Patterns You Should Know](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/javascript-4-javascript-design-patterns-you-should-know.md)
 
 #### III.Document Link Outsite
 ---
