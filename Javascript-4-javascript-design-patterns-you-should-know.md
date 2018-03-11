@@ -4,8 +4,7 @@
 - JavaScript web developers frequently interact with design patterns, even unknowingly, when creating applications.
 
 >**Table of Contents**
-
-     [I.Module Design Pattern](#case1) 
+     [I.Module Design Pattern](#case1)
    
      [II.Prototype Design Pattern](#case2) 
    
@@ -33,7 +32,7 @@
   1. **Implementation:** What does the implementation look like?
   
 <a name="case1"></a><a name="I"></a>
-#### I(#case1).Module Design Pattern
+#### [I](#case1).Module Design Pattern
 ---
 - JavaScript modules are the most prevalently used design patterns for keeping particular pieces of code independent of other components. This provides loose coupling to support well-structured code.
 - For those that are familiar with object-oriented languages, modules are JavaScript "classes". One of the many advantages of classes is encapsulation - protecting states and behaviors from being accessed from other classes. The module pattern allows for public and private (plus the lesser-know protected and privileged) access levels.
