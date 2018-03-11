@@ -4,12 +4,12 @@
 - JavaScript web developers frequently interact with design patterns, even unknowingly, when creating applications.
 
 >**Table of Contents**
-
-     [I. Module Design Pattern](#case1)
-     [II. Prototype Design Pattern](#case2) 
-     [III. Observer Design Pattern](#case3) 
-     [IV. Singleton](#case4) 
-     [V. Conclusion](#case5) 
+---
+     [I.Module Design Pattern](#case1)
+     [II.Prototype Design Pattern](#case2) 
+     [III.Observer Design Pattern](#case3) 
+     [IV.Singleton](#case4) 
+     [V.Conclusion](#case5) 
    
 - Although there is a diverse list of design patterns used in certain circumstances, JavaScript developers tend to use some patterns customarily more than others.
 
@@ -106,7 +106,8 @@ Exposer.methodToExpose; // undefined
 ```
 - Although this looks much cleaner, an obvious disadvantage is unable to reference the private methods. This can pose unit testing challenges. Similarly, the public behaviors are non-overridable.
 
-#### II. Prototype Design Pattern
+<a name="case2"></a><a name="II"></a>
+## [II](#case2). Prototype Design Pattern
 
 - Any JavaScript developer has either seen the keyword prototype, confused by the prototypical inheritance, or implemented prototypes in their code. The Prototype design pattern relies on the [JavaScript prototypical inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain). The prototype model is used mainly for creating objects in performance-intensive situations.
 
@@ -183,7 +184,8 @@ TeslaModelS.prototype = function() {
 ```
 - Note how the functions stop and go will be shielded from the returning object due to being outside of returned object's scope. Since JavaScript natively supports prototypical inheritance, there is no need to rewrite underlying features.
 
-## III. Observer Design Pattern
+<a name="case3"></a><a name="III"></a>
+## [III](#case3). Observer Design Pattern
 ---
 - There are many times when one part of the application changes, other parts needs to be updated. In AngularJS, if the ```$scope``` object updates, an event can be triggered to notify another component. The observer pattern incorporates just that - if an object is modified it **broadcasts** to dependent objects that a change has occurred.
 - Another prime example is the model-view-controller (MVC) architecture; The view updates when the model changes. One benefit is decoupling the view from the model to reduce dependencies.
@@ -277,7 +279,8 @@ subject.notifyAllObservers();
 - Many developers choose to aggregate the publish/subscribe design pattern with the observer though there is a distinction. Subscribers in the publish/subscribe pattern are notified through some messaging medium, but observers are notified by implementing a handler similar to the subject.
 - In AngularJS, a subscriber 'subscribes' to an event using $on('event', callback), and a publisher 'publishes' an event using $emit('event', args) or $broadcast('event', args).
 
-## IV. Singleton
+<a name="case4"></a><a name="IV"></a>
+## [IV](#case4). Singleton
 ---
 - A Singleton only allows for a single instantiation, but many instances of the same object. The Singleton restricts clients from creating multiple objects, after the first object created, it will return instances of itself.
 - Finding use cases for Singletons is difficult for most who have not yet used it prior. One example is using an office printer. If there are ten people in an office, and they all use one printer, ten computers share one printer (instance). By sharing one printer, they share the same resources.
@@ -334,7 +337,8 @@ var officePrinter = printer.getInstance();
 - In AngularJS, Singletons are prevalent, the most notable being services, factories, and providers. Since they maintain state and provides resource accessing, creating two instances defeats the point of a shared service/factory/provider.
 - Race conditions occur in multi-threaded applications when more than one thread tries to access the same resource. Singletons are susceptible to race conditions, such that if no instance were initialized first, two threads could then create two objects instead of returning and instance. This defeats the purpose of a singleton. Therefore, developers must be privy to synchronization when implementing singletons in multithreaded applications.
 
-## V. Conclusion
+<a name="case5"></a><a name="V"></a>
+## [V](#case4). Conclusion
 ----
 - Design patterns are frequently used in larger applications, though to understand where one might be advantageous over another, comes with practice.
 - Before building any application, you should thoroughly think about each actor and how they interact with one another. After reviewing the ```Module```, ```Prototype```, ```Observer```, and ```Singleton``` design patterns, you should be able to identify these patterns and use them in the wild.
