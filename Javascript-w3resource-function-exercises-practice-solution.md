@@ -229,22 +229,40 @@ The Quick Brown Fox
 ```
 
 **6. Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.**
+- Write a JavaScript function that accepts a string as a parameter and find the longest word within the string.
 - Viết một hàm JavaScript chấp nhận một chuỗi như một tham số và tìm thấy từ dài nhất trong chuỗi.
 - Sample Data and output: 
 - Example string: 'Web Development Tutorial' 
 - Expected Output: 'Development'
+
+**Explanation:**
+- Assume str = '@Web Development #Tutorial';
+- The ```match()``` method is used to retrieve the matches when matching a string against a regular expression.
+- The match() method searches a string for a match against a regular expression, and returns the matches, as an Array object.(Phương thức match () tìm kiếm một chuỗi cho một đối sánh với một biểu thức chính quy và trả về các đối sánh, như một đối tượng Array.)
+- Therefore ```str.match(/\w[a-z]{0,}/gi)``` will ```return ["Web", "Development", "Tutorial"]```.
+- For loop checks the length of the array element and compare with previous one and finally return the longest string.
+- The length property represents an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.
+```Syntax -> arr.length```
+
 >JavaScript Code:
 ```javascript
+function find_longest_word(str) {
+  var array1 = str.match(/\w[a-z]{0,}/gi);
+  var result = array1[0];
 
-```
-
->ES6 Version:
-
+  for (var x = 1; x < array1.length; x++) {
+    if (result.length < array1[x].length) {
+        result = array1[x];
+    }
+  }
+  return result;
+}
+console.log(find_longest_word('Web Development Tutorial'));
 ```
 
 >Result:
 ```javascript
-
+Development
 ```
 
 **7. **
