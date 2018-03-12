@@ -300,20 +300,39 @@ console.log(vowel_count("The quick brown fox"));
 5
 ```
 
-**8. **
+**8. Write a JavaScript function that accepts a number as a parameter and check the number is prime or not.**
+
+- Viết một hàm JavaScript chấp nhận một số như một tham số và kiểm tra số đó là số nguyên tố hay không.
+- Số nguyên tố là số tự nhiên chỉ có hai ước số dương phân biệt là 1 và chính nó. Các số có nhiều hơn 2 ước số dương được gọi là hợp số.
+- Do số 1 chỉ có một (1) ước số dương là chính nó, nên số 1 không phải là số nguyên tố và cũng không phải là hợp số.
+- Các số nguyên tố từ 2 đến 100:
+```2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97```
+- Số 2 là số nguyên tố nhỏ nhất, và cũng là số nguyên tố chẵn duy nhất. 
 
 >JavaScript Code:
 ```javascript
+function test_prime(n) {
 
-```
+  if (n === 1) {
+    return false;
+  } else if (n === 2) {
+    return true;
+  } else {
+    for (var x = 2; x < n; x++) {
+      if (n % x === 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+}
 
->ES6 Version:
-
+console.log(test_prime(37));
 ```
 
 >Result:
 ```javascript
-
+true
 ```
 
 **9. **
