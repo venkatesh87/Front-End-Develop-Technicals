@@ -335,36 +335,83 @@ console.log(test_prime(37));
 true
 ```
 
-**9. **
+**9. Write a JavaScript function which accepts an argument and returns the type.**
+- Viết một hàm JavaScript chấp nhận đối số và trả về kiểu.
+- **Note** : There are six possible values that typeof returns: object, boolean, function, number, string, and undefined.
 
 >JavaScript Code:
 ```javascript
+function detect_data_type(value) {
+  var dtypes = [Function, RegExp, Number, String, Boolean, Object],
+    x, len;
 
+  if (typeof value === "object" || typeof value === "function") {
+    for (x = 0, len = dtypes.length; x < len; x++) {
+      if (value instanceof dtypes[x]) {
+        return dtypes[x];
+      }
+    }
+  }
+
+  return typeof value;
+}
+console.log(detect_data_type(12));
+console.log(detect_data_type('w3resource'));
+console.log(detect_data_type(false));
 ```
 
->ES6 Version:
+>Result:
 
+```javascript
+number
+string
+boolean
+```
+
+**10. Write a JavaScript function which returns the n rows by n columns identity matrix**
+
+>JavaScript Code:
+```javascript
+function matrix(n) {
+  var i;
+  var j;
+
+  for (i = 0; i < n; i++) {
+    for (j = 0; j < n; j++) {
+      if (i === j) {
+        console.log(' 1 ');
+      } else {
+        console.log(' 0 ');
+      }
+    }
+    console.log('----------');
+  }
+}
+matrix(4);
 ```
 
 >Result:
 ```javascript
-
-```
-
-**10. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
+1 
+ 0 
+ 0 
+ 0 
+----------
+ 0 
+ 1 
+ 0 
+ 0 
+----------
+ 0 
+ 0 
+ 1 
+ 0 
+----------
+ 0 
+ 0 
+ 0 
+ 1 
+----------
 ```
 
 **11. **
