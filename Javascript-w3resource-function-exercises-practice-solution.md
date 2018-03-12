@@ -414,14 +414,10 @@ matrix(4);
 ----------
 ```
 
-**11. **
-
+**11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.**
+- Viết một hàm JavaScript sẽ lấy một mảng số được lưu trữ và tìm số thứ hai thấp nhất thứ hai và thứ hai lớn nhất, tương ứng.
 >JavaScript Code:
 ```javascript
-
-```
-
->ES6 Version:
 
 ```
 
