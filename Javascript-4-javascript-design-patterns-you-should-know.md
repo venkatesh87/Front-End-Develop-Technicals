@@ -166,19 +166,21 @@ TeslaModelS.prototype = {
 >JavaScript Code:
 ```javascript
 var TeslaModelS = function() {
-  this.numWheels    = 4;
+  this.numWheels = 4;
   this.manufacturer = 'Tesla';
-  this.make         = 'Model S';
+  this.make = 'Model S';
 }
 
 TeslaModelS.prototype = function() {
 
   var go = function() {
     // Rotate wheels
+    console.log("Rotate wheels");
   };
 
   var stop = function() {
     // Apply brake pads
+    console.log("Apply brake pads");
   };
 
   return {
@@ -187,6 +189,8 @@ TeslaModelS.prototype = function() {
   }
 
 }();
+TeslaModelS.prototype.pressBrakePedal();
+TeslaModelS.prototype.pressGasPedal();
 ```
 - Note how the functions stop and go will be shielded from the returning object due to being outside of returned object's scope. Since JavaScript natively supports prototypical inheritance, there is no need to rewrite underlying features.
 
