@@ -306,7 +306,7 @@
 
 **Syntax**
 
-```javascript
+```javascripts
 /* Keyword values */
 writing-mode: horizontal-tb;
 writing-mode: vertical-rl;
