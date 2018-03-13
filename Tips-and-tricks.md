@@ -408,4 +408,4 @@ writing-mode: unset;
 }
 ```
 Reference-style: 
-![alt text][https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/writing-mode-actual-result.png]
+![alt text](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/writing-mode-actual-result.png)
