@@ -296,3 +296,112 @@
   >6.6 **%**:
   
   >6.6 **In**:
+  
+7. Advanced Text Styling and Positioning with CSS(3)
+---
+**Refer :** https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
+- The **writing-mode** CSS property defines whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
+
+**Syntax**
+
+```javascript
+/* Keyword values */
+writing-mode: horizontal-tb;
+writing-mode: vertical-rl;
+writing-mode: vertical-lr;
+
+/* Global values */
+writing-mode: inherit;
+writing-mode: initial;
+writing-mode: unset;
+```
+- The ```writing-mode``` property is specified as one of the values listed below.
+- **horizontal-tb**: Content flows horizontally from left to right, vertically from top to bottom. The next horizontal line is positioned below the previous line.
+- **vertical-rl**: Content flows vertically from top to bottom, horizontally from right to left. The next vertical line is positioned to the left of the previous line.
+- **vertical-lr**: Content flows vertically from top to bottom, horizontally from left to right. The next vertical line is positioned to the right of the previous line.
+- **sideways-rl**: Content flows vertically from top to bottom and all the glyphs, even those in vertical scripts, are set sideways toward the right.
+- **sideways-lr**: Content flows vertically from top to bottom and all the glyphs, even those in vertical scripts, are set sideways toward the left.
+- **lr**: Deprecated except for SVG1 documents. For CSS, use horizontal-tb instead.
+- **lr-tb**: Deprecated except for SVG1 documents. For CSS, use horizontal-tb instead.
+- **rl**: Deprecated except for SVG1 documents. For CSS, use horizontal-tb instead.
+- **tb**: Deprecated except for SVG1 documents. For CSS, use vertical-lr instead.
+- **tb-rl**: Deprecated except for SVG1 documents. For CSS, use vertical-rl instead.
+
+>**HTML**
+- The HTML is simply a <table> with each writing mode in a row with a column showing text in various scripts using that writing mode.
+  
+```javascript
+<table>
+  <tr>
+    <th>Value</th>
+    <th>Vertical script</th>
+    <th>Horizontal script</th>
+    <th>Mixed script</th>
+  </tr>
+  <tr>
+    <td>horizontal-tb</td>
+    <td class="example Text1"><span>我家没有电脑。</span></td>
+    <td class="example Text1"><span>Example text</span></td>
+    <td class="example Text1"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>vertical-lr</td>
+    <td class="example Text2"><span>我家没有电脑。</span></td>
+    <td class="example Text2"><span>Example text</span></td>
+    <td class="example Text2"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>vertical-rl</td>
+    <td class="example Text3"><span>我家没有电脑。</span></td>
+    <td class="example Text3"><span>Example text</span></td>
+    <td class="example Text3"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>sideways-lr</td>
+    <td class="example Text4"><span>我家没有电脑。</span></td>
+    <td class="example Text4"><span>Example text</span></td>
+    <td class="example Text4"><span>1994年に至っては</span></td>
+  </tr>
+  <tr>
+    <td>sideways-rl</td>
+    <td class="example Text5"><span>我家没有电脑。</span></td>
+    <td class="example Text5"><span>Example text</span></td>
+    <td class="example Text5"><span>1994年に至っては</span></td>
+  </tr>
+</table>
+```
+
+>**CSS**
+- The CSS that adjusts the directionality of the content looks like this:
+
+```javascript
+.example.Text1 span, .example.Text1 {
+  writing-mode: horizontal-tb;
+  -webkit-writing-mode: horizontal-tb;
+  -ms-writing-mode: horizontal-tb;
+}
+
+.example.Text2 span, .example.Text2 {
+  writing-mode: vertical-lr;
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: vertical-lr;
+}
+
+.example.Text3 span, .example.Text3 {
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+}
+
+.example.Text4 span, .example.Text4 {
+  writing-mode: sideways-lr;
+  -webkit-writing-mode: sideways-lr;
+  -ms-writing-mode: sideways-lr;
+}
+
+.example.Text5 span, .example.Text5 {
+  writing-mode: sideways-rl;
+  -webkit-writing-mode: sideways-rl;
+  -ms-writing-mode: sideways-rl;
+}
+```
