@@ -299,7 +299,9 @@
   
 7. Advanced Text Styling and Positioning with CSS(3)
 ---
+
 **Refer :** https://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode
+
 - The **writing-mode** CSS property defines whether lines of text are laid out horizontally or vertically, as well as the direction in which blocks progress.
 
 **Syntax**
