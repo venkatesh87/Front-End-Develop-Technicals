@@ -408,7 +408,7 @@ writing-mode: unset;
 }
 ```
 
-![alt text](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/writing-mode-actual-result.png)
+Reference: ![alt text](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/writing-mode-actual-result.png)
 
 **8.:first-letter**
 
