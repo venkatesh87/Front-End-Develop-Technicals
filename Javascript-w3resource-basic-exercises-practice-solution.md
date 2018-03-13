@@ -14,25 +14,25 @@
 >CSS
 ```javascript
 div {
-	padding: 60px;
-	width: 60px;
-	font-size: 3em;
-	background: pink;
-	text-align: center;
-	margin: 1%;
-	display: inline-block;
-	float: left;
-	cursor: pointer;
-	font-family: 'Lato';
+  padding: 60px;
+  width: 60px;
+  font-size: 3em;
+  background: pink;
+  text-align: center;
+  margin: 1%;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  font-family: 'Lato';
 }
 
 .o-hide {
-	opacity: 0;
-	transition: all ease 0.8s;
+  opacity: 0;
+  transition: all ease 0.8s;
 }
 
 .o-hide:hover {
-	opacity: 1;
+  opacity: 1;
 }
 ```
 
@@ -48,100 +48,100 @@ div {
 >CSS
 ```javascript
 div {
-	padding: 60px;
-	width: 60px;
-	font-size: 3em;
-	background: pink;
-	text-align: center;
-	margin: 1%;
-	display: inline-block;
-	float: left;
-	cursor: pointer;
-	font-family: 'Lato';
+  padding: 60px;
+  width: 60px;
+  font-size: 3em;
+  background: pink;
+  text-align: center;
+  margin: 1%;
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  font-family: 'Lato';
 }
 
 .o-hide {
-	visibility: hidden;
-	transition: all ease 0.8s;
+  visibility: hidden;
+  transition: all ease 0.8s;
 }
 
 .o-hide:hover {
-	visibility: visible;
+  visibility: visible;
 }
 
 .o-hide p {
-	visibility: visible;
-	margin: 0;
-	padding: 0;
+  visibility: visible;
+  margin: 0;
+  padding: 0;
 }
 ```
 
 >JS
 ```javascript
-	var oHide = document.querySelector(".o-hide");
-	var oHideP = document.querySelector(".o-hide p");
-	var count = oHideP.innerHTML;
+  var oHide = document.querySelector(".o-hide");
+  var oHideP = document.querySelector(".o-hide p");
+  var count = oHideP.innerHTML;
 
-	oHide.addEventListener("click", function(){
-	count++;
-	oHideP.innerHTML = count;
+  oHide.addEventListener("click", function(){
+  count++;
+  oHideP.innerHTML = count;
 });
 ```
 **1.3. Display**
 
 >HTML
 ```javascript
-	<div>Hover!</div>
-		<div class="o-hide"><p>0</p></div>
-	<div>0</div>
+<div>Hover!</div>
+<div class="o-hide"><p>0</p></div>
+<div>0</div>
 ```
 >CSS
 
 ```javascript
 div {
-	height: 60px;
-	padding: 60px 0;
-	width: 180px;
-	font-size: 2em;
-	line-height: 60px;
-	background: pink;
-	text-align: center;
-	margin: 1%;
-	display: block;
-	float: left;
-	cursor: pointer;
-	font-family: 'Lato';
+  height: 60px;
+  padding: 60px 0;
+  width: 180px;
+  font-size: 2em;
+  line-height: 60px;
+  background: pink;
+  text-align: center;
+  margin: 1%;
+  display: block;
+  float: left;
+  cursor: pointer;
+  font-family: 'Lato';
 }
 
 .o-hide {
-	display: none;
-	transition: all ease 0.8s;
+  display: none;
+  transition: all ease 0.8s;
 }
 
 .o-hide:hover {
-	display: block;
+  display: block;
 }
 
 .o-hide p {
-	display: block;
-	margin: 0;
-	padding: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 ```
 
 >JS
 ```javascript
-	var count = 0;
-	var oHide = document.querySelector(".o-hide");
-	var firstDiv = document.querySelector("div:nth-child(1)");
+  var count = 0;
+  var oHide = document.querySelector(".o-hide");
+  var firstDiv = document.querySelector("div:nth-child(1)");
 
-	firstDiv.addEventListener("mouseover", function(){
-	count++;
-	oHide.innerHTML = '<p>' + count + '</p>';
-	});
+  firstDiv.addEventListener("mouseover", function(){
+    count++;
+    oHide.innerHTML = '<p>' + count + '</p>';
+  });
 
-	firstDiv.addEventListener("click", function(){
-	oHide.style.display = "block";
+  firstDiv.addEventListener("click", function(){
+  oHide.style.display = "block";
 });
 ```
 **1.4. Position**
@@ -149,52 +149,52 @@ div {
 >HTML
 ```javascript
 <div>Hover!</div>
-	<div class="o-hide"><p>0</p></div>
+<div class="o-hide"><p>0</p></div>
 <div>0</div>
 ```
 
 >CSS
 ```javascript
 div {
-	height: 60px;
-	padding: 60px 0;
-	width: 180px;
-	font-size: 2em;
-	line-height: 60px;
-	background: pink;
-	text-align: center;
-	margin: 1%;
-	display: block;
-	float: left;
-	cursor: pointer;
-	font-family: 'Lato';
+  height: 60px;
+  padding: 60px 0;
+  width: 180px;
+  font-size: 2em;
+  line-height: 60px;
+  background: pink;
+  text-align: center;
+  margin: 1%;
+  display: block;
+  float: left;
+  cursor: pointer;
+  font-family: 'Lato';
 }
 
 .o-hide {
-	position: absolute;
-	top: -9999px;
-	left: -9999px;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
 .o-hide:hover {
-	position: static;
+  position: static;
 }
 ```
 
 > JS
 ```javascript
-	var count = 0;
-	var oHide = document.querySelector(".o-hide");
-	var firstDiv = document.querySelector("div:nth-child(1)");
+  var count = 0;
+  var oHide = document.querySelector(".o-hide");
+  var firstDiv = document.querySelector("div:nth-child(1)");
 
-	firstDiv.addEventListener("mouseover", function(){
-		count++;
-		oHide.innerHTML = count;
-	});
+  firstDiv.addEventListener("mouseover", function(){
+    count++;
+    oHide.innerHTML = count;
+  });
 
-	firstDiv.addEventListener("click", function(){
-	  oHide.style.position = "static";
-	});
+  firstDiv.addEventListener("click", function(){
+    oHide.style.position = "static";
+  });
 ```
 
 **1.5. Clip-path**
@@ -209,18 +209,18 @@ div {
 >CSS
 ```javascript
 div {
-	height: 60px;
-	padding: 60px 0;
-	width: 180px;
-	font-size: 2em;
-	line-height: 60px;
-	background: pink;
-	text-align: center;
-	margin: 1%;
-	display: block;
-	float: left;
-	cursor: pointer;
-	font-family: 'Lato';
+height: 60px;
+padding: 60px 0;
+width: 180px;
+font-size: 2em;
+line-height: 60px;
+background: pink;
+text-align: center;
+margin: 1%;
+display: block;
+float: left;
+cursor: pointer;
+font-family: 'Lato';
 }
 
 .o-hide {
@@ -272,7 +272,7 @@ background-image:
 url("https://preview.ibb.co/iaBzBm/butterflies.png"),
 url("https://preview.ibb.co/eaasWm/grey.png");
 ```
-**5. Không nên nhầm lẫn giữa <b> với các thẻ <strong>, <em> hay <mark>**
+**5. Không nên nhầm lẫn giữa ```<b>``` với các thẻ ```<strong>```, ```<em>``` hay ```<mark>```**
 
 - **```<b>```**: Đơn thuần chỉ là để làm đậm văn bản mà không truyền đạt thêm thông tin ngữ nghĩa nào
 - **```<strong>```**: Dùng để thể hiện tầm quan trọng của đoạn văn bản đặt trong nó.
