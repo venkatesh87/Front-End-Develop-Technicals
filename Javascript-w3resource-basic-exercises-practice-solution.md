@@ -249,15 +249,15 @@ firstDiv.addEventListener("click", function(){
 >CSS
 ```javascript
 li{
-	padding:8px 0;
-	width:339px;
-	font-size:0.915em;
-	min-height:37px;
-	display:-moz-inline-stack;
-	display:inline-block;
-	vertical-align:top;
-	zoom:1;
-	*display:inline;
+  padding:8px 0;
+  width:339px;
+  font-size:0.915em;
+  min-height:37px;
+  display:-moz-inline-stack;
+  display:inline-block;
+  vertical-align:top;
+  zoom:1;
+  *display:inline;
 }
 ```
 
@@ -268,9 +268,9 @@ li{
 - You can specify more than one background image by separating each value using a comma. The image you set first will be displayed on the top layer.
 
 ```javascript
-background-image:
-url("https://preview.ibb.co/iaBzBm/butterflies.png"),
-url("https://preview.ibb.co/eaasWm/grey.png");
+  background-image:
+  url("https://preview.ibb.co/iaBzBm/butterflies.png"),
+  url("https://preview.ibb.co/eaasWm/grey.png");
 ```
 **5. Không nên nhầm lẫn giữa ```<b>``` với các thẻ ```<strong>```, ```<em>``` hay ```<mark>```**
 
@@ -313,15 +313,15 @@ url("https://preview.ibb.co/eaasWm/grey.png");
 **Syntax**
 
 ```javascript
-/* Keyword values */
-writing-mode: horizontal-tb;
-writing-mode: vertical-rl;
-writing-mode: vertical-lr;
+  /* Keyword values */
+  writing-mode: horizontal-tb;
+  writing-mode: vertical-rl;
+  writing-mode: vertical-lr;
 
-/* Global values */
-writing-mode: inherit;
-writing-mode: initial;
-writing-mode: unset;
+  /* Global values */
+  writing-mode: inherit;
+  writing-mode: initial;
+  writing-mode: unset;
 ```
 - The ```writing-mode``` property is specified as one of the values listed below.
 - **horizontal-tb**: Content flows horizontally from left to right, vertically from top to bottom. The next horizontal line is positioned below the previous line.
