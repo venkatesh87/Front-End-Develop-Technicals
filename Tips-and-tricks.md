@@ -407,3 +407,5 @@ writing-mode: unset;
   -ms-writing-mode: sideways-rl;
 }
 ```
+Reference-style: 
+![alt text][https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/writing-mode-actual-result.png]
