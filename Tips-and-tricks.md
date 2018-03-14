@@ -3,16 +3,54 @@
 **1. Five Ways to Hide Elements in CSS**
 
   **1.1. Opacity**
-  
-    >HTML:
-    ```javascript
+
+  >HTML
+
+  ```
+  <div>1</div>
+    <div class="o-hide">2</div>
+  <div>3</div>
+  ```
+
+  >CSS
+
+  ```
+  div {
+    padding: 60px;
+    width: 60px;
+    font-size: 3em;
+    background: pink;
+    text-align: center;
+    margin: 1%;
+    display: inline-block;
+    float: left;
+    cursor: pointer;
+    font-family: 'Lato';
+  }
+
+  .o-hide {
+    opacity: 0;
+    transition: all ease 0.8s;
+  }
+
+  .o-hide:hover {
+    opacity: 1;
+  }
+  ```
+
+  **1.2. Visibility**
+
+    >HTML
+
+    ```
     <div>1</div>
-      <div class="o-hide">2</div>
+    <div class="o-hide"><p>2</p></div>
     <div>3</div>
     ```
 
     >CSS
-    ```javascript
+
+    ```
     div {
       padding: 60px;
       width: 60px;
@@ -27,254 +65,218 @@
     }
 
     .o-hide {
-      opacity: 0;
+      visibility: hidden;
       transition: all ease 0.8s;
     }
 
     .o-hide:hover {
-      opacity: 1;
+      visibility: visible;
+    }
+
+    .o-hide p {
+      visibility: visible;
+      margin: 0;
+      padding: 0;
     }
     ```
 
-  **1.2. Visibility**
+    >JS
 
-      >HTML
+    ```javascript
+    var oHide = document.querySelector(".o-hide");
+    var oHideP = document.querySelector(".o-hide p");
+    var count = oHideP.innerHTML;
 
-      ```javascript
-      <div>1</div>
-      <div class="o-hide"><p>2</p></div>
-      <div>3</div>
-      ```
-
-      >CSS
-
-      ```javascript
-      div {
-        padding: 60px;
-        width: 60px;
-        font-size: 3em;
-        background: pink;
-        text-align: center;
-        margin: 1%;
-        display: inline-block;
-        float: left;
-        cursor: pointer;
-        font-family: 'Lato';
-      }
-
-      .o-hide {
-        visibility: hidden;
-        transition: all ease 0.8s;
-      }
-
-      .o-hide:hover {
-        visibility: visible;
-      }
-
-      .o-hide p {
-        visibility: visible;
-        margin: 0;
-        padding: 0;
-      }
-      ```
-
-      >JS
-
-      ```javascript
-      var oHide = document.querySelector(".o-hide");
-      var oHideP = document.querySelector(".o-hide p");
-      var count = oHideP.innerHTML;
-
-      oHide.addEventListener("click", function(){
-        count++;
-        oHideP.innerHTML = count;
-      });
-    ```
+    oHide.addEventListener("click", function(){
+      count++;
+      oHideP.innerHTML = count;
+    });
+  ```
 
   **1.3. Display**
 
-      >HTML
+    >HTML
 
-      ```javascript
-      <div>Hover!</div>
-      <div class="o-hide"><p>0</p></div>
-      <div>0</div>
-      ```
+    ```
+    <div>Hover!</div>
+    <div class="o-hide"><p>0</p></div>
+    <div>0</div>
+    ```
 
-      >CSS
+    >CSS
 
-      ```javascript
-      div {
-        height: 60px;
-        padding: 60px 0;
-        width: 180px;
-        font-size: 2em;
-        line-height: 60px;
-        background: pink;
-        text-align: center;
-        margin: 1%;
-        display: block;
-        float: left;
-        cursor: pointer;
-        font-family: 'Lato';
-      }
+    ```
+    div {
+      height: 60px;
+      padding: 60px 0;
+      width: 180px;
+      font-size: 2em;
+      line-height: 60px;
+      background: pink;
+      text-align: center;
+      margin: 1%;
+      display: block;
+      float: left;
+      cursor: pointer;
+      font-family: 'Lato';
+    }
 
-      .o-hide {
-        display: none;
-        transition: all ease 0.8s;
-      }
+    .o-hide {
+      display: none;
+      transition: all ease 0.8s;
+    }
 
-      .o-hide:hover {
-        display: block;
-      }
+    .o-hide:hover {
+      display: block;
+    }
 
-      .o-hide p {
-        display: block;
-        margin: 0;
-        padding: 0;
-      }
-      ```
+    .o-hide p {
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+    ```
 
-      >JS
+    >JS
 
-      ```javascript
-      var count = 0;
-      var oHide = document.querySelector(".o-hide");
-      var firstDiv = document.querySelector("div:nth-child(1)");
+    ```javascript
+    var count = 0;
+    var oHide = document.querySelector(".o-hide");
+    var firstDiv = document.querySelector("div:nth-child(1)");
 
-      firstDiv.addEventListener("mouseover", function(){
-        count++;
-        oHide.innerHTML = '<p>' + count + '</p>';
-      });
+    firstDiv.addEventListener("mouseover", function(){
+      count++;
+      oHide.innerHTML = '<p>' + count + '</p>';
+    });
 
-      firstDiv.addEventListener("click", function(){
-        oHide.style.display = "block";
-      });
-      ```
+    firstDiv.addEventListener("click", function(){
+      oHide.style.display = "block";
+    });
+    ```
 
   **1.4. Position**
 
-      >HTML
+    >HTML
 
-      ```javascript
-      <div>Hover!</div>
-      <div class="o-hide"><p>0</p></div>
-       <div>0</div>
-      ```
+    ```
+    <div>Hover!</div>
+    <div class="o-hide"><p>0</p></div>
+     <div>0</div>
+    ```
 
-      >CSS
+    >CSS
 
-      ```javascript
-      div {
-        height: 60px;
-        padding: 60px 0;
-        width: 180px;
-        font-size: 2em;
-        line-height: 60px;
-        background: pink;
-        text-align: center;
-        margin: 1%;
-        display: block;
-        float: left;
-        cursor: pointer;
-        font-family: 'Lato';
-      }
+    ```
+    div {
+      height: 60px;
+      padding: 60px 0;
+      width: 180px;
+      font-size: 2em;
+      line-height: 60px;
+      background: pink;
+      text-align: center;
+      margin: 1%;
+      display: block;
+      float: left;
+      cursor: pointer;
+      font-family: 'Lato';
+    }
 
-      .o-hide {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-      }
+    .o-hide {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
 
-      .o-hide:hover {
-        position: static;
-      }
-      ```
+    .o-hide:hover {
+      position: static;
+    }
+    ```
 
-      >JS
+    >JS
 
-      ```javascript
-      var count = 0;
-      var oHide = document.querySelector(".o-hide");
-      var firstDiv = document.querySelector("div:nth-child(1)");
+    ```
+    var count = 0;
+    var oHide = document.querySelector(".o-hide");
+    var firstDiv = document.querySelector("div:nth-child(1)");
 
-      firstDiv.addEventListener("mouseover", function(){
-        count++;
-        oHide.innerHTML = count;
-      });
+    firstDiv.addEventListener("mouseover", function(){
+      count++;
+      oHide.innerHTML = count;
+    });
 
-      firstDiv.addEventListener("click", function(){
-          oHide.style.position = "static";
-      });
-      ```
+    firstDiv.addEventListener("click", function(){
+        oHide.style.position = "static";
+    });
+    ```
 
   **1.5. Clip-path**
 
-      >HTML
+    >HTML
 
-      ```javascript
-      <div>Hover!</div>
-      <div class="o-hide">0</div>
-      <div>0</div>
-      ```
+    ```
+    <div>Hover!</div>
+    <div class="o-hide">0</div>
+    <div>0</div>
+    ```
 
-      >CSS
+    >CSS
 
-      ```javascript
-      div {
-        height: 60px;
-        padding: 60px 0;
-        width: 180px;
-        font-size: 2em;
-        line-height: 60px;
-        background: pink;
-        text-align: center;
-        margin: 1%;
-        display: block;
-        float: left;
-        cursor: pointer;
-        font-family: 'Lato';
-      }
+    ```
+    div {
+      height: 60px;
+      padding: 60px 0;
+      width: 180px;
+      font-size: 2em;
+      line-height: 60px;
+      background: pink;
+      text-align: center;
+      margin: 1%;
+      display: block;
+      float: left;
+      cursor: pointer;
+      font-family: 'Lato';
+    }
 
-      .o-hide {
-        clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px);
-      }
-      ```
+    .o-hide {
+      clip-path: polygon(0px 0px, 0px 0px, 0px 0px, 0px 0px);
+    }
+    ```
 
-      >JS
+    >JS
 
-      ```javascript
-      var count = 0;
-      var oHide = document.querySelector(".o-hide");
-      var firstDiv = document.querySelector("div:nth-child(1)");
+    ```
+    var count = 0;
+    var oHide = document.querySelector(".o-hide");
+    var firstDiv = document.querySelector("div:nth-child(1)");
 
-      firstDiv.addEventListener("mouseover", function(){
-          count++;
-          oHide.innerHTML = count;
-      });
+    firstDiv.addEventListener("mouseover", function(){
+        count++;
+        oHide.innerHTML = count;
+    });
 
 
-      firstDiv.addEventListener("click", function(){
-          oHide.className = "";
-      });
-      ```
+    firstDiv.addEventListener("click", function(){
+        oHide.className = "";
+    });
+    ```
   **2 .Equal item tag ```<li>```**
 
-      >CSS
+    >CSS
 
-      ```javascript
-      li{
-        padding:8px 0;
-        width:339px;
-        font-size:0.915em;
-        min-height:37px;
-        display:-moz-inline-stack;
-        display:inline-block;
-        vertical-align:top;
-        zoom:1;
-        *display:inline;
-      }
     ```
+    li{
+      padding:8px 0;
+      width:339px;
+      font-size:0.915em;
+      min-height:37px;
+      display:-moz-inline-stack;
+      display:inline-block;
+      vertical-align:top;
+      zoom:1;
+      *display:inline;
+    }
+  ```
 
   **3. Centering CSS**
 
@@ -283,7 +285,7 @@
 
     - You can specify more than one background image by separating each value using a comma. The image you set first will be displayed on the top layer.
   
-    ```javascript
+    ```
     background-image:
       url("https://preview.ibb.co/iaBzBm/butterflies.png"),
       url("https://preview.ibb.co/eaasWm/grey.png");
@@ -329,17 +331,18 @@
 
   **Syntax**
 
-  ```
-  /* Keyword values */
-  writing-mode: horizontal-tb;
-  writing-mode: vertical-rl;
-  writing-mode: vertical-lr;
+    ```
+    /* Keyword values */
+    writing-mode: horizontal-tb;
+    writing-mode: vertical-rl;
+    writing-mode: vertical-lr;
 
-  /* Global values */
-  writing-mode: inherit;
-  writing-mode: initial;
-  writing-mode: unset;
-  ```
+    /* Global values */
+    writing-mode: inherit;
+    writing-mode: initial;
+    writing-mode: unset;
+    ```
+
   - The ```writing-mode``` property is specified as one of the values listed below.
   - ```horizontal-tb``` Content flows horizontally from left to right, vertically from top to bottom. The next horizontal line is positioned below the previous line.
   - ```vertical-rl```: Content flows vertically from top to bottom, horizontally from right to left. The next vertical line is positioned to the left of the previous line.
@@ -355,7 +358,7 @@
   >**HTML**
   - The HTML is simply a ```<table>``` with each writing mode in a row with a column showing text in various scripts using that writing mode.
     
-  ```javascript
+  ```
   <table>
     <tr>
       <th>Value</th>
@@ -396,10 +399,10 @@
   </table>
   ```
 
->**CSS**
-- The CSS that adjusts the directionality of the content looks like this:
+  >**CSS**
+  - The CSS that adjusts the directionality of the content looks like this:
 
-  ```javascript
+  ```
   .example.Text1 span, .example.Text1 {
     writing-mode: horizontal-tb;
     -webkit-writing-mode: horizontal-tb;
