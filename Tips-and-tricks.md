@@ -268,12 +268,12 @@
 
     >6.1 **vw & vh**: 
   
-      - Sử dụng vh, vw khi bạn muốn sử dụng chiều rộng hoặc chiều cao của khung nhìn thay vì chiều rộng của phần tử gốc
-      - ```1 vw = 1%``` chiều ngang của trình duyệt.
-      - ```1 vh = 1%``` chiều cao của trình duyệt.
-      - Nó khác biệt với ```%``` ở chỗ, khi dùng % thì phần thử con set height ```%``` nó thừa hưởng height của cấp cha gần nhất với nó.
-      - Còn đối với ```vh``` và ```vw``` nó thừa hưởng từ cấp root(html) tức là bạn cứ hiểu cái trình duyệt của bạn hay điện thoại bạn rộng bao nhiêu thì nó sẽ lấy bấy nhiêu đó làm ```%``` để tính cho đối tượng mà bạn muốn qui định.
-      - Phần tử vh bằng 1/100 chiều cao của khung nhìn
+    - Sử dụng vh, vw khi bạn muốn sử dụng chiều rộng hoặc chiều cao của khung nhìn thay vì chiều rộng của phần tử gốc
+    - ```1 vw = 1%``` chiều ngang của trình duyệt.
+    - ```1 vh = 1%``` chiều cao của trình duyệt.
+    - Nó khác biệt với ```%``` ở chỗ, khi dùng % thì phần thử con set height ```%``` nó thừa hưởng height của cấp cha gần nhất với nó.
+    - Còn đối với ```vh``` và ```vw``` nó thừa hưởng từ cấp root(html) tức là bạn cứ hiểu cái trình duyệt của bạn hay điện thoại bạn rộng bao nhiêu thì nó sẽ lấy bấy nhiêu đó làm ```%``` để tính cho đối tượng mà bạn muốn qui định.
+    - Phần tử vh bằng 1/100 chiều cao của khung nhìn
       
     >6.2 **vmin and vmax**: 
     
