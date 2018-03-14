@@ -4,14 +4,16 @@
 
   **1.1. Opacity**
 
-    > HTML
+    >HTML
+
     ```javascript
     <div>1</div>
       <div class="o-hide">2</div>
     <div>3</div>
     ```
 
-    > CSS
+    >CSS
+
     ```javascript
     div {
       padding: 60px;
@@ -39,6 +41,7 @@
   **1.2. Visibility**
 
       >HTML
+
       ```javascript
       <div>1</div>
       <div class="o-hide"><p>2</p></div>
@@ -46,6 +49,7 @@
       ```
 
       >CSS
+
       ```javascript
       div {
         padding: 60px;
@@ -77,6 +81,7 @@
       ```
 
       >JS
+
       ```javascript
       var oHide = document.querySelector(".o-hide");
       var oHideP = document.querySelector(".o-hide p");
@@ -91,6 +96,7 @@
   **1.3. Display**
 
       >HTML
+
       ```javascript
       <div>Hover!</div>
       <div class="o-hide"><p>0</p></div>
@@ -98,6 +104,7 @@
       ```
 
       >CSS
+
       ```javascript
       div {
         height: 60px;
@@ -131,6 +138,7 @@
       ```
 
       >JS
+
       ```javascript
       var count = 0;
       var oHide = document.querySelector(".o-hide");
@@ -149,12 +157,15 @@
   **1.4. Position**
 
       >HTML
+
       ```javascript
       <div>Hover!</div>
       <div class="o-hide"><p>0</p></div>
        <div>0</div>
       ```
+
       >CSS
+
       ```javascript
       div {
         height: 60px;
@@ -183,6 +194,7 @@
       ```
 
       >JS
+
       ```javascript
       var count = 0;
       var oHide = document.querySelector(".o-hide");
@@ -201,6 +213,7 @@
   **1.5. Clip-path**
 
       >HTML
+
       ```javascript
       <div>Hover!</div>
       <div class="o-hide">0</div>
@@ -208,6 +221,7 @@
       ```
 
       >CSS
+
       ```javascript
       div {
         height: 60px;
@@ -230,6 +244,7 @@
       ```
 
       >JS
+
       ```javascript
       var count = 0;
       var oHide = document.querySelector(".o-hide");
@@ -248,6 +263,7 @@
   **2 .Equal item tag ```<li>```**
 
       >CSS
+
       ```javascript
       li{
         padding:8px 0;
@@ -282,7 +298,7 @@
     - **```<em>```**: Đặt một mức độ nhấn mạnh nào đó vào văn bản trong nó.
     - **```<mark>```**: Dùng để thể hiện phần văn bản liên quan trong nó.
   
-  **6. CSS Unit: **
+  **6. CSS Unit:**
 
     >6.1 **vw & vh**: 
   
