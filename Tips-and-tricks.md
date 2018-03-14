@@ -3,7 +3,7 @@
 **1. Five Ways to Hide Elements in CSS**
 
   **1.1. Opacity**
-
+**1. **
     >HTML:
 
     ```javascript
