@@ -266,22 +266,28 @@
   
   **6. CSS Unit:**
 
-    >6.1 **vw & vh**: 
-    - Sử dụng vh, vw khi bạn muốn sử dụng chiều rộng hoặc chiều cao của khung nhìn thay vì chiều rộng của phần tử gốc
-    - ```1 vw = 1%``` chiều ngang của trình duyệt.
-    - ```1 vh = 1%``` chiều cao của trình duyệt.
-    - Nó khác biệt với ```%``` ở chỗ, khi dùng % thì phần thử con set height ```%``` nó thừa hưởng height của cấp cha gần nhất với nó.
-    - Còn đối với ```vh``` và ```vw``` nó thừa hưởng từ cấp root(html) tức là bạn cứ hiểu cái trình duyệt của bạn hay điện thoại bạn rộng bao nhiêu thì nó sẽ lấy bấy nhiêu đó làm ```%``` để tính cho đối tượng mà bạn muốn qui định.
-    - Phần tử vh bằng 1/100 chiều cao của khung nhìn
-      
-    >6.2 **vmin and vmax**:
-    - vmin và vmax có liên quan đến chiều cao và chiều rộng tối đa hoặc tối thiểu, tùy thuộc vào kích thước nhỏ hơn và lớn hơn. Ví dụ: nếu trình duyệt được đặt chiều rộng 1100px và chiều cao 700px, 1vmin sẽ là 7px và 1vmax sẽ là 11px. Tuy nhiên, nếu chiều rộng được đặt là 800px và chiều cao đặt là 1080px, vmin sẽ bằng 8px trong khi vmax sẽ được đặt thành 10.8px.
-    
-    >6.3 **ex & ch**:
-    >6.4 **rem & em**:
-    >6.5 **PX, PT**: 
-    >6.6 **%**:
-    >6.6 **In**:
+   >6.1 **vw & vh**: 
+   
+   - Sử dụng vh, vw khi bạn muốn sử dụng chiều rộng hoặc chiều cao của khung nhìn thay vì chiều rộng của phần tử gốc
+   - ```1 vw = 1%``` chiều ngang của trình duyệt.
+   - ```1 vh = 1%``` chiều cao của trình duyệt.
+   - Nó khác biệt với ```%``` ở chỗ, khi dùng % thì phần thử con set height ```%``` nó thừa hưởng height của cấp cha gần nhất với nó.
+   - Còn đối với ```vh``` và ```vw``` nó thừa hưởng từ cấp root(html) tức là bạn cứ hiểu cái trình duyệt của bạn hay điện thoại bạn rộng bao nhiêu thì nó sẽ lấy bấy nhiêu đó làm ```%``` để tính cho đối tượng mà bạn muốn qui định.
+   - Phần tử vh bằng 1/100 chiều cao của khung nhìn
+
+   >6.2 **vmin and vmax**:
+   
+   - vmin và vmax có liên quan đến chiều cao và chiều rộng tối đa hoặc tối thiểu, tùy thuộc vào kích thước nhỏ hơn và lớn hơn. Ví dụ: nếu trình duyệt được đặt chiều rộng 1100px và chiều cao 700px, 1vmin sẽ là 7px và 1vmax sẽ là 11px. Tuy nhiên, nếu chiều rộng được đặt là 800px và chiều cao đặt là 1080px, vmin sẽ bằng 8px trong khi vmax sẽ được đặt thành 10.8px.
+
+   >6.3 **ex & ch**:
+   
+   >6.4 **rem & em**:
+   
+   >6.5 **PX, PT**: 
+   
+   >6.6 **%**:
+   
+   >6.6 **In**:
   
 **7. Advanced Text Styling and Positioning with CSS(3)**
 
