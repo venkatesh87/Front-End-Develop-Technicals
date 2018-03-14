@@ -3,9 +3,8 @@
 **1. Five Ways to Hide Elements in CSS**
 
   **1.1. Opacity**
-**1. **
+  
     >HTML:
-
     ```javascript
     <div>1</div>
       <div class="o-hide">2</div>
@@ -13,7 +12,6 @@
     ```
 
     >CSS
-
     ```javascript
     div {
       padding: 60px;
