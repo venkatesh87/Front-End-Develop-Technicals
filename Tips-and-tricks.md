@@ -4,7 +4,7 @@
 
   **1.1. Opacity**
 
-    >HTML
+    >HTML:
 
     ```javascript
     <div>1</div>
