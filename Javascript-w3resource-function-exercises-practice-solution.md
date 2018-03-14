@@ -416,14 +416,63 @@ matrix(4);
 
 **11. Write a JavaScript function which will take an array of numbers stored and find the second lowest and second greatest numbers, respectively.**
 - Viết một hàm JavaScript sẽ lấy một mảng số được lưu trữ và tìm số thứ hai thấp nhất thứ hai và thứ hai lớn nhất, tương ứng.
+- The ```sort()``` method sorts the items of an array: Phương thức ```sort()``` loại các item của một mảng.
+- The ```sort``` order can be either alphabetic or numeric, and either ascending (up) or descending (down): Thứ tự sắp xếp có thể là chữ cái hoặc chữ số, hoặc tăng dần (lên) hoặc giảm dần (xuống).
+- By default, the ```sort()``` method sorts the values as strings in alphabetical and ascending order: Theo mặc định, phương thức sort () sắp xếp các giá trị dưới dạng các chuỗi theo thứ tự chữ cái và thứ tự tăng dần.
+
 >JavaScript Code:
+
 ```javascript
 
 ```
 
+>JavaScript Code:
+- Sort the numbers in the array in ascending order(Sắp xếp các số trong mảng theo thứ tự tăng dần)
+- The first item in the array (```points[0]```) is now the lowest value(Mục đầu tiên trong mảng (`` `points [0]` ``) bây giờ là giá trị thấp nhất)
+```javascript
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+function myFunction() {
+  points.sort(function(a, b){return a-b});
+  document.getElementById("demo").innerHTML = points[0];
+}
+```
+
+>JavaScript Code:
+- Sort the numbers in the array in descending order(Sắp xếp các số trong mảng theo thứ tự giảm dần)
+- The first item in the array (```points[0]```) is now the highest value(Mục đầu tiên trong mảng (```points[0]```) bây giờ là giá trị cao nhất)
+```javascript
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = points;
+function myFunction() {
+  points.sort(function(a, b){return b-a});
+  document.getElementById("demo").innerHTML = points[0];
+}
+```
+
+>JavaScript Code:
+```javascript
+function Second_Greatest_Lowest(arr_num) {
+  arr_num.sort(function(x, y) {
+    return x - y;
+  });
+  var uniqa = [arr_num[0]];
+  var result = [];
+
+  for (var j = 1; j < arr_num.length; j++) {
+    if (arr_num[j - 1] !== arr_num[j]) {
+      uniqa.push(arr_num[j]);
+    }
+  }
+  result.push(uniqa[1], uniqa[uniqa.length - 2]);
+  return result.join(',');
+}
+
+console.log(Second_Greatest_Lowest([1, 2, 3, 4, 5]));
+```
 >Result:
 ```javascript
-
+2, 4
 ```
 
 **12. **
