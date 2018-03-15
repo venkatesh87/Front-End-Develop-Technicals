@@ -80,9 +80,9 @@
 
 ├── **[API]**
 
-│   ├── [API Facebook](https://developers.facebook.com/tools-and-support/)
+│   ├── [API Facebook](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-facebook.md)
 
-│   ├── [API Google](https://developers.google.com/maps/documentation/javascript)
+│   ├── [API Google](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-google.md)
 
 ├── **[UI/UX]**
 
