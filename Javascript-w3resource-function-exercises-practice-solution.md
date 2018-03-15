@@ -475,36 +475,64 @@ console.log(Second_Greatest_Lowest([1, 2, 3, 4, 5]));
 2, 4
 ```
 
-**12. **
+**12. Write a JavaScript function which says whether a number is perfect.**
+**Note** : According to Wikipedia : In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, the sum of its positive divisors excluding the number itself (also known as its aliquot sum). Equivalently, a perfect number is a number that is half the sum of all of its positive divisors (including itself).
+- Theo Wikipedia: Trong lý thuyết số, một con số hoàn hảo là một số nguyên dương bằng tổng các ước số dương của nó, đó là, tổng số ước số dương của nó không bao gồm con số chính nó (còn gọi là tổng số của nó). Tương đương, một số hoàn hảo là một số là một nửa tổng của tất cả các ước số tích cực của nó (bao gồm cả chính nó).
+**Example** : The first perfect number is 6, because 1, 2, and 3 are its proper positive divisors, and 1 + 2 + 3 = 6. Equivalently, the number 6 is equal to half the sum of all its positive divisors: ( 1 + 2 + 3 + 6 ) / 2 = 6. The next perfect number is 28 = 1 + 2 + 4 + 7 + 14. This is followed by the perfect numbers 496 and 8128.
+- Số hoàn hảo đầu tiên là 6, bởi vì 1, 2, và 3 là các ước số tích cực thích hợp của nó, và 1 + 2 + 3 = 6. Tương đương, số 6 bằng một nửa tổng của tất cả các ước số dương của nó: (1 + 2 + 3 + 6) / 2 = 6. Số hoàn hảo tiếp theo là 28 = 1 + 2 + 4 + 7 + 14. Tiếp theo là số hoàn hảo 496 và 8128.
 
 >JavaScript Code:
 ```javascript
+function is_perfect(number) {
+  var temp = 0;
+  for (var i = 1; i <= number / 2; i++) {
+    if (number % i === 0) {
+      temp += i;
+    }
+  }
 
-```
-
->ES6 Version:
-
+  if (temp === number && temp !== 0) {
+    console.log("It is a perfect number.");
+  } else {
+    console.log("It is not a perfect number.");
+  }
+}
+is_perfect(28);
 ```
 
 >Result:
 ```javascript
-
+It is a perfect number.
 ```
 
-**13. **
+**13. Write a JavaScript function to compute the factors of a positive integer.**
+- Viết một hàm JavaScript để tính toán các yếu tố của một số nguyên dương.
 
 >JavaScript Code:
 ```javascript
-
-```
-
->ES6 Version:
-
+function factors(n) {
+  var num_factors = [],i;
+  for (i = 1; i <= Math.floor(Math.sqrt(n)); i += 1)
+    if (n % i === 0) {
+      num_factors.push(i);
+      if (n / i !== i)
+        num_factors.push(n / i);
+    }
+  num_factors.sort(function(x, y) {
+    return x - y;
+  }); // numeric sort
+  return num_factors;
+}
+console.log(factors(15)); // [1,3,5,15] 
+console.log(factors(16)); // [1,2,4,8,16] 
+console.log(factors(17)); // [1,17]
 ```
 
 >Result:
 ```javascript
-
+[1,3,5,15]
+[1,2,4,8,16] 
+[1,17]
 ```
 
 **14. **
