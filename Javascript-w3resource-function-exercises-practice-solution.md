@@ -562,8 +562,10 @@ console.log(exp(3, 3));
 
 ```
 
-**15. **
-
+**15. Write a JavaScript function to extract unique characters from a string.**
+- Viết một hàm JavaScript để trích các ký tự độc nhất từ một chuỗi.
+- **Example string :** "thequickbrownfoxjumpsoverthelazydog"
+- **Expected Output :** "thequickbrownfxjmpsvlazydg"
 >JavaScript Code:
 ```javascript
 
