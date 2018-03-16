@@ -535,11 +535,22 @@ console.log(factors(17)); // [1,17]
 [1,17]
 ```
 
-**14. **
-
+**14. Write a JavaScript function to compute the value of bn where n is the exponent and b is the bases. Accept b and n from the user and display the result.**
+- Viết một hàm JavaScript để tính giá trị của b mũ n trong đó n là số mũ và b là các căn cứ. Chấp nhận b và n từ người dùng và hiển thị kết quả.
+- Khi chạy vong lặp nó luôn luôn trả vể giá trị cuối cùng lớn nhất.
+  + ban đầu i = 1, ans = 1 thì ==> ans = 3 * 1 = 3. 
+  + Tiếp đến i = 2 thì ans = 3 ==> ans = 3 * 3 = 9.
+  + Tiếp đến i = 3 thì ans = 9 ==> ans = 3 * 9 = 27.
 >JavaScript Code:
 ```javascript
-
+function exp(b, n) {
+  var ans = 1;
+  for (var i = 1; i <= n; i++) {
+    ans = b * ans;
+  }
+  return ans;
+}
+console.log(exp(3, 3));
 ```
 
 >ES6 Version:
