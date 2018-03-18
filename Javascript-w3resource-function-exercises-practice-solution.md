@@ -566,98 +566,161 @@ console.log(exp(3, 3));
 - Viết một hàm JavaScript để trích các ký tự độc nhất từ một chuỗi.
 - **Example string :** "thequickbrownfoxjumpsoverthelazydog"
 - **Expected Output :** "thequickbrownfxjmpsvlazydg"
+
 >JavaScript Code:
 ```javascript
+function unique_char(str1) {
+  var str = str1;
+  var uniql = "";
+  for (var x = 0; x < str.length; x++) {
 
+    if (uniql.indexOf(str.charAt(x)) == -1) {
+      uniql += str[x];
+
+    }
+  }
+  return uniql;
+}
+console.log(unique_char("thequickbrownfoxjumpsoverthelazydog"));
+```
+>Result:
+```javascript
+thequickbrownfxjmpsvlazydg
 ```
 
->ES6 Version:
-
+**16. Write a JavaScript function to get the number of occurrences of each letter in specified string**
+- Viết một hàm JavaScript để nhận số lần xuất hiện của mỗi ký tự trong chuỗi được chỉ định.
+>JavaScript Code:
+```javascript
+function Char_Counts(str1) {
+  var uchars = {};
+  str1.replace(/\S/g, function(l) { uchars[l] = (isNaN(uchars[l]) ? 1 : uchars[l] + 1); });
+  return uchars;
+}
+console.log(Char_Counts("The quick brown fox jumps over the lazy dog"));
 ```
 
 >Result:
 ```javascript
-
+{"T":1,"h":2,"e":3,"q":1,"u":2,"i":1,"c":1,"k":1,"b":1,"r":2,"o":4,"w":1,"n":1,"f":1,"x":1,"j":1,"m":1,"p":1,"s":1,"v":1,"t":1,"l":1,"a":1,"z":1,"y":1,"d":1,"g":1}
 ```
 
-**16. **
+**17. Write a JavaScript function that generates a string id (specified length) of random characters.**
+- Viết một hàm JavaScript tạo ra một id chuỗi (chiều dài xác định) của các ký tự ngẫu nhiên.
+- Sample character list : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
 >JavaScript Code:
 ```javascript
-
-```
-
->ES6 Version:
-
+function makeid(l) {
+  var text = "";
+  var char_list = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  for (var i = 0; i < l; i++) {
+    text += char_list.charAt(Math.floor(Math.random() * char_list.length));
+  }
+  return text;
+}
+console.log(makeid(8));
 ```
 
 >Result:
 ```javascript
-
+dppxWjgO
 ```
 
-**17. **
-
+**18. Write a JavaScript function to get all possible subset with a fixed length (for example 2) combinations in an array.**
+- Viết một hàm JavaScript để nhận được tất cả các tập hợp con có thể có kết hợp chiều dài cố định (ví dụ 2) trong một mảng.
+- Sample array : [1, 2, 3] and subset length is 2 
+- Expected output : [[2, 1], [3, 1], [3, 2], [3, 2, 1]]
 >JavaScript Code:
 ```javascript
+function subset(arra, arra_size) {
+  var result_set = [],
+    result;
 
-```
 
->ES6 Version:
+  for (var x = 0; x < Math.pow(2, arra.length); x++) {
+    result = [];
+    i = arra.length - 1;
+    do {
+      if ((x & (1 << i)) !== 0) {
+        result.push(arra[i]);
+      }
+    } while (i--);
 
+    if (result.length >= arra_size) {
+      result_set.push(result);
+    }
+  }
+
+  return result_set;
+}
+
+console.log(subset([1, 2, 3], 2));
 ```
 
 >Result:
 ```javascript
-
+[[2,1],[3,1],[3,2],[3,2,1]]
 ```
 
-**18. **
-
+**19. Write a JavaScript function that accepts two arguments, a string and a letter and the function will count the number of occurrences of the specified letter within the string.**
+- Viết một hàm JavaScript chấp nhận hai đối số, một chuỗi và một chữ cái và chức năng sẽ đếm số lần xuất hiện của ký tự được chỉ định bên trong chuỗi.
+- Sample arguments: 'w3resource.com', 'o' 
+- Expected output: 2
 >JavaScript Code:
 ```javascript
+function char_count(str, letter) {
+  var letter_Count = 0;
+  for (var position = 0; position < str.length; position++) {
+    if (str.charAt(position) == letter) {
+      letter_Count += 1;
+    }
+  }
+  return letter_Count;
+}
 
-```
-
->ES6 Version:
-
+console.log(char_count('w3resource.com', 'o'));
 ```
 
 >Result:
 ```javascript
-
+2
 ```
 
-**19. **
+**20. Write a JavaScript function to find the first not repeated character.**
+- Viết một hàm JavaScript để tìm ký tự đầu tiên không lặp lại.
+- Sample arguments : 'abacddbec' 
+Expected output : 'e' 
 
 >JavaScript Code:
 ```javascript
+function find_FirstNotRepeatedChar(str) {
+  var arra1 = str.split('');
+  var result = '';
+  var ctr = 0;
 
-```
+  for (var x = 0; x < arra1.length; x++) {
+    ctr = 0;
 
->ES6 Version:
+    for (var y = 0; y < arra1.length; y++) {
+      if (arra1[x] === arra1[y]) {
+        ctr += 1;
+      }
+    }
 
+    if (ctr < 2) {
+      result = arra1[x];
+      break;
+    }
+  }
+  return result;
+}
+console.log(find_FirstNotRepeatedChar('abacddbec'));
 ```
 
 >Result:
 ```javascript
-
-```
-
-**20. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
+e
 ```
 
 **21. **
