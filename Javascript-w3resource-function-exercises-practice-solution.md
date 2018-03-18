@@ -421,12 +421,6 @@ matrix(4);
 - By default, the ```sort()``` method sorts the values as strings in alphabetical and ascending order: Theo mặc định, phương thức sort () sắp xếp các giá trị dưới dạng các chuỗi theo thứ tự chữ cái và thứ tự tăng dần.
 
 >JavaScript Code:
-
-```javascript
-
-```
-
->JavaScript Code:
 - Sort the numbers in the array in ascending order(Sắp xếp các số trong mảng theo thứ tự tăng dần)
 - The first item in the array (```points[0]```) is now the lowest value(Mục đầu tiên trong mảng (`` `points [0]` ``) bây giờ là giá trị thấp nhất)
 ```javascript
