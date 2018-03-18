@@ -723,20 +723,26 @@ console.log(find_FirstNotRepeatedChar('abacddbec'));
 e
 ```
 
-**21. **
+**21. Write a JavaScript function that accept a list of country names as input and returns the longest country name as output**
+- Viết một hàm JavaScript chấp nhận một danh sách các tên quốc gia làm đầu vào và trả về tên nước dài nhất là đầu ra
+- The reduce() method reduces the array to a single value.(Phương thức reduce () làm giảm mảng thành một giá trị.)
+- The reduce() method executes a provided function for each value of the array (from left-to-right).(Phương thức reduction () thực hiện một hàm được cung cấp cho mỗi giá trị của mảng (từ trái sang phải).)
+- The return value of the function is stored in an accumulator (result/total).(Giá trị trả lại của hàm được lưu trữ trong một accumulator (kết quả / tổng số).)
 
 >JavaScript Code:
 ```javascript
-
-```
-
->ES6 Version:
-
+function Longest_Country_Name(country_name) {
+  return country_name.reduce(function(lname, country) {
+      return lname.length > country.length ? lname : country;
+    },
+    "");
+}
+console.log(Longest_Country_Name(["Australia", "Germany", "United States of America"]));
 ```
 
 >Result:
 ```javascript
-
+"United States of America"
 ```
 
 **22. **
