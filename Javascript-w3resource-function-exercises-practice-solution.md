@@ -739,130 +739,80 @@ console.log(Longest_Country_Name(["Australia", "Germany", "United States of Amer
 "United States of America"
 ```
 
-**22. **
+**22. Write a JavaScript function to find longest substring in a given a string without repeating characters.**
+- Viết một hàm JavaScript để tìm chuỗi con dài nhất trong một chuỗi cho trước mà không lặp lại các ký tự.
 
 >JavaScript Code:
 ```javascript
+function longest_substring_without_repeating_characters(input) {
+  var chars = input.split('');
+  var curr_char;
+  var str = "";
+  var longest_string = "";
+  var hash = {};
+  for (var i = 0; i < chars.length; i++) {
+    curr_char = chars[i];
+    if (!hash[chars[i]]) {
+      str += curr_char;
+      hash[chars[i]] = { index: i };
+    } else {
+      if (longest_string.length <= str.length) {
+        longest_string = str;
+      }
+      var prev_dupeIndex = hash[curr_char].index;
+      var str_FromPrevDupe = input.substring(prev_dupeIndex + 1, i);
+      str = str_FromPrevDupe + curr_char;
+      hash = {};
+      for (var j = prev_dupeIndex + 1; j <= i; j++) {
+        hash[input.charAt(j)] = { index: j };
+      }
+    }
+  }
+  return longest_string.length > str.length ? longest_string : str;
+}
+console.log(longest_substring_without_repeating_characters("google.com"));
 
-```
-
->ES6 Version:
-
+console.log(longest_substring_without_repeating_characters("example.com"));
 ```
 
 >Result:
 ```javascript
-
+gle.com
+xample.co
 ```
 
-**23. **
+**23. Write a JavaScript program to pass a 'JavaScript function' as parameter.**
+- Viết một chương trình JavaScript để truyền một 'chức năng JavaScript' làm tham số.
 
 >JavaScript Code:
 ```javascript
-
-```
-
->ES6 Version:
-
+function addStudent(id, refreshCallback) {
+  refreshCallback();
+}
+function refreshStudentList() {
+  console.log('Hello');
+}
+addStudent(1, refreshStudentList);
 ```
 
 >Result:
 ```javascript
-
+Hello
 ```
 
-**24. **
+**24. Write a JavaScript function to get the function name.**
+- Viết một hàm JavaScript để có được tên hàm.
 
 >JavaScript Code:
 ```javascript
+function abc() {
+  console.log(arguments.callee.name);
+}
 
-```
-
->ES6 Version:
-
+abc();
 ```
 
 >Result:
 ```javascript
-
-```
-
-**25. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
-```
-
-**26. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
-```
-
-**27. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
-```
-
-**28. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
-```
-
-**29. **
-
->JavaScript Code:
-```javascript
-
-```
-
->ES6 Version:
-
-```
-
->Result:
-```javascript
-
+abc
 ```
