@@ -4,7 +4,6 @@
 
 **1. Write a JavaScript program to calculate the factorial of a number.**
 - Viết một chương trình JavaScript để tính toán giai thừa của một số.
-- In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 x 4 x 3 x 2 x 1 = 120
 - In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example, 5! = 5 x 4 x 3 x 2 x 1 = 120 (Trong toán học, giai thừa của một số nguyên n không âm, được biểu diễn bởi n !, là sản phẩm của tất cả các số nguyên dương nhỏ hơn hoặc bằng n. Ví dụ, 5! = 5 x 4 x 3 x 2 x 1 = 120)
 
 >JavaScript Code:
