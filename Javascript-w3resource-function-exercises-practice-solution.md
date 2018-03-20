@@ -8,15 +8,15 @@ Expected Output: 34223
 Assume n = 1000. 
 Convert a number to a string :
 
-**Code :** -> n = n + "";
+**Code :** -> ```n = n + "";```
 
 **Note :** There are different ways to convert number to string : Có nhiều cách khác nhau để chuyển đổi số thành chuỗi.
 
-**String literal** -> str = "" + num + "";
+**String literal** -> ```str = "" + num + "";```
 
-**String constructor** -> str = String(num);
+**String constructor** -> ```str = String(num);```
 
-**toString** -> str = num.toString();
+**toString** -> ```str = num.toString();```
 
 **String Literal simple** -> str = "" + num;
 
@@ -24,19 +24,19 @@ The ```split()``` method is used to split a String object into an array of strin
 
 **Code :** console.log('1000'.split(""));
 
-**Output :** ["1", "0", "0", "0"]
+**Output :** ```["1", "0", "0", "0"]```
 
 The ```reverse()``` method is used to reverse an array in place. The first array element becomes the last and the last becomes the first.
 
-**Code :** console.log(["1", "0", "0", "0"].reverse());
+**Code :** ```console.log(["1", "0", "0", "0"].reverse());```
 
-**Output :** ["0", "0", "0", "1"]
+**Output :** ```["0", "0", "0", "1"]```
 
 The ```join()``` method is used to join all elements of an array into a string.
 
-**Code :** console.log(["1", "0", "0", "0"].reverse().join(""));
+**Code :** ```console.log(["1", "0", "0", "0"].reverse().join(""));```
 
-**Output :** "0001"
+**Output :** ```"0001"```
 
 >JavaScript Code:
 ```javascript
