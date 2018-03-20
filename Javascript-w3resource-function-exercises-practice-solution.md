@@ -9,14 +9,23 @@ Assume n = 1000.
 Convert a number to a string :
 
 **Code :** -> ```n = n + "";```
+
 **Note :** There are different ways to convert number to string : Có nhiều cách khác nhau để chuyển đổi số thành chuỗi.
+
 **String literal** -> ```str = "" + num + "";```
+
 **String constructor** -> ```str = String(num);```
+
 **toString** -> ```str = num.toString();```
+
 **String Literal simple** -> str = "" + num;
+
 The ```split()``` method is used to split a String object into an array of strings by separating the string into substrings.
+
 **Code :** console.log('1000'.split(""));
+
 **Output :** ```["1", "0", "0", "0"]```
+
 The ```reverse()``` method is used to reverse an array in place. The first array element becomes the last and the last becomes the first.
 
 **Code :** ```console.log(["1", "0", "0", "0"].reverse());```
