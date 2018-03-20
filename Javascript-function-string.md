@@ -12,7 +12,7 @@
   + Nếu bắt đầu là số âm hoặc lớn hơn chiều dài của chuỗi, bắt đầu được đặt thành 0
 - ```length```: Không bắt buộc, Số ký tự để lấy xuất. Nếu bỏ qua, nó sẽ trích ra phần còn lại của chuỗi
 
->**Case 1:**
+>**Case 1:** Từ chỉ số thứ 1 lấy 4 ký tự
 ```javascript
 function myFunction() {
   var str = "Hello world!";
@@ -26,7 +26,7 @@ function myFunction() {
 ello
 ```
 
->**Case 2:**
+>**Case 2:** Trả lại các phần tử còn lại của chuỗi từ chỉ số thứ 2
 
 ```javascript
 function myFunction() {
@@ -41,7 +41,7 @@ function myFunction() {
 llo world!
 ```
 
->**Case 3:**
+>**Case 3:** Từ chỉ số thứ 11 lấy 1 ký tự
 ```javascript
 function myFunction() {
   var str = "Hello world!";
@@ -58,13 +58,13 @@ function myFunction() {
 **2. substring():**
 
 - ```string.substring(start, end)```
-- Phương thức substring () lấy ra các ký tự từ một chuỗi, giữa hai chỉ số xác định, và trả về chuỗi con mới.
-- Phương pháp này lấy các ký tự trong một chuỗi giữa "start" và "end", không bao gồm "end" chính nó. " chính nó.
-- Nếu "start" lớn hơn "end", phương pháp này sẽ hoán đổi hai đối số, có nghĩa là str.substring (1, 4) == str.substring (4, 1).
-- Nếu "start" hoặc "end" nhỏ hơn 0, nó sẽ được coi như là 0.
-- Phương thức substring() không thay đổi chuỗi gốc
-- start: bắt buộc. Vị trí bắt đầu khai thác. Ký tự đầu tiên ở chỉ số 0
-- end: Không bắt buộc. Vị trí (đến, nhưng không bao gồm) nơi để kết thúc khai thác. Nếu bỏ qua, nó sẽ lấy phần còn lại của chuỗi
+- Phương thức ```substring()``` lấy ra các ký tự từ một chuỗi, giữa hai chỉ số xác định, và trả về chuỗi con mới.
+- Phương pháp này lấy các ký tự trong một chuỗi giữa ```start``` và ```end```, không bao gồm ```end``` chính nó. " chính nó.
+- Nếu ```start``` lớn hơn ```end```, phương pháp này sẽ hoán đổi hai đối số, có nghĩa là ```str.substring (1, 4) == str.substring (4, 1)```.
+- Nếu ```start``` hoặc ```end``` nhỏ hơn 0, nó sẽ được coi như là 0.
+- Phương thức ```substring()``` không thay đổi chuỗi gốc
+- ```start```: bắt buộc. Vị trí bắt đầu khai thác. Ký tự đầu tiên ở chỉ số 0
+- ```end```: Không bắt buộc. Vị trí (đến, nhưng không bao gồm) nơi để kết thúc khai thác. Nếu bỏ qua, nó sẽ lấy phần còn lại của chuỗi
 
 >**Case 1:**
 ```javascript
@@ -111,10 +111,10 @@ Hello world!
 **3. slice():**
 
 - ```array.slice(start, end)```
-- Phương thức slice() trả về các phần tử đã chọn trong một mảng, như một đối tượng mảng mới.
-- Phương thức slice () chọn các phần tử bắt đầu từ đối số start đã cho, và kết thúc tại, nhưng không bao gồm, đối số kết thúc đã cho.
-- start: Không bắt buộc. Một số nguyên xác định nơi bắt đầu lựa chọn (Phần tử đầu tiên có chỉ số 0). Sử dụng số âm để chọn từ cuối mảng. Nếu bỏ qua, nó hoạt động như "0"
-- end: Không bắt buộc. Một số nguyên xác định nơi để kết thúc lựa chọn. Nếu bỏ qua, tất cả các yếu tố từ vị trí bắt đầu và đến cuối mảng sẽ được chọn. Sử dụng số âm để chọn từ cuối mảng
+- Phương thức ```slice()``` trả về các phần tử đã chọn trong một mảng, như một đối tượng mảng mới.
+- Phương thức ```slice()``` chọn các phần tử bắt đầu từ đối số start đã cho, và kết thúc tại, nhưng không bao gồm, đối số kết thúc đã cho.
+- ```start```: Không bắt buộc. Một số nguyên xác định nơi bắt đầu lựa chọn (Phần tử đầu tiên có chỉ số 0). Sử dụng số âm để chọn từ cuối mảng. Nếu bỏ qua, nó hoạt động như "0"
+- ```end```: Không bắt buộc. Một số nguyên xác định nơi để kết thúc lựa chọn. Nếu bỏ qua, tất cả các yếu tố từ vị trí bắt đầu và đến cuối mảng sẽ được chọn. Sử dụng số âm để chọn từ cuối mảng
 
 >**Case 1:**
 
