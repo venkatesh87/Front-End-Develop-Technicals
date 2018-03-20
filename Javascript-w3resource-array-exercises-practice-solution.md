@@ -59,16 +59,23 @@ true
   
 >JavaScript Code:
 ```javascript
-
+array_Clone = function(arra1) {
+  return arra1.slice(0);
+};
+console.log(array_Clone([1, 2, 4, 0]));
+console.log(array_Clone([1, 2, [4, 0]]));
 ```
 
 >ES6 Version:
-
+array_Clone = arra1 => arra1.slice(0);
+console.log(array_Clone([1, 2, 4, 0]));
+console.log(array_Clone([1, 2, [4, 0]]));
 ```
 
 >Result:
 ```javascript
-
+[1,2,4,0]
+[1,2,[4,0]]
 ```
 
 **3. **
