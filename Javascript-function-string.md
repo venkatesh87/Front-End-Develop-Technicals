@@ -3,7 +3,7 @@
 **1. substr ():**
 
 - ```string.substr(start, length)```
-- Phương thức substr () lấy ra các phần của một chuỗi, bắt đầu từ ký tự tại vị trí đã chỉ định và trả về số ký tự được chỉ định.
+- Phương thức ```substr()``` lấy ra các phần của một chuỗi, bắt đầu từ ký tự tại vị trí đã chỉ định và trả về số ký tự được chỉ định.
 - ```substr()```: Là phương thức không thay đổi chuỗi gốc.
 - ```start```: 
   + Cần thiết, Vị trí bắt đầu khai thác. Ký tự đầu tiên ở chỉ số 0
