@@ -78,31 +78,63 @@ console.log(array_Clone([1, 2, [4, 0]]));
 [1,2,[4,0]]
 ```
 
-**3. **
+**3. Write a simple JavaScript program to join all elements of the following array into a string.**
+- Viết một chương trình JavaScript đơn giản để nối tất cả các phần tử của mảng sau vào một chuỗi.
 
 >JavaScript Code:
 ```javascript
-
+myColor = ["Red", "Green", "White", "Black"];
+console.log(myColor.toString());
+console.log(myColor.join());
+console.log(myColor.join('+'));
+console.log(myColor.join(' '));
 ```
 
 >ES6 Version:
-
+myColor = ["Red", "Green", "White", "Black"];
+console.log(myColor.toString());
+console.log(myColor.join());
+console.log(myColor.join('+'));
+console.log(myColor.join(' '));
 ```
 
 >Result:
 ```javascript
-
+Red,Green,White,Black
+Red,Green,White,Black
+Red+Green+White+Black
+Red Green White Black
 ```
 
-**4. **
+**4. Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8**
+- Viết một chương trình JavaScript chấp nhận một số như đầu vào và chèn dấu gạch ngang (-) giữa hai số chẵn. Ví dụ nếu bạn chấp nhận 025468 đầu ra phải là 0-254-6-8
+- The ```toString()``` method converts a number to a string: Phương thức ```toString()``` chuyển đổi một số thành một chuỗi.
+- The push() method adds new items to the end of an array, and returns the new length: Phương thức push () thêm các mục mới vào cuối mảng, và trả về chiều dài mới.
 
 >JavaScript Code:
 ```javascript
+const num = window.prompt();
+const str = num.toString();
+const result = [str[0]];
 
+for (let x = 1; x < str.length; x++) {
+  if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+    result.push('-', str[x]);
+  } else {
+    result.push(str[x]);
+  }
+}
+console.log(result.join(''));
 ```
 
 >ES6 Version:
-
+is_array = input => {
+  if (toString.call(input) === "[object Array]")
+    return true;
+  return false;
+};
+console.log(is_array('w3resource'));
+console.log(is_array([1, 2, 4, 0]));
 ```
 
 >Result:
