@@ -6,11 +6,11 @@
 - Phương thức substr () lấy ra các phần của một chuỗi, bắt đầu từ ký tự tại vị trí đã chỉ định và trả về số ký tự được chỉ định.
 - ```substr()```: Là phương thức không thay đổi chuỗi gốc.
 - ```start```: 
-+ Cần thiết, Vị trí bắt đầu khai thác. Ký tự đầu tiên ở chỉ số 0
-+ Nếu bắt đầu là dương và lớn hơn, hoặc bằng, với chiều dài của chuỗi, substr() trả về một chuỗi rỗng.
-+ Nếu bắt đầu là số âm, substr() sử dụng nó như là một chỉ số ký tự từ cuối của chuỗi.
-+ Nếu bắt đầu là số âm hoặc lớn hơn chiều dài của chuỗi, bắt đầu được đặt thành 0
-- length: Không bắt buộc, Số ký tự để lấy xuất. Nếu bỏ qua, nó sẽ trích ra phần còn lại của chuỗi
+  + Cần thiết, Vị trí bắt đầu khai thác. Ký tự đầu tiên ở chỉ số 0
+  + Nếu bắt đầu là dương và lớn hơn, hoặc bằng, với chiều dài của chuỗi, substr() trả về một chuỗi rỗng.
+  + Nếu bắt đầu là số âm, substr() sử dụng nó như là một chỉ số ký tự từ cuối của chuỗi.
+  + Nếu bắt đầu là số âm hoặc lớn hơn chiều dài của chuỗi, bắt đầu được đặt thành 0
+- ```length```: Không bắt buộc, Số ký tự để lấy xuất. Nếu bỏ qua, nó sẽ trích ra phần còn lại của chuỗi
 
 >**Case 1:**
 ```javascript
