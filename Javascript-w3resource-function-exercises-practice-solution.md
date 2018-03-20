@@ -5,26 +5,37 @@
 Sample Data and output: 
 Example x = 32243; 
 Expected Output: 34223
-
 Assume n = 1000. 
 Convert a number to a string :
+
 **Code :** -> n = n + "";
+
 **Note :** There are different ways to convert number to string : Có nhiều cách khác nhau để chuyển đổi số thành chuỗi.
 
 **String literal** -> str = "" + num + "";
+
 **String constructor** -> str = String(num);
+
 **toString** -> str = num.toString();
+
 **String Literal simple** -> str = "" + num;
+
 The ```split()``` method is used to split a String object into an array of strings by separating the string into substrings.
+
 **Code :** console.log('1000'.split(""));
+
 **Output :** ["1", "0", "0", "0"]
 
 The ```reverse()``` method is used to reverse an array in place. The first array element becomes the last and the last becomes the first.
+
 **Code :** console.log(["1", "0", "0", "0"].reverse());
+
 **Output :** ["0", "0", "0", "1"]
 
 The ```join()``` method is used to join all elements of an array into a string.
+
 **Code :** console.log(["1", "0", "0", "0"].reverse().join(""));
+
 **Output :** "0001"
 
 >JavaScript Code:
@@ -42,6 +53,7 @@ console.log(reverse_a_number(32243));
 ```
 
 **2. Write a JavaScript function that checks whether a passed string is palindrome or not?**
+
 - Viết một hàm JavaScript để kiểm tra xem chuỗi đã qua có phải là palindrome hay không? 
 - Một chuỗi được gọi là Palindrome nếu sau khi đảo ngược các ký tự của nó, ta nhận được chuỗi ban đầu. Ví dụ: chuỗi "MADAM" là Palindrome.
 - The ```toLowerCase()``` method converts a string to lowercase letters.
