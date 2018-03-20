@@ -1,6 +1,6 @@
 #### I. JavaScript Recursion - Exercises, Practice, Solution
 ---
-**Recursion**: Đệ qui.
+**Recursion**: Đệ qui. Trả lại chính hắn, thông gia tham số mới truyền vào đã được tính toán ở trên.
 
 **1. Write a JavaScript program to calculate the factorial of a number.**
 - Viết một chương trình JavaScript để tính toán giai thừa của một số.
