@@ -146,7 +146,63 @@ Lemon,Apple
 ```
 
 **4. split():** 
+- Phương thức ```split()``` được sử dụng để chia một chuỗi thành một mảng các chuỗi con, và trả về mảng mới.
+- Nếu một chuỗi rỗng ("") được sử dụng làm dấu tách, chuỗi được phân chia giữa mỗi ký tự.
+- ```string.split(separator, limit)```
+- ```separator```: Không bắt buộc, Chỉ định ký tự, hoặc biểu thức chính quy, để sử dụng cho việc chia tách chuỗi. Nếu bỏ qua, toàn bộ chuỗi sẽ được trả lại (một mảng chỉ với một mục)
+- ```limit```: Một số nguyên xác định số lượng các phần tách, các mục sau khi giới hạn phân chia sẽ không được bao gồm trong mảng
 
-- Phương thức split () được dùng để tách (phân chia) một chuỗi thành một mảng các chuỗi con, và trả về mảng mới.
+>**Case 1:**
+```javascript
+function myFunction() {
+  var str = "How are you doing today?";
+  var res = str.split(" ");
+  document.getElementById("demo").innerHTML = res;
+}
+```
+>Result:
+```javascript
+How,are,you,doing,today?
+```
 
+>**Case 2:**
+```javascript
+function myFunction() {
+  var str = "How are you doing today?";
+  var res = str.split(" ", 3);
+  document.getElementById("demo").innerHTML = res;
+}
+```
+>Result:
+```javascript
+How,are,you
+```
+>**Case 3:**
+```javascript
+function myFunction() {
+  var str = "How are you doing today?";
+  var res = str.split("o");
+  document.getElementById("demo").innerHTML = res;
+}
+```
+>Result:
+```javascript
+H,w are y,u d,ing t,day?
+```
 **5. join():** 
+
+- Phương thức ```join()``` kết hợp các phần tử của một mảng vào một chuỗi, và trả về chuỗi.
+- Các phần tử sẽ được phân tách bằng một dấu tách quy định. Dấu tách mặc định là dấu phẩy (,).
+
+```
+function myFunction() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var x = document.getElementById("demo");
+  x.innerHTML = fruits.join();
+}
+```
+
+>Result:
+```javascript
+Banana,Orange,Apple,Mango
+```
