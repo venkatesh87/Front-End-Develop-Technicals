@@ -69,6 +69,7 @@
 1. [Tobiasahlin](http://tobiasahlin.com/moving-letters/#)
 
 #### III. Animation SVG 
+---
 
 1. [Polymorph](https://github.com/notoriousb1t/polymorph)
 
