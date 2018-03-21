@@ -212,14 +212,47 @@ console.log(arr2);
 - Viết một chương trình JavaScript để tìm ra mục thường gặp nhất của một mảng.
 - Sample array : ```var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];```
 - Sample Output : a ( 5 times )
-
+- Vòng lặp lồng vòng lặp: 
+  + Index i = 0: Ở vòng lặp 1 i = 0, length = 3, i sẽ nhỏ hơn 3, tức i = 2 nó sẽ chạy ở vòng lặp thứ 2 j = 0, arr[0] = arr[0], m = 1, tiếp nó sẽ chạy cái j++ tức j = 1, arr[0] != arr[1], tiếp đến chạy j = 2, arr[0] == arr[2], m = 2. Nếu m > ml thì gán ml = m. Thực chất là dùng cái arr[0] làm cờ so sánh với các arr[j]. Kiểm tra trùng hay ko.
+  + Index i = 1: thỏa điều kiên arr[1] == arr[1] nhưng ko thỏa điều kiện arr[1] == arr[2] tăng m lên 1.
+  + Index i = 2: thỏa điều kiên arr[2] == arr[2] nhưng ko tồn tại điều kiện arr[2] == arr[3]  tăng m lên 1.
 >JavaScript Code:
 ```javascript
-
+var arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+var mf = 1;
+var m = 0;
+var item;
+for (var i = 0; i < arr1.length; i++) {
+  for (var j = i; j < arr1.length; j++) {
+    if (arr1[i] == arr1[j])
+      m++;
+    if (mf < m) {
+      mf = m;
+      item = arr1[i];
+    }
+  }
+  m = 0;
+}
+console.log(item + " ( " + mf + " times ) ");
 ```
 
 >ES6 Version:
-
+const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+let mf = 1;
+let m = 0;
+let item;
+for (let i = 0; i < arr1.length; i++) {
+  for (let j = i; j < arr1.length; j++) {
+    if (arr1[i] == arr1[j])
+      m++;
+    if (mf < m) {
+      mf = m;
+      item = arr1[i];
+    }
+  }
+  m = 0;
+}
+console.log(`${item} ( ${mf} times ) `);
 ```
 
 >Result:
@@ -240,7 +273,7 @@ console.log(arr2);
 
 >Result:
 ```javascript
-
+a ( 5 times ) 
 ```
 
 **8. **
