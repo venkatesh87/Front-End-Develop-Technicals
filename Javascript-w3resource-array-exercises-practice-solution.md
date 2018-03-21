@@ -7,7 +7,7 @@
 - The call() method is a predefined JavaScript function method.(Phương thức call () là một hàm JavaScript được xác định trước.)
 - It can be used to invoke (call) a function with an owner object as the first argument (parameter).(Nó có thể được sử dụng để gọi ```(call)``` một hàm với một đối tượng chủ sở hữu như là đối số đầu tiên ```(parameter)```)
 
-**call()**
+
 ```
 var person = {
   firstName: "John",
