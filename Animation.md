@@ -1,3 +1,18 @@
+
+#### I. Animation Libraries
+---
+1. [AnimeJS](http://animejs.com/)
+
+1. [TweenMax Greensock](https://greensock.com/examples-showcases)
+
+1. [A note on reactive animations with GSAP]()
+
+1. [Mojs](http://mojs.io/)
+
+1. [Popmotion](https://popmotion.io/)
+
+1. [Velocity](http://velocityjs.org/)
+
 1. [Aos](https://michalsnik.github.io/aos/)
 
 1. [Wow](http://mynameismatthieu.com/WOW/)
@@ -28,17 +43,9 @@
 
 1. [Animista](http://animista.net/)
 
-1. [TweenMax.min.js](https://greensock.com/beziertweens)
-
 1. [erictreacy](https://github.com/erictreacy/mimic.css)
 
-1. [Animejs](http://animejs.com/)
-
 1. [GSAP](https://greensock.com/gsap)
-
-1. [AnimeJS](http://animejs.com/)
-
-1. [Velocity.js](http://velocityjs.org/)
 
 1. [Famous](http://staging.famous.org/)
 
@@ -47,3 +54,27 @@
 1. [SVG.js](http://svgjs.com/)
 
 1. [Animo.js](https://animo.js.org/)
+
+#### II. Additional Libraries & References
+---
+
+1. [Snap SVG](http://snapsvg.io/)
+
+1. [Just Animate](https://just-animate.github.io/)
+
+1. [Createjs](https://createjs.com/tweenjs)
+
+1. [Sequencejs](https://www.sequencejs.com/)
+
+1. [Tobiasahlin](http://tobiasahlin.com/moving-letters/#)
+
+#### III. Animation SVG 
+
+1. [Polymorph](https://github.com/notoriousb1t/polymorph)
+
+1. [SamKnows](https://github.com/SamKnows/path.js)
+
+1. [Lengthy SVG](https://github.com/shshaw/lengthy-svg)
+
+1. [Web Animation](https://web-animation.github.io/)
+
