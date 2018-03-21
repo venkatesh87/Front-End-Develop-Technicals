@@ -113,8 +113,25 @@ Red Green White Black
 - Viết một chương trình JavaScript chấp nhận một số như đầu vào và chèn dấu gạch ngang (-) giữa hai số chẵn. Ví dụ nếu bạn chấp nhận 025468 đầu ra phải là 0-254-6-8
 - The ```toString()``` method converts a number to a string: Phương thức ```toString()``` chuyển đổi một số thành một chuỗi.
 - The push() method adds new items to the end of an array, and returns the new length: Phương thức push () thêm các mục mới vào cuối mảng, và trả về chiều dài mới.
+- ```str[x-1]``` và ```str[x]``` là 2 chuỗi liền kề nhau trong mảng.
 
 >JavaScript Code:
+```javascript
+var num = window.prompt();
+var str = num.toString();
+var result = [str[0]];
+
+for (var x = 1; x < str.length; x++) {
+  if ((str[x - 1] % 2 === 0) && (str[x] % 2 === 0)) {
+    result.push('-', str[x]);
+  } else {
+    result.push(str[x]);
+  }
+}
+console.log(result.join(''));
+```
+
+>ES6 Version:
 ```javascript
 const num = window.prompt();
 const str = num.toString();
@@ -128,22 +145,6 @@ for (let x = 1; x < str.length; x++) {
   }
 }
 console.log(result.join(''));
-```
-
->ES6 Version:
-```javascript
-is_array = input => {
-  if (toString.call(input) === "[object Array]")
-    return true;
-  return false;
-};
-console.log(is_array('w3resource'));
-console.log(is_array([1, 2, 4, 0]));
-```
-
->Result:
-```javascript
-
 ```
 
 **5. **
