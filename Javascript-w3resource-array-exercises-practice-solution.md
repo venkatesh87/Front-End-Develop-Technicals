@@ -35,6 +35,7 @@ console.log(is_array([1, 2, 4, 0]));
 ```
 
 >ES6 Version:
+```javascript
 is_array = input => {
   if (toString.call(input) === "[object Array]")
     return true;
