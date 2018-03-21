@@ -147,23 +147,71 @@ for (let x = 1; x < str.length; x++) {
 console.log(result.join(''));
 ```
 
-**5. **
+**5. Write a JavaScript program to sort the items of an array.**
+- Viết một chương trình JavaScript để sắp xếp các mục của một mảng.
 
 >JavaScript Code:
 ```javascript
+var arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+var arr2 = [];
+var min = arr1[0];
+var pos;
+max = arr1[0];
+for (i = 0; i < arr1.length; i++) {
+  if (max < arr1[i]) max = arr1[i];
+}
 
+for (var i = 0; i < arr1.length; i++) {
+  for (var j = 0; j < arr1.length; j++) {
+    if (arr1[j] != "x") {
+      if (min > arr1[j]) {
+        min = arr1[j];
+        pos = j;
+      }
+    }
+  }
+  arr2[i] = min;
+  arr1[pos] = "x";
+  min = max;
+}
+console.log(arr2);
 ```
 
 >ES6 Version:
+const arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+const arr2 = [];
+let min = arr1[0];
+let pos;
+max = arr1[0];
+for (i = 0; i < arr1.length; i++) {
+  if (max < arr1[i]) max = arr1[i];
+}
 
+for (var i = 0; i < arr1.length; i++) {
+  for (let j = 0; j < arr1.length; j++) {
+    if (arr1[j] != "x") {
+      if (min > arr1[j]) {
+        min = arr1[j];
+        pos = j;
+      }
+    }
+  }
+  arr2[i] = min;
+  arr1[pos] = "x";
+  min = max;
+}
+console.log(arr2);
 ```
 
 >Result:
 ```javascript
-
+[-4,-3,1,2,3,5,6,7,8]
 ```
 
-**6. **
+**6. Write a JavaScript program to find the most frequent item of an array.**
+- Viết một chương trình JavaScript để tìm ra mục thường gặp nhất của một mảng.
+- Sample array : ```var arr1=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];```
+- Sample Output : a ( 5 times )
 
 >JavaScript Code:
 ```javascript
