@@ -68,6 +68,7 @@ console.log(array_Clone([1, 2, [4, 0]]));
 ```
 
 >ES6 Version:
+```javascript
 array_Clone = arra1 => arra1.slice(0);
 console.log(array_Clone([1, 2, 4, 0]));
 console.log(array_Clone([1, 2, [4, 0]]));
@@ -92,6 +93,7 @@ console.log(myColor.join(' '));
 ```
 
 >ES6 Version:
+```javascript
 myColor = ["Red", "Green", "White", "Black"];
 console.log(myColor.toString());
 console.log(myColor.join());
@@ -129,6 +131,7 @@ console.log(result.join(''));
 ```
 
 >ES6 Version:
+```javascript
 is_array = input => {
   if (toString.call(input) === "[object Array]")
     return true;
