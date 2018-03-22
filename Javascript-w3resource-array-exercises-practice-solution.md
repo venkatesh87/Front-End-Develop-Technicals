@@ -258,87 +258,243 @@ console.log(`${item} ( ${mf} times ) `);
 
 >Result:
 ```javascript
-
+a ( 5 times )
 ```
 
 **7. **
 
 >JavaScript Code:
 ```javascript
+str = 'c';
+var UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var LOWER = 'abcdefghijklmnopqrstuvwxyz';
+var result = [];
 
+for (var x = 0; x < str.length; x++) {
+  if (UPPER.indexOf(str[x]) !== -1) {
+    result.push(str[x].toLowerCase());
+  } else if (LOWER.indexOf(str[x]) !== -1) {
+    result.push(str[x].toUpperCase());
+  } else {
+    result.push(str[x]);
+  }
+}
+console.log(result.join(''));
 ```
 
 >ES6 Version:
+str = 'c';
+const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+const result = [];
 
+for (let x = 0; x < str.length; x++) {
+  if (UPPER.includes(str[x])) {
+    result.push(str[x].toLowerCase());
+  } else if (LOWER.includes(str[x])) {
+    result.push(str[x].toUpperCase());
+  } else {
+    result.push(str[x]);
+  }
+}
+console.log(result.join(''));
 ```
 
 >Result:
 ```javascript
-a ( 5 times ) 
+C
 ```
 
-**8. **
+**8. Write a JavaScript program which prints the elements of the following array.**
+- Viết một chương trình JavaScript in các phần tử của mảng sau.
 
 >JavaScript Code:
 ```javascript
+// a sample 2-D array 
+var a = [
+  [1, 2, 1, 24],
+  [8, 11, 9, 4],
+  [7, 0, 7, 27],
+  [7, 4, 28, 14],
+  [3, 10, 26, 7]
+];
 
+for (var i in a) {
+  console.log("row " + i);
+  for (var j in a[i]) {
+    console.log(" " + a[i][j]);
+  }
+}
 ```
 
 >ES6 Version:
+// a sample 2-D array 
+const a = [
+  [1, 2, 1, 24],
+  [8, 11, 9, 4],
+  [7, 0, 7, 27],
+  [7, 4, 28, 14],
+  [3, 10, 26, 7]
+];
 
+for (const i in a) {
+  console.log(`row ${i}`);
+  for (const j in a[i]) {
+    console.log(` ${a[i][j]}`);
+  }
+}
 ```
 
 >Result:
 ```javascript
-
+row 0
+ 1
+ 2
+ 1
+ 24
+row 1
+ 8
+ 11
+ 9
+ 4
+row 2
+ 7
+ 0
+ 7
+ 27
+row 3
+ 7
+ 4
+ 28
+ 14
+row 4
+ 3
+ 10
+ 26
+ 7
 ```
 
-**9. **
+**9. Write a JavaScript program to find the sum of squares of a numeric vector.**
+- Viết một chương trình JavaScript để tìm tổng của hình vuông của một vector số.
+- The ```pow(x, y)```: phương thức trả về giá trị của x với x mũ y.
 
 >JavaScript Code:
 ```javascript
+function sum_sq(array) {
+  var sum = 0,
+    i = array.length;
+  while (i--)
+    sum += Math.pow(array[i], 2);
+  return sum;
+}
 
+console.log(sum_sq([0, 1, 2, 3, 4]));
 ```
 
 >ES6 Version:
+function sum_sq(array) {
+  let sum = 0;
+  let i = array.length;
+  while (i--)
+    sum += array[i] ** 2;
+  return sum;
+}
 
+console.log(sum_sq([0, 1, 2, 3, 4]));
 ```
 
 >Result:
 ```javascript
-
+30
 ```
 
-**10. **
+**10. Write a JavaScript program to compute the sum and product of an array of integers.**
+- Viết một chương trình JavaScript để tính tổng và tính nhân của một mảng các số nguyên.
 
 >JavaScript Code:
 ```javascript
-
+var array = [1, 2, 3, 4, 5, 6],
+  s = 0,
+  p = 1,
+  i;
+for (i = 0; i < array.length; i += 1) {
+  s += array[i];
+  p *= array[i];
+}
+console.log('Sum : ' + s + ' Product :  ' + p);
 ```
 
 >ES6 Version:
-
+const array = [1, 2, 3, 4, 5, 6];
+let s = 0;
+let p = 1;
+let i;
+for (i = 0; i < array.length; i += 1) {
+  s += array[i];
+  p *= array[i];
+}
+console.log(`Sum : ${s} Product :  ${p}`);
 ```
 
 >Result:
 ```javascript
-
+Sum: 21 
+Multiplication: 720
 ```
 
-**11. **
+**11. Write a JavaScript program to display the colors in the following way**
+- Viết một chương trình JavaScript để hiển thị các màu theo cách sau.
+- Here is the sample array:
+- ```color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];```
+- ```o = ["th","st","nd","rd"]```
+- Output
++ "1st choice is Blue ."
++ "2nd choice is Green."
++ "3rd choice is Red."
 
 >JavaScript Code:
 ```javascript
+var color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
 
+function Ordinal(n) {
+  var o = ["th", "st", "nd", "rd"],
+    x = n % 100;
+  return x + (o[(x - 20) % 10] || o[x] || o[0]);
+}
+
+for (n = 0; n < color.length; n++) {
+  var ordinal = n + 1;
+  var output = (Ordinal(ordinal) + " choice is " + color[n] + ".");
+  console.log(output);
+}
 ```
 
 >ES6 Version:
+```javascript
+const color = ["Blue ", "Green", "Red", "Orange", "Violet", "Indigo", "Yellow "];
 
+function Ordinal(n) {
+  const o = ["th", "st", "nd", "rd"];
+  const x = n % 100;
+  return x + (o[(x - 20) % 10] || o[x] || o[0]);
+}
+
+for (n = 0; n < color.length; n++) {
+  const ordinal = n + 1;
+  const output = (`${Ordinal(ordinal)} choice is ${color[n]}.`);
+  console.log(output);
+}
 ```
 
 >Result:
 ```javascript
-
+1st choice is Blue .
+2nd choice is Green.
+3rd choice is Red.
+4th choice is Orange.
+5th choice is Violet.
+6th choice is Indigo.
+7th choice is Yellow .
 ```
 
 **12. **
@@ -349,6 +505,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -365,6 +522,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -381,6 +539,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -397,6 +556,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -413,6 +573,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -429,6 +590,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -445,6 +607,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -461,6 +624,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -477,6 +641,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -493,6 +658,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -509,6 +675,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -525,6 +692,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -541,6 +709,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -557,6 +726,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -573,6 +743,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -589,6 +760,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -605,6 +777,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
@@ -621,6 +794,7 @@ a ( 5 times )
 ```
 
 >ES6 Version:
+```javascript
 
 ```
 
