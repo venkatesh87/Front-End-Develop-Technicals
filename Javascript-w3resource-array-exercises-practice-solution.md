@@ -497,7 +497,23 @@ for (n = 0; n < color.length; n++) {
 7th choice is Yellow .
 ```
 
-**12. **
+**12. Find the leap years in a given range of years.**
+- Tìm năm nhuận trong một phạm vi nhất định của năm.
+- The ```forEach()``` method calls a provided function once for each element in an array, in order.(Phương thức ```forEach()``` gọi một hàm được cung cấp một lần cho mỗi phần tử trong một mảng, theo thứ tự.)
+- ```forEach()``` does not execute the function for array elements without values.(```forEach()``` không thực hiện chức năng cho các phần tử mảng không có giá trị.)
+
+>JavaScript forEach():
+```javascript
+var array1 = ['a', 'b', 'c'];
+
+array1.forEach(function(element) {
+  console.log(element);
+});
+
+// expected output: "a"
+// expected output: "b"
+// expected output: "c"
+```
 
 >JavaScript Code:
 ```javascript
