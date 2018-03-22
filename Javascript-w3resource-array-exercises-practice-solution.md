@@ -1,12 +1,13 @@
 #### I. JavaScript array - Exercises, Practice, Solution
 ---
+- The ```shift()``` method removes the first item of an array.
+- The ```pop()``` method removes the last item of an array.
 
 **1. Write a JavaScript function to check whether an 'input' is an array or not.**
 - Viết một hàm JavaScript để kiểm tra xem một 'đầu vào' là một mảng hay không.
 - Phương thức ```toString()``` trả về một chuỗi đại diện cho object.
 - The call() method is a predefined JavaScript function method.(Phương thức call () là một hàm JavaScript được xác định trước.)
 - It can be used to invoke (call) a function with an owner object as the first argument (parameter).(Nó có thể được sử dụng để gọi ```(call)``` một hàm với một đối tượng chủ sở hữu như là đối số đầu tiên ```(parameter)```)
-
 
 ```
 var person = {
@@ -261,7 +262,8 @@ console.log(`${item} ( ${mf} times ) `);
 a ( 5 times )
 ```
 
-**7. **
+**7. Write a JavaScript program which accept a string as input and swap the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.**
+- Viết một chương trình JavaScript chấp nhận một chuỗi như là đầu vào và trao đổi các trường hợp của mỗi nhân vật. Ví dụ nếu bạn nhập 'The Quick Brown Fox' đầu ra nên được 'tHE qUICK bROWN fOX'.
 
 >JavaScript Code:
 ```javascript
@@ -392,6 +394,7 @@ console.log(sum_sq([0, 1, 2, 3, 4]));
 ```
 
 >ES6 Version:
+```javascript
 function sum_sq(array) {
   let sum = 0;
   let i = array.length;
@@ -425,6 +428,7 @@ console.log('Sum : ' + s + ' Product :  ' + p);
 ```
 
 >ES6 Version:
+```javascript
 const array = [1, 2, 3, 4, 5, 6];
 let s = 0;
 let p = 1;
@@ -502,49 +506,123 @@ for (n = 0; n < color.length; n++) {
 - The ```forEach()``` method calls a provided function once for each element in an array, in order.(Phương thức ```forEach()``` gọi một hàm được cung cấp một lần cho mỗi phần tử trong một mảng, theo thứ tự.)
 - ```forEach()``` does not execute the function for array elements without values.(```forEach()``` không thực hiện chức năng cho các phần tử mảng không có giá trị.)
 
->JavaScript forEach():
-```javascript
-var array1 = ['a', 'b', 'c'];
-
-array1.forEach(function(element) {
-  console.log(element);
-});
-
-// expected output: "a"
-// expected output: "b"
-// expected output: "c"
-```
-
 >JavaScript Code:
 ```javascript
+function leap_year_range(st_year, end_year) {
+  var year_range = [];
+  for (var i = st_year; i <= end_year; i++) {
+    year_range.push(i);
+  }
+  var new_array = [];
 
+  year_range.forEach(
+    function(year) {
+      if (test_LeapYear(year))
+        new_array.push(year);
+    });
+
+  return new_array;
+}
+
+function test_LeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 100 === 0 && year % 400 === 0)) {
+    return year;
+  } else {
+    return false;
+  }
+}
+
+console.log(leap_year_range(2000, 2012));
 ```
 
 >ES6 Version:
 ```javascript
+function leap_year_range(st_year, end_year) {
+  const year_range = [];
+  for (let i = st_year; i <= end_year; i++) {
+    year_range.push(i);
+  }
+  const new_array = [];
 
+  year_range.forEach(
+    year => {
+      if (test_LeapYear(year))
+        new_array.push(year);
+    });
+
+  return new_array;
+}
+
+function test_LeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 100 === 0 && year % 400 === 0)) {
+    return year;
+  } else {
+    return false;
+  }
+}
+
+console.log(leap_year_range(2000, 2012));
 ```
 
 >Result:
 ```javascript
-
+[2000,2004,2008,2012]
 ```
 
-**13. **
+**13. Write a JavaScript program to shuffle an array.**
+**Hay**
+- Viết một chương trình JavaScript để xáo trộn một mảng.
 
 >JavaScript Code:
 ```javascript
+function shuffle(arra1) {
+  var ctr = arra1.length,
+    temp, index;
 
+  // While there are elements in the array
+  while (ctr > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+    ctr--;
+    // And swap the last element with it
+    temp = arra1[ctr];
+    arra1[ctr] = arra1[index];
+    arra1[index] = temp;
+  }
+  return arra1;
+}
+var myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(shuffle(myArray));
 ```
 
 >ES6 Version:
 ```javascript
+function shuffle(arra1) {
+  let ctr = arra1.length;
+  let temp;
+  let index;
 
+  // While there are elements in the array
+  while (ctr > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+    ctr--;
+    // And swap the last element with it
+    temp = arra1[ctr];
+    arra1[ctr] = arra1[index];
+    arra1[index] = temp;
+  }
+  return arra1;
+}
+const myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(shuffle(myArray));
 ```
 
 >Result:
 ```javascript
-
+[5,3,0,9,8,2,1,4,7,6]
 ```
 
 **14. **
