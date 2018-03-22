@@ -194,7 +194,7 @@ H,w are y,u d,ing t,day?
 - Phương thức ```join()``` kết hợp các phần tử của một mảng vào một chuỗi, và trả về chuỗi.
 - Các phần tử sẽ được phân tách bằng một dấu tách quy định. Dấu tách mặc định là dấu phẩy (,).
 
-```
+```javascript
 function myFunction() {
   var fruits = ["Banana", "Orange", "Apple", "Mango"];
   var x = document.getElementById("demo");
@@ -206,3 +206,268 @@ function myFunction() {
 ```javascript
 Banana,Orange,Apple,Mango
 ```
+
+**6. indexOf():** 
+- ```string.indexOf(searchvalue, start)```
+- ```searchvalue```: Cần thiết. Chuỗi để tìm kiếm
+- ```start```: Default  0. Tại vị trí nào để bắt đầu tìm kiếm
+- Phương thức ```indexOf()``` trả về vị trí của sự xuất hiện đầu tiên của một giá trị được chỉ định trong một chuỗi.
+- Phương thức này trả về -1 nếu giá trị tìm kiếm không bao giờ xảy ra.
+- Phương thức ```indexOf()``` phân biệt chữ hoa chữ thường.
+>**Case 1:**
+```javascript
+function myFunction() {
+  var str = "Hello world, welcome to the universe.";
+  var n = str.indexOf("welcome");
+  document.getElementById("demo").innerHTML = n;
+}
+```
+>Result:
+```javascript
+13
+```
+>**Case 2:**
+```javascript
+function myFunction() {
+  var str = "Hello world, welcome to the universe.";
+  var n = str.indexOf("e");
+  document.getElementById("demo").innerHTML = n;
+}
+```
+>Result:
+```javascript
+1
+```
+>**Case 3:**
+```javascript
+function myFunction() {
+  var str = "Hello world, welcome to the universe.";
+  var n = str.indexOf("e", 5);
+  document.getElementById("demo").innerHTML = n;
+}
+```
+>Result:
+```javascript
+14
+```
+
+**7. lastIndexOf():** 
+- ```string.lastIndexOf(searchvalue, start)```
+- ```searchvalue```: Cần thiết. Chuỗi để tìm kiếm
+- ```start```: Vị trí bắt đầu tìm kiếm (tìm kiếm ngược). Nếu bỏ qua, giá trị mặc định là chiều dài của chuỗi
+- Phương thức ```lastIndexOf()``` trả về vị trí của lần xuất hiện cuối cùng của một giá trị được chỉ định trong một chuỗi.
+- Chuỗi được tìm kiếm từ cuối đến đầu, nhưng trả về chỉ mục bắt đầu từ đầu, ở vị trí 0.
+- Phương thức này trả về -1 nếu giá trị tìm kiếm không bao giờ xảy ra.
+- Phương thức ```lastIndexOf()``` phân biệt chữ hoa chữ thường!
+
+>**Case 1:**
+```javascript
+function myFunction() {
+  var str = "Hello planet earth, you are a great planet.";
+  var n = str.lastIndexOf("planet");
+  document.getElementById("demo").innerHTML = n;
+}
+```
+>Result:
+```javascript
+36
+```
+>**Case 2:**
+```javascript
+function myFunction() {
+  var str = "Hello planet earth, you are a great planet.";
+  var n = str.lastIndexOf("planet", 20);
+  document.getElementById("demo").innerHTML = n;
+}
+```
+
+**8. charAt():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+**9. charCodeAt():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**10. concat():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**11. endsWith():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**12. fromCharCode():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**13. includes():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**14. localeCompare():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**15. match():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**16. repeat():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**17. replace():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**18. search():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**19. startsWith():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**20. toLocaleLowerCase():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**21. toLocaleUpperCase():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**22. toLowerCase():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**23. toString():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**24. toUpperCase():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**25. trim():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**26. valueOf():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+
