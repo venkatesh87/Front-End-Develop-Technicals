@@ -237,6 +237,7 @@ console.log(item + " ( " + mf + " times ) ");
 ```
 
 >ES6 Version:
+```javascript
 const arr1 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
 let mf = 1;
 let m = 0;
