@@ -73,7 +73,9 @@
 
 1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc.md)
 
-1. [JavaScript string](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function-string.md)
+1. [JavaScript String](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function-string.md)
+
+1. [JavaScript Loop](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-loop.md)
 
 #### II.JavaScript Design Patterns You Should Know
 ---
