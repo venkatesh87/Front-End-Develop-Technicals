@@ -126,3 +126,21 @@
 1. [Jsbin](https://jsbin.com/?html,css,js,console)
 
 1. [Codepen](https://codepen.io/pen/)
+
+#### V. Advanced coding skills
+---
+
+1. [Coderbyte](https://coderbyte.com/)
+
+1. [Codewars](https://www.codewars.com/)
+
+1. [Codefights](https://codefights.com/)
+
+1. [Topcoder](https://www.topcoder.com/challenges/)
+
+1. [Hackerrank](https://www.hackerrank.com/)
+
+1. [Leetcode](https://leetcode.com/)
+
+1. [Geeksforgeeks](https://www.geeksforgeeks.org/)
+
