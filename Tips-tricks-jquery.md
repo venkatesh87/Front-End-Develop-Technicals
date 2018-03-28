@@ -171,8 +171,58 @@ setInterval(toggleSlide, 1000);
 
 >**Case 7: ** Loop active Javascript
 
+**HTML**
 ```javascript
+<ul>
+  <li class="panel active">Item 1</li>
+  <li class="panel">Item 2</li>
+  <li class="panel">Item 3</li>
+</ul>
+```
 
+***JS*
+```javascript
+$(function() {
+  var lis_count = $('li.panel').length;
+  var active_li_index = 0;
+
+  setInterval(function() {
+    if ($('li.panel.active').index() == lis_count - 1)
+      active_li_index = 0;
+    else
+      active_li_index++;
+
+    $('li.panel.active').removeClass('active');
+    $('li.panel').eq(active_li_index).addClass('active');
+  }, 1000);
+})
+```
+
+```javascript
+document.addEventListener('DOMContentLoaded', function() {
+  var lis = Array.prototype.slice.call(document.querySelectorAll('li.panel'));
+  var lis_count = lis.length;
+  var active_li_index = 0;
+
+  setInterval(function() {
+    var active_li = document.querySelector('li.panel.active');
+
+    if (lis.indexOf(active_li) == lis_count - 1)
+      active_li_index = 0;
+    else
+      active_li_index++;
+
+    active_li.classList.remove('active');
+    document.querySelectorAll('li.panel')[active_li_index].classList.add('active');
+  }, 1000);
+}, false);
+```
+
+**CSS**
+```javascript
+.active {
+  background - color: yellow;
+}
 ```
 
 #### 4. Allow show/hide, fadeIn/fadeOut, slideUp/slideDown block:
