@@ -180,7 +180,7 @@ setInterval(toggleSlide, 1000);
 </ul>
 ```
 
-***JS*
+**JS**
 ```javascript
 $(function() {
   var lis_count = $('li.panel').length;
