@@ -1,6 +1,7 @@
 #### 1. Code JavaScript Flag :
+---
 
-**- Case 1:**
+>**Case 1:**
 ```javascript
   window.DEBUG = true;
 
@@ -19,7 +20,7 @@
   log("foobar") // Does not need to be wrapper, as log() itself is functional only in debug mode    
 ```
 
-**- Case 2:** 
+>**Case 2:** 
 
 ```javascript
 var is_playing = true;
@@ -33,9 +34,11 @@ if (is_playing) {
 ```     
 
 #### 2. Check active:
+---
 
-**Switch active**
+>**Switch class active:**
 
+>**Case 1**
 ```javascript
 $('selector').on('click', function(){
   $('selector').removeClass('active');
@@ -43,17 +46,7 @@ $('selector').on('click', function(){
 });
 ```
 
-**Switch class active:**
-
-**- Case 1**
-```javascript
-$('selector').on('click', function(){
-  $('selector').removeClass('active');
-  $(this).addClass('active');
-});
-```
-
-**- Case 2**
+>**Case 2**
 
 ```javascript
 $('selector').find('a').click(function() {
@@ -64,7 +57,7 @@ $('selector').find('a').click(function() {
 });
 ```
 
-#### 3. Index and active index
+>**Case 3** Index and active index
 
 - Get index of tag ```<a>```.
   ```this_index = selectors.navigation.find('a').index(this);```
@@ -110,15 +103,31 @@ $(document).ready(function() {
   });
 });
 ```
-#### 2. Check length element :
 
-**- Case 1: length-of-a-javascript-string**
+>**Case 4: ** Loop active jQuery
+
+```javascript
+var toggleSlide = function(){
+    $("h1 .words span.active").removeClass().next().add("h1 .words span:first").last().addClass("active");
+  }
+  setInterval(toggleSlide, 1500);
+````
+
+>**Case 5: ** Loop active Javascript
+
+```javascript
+
+````
+
+#### 2. Check length element :
+---
+>**Case 1: length-of-a-javascript-string**
 ```javascript
 var str = "Hello World!";
 var n = str.length;
 ```
 
-**- Case 2: length-of-a-javascript-object** 
+>**Case 2: length-of-a-javascript-object** 
 
 ```javascript
 Object.size = function(obj) {
@@ -142,9 +151,9 @@ Object.keys(myObject).length
 
 #### 3. Object :
 
-**Length of a JavaScript object (or associative array)**
+>**Length of a JavaScript object (or associative array)**
 
-**- The most robust answer:**
+>**The most robust answer:**
 ```javascript
 var myArray = new Object();
 myArray["firstname"] = "Gareth";
@@ -161,25 +170,26 @@ Object.size = function(obj) {
 // Get the size of an object
 var size = Object.size(myArray);
 ```
-**- Here's an update as of 2016 and widespread deployment of ES5 and beyond. For IE9+ and all other modern ES5+ capable browsers, you can use Object.keys() so the above code just becomes:**
+>**- Here's an update as of 2016 and widespread deployment of ES5 and beyond. For IE9+ and all other modern ES5+ capable browsers, you can use Object.keys() so the above code just becomes:**
 
 ```javascript
 var size = Object.keys(myObj).length;
 ```
-**- If you know you don't have to worry about hasOwnProperty checks, you can do this very simply:**
+>**- If you know you don't have to worry about hasOwnProperty checks, you can do this very simply:**
 
 ```javascript
 Object.keys(myArray).length
 ```
 
-**Use something as simple as:**
+>**Use something as simple as:**
 
 ```javascript
 Object.keys(obj).length
 ```
 #### 4. Keyboard
+---
 
-**Disable F12 Key in a Page**
+>**Disable F12 Key in a Page**
 
 ```javascript
 document.onkeypress = function (event) {  
@@ -196,7 +206,7 @@ document.onkeydown = function (event) {
 }
 ```
 
-**Disable Ctrl+U Key in a Page**
+>**Disable Ctrl+U Key in a Page**
 
 ```javascript
 document.onkeydown = function(e) {
@@ -213,13 +223,13 @@ document.onkeydown = function(e) {
 };
 ```
 
-**Disable View Page Source Key in a Page Right Click Mouse**
+>**Disable View Page Source Key in a Page Right Click Mouse**
 
 ```javascript
 <body oncontextmenu="return false">
 ```
 
-**Disable keyboard Ctrl+S:**
+>**Disable keyboard Ctrl+S:**
 
 ```javascript
 document.onkeydown = function (e) {
@@ -236,7 +246,7 @@ document.onkeydown = function (e) {
 };
 ```
 
-**Rendering a simple list of products with jQuery:**
+>**Rendering a simple list of products with jQuery:**
 
 ```javascript
 var products = [
