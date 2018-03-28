@@ -145,6 +145,7 @@ $(document).ready(function() {
   });
 });
 ```
+
 >**Case 6: ** Loop active jQuery
 
 ```javascript
