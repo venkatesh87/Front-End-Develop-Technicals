@@ -1,4 +1,4 @@
-#### 1. Code JavaScript Flag :
+##### 1. Code JavaScript Flag :
 ---
 
 >**Case 1:**
@@ -116,10 +116,20 @@ var toggleSlide = function(){
 >**Case 5: ** Loop active Javascript
 
 ```javascript
+toggleSlide = function() {
+  var active = $("#slider ul li.active");
+  var next = active.next();
+  if (next.length === 0) {
+    next = $('#slider ul li:first');
+  }
 
+  active.removeClass('active');
+  next.addClass('active');
+}
+setInterval(toggleSlide, 1000);
 ````
 
-#### 2. Check length element :
+##### 2. Check length element :
 ---
 >**Case 1: length-of-a-javascript-string**
 ```javascript
@@ -149,8 +159,8 @@ Object.keys(myObject).length
 ```  
 
 
-#### 3. Object :
-
+##### 3. Object :
+---
 >**Length of a JavaScript object (or associative array)**
 
 >**The most robust answer:**
@@ -186,7 +196,7 @@ Object.keys(myArray).length
 ```javascript
 Object.keys(obj).length
 ```
-#### 4. Keyboard
+##### 4. Keyboard
 ---
 
 >**Disable F12 Key in a Page**
