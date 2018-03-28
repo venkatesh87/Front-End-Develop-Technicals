@@ -145,6 +145,34 @@ $(document).ready(function() {
   });
 });
 ```
+>**Case 6: ** Loop active jQuery
+
+```javascript
+var toggleSlide = function(){
+    $("h1 .words span.active").removeClass().next().add("h1 .words span:first").last().addClass("active");
+  }
+  setInterval(toggleSlide, 1500);
+```
+
+```javascript
+toggleSlide = function() {
+  var active = $("#slider ul li.active");
+  var next = active.next();
+  if (next.length === 0) {
+    next = $('#slider ul li:first');
+  }
+
+  active.removeClass('active');
+  next.addClass('active');
+}
+setInterval(toggleSlide, 1000);
+```
+
+>**Case 7: ** Loop active Javascript
+
+```javascript
+
+```
 
 #### 4. Allow show/hide, fadeIn/fadeOut, slideUp/slideDown block:
 
