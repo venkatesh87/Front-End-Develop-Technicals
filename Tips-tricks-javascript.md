@@ -33,103 +33,22 @@ if (is_playing) {
 }
 ```     
 
-#### 2. Check active:
+##### 2. Check active:
 ---
 
 >**Switch class active:**
 
 >**Case 1**
 ```javascript
-$('selector').on('click', function(){
-  $('selector').removeClass('active');
-  $(this).addClass('active');
-});
+
 ```
-
->**Case 2**
-
-```javascript
-$('selector').find('a').click(function() {
-  var iscurrent = $(this).parent().hasClass('active');
-  $('selector').find('li').removeClass('active');
-  $(this).parent().addClass('active');
-  return false;
-});
-```
-
->**Case 3** Index and active index
-
-- Get index of tag ```<a>```.
-  ```this_index = selectors.navigation.find('a').index(this);```
-  
-- Assign the variable to the ```<a>``` tag containing the active class.
-  ```var active_selector = selectors.navigation.find('.active');```
-  
-- Get index of active class.
-  ```active_index = selectors.navigation.find('a').index(active_selector);```
-  
-- Từ ```index``` của ```this_index``` và ```index``` của ```active```, chúng ta có thể lấy nó và gán lên ```function()``` xử lý tab để ẩn hiện ```eachItem(this_index)```
-  
-```javascript
-var this_index = '';
-var active_index = '';
-var selectors = {
-  navigation: $('.nav-tabs'),
-  content: $('.tab_panel')
-}
-var tabs = {
-  showContent: function(index) {
-    selectors.content.eq(active_index).hide();
-    selectors.content.eq(index).show();
-  }
-}
-var eachItem = function(this_index) {
-  if ($('.tab_panel').hasClass('active')) {
-    tabs.showContent(this_index);
-  }
-};
-$(document).ready(function() {
-  selectors.navigation.on('click', 'a', function(e) {
-    e.preventDefault();
-    this_index = selectors.navigation.find('a').index(this);
-    var active_selector = selectors.navigation.find('.active');
-    active_index = selectors.navigation.find('a').index(active_selector);
-
-    active_selector.removeClass('active');
-    $(this).addClass('active');
-    
-    // If the element is not found, index() will return -1.
-    eachItem(this_index);
-  });
-});
-```
-
->**Case 4: ** Loop active jQuery
-
-```javascript
-var toggleSlide = function(){
-    $("h1 .words span.active").removeClass().next().add("h1 .words span:first").last().addClass("active");
-  }
-  setInterval(toggleSlide, 1500);
-````
-
 >**Case 5: ** Loop active Javascript
 
 ```javascript
-toggleSlide = function() {
-  var active = $("#slider ul li.active");
-  var next = active.next();
-  if (next.length === 0) {
-    next = $('#slider ul li:first');
-  }
 
-  active.removeClass('active');
-  next.addClass('active');
-}
-setInterval(toggleSlide, 1000);
 ````
 
-##### 2. Check length element :
+##### 3. Check length element :
 ---
 >**Case 1: length-of-a-javascript-string**
 ```javascript
@@ -158,8 +77,7 @@ var size = Object.size(myArray);
 Object.keys(myObject).length
 ```  
 
-
-##### 3. Object :
+##### 4. Object :
 ---
 >**Length of a JavaScript object (or associative array)**
 
@@ -196,7 +114,7 @@ Object.keys(myArray).length
 ```javascript
 Object.keys(obj).length
 ```
-##### 4. Keyboard
+##### 5. Keyboard
 ---
 
 >**Disable F12 Key in a Page**
