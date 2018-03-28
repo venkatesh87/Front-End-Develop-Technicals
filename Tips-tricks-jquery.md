@@ -146,7 +146,7 @@ $(document).ready(function() {
 });
 ```
 
->**Case 6: ** Loop active jQuery
+> **Case 6: ** Loop active jQuery
 
 ```javascript
 var toggleSlide = function(){
