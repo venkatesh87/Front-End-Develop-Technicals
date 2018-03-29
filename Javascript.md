@@ -67,6 +67,8 @@
 
 1. [Javascript JSON](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-json.md)
 
+1. [Javascript Some Are Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-some-are-commonly-used.md)
+
 1. [Javascript introduction to functional](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-introduction-to-functional.md)
 
 1. [Javascript variable scope and hoisting](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-variable-scope-and-hoisting.md)
