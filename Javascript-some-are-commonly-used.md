@@ -109,12 +109,25 @@ lLoc = window.screenX
 lLoc = window.screenY
 ```
 
-**6. onresize, onscroll**
-```javascript
+**6. pageXOffset, pageYOffset**
 
+>**pageXOffset**
+
+- Đây là bí danh cho scrollX
+
+```javascript
+xOffset = window.pageXOffset;
 ```
 
-**7. **
+>**pageYOffset**
+
+- Trang thuộc tính chỉ đọc WindowYOffset là một bí danh cho scrollY;như vậy, nó trả về số pixel mà tài liệu hiện đang cuộn dọc theo trục thẳng đứng (nghĩa là, lên hoặc xuống).với một giá trị 0,0 chỉ ra rằng cạnh trên cùng của tài liệu hiện đang được căn chỉnh với cạnh trên cùng của khu vực nội dung của cửa sổ.
+
+```javascript
+window.pageYOffset;
+yOffset = window.pageYOffset;
+```
+**7. onresize, onscroll**
 ```javascript
 
 ```
