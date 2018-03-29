@@ -111,6 +111,12 @@ lLoc = window.screenY
 
 **6. pageXOffset, pageYOffset**
 
+```javascript
+window.addEventListener("scroll", function(e) { 
+  r = window.pageYOffset || document.documentElement.scrollTop 
+});
+```
+
 >**pageXOffset**
 
 - Đây là bí danh cho scrollX
