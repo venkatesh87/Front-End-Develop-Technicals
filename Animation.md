@@ -55,6 +55,8 @@
 
 1. [Animo.js](https://animo.js.org/)
 
+1. [25+ CSS Animation Libraries](https://cssauthor.com/css-animation-libraries/?ref=webdesignernews.com)
+
 #### II. Additional Libraries & References
 ---
 
