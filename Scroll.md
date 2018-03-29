@@ -1,11 +1,8 @@
-###Scroll Effect Element :
+##### Scroll Effect Element
+---
+- [Scrollmagic](http://scrollmagic.io/)
+- [Basicscroll](https://basicscroll.electerious.com/)
 
-  - [Scrollmagic](http://scrollmagic.io/)
-
-###Scroll Browser :
-
-###Scroll Plugin 
-
-###Scroll Page
-
+##### Scroll Page
+---
 1. [FullPage](http://alvarotrigo.com/fullPage/)
