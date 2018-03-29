@@ -1,21 +1,21 @@
-### 1. Window onload
-
+#### 1. Window onload
+---
 ```javascript
 $( window ).load(function() {
 	// code here
 });
 ```
 
-### 2. Document ready
-
+#### 2. Document ready
+---
 ```javascript
 $(document).ready(function(){
 	// code here
 });
 ```
 
-### 3. function($)
-
+#### 3. function($)
+---
 ```javascript
 (function($) {
   $(function() {
@@ -30,8 +30,8 @@ $(document).ready(function(){
 })(jQuery);
 ```
 
-### 4. App function
-
+#### 4. App function
+---
 ```
 var App = function() {
   function handleFunction() {
@@ -48,8 +48,8 @@ $(document).ready(function() {
 });
 ```
 
-**- Case 5: function for jQuery**
-
+#### 5. function for jQuery**
+---
 ```javascript
 //function to fix height of iframe!
   var calcHeight = function() {
@@ -67,6 +67,4 @@ $(document).ready(function() {
   });
   ```
   
-
-
-### 5. Function Expression
+### 6. Function Expression
