@@ -490,11 +490,13 @@ function myMove() {
 ```
   
 >**onload:** Sự kiện onload và onunload được kích hoạt khi người dùng nhập hoặc thoát khỏi trang.
-
 ```javascript
 <body onload="checkCookies()">
   <p id="demo"></p>
 </body>
+```
+
+```javascript
 function checkCookies(){
   var text = '';
   if(navigator.cookieEnabled == true){
@@ -610,7 +612,7 @@ function displayDate(){
 >**The removeEventListener() method**:
 ```javascript
 <div id="myDIV">This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.
-  <p>Click the button to remove the DIV's event handler.</p>
+  <p>Click the button to remove the ```DIV's``` event handler.</p>
   <button onclick="removeHandler()" id="myBtn">Try it</button>
 </div>
 ```
@@ -696,13 +698,13 @@ element.insertBefore(para,child);
 ```
 ### 11. DOM Collections
 ---
-
 ```javascript
 <p>Hello World!</p>
 <p>Hello Norway!</p>
 <p>Click the button to change the color of all p elements.</p>
 <button onclick="myFunction()">Try it</button>
-
+```
+```javascript
 function myFunction() {
     var myCollection = document.getElementsByTagName("p");
     var i;
@@ -714,13 +716,13 @@ function myFunction() {
 
 ### 12. DOM Node Lists
 ---
-
 ```javascript
 <p>Hello World!</p>
 <p>Hello Norway!</p>
 <p>Click the button to change the color of all p elements.</p>
 <button onclick="myFunction()">Try it</button>
-
+```
+```javascript
 function myFunction() {
     var myNodelist = document.querySelectorAll("p");
     var i;
