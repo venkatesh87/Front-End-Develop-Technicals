@@ -1,11 +1,11 @@
-#### Scroll Effect Element
+###### Scroll Effect Element
 ---
 - [Scrollmagic](http://scrollmagic.io/)
 
-#### Parallax scrolling
+###### Parallax scrolling
 ---
 - [Basicscroll](https://basicscroll.electerious.com/)
 
-#### Scroll Page
+###### Scroll Page
 ---
 1. [FullPage](http://alvarotrigo.com/fullPage/)
