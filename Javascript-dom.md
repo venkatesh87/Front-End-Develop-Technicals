@@ -533,6 +533,9 @@ function mOut(obj){
 
 ```javascript
 <p id="p1" onmousedown="mouseDown()" >Click the text!</p>
+```
+
+```javascript
 function mouseDown(){
   document.getElementById('').style.color = 'red';
 }
@@ -566,10 +569,11 @@ function myFunction(e) {
 }
 ```
 >**Add an Event Handler to the Window Object**:
-
 ```javascript
 <p id="demo"></p>
+```
 
+```javascript
 window.addEventListener("resize", function(){
   document.getElementById("demo").innerHTML = Math.random();
 });
@@ -592,7 +596,9 @@ document.getElementById("myDiv").addEventListener("click", myFunction, true);
 ```javascript
 <button id="myBtn">Try it</button>
 <p id="demo"></p>
+```
 
+```javascript
 document.getElementById('myBtn').addEventListener('click', );
 function displayDate(){
   document.getElementById('demo').innerHTML = Date();
@@ -605,6 +611,8 @@ function displayDate(){
   <p>Click the button to remove the DIV's event handler.</p>
   <button onclick="removeHandler()" id="myBtn">Try it</button>
 </div>
+```
+```javascript
 document.getElementById("myDIV").addEventListener("mousemove", myFunction);
 function myFunction() {
     document.getElementById("demo").innerHTML = Math.random();
@@ -613,7 +621,6 @@ function removeHandler() {
     document.getElementById("myDIV").removeEventListener("mousemove", myFunction);
 }
 ```
-
 ### 9. DOM Navigation
 ---
 
