@@ -41,7 +41,7 @@
 - poster: Xác định hình đại diện cho video.
 - preload: Xác định việc tải video khi tải trang.
 
-> **2. Details/Summary **
+> **2. Details/Summary**
 
 ```javascripts
 <h2>I'm having a party!</h2>
