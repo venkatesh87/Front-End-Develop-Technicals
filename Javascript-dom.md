@@ -518,9 +518,11 @@ myFunction(){
 ```
 
 >**The onmouseover and onmouseout Events**
-
 ```javascript
 <div onmouseover="mOver(this) onmouseout="mOut(this)">Mouse Over Me</div>
+```
+
+```javascript
 function mOver(obj){
   obj.innerHTML = 'Mouse Out Me'
 }
@@ -612,6 +614,7 @@ function displayDate(){
   <button onclick="removeHandler()" id="myBtn">Try it</button>
 </div>
 ```
+
 ```javascript
 document.getElementById("myDIV").addEventListener("mousemove", myFunction);
 function myFunction() {
@@ -650,13 +653,14 @@ document.getElementById("id02").innerHTML = document.getElementById("id01").node
 ---
 
 >**Creating New HTML Elements (Nodes)**:
-
 ```javascript
 <div id="div1">
   <p id="p1">This is a paragraph.</p>
   <p id="p2">This is another paragraph.</p>
 </div>
+```
 
+```javascript
 var para = document.createElement("p");
 var node = document.createTextNode("This is new.");
 para.appendChild(node);
@@ -666,13 +670,14 @@ element.appendChild(para);
 ==> **Result:** ```<p id="p1">This is new.</p>```
 
 >**Creating new HTML Elements** ```insertBefore()```
-
 ```javascript
 <div id="div1">
 <p id="p1">This is a paragraph.</p>
 <p id="p2">This is another paragraph.</p>
 </div>
+```
 
+```javascript
 var para = document.createElement("p");
 var node = document.createTextNode("This is new.");
 para.appendChild(node);
