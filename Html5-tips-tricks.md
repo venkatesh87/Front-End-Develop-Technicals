@@ -66,3 +66,77 @@
   Use Google Maps.
 </details>
 ```
+
+> **2. Figure element**
+
+> **2.1 The figure element is commonly used for images**
+```javascripts
+<figure>
+  <img src="dog.jpg" alt="Maltese Terrier">
+</figure>
+```
+
+> **2.2 Multiple Images in figure**
+```javascripts
+<figure>
+  <img src="dog1.jpg" alt="Maltese Terrier">
+  <img src="dog2.jpg" alt="Black Labrador">
+  <img src="dog3.jpg" alt="Golden Retriever">
+</figure>
+<figure>
+  <pre>
+  <code>
+    p {
+        color: #333;
+        font-family: Helvetica, sans-serif;
+        font-size: 1rem;
+    }
+  </code>
+</pre>
+</figure>
+```
+
+> **2.3 Nesting figure Inside Another figure
+```javascripts
+<figure role="group">
+  <figcaption>Dog breeds</figcaption>
+  <figure>
+    <img src="dog1.jpg" alt="Maltese Terrier">
+    <figcaption>Adorable Maltese Terrier</figcaption>
+  </figure>
+  <figure>
+    <img src="dog2.jpg" alt="Black Labrador">
+    <figcaption>Cute black labrador</figcaption>
+  </figure>
+</figure>
+```
+
+> **2.4 Correct Usage of figcaption
+```javascripts
+<figure>
+  <figcaption>Three different breeds of dog.</figcaption>
+  <img src="dog1.jpg" alt="Maltese Terrier">
+  <img src="dog2.jpg" alt="Black Labrador">
+  <img src="dog3.jpg" alt="Golden Retriever">
+</figure>
+```
+**OR:**
+```javascripts
+<figure>
+  <img src="dog1.jpg" alt="Maltese Terrier">
+  <img src="dog2.jpg" alt="Black Labrador">
+  <img src="dog3.jpg" alt="Golden Retriever">
+  <figcaption>Three different breeds of dog.</figcaption>
+</figure>
+```
+
+> **2.5 You Can Use Flow Elements in figcaption Too
+```javascripts
+<figure>
+  <img src="dogs.jpg" alt="Group photo of dogs">
+  <figcaption>
+    <h2>Puppy School</h2>
+    <p>Championship Class of 2016</p>
+  </figcaption>
+</figure>
+```
