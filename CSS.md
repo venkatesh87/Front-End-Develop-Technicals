@@ -4,8 +4,9 @@
 
 1. [CSS Gradient](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-gradient.md)
 
-2. [CSS Variables](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-variables.md)
+1. [CSS Variables](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-variables.md)
 
+1. [Scooped-corners-in-2018](https://css-tricks.com/scooped-corners-in-2018/)
 
 ```javascripts 
 forgot~p 
