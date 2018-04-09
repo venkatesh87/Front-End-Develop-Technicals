@@ -138,22 +138,43 @@ yOffset = window.pageYOffset;
 
 ```
 
-*8. **
+**8. scrollTop**
 ```javascript
 
 ```
 
-**9. **
+**9. scrollRight**
 ```javascript
 
 ```
 
-**10. **
+**10. scrollBottom**
 ```javascript
 
 ```
 
-**11. **
+**11. scrollLeft**
 ```javascript
 
+```
+
+**11. getBoundingClientRect()**
+- The ```Element.getBoundingClientRect()``` method returns the size of an element and its position relative to the viewport.
+```javascript
+var domRect = element.getBoundingClientRect();
+```
+- Các tập lệnh yêu cầu khả năng tương thích trình duyệt cao có thể sử dụng window.pageXOffset và window.pageYOffset thay vì window.scrollX và window.scrollY. Các tập lệnh mà không có quyền truy cập vào các thuộc tính này có thể sử dụng mã như sau:
+
+```javascript
+// For scrollX
+(((t = document.documentElement) || (t = document.body.parentNode))
+  && typeof t.scrollLeft == 'number' ? t : document.body).scrollLeft
+// For scrollY
+(((t = document.documentElement) || (t = document.body.parentNode))
+  && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
+```
+
+**rect is a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height**
+```javascript
+var rect = obj.getBoundingClientRect();
 ```
