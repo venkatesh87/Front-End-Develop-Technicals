@@ -8,6 +8,8 @@
 
 1. [Scooped-corners-in-2018](https://css-tricks.com/scooped-corners-in-2018/)
 
+1. [5 tips for super-fast CSS](https://www.creativebloq.com/how-to/5-tips-for-super-fast-css)
+
 ```javascripts 
 forgot~p 
 ```
