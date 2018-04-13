@@ -21,3 +21,5 @@
 11. [Process Loading](https://github.com/daodc/Front-End-Develop-Technical/wiki/process-loading)
 
 12. [Unit CSS %, EM, REM](https://github.com/daodc/Front-End-Develop-Technical/wiki/Unit-PERCENT-EM-REM-In-Web)
+
+13. [Memorize The Company Projects](https://github.com/daodc/Front-End-Develop-Technical/wiki/Memorize-the-company-projects.md)
