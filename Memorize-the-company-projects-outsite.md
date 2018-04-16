@@ -1,4 +1,4 @@
-#### I. Memorize the company project GDIT
+# I. Memorize the company project GDIT
 ---
 
 **1. 20180328_I_DESIGN**
