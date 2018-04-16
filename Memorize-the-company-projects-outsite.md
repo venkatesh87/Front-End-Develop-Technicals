@@ -1,5 +1,4 @@
 # I. Memorize the company project GDIT
----
 
 **1. 20180328_I_DESIGN**
 - Switch screen with smartphone.
