@@ -44,6 +44,7 @@ if($(window).width()<=1000){
 
 **ForEach**:
 >JavaScript Code:
+```javascript
 var Navigation = {
   selector: {
     nav_item: document.querySelectorAll('.navigation ul li')  
