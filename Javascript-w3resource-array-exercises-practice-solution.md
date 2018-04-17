@@ -179,6 +179,7 @@ console.log(arr2);
 ```
 
 >ES6 Version:
+```javascript
 const arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
 const arr2 = [];
 let min = arr1[0];
