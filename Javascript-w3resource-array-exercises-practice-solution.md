@@ -285,6 +285,7 @@ console.log(result.join(''));
 ```
 
 >ES6 Version:
+```javascript
 str = 'c';
 const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWER = 'abcdefghijklmnopqrstuvwxyz';
