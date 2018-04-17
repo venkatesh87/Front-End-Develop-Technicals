@@ -42,7 +42,7 @@ if($(window).width()<=1000){
 }
 ```
 
-**ForEach**:
+**ForEach**: item sẽ hiểu từng thẻ ```<li>```.
 >JavaScript Code:
 ```javascript
 var Navigation = {
@@ -54,22 +54,22 @@ var Navigation = {
   },
   nav_reset: function(){
     if ($(window).width() > 1000) {
-      Navigation.selector.nav_item.forEach(function(userItem) {
-        userItem.style.WebkitOpacity = "1";
-        userItem.style.msOpacity = "1";
-        userItem.style.opacity = "1";
-        userItem.style.WebkitTransform = "translate3d(0, 0, 0)";
-        userItem.style.msTransform = "translate3d(0, 0, 0)";
-        userItem.style.transform = "translate3d(0, 0, 0)";
+      Navigation.selector.nav_item.forEach(function(item) {
+        item.style.WebkitOpacity = "1";
+        item.style.msOpacity = "1";
+        item.style.opacity = "1";
+        item.style.WebkitTransform = "translate3d(0, 0, 0)";
+        item.style.msTransform = "translate3d(0, 0, 0)";
+        item.style.transform = "translate3d(0, 0, 0)";
       });
     } else if ($(window).width() <= 1000) {
       Navigation.selector.nav_item.forEach(function(userItem) {
-        userItem.style.WebkitOpacity = "0";
-        userItem.style.msOpacity = "0";
-        userItem.style.opacity = "0";
-        userItem.style.WebkitTransform = "translate3d(0, 40px, 0)";
-        userItem.style.msTransform = "translate3d(0, 40px, 0)";
-        userItem.style.transform = "translate3d(0, 40px, 0)";
+        item.style.WebkitOpacity = "0";
+        item.style.msOpacity = "0";
+        item.style.opacity = "0";
+        item.style.WebkitTransform = "translate3d(0, 40px, 0)";
+        item.style.msTransform = "translate3d(0, 40px, 0)";
+        item.style.transform = "translate3d(0, 40px, 0)";
       });
     }
   }
