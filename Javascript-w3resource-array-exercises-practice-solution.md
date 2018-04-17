@@ -330,6 +330,7 @@ for (var i in a) {
 ```
 
 >ES6 Version:
+```javascript
 // a sample 2-D array 
 const a = [
   [1, 2, 1, 24],
