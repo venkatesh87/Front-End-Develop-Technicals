@@ -155,20 +155,24 @@ if (window.PointerEvent) {
 }
 ```
 
+
+>Nếu trình duyệt hỗ trợ sự kiện con trỏ
 ```javascript
-// Nếu trình duyệt hỗ trợ sự kiện con trỏ
 pointerdown: Con trỏ được nhấn
 pointerup: Phát hành con trỏ
 pointerleave: Con trỏ ra ngoài khu vực
 pointermove: Con trỏ đang di chuyển
 
-// Thêm tất cả sự kiện của trình nghe chuột fallback của người nghe
+>Thêm tất cả sự kiện của trình nghe chuột fallback của người nghe
+```javascript
 mousedown: Nhấn chuột
 mouseup: Nhả chuột
 mouseleave: Chuột ra khỏi khu vực
 mousemove: Chuột đang di chuyển
+```
 
-// Thêm tất cả sự kiện chạm vào người nghe lại dự phòng
+>Thêm tất cả sự kiện chạm vào người nghe lại dự phòng
+```javascript
 touchstart: ngón tay chạm vào màn hình
 touchend: Ngón tay không còn chạm vào màn hình nữa
 touchmove: ngón tay đang di chuyển
