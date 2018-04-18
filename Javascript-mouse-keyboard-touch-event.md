@@ -1,6 +1,6 @@
 ### I. Javascript Mouse, Keyboard, Touch event.
 ---
->Nếu trình duyệt hỗ trợ sự kiện con trỏ
+>**Nếu trình duyệt hỗ trợ sự kiện con trỏ**
 ```javascript
 pointerdown: Con trỏ được nhấn
 pointerup: Phát hành con trỏ
@@ -8,7 +8,7 @@ pointerleave: Con trỏ ra ngoài khu vực
 pointermove: Con trỏ đang di chuyển
 ```
 
->Thêm tất cả sự kiện của trình nghe chuột fallback của người nghe
+>**Thêm tất cả sự kiện của trình nghe chuột fallback của người nghe**
 ```javascript
 mousedown: Nhấn chuột
 mouseup: Nhả chuột
@@ -16,7 +16,7 @@ mouseleave: Chuột ra khỏi khu vực
 mousemove: Chuột đang di chuyển
 ```
 
->Thêm tất cả sự kiện chạm vào người nghe lại dự phòng
+>**Thêm tất cả sự kiện chạm vào người nghe lại dự phòng**
 ```javascript
 touchstart: ngón tay chạm vào màn hình
 touchend: Ngón tay không còn chạm vào màn hình nữa
@@ -25,7 +25,7 @@ touchmove: ngón tay đang di chuyển
 
 **1. Mouse Events**
 
->```onmouseover```/```onmouseout``` - When the mouse passes over an element:
+>**```onmouseover```/```onmouseout``` - When the mouse passes over an element**:
 ```javascript
 <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32">
 ```
@@ -42,7 +42,7 @@ function normalImg(x) {
 }
 ```
 
->```mouseover```/```mouseout``` - When pressing/releasing a mouse button:
+>**```mouseover```/```mouseout``` - When pressing/releasing a mouse button**:
 - ```mouseover```: Sự kiện di chuột xảy ra khi con trỏ chuột nằm trên phần tử được chọn.
 - ```mouseout```: Sự kiện onmouseout xảy ra khi con trỏ chuột được di chuyển ra khỏi phần tử.
 
@@ -92,7 +92,7 @@ function mouseOut() {
 </script>
 ```
 
->```onmousedown```/```onmouseup``` - When pressing/releasing a mouse button:
+>**```onmousedown```/```onmouseup``` - When pressing/releasing a mouse button**:
 - ```onmousedown```: Sự kiện onmousedown xảy ra khi người dùng nhấn một nút chuột trên một phần tử.
 - ```onmouseup```:  Sự kiện onmouseup xảy ra khi người dùng thả một nút chuột lên một phần tử.
 ```javascript
@@ -106,7 +106,7 @@ function mouseUp() {
 }
 ```
 
->```mousedown``` - When mouse is clicked: Alert which element, ```mouseup``` - When mouse is clicked: Alert which button:
+>```**mousedown``` - When mouse is clicked: Alert which element, ```mouseup``` - When mouse is clicked: Alert which button**:
 ```javascript
 document.getElementById("demo").addEventListener("mousedown", mouseDown);
 document.getElementById("demo").addEventListener("mouseup", mouseUp);
@@ -120,7 +120,7 @@ function mouseUp() {
 }
 ```
 
->```onmousemove```/```onmouseout``` - When moving the mouse pointer over/out of an image:
+>**```onmousemove```/```onmouseout``` - When moving the mouse pointer over/out of an image**:
 - ```onmousemove```: Sự kiện onmousemove xảy ra khi con trỏ đang di chuyển trong khi nó ở trên một phần tử.
 ```
 <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div>
@@ -152,7 +152,7 @@ function myFunction(e) {
 
 **2. Click Events**
 
->```onclick``` - When button is clicked:
+>**```onclick``` - When button is clicked**:
 ```javascript
 
 ```
@@ -163,83 +163,83 @@ function myFunction(e) {
 
 **3. Load Events**
 
->```onload``` - When the page has been loaded:
+>**```onload``` - When the page has been loaded**:
 ```javascript
 
 ```
->```onerror``` - When an error occurs when loading an image:
-```javascript
-
-```
-
->```onunload``` - When the browser closes the document:
+>**```onerror``` - When an error occurs when loading an image**:
 ```javascript
 
 ```
 
->```onresize``` - When the browser window is resized:
+>**```onunload``` - When the browser closes the document**:
+```javascript
+
+```
+
+>**```onresize``` - When the browser window is resized**:
 ```javascript
 
 ```
 
 **4. Input Events**
 
->```onblur``` - When a user leaves an input field:
+>**```onblur``` - When a user leaves an input field**:
 ```javascript
 
 ```
 
->```onchange``` - When a user changes the content of an input field:
+>**```onchange``` - When a user changes the content of an input field**:
 ```javascript
 
 ```
 
->```onchange``` - When a user selects a dropdown value:
+>**```onchange``` - When a user selects a dropdown value**:
 ```javascript
 
 ```
 
->```onfocus``` - When an input field gets focus:
+>**```onfocus``` - When an input field gets focus**:
 ```javascript
 
 ```
 
->```onselect``` - When input text is selected:
+>**```onselect``` - When input text is selected**:
 ```javascript
 
 ```
 
->```onsubmit``` - When a user clicks the submit button:
+>**```onsubmit``` - When a user clicks the submit button**:
 ```javascript
 
 ```
 
->```onreset``` - When a user clicks the reset button:
+>**```onreset``` - When a user clicks the reset button**:
 ```javascript
 
 ```
 
->```onkeydown``` - When a user is pressing/holding down a key:
+>**```onkeydown``` - When a user is pressing/holding down a key**:
 ```javascript
 
 ```
 
->```onkeypress``` - When a user is pressing/holding down a key:
+>**```onkeypress``` - When a user is pressing/holding down a key**:
 ```javascript
 
 ```
 
->```onkeyup``` - When the user releases a key:
+>**```onkeyup``` - When the user releases a key**:
 ```javascript
 
 ```
 
->```onkeyup``` - When the user releases a key:
+>**```onkeyup``` - When the user releases a key**:
 ```javascript
 
 ```
 
->```onkeydown``` vs ```onkeyup``` - Both:
+>**```onkeydown``` vs ```onkeyup``` - Both**:
 ```javascript
 
 ```
