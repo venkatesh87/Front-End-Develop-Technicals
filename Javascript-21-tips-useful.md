@@ -1,4 +1,4 @@
-#### I. 21 THỦ THUẬT JAVASCRIPT HỮU ÍCH.
+## I. 21 THỦ THUẬT JAVASCRIPT HỮU ÍCH.
 ---
 
 **1. Tạo hàm query DOM ngắn gọn hơn với bind**
