@@ -162,6 +162,7 @@ pointerdown: Con trỏ được nhấn
 pointerup: Phát hành con trỏ
 pointerleave: Con trỏ ra ngoài khu vực
 pointermove: Con trỏ đang di chuyển
+```
 
 >Thêm tất cả sự kiện của trình nghe chuột fallback của người nghe
 ```javascript
