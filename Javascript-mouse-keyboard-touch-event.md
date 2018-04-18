@@ -130,3 +130,46 @@
 ```javascript
 
 ```
+
+
+```javascript
+var svg = document.querySelector('svg');
+
+// If browser supports pointer events
+if (window.PointerEvent) {
+  svg.addEventListener('pointerdown', onPointerDown); // Pointer is pressed
+  svg.addEventListener('pointerup', onPointerUp); // Releasing the pointer
+  svg.addEventListener('pointerleave', onPointerUp); // Pointer gets out of the SVG area
+  svg.addEventListener('pointermove', onPointerMove); // Pointer is moving
+} else {
+  // Add all mouse events listeners fallback
+  svg.addEventListener('mousedown', onPointerDown); // Pressing the mouse
+  svg.addEventListener('mouseup', onPointerUp); // Releasing the mouse
+  svg.addEventListener('mouseleave', onPointerUp); // Mouse gets out of the SVG area
+  svg.addEventListener('mousemove', onPointerMove); // Mouse is moving
+
+  // Add all touch events listeners fallback
+  svg.addEventListener('touchstart', onPointerDown); // Finger is touching the screen
+  svg.addEventListener('touchend', onPointerUp); // Finger is no longer touching the screen
+  svg.addEventListener('touchmove', onPointerMove); // Finger is moving
+}
+```
+
+```javascript
+// Nếu trình duyệt hỗ trợ sự kiện con trỏ
+pointerdown: Con trỏ được nhấn
+pointerup: Phát hành con trỏ
+pointerleave: Con trỏ ra ngoài khu vực
+pointermove: Con trỏ đang di chuyển
+
+// Thêm tất cả sự kiện của trình nghe chuột fallback của người nghe
+mousedown: Nhấn chuột
+mouseup: Nhả chuột
+mouseleave: Chuột ra khỏi khu vực
+mousemove: Chuột đang di chuyển
+
+// Thêm tất cả sự kiện chạm vào người nghe lại dự phòng
+touchstart: ngón tay chạm vào màn hình
+touchend: Ngón tay không còn chạm vào màn hình nữa
+touchmove: ngón tay đang di chuyển
+```
