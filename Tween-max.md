@@ -29,4 +29,3 @@
 - ```repeat```:  Number - Số lần mà animation phải lặp lại sau lần lặp đầu tiên. Ví dụ: nếu repeat là 1, animation sẽ phát tổng cộng 2 lần (lần phát đầu tiên cộng 1 lần repeat). Để repeat vô thời hạn, sử dụng ```-1```. lặp lại luôn phải là một số nguyên.
 - ```repeatDelay```:  Number - Số lượng thời gian tính bằng giây (hoặc khung hình cho khung hình) giữa các lần repeat. Ví dụ, nếu repeat is 2 and repeatDelay is 1, hoạt hình sẽ chơi ban đầu, sau đó chờ 1 giây trước khi nó lặp lại, sau đó chơi lại, sau đó đợi 1 giây nữa trước khi thực hiện lần lặp lại cuối cùng.
 - ```yoyo```: Boolean  - Nếu đúng, mỗi chu kỳ lặp lại khác sẽ chạy theo chiều ngược lại để tween xuất hiện để đi qua lại (phía trước và ngược lại). Điều này không ảnh hưởng đến tài sản "đảo ngược" mặc dù. Vì vậy, nếu lặp lại là 2 và yoyo là sai, nó sẽ giống như: start - 1 - 2 - 3 - 1 - 2 - 3 - 1 - 2 - 3 - end. Nhưng nếu yoyo là đúng, nó sẽ giống như: start - 1 - 2 - 3 - 3 - 2 - 1 - 1 - 2 - 3 - end.
-- 
