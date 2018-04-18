@@ -3,12 +3,12 @@
 
 **1. Input Events**
 
->onblur - When a user leaves an input field:
+>```onblur``` - When a user leaves an input field:
 ```javascript
 
 ```
 
->onchange - When a user changes the content of an input field:
+>```onchange``` - When a user changes the content of an input field:
 ```javascript
 
 ```
