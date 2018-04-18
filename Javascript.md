@@ -7,6 +7,8 @@
 
 1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
+1. [Javascript 21 Tips Useful](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-21-tips-useful.md)
+
 1. [JavaScript Functions and Helpers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/JavaScript-functions-and-helpers.md)
 
 1. [JavaScript study](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-study.md)
