@@ -1,7 +1,75 @@
 ### I. Javascript Mouse, Keyboard, Touch event.
 ---
 
-**1. Input Events**
+**1. Mouse Events**
+
+>```onmouseover```/```onmouseout``` - When the mouse passes over an element:
+```javascript
+
+```
+>```onmousedown```/```onmouseup``` - When pressing/releasing a mouse button:
+```javascript
+
+```
+
+>```onmousedown``` - When mouse is clicked: Alert which element:
+```javascript
+
+```
+
+>```onmousedown``` - When mouse is clicked: Alert which button:
+```javascript
+
+```
+
+>```onmousemove```/```onmouseout``` - When moving the mouse pointer over/out of an image:
+```javascript
+
+```
+
+>```onmouseover```/```onmouseout``` - When moving the mouse over/out of an image:
+```javascript
+
+```
+
+>```onmouseover``` an image map:
+```javascript
+
+```
+
+**2. Click Events**
+
+>```onclick``` - When button is clicked:
+```javascript
+
+```
+>```ondblclick``` - When a text is double-clicked:
+```javascript
+
+```
+
+**3. Load Events**
+
+>```onload``` - When the page has been loaded:
+```javascript
+
+```
+>```onerror``` - When an error occurs when loading an image:
+```javascript
+
+```
+
+>```onunload``` - When the browser closes the document:
+```javascript
+
+```
+
+>```onresize``` - When the browser window is resized:
+```javascript
+
+```
+
+**4. Input Events**
 
 >```onblur``` - When a user leaves an input field:
 ```javascript
@@ -43,7 +111,7 @@
 
 ```
 
->onkeypress - When a user is pressing/holding down a key:
+>```onkeypress``` - When a user is pressing/holding down a key:
 ```javascript
 
 ```
@@ -59,83 +127,6 @@
 ```
 
 >```onkeydown``` vs ```onkeyup``` - Both:
-```javascript
-
-```
-**2. Mouse Events**
-
->```onmouseover```/```onmouseout``` - When the mouse passes over an element:
-```javascript
-
-```
->```onmousedown```/```onmouseup``` - When pressing/releasing a mouse button:
-```javascript
-
-```
-
->```onmousedown``` - When mouse is clicked: Alert which element:
-```javascript
-
-```
-
->```onmousedown``` - When mouse is clicked: Alert which button:
-```javascript
-
-```
-
->```onmousemove```/```onmouseout``` - When moving the mouse pointer over/out of an image:
-```javascript
-
-```
-
->```onmouseover```/```onmouseout``` - When moving the mouse over/out of an image:
-```javascript
-
-```
-
->```onmouseover``` an image map:
-```javascript
-
-```
-
-**3. Click Events**
-
->```onclick``` - When button is clicked:
-```javascript
-
-```
->```ondblclick``` - When a text is double-clicked:
-```javascript
-
-```
-
-**4. Load Events**
-
->```onload``` - When the page has been loaded:
-```javascript
-
-```
->```onerror``` - When an error occurs when loading an image:
-```javascript
-
-```
-
->```onunload``` - When the browser closes the document:
-```javascript
-
-```
-
->```onresize``` - When the browser window is resized:
-```javascript
-
-```
-
->JavaScript Code:
-```javascript
-
-```
-
->JavaScript Code:
 ```javascript
 
 ```
