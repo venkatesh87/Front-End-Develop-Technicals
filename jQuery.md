@@ -6,6 +6,8 @@
 
 1. [JQuery Objects](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-objects.md)
 
+1. [JQuery Mouse Keyboard Touch Event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-mouse-keyboard-touch-event.md)
+
 1. [JQuery Gallery Photo Json](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-gallery-photo-json.md)
 
 1. [Function jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Function-jquery.md)
