@@ -109,7 +109,41 @@ lLoc = window.screenX
 lLoc = window.screenY
 ```
 
-**6. pageXOffset, pageYOffset**
+**6. MouseEvent clientX, clientY**
+
+>**MouseEvent clientX**
+- The ```clientX``` property returns the horizontal coordinate (according to the client area) of the mouse pointer when a mouse event was triggered.
+- Thuộc tính clientX trả về tọa độ theo chiều ngang (theo client area) của con trỏ chuột khi một sự kiện chuột được kích hoạt.
+- The client area is the current window.
+- client area là cửa sổ hiện tại.
+- To get the vertical coordinate (according to the client area) of the mouse pointer, use the clientY property.
+- Để có được tọa độ theo chiều dọc (theo client area) của con trỏ chuột, sử dụng tài sản ```clientY```.
+- Xuất ra tọa độ của con trỏ chuột khi nhấp chuột vào một phần tử:
+```javascript
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+}
+```
+
+>**MouseEvent clientY**
+- The clientY property returns the vertical coordinate (according to the client area) of the mouse pointer when a mouse event was triggered.
+- Thuộc tính clientY trả về tọa độ theo chiều dọc (theo khu vực khách hàng) của con trỏ chuột khi một sự kiện chuột được kích hoạt.
+- To get the horizontal coordinate (according to the client area) of the mouse pointer, use the clientX property.
+- Để có được tọa độ ngang (theo khu vực khách hàng) của con trỏ chuột, hãy sử dụng thuộc tính clientX.
+- Xuất ra các tọa độ của con trỏ chuột trong khi con trỏ chuột di chuyển qua một phần tử:
+```javascript
+function showCoords(event) {
+  var x = event.clientX;
+  var y = event.clientY;
+  var coords = "X coords: " + x + ", Y coords: " + y;
+  document.getElementById("demo").innerHTML = coords;
+}
+```
+
+**7. pageXOffset, pageYOffset**
 
 ```javascript
 window.addEventListener("scroll", function(e) { 
@@ -133,32 +167,32 @@ xOffset = window.pageXOffset;
 window.pageYOffset;
 yOffset = window.pageYOffset;
 ```
-**7. onresize, onscroll**
+**8. onresize, onscroll**
 ```javascript
 
 ```
 
-**8. scrollTop**
+**9. scrollTop**
 ```javascript
 
 ```
 
-**9. scrollRight**
+**10. scrollRight**
 ```javascript
 
 ```
 
-**10. scrollBottom**
+**11. scrollBottom**
 ```javascript
 
 ```
 
-**11. scrollLeft**
+**12. scrollLeft**
 ```javascript
 
 ```
 
-**11. getBoundingClientRect()**
+**13. getBoundingClientRect()**
 - The ```Element.getBoundingClientRect()``` method returns the size of an element and its position relative to the viewport.
 ```javascript
 var domRect = element.getBoundingClientRect();
