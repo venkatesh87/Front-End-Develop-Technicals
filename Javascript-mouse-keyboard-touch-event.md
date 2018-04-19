@@ -364,27 +364,168 @@ function myFunction() {
 - Sự kiện ```onblur``` tương tự như sự kiện onfocusout. Sự khác biệt chính là sự kiện onblur không bong bóng. Do đó, nếu bạn muốn tìm hiểu xem một phần tử hoặc con của nó có mất tập trung, bạn có thể sử dụng sự kiện ```onfocusout```. Tuy nhiên, bạn có thể đạt được điều này bằng cách sử dụng tham số optionalCapture tùy chọn của phương thức ```addEventListener()``` cho sự kiện onblur.
 
 ```javascript
+<input type="text" onblur="myFunction()">
+function myFunction() {
+  alert("Input field lost focus.");
+}
+```
 
+```javascript
+document.getElementById("fname").onblur = function() {myFunction()};
+function myFunction() {
+  alert("Input field lost focus.");
+}
+```
+
+```javascript
+document.getElementById("fname").addEventListener("blur", myFunction);
+function myFunction() {
+  alert("Input field lost focus.");
+}
 ```
 
 >**```onchange``` - When a user changes the content of an input field**:
-```javascript
+- Sự kiện ```onchange``` xảy ra khi giá trị của một phần tử đã được thay đổi.
+- Đối với các nút ```radio``` và hộp kiểm, sự kiện ```onchange``` xảy ra khi trạng thái đã kiểm tra đã được thay đổi.
+- Sự kiện này tương tự như sự kiện ```oninput```. Sự khác biệt là sự kiện ```oninput``` xảy ra ngay sau khi giá trị của một phần tử đã thay đổi, trong khi onchange xảy ra khi phần tử mất tiêu điểm, sau khi nội dung đã được thay đổi. Sự khác biệt khác là sự kiện ```onchange``` cũng hoạt động trên các phần tử ```<select>```.
 
+```javascript
+<input type="text" id="fname" onchange="myFunction()">
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+```
+
+```javascript
+document.getElementById("fname").onchange = function() {myFunction()};
+function myFunction() {
+ var x = document.getElementById("fname");
+ x.value = x.value.toUpperCase();
+}
+```
+
+```javascript
+document.getElementById("fname").addEventListener("change", myFunction);
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
 ```
 
 >**```onchange``` - When a user selects a dropdown value**:
+- Thực thi JavaScript khi người dùng thay đổi tùy chọn đã chọn của phần tử ```<select>```
 ```javascript
-
+<select id="mySelect" onchange="myFunction()">
+  <option value="Audi">Audi
+  <option value="BMW">BMW
+  <option value="Mercedes">Mercedes
+  <option value="Volvo">Volvo
+</select>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
 ```
 
 >**```onfocus``` - When an input field gets focus**:
-```javascript
+- Sự kiện ```onfocus``` xảy ra khi một phần tử được focus.
+- Sự kiện ```onfocus``` thường được sử dụng với ```<input>```, ```<select>``` và ```<a>```.
+- Sự kiện ```onfocus``` là sự đối ngược với sự kiện ```onblur```.
+- Sự kiện ```onfocus``` tương tự như sự kiện ```onfocusin```. Sự khác biệt chính là sự kiện ```onfocus``` không bong bóng. Vì vậy, nếu bạn muốn tìm hiểu xem một phần tử hoặc con của nó có được tiêu điểm, bạn có thể sử dụng sự kiện ```onfocusin```. Tuy nhiên, bạn có thể đạt được điều này bằng cách sử dụng tham số ```optionalCapture``` tùy chọn của phương thức ```addEventListener()``` cho sự kiện ```onfocus```.
 
+```javascript
+Enter your name: <input type="text" id="fname" onfocus="myFunction()">
+function myFunction() {
+  document.getElementById("fname").style.backgroundColor = "red";
+}
 ```
 
->**```onselect``` - When input text is selected**:
 ```javascript
+Enter your name: <input type="text" id="fname">
+document.getElementById("fname").onfocus = function() {myFunction()};
+function myFunction() {
+  document.getElementById("fname").style.backgroundColor = "red";
+}
+```
 
+```javascript
+Enter your name: <input type="text" id="fname">
+document.getElementById("fname").addEventListener("focus", myFunction);
+function myFunction() {
+  document.getElementById("fname").style.backgroundColor = "red";
+}
+```
+
+```javascript
+Enter your name: <input type="text" id="myInput" onfocus="focusFunction()" onblur="blurFunction()">
+function focusFunction() {
+  // Focus = Changes the background color of input to yellow
+  document.getElementById("myInput").style.background = "yellow";
+}
+
+function blurFunction() {
+  // No focus = Changes the background color of input to red
+  document.getElementById("myInput").style.background = "red";
+}
+```
+
+```javascript
+<input type="text" onfocus="this.value=''" value="Blabla">
+```
+
+```javascript
+var x = document.getElementById("myForm");
+x.addEventListener("focus", myFocusFunction, true);
+x.addEventListener("blur", myBlurFunction, true);
+
+function myFocusFunction() {
+  document.getElementById("myInput").style.backgroundColor = "yellow";  
+}
+
+function myBlurFunction() {
+  document.getElementById("myInput").style.backgroundColor = "";  
+}
+```
+
+```javascript
+var x = document.getElementById("myForm");
+x.addEventListener("focusin", myFocusFunction);
+x.addEventListener("focusout", myBlurFunction);
+
+function myFocusFunction() {
+  document.getElementById("myInput").style.backgroundColor = "yellow";
+}
+
+function myBlurFunction() {
+  document.getElementById("myInput").style.backgroundColor = "";  
+}
+```
+>**```onselect``` - When input text is selected**:
+- Sự kiện ```onselect``` xảy ra sau khi một số văn bản đã được chọn trong một phần tử.
+- Sự kiện ```onselect``` chủ yếu được sử dụng trên các phần tử ```<input type = "text">``` hoặc ```<textarea>```.
+
+```javascript
+Select some text: <input type="text" value="Hello world!" onselect="myFunction()">
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You selected some text!";
+}
+```
+
+```javascript
+Select some text: <input type="text" value="Hello world!" id="myText">
+document.getElementById("myText").onselect = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You selected some text!";
+}
+```
+
+```javascript
+document.getElementById("myText").addEventListener("select", myFunction);
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = "You selected some text!";
+}
 ```
 
 >**```onsubmit``` - When a user clicks the submit button**:
