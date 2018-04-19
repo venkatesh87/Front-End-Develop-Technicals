@@ -25,7 +25,7 @@
 1. [toptal](https://www.toptal.com/front-end)
 
 ### III. Learn
-
+1. [front end handbook](https://frontendmasters.com/books/front-end-handbook/2018/)
 1. [frontendmasters](https://frontendmasters.gitbooks.io/front-end-handbook/content/index.html?utm_content=buffer50663&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)
 1. [UsePanda](http://usepanda.com/)
 
