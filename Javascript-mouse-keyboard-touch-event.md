@@ -1,5 +1,6 @@
 ### I. Javascript Mouse, Keyboard, Touch event.
 ---
+- Phương thức ```addEventListener()``` không được hỗ trợ trong Internet Explorer 8 và các phiên bản trước đó.
 >**Nếu trình duyệt hỗ trợ sự kiện con trỏ**
 ```javascript
 pointerdown: Con trỏ được nhấn
@@ -262,22 +263,96 @@ function myFunction() {
 **3. Load Events**
 
 >**```onload``` - When the page has been loaded**:
-```javascript
+- Sự kiện ```onload``` xảy ra khi một đối tượng đã được nạp.
+- ```onload``` thường được sử dụng trong phần tử ```<body>``` để thực thi một tập lệnh khi một trang web đã tải xong toàn bộ nội dung (bao gồm cả hình ảnh, tệp kịch bản, các tệp CSS, v.v ...).
 
+```javascript
+<iframe onload="myFunction()" src="/default.asp"></iframe>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Iframe is loaded.";
+}
 ```
->**```onerror``` - When an error occurs when loading an image**:
-```javascript
 
+```javascript
+document.getElementById("myFrame").onload = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Iframe is loaded.";
+}
+```
+
+```javascript
+document.getElementById("myFrame").addEventListener("load", myFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Iframe is loaded.";
+}
+```
+
+>**```onerror``` - When an error occurs when loading an image**:
+- Sự kiện ```onerror``` được kích hoạt nếu xảy ra lỗi khi tải tệp tin bên ngoài 
+```javascript
+<img src="image.gif" onerror="myFunction()">
+<p id="demo"></p>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "The image could not be loaded.";
+}
+```
+
+```javascript
+document.getElementById("myImg").onerror = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").innerHTML = "The image could not be loaded.";
+}
+```
+
+```javascript
+document.getElementById("myImg").addEventListener("error", myFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "The image could not be loaded.";
+}
 ```
 
 >**```onunload``` - When the browser closes the document**:
-```javascript
+- Thuộc tính ```onunload``` sẽ kích hoạt khi trang đã được dỡ xuống (hoặc cửa sổ trình duyệt đã bị đóng).
+- ```onunload``` xảy ra khi người dùng điều hướng khỏi trang (bằng cách nhấp vào liên kết, gửi biểu mẫu, đóng cửa sổ trình duyệt ...)
+- Nếu bạn tải lại trang, bạn cũng sẽ kích hoạt sự kiện onunload (và sự kiện tải lên).
 
+```javascript
+<body onunload="myFunction()">
+function myFunction() {
+  alert("Thank you for visiting W3Schools!");
+}
 ```
 
 >**```onresize``` - When the browser window is resized**:
-```javascript
+- Sự kiện onresize xảy ra khi cửa sổ trình duyệt đã được thay đổi kích cỡ.
 
+```javascript
+<body onresize="myFunction()">
+function myFunction() {
+  var w = window.outerWidth;
+  var h = window.outerHeight;
+  var txt = "Window size: width=" + w + ", height=" + h;
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+```
+
+```javascript
+document.getElementsByTagName("BODY")[0].onresize = function() {myFunction()};
+var x = 0;
+function myFunction() {
+  var txt = x += 1;
+  document.getElementById("demo").innerHTML = txt;
+}
+```
+
+```javascript
+window.addEventListener("resize", myFunction);
+var x = 0;
+function myFunction() {
+  var txt = x += 1;
+  document.getElementById("demo").innerHTML = txt;
+}
 ```
 
 **4. Input Events**
