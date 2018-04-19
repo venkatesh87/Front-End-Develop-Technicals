@@ -358,6 +358,11 @@ function myFunction() {
 **4. Input Events**
 
 >**```onblur``` - When a user leaves an input field**:
+- Sự kiện ```onblur``` xảy ra khi một đối tượng mất tập trung.
+- Sự kiện ```onblur``` thường được sử dụng với mã form validation (ví dụ: khi người dùng bỏ một form field).
+- Sự kiện ```onblur``` là sự phản đối của sự kiện ```onfocus```.
+- Sự kiện ```onblur``` tương tự như sự kiện onfocusout. Sự khác biệt chính là sự kiện onblur không bong bóng. Do đó, nếu bạn muốn tìm hiểu xem một phần tử hoặc con của nó có mất tập trung, bạn có thể sử dụng sự kiện ```onfocusout```. Tuy nhiên, bạn có thể đạt được điều này bằng cách sử dụng tham số optionalCapture tùy chọn của phương thức ```addEventListener()``` cho sự kiện onblur.
+
 ```javascript
 
 ```
