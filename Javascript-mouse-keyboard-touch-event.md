@@ -25,7 +25,9 @@ touchmove: ngón tay đang di chuyển
 
 **1. Mouse Events**
 
->**```onmouseover```/```onmouseout``` - When the mouse passes over an element**:
+>**```onmouseover```/```onmouseout```**:
+- ```mouseover```: Sự kiện di chuột xảy ra khi con trỏ chuột nằm trên phần tử được chọn.
+- ```mouseout```: Sự kiện onmouseout xảy ra khi con trỏ chuột được di chuyển ra khỏi phần tử.
 ```javascript
 <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" border="0" src="smiley.gif" alt="Smiley" width="32" height="32">
 ```
@@ -35,16 +37,22 @@ function bigImg(x) {
     x.style.height = "64px";
     x.style.width = "64px";
 }
-
 function normalImg(x) {
     x.style.height = "32px";
     x.style.width = "32px";
 }
 ```
 
->**```mouseover```/```mouseout``` - When pressing/releasing a mouse button**:
-- ```mouseover```: Sự kiện di chuột xảy ra khi con trỏ chuột nằm trên phần tử được chọn.
-- ```mouseout```: Sự kiện onmouseout xảy ra khi con trỏ chuột được di chuyển ra khỏi phần tử.
+```javascript
+document.getElementById("demo").onmouseover = function() {mouseOver()};
+document.getElementById("demo").onmouseout = function() {mouseOut()};
+function mouseOver() {
+  document.getElementById("demo").style.color = "red";
+}
+function mouseOut() {
+  document.getElementById("demo").style.color = "black";
+}
+```
 
 ```javascript
 document.getElementById("demo").addEventListener("mouseover", mouseOver);
@@ -52,7 +60,6 @@ document.getElementById("demo").addEventListener("mouseout", mouseOut);
 function mouseOver() {
   document.getElementById("demo").style.color = "red";
 }
-
 function mouseOut() {
   document.getElementById("demo").style.color = "black";
 }
@@ -64,37 +71,47 @@ function mouseOut() {
   <li>item 2</li>
   <li>item 3</li>
 </ul>
+```
+```javascript
+var test = document.getElementById("test");
 
-<script>
-  var test = document.getElementById("test");
+// this handler will be executed only once when the cursor moves over the unordered list
+test.addEventListener("mouseenter", function( event ) {   
+// highlight the mouseenter target
+event.target.style.color = "purple";
 
-  // this handler will be executed only once when the cursor moves over the unordered list
-  test.addEventListener("mouseenter", function( event ) {   
-    // highlight the mouseenter target
-    event.target.style.color = "purple";
+// reset the color after a short delay
+setTimeout(function() {
+  event.target.style.color = "";
+}, 500);
+}, false);
 
-    // reset the color after a short delay
-    setTimeout(function() {
-      event.target.style.color = "";
-    }, 500);
-  }, false);
-  
-  // this handler will be executed every time the cursor is moved over a different list item
-  test.addEventListener("mouseover", function( event ) {   
-    // highlight the mouseover target
-    event.target.style.color = "orange";
+// this handler will be executed every time the cursor is moved over a different list item
+test.addEventListener("mouseover", function( event ) {   
+// highlight the mouseover target
+event.target.style.color = "orange";
 
-    // reset the color after a short delay
-    setTimeout(function() {
-      event.target.style.color = "";
-    }, 500);
-  }, false);
-</script>
+// reset the color after a short delay
+setTimeout(function() {
+  event.target.style.color = "";
+}, 500);
+}, false);
 ```
 
 >**```onmousedown```/```onmouseup``` - When pressing/releasing a mouse button**:
 - ```onmousedown```: Sự kiện onmousedown xảy ra khi người dùng nhấn một nút chuột trên một phần tử.
 - ```onmouseup```:  Sự kiện onmouseup xảy ra khi người dùng thả một nút chuột lên một phần tử.
+
+```javascript
+<p id="demo" onmousedown="mouseDown()" onmouseup="mouseUp()">Click me.</p>
+function mouseDown() {
+  document.getElementById("demo").innerHTML = "The mouse button is held down.";
+}
+function mouseUp() {
+  document.getElementById("demo").innerHTML = "You released the mouse button.";
+}
+```
+
 ```javascript
 document.getElementById("demo").onmousedown = function() {mouseDown()};
 document.getElementById("demo").onmouseup = function() {mouseUp()};
@@ -106,21 +123,18 @@ function mouseUp() {
 }
 ```
 
->```**mousedown``` - When mouse is clicked: Alert which element, ```mouseup``` - When mouse is clicked: Alert which button**:
 ```javascript
 document.getElementById("demo").addEventListener("mousedown", mouseDown);
 document.getElementById("demo").addEventListener("mouseup", mouseUp);
-
 function mouseDown() {
-    document.getElementById("demo").innerHTML = "The mouse button is held down.";
+  document.getElementById("demo").innerHTML = "The mouse button is held down.";
 }
-
 function mouseUp() {
-    document.getElementById("demo").innerHTML = "You released the mouse button.";
+  document.getElementById("demo").innerHTML = "You released the mouse button.";
 }
 ```
 
->**```onmousemove```/```onmouseout``` - When moving the mouse pointer over/out of an image**:
+>**```onmousemove```**:
 - ```onmousemove```: Sự kiện onmousemove xảy ra khi con trỏ đang di chuyển trong khi nó ở trên một phần tử.
 ```
 <div onmousemove="myFunction(event)" onmouseout="clearCoor()"></div>
@@ -139,6 +153,16 @@ function clearCoor() {
 ```
 
 ```javascript
+document.getElementById("myDIV").onmousemove = function(event) {myFunction(event)};
+function myFunction(e) {
+  var x = e.clientX;
+  var y = e.clientY;
+  var coor = "Coordinates: (" + x + "," + y + ")";
+  document.getElementById("demo").innerHTML = coor;
+}
+```
+
+```javascript
 document.getElementById("myDIV").addEventListener("mousemove", function(event) {
     myFunction(event);
 });
@@ -150,15 +174,89 @@ function myFunction(e) {
 }
 ```
 
+>**```onmouseenter```/```onmouseleave```**:
+- Sự kiện ```onmouseenter``` xảy ra khi con trỏ chuột được di chuyển vào một phần tử.
+- Sự kiện này thường được sử dụng cùng với sự kiện ```onmouseleave``` xảy ra khi con trỏ chuột được di chuyển ra khỏi một phần tử.
+- Sự kiện onmouseenter tương tự như sự kiện ```onmouseover```. Sự khác biệt duy nhất là sự kiện ```onmouseenter``` không bong bóng (không phổ biến lên hệ thống phân cấp tài liệu)
+
+```javascript
+<h1 id="demo" onmouseenter="mouseEnter()" onmouseleave="mouseLeave()">Mouse over me</h1>
+function mouseEnter() {
+  document.getElementById("demo").style.color = "red";
+}
+function mouseLeave() {
+  document.getElementById("demo").style.color = "black";
+}
+```
+
+```javascript
+document.getElementById("demo").onmouseenter = function() {mouseEnter()};
+document.getElementById("demo").onmouseleave = function() {mouseLeave()};
+function mouseEnter() {
+  document.getElementById("demo").style.color = "red";
+}
+function mouseLeave() {
+  document.getElementById("demo").style.color = "black";
+}
+```
+
+```javascript
+document.getElementById("demo").addEventListener("mouseenter", mouseEnter);
+document.getElementById("demo").addEventListener("mouseleave", mouseLeave);
+function mouseEnter() {
+  document.getElementById("demo").style.color = "red";
+}
+function mouseLeave() {
+  document.getElementById("demo").style.color = "black";
+}
+```
+
 **2. Click Events**
 
 >**```onclick``` - When button is clicked**:
-```javascript
-
 ```
->```ondblclick``` - When a text is double-clicked:
-```javascript
+<p id="demo" onclick="myFunction()">Click me.</p>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+```
 
+```javascript
+document.getElementById("demo").onclick = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+```
+
+```javascript
+document.getElementById("demo").addEventListener("click", myFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+}
+```
+
+>**```ondblclick``` - When a text is double-clicked**:
+- Sự kiện ondblclick xảy ra khi người dùng nhấp đúp vào một phần tử.
+
+```javascript
+<p id="demo" ondblclick="myFunction()">Double-click me.</p>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I was double-clicked!";
+}
+```
+
+```javascript
+document.getElementById("demo").ondblclick = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I was double-clicked!";
+}
+```
+
+```javascript
+document.getElementById("demo").addEventListener("dblclick", myFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "I was double-clicked!";
+}
 ```
 
 **3. Load Events**
