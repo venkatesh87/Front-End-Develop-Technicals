@@ -3,7 +3,7 @@
 
 **1. JavaScript Window**
 
->**window, width, height**
+>**```window```, ```width```, ```height```**
 - Global variables are properties of the window object.
 - Global functions are methods of the window object.
 - The browser window (the browser viewport) is NOT including toolbars and scrollbars.(Cửa sổ trình duyệt (khung nhìn trình duyệt) KHÔNG bao gồm thanh công cụ và thanh cuộn.)
@@ -25,7 +25,7 @@ var h = window.innerHeight
 var x = document.getElementById("demo");
 x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
 ```
-**2. JavaScript Window Screen**
+>**2. JavaScript Window Screen**
 
 - The window.screen object can be written without the window prefix.(Đối tượng window.screen có thể được viết mà không có tiền tố cửa sổ.)
 
@@ -46,7 +46,7 @@ document.getElementById("demo").innerHTML = "Screen Width: " + screen.width;
 document.getElementById("demo").innerHTML = "Screen Height: " + screen.height;
 ```
 
-**2. addEventListener**
+>**3. ```addEventListener```**
 
 ```javascript
 element.addEventListener("mouseover", myFunction);
@@ -56,12 +56,12 @@ element.addEventListener("resize", myThirdFunction);
 element.addEventListener("mousemove", myThirdFunction);
 ```
 
-**3. offsetHeight , offsetLeft, offsetParent, offsetTop, offsetWidth**
+**4. offsetHeight , offsetLeft, offsetParent, offsetTop, offsetWidth**
 ```javascript
 
 ```
 
-**4. scrollX, scrollY**
+**5. ```scrollX```, ```scrollY```**
 
 >**scrollX**
 ```javascript
@@ -83,7 +83,7 @@ if (window.scrollY) {
 window.scrollByPages(1);
 ```
 
-**5. screen, screenX, screenY**
+**6. MouseEvent ```screen```, ```screenX```, ```screenY``` Property**
 
 >**screen**
 - Returns a reference to the screen object associated with the window. The screen object, implementing the Screen interface, is a special object for inspecting properties of the screen on which the current window is being rendered.
@@ -93,23 +93,21 @@ window.scrollByPages(1);
 screenObj = window.screen;
 ```
 
->**screenX**
-- The ```Window.screenX``` read-only property returns the horizontal distance, in CSS pixels, of the left border of the user's browser from the left side of the screen.
-- Thuộc tính chỉ đọc ```Window.screenX``` trả về khoảng cách ngang, trong pixel CSS, của đường biên bên trái của trình duyệt của người dùng từ phía bên trái của màn hình.
+>**MouseEvent ```screenX``` Property**
+- Thuộc tính ```screenX``` trả về tọa độ ngang (theo màn hình máy tính người dùng) của con trỏ chuột khi một sự kiện được kích hoạt.
 
 ```javascript
 lLoc = window.screenX 
 ```
 
->**screenY**
-- The ```Window.screenY``` read-only property returns the vertical distance, in CSS pixels of the top border of the user's browser from the top edge of the screen.
-- Thuộc tính chỉ đọc ```Window.screenY``` trả về khoảng cách theo chiều dọc, trong pixel CSS của đường viền trên của trình duyệt của người dùng từ cạnh trên của màn hình.
+>**MouseEvent ```screenY``` Property**
+- Thuộc tính ```screenY``` trả về tọa độ dọc (theo màn hình máy tính người dùng) của con trỏ chuột khi một sự kiện được kích hoạt.
 
 ```javascript
 lLoc = window.screenY
 ```
 
-**6. MouseEvent clientX, clientY**
+>**6. MouseEvent ```clientX```, ```clientY```**
 
 >**MouseEvent clientX**
 - The ```clientX``` property returns the horizontal coordinate (according to the client area) of the mouse pointer when a mouse event was triggered.
@@ -128,7 +126,7 @@ function showCoords(event) {
 }
 ```
 
->**MouseEvent clientY**
+>**MouseEvent ```clientY```**
 - The clientY property returns the vertical coordinate (according to the client area) of the mouse pointer when a mouse event was triggered.
 - Thuộc tính clientY trả về tọa độ theo chiều dọc (theo khu vực khách hàng) của con trỏ chuột khi một sự kiện chuột được kích hoạt.
 - To get the horizontal coordinate (according to the client area) of the mouse pointer, use the clientX property.
@@ -142,8 +140,25 @@ function showCoords(event) {
   document.getElementById("demo").innerHTML = coords;
 }
 ```
+>**Phân biệt sự khác biệt giữa ```clientX``` và ```clientY``` và ```screenX``` và màn hình**
 
-**7. pageXOffset, pageYOffset**
+```javascript
+<div onclick="showCoords(event)"><p id="demo"></p></div>
+function showCoords(event) {
+    var cX = event.clientX;
+    var sX = event.screenX;
+    var cY = event.clientY;
+    var sY = event.screenY;
+    var coords1 = "client - X: " + cX + ", Y coords: " + cY;
+    var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
+    document.getElementById("demo").innerHTML = coords1 + "<br>" + coords2;
+}
+```
+
+>**7. ```pageXOffset```, ```pageYOffset```**
+- Các thuộc tính ```pageXOffset``` và ```pageYOffset``` trả về các pixel mà document hiện tại đã được ```cuộn``` ```từ góc trên``` ```bên trái``` của ```cửa sổ```, ```theo chiều ngang``` và ```theo chiều dọc```.
+- Thuộc tính pageXOffset và pageYOffset bằng với thuộc tính scrollX và scrollY.
+- ```window.pageXOffset```, ```window.pageYOffset```
 
 ```javascript
 window.addEventListener("scroll", function(e) { 
@@ -151,48 +166,95 @@ window.addEventListener("scroll", function(e) {
 });
 ```
 
->**pageXOffset**
+>**```pageXOffset```**
 
-- Đây là bí danh cho scrollX
+- Đây là bí danh cho ```scrollX```
 
 ```javascript
 xOffset = window.pageXOffset;
 ```
 
->**pageYOffset**
+>**```pageYOffset```**
 
-- Trang thuộc tính chỉ đọc WindowYOffset là một bí danh cho scrollY;như vậy, nó trả về số pixel mà tài liệu hiện đang cuộn dọc theo trục thẳng đứng (nghĩa là, lên hoặc xuống).với một giá trị 0,0 chỉ ra rằng cạnh trên cùng của tài liệu hiện đang được căn chỉnh với cạnh trên cùng của khu vực nội dung của cửa sổ.
+- Trang thuộc tính chỉ đọc WindowYOffset là một bí danh cho ```scrollY```;như vậy, nó trả về số pixel mà tài liệu hiện đang cuộn dọc theo trục thẳng đứng (nghĩa là, lên hoặc xuống).với một giá trị 0,0 chỉ ra rằng cạnh trên cùng của tài liệu hiện đang được căn chỉnh với cạnh trên cùng của khu vực nội dung của cửa sổ.
 
 ```javascript
 window.pageYOffset;
 yOffset = window.pageYOffset;
 ```
-**8. onresize, onscroll**
-```javascript
 
+>**sticky header**
+
+```javascript
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 ```
 
-**9. scrollTop**
-```javascript
+>**9. ```scrollTop```**
+- Thuộc tính ```scrollTop``` đặt hoặc trả về số lượng pixel mà nội dung của phần tử được cuộn theo chiều dọc.
 
+```javascript
+<div id="myDIV" onscroll="myFunction()">
+  <div id="content">Scroll inside me!</div>
+</div>
+<p id="demo"></p>
+function myFunction() {
+    var elmnt = document.getElementById("myDIV");
+    var x = elmnt.scrollLeft;
+    var y = elmnt.scrollTop;
+    document.getElementById ("demo").innerHTML = "Horizontally: " + x + "px<br>Vertically: " + y + "px";
+}
 ```
 
-**10. scrollRight**
-```javascript
-
+```
+<button onclick="myFunction()">Scroll contents of body</button><br><br>
+function myFunction() {
+  var body = document.body; // For Safari
+  var html = document.documentElement; // Chrome, Firefox, IE and Opera places the overflow at the html level, unless else is specified. Therefore, we use the documentElement property for these browsers
+  body.scrollLeft += 30;
+  body.scrollTop += 10;
+  html.scrollLeft += 30;
+  html.scrollTop += 10;
+}
 ```
 
-**11. scrollBottom**
+>**12. ```scrollLeft```**
+- Sử dụng thuộc tính ```scrollLeft``` để đặt hoặc trả lại số pixel mà nội dung của phần tử được cuộn theo chiều ngang.
 ```javascript
-
+<div id="myDIV" onscroll="myFunction()">
+  <div id="content">Scroll inside me!</div>
+</div>
+<p id="demo"></p>
+function myFunction() {
+    var elmnt = document.getElementById("myDIV");
+    var x = elmnt.scrollLeft;
+    var y = elmnt.scrollTop;
+    document.getElementById ("demo").innerHTML = "Horizontally: " + x + "px<br>Vertically: " + y + "px";
+}
 ```
 
-**12. scrollLeft**
-```javascript
+>**```scrollBy```**
+- Phương thức ```scrollBy()``` cuộn ```document``` theo số pixel được chỉ định.
+- window.scrollBy(xnum, ynum)
 
+```javascript
+<button onclick="scrollWin(0, 50)">Scroll down</button>
+<button onclick="scrollWin(0, -50)">Scroll up</button>
+<button onclick="scrollWin(100, 0)">Scroll right</button>
+<button onclick="scrollWin(-100, 0)">Scroll left</button>
+function scrollWin() {
+    window.scrollBy(0, 100);
+}
 ```
 
-**13. getBoundingClientRect()**
+**13. ```getBoundingClientRect()```**
 - The ```Element.getBoundingClientRect()``` method returns the size of an element and its position relative to the viewport.
 ```javascript
 var domRect = element.getBoundingClientRect();
@@ -208,7 +270,7 @@ var domRect = element.getBoundingClientRect();
   && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
 ```
 
-**rect is a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height**
+>**rect is a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height**
 ```javascript
 var rect = obj.getBoundingClientRect();
 ```
