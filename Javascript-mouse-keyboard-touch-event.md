@@ -529,40 +529,145 @@ function myFunction() {
 ```
 
 >**```onsubmit``` - When a user clicks the submit button**:
+- Thuộc tính ```onsubmit``` được kích hoạt khi một biểu mẫu được gửi.
 ```javascript
+<form action="/action_page.php" onsubmit="myFunction()">
+  Enter name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+function myFunction() {
+  alert("The form was submitted");
+}
+```
 
+```javascript
+<form id="myForm" action="/action_page.php">
+  Enter name: <input type="text" name="fname">
+  <input type="submit" value="Submit">
+</form>
+document.getElementById("myForm").onsubmit = function() {myFunction()};
+function myFunction() {
+  alert("The form was submitted");
+}
+```
+
+```javascript
+document.getElementById("myForm").addEventListener("submit", myFunction);
+function myFunction() {
+  alert("The form was submitted");
+}
 ```
 
 >**```onreset``` - When a user clicks the reset button**:
+- The onreset event occurs when a form is reset.
 ```javascript
+<form onreset="myFunction()">
+  Enter name: <input type="text">
+  <input type="reset">
+</form>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "The form was reset";
+}
+```
 
+```javascript
+<form id="myForm">
+  Enter name: <input type="text">
+  <input type="reset">
+</form>
+document.getElementById("myForm").onreset = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").innerHTML = "The form was reset";
+}
+```
+
+```javascript
+<form id="myForm">
+  Enter name: <input type="text">
+  <input type="reset">
+</form>
+document.getElementById("myForm").addEventListener("reset", myFunction);
+function myFunction() {
+  document.getElementById("demo").innerHTML = "The form was reset";
+}
 ```
 
 >**```onkeydown``` - When a user is pressing/holding down a key**:
-```javascript
+- Sự kiện ```onkeydown``` xảy ra khi người dùng nhấn một phím (trên bàn phím).
 
+```javascript
+<input type="text" id="demo" onkeydown="myFunction()">
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
+```
+
+```javascript
+document.getElementById("demo").onkeydown = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
+```
+
+```javascript
+document.getElementById("demo").addEventListener("keydown", myFunction);
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
 ```
 
 >**```onkeypress``` - When a user is pressing/holding down a key**:
-```javascript
+- Sự kiện ```onkeypress``` xảy ra khi người dùng nhấn một phím (trên bàn phím).
 
+```javascript
+<input type="text" id="demo" onkeypress="myFunction()">
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
+```
+
+```javascript
+document.getElementById("demo").onkeypress = function() {myFunction()};
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
+```
+
+```javascript
+document.getElementById("demo").addEventListener("keypress", myFunction);
+function myFunction() {
+  document.getElementById("demo").style.backgroundColor = "red";
+}
 ```
 
 >**```onkeyup``` - When the user releases a key**:
-```javascript
+- Sự kiện ```onkeyup``` xảy ra khi người dùng giải phóng một phím (trên bàn phím).
 
+```javascript
+Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
 ```
 
->**```onkeyup``` - When the user releases a key**:
 ```javascript
-
+Enter your name: <input type="text" id="fname">
+document.getElementById("fname").onkeyup = function() {myFunction()};
+function myFunction() {
+  var x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
 ```
 
->**```onkeydown``` vs ```onkeyup``` - Both**:
 ```javascript
-
+Enter your name: <input type="text" id="fname">
+document.getElementById("fname").addEventListener("keyup", myFunction);
+function myFunction() {
+    var x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
 ```
-
 
 ```javascript
 var svg = document.querySelector('svg');
