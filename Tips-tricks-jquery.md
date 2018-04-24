@@ -78,6 +78,19 @@ function navSticky() {
 }
 ```
 
+>**Cách tính ```scrollBottom```**
+- ```scrollBottom``` thì bằng ```$(window).scrollTop() + $(window).height();```
+```javascript
+$(window).scroll(function() {
+  var scrollBottom = $(window).scrollTop() + $(window).height();
+  var height_document = $(document).height();
+  if (scrollBottom > height_document) {
+    $('.navigation_top').addClass('sticky');
+  } else {
+    $('.navigation_top').removeClass('sticky');
+  }
+});
+```
 #### 2. Function jQuery:
 <hr />
 > siblings(): Lấy thành phần con cùng cấp của mỗi thành phần trong một bộ chọn phù hợp(Tức là tất cả các thành phần anh chị em cùng cấp với ```<li>``` có class="second" đều đã được chọn, riêng chính nó thì không.) 
