@@ -1,4 +1,4 @@
-## Tips Tricks jQuery
+### Tips Tricks JQuery
 
 #### 1. Scroll:
 <hr />
