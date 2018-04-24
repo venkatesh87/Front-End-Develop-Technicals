@@ -101,4 +101,18 @@ object-fit: | contain | cover | none | scale-down
 } 
 ```
 
+#### 4. ```-webkit-overflow-scrolling``` Khi style ```scroll``` cho một phần tử với ```overflow: auto``` thì nên để giá trị này vào:
+- Thuộc tính CSS ```-webkit-overflow-scrolling``` kiểm soát xem thiết bị cảm ứng có sử dụng cuộn dựa trên động lượng cho một phần tử đã cho hay không..
+
+```javascript 
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+} 
+```
+
 #### 5 Flexbox Techniques You Need to Know About
