@@ -287,3 +287,26 @@ function productListJustJquery(products, element) {
   }
 }
 ```
+
+##### 5. Scroll
+---
+>**```document.body.scrollTop > 20 || document.documentElement.scrollTop```**
+```javascript
+window.onscroll = function() {
+    if ($(window).width() < 700) {
+        navSticky();
+    }
+};
+function navSticky() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    $('.navigation_top').addClass('sticky');
+  } else {
+    $('.navigation_top').removeClass('sticky');
+  }
+}
+```
+
+>**```window.pageYOffset```**
+```javascript
+
+```
