@@ -64,6 +64,18 @@ $(function() {
 });
 ```
 
+>**Nếu sử dụng javascript Pure thì phải kèm theo ```document.body.scrollTop``` và ```document.documentElement.scrollTop```**
+```javascript
+window.onscroll = function() {navSticky()};
+function navSticky() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    $('.navigation_top').addClass('sticky');
+  } else {
+    $('.navigation_top').removeClass('sticky');
+  }
+}
+```
+
 #### 2. Function jQuery:
 <hr />
 > siblings(): Lấy thành phần con cùng cấp của mỗi thành phần trong một bộ chọn phù hợp(Tức là tất cả các thành phần anh chị em cùng cấp với ```<li>``` có class="second" đều đã được chọn, riêng chính nó thì không.) 
