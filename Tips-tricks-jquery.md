@@ -24,7 +24,7 @@ if (topFlg) {
 >**Case 2:** Dùng kỹ thuật ```.length```
 ```javascript
 var bannerSlider = $(".slider_top");
-if (bannerSlider.length) {
+if (bannerSlider.length > 0) {
   bannerSlider.slick({
     dots: true,
     infinite: true,
