@@ -1,5 +1,42 @@
 ### Tips Tricks JQuery
 
+#### Sử dụng Plugin:
+- ** Chú ý: Trong trường hợp dùng nhiều thư viện ```plugin``` jQuery trên site gồm nhiều page thường hay bị báo lỗi thư viện tại trang ko được load plugin. Lý do bởi vì ```class``` or ```id``` của ```page này``` được gọi trong thư viện ```jQuery```, nhưng ```class``` or ```id``` ở ```page này``` lại không tồn tại ```page khác``` dù ```page khác``` có ```include``` thư viện của ```plugin``` đó đi chăng nữa nó vẫn bị lỗi. Để giải quyết trường hợp này có 2 cách xử lý:
+
+>**Case 1:** Dùng kỹ thuật ```flag```
+```javascript
+var topFlg = $('body').hasClass('format_top');
+if (topFlg) {
+  var bannerSlider = $(".slider_top");
+  bannerSlider.slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 5000,
+    cssEase: 'linear'
+  });
+}
+```
+
+>**Case 2:** Dùng kỹ thuật ```.length```
+```javascript
+var bannerSlider = $(".slider_top");
+if (bannerSlider.length) {
+  bannerSlider.slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    fade: true,
+    autoplay: true,
+    arrows: false,
+    autoplaySpeed: 5000,
+    cssEase: 'linear'
+  });
+}
+```
 #### 1. Scroll:
 <hr />
 
