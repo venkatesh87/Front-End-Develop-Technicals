@@ -96,7 +96,7 @@
 </figure>
 ```
 
-> **2.3 Nesting figure Inside Another figure
+> **2.3 Nesting figure Inside Another figure**
 ```javascripts
 <figure role="group">
   <figcaption>Dog breeds</figcaption>
@@ -111,7 +111,7 @@
 </figure>
 ```
 
-> **2.4 Correct Usage of figcaption
+> **2.4 Correct Usage of figcaption**
 ```javascripts
 <figure>
   <figcaption>Three different breeds of dog.</figcaption>
@@ -130,7 +130,7 @@
 </figure>
 ```
 
-> **2.5 You Can Use Flow Elements in figcaption Too
+> **2.5 You Can Use Flow Elements in figcaption Too**
 ```javascripts
 <figure>
   <img src="dogs.jpg" alt="Group photo of dogs">
@@ -139,4 +139,41 @@
     <p>Championship Class of 2016</p>
   </figcaption>
 </figure>
+```
+
+> **3. Create a Responsive SVG**
+- You should width = 100% and set attribute is preserveAspectRatio="none".
+
+>**SVG Non-Responsive**
+```javascripts
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="184px" viewBox="0 0 1440 184" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Banner Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Banner-Copy-2">
+            <path d="M1439.90076,0 L1440,0 L1440,183 L0,183 L0,182.65625 C817.489956,174.070312 1258.10437,164.479167 1321.84325,153.882812 C1385.58213,143.286458 1424.96771,115.395833 1440,70.2109375 L1439.90076,0 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+            <path d="M1439.86021,1.81582461 L1440,1.81582461 L1440,70.8116742 C1424.96771,115.99657 1385.58213,143.887195 1321.84325,154.483549 C1258.10437,165.079903 817.489956,174.671049 0,183.256987 C816.891371,128.749174 1257.2065,96.1970909 1320.94537,85.6007367 C1384.68425,75.0043825 1424.32259,47.1172162 1439.86038,1.93923769 L1439.86021,1.81582461 Z" id="nam-tren" fill="#F2EAEA"></path>
+        </g>
+    </g>
+</svg>
+```
+
+>**SVG Responsive**
+```javascripts
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100%" height="184px" viewBox="0 0 1440 184" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+  <title>Banner Copy 2</title>
+  <desc>Created with Sketch.</desc>
+  <defs></defs>
+  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Banner-Copy-2">
+      <path d="M1439.90076,0 L1440,0 L1440,183 L0,183 L0,182.65625 C817.489956,174.070312 1258.10437,164.479167 1321.84325,153.882812 C1385.58213,143.286458 1424.96771,115.395833 1440,70.2109375 L1439.90076,0 Z" id="Combined-Shape" fill="#FFFFFF"></path>
+      <path d="M1439.86021,1.81582461 L1440,1.81582461 L1440,70.8116742 C1424.96771,115.99657 1385.58213,143.887195 1321.84325,154.483549 C1258.10437,165.079903 817.489956,174.671049 0,183.256987 C816.891371,128.749174 1257.2065,96.1970909 1320.94537,85.6007367 C1384.68425,75.0043825 1424.32259,47.1172162 1439.86038,1.93923769 L1439.86021,1.81582461 Z" id="nam-tren" fill="#F2EAEA"></path>
+    </g>
+  </g>
+</svg>
 ```
