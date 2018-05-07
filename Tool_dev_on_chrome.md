@@ -20,3 +20,7 @@
 ## Tool Convert Favicon
 
 [Favicon generator](https://www.favicon-generator.org/)
+
+## Tool Manager Task
+
+https://www.taskblast.net/index.php?id=TrelloAsi
