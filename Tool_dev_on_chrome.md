@@ -16,3 +16,7 @@
       - Extension ReactJS Supper-Powered
       - Extension Google Translate
       - Extension Page Ruler
+      
+## Tool Convert Favicon
+
+[Favicon generator](https://www.favicon-generator.org/)
