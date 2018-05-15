@@ -4,7 +4,7 @@
 
 3. [Keyboard Focus](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Keyboard-focus.md)
 
-4. [PerfectPixel](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/PerfectPixe.mdl)
+4. [PerfectPixel](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/PerfectPixel.md)
 
 5. [Accessibility](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Accessibility.md)
 
