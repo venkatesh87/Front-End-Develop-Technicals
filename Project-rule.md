@@ -18,7 +18,7 @@
 
 10. [Images](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Images.md)
 
-11. [Process Loading](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/process-loading.md)
+11. [Process Loading](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Process-loading.md)
 
 12. [Unit CSS %, EM, REM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Unit-PERCENT-EM-REM-In-Web.md)
 
