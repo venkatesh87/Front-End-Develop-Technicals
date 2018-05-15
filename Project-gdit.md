@@ -46,3 +46,7 @@
 
 1. Saitama Olympic Paralympics:
 
+
+1. Oita(Phía Nhật phát triển): https://www.city.oita.oita.jp/index.html
+
+1. Metro(Phía Nhật phát triển): http://www.metro.tokyo.jp/index.html
