@@ -8,7 +8,7 @@
 
 5. [Accessibility](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Accessibility.md)
 
-6. [Web Accessibility Checklist](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Web-Accessibility-Checklist.md)
+6. [Web Accessibility Checklist](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Web-accessibility-checklist.md)
 
 7. [Usability](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Usability.md)
 
