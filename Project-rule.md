@@ -12,9 +12,9 @@
 
 7. [Usability](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Usability.md)
 
-8. [Validator W3c](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Validator-W3c.md)
+8. [Validator W3c](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Validator-w3c.md)
 
-9. [Color Contrast](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Color-Contrast.md)
+9. [Color Contrast](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Color-contrast.md)
 
 10. [Images](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Images.md)
 
