@@ -2,7 +2,7 @@
 
 2. [Off javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Off-Javascript.md)
 
-3. [Keyboard Focus](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Keyboard-Focus.md)
+3. [Keyboard Focus](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Keyboard-focus.md)
 
 4. [PerfectPixel](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/PerfectPixe.mdl)
 
