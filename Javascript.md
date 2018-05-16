@@ -87,6 +87,8 @@
 ---
 1. [4 JavaScript Design Patterns You Should Know](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-4-javascript-design-patterns-you-should-know.md)
 
+1. [Javascript Design Patterns Singleton](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-singleton)
+
 #### III.Document Link Outsite
 ---
 
