@@ -177,3 +177,8 @@
   </g>
 </svg>
 ```
+
+>**Hover Icons SVG**
+```javascripts
+
+```
