@@ -125,3 +125,17 @@ function myFunction() {
   document.getElementsByTagName("H1")[0].setAttribute("class", "democlass");
 }
 ```
+
+**9. getBoundingClientRect():** 
+- rect is a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height
+- Kết quả là hình chữ nhật nhỏ nhất chứa toàn bộ phần tử, với các thuộc tính chỉ đọc, ```left, top, right, bottom, x, y, width, height``` mô tả toàn bộ hộp viền theo pixel. Các thuộc tính khác với ```width``` và ```height``` có liên quan đến phía trên cùng bên trái của chế độ xem.
+- Các tập lệnh yêu cầu khả năng tương thích trình duyệt chéo cao có thể sử dụng window.pageXOffset và window.pageYOffset thay vì window.scrollX và window.scrollY. Các tập lệnh không có quyền truy cập vào các thuộc tính này có thể sử dụng mã như sau:
+
+```javascript
+// For scrollX
+(((t = document.documentElement) || (t = document.body.parentNode))
+  && typeof t.scrollLeft == 'number' ? t : document.body).scrollLeft
+// For scrollY
+(((t = document.documentElement) || (t = document.body.parentNode))
+  && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
+  ```
