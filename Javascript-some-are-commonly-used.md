@@ -1,4 +1,4 @@
-#### I. JavaScript array - Exercises, Practice, Solution
+#### I. Javascript Some Are Commonly Used
 ---
 
 **1. JavaScript Window**
