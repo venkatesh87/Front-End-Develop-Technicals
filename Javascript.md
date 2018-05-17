@@ -83,6 +83,8 @@
 
 1. [JavaScript Loop](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-loop.md)
 
+1. [Memorize The Company Projects](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Memorize-the-company-projects.md)
+
 #### II.JavaScript Design Patterns You Should Know
 ---
 1. [4 JavaScript Design Patterns You Should Know](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-4-javascript-design-patterns-you-should-know.md)
