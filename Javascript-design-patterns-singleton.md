@@ -6,7 +6,7 @@
 
 - Một singleton nên được bất biến bởi mã tiêu thụ, và sẽ không có nguy cơ instantiating nhiều hơn một trong số họ.
 
->**The Old Way of Creating a Singleton in JavaScript: ** Cách cũ để tạo Singleton trong JavaScript
+>**The Old Way of Creating a Singleton in JavaScript:** Cách cũ để tạo Singleton trong JavaScript
 
 ```javascript
 var UserStore = (function(){
