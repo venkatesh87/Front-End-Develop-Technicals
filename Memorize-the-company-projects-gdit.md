@@ -1,12 +1,51 @@
 #### I. Memorize the company project GDIT
 ---
 
-**1. ABC projects**
-- Text.
+**1. File ```gd.js```**
+- ```$.gd``` có nghĩa là
 
 >JavaScript Code:
-```javascript
-
+$.gd = {
+ Uri: function(d) {
+ 
+ },
+ wrapperWidth: function(b) {
+ 
+ },
+ searchText: function(e) {
+ 
+ },
+ googleSearchImage: function(b) {
+ 
+ },
+ textSize: function(d) {
+ 
+ },
+ changeStyle: function(g) {
+ 
+ },
+ activeLink: function(f) {
+ 
+ },
+ rollover: function(f) {
+ 
+ },
+ tab: function(f) {
+ 
+ },
+ switchMenu: function(m) {
+ 
+ },
+ labelClickable: function(d) {
+ 
+ },
+ blockSkipExpander: function(b) {
+ 
+ },
+ directoryFlg: function(a) {
+ 
+ }
+}
 ```
 
 **2. **
