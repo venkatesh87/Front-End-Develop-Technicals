@@ -5,6 +5,7 @@
 - ```$.gd``` có nghĩa là
 
 >JavaScript Code:
+```javascript
 $.gd = {
  Uri: function(d) {
  
