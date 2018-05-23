@@ -6,7 +6,6 @@
 1. [Cssauthor](http://www.cssauthor.com/jquery-css3-hover-effects/#Logo)
 1. [jQueryrain](http://www.jqueryrain.com/)
 1. [htmldrive](http://www.htmldrive.net/)
-1. [jqueryscript](http://www.jqueryscript.net/)
 1. [simbyone](http://simbyone.com/responsive-jquery-pop-up-gallery/?utm_content=buffer7777c&utm_medium=social&utm_source=facebook.com&utm_campaign=buffer)
 1. [callmenick](http://callmenick.com/)
 1. [thecodeplayer](http://thecodeplayer.com/)
@@ -21,7 +20,8 @@
 1. [Pinterest](https://www.pinterest.com/source/codepen.io/)
 1. [codemyui](https://codemyui.com/tag/hover-animation/page/3/)
 1. [codemyui](https://codemyui.com/tag/navigation-menu/)
-
+1. [cssscript](https://www.cssscript.com/category/free-javascripts/)
+1. [jqueryscript](http://www.jqueryscript.net/)
 
 ### II. UI/UX/Template:
 
