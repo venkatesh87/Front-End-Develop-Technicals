@@ -93,6 +93,11 @@
 
 1. [JavaScript Object Creation: Patterns and Best Practices](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-object-creation.md)
 
+>**Write Plugin JS**
+1. [cssscript](https://www.cssscript.com/category/free-javascripts/)
+
+1. [jqueryscript](http://www.jqueryscript.net/)
+
 #### III.Document Link Outsite
 ---
 
