@@ -69,6 +69,8 @@
 
 │   ├── [Image Hover](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Image-effect.md)
 
+│   ├── [Parallax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Parallax.md)
+
 │   └── [DataTable](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DataTable.md)
 
 
