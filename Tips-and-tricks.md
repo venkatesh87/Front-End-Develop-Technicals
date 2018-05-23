@@ -405,3 +405,20 @@
 **8.:first-letter**
 
   https://css-tricks.com/almanac/properties/w/writing-mode/
+
+**8. Scroll**
+
+- Khi scroll window muốn neo(anchor) một thành phần thì hãy sử dụng ```postion: sticky```.
+- Sticky: Phần tử được định vị dựa trên vị trí cuộn của người dùng.
+- Một element ```sticky``` toggles giữa ```relative``` and ```fixed```, tùy thuộc vào vị trí di chuyển. Nó được định vị tương đối cho đến khi một vị trí bù đắp nhất định được đáp ứng trong khung nhìn - sau đó nó "dính" tại chỗ (như ```position:fixed```).
+- Không hỗ trợ trong ```IE/Edge 15``` hoặc cũ hơn. Được hỗ trợ trong Safari từ phiên bản 6.1 với ```-webkit- prefix```.
+
+```
+<img class="sticky" src="img_avatar.png" alt="Avatar">
+img.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 200px;
+}
+```
