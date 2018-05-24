@@ -22,6 +22,38 @@ $(document).ready(function() {
 });
 ```
 
+```
+var BackToTop = {
+    selector : $('#btn_to_top'),
+    appear : $(window).height() * 0.3,
+    anchor : $('#tmp_footer_cnt').offset().top - $(window).height(),
+    update : function(){
+        BackToTop.appear = $(window).height() * 0.3;
+        BackToTop.anchor = $('#tmp_footer_cnt').offset().top - $(window).height();
+    },
+    scroll : {
+        to_top: function(){
+            $('html, body').animate({scrollTop: 0}, 1000)
+        },
+        update_position: function(current_position){
+            if (current_position <= BackToTop.appear){
+                BackToTop.selector.removeClass('appear');
+            }else{
+                BackToTop.selector.addClass('appear');
+            }
+            if (current_position < BackToTop.anchor){
+                BackToTop.selector.addClass('anchor');
+            }else{
+                BackToTop.selector.removeClass('anchor');
+            }
+        }
+    }
+}
+$(document).ready(function() {
+  BackToTop.update();
+});
+
+```
 >**Design Paterns 2**
 
 ```javascript
