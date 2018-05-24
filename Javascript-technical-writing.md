@@ -99,7 +99,7 @@ function displayDate(){
 }
 ```
 
-## I. Check length element :
+## II. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
 ```javascript
@@ -129,7 +129,7 @@ Object.keys(myObject).length
 ```  
 
 
-## II. Object :
+## III. Object :
 
 ### Length of a JavaScript object (or associative array)
 
@@ -166,9 +166,9 @@ Object.keys(myArray).length
 ```javascript
 Object.keys(obj).length
 ```
-## III. Array :
+## IV. Array :
 
-## IV. API Youtube :
+## V. API Youtube :
 
 ### Reference : https://developers.google.com/youtube/documentation/
 
@@ -280,9 +280,9 @@ function startVideo() {
 Copy link youtube dán vào đây.
 **https://boingboing.net/features/getthumbs.html**
 
-## V. API Facebook:
+## VI. API Facebook:
 
-## VI. Character :
+## VII. Character :
 
 ```javascript
 // Count character base on byte.
@@ -301,7 +301,7 @@ function wc(str) {
 }
 ```
 
-## VII. document.querySelector():
+## VIII. document.querySelector():
 
 ```javascript
 var demo1 = document.querySelector('.demo1'),
@@ -324,9 +324,9 @@ popSwitcher(demo1);
 popSwitcher(demo2, '-emphasis');
 popSwitcher(demo3, '-emphasis');
 ```
-### VIII.Reference : https://developers.facebook.com/docs/plugins
+### IX.Reference : https://developers.facebook.com/docs/plugins
 
-### IX. Cách get data trong file Json
+### X. Cách get data trong file Json
 
 ```javascript
 - var random = jsonContent.featured[Math.floor(Math.random() * jsonContent.featured.length)];
@@ -334,7 +334,7 @@ popSwitcher(demo3, '-emphasis');
 - var random = jsonContent["featured"][Math.floor(Math.random()*jsonContent["featured"].length)];
 ```
 
-## X. Is it correct to use JavaScript Array.sort() method for shuffling?(Nó là đúng để sử dụng phương pháp JavaScript Array.sort () cho xáo trộn không?)
+## XI. Is it correct to use JavaScript Array.sort() method for shuffling?(Nó là đúng để sử dụng phương pháp JavaScript Array.sort () cho xáo trộn không?)
 
 [stackoverflow shuffling random](http://stackoverflow.com/questions/962802/is-it-correct-to-use-javascript-array-sort-method-for-shuffling#962890)
 
@@ -351,4 +351,33 @@ function shuffle(array) {
 
     return array;
 }
+```
+
+### XII. Code writing techniques
+
+>**Truyền ```object``` vào ```function```**
+[Demo](https://codepen.io/mrfrk/pen/WzjweX)
+```javascript
+var data = {
+  '#box1': '5',
+  '#box2': '4',
+  '#box3': '3',
+  '#box4': '2',
+  '#box5': '1',
+  '#box6': '0'
+}
+
+var zindexer = (function() {
+  Object.keys(data).map(function(key, index) {
+    var select = document.querySelectorAll(key);
+    if (select.length > 1)
+      Array.prototype.forEach.call(select, function(item) {
+        item.style.zIndex = data[key];
+      });
+    else
+      select[0].style.zIndex = data[key];
+  });
+});
+zindexer(data);
+
 ```
