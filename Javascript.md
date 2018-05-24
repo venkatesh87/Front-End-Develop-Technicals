@@ -77,6 +77,8 @@
 
 1. [Javascript variable scope and hoisting](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-variable-scope-and-hoisting.md)
 
+1. [Javascript ES6(ECMAScript2015)](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-es6-ecmascript2015.md)
+
 1. [Understand The JavaScript Ternary Operator like the ABCs](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-understand-the-javascript-ternary-operator-like-abc.md)
 
 1. [JavaScript String](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-function-string.md)
