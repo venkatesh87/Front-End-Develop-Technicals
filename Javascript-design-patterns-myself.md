@@ -51,6 +51,12 @@ var BackToTop = {
 }
 $(document).ready(function() {
   BackToTop.update();
+  BackToTop.update();
+  BackToTop.scroll.update_position(window.scrollY);
+  BackToTop.selector.on('click',function(e){
+      e.preventDefault();
+      BackToTop.scroll.to_top();
+  });
 });
 
 ```
