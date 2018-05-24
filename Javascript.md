@@ -97,12 +97,13 @@
 
 1. [Javascript Design Patterns Myself](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-myself.md)
 
->**Write Plugin JS**
+#### III.Write Plugin JS
+---
 1. [cssscript](https://www.cssscript.com/category/free-javascripts/)
 
 1. [jqueryscript](http://www.jqueryscript.net/)
 
-#### III.Document Link Outsite
+#### IV.Document Link Outsite
 ---
 
 1. [Video getting started with javascript](https://scotch.io/courses/getting-started-with-javascript)
@@ -141,14 +142,14 @@
 
 1. [W3schools](https://www.w3schools.com/js/)
 
-#### IV. Tool Code Javascript Online
+#### V. Tool Code Javascript Online
 ---
 
 1. [Jsbin](https://jsbin.com/?html,css,js,console)
 
 1. [Codepen](https://codepen.io/pen/)
 
-#### V. Advanced coding skills
+#### VI. Advanced coding skills
 ---
 
 1. [Coderbyte](https://coderbyte.com/)
