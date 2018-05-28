@@ -1,5 +1,5 @@
 #### 1. CSS multiline text with ellipsis
-
+---
 **Reference :**
 
 - [http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/](http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/)
@@ -116,3 +116,28 @@ object-fit: | contain | cover | none | scale-down
 ```
 
 #### 5 Flexbox Techniques You Need to Know About
+
+#### 1. Mobile
+---
+
+>**1. Nếu làm Responsive cho Mobile thì nên set các thuộc tính dưới đây:**
+
+html{
+    -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+>**1. Nếu làm Popop up cho Mobile, thì nên set thuộc tính này trong vùng scroll**
+2. 
+.modal{
+  -webkit-overflow-scrolling: touch;
+}
+
