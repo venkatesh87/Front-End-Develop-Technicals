@@ -58,7 +58,9 @@ $.gd = {
   + Cố định hiển thị 2s
   + **Intro Left**: Fade-out xuống dưới 2 giây
   + **Intro Right**: Fade-out lên trên 2 giây
-
+  + Header cố định.
+  + 2 Button Arrow biểu tượng neo cố định trong phần content ở dưới
+  + Click vào 
 >JavaScript Code:
 ```javascript
 
