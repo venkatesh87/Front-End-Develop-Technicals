@@ -24,6 +24,14 @@ $(window).on("resize", function () {
 }).resize();
 ```
 
+```javascript
+$(window).resize(function() {
+  calcHeight();
+}).load(function() {
+  calcHeight();
+});
+```
+
 >JavaScript Code hiệu quả:
 ```javascript
 $('.nav-icons').click(function(e) {
