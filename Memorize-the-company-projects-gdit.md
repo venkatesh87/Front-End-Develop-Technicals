@@ -49,8 +49,15 @@ $.gd = {
 }
 ```
 
-**2. **
-- Text.
+**2. NIIGATA PREFECTURE Project**
+- **Request:** 
+- Màn hình **Intro**
+  + **FadeIn** logo 1s
+  + **Intro Left**: Fade-in từ trên xuống 2 giây
+  + **Intro Right**: Fade-in từ dưới lên 2 giây
+  + Cố định hiển thị 2s
+  + **Intro Left**: Fade-out xuống dưới 2 giây
+  + **Intro Right**: Fade-out lên trên 2 giây
 
 >JavaScript Code:
 ```javascript
