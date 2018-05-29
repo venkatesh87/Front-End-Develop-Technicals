@@ -330,7 +330,7 @@ Makes it possible to reuse the css class in another place, giving a more consist
 <div class="message">
 ```
 
-##II. CSS :
+## II. CSS :
 
 **1. Concept understand :**
 
@@ -661,8 +661,7 @@ No matter how deeply the CSS is nested, please nest up to great grandchild at th
 }
 ```
 
-
-##III. JS and jQuery :
+## III. JS and jQuery :
 
 **1. Loading JavaScript in HTML:**
 
@@ -696,7 +695,7 @@ $(document).ready(function(){
 });
 ```
 
-##IV. Responsive :
+## IV. Responsive :
 
 * Tag meta
 * images
@@ -705,7 +704,7 @@ $(document).ready(function(){
 * Use framework Bootstrap
 * Use framework Materialize
 
-##V. No-Responsive :
+## V. No-Responsive :
 
 - Remove Tag meta : 
 
@@ -715,7 +714,7 @@ $(document).ready(function(){
 
 - Fix width container
 
-##VI. Build project with Grunt or Gulp :
+## VI. Build project with Grunt or Gulp :
 
    * Grunt :
       * Reference : [http://gruntjs.com/](http://gruntjs.com/)
@@ -724,7 +723,7 @@ $(document).ready(function(){
        * Reference : [http://gulpjs.com/](http://gulpjs.com/)
 
 
-##VII. TOOLS :
+## VII. TOOLS :
 
 Everyone uses different tools to write their code. These settings ensure that everything will display the same regardless of environment or text editor.
 
