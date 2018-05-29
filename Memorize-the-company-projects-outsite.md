@@ -14,7 +14,15 @@ $(myResizeFunction); // Do on DOM ready
 $(window).on("load resize", myResizeFunction); 
 ```
 
->JavaScript Code hiệu quả:
+```javascript
+$(window).resize(function() {
+  calcHeight();
+}).load(function() {
+  calcHeight();
+});
+```
+
+>JavaScript Code hiệu quả: Cái này có 1 cái hại là mỗi khi resize nó thực thi lại hành động
 ```javascript
 // Bind to the resize event of the window object
 $(window).on("resize", function () {
@@ -24,15 +32,7 @@ $(window).on("resize", function () {
 }).resize();
 ```
 
-```javascript
-$(window).resize(function() {
-  calcHeight();
-}).load(function() {
-  calcHeight();
-});
-```
-
->JavaScript Code hiệu quả:
+>JavaScript Code hiệu quả: 
 ```javascript
 $('.nav-icons').click(function(e) {
   if($(window).width()<=1000){
