@@ -173,7 +173,7 @@ image.jpg cannot be accessed as Image.jpg.
 
 ```
 <!-- Good -->
-<img src="spreadsheet.png" alt="Spreadsheet screenshot." width="100" height=100"">
+<img src="spreadsheet.png" alt="Spreadsheet screenshot." width="100" height="100">
 ```
 **9. No self closing tags:**
 
