@@ -1,17 +1,17 @@
 # Table of Content
-1. [Issues](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#issues)
-  1. [Issue Type Labels](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#type-labels-required) 
-  2. [Ranking Labels](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#rank-labels-optional) 
-  3. [Component Labels](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#component-labels-always-required) 
-  4. [Status Labels](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#status-required) 
-2. [Branches](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md##branches)
-  1. [Hotfix Branch](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#hotfix)
-  2. [Feature Branch](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#feature)
+1. [Issues](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow#issues)
+  1. [Issue Type Labels](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#type-labels-required) 
+  2. [Ranking Labels](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#rank-labels-optional) 
+  3. [Component Labels](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#component-labels-always-required) 
+  4. [Status Labels](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#status-required) 
+2. [Branches](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow##branches)
+  1. [Hotfix Branch](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#hotfix)
+  2. [Feature Branch](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#feature)
 
-3. [Pull-Request](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#pull-request-pr)
-  1. [PR Status Workflow](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#pr-status-workflow)
-  2. [PR Labeling](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#pr-labeling)
-  3. [PR Code Review](https://github.com/daodc/Front-End-Develop-Technical/wiki/WorkFlow.md#pr-code-review)
+3. [Pull-Request](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#pull-request-pr)
+  1. [PR Status Workflow](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#pr-status-workflow)
+  2. [PR Labeling](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#pr-labeling)
+  3. [PR Code Review](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/WorkFlow#pr-code-review)
 
 ***
 
