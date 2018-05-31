@@ -77,7 +77,7 @@ $.gd = {
 
 ```
 
-**4. **
+**4. Javascript Kobe project**
 - Text.
 
 >JavaScript Code:
