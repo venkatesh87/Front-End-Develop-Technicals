@@ -66,7 +66,7 @@ $.gd = {
 
 ```
 
-**3. **
+**3. Hướng dẫn kỹ thuật di dời các phần tử khi về thiết bị smartphone**
 - Text.
 
 >JavaScript Code:
