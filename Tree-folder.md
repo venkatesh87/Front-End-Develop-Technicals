@@ -71,6 +71,8 @@
 
 │   ├── [Parallax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Parallax.md)
 
+│   ├── [Text Effect](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Text-effect.md)
+
 │   └── [DataTable](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DataTable.md)
 
 
