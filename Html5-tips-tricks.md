@@ -161,7 +161,7 @@
 </svg>
 ```
 
->**SVG Responsive**
+>**4. SVG Responsive**
 ```javascripts
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="100%" height="184px" viewBox="0 0 1440 184" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -178,7 +178,19 @@
 </svg>
 ```
 
->**Hover Icons SVG**
-```javascripts
+>**5. Hover Icons SVG**
 
+```javascripts
+.social--footer .social__item svg * {
+  fill: #373f48
+}
+.social--footer .social__item a:hover svg * {
+  fill: #ca9d81
+}
+.social--footer .social__item a svg * {
+  -webkit-transition: fill ease .25s;
+  -ms-transition: fill ease .25s;
+  transition: fill ease .25s
+}
 ```
+
