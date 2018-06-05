@@ -38,6 +38,8 @@
 
 1. [Siimple](https://siimple.juanes.xyz/)
 
+1. [Elegantthemes](https://www.elegantthemes.com/gallery/divi/)
+
 ### I. FrameWork Material Design
 
 1. [MUI](https://www.muicss.com/)
