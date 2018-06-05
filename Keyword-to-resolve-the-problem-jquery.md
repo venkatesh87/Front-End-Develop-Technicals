@@ -3,7 +3,7 @@
 1. [Scaled/Proportional Content with CSS and JavaScript](https://css-tricks.com/scaled-proportional-blocks-with-css-and-javascript/)
 
 >**JS**
-```
+```javascript
 var $el = $("#very-specific-design");
 var elHeight = $el.outerHeight();
 var elWidth = $el.outerWidth();
@@ -25,7 +25,7 @@ var starterData = {
 doResize(null, starterData);
 ```
 >**HTML**
-```
+```javascript
 <div class="scaleable-wrapper" id="scaleable-wrapper">
   <div class="very-specific-design" id="very-specific-design">
     <h1>I am designed just so.</h1>
@@ -36,7 +36,7 @@ doResize(null, starterData);
 </div>
 ```
 >**CSS**
-```
+```javascript
 body {
   background: #ccc;
   padding: 20px;
