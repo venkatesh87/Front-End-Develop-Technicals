@@ -85,8 +85,8 @@ $.gd = {
 
 ```
 
-**5. **
-- Text.
+**5. 20180411_Iwate**
+- Scale div with its content to fit window.
 
 >JavaScript Code:
 ```javascript
