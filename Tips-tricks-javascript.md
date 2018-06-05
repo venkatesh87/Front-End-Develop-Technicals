@@ -54,7 +54,7 @@ if (is_playing) {
 </ul>
 ```
 
-***JS*
+**JS**
 ```javascript
 $(function() {
   var lis_count = $('li.panel').length;
