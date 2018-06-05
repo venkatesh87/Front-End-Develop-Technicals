@@ -290,7 +290,7 @@ function productListJustJquery(products, element) {
 
 ##### 5. Scroll
 ---
->**```document.body.scrollTop > 20 || document.documentElement.scrollTop```**
+>**Case 1: ```document.body.scrollTop > 20 || document.documentElement.scrollTop```**
 ```javascript
 window.onscroll = function() {
     if ($(window).width() < 700) {
@@ -303,6 +303,18 @@ function navSticky() {
   } else {
     $('.navigation_top').removeClass('sticky');
   }
+}
+```
+>**Case 2:** Scroll Indicator
+```javascript
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
 }
 ```
 
