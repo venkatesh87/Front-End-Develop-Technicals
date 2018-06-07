@@ -711,38 +711,97 @@ console.log(Arrays_sum([1, 0, 2, 3, 4], [3, 5, 6, 7, 8, 13]));
 [4,5,8,10,12,13]
 ```
 
-**15. **
-
+**15. Write a JavaScript program to find duplicate values in a JavaScript array.**
+- Viết chương trình JavaScript để tìm các giá trị trùng lặp trong một mảng JavaScript.
 >JavaScript Code:
 ```javascript
-
+function find_duplicate_in_array(arra1) {
+  var i,
+  len=arra1.length,
+  result = [],
+  obj = {}; 
+  for (i=0; i<len; i++)
+  {
+  obj[arra1[i]]=0;
+  }
+  for (i in obj) {
+  result.push(i);
+  }
+  return result;
+  }
+var arr = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6];
+console.log(find_duplicate_in_array(arr));
 ```
 
 >ES6 Version:
 ```javascript
-
+function find_duplicate_in_array(arra1) {
+  let i;
+  const len=arra1.length;
+  const result = [];
+  const obj = {};
+  for (i=0; i<len; i++){
+    obj[arra1[i]]=0;
+  }
+  for (i in obj) {
+    result.push(i);
+  }
+  return result;
+}
+const arr = [1, 2, -2, 4, 5, 4, 7, 8, 7, 7, 71, 3, 6];
+console.log(find_duplicate_in_array(arr));
 ```
 
 >Result:
 ```javascript
-
+["1","2","3","4","5","6","7","8","71","-2"]
 ```
 
-**16. **
-
+**16. Write a JavaScript program to compute the union of two arrays.**
+- Viết một chương trình JavaScript để tính toán sự kết hợp của hai mảng.
 >JavaScript Code:
 ```javascript
-
+function union(arra1, arra2) {
+  if ((arra1 == null) || (arra2 == null))
+    return void 0;
+  var obj = {};
+  for (var i = arra1.length - 1; i >= 0; --i)
+    obj[arra1[i]] = arra1[i];
+  for (var i = arra2.length - 1; i >= 0; --i)
+    obj[arra2[i]] = arra2[i];
+  var res = [];
+  for (var n in obj) {
+    if (obj.hasOwnProperty(n))
+       res.push(obj[n]);
+  }
+  return res;
+}
+console.log(union([1, 2, 3], [100, 2, 1, 10]));
 ```
 
 >ES6 Version:
 ```javascript
-
+function union(arra1, arra2) {
+  if ((arra1 == null) || (arra2 == null))
+    return void 0;
+  const obj = {};
+  for (var i = arra1.length - 1; i >= 0; --i)
+    obj[arra1[i]] = arra1[i];
+  for (var i = arra2.length - 1; i >= 0; --i)
+    obj[arra2[i]] = arra2[i];
+  const res = [];
+  for (const n in obj) {
+    if (obj.hasOwnProperty(n))
+      res.push(obj[n]);
+  }
+  return res;
+}
+console.log(union([1, 2, 3], [100, 2, 1, 10]));
 ```
 
 >Result:
 ```javascript
-
+[1,2,3,10,100]
 ```
 
 **17. **
