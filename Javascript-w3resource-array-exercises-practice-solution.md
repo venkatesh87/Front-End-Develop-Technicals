@@ -2,6 +2,10 @@
 ---
 - The ```shift()``` method removes the first item of an array.
 - The ```pop()``` method removes the last item of an array.
+- ```array.splice(index, howmany, item1, ....., itemX)``` method adds/removes items to/from an array, and returns the removed item(s).
+  + ```index```: Số nguyên chỉ định vị trí cần thêm / xóa mục, Sử dụng giá trị âm để chỉ định vị trí từ cuối mảng
+  + ```howmany```: Số lượng mục cần xóa. Nếu được đặt thành 0, sẽ không có mục nào bị xóa
+  + ```item1, ..., itemX```: The new item(s) to be added to the array
 
 **1. Write a JavaScript function to check whether an 'input' is an array or not.**
 - Viết một hàm JavaScript để kiểm tra xem một 'đầu vào' là một mảng hay không.
