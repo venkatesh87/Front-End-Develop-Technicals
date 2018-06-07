@@ -32,7 +32,7 @@ $(document).ready(function(){
 
 #### 4. App function
 ---
-```
+```javascript
 var App = function() {
   function handleFunction() {
 		// code here   
