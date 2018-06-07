@@ -1,4 +1,4 @@
-## I. Code JavaScript Flag :
+## 1. Code JavaScript Flag :
 
 **- Case 1:**
 ```javascript
@@ -99,7 +99,7 @@ function displayDate(){
 }
 ```
 
-## II. Check length element :
+## 2. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
 ```javascript
@@ -129,7 +129,7 @@ Object.keys(myObject).length
 ```  
 
 
-## III. Object :
+## 3. Object :
 
 ### Length of a JavaScript object (or associative array)
 
@@ -166,9 +166,9 @@ Object.keys(myArray).length
 ```javascript
 Object.keys(obj).length
 ```
-## IV. Array :
+## 4. Array :
 
-## V. API Youtube :
+## 5. API Youtube :
 
 ### Reference : https://developers.google.com/youtube/documentation/
 
@@ -280,9 +280,9 @@ function startVideo() {
 Copy link youtube dán vào đây.
 **https://boingboing.net/features/getthumbs.html**
 
-## VI. API Facebook:
+## 6. API Facebook:
 
-## VII. Character :
+## 7. Character :
 
 ```javascript
 // Count character base on byte.
@@ -301,7 +301,7 @@ function wc(str) {
 }
 ```
 
-## VIII. document.querySelector():
+## 8. document.querySelector():
 
 ```javascript
 var demo1 = document.querySelector('.demo1'),
@@ -324,9 +324,9 @@ popSwitcher(demo1);
 popSwitcher(demo2, '-emphasis');
 popSwitcher(demo3, '-emphasis');
 ```
-### IX.Reference : https://developers.facebook.com/docs/plugins
+### 9.Reference : https://developers.facebook.com/docs/plugins
 
-### X. Cách get data trong file Json
+### 10. Cách get data trong file Json
 
 ```javascript
 - var random = jsonContent.featured[Math.floor(Math.random() * jsonContent.featured.length)];
@@ -334,7 +334,7 @@ popSwitcher(demo3, '-emphasis');
 - var random = jsonContent["featured"][Math.floor(Math.random()*jsonContent["featured"].length)];
 ```
 
-## XI. Is it correct to use JavaScript Array.sort() method for shuffling?(Nó là đúng để sử dụng phương pháp JavaScript Array.sort () cho xáo trộn không?)
+## 11. Is it correct to use JavaScript Array.sort() method for shuffling?(Nó là đúng để sử dụng phương pháp JavaScript Array.sort () cho xáo trộn không?)
 
 [stackoverflow shuffling random](http://stackoverflow.com/questions/962802/is-it-correct-to-use-javascript-array-sort-method-for-shuffling#962890)
 
@@ -353,7 +353,7 @@ function shuffle(array) {
 }
 ```
 
-### XII. Code writing techniques
+### 12. Code writing techniques
 
 >**Truyền ```object``` vào ```function```**
 [Demo](https://codepen.io/mrfrk/pen/WzjweX)
@@ -381,3 +381,72 @@ var zindexer = (function() {
 zindexer(data);
 
 ```
+
+### 13. Array
+>**For Each**
+```javascript
+var appear = document.querySelectorAll(".appear");
+//var img = document.querySelectorAll(".img");
+appear.forEach(function(e) {
+  e.appear = new TimelineMax({ paused: !0 });
+  e.appear.from(e, 1, { y: 100, opacity: 0, ease: Power3.easeOut }, .05, 0);
+});
+```
+>**For Each Tìm năm nhuận trong một phạm vi nhất định của năm.**
+```javascript
+function leap_year_range(st_year, end_year) {
+  var year_range = [];
+  for (var i = st_year; i <= end_year; i++) {
+    year_range.push(i);
+  }
+  var new_array = [];
+
+  year_range.forEach(
+    function(year) {
+      if (test_LeapYear(year))
+        new_array.push(year);
+    });
+
+  return new_array;
+}
+
+function test_LeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 100 === 0 && year % 400 === 0)) {
+    return year;
+  } else {
+    return false;
+  }
+}
+
+console.log(leap_year_range(2000, 2012));
+```
+>**Viết một chương trình JavaScript để xáo trộn một mảng.**
+```javascript
+function shuffle(arra1) {
+  var ctr = arra1.length,
+    temp, index;
+
+  // While there are elements in the array
+  while (ctr > 0) {
+    // Pick a random index
+    index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+    ctr--;
+    // And swap the last element with it
+    temp = arra1[ctr];
+    arra1[ctr] = arra1[index];
+    arra1[index] = temp;
+  }
+  return arra1;
+}
+var myArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(shuffle(myArray));
+```
+```javascript
+
+```
+### 14. Code writing techniques
+
+### 15. Code writing techniques
+
+### 16. Code writing techniques
