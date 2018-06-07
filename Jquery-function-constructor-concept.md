@@ -67,4 +67,17 @@ $(document).ready(function() {
   });
   ```
   
-### 6. Function Expression
+### 6. Function Declarations
+---
+```javascript
+function functionName(parameters) {
+  code to be executed
+}
+```
+
+### 7. Function Expression
+---
+```javascript
+var x = function (a, b) {return a * b};
+document.getElementById("demo").innerHTML = x;
+```
