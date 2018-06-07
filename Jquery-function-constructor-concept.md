@@ -78,6 +78,8 @@ function functionName(parameters) {
 ### 7. Function Expression
 ---
 ```javascript
-var x = function (a, b) {return a * b};
-document.getElementById("demo").innerHTML = x;
+var x = function (a, b) {
+  return a * b
+};
+document.getElementById("demo").innerHTML = x(4,5);
 ```
