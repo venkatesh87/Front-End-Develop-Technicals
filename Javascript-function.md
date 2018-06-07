@@ -28,7 +28,7 @@ function myFunction(a, b) {
 - A function expression can be stored in a variable:
 ```javascript
 var x = function (a, b) {return a * b};
-document.getElementById("demo").innerHTML = x;
+document.getElementById("demo").innerHTML = x(4,5);
 ```
 
 - After a function expression has been stored in a variable, the variable can be used as a function:
