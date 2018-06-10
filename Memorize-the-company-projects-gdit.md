@@ -66,9 +66,74 @@ $.gd = {
   + **2 Button Arrow** ```県政情報 を見る```, ```魅力情報 を見る``` neo cố định trong phần content ở dưới
   + Click vào button **県政情報 を見る** **FadeIn** màn hình **新潟県 県民向け** và ẩn màn hình **新潟県 通常**
   + Click vào button **魅力情報 を見る** **FadeIn** màn hình **新潟県 魅力** và ẩn màn hình **新潟県 通常**
->JavaScript Code:
+- **Menu Responsive:**
+  + Fixed header
+  + Có nút Back Top.
+  + Click button search, button navigation toggle slide content, chuyển đổi trạng thái icon nav open, close
+  
+>JavaScript Code Navigation:
 ```javascript
+var BackToTop = {
+  selector: $('.back-top a'),
+  init: function() {
+    BackToTop.selector.on('click', function(e) {
+      e.preventDefault();
+      BackToTop.to_top();
+    });
+  },
+  to_top: function() {
+    $('html, body').animate({ scrollTop: 0 }, 1000)
+  }
+}
 
+$(document).ready(function() {
+  BackToTop.init();
+  var deviceWidth = $(window).width();
+  var temp = "";
+  $('.mobile-control li a').on('click', function(e) {
+    e.preventDefault();
+    var _this = $(this);
+
+    function toggle_nav_sp() {
+      if (_this.attr('href') == '#navigation') {
+        $('#search').stop(false, true).fadeOut();
+        $('.search-link').removeClass('open');
+        $('.search-link .nav-text').text('検索');
+      } else if (_this.attr('href') == '#search') {
+        $('#navigation').stop(false, true).fadeOut();
+        $('.navigation-link').removeClass('open');
+        $('.navigation-link .nav-text').text('メニュー');
+      }
+    }
+    $('.mobile-control li').removeClass('active');
+    $(this).parent().addClass('active');
+    if ($(this).parent().hasClass('active')) {
+      if (_this.hasClass('open')) {
+        _this.removeClass('open');
+        _this.children('.nav-text').text(temp);
+        $('body').removeClass('overlay');
+        $(_this.attr('href')).stop(false, true).slideUp(300);
+        toggle_nav_sp();
+      } else {
+        _this.addClass('open');
+        temp = _this.children('.nav-text').text();
+        _this.children('.nav-text').text('閉じる');
+        $('body').addClass('overlay');
+        $(_this.attr('href')).stop(false, true).slideDown(300);
+        toggle_nav_sp();
+      }
+    }
+  });
+
+  $('.close-up a').on('click', function(e) {
+    e.preventDefault();
+    var _this = $('.mobile-control li a.open');
+    _this.removeClass('open');
+    _this.children('.nav-text').text(temp);
+    $('body').removeClass('overlay');
+    $(_this.attr('href')).stop().slideUp(200);
+  });
+});
 ```
 
 **3. Hướng dẫn kỹ thuật di dời các phần tử khi về thiết bị smartphone**
