@@ -310,10 +310,13 @@ $(document).ready(function() {
 ```
 
 **4. Javascript Nerima project**
+
 **▼ Phần sẽ tạo**
+
     - Tạo HTML dùng để demo cho quận Nerima
       + Toppage (4 page)
       + Endpage　(1 page)
+      
 **▼ Spec toppage**
     - Chuyển đổi 4 scene trên 1 page
     - Switch thì chuyển đổi mà không di chuyển page bằng Javascript (Giống với demo HTML5)
@@ -324,6 +327,7 @@ $(document).ready(function() {
     - 4. Fade in content
     - 5. Nhấn vào＜・＞, di chuyển đến màn hình tiếp theo
     - 6. Navigation của ↓ thì khung ở trung tâm nằm cố định, navigation di chuyển sang trái phải
+    
 **▼ Endpage**
     - Endpage thì cho xem vùng edit trên CMS
     - Header, navi phải, footer thì dán image capture là OK
@@ -332,6 +336,7 @@ $(document).ready(function() {
       + H1,H2,H3
       + Table
       + List
+      
 **☆ Do hiện đang tạo part của phần End nên nhờ các bạn coding nếu kịp nhé**
 
 >JavaScript Code:
