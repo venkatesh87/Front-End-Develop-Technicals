@@ -1,3 +1,5 @@
+[Pan, Pinch, Press, Rotate, Swipe, Tap: Hammerjs](http://hammerjs.github.io/)
+
 ### Swipper viết theo kiểu object
 
 #### HTML:
