@@ -71,8 +71,29 @@ $.gd = {
   + Có nút Back Top.
   + Click button search, button navigation toggle slide content, chuyển đổi trạng thái icon nav open, close
   
->JavaScript Code Navigation:
+>JavaScript Code:
 ```javascript
+var ScrollContent = {
+  selector: {
+    scrollLeft: '.scroll-left',
+    scrollRight: '.scroll-right',
+    content: '.scroll-main'
+  },
+  init: function() {
+    ScrollContent.calculator();
+  },
+  calculator: function() {
+    $(ScrollContent.selector.content).mCustomScrollbar({
+      theme: "minimal"
+    });
+    $(ScrollContent.selector.scrollLeft).mCustomScrollbar({
+      theme: "minimal"
+    });
+    $(ScrollContent.selector.scrollRight).mCustomScrollbar({
+      theme: "minimal"
+    });
+  }
+}
 var BackToTop = {
   selector: $('.back-top a'),
   init: function() {
@@ -86,9 +107,89 @@ var BackToTop = {
   }
 }
 
+var Animation = {
+  selector: {
+    openning: '.openning',
+    introLft: '.intro-lft',
+    introRgt: '.intro-rgt',
+    control: '.load-control',
+    loadChallenge: '.load-challenge',
+    loadInfo: '.load-info',
+    sectionIntro: '.section-intro',
+    sectionChallenge: '.section-challenge',
+    sectionCharm: '.section-charm',
+    sectionPrefecture: '.section-prefecture',
+  },
+  handle: {
+    main: new TimelineMax(),
+    elml: new TimelineMax(),
+    elmr: new TimelineMax(),
+    ctr: new TimelineMax()
+  },
+  init: function() {
+    Animation.logo_opening();
+    Animation.show_challenge();
+  },
+  logo_opening: function() {
+    Animation.handle.main.to($(Animation.selector.openning), 1.5, {
+      ease: Power2.easeIn,
+      autoAlpha: 1,
+      visibility: 'visible',
+      onComplete: function() {
+        Animation.show_intro();
+      }
+    });
+    Animation.handle.main.to($(Animation.selector.openning), 2.5, { ease: Expo.easeOut, autoAlpha: 1, visibility: 'visible' });
+    Animation.handle.main.to($(Animation.selector.openning), 1, {
+      ease: Expo.easeOut,
+      autoAlpha: 0,
+      visibility: 'hidden',
+      display: "none",
+      onComplete: function() {
+        $(Animation.selector.sectionIntro).hide();
+      }
+    });
+  },
+  show_intro: function() {
+    Animation.handle.elml.to($(Animation.selector.introLft), 1, { ease: Expo.easeIn, y: "0%" });
+    Animation.handle.elml.to($(Animation.selector.introLft), 1, { ease: Expo.easeIn, y: "0%" });
+    Animation.handle.elml.to($(Animation.selector.introLft), 2.5, { ease: Expo.easeOut, y: "100%" });
+    Animation.handle.elmr.to($(Animation.selector.introRgt), 1, { ease: Expo.easeIn, y: "0%" });
+    Animation.handle.elmr.to($(Animation.selector.introRgt), 1, { ease: Expo.easeIn, y: "0%" });
+    Animation.handle.elmr.to($(Animation.selector.introRgt), 2.5, { ease: Expo.easeOut, y: "-100%" });
+  },
+  show_challenge: function() {
+    Animation.handle.main.to($(Animation.selector.sectionChallenge), 2, {
+      ease: Power3.easeOut,
+      autoAlpha: 1,
+      display: "block",
+      onComplete: function() {
+        Animation.show_control();
+      }
+    });
+  },
+  show_control: function() {
+    Animation.handle.ctr.to($(Animation.selector.control), 6, { ease: Power2.easeOut, autoAlpha: 1, y: "0%", visibility: 'visible' });
+  }
+};
+
 $(document).ready(function() {
   BackToTop.init();
   var deviceWidth = $(window).width();
+  if (deviceWidth > 490) {
+    Animation.init();
+  }
+  $(window).on('resize', function() {
+    if (deviceWidth > 490) {
+      ScrollContent.init();
+    }
+    if (deviceWidth < 490) {
+      $(ScrollContent.selector.content).mCustomScrollbar("destroy"); //destroy scrollbar 
+      $(ScrollContent.selector.scrollLeft).mCustomScrollbar("destroy"); //destroy scrollbar 
+      $(ScrollContent.selector.scrollRight).mCustomScrollbar("destroy"); //destroy scrollbar 
+    }
+  }).resize();
+
   var temp = "";
   $('.mobile-control li a').on('click', function(e) {
     e.preventDefault();
@@ -107,6 +208,7 @@ $(document).ready(function() {
     }
     $('.mobile-control li').removeClass('active');
     $(this).parent().addClass('active');
+
     if ($(this).parent().hasClass('active')) {
       if (_this.hasClass('open')) {
         _this.removeClass('open');
@@ -133,9 +235,66 @@ $(document).ready(function() {
     $('body').removeClass('overlay');
     $(_this.attr('href')).stop().slideUp(200);
   });
+  /*Rule Hover*/
+  $(".gnavi").each(function() {
+    $(this).find("li").hover(
+      function() {
+        if ($(this).find(".sub-menu").length > 0) {
+          $('body').addClass('overlay');
+          $(".sub-menu").stop(false, true).slideDown();
+        }
+      },
+      function() {
+        $('body').removeClass('overlay');
+        $(".sub-menu").stop(false, true).slideUp();
+      }
+    );
+  });
+  var menuCloseFlag = true;
+  $(".gnavi .sub-menu").mouseover(function() {
+    menuCloseFlag = false;
+    $(this).parent().find("a:first").addClass("hover_rule");
+    $('.btn-close-sub').click(function(e) {
+      e.preventDefault();
+      $(".gnavi .sub-menu").slideUp();
+    });
+  });
+  $(".gnavi .sub-menu").mouseout(function() {
+    var self = this;
+    menuCloseFlag = true;
+    setTimeout(function() {
+      if (menuCloseFlag) {
+        $(self).parent().find("a:first").removeClass("hover_rule");
+      }
+    }, 200);
+  });
+  $('.load-challenge').click(function(e) {
+    e.preventDefault();
+    $(Animation.selector.sectionChallenge).fadeOut(200);
+    $(Animation.selector.sectionCharm).fadeOut(200);
+    $(Animation.selector.loadChallenge).fadeOut(200);
+    $(Animation.selector.loadInfo).fadeIn(200);
+    $(Animation.selector.loadInfo).css({ 'right': 'auto', 'left': '-11px' });
+    $(Animation.selector.control).css({ 'width': '125px', 'right': 'auto', 'left': '0', 'margin-left': '0' });
+    $(Animation.selector.sectionPrefecture).fadeIn(500);
+    if (deviceWidth < 1400) {
+      $(Animation.selector.loadInfo).css({ 'right': 'auto', 'left': '0' });
+    }
+    return false;
+  });
+  $('.load-info').click(function(e) {
+    e.preventDefault();
+    $(Animation.selector.sectionChallenge).fadeOut(200);
+    $(Animation.selector.sectionPrefecture).fadeOut(200);
+    $(Animation.selector.loadInfo).fadeOut(200);
+    $(Animation.selector.loadChallenge).fadeIn(200);
+    $(Animation.selector.loadChallenge).css({ 'right': 0, 'left': 'auto' });
+    $(Animation.selector.control).css({ 'width': '125px', 'left': 'auto', 'right': 0, 'margin-left': '0' });
+    $(Animation.selector.sectionCharm).fadeIn(500);
+    return false;
+  });
 });
 ```
-
 **3. Hướng dẫn kỹ thuật di dời các phần tử khi về thiết bị smartphone**
 - Pankuzu.
 - Header
