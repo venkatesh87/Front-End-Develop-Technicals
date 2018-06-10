@@ -338,7 +338,15 @@ $(document).ready(function() {
       + H1,H2,H3
       + Table
       + List
-      
+    
+**▼ ＜URL＞**		
+
+    - 便利帳	```/benri.html```
+    - 手続きガイド	```/tetsuzuki.html```	
+    - 地域情報	```/chiiki.html```	
+    - 事業者向け	```/jigyosha.html```	
+    - 末端ページ ```/Endpage/hikkoshi.html```	
+    
 **☆ Do hiện đang tạo part của phần End nên nhờ các bạn coding nếu kịp nhé**
 
 >JavaScript Code:
