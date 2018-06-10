@@ -318,6 +318,7 @@ $(document).ready(function() {
       + Endpage　(1 page)
       
 **▼ Spec toppage**
+
     - Chuyển đổi 4 scene trên 1 page
     - Switch thì chuyển đổi mà không di chuyển page bằng Javascript (Giống với demo HTML5)
     - Switch thì slide tổng thể màn hình bằng animation
@@ -329,6 +330,7 @@ $(document).ready(function() {
     - 6. Navigation của ↓ thì khung ở trung tâm nằm cố định, navigation di chuyển sang trái phải
     
 **▼ Endpage**
+
     - Endpage thì cho xem vùng edit trên CMS
     - Header, navi phải, footer thì dán image capture là OK
     - Vùng edit thì để có thể sử dụng part trên CMS, nhờ các bạn coding nội dung bên dưới
