@@ -70,6 +70,9 @@ $.gd = {
   + Fixed header
   + Có nút Back Top.
   + Click button search, button navigation toggle slide content, chuyển đổi trạng thái icon nav open, close
+- **Import library:**
+  + ```TweenMax.min.js```
+  + ```jquery.mCustomScrollbar.concat.min```
   
 >JavaScript Code:
 ```javascript
@@ -306,7 +309,7 @@ $(document).ready(function() {
 
 ```
 
-**4. Javascript Kobe project**
+**4. Javascript Nerima project**
 - Text.
 
 >JavaScript Code:
