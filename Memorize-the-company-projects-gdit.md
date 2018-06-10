@@ -51,7 +51,7 @@ $.gd = {
 
 **2. NIIGATA PREFECTURE Project**
 - **Request:** 
-- ** Màn hình Intro**
+- **Màn hình Intro**
   + **FadeIn** logo 2s
   + **Intro Left**: Fade-in từ trên xuống 2 giây
   + **Intro Right**: Fade-in từ dưới lên 2 giây
