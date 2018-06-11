@@ -50,6 +50,11 @@ $.gd = {
 ```
 
 **2. NIIGATA PREFECTURE Project**
+- **Screen slide animation**
+- ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-1.jpg)
+- ![slide 3, 4](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-2.jpg)
+- ![slide 5, 6](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-3.jpg)
+- ![slide 7, 8](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-4.jpg)
 - **Request:** 
 - **Màn hình Intro**
   + **FadeIn** logo 2s
@@ -349,7 +354,7 @@ $(document).ready(function() {
     
 **☆ Do hiện đang tạo part của phần End nên nhờ các bạn coding nếu kịp nhé**
 - Screen slide animation
-![Image of Nerima](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/nerima-animationpng.png)
+![Image of Nerima](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/nerima-animation.jpg)
 - Slide the whole screen including Border(Trượt toàn bộ màn hình bao gồm border)
 >JavaScript Code:
 ```javascript
