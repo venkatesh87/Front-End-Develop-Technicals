@@ -309,7 +309,7 @@ $(document).ready(function() {
 
 ```
 
-**4. Javascript Nerima project**
+**4. Javascript Nerima Project**
 
 **▼ Phần sẽ tạo**
 
@@ -348,7 +348,9 @@ $(document).ready(function() {
     - 末端ページ ```/Endpage/hikkoshi.html```	
     
 **☆ Do hiện đang tạo part của phần End nên nhờ các bạn coding nếu kịp nhé**
-
+- Screen slide animation
+![Image of Nerima](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/nerima-animationpng.png)
+- Slide the whole screen including Border(Trượt toàn bộ màn hình bao gồm border)
 >JavaScript Code:
 ```javascript
 
