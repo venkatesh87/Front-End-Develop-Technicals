@@ -373,7 +373,7 @@ $(document).ready(function() {
 
 ```
 
-**6. **
+**6. 20171012 HTML5 Landing Page**
 - Text.
 
 >JavaScript Code:
@@ -381,7 +381,7 @@ $(document).ready(function() {
 
 ```
 
-**7. **
+**7. 20180313 Booking HTML5 RakuRaKu**
 - Text.
 
 >JavaScript Code:
@@ -389,7 +389,7 @@ $(document).ready(function() {
 
 ```
 
-**8. **
+**8. 20180508 ChartJS**
 - Text.
 
 >JavaScript Code:
@@ -397,7 +397,7 @@ $(document).ready(function() {
 
 ```
 
-**9. **
+**9. 20180509 Plugin SmartPhone**
 - Text.
 
 >JavaScript Code:
@@ -405,7 +405,231 @@ $(document).ready(function() {
 
 ```
 
-**10. **
+**10. 20180511 Foreign Language Tokyo**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**11. 20171211 Chiba Kun’s Hiroba FE**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**12. 20171122 Hiroshima**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**13. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**14. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**15. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**16. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**17. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**11. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**12. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**13. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**14. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**15. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**16. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**17. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**11. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**12. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**13. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**14. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**15. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**16. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**17. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**11. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**12. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**13. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**14. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**15. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**16. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**17. **
 - Text.
 
 >JavaScript Code:
