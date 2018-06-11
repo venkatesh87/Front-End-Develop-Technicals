@@ -362,8 +362,12 @@ $(document).ready(function() {
 ```
 
 **5. 20180411_Iwate**
-- Scale div with its content to fit window.
-
+- **Request:** 
+  + Project name: HTML demo dùng để giới thiệu về tỉnh Iwate
+  + Làm giống https://nssg.jp/
+  + Chỉ cho hiển thị từ ban đầu phần catch copy, rồi dần dần image khác sẽ được hiện ra.
+  + Nhờ các bạn nhận thức về phần Responsive, nhưng khi hiển thị Smartphone thì không hoạt động cũng được.
+- ![Image of Iwate](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-iwate.jpg)
 >JavaScript Code:
 ```javascript
 
