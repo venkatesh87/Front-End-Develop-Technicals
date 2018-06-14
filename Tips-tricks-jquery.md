@@ -82,6 +82,29 @@ $('.back_top').click(function() {
 
 - ```$(document).height()``` : thì bằng tổng $(window).scrollTop() + $(window).height().
 
+>**Back Top with href --> id**
+```javascript
+<p class="ptop"><a href="#tmp_header">ページの先頭へ戻る</a></p>
+```
+
+```javascript
+var BackTop = {
+  Selector: {
+    button: $('.ptop a'),
+    header: $('#tmp_header')
+  },
+  init: function() {
+    BackTop.Selector.button.on('click', function(e){
+      e.preventDefault();
+      BackTop.to_top();
+    });
+  },
+  to_top: function(){
+    $('html, body').animate({scrollTop: BackTop.Selector.header.offset().top}, 500);
+  }
+}
+BackTop.init();
+```
 >**Scroll/Follow Sidebar**
 ```javascript
 $(function() {
