@@ -382,29 +382,17 @@ $(document).ready(function() {
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-3.jpg)
 - **Openning**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-4.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-5.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-6.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-7.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-8.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-9.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-10.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-11.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-12.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-13.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-14.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-15.jpg)
-- **Top Page**.
 - ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-16.jpg)
 >JavaScript Code:
 ```javascript
