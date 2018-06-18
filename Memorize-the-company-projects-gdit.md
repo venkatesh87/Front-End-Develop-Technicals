@@ -439,8 +439,33 @@ $(document).ready(function() {
 
 ```
 
-**12. 20171122 Hiroshima**
-- Text.
+**12. 20171122 Minoh City**
+- **Main Visual**: 
+  + Tại image background, số lượng setting tối đa thì hãy hiển thị bằng chuyển đổi fade 5 image.
+  + Trường hợp height của image lớn hơn size image được đề xuất thì sẽ là 556px, trường hợp Width lớn thì sẽ là trạng thái hiển thị cắt phía trái phải của image, trường hợp nhỏ thì sẽ được phóng to hiển thị cho khớp với height 556px.
+  + Ngoài ra, data image thì nhờ các bạn loading, và setting bằng xml.
+  + http://www.city.miura.kanagawa.jp/
+　+ http://www.city.miura.kanagawa.jp/shared/js/top_gallery.xml
+ 
+**Di chuyển bằng slide nghiêng chéo**
+  + **Khái quát**: Lấy image banner cố định làm image background, hiển thị chuyển đổi bằng thời gian hoặc Sendpage. Khi 3 image đang được hiển thị, thì image khác nhau sẽ được hiển thị khi được hiển thị tại vùng trung tâm (ở giữa). Ngoài ra, size hiển thị giữa lúc PC và smartphone sẽ khác nhau.
+  + **Số image đăng ký**: Tối đa 3 cái
+  + **Size image**
+    + Image PC lớn：width 294px　 heigh t294px
+    + Image PC nhỏ：width 166px　 height 166px
+    + Smartphone：width 197px　 height 197px
+ + **Thời gian chuyển đổi**: 5s
+ + **Phương pháp chuyển đổi**: Slide (Di chuyển nghiêng chéo)
+ + **Khi Javascript OFF**: 5s
+    + Ba image đã được setting sẽ được hiển thị nhưng phần chuyển đổi tại thao tác slide thì không hoạt động
+ + **Remark**
+    + Image active thì size image sẽ khác nhau Có link
+
+**Hoạt động「電車/tàu điện」chạy**
+ + Hãy set để image của tàu điện đang được hiển thị ở Footer di chuyển từ「このページの先頭へ戻る」đến bên ngang của bụi cỏ.
+ + Khi hiển thị SP thì không hoạt động cũng được.
+ + Nhờ các bạn set để sau khi di chuyển đến bụi cỏ thì nó biến mất đi.
+ + Về FLASH, trên site hiện tại thì nó nằm trong phần Footer của Toppage. http://www.city.minoh.lg.jp/
 
 >JavaScript Code:
 ```javascript
