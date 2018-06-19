@@ -1,5 +1,5 @@
 
-#### I. Animation Libraries
+#### I. Animation JS Libraries
 ---
 1. [AnimeJS](http://animejs.com/)
 
@@ -17,15 +17,8 @@
 
 1. [Wow](http://mynameismatthieu.com/WOW/)
 
-1. [Effeckt](http://h5bp.github.io/Effeckt.css/)
-
-1. [Animate](https://daneden.github.io/animate.css/)
-
 1. [Magic Animations](https://www.minimamente.com/example/magic_animations/)
 
-1. [Csshake](http://elrumordelaluz.github.io/csshake/)
-
-1. [Hover](http://ianlunn.github.io/Hover/)
 
 1. [Spinkit](http://tobiasahlin.com/spinkit/)
 
@@ -42,8 +35,6 @@
 1. [Flexbox](http://bourbon.io/docs/#flexbox)
 
 1. [Animista](http://animista.net/)
-
-1. [erictreacy](https://github.com/erictreacy/mimic.css)
 
 1. [GSAP](https://greensock.com/gsap)
 
@@ -81,3 +72,16 @@
 
 1. [Web Animation](https://web-animation.github.io/)
 
+#### I. Animation CSS
+---
+1. [WickedCSS](http://kristofferandreasen.github.io/wickedCSS)
+
+1. [Hover](http://ianlunn.github.io/Hover/)
+
+1. [Csshake](http://elrumordelaluz.github.io/csshake/)
+
+1. [Animate](https://daneden.github.io/animate.css/)
+
+1. [erictreacy](https://github.com/erictreacy/mimic.css)
+
+1. [Effeckt](http://h5bp.github.io/Effeckt.css/)
