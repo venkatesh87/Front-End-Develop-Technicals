@@ -1,6 +1,8 @@
 #### I.Document Link Local
 ---
 
+1. [Javascript Slideshow](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-slideshow.md)
+
 1. [Flex Those JavaScript Array Muscles](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-flex-those-javaScript-array-muscles.md)
 
 1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
