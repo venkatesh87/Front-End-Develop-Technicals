@@ -399,54 +399,18 @@ $(document).ready(function() {
 
 ```
 
-**7. 20180313 Booking HTML5 RakuRaKu**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**8. 20180508 ChartJS**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**9. 20180509 Plugin SmartPhone**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**10. 20180511 Foreign Language Tokyo**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**11. 20171211 Chiba Kun’s Hiroba FE**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**12. 20171122 Minoh City**
+**7. 20171122 Minoh City**
 - **Main Visual**: 
   + Tại image background, số lượng setting tối đa thì hãy hiển thị bằng chuyển đổi fade 5 image.
   + Trường hợp height của image lớn hơn size image được đề xuất thì sẽ là 556px, trường hợp Width lớn thì sẽ là trạng thái hiển thị cắt phía trái phải của image, trường hợp nhỏ thì sẽ được phóng to hiển thị cho khớp với height 556px.
   + Ngoài ra, data image thì nhờ các bạn loading, và setting bằng xml.
+  
   + http://www.city.miura.kanagawa.jp/
+  
 　+ http://www.city.miura.kanagawa.jp/shared/js/top_gallery.xml
+ 
   ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/minho-city-1.jpg)
+  
 **Di chuyển bằng slide nghiêng chéo**
   + **Khái quát**: Lấy image banner cố định làm image background, hiển thị chuyển đổi bằng thời gian hoặc Sendpage. Khi 3 image đang được hiển thị, thì image khác nhau sẽ được hiển thị khi được hiển thị tại vùng trung tâm (ở giữa). Ngoài ra, size hiển thị giữa lúc PC và smartphone sẽ khác nhau.
   + **Số image đăng ký**: Tối đa 3 cái
@@ -475,6 +439,45 @@ $(document).ready(function() {
  + Nhờ các bạn hình dung kiểu như sakura_demo/demo.html.
  + Ngoài ra, demo là cái dùng để test nên các bạn chỉnh sửa hay làm lại cũng không sao nhé
 ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/minho-city-4.jpg)
+
+>JavaScript Code:
+```javascript
+
+```
+**8. 20180313 Booking HTML5 RakuRaKu**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**9. 20180508 ChartJS**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**10. 20180509 Plugin SmartPhone**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**11. 20180511 Foreign Language Tokyo**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**12. 20171211 Chiba Kun’s Hiroba FE**
+- Text.
 
 >JavaScript Code:
 ```javascript
@@ -521,7 +524,7 @@ $(document).ready(function() {
 
 ```
 
-**11. **
+**18. **
 - Text.
 
 >JavaScript Code:
@@ -529,7 +532,7 @@ $(document).ready(function() {
 
 ```
 
-**12. **
+**19. **
 - Text.
 
 >JavaScript Code:
@@ -537,7 +540,7 @@ $(document).ready(function() {
 
 ```
 
-**13. **
+**20. **
 - Text.
 
 >JavaScript Code:
@@ -545,7 +548,7 @@ $(document).ready(function() {
 
 ```
 
-**14. **
+**21. **
 - Text.
 
 >JavaScript Code:
@@ -553,7 +556,7 @@ $(document).ready(function() {
 
 ```
 
-**15. **
+**22. **
 - Text.
 
 >JavaScript Code:
@@ -561,7 +564,7 @@ $(document).ready(function() {
 
 ```
 
-**16. **
+**23. **
 - Text.
 
 >JavaScript Code:
@@ -569,7 +572,7 @@ $(document).ready(function() {
 
 ```
 
-**17. **
+**24. **
 - Text.
 
 >JavaScript Code:
@@ -577,7 +580,7 @@ $(document).ready(function() {
 
 ```
 
-**11. **
+**25. **
 - Text.
 
 >JavaScript Code:
@@ -585,7 +588,7 @@ $(document).ready(function() {
 
 ```
 
-**12. **
+**26. **
 - Text.
 
 >JavaScript Code:
@@ -593,7 +596,7 @@ $(document).ready(function() {
 
 ```
 
-**13. **
+**27. **
 - Text.
 
 >JavaScript Code:
@@ -601,7 +604,7 @@ $(document).ready(function() {
 
 ```
 
-**14. **
+**28. **
 - Text.
 
 >JavaScript Code:
@@ -609,7 +612,7 @@ $(document).ready(function() {
 
 ```
 
-**15. **
+**29. **
 - Text.
 
 >JavaScript Code:
@@ -617,7 +620,7 @@ $(document).ready(function() {
 
 ```
 
-**16. **
+**30. **
 - Text.
 
 >JavaScript Code:
@@ -625,122 +628,4 @@ $(document).ready(function() {
 
 ```
 
-**17. **
-- Text.
 
->JavaScript Code:
-```javascript
-
-```
-
-**11. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**12. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**13. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**14. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**15. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**16. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**17. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**11. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**12. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**13. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**14. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**15. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**16. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**17. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
