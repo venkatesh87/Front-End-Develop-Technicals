@@ -446,7 +446,7 @@ $(document).ready(function() {
   + Ngoài ra, data image thì nhờ các bạn loading, và setting bằng xml.
   + http://www.city.miura.kanagawa.jp/
 　+ http://www.city.miura.kanagawa.jp/shared/js/top_gallery.xml
-  ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-1.jpg)
+  ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/minho-city-1.jpg)
 **Di chuyển bằng slide nghiêng chéo**
   + **Khái quát**: Lấy image banner cố định làm image background, hiển thị chuyển đổi bằng thời gian hoặc Sendpage. Khi 3 image đang được hiển thị, thì image khác nhau sẽ được hiển thị khi được hiển thị tại vùng trung tâm (ở giữa). Ngoài ra, size hiển thị giữa lúc PC và smartphone sẽ khác nhau.
   + **Số image đăng ký**: Tối đa 3 cái
@@ -461,20 +461,20 @@ $(document).ready(function() {
  + **Remark**
     + Image active thì size image sẽ khác nhau Có link
     
- ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-2.jpg)
+ ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/minho-city-2.jpg)
 
 **Hoạt động「電車/tàu điện」chạy**
  + Hãy set để image của tàu điện đang được hiển thị ở Footer di chuyển từ「このページの先頭へ戻る」đến bên ngang của bụi cỏ.
  + Khi hiển thị SP thì không hoạt động cũng được.
  + Nhờ các bạn set để sau khi di chuyển đến bụi cỏ thì nó biến mất đi.
  + Về FLASH, trên site hiện tại thì nó nằm trong phần Footer của Toppage. http://www.city.minoh.lg.jp/
- ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-3.jpg)
+ ![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/minho-city-3.jpg)
 
 **Hoạt động「もみじの葉っぱ/lá đỏ」rơi**
  + Hãy set để khoảng ba lá đỏ kiểu đang rơi phấp phới xuống dưới 2 bên trái phải một cách tự động, khác với lá đỏ đang được hiển thị trên Main visual. Khi hiển thị SP thì không hoạt động cũng được.
  + Nhờ các bạn hình dung kiểu như sakura_demo/demo.html.
  + Ngoài ra, demo là cái dùng để test nên các bạn chỉnh sửa hay làm lại cũng không sao nhé
-![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-4.jpg)
+![Minoh City](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/minho-city-4.jpg)
 
 >JavaScript Code:
 ```javascript
