@@ -17,12 +17,9 @@
 
 1. [Wow](http://mynameismatthieu.com/WOW/)
 
-1. [Magic Animations](https://www.minimamente.com/example/magic_animations/)
+1. [T-scroll](https://t-scroll.com/demo.html)
 
-
-1. [Spinkit](http://tobiasahlin.com/spinkit/)
-
-1. [All animation](http://all-animation.github.io/)
+1. [icostacruz](http://ricostacruz.com/jquery.transit/)
 
 1. [Demonstration](http://demonstration.easy-development.com/story-box/index.php)
 
@@ -36,8 +33,6 @@
 
 1. [Animista](http://animista.net/)
 
-1. [GSAP](https://greensock.com/gsap)
-
 1. [Famous](http://staging.famous.org/)
 
 1. [Move.js](https://visionmedia.github.io/move.js/)
@@ -45,6 +40,8 @@
 1. [SVG.js](http://svgjs.com/)
 
 1. [Animo.js](https://animo.js.org/)
+
+1. [Animateplus](https://github.com/bendc/animateplus)
 
 1. [25+ CSS Animation Libraries](https://cssauthor.com/css-animation-libraries/?ref=webdesignernews.com)
 
@@ -85,3 +82,25 @@
 1. [erictreacy](https://github.com/erictreacy/mimic.css)
 
 1. [Effeckt](http://h5bp.github.io/Effeckt.css/)
+
+1. [Spinkit](http://tobiasahlin.com/spinkit/)
+
+1. [Magic Animations](https://www.minimamente.com/example/magic_animations/)
+
+1. [All animation](http://all-animation.github.io/)
+
+1. [Woah css](http://www.joerezendes.com/projects/Woah.css/)
+
+1. [Repaintless](https://szynszyliszys.github.io/repaintless/)
+
+1. [Shakrmedia](https://shakrmedia.github.io/tuesday/)
+
+1. [Obnoxious](http://tholman.com/obnoxious/)
+
+1. [Dyn-css](http://www.vittoriozaccaria.net/dyn-css/)
+
+#### I. Convert to CSS Source to Greensock Source
+---
+1. [Convert to CSS Source to Greensock Source](https://cssanimation.io/)
+
+
