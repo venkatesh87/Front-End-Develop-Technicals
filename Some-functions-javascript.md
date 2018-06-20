@@ -1,4 +1,26 @@
-**1. splice():** The splice() method adds/removes items to/from an array, and returns the removed item(s).
+**1. indexOf():** 
+
+>**indexOf() String**: Phương thức ```indexOf()``` trả về vị trí của lần xuất hiện đầu tiên của một giá trị được chỉ định trong một chuỗi.
+```javascript
+function myFunction() {
+    var str = "Hello world welcome to the universe.";
+    var n = str.indexOf("welcome");
+    document.getElementById("demo").innerHTML = n;
+}
+```
+**==> Result:** 12
+
+>**indexOf() Array**: Phương thức ```indexOf()``` tìm kiếm mảng cho mục được chỉ định và trả về vị trí(position) của nó.
+```javascript
+function myFunction() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var a = fruits.indexOf("Apple");
+  document.getElementById("demo").innerHTML = a;
+}
+```
+**==> Result:** 2
+
+**2. splice():** The splice() method adds/removes items to/from an array, and returns the removed item(s).
 
 ```javascript
 array.splice(index, howmany, item1, ....., itemX)
@@ -28,7 +50,7 @@ fruits.splice(2, 2);
 ```javascript
 Banana,Orange,Kiwi
 ```
-**2. document.getElementsByClassName():** Get all elements with the specified class name
+**3. document.getElementsByClassName():** Get all elements with the specified class name
 
 >**HTML**
 ```javascript
@@ -45,7 +67,7 @@ function myFunction() {
 }
 ```
 
-**3. document.getElementsByTagName():** Get all elements in the document with the specified tag name.
+**4. document.getElementsByTagName():** Get all elements in the document with the specified tag name.
 
 >**HTML**
 ```javascript
@@ -68,7 +90,7 @@ function myFunction() {
 }
 ```
 
-**4. document.querySelectorAll():** Get all elements in the document with class="elements"
+**5. document.querySelectorAll():** Get all elements in the document with class="elements"
 
 >**HTML**
 ```javascript
@@ -84,7 +106,7 @@ function myFunction() {
 }
 ```
 
-**5. document.createElement():** Create a <button> element
+**6. document.createElement():** Create a <button> element
 
 >**JS**
 ```javascript
