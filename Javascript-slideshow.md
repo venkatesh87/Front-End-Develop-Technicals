@@ -20,7 +20,7 @@
 ```
 
 ##### Slideshow 2:
-
+- Chú ý phép chia ```%``` lấy phần dư có kết quả như sau, 1%5 = 1, 2%5 = 2, ..., 6%5 = 1.
 >Javascript Code:
 ```javascript
 
