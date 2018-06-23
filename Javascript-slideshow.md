@@ -291,7 +291,7 @@ previous.onclick = function(){
 }
 ```
 
-##### Slideshow 4:
+##### Slideshow Next/Previous:
 
 >Javascript Code:
 ```javascript
@@ -380,38 +380,262 @@ ul,li {
 }
 ```
 
-##### Slideshow 5:
+##### Slideshow Next/Previous Prototype:
 
 >Javascript Code:
 ```javascript
+function Slider(container, nav) {
+  this.container = container;
+  this.nav = nav.show();
 
-```
+  this.imgs = this.container.find('img');
+  this.imgWidth = this.imgs[0].width;
+  this.imgsLen = this.imgs.length;
 
->HTML Code:
-```javascript
+  this.current = 0;
 
-```
+  this.events.click.call(this);
+}
 
->CSS:
-```javascript
+Slider.prototype.transition = function() {
+  this.container.animate({
+    'margin-left': -(this.current * this.imgWidth)
+  });
+}
 
+Slider.prototype.setCurrent = function(dir) {
+  var pos = this.current;
+  // if direction == next then pos++ else pos--
+  pos += (dir === 'next' ? 1 : -1);
+  // reset current if pos < 0, 0 is start position
+  this.current = (pos < 0) ? this.imgsLen - 1 : pos % this.imgsLen;
+
+  return pos;
+}
+
+Slider.prototype.events = {
+  click: function() {
+    var self = this;
+
+    self.nav.find('button').on('click', function() {
+      self.setCurrent($(this).data('dir'));
+      self.transition();
+    });
+  }
+};
 ```
 
 ##### Slideshow 6:
 
 >Javascript Code:
 ```javascript
+(function () {
+  var slideSpeed = 0.06;
+  var enableAutoSlide = false;
+  var autoSlideRate = 4000;
+  var imageFitPercentage = 80;
+
+  var sliders;
+  var images = [];
+  var currentSlide = 0;
+  
+  initSlider();
+
+  function initSlider() {
+    sliders = document.getElementsByClassName('carousel-slideshow');
+    for(var i = 0; i < sliders.length; i++)
+      buildSlider(sliders[i]);
+  }
+  function buildSlider(slider) {
+    var imgSrc = [];
+    stashImageSources(slider.children, imgSrc);
+    slider.innerHTML = '';
+    addArrows(slider);
+    createInitSlide(slider, imgSrc[0]);
+    loadStoredImages(imgSrc);
+  }
+  function stashImageSources(images, imgSrc) {
+    for(var i = 0; i < images.length; i++) {
+      imgSrc.push(images[i].src);
+      images[i].src = '';
+    }
+  }
+  function addArrows(slider) {
+    addClassDiv(slider, 'slider-arrow-box-left');
+    addClassDiv(slider, 'slider-arrow-box-right');
+    addClassDiv(slider.children[0], 'left-slider-arrow');
+    addClassDiv(slider.children[1], 'right-slider-arrow');
+    addPrevListener(slider);
+    addNextListener(slider);
+    if(enableAutoSlide) startAutoSlide(slider);
+  }
+  function addClassDiv(parent, className) {
+    var div = document.createElement('div');
+    addClass(div, className);
+    parent.appendChild(div);
+  }
+  function addClass(element, className) {
+    var classes = element.className.split(' ');
+    if(classes.indexOf(className) == -1)
+      element.className += ' ' + className;
+  }
+  function addPrevListener(slider) {
+    slider.children[0].onmousedown = function() {
+      if(!slider.animRunning) prevSlide(slider);
+    };
+  }
+  function addNextListener(slider) {
+    slider.children[1].onmousedown = function() {
+      if(!slider.animRunning) nextSlide(slider);
+    };
+  }
+  function createInitSlide(slider, src) {
+    var initSlide = createSlide(slider, src);
+    slider.appendChild(initSlide);
+    fitImageToSlider(initSlide, slider);
+  }
+  function createSlide(slider, src) {
+    var slide = document.createElement('img');
+    slide.setAttribute('src', src);
+    addClass(slide, 'slide');
+    return slide;
+  }
+  function fitImageToSlider(slide, slider) {
+    slide.style.height = imageFitPercentage + '%';
+    if(slide.clientWidth >= slider.clientWidth) {
+      slide.style.width = imageFitPercentage + '%';
+      slide.style.height = 'auto';
+    }
+    slide.style.marginLeft = ((slider.clientWidth - slide.clientWidth)/2) + 'px';
+    slide.style.marginTop = ((slider.clientHeight - slide.clientHeight)/2) + 'px';
+  }
+  function loadStoredImages(imgSrc) {
+    for(var i = 0; i < imgSrc.length; i++) {
+      images[i] = new Image;
+      images[i].src = imgSrc[i];
+    }
+  }
+  function nextSlide(slider) {
+    if(enableAutoSlide) resetAutoSlide(slider);
+    currentSlide = carouselIncrement(currentSlide, 0, images.length-1);
+    var nextSrc = images[currentSlide].src;
+    var nextSlide = createSlide(slider, nextSrc);
+    nextSlide.style.position = 'absolute';
+    nextSlide.style.left = '100%';
+    slider.appendChild(nextSlide);
+    fitImageToSlider(nextSlide, slider);
+    slideToNext(slider);
+  }
+  function resetAutoSlide(slider) {
+    if(slider.autoSlideTimer != undefined)
+      clearTimeout(slider.autoSlideTimer);
+    startAutoSlide(slider);
+  }
+  function startAutoSlide(slider) {
+    slider.autoSlideTimer = setTimeout(function() {
+      if(!slider.animRunning) nextSlide(slider);
+    }, autoSlideRate);
+  }
+  function carouselIncrement(variable, min, max) {
+    if(variable + 1 > max) return min;
+    else return ++variable;
+  }
+  function slideToNext(slider) {
+    var oldSlide = slider.children[2];
+    var newSlide = slider.children[3];
+    startNextSlideAnimation(slider, oldSlide, newSlide);
+  }
+  function startNextSlideAnimation(slider, oldSlide, newSlide) {
+    slider.animRunning = true;
+    var newSlidePos = getPxStyle(newSlide, 'left');
+    var delta = Math.floor(newSlidePos * slideSpeed);
+    if(delta < 4) delta = 4;
+    oldSlide.style.left = getPxStyle(oldSlide, 'left') - delta + 'px';
+    newSlide.style.left = newSlidePos - delta + 'px';
+    if(getPxStyle(newSlide, 'left') <= 0)
+      endNextSlideAnimation(slider, oldSlide, newSlide);
+    else window.requestAnimationFrame(function() {
+      startNextSlideAnimation(slider, oldSlide, newSlide);
+    });
+  }
+  function getPxStyle(element, style) {
+    var style = window.getComputedStyle(element).getPropertyValue(style);
+    return parseInt(style.substring(0, style.length - 2));
+  }
+  function endNextSlideAnimation(slider, oldSlide, newSlide) {
+    newSlide.style.left = 0 + 'px';
+    slider.removeChild(oldSlide);
+    newSlide.style.position = 'relative';
+    slider.animRunning = false;
+  }
+  function prevSlide(slider) {
+    currentSlide = carouselDecrement(currentSlide, 0, images.length-1);
+    var prevSrc = images[currentSlide].src;
+    var prevSlide = createSlide(slider, prevSrc);
+    prevSlide.style.position = 'absolute';
+    prevSlide.style.left = '-100%';
+    slider.appendChild(prevSlide);
+    fitImageToSlider(prevSlide, slider);
+    slideToPrev(slider);
+  }
+  function carouselDecrement(variable, min, max) {
+    if(variable - 1 < min) return max;
+    else return --variable;
+  }
+  function slideToPrev(slider) {
+    var oldSlide = slider.children[2];
+    var newSlide = slider.children[3];
+    startPrevSlideAnimation(slider, oldSlide, newSlide);
+  }
+  function startPrevSlideAnimation(slider, oldSlide, newSlide) {
+    slider.animRunning = true;
+    var newSlidePos = getPxStyle(newSlide, 'left');
+    var delta = -Math.floor(newSlidePos * slideSpeed);
+    if(delta < 4) delta = 4;
+    oldSlide.style.left = getPxStyle(oldSlide, 'left') + delta + 'px';
+    newSlide.style.left = newSlidePos + delta + 'px';
+    if(getPxStyle(newSlide, 'left') >= 0)
+      endNextSlideAnimation(slider, oldSlide, newSlide);
+    else window.requestAnimationFrame(function() {
+      startPrevSlideAnimation(slider, oldSlide, newSlide);
+    });
+  }
+  function endPrevSlideAnimation(slider, oldSlide, newSlide) {
+    newSlide.style.left = 0 + 'px';
+    slider.removeChild(oldSlide);
+    newSlide.style.position = 'relative';
+    slider.animRunning = false;
+  }
+
+  window.onresize = function() {
+    sliders = document.getElementsByClassName('carousel-slideshow');
+    for(var i = 0; i < sliders.length; i++) {
+      var slide = sliders[i].children[2];
+      fitImageToSlider(slide, sliders[i]);
+    }
+  };
+})();
 
 ```
 
 >HTML Code:
 ```javascript
-
+<div id="myDiv" class="carousel-slideshow">
+  <img src="demo-images/01.jpg">
+  <img src="demo-images/02.jpg">
+  <img src="demo-images/03.jpg">
+  <img src="demo-images/04.jpg">
+</div>
 ```
 
 >CSS:
 ```javascript
-
+#myDiv {
+  display: inline-block;
+  width: 80%;
+  height: 80vh;
+  margin-top: 10vh;
+}
 ```
 
 ##### Slideshow 7:
