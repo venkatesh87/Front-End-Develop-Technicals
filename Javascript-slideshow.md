@@ -1,6 +1,6 @@
 #### I. JavaScript array - Exercises, Practice, Solution
 ---
-##### Slideshow 1:
+##### Slideshow:
 - **indexOf() String**: Phương thức ```indexOf()``` trả về vị trí của lần xuất hiện đầu tiên của một giá trị được chỉ định trong một chuỗi.
 - **indexOf() Array**: Phương thức ```indexOf()``` tìm kiếm mảng cho mục được chỉ định và trả về vị trí(position) của nó.
 
@@ -55,7 +55,7 @@ setInterval(function() {
 }
 ```
 
-##### Slideshow 2:
+##### Slideshow Play/Pause:
 - Chú ý phép chia ```%``` lấy phần dư có kết quả như sau, 1%5 = 1, 2%5 = 2, ..., 6%5 = 1.
 >Javascript Code:
 ```javascript
@@ -109,6 +109,14 @@ pause.addEventListener('click', function(){
 
 >CSS:
 ```javascript
+.sliders {
+  position: relative;
+  height: 325px;
+  width: 45px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 .item_slide {
   position: absolute;
   left: 0;
@@ -122,14 +130,39 @@ pause.addEventListener('click', function(){
   -o-transition: opacity 1s;
   transition: opacity 1s;
 }
-
 .active {
   opacity: 1;
   z-index: 2;
 }
+.press {
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 7px 0px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  margin: 10px 5px 0 0;
+  width: 40px;
+}
+.press:hover,
+.press:focus {
+  background: #eee;
+  color: #333;
+}
+.controls {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  z-index: 10;
+  font-size: 0;
+}
+.slideshow {
+  position: relative;
+}
 ```
 
-##### Slideshow 3:
+##### Slideshow Next/Previous/Play/Pause:
 
 >Javascript Code:
 ```javascript
