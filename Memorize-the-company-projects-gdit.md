@@ -445,27 +445,444 @@ $(document).ready(function() {
 
 ```
 **8. 20180313 Booking HTML5 RakuRaKu**
-- Text.
+
+- abc
 
 >JavaScript Code:
 ```javascript
 
 ```
 
-**9. 20180508 ChartJS**
-- Text.
+**9. 20180509 Plugin SmartPhone**
+
+**Nội dung**
+- Xác định breakpoint
+- Chuyển đổi màn hình PC và Smartphone
+- Di chuyển element ứng với breakpoint
+- Về hoạt động thì Oita city là dự án được cho là có chất lượng tốt nhất cho đến hiện tại phía bên GD.
+- Oita city: https://www.city.oita.oita.jp/
+- Nguyện vọng là tạo được chất lượng sản phẩm bằng hoặc cao hơn Oita city này.
+
 
 >JavaScript Code:
 ```javascript
+(function($) {
+  $.gd.switchViewSP = function(options) {
+    var defaults = {
+        wrapper_width: 1280, //Wrapper width on PC Mode
+        breakpoint: [640],
+        pc_layout: [],
+        map: [
+          []
+        ],
+        button_pc: '#tmp_switch_pc_style',
+        button_sp: '#tmp_switch_sp_style',
+      },
+      st = $.extend(defaults, options),
+      t = this,
+      viewport_backup = '',
+      cookie = $.cookie('pcviewport'),
+      realView = -1,
+      currentView = -1 //pc is default
+    ;
 
+    if (cookie == 'pc') currentView = -2;
+
+    //Init
+    init();
+    $(window).on('resize', function() {
+      handleLayout();
+    });
+    $(st.button_pc).on('click', function() {
+      if (currentView > -1) {
+        currentView = -2;
+        $('html').addClass('pc_view');
+        // PC Simulator Mode
+        renderLayout(currentView);
+        changeViewport(currentView);
+        $.cookie('pcviewport', 'pc');
+        window.location.reload();
+      }
+    });
+    $(st.button_sp).on('click', function() {
+      if (currentView == -2) {
+        currentView = realView;
+        $('html').removeClass('pc_view');
+        //Roll back to normal mode
+        renderLayout(currentView);
+        changeViewport(currentView);
+        $.cookie('pcviewport', '');
+      }
+    })
+
+    //Method
+    function init() {
+      handleLayout();
+      // Lauch all script in pc layout if in PC Mode when first loaded
+      if (currentView == -1 || (currentView == -2 && realView == -1)) {
+        st.pc_layout.forEach(function(e) {
+          if (typeof e.callback == 'function') {
+            e.callback();
+          }
+        })
+      }
+    }
+
+    function handleLayout() {
+      var temp = getRealView();
+      if (realView != temp) {
+        realView = temp;
+        if (currentView != -2) {
+          currentView = realView; // If not in PC view simulator set current base on real view
+          renderLayout(currentView); // Make change layout only if not in simulator
+        }
+        if (realView == -1) {
+          $('html').removeClass('pc_view');
+          //Roll back viewport meta
+          if (currentView == -2) {
+            renderLayout(realView);
+            changeViewport(realView);
+          }
+        } else if (currentView == -2) {
+          $('html').addClass('pc_view');
+          //Roll back to pc view simulator
+          renderLayout(currentView);
+          changeViewport(currentView);
+        }
+      }
+    }
+
+    function changeViewport(layout) {
+      var viewport = document.querySelector('meta[name="viewport"]');
+      if (layout == -2) {
+        var scale = screen.width / st.wrapper_width;
+        if (viewport_backup == '') viewport_backup = viewport.content;
+        viewport.content = "width=" + (st.breakpoint[0] + 1) + ",initial-scale=" + scale + ", maximum-scale=3.0";
+      } else {
+        if (viewport_backup == '') {
+          viewport.content = "width=device-width, maximum-scale=3.0";
+        } else {
+          viewport.content = viewport_backup;
+        }
+      }
+
+    }
+
+    function getRealView() {
+      var ww, counter;
+      if (window.innerWidth > window.innerHeight) {
+        ww = Math.max(screen.width, screen.height);
+      } else {
+        ww = Math.min(screen.width, screen.height);
+      }
+      for (counter = 0; counter < st.breakpoint.length; counter++) {
+        if (ww > st.breakpoint[counter]) {
+          break;
+        }
+      }
+      return (counter - 1);
+    }
+
+    function renderLayout(index) {
+      var map;
+      if (index > -1) {
+        map = st.map[index];
+      } else {
+        map = st.pc_layout;
+      }
+      if (map.length) {
+        map.forEach(function(e, i) {
+          if (e.from) {
+            e.element = moveElement(e.from, e.method, e.to);
+          }
+          if (typeof e.callback == 'function') {
+            e.callback();
+          }
+        });
+      }
+    }
+
+    function moveElement(from, method, to) {
+      var el;
+      switch (method) {
+        case 'append':
+          el = from.appendTo($(to));
+          break;
+        case 'prepend':
+          el = from.prependTo($(to));
+          break;
+        case 'before':
+          el = from.insertBefore($(to));
+          break;
+        case 'after':
+          el = from.insertAfter($(to));
+          break;
+        case 'remove':
+          el = from.detach();
+          break;
+        case 'addClass':
+          el = from.addClass(to);
+          break;
+        case 'removeClass':
+          el = from.removeClass(to);
+          break;
+      }
+      return el;
+    }
+  }
+})(jQuery);
 ```
 
-**10. 20180509 Plugin SmartPhone**
+**10. Zoomer_Plugin**
 - Text.
 
 >JavaScript Code:
 ```javascript
+(function($) {
 
+  $.gd.zoomer = function(options) {
+    var defaults = {
+        breakpoint: 640,
+        selector: '#tmp_contents img',
+        zoomerTemplate: '<div id="tmp_zoomer"><div id="tmp_zoomer_close">X</div><div id="tmp_zoomer_cnt"><div id="tmp_zoomer_holder"></div></div><div id="tmp_zoomer_controls"><div id="tmp_zoomer_minus">-</div><div id="tmp_zoomer_plus">+</div></div></div>',
+        increaseRate: 0.1,
+        timing: 200 //set 0 for no animation
+      },
+      st = $.extend(defaults, options),
+      t = this,
+      zoomer = {
+        wrap: '#tmp_zoomer',
+        close: '#tmp_zoomer_close',
+        cnt: '#tmp_zoomer_cnt',
+        holder: '#tmp_zoomer_holder',
+        img: '#tmp_zoomer_holder img',
+        zoomIn: '#tmp_zoomer_plus',
+        zoomOut: '#tmp_zoomer_minus',
+      };
+
+    //Init
+    $(window).on('load', function() {
+      init();
+    });
+
+    //Method
+    function init() {
+      if ($(st.selector).length) {
+        $(st.selector).on('click', function() {
+          var imgObj = getImageData($(this));
+          var arr_tes = [imgObj]
+          imgObj.addEventListener('load', function() {
+            if (imgObj.width > $(window).width() && $(window).width() <= st.breakpoint) {
+              // start init zoomer
+              initZoomer(imgObj);
+            }
+          })
+        });
+      }
+    }
+
+    function getImageData(selector) {
+      var imgObj = document.createElement('img');
+      imgObj.src = selector.attr('src');
+      return imgObj;
+    }
+
+    function initZoomer(imgObj) {
+      var initScale = Math.min(($(window).width() - 40) / imgObj.width, ($(window).height() - 40) / imgObj.height),
+        newScale = initScale,
+        currentScale = initScale,
+        position = {
+          x: 0,
+          y: 0
+        };
+      //append raw html into view
+      appendHtml(imgObj, initScale);
+      //init control event
+      $(zoomer.zoomIn).on('click', function() {
+        newScale += st.increaseRate;
+        if (newScale > 1) {
+          newScale = 1;
+        }
+        setScale(newScale);
+      });
+      $(zoomer.zoomOut).on('click', function() {
+        newScale -= st.increaseRate;
+        if (newScale < initScale) {
+          newScale = initScale;
+        }
+        setScale(newScale);
+      });
+      $(zoomer.close).on('click', function() {
+        $(zoomer.wrap).remove();
+        $('body').removeClass('zoomer_active');
+      })
+      //init swipe event
+      var origin = {
+        x: 0,
+        y: 0,
+        temp: {
+          x: 0,
+          y: 0
+        },
+        limit: {
+          x: 0,
+          y: 0
+        }
+      }
+      $(zoomer.wrap).on('touchmove', function(e) {
+        e.preventDefault();
+      })
+      $(zoomer.img).on('touchstart', function(e) {
+        origin.x = e.originalEvent.touches[0].clientX;
+        origin.y = e.originalEvent.touches[0].clientY;
+        origin.limit.x = ((imgObj.width * currentScale + 40) - $(window).width()) / 2;
+        origin.limit.y = ((imgObj.height * currentScale + 40) - $(window).height()) / 2;
+      });
+      $(zoomer.img).on('touchmove', function(e) {
+        e.preventDefault();
+        $(zoomer.wrap).addClass('control_deactive');
+        $(zoomer.wrap).addClass('moving_mode');
+        var new_position = {
+          x: e.originalEvent.touches[0].clientX - origin.x,
+          y: e.originalEvent.touches[0].clientY - origin.y
+        }
+        new_position.x += position.x;
+        new_position.y += position.y;
+        //Check limit
+        new_position = reCheckWithLimit(origin.limit, new_position, position);
+        $(zoomer.cnt).css({
+          'transform': 'translate(' + new_position.x + 'px,' + new_position.y + 'px)'
+        });
+        origin.temp.x = new_position.x;
+        origin.temp.y = new_position.y;
+        return false;
+      });
+      $(zoomer.img).on('touchend', function(e) {
+        if ($(zoomer.wrap).hasClass('moving_mode')) { //Only reset position if it already moved
+          $(zoomer.wrap).removeClass('moving_mode');
+          $(zoomer.wrap).removeClass('control_deactive');
+          position.x = origin.temp.x;
+          position.y = origin.temp.y;
+          origin.x = 0;
+          origin.y = 0;
+          origin.temp.x = 0;
+          origin.temp.y = 0;
+        }
+      });
+      //UX
+      $(zoomer.img).on('click', function() {
+        $(zoomer.wrap).toggleClass('control_deactive');
+      })
+
+      //Private function
+      function setScale(scale) {
+        var limit = {
+          x: ((imgObj.width * scale + 40) - $(window).width()) / 2,
+          y: ((imgObj.height * scale + 40) - $(window).height()) / 2
+        }
+        //Reposition with new scale
+        var new_position = {
+          x: position.x,
+          y: position.y
+        }
+        new_position.x = (new_position.x / (imgObj.width * currentScale)) * imgObj.width * scale;
+        new_position.y = (new_position.y / (imgObj.height * currentScale)) * imgObj.height * scale;
+        //Check limit
+        new_position = reCheckWithLimit(limit, new_position, { x: 0, y: 0 });
+        setPosition(new_position);
+
+        if (st.timing > 0) {
+          doAnimation($(zoomer.img), currentScale, scale, 'scale', st.timing);
+        } else {
+          $(zoomer.img).css({
+            'transform': 'scale(' + scale + ')'
+          });
+        }
+        currentScale = scale;
+      }
+
+      function setPosition(new_position) {
+        if (st.timing > 0) {
+          doAnimation($(zoomer.cnt), [position.x, position.y], [new_position.x, new_position.y], 'translate', 200);
+        } else {
+          $(zoomer.cnt).css({
+            'transform': 'translate(' + new_position.x + 'px,' + new_position.y + 'px)'
+          });
+        }
+        position.x = new_position.x;
+        position.y = new_position.y;
+      }
+    }
+
+    function appendHtml(imgObj, initScale) {
+      $('body').append(st.zoomerTemplate);
+      $('body').addClass('zoomer_active');
+      $(zoomer.holder).append(imgObj);
+      $(zoomer.holder).css({
+        'width': imgObj.width,
+        'height': imgObj.height,
+      });
+      $(zoomer.img).css({
+        'transform': 'scale(' + initScale + ')',
+        'transform-origin': '50% 50%'
+      });
+    }
+
+    function reCheckWithLimit(limit, current, old) {
+      var new_position = current;
+      if (limit.x > 0) {
+        if (new_position.x < -limit.x) new_position.x = -limit.x;
+        if (new_position.x > limit.x) new_position.x = limit.x;
+      } else {
+        new_position.x = old.x;
+      }
+      if (limit.y > 0) {
+        if (new_position.y < -limit.y) new_position.y = -limit.y;
+        if (new_position.y > limit.y) new_position.y = limit.y;
+      } else {
+        new_position.y = old.y;
+      }
+      return new_position;
+    }
+
+    function doAnimation(selector, start, end, css, timing) {
+      var startTimes = 0;
+      window.requestAnimationFrame(step);
+
+      function step(timestamp) {
+        if (!startTimes) startTimes = timestamp;
+        var progressTimes = timestamp - startTimes;
+        var progress;
+        if (progressTimes >= timing) progressTimes = timing;
+        if (Array.isArray(start)) {
+          progress = new Array();
+          start.forEach(function(e, i) {
+            progress[i] = e + (progressTimes * (end[i] - e) / timing)
+          });
+        } else {
+          progress = start + (progressTimes * (end - start) / timing);
+        }
+        switch (css) {
+          case 'scale':
+            selector.css({
+              'transform': 'scale(' + progress + ')'
+            });
+            break;
+          case 'translate':
+            selector.css({
+              'transform': 'translate(' + progress[0] + 'px,' + progress[1] + 'px)'
+            });
+            break;
+          default:
+            selector.css({
+              css: progress + 'px'
+            })
+        }
+        if (progressTimes < timing) window.requestAnimationFrame(step);
+      }
+    }
+  }
+})(jQuery);
 ```
 
 **11. 20180511 Foreign Language Tokyo**
@@ -492,7 +909,7 @@ $(document).ready(function() {
 
 ```
 
-**14. **
+**14. 20180508 ChartJS**
 - Text.
 
 >JavaScript Code:
