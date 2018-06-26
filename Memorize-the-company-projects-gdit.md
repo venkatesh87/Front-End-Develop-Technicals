@@ -634,7 +634,40 @@ $(document).ready(function() {
 ```
 
 **10. Zoomer_Plugin**
-- Text.
+**10.1. Yêu cầu**: Khi hiển thị SP, tạo style, JS có thể phóng to image trong phần content bằng tab.
+- **Tham khảo**
+  + http://migo-media.com/zoomer-mobile/
+  + http://migo-media.com/demo/zoomer/demo.html
+- Là chức năng dùng cho người không sử dụng Pinch in pinch out 
+- **Phạm vi, đối tượng**
+  + Trong img trong phần DIV#tmp_contents, chỉ lấy img có naturalWidth (kích thước thực tế) lớn hơn độ rộng của viewport làm đối tượng.
+
+- **Chức năng mong muốn có**
+  + Khi tap vào image thì được hiển thị như là modal window, và vùng xung quanh image sẽ thành màu đen bán trong suốt.
+  + Button ”拡大/phóng to”, ”縮小/thu nhỏ”
+  + Button “閉じる/Close” để có thể xóa
+
+- **Nguyện vọng về sản phẩm tạo**
+  + Hoạt động ở jQuery 1.7.1 trở lên
+  + Cho dù là ở dự án như thế nào thì cũng có thể hoạt động được bằng việc bổ sung vào JS, bổ sung vào stylesheet
+**10.2. Tài liệu hướng dẫn sử dụng plugin Zoomer**: 
+  **Mô tả:** Tự động thêm chức năng zoom hình ảnh bằng popup cho images nằm trong khu vực ```#tmp_contents```
+  **Sử dụng:**
+    + Include file zoomer.css và zoomer.js vào trong document
+    + Thêm script js:
+  **Cấu hình:*
+  
+  | Tên thuộc tính | Loại | Mặc định | Chức năng |
+  | --- | --- | --- | --- |
+  | breakpoint | int | 640 | Điểm breakpoint chuyển đổi qua sp. Với trường hợp muốn sử dụng plugin trên PC thì có thể setting thành 1 số giá trị lớn như 10,000,…  |
+  | selector | css selector | '#tmp_contents img' | Selector chỉ trực tiếp đến các img nhận chức năng zoomer 
+  | zoomerTemplate | html | '<div id="tmp_zoomer">…</div>' | Template html popup của zoomer. Trong trường hợp thay đổi template cần giữ nguyên các id #tmp_zoomer, #tmp_zoomer_close, #tmp_zoomer_cnt, #tmp_zoomer_holder, #tmp_zoomer_plus, #tmp_zoomer_minus |
+  | increaseRate | float < 1 | 0.1 | Tỷ lệ zoom với mỗi lần click. Bắt buộc phải lớn hơn 0  và bé hơn 1. |
+  | timing | int | 200 | Thời gian animation khi được zoom. Với trường hợp muốn tắt hẳn animation thì setting thông số này bằng 0. |
+  
+1.	$.gd.zoomer();  
+
+III/ Cấu hình:
 
 >JavaScript Code:
 ```javascript
