@@ -655,7 +655,9 @@ $(document).ready(function() {
   **Sử dụng:**
     + Include file zoomer.css và zoomer.js vào trong document
     + Thêm script js:
-  **Cấu hình:*
+    
+  **Cấu hình:**
+  
   
   | Tên thuộc tính | Loại | Mặc định | Chức năng |
   | --- | --- | --- | --- |
