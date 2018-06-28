@@ -677,249 +677,279 @@ III/ Cấu hình:
 >JavaScript Code:
 ```javascript
 (function($) {
+    $.gd.zooming = function(options){
+        var defaults = {
+                breakpoint : 640,
+                selector: '#tmp_contents img',
+                zoomingTemplate : '<div id="tmp_zooming"><div id="tmp_zooming_close">X</div><div id="tmp_zooming_cnt"><div id="tmp_zooming_holder"></div></div><div id="tmp_zooming_controls"><div id="tmp_zooming_minus">-</div><div id="tmp_zooming_plus">+</div></div></div>',
+                increaseRate : 0.1,
+                timing : 200//set 0 for no animation
+            },
+            st = $.extend(defaults,options),
+            t = this,
+            zooming = {
+                wrap : '#tmp_zooming',
+                close : '#tmp_zooming_close',
+                cnt : '#tmp_zooming_cnt',
+                holder : '#tmp_zooming_holder',
+                img : '#tmp_zooming_holder img',
+                zoomIn : '#tmp_zooming_plus',
+                zoomOut : '#tmp_zooming_minus',
+            };
+        //Init
+        $(window).on('load',function(){
+            init();
+            checkZoomingAvailable();
+        });
+        $(window).on('resize',function(){
+            checkZoomingAvailable();
+        })
 
-  $.gd.zoomer = function(options) {
-    var defaults = {
-        breakpoint: 640,
-        selector: '#tmp_contents img',
-        zoomerTemplate: '<div id="tmp_zoomer"><div id="tmp_zoomer_close">X</div><div id="tmp_zoomer_cnt"><div id="tmp_zoomer_holder"></div></div><div id="tmp_zoomer_controls"><div id="tmp_zoomer_minus">-</div><div id="tmp_zoomer_plus">+</div></div></div>',
-        increaseRate: 0.1,
-        timing: 200 //set 0 for no animation
-      },
-      st = $.extend(defaults, options),
-      t = this,
-      zoomer = {
-        wrap: '#tmp_zoomer',
-        close: '#tmp_zoomer_close',
-        cnt: '#tmp_zoomer_cnt',
-        holder: '#tmp_zoomer_holder',
-        img: '#tmp_zoomer_holder img',
-        zoomIn: '#tmp_zoomer_plus',
-        zoomOut: '#tmp_zoomer_minus',
-      };
-
-    //Init
-    $(window).on('load', function() {
-      init();
-    });
-
-    //Method
-    function init() {
-      if ($(st.selector).length) {
-        $(st.selector).on('click', function() {
-          var imgObj = getImageData($(this));
-          var arr_tes = [imgObj]
-          imgObj.addEventListener('load', function() {
-            if (imgObj.width > $(window).width() && $(window).width() <= st.breakpoint) {
-              // start init zoomer
-              initZoomer(imgObj);
+        //Method
+        function init(){
+            if($(st.selector).length){
+                $(st.selector).on('click',function(){
+                    var imgObj = getImageData($(this));
+                    imgObj.addEventListener('load',function(){
+                        if (imgObj.width > $(window).width() && $(window).width() <= st.breakpoint){
+                            // start init zooming
+                            initZoomimg(imgObj);
+                        }
+                    })
+                });
             }
-          })
-        });
-      }
-    }
-
-    function getImageData(selector) {
-      var imgObj = document.createElement('img');
-      imgObj.src = selector.attr('src');
-      return imgObj;
-    }
-
-    function initZoomer(imgObj) {
-      var initScale = Math.min(($(window).width() - 40) / imgObj.width, ($(window).height() - 40) / imgObj.height),
-        newScale = initScale,
-        currentScale = initScale,
-        position = {
-          x: 0,
-          y: 0
-        };
-      //append raw html into view
-      appendHtml(imgObj, initScale);
-      //init control event
-      $(zoomer.zoomIn).on('click', function() {
-        newScale += st.increaseRate;
-        if (newScale > 1) {
-          newScale = 1;
         }
-        setScale(newScale);
-      });
-      $(zoomer.zoomOut).on('click', function() {
-        newScale -= st.increaseRate;
-        if (newScale < initScale) {
-          newScale = initScale;
+        function getImageData(selector){
+            var imgObj = document.createElement('img');
+            imgObj.src = selector.attr('src');
+            return imgObj;
         }
-        setScale(newScale);
-      });
-      $(zoomer.close).on('click', function() {
-        $(zoomer.wrap).remove();
-        $('body').removeClass('zoomer_active');
-      })
-      //init swipe event
-      var origin = {
-        x: 0,
-        y: 0,
-        temp: {
-          x: 0,
-          y: 0
-        },
-        limit: {
-          x: 0,
-          y: 0
-        }
-      }
-      $(zoomer.wrap).on('touchmove', function(e) {
-        e.preventDefault();
-      })
-      $(zoomer.img).on('touchstart', function(e) {
-        origin.x = e.originalEvent.touches[0].clientX;
-        origin.y = e.originalEvent.touches[0].clientY;
-        origin.limit.x = ((imgObj.width * currentScale + 40) - $(window).width()) / 2;
-        origin.limit.y = ((imgObj.height * currentScale + 40) - $(window).height()) / 2;
-      });
-      $(zoomer.img).on('touchmove', function(e) {
-        e.preventDefault();
-        $(zoomer.wrap).addClass('control_deactive');
-        $(zoomer.wrap).addClass('moving_mode');
-        var new_position = {
-          x: e.originalEvent.touches[0].clientX - origin.x,
-          y: e.originalEvent.touches[0].clientY - origin.y
-        }
-        new_position.x += position.x;
-        new_position.y += position.y;
-        //Check limit
-        new_position = reCheckWithLimit(origin.limit, new_position, position);
-        $(zoomer.cnt).css({
-          'transform': 'translate(' + new_position.x + 'px,' + new_position.y + 'px)'
-        });
-        origin.temp.x = new_position.x;
-        origin.temp.y = new_position.y;
-        return false;
-      });
-      $(zoomer.img).on('touchend', function(e) {
-        if ($(zoomer.wrap).hasClass('moving_mode')) { //Only reset position if it already moved
-          $(zoomer.wrap).removeClass('moving_mode');
-          $(zoomer.wrap).removeClass('control_deactive');
-          position.x = origin.temp.x;
-          position.y = origin.temp.y;
-          origin.x = 0;
-          origin.y = 0;
-          origin.temp.x = 0;
-          origin.temp.y = 0;
-        }
-      });
-      //UX
-      $(zoomer.img).on('click', function() {
-        $(zoomer.wrap).toggleClass('control_deactive');
-      })
-
-      //Private function
-      function setScale(scale) {
-        var limit = {
-          x: ((imgObj.width * scale + 40) - $(window).width()) / 2,
-          y: ((imgObj.height * scale + 40) - $(window).height()) / 2
-        }
-        //Reposition with new scale
-        var new_position = {
-          x: position.x,
-          y: position.y
-        }
-        new_position.x = (new_position.x / (imgObj.width * currentScale)) * imgObj.width * scale;
-        new_position.y = (new_position.y / (imgObj.height * currentScale)) * imgObj.height * scale;
-        //Check limit
-        new_position = reCheckWithLimit(limit, new_position, { x: 0, y: 0 });
-        setPosition(new_position);
-
-        if (st.timing > 0) {
-          doAnimation($(zoomer.img), currentScale, scale, 'scale', st.timing);
-        } else {
-          $(zoomer.img).css({
-            'transform': 'scale(' + scale + ')'
-          });
-        }
-        currentScale = scale;
-      }
-
-      function setPosition(new_position) {
-        if (st.timing > 0) {
-          doAnimation($(zoomer.cnt), [position.x, position.y], [new_position.x, new_position.y], 'translate', 200);
-        } else {
-          $(zoomer.cnt).css({
-            'transform': 'translate(' + new_position.x + 'px,' + new_position.y + 'px)'
-          });
-        }
-        position.x = new_position.x;
-        position.y = new_position.y;
-      }
-    }
-
-    function appendHtml(imgObj, initScale) {
-      $('body').append(st.zoomerTemplate);
-      $('body').addClass('zoomer_active');
-      $(zoomer.holder).append(imgObj);
-      $(zoomer.holder).css({
-        'width': imgObj.width,
-        'height': imgObj.height,
-      });
-      $(zoomer.img).css({
-        'transform': 'scale(' + initScale + ')',
-        'transform-origin': '50% 50%'
-      });
-    }
-
-    function reCheckWithLimit(limit, current, old) {
-      var new_position = current;
-      if (limit.x > 0) {
-        if (new_position.x < -limit.x) new_position.x = -limit.x;
-        if (new_position.x > limit.x) new_position.x = limit.x;
-      } else {
-        new_position.x = old.x;
-      }
-      if (limit.y > 0) {
-        if (new_position.y < -limit.y) new_position.y = -limit.y;
-        if (new_position.y > limit.y) new_position.y = limit.y;
-      } else {
-        new_position.y = old.y;
-      }
-      return new_position;
-    }
-
-    function doAnimation(selector, start, end, css, timing) {
-      var startTimes = 0;
-      window.requestAnimationFrame(step);
-
-      function step(timestamp) {
-        if (!startTimes) startTimes = timestamp;
-        var progressTimes = timestamp - startTimes;
-        var progress;
-        if (progressTimes >= timing) progressTimes = timing;
-        if (Array.isArray(start)) {
-          progress = new Array();
-          start.forEach(function(e, i) {
-            progress[i] = e + (progressTimes * (end[i] - e) / timing)
-          });
-        } else {
-          progress = start + (progressTimes * (end - start) / timing);
-        }
-        switch (css) {
-          case 'scale':
-            selector.css({
-              'transform': 'scale(' + progress + ')'
+        function initZoomimg(imgObj){
+            var initScale = Math.min(($(window).width() - 40) / imgObj.width,($(window).height() - 40) / imgObj.height),
+                newScale = initScale,
+                currentScale = initScale,
+                position = {
+                    x : 0,
+                    y : 0
+                };
+            console.log(initScale);
+            //append raw html into view
+            appendHtml(imgObj,initScale);
+            //init control event
+            $(zooming.zoomIn).on('click',function(){
+                newScale += st.increaseRate;
+                $(zooming.zoomOut).removeClass('deactive');
+                if (newScale > 1 - (st.increaseRate / 2)){
+                    newScale = 1;
+                    $(zooming.zoomIn).addClass('deactive');
+                }
+                setScale(newScale);
             });
-            break;
-          case 'translate':
-            selector.css({
-              'transform': 'translate(' + progress[0] + 'px,' + progress[1] + 'px)'
+            $(zooming.zoomOut).addClass('deactive');
+            $(zooming.zoomOut).on('click',function(){
+                newScale -= st.increaseRate;
+                $(zooming.zoomIn).removeClass('deactive');
+                if (newScale < initScale + (st.increaseRate / 2)){
+                    newScale = initScale;
+                    $(zooming.zoomOut).addClass('deactive');
+                }else{
+                    $(zooming.zoomOut).removeClass('deactive');
+                }
+                setScale(newScale);
             });
-            break;
-          default:
-            selector.css({
-              css: progress + 'px'
+            $(zooming.close).on('click',function(){
+                $(zooming.wrap).remove();
+                $('body').removeClass('zooming_active');
             })
+            //init swipe event
+            var origin = {
+                x : 0,
+                y : 0,
+                temp: {
+                    x: 0,
+                    y: 0
+                },
+                limit: {
+                    x: 0,
+                    y: 0
+                }
+            }
+            $(zooming.wrap).on('touchmove',function(e){
+                e.preventDefault();
+            })
+            $(zooming.img).on('touchstart',function(e){
+                origin.x = e.originalEvent.touches[0].clientX;
+                origin.y = e.originalEvent.touches[0].clientY;
+                origin.limit.x = ((imgObj.width * currentScale + 40) - $(window).width()) / 2;
+                origin.limit.y = ((imgObj.height * currentScale + 40) - $(window).height()) / 2;
+            });
+            $(zooming.img).on('touchmove',function(e){
+                e.preventDefault();
+                $(zooming.wrap).addClass('control_deactive');
+                $(zooming.wrap).addClass('moving_mode');
+                var new_position ={
+                    x : e.originalEvent.touches[0].clientX - origin.x,
+                    y : e.originalEvent.touches[0].clientY - origin.y
+                }
+                new_position.x += position.x;
+                new_position.y += position.y;
+                //Check limit
+                new_position = reCheckWithLimit(origin.limit,new_position,position);
+                $(zooming.cnt).css({
+                    'transform' : 'translate(' + new_position.x + 'px,' + new_position.y + 'px)',
+                    '-webkit-transform' : 'translate(' + new_position.x + 'px,' + new_position.y + 'px)'
+                });
+                origin.temp.x = new_position.x;
+                origin.temp.y = new_position.y;
+                return false;
+            });
+            $(zooming.img).on('touchend',function(e){
+                if ($(zooming.wrap).hasClass('moving_mode')){ //Only reset position if it already moved
+                    $(zooming.wrap).removeClass('moving_mode');
+                    $(zooming.wrap).removeClass('control_deactive');
+                    position.x = origin.temp.x;
+                    position.y = origin.temp.y;
+                    origin.x = 0;
+                    origin.y = 0;
+                    origin.temp.x = 0;
+                    origin.temp.y = 0;
+                }
+            });
+            //UX
+            $(zooming.img).on('click',function(){
+                $(zooming.wrap).toggleClass('control_deactive');
+            })
+
+            //Private function
+            function setScale(scale){
+                var limit = {
+                    x : ((imgObj.width * scale + 40) - $(window).width()) / 2,
+                    y : ((imgObj.height * scale + 40) - $(window).height()) / 2
+                }
+                //Reposition with new scale
+                var new_position = {
+                    x: position.x,
+                    y: position.y
+                }
+                new_position.x = (new_position.x / (imgObj.width * currentScale)) * imgObj.width * scale;
+                new_position.y = (new_position.y / (imgObj.height * currentScale)) * imgObj.height * scale;
+                //Check limit
+                new_position = reCheckWithLimit(limit,new_position,{x:0,y:0});
+                setPosition(new_position);
+
+                if (st.timing > 0){
+                    doAnimation($(zooming.img),currentScale,scale,'scale',st.timing);
+                }else{
+                    $(zooming.img).css({
+                        'transform' : 'scale(' + scale + ')',
+                        '-webkit-transform' : 'scale(' + scale + ')'
+                    });
+                }
+                currentScale = scale;
+            }
+            function setPosition(new_position){
+                if (st.timing > 0){
+                    doAnimation($(zooming.cnt),[position.x,position.y],[new_position.x,new_position.y],'translate',200);
+                }else{
+                    $(zooming.cnt).css({
+                        'transform' : 'translate(' + new_position.x + 'px,' + new_position.y + 'px)',
+                        '-webkit-transform' : 'translate(' + new_position.x + 'px,' + new_position.y + 'px)'
+                    });
+                }
+                position.x = new_position.x;
+                position.y = new_position.y;
+            }
         }
-        if (progressTimes < timing) window.requestAnimationFrame(step);
-      }
+        function appendHtml(imgObj,initScale){
+            $('body').append(st.zoomingTemplate);
+            $('body').addClass('zooming_active');
+            $(zooming.holder).append(imgObj);
+            $(zooming.holder).css({
+                'width' : imgObj.width,
+                'height' : imgObj.height,
+            });
+            $(zooming.img).css({
+                'transform': 'scale(' + initScale + ')',
+                '-webkit-transform': 'scale(' + initScale + ')',
+                'transform-origin' : '50% 50%',
+                '-webkit-transform-origin' : '50% 50%'
+            });
+        }
+        function reCheckWithLimit(limit,current,old){
+            var new_position = current;
+            if(limit.x > 0){
+                if (new_position.x < - limit.x) new_position.x = - limit.x;
+                if (new_position.x > limit.x) new_position.x = limit.x;
+            }else{
+                new_position.x = old.x;
+            }
+            if(limit.y > 0){
+                if (new_position.y < - limit.y) new_position.y = - limit.y;
+                if (new_position.y > limit.y) new_position.y = limit.y;
+            }else{
+                new_position.y = old.y;
+            }
+            return new_position;
+        }
+        function doAnimation(selector,start,end,css,timing){
+            var startTimes = 0;
+            window.requestAnimationFrame(step);
+            function step(timestamp){
+                if (!startTimes) startTimes = timestamp;
+                var progressTimes = timestamp - startTimes;
+                var progress;
+                if (progressTimes >= timing) progressTimes = timing;
+                if (Array.isArray(start)){
+                    progress = new Array();
+                    start.forEach(function(e,i){
+                        progress[i] = e + (progressTimes * (end[i] - e) / timing)
+                    });
+                }else{
+                    progress = start + (progressTimes * (end - start) / timing);
+                }
+                switch(css){
+                    case 'scale' : 
+                        selector.css({
+                            'transform': 'scale(' + progress + ')',
+                            '-webkit-transform': 'scale(' + progress + ')'
+                        });
+                        break;
+                    case 'translate': 
+                        selector.css({
+                            'transform': 'translate(' + progress[0] + 'px,' + progress[1] + 'px)',
+                            '-webkit-transform': 'translate(' + progress[0] + 'px,' + progress[1] + 'px)'
+                        });
+                        break;
+                    default:
+                        selector.css({
+                            css : progress + 'px'
+                        })
+                }
+                if (progressTimes < timing) window.requestAnimationFrame(step);
+            }
+        }
+        function checkZoomingAvailable(){
+            var ww = $(window).width();
+            if (ww <= st.breakpoint){
+                $(st.selector).each(function(){
+                    var _t = $(this),
+                        imgObj = getImageData(_t);
+                    imgObj.addEventListener('load',function(){
+                        if (imgObj.width > ww){
+                            if (!(_t.parent('.zooming_available').length))
+                                _t.wrap('<span class="zooming_available"></span>');
+                        }else{
+                            if (_t.parent('.zooming_available').length) _t.unwrap();
+                        }
+                    })
+                });
+            }else{
+                $(st.selector).each(function(){
+                    if ($(this).parent('.zooming_available').length) $(this).unwrap();
+                })
+            }
+        }
     }
-  }
 })(jQuery);
 ```
 
