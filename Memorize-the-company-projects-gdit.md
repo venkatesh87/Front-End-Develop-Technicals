@@ -652,12 +652,15 @@ $(document).ready(function() {
   + Cho dù là ở dự án như thế nào thì cũng có thể hoạt động được bằng việc bổ sung vào JS, bổ sung vào stylesheet
 **10.2. Tài liệu hướng dẫn sử dụng plugin Zoomer**: 
   **Mô tả:** Tự động thêm chức năng zoom hình ảnh bằng popup cho images nằm trong khu vực ```#tmp_contents```
+  
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/zoom-1.jpg)
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/zoom-2.jpg)
+  
   **Sử dụng:**
     + Include file zoomer.css và zoomer.js vào trong document
     + Thêm script js:
     
   **Cấu hình:**
-  
   
   | Tên thuộc tính | Loại | Mặc định | Chức năng |
   | --- | --- | --- | --- |
