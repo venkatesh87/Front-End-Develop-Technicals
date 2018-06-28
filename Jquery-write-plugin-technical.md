@@ -1,6 +1,66 @@
 #### Advanced Plugin Concepts
 ---
-- ****: 
+>**Version added: 1.0** jQuery.extend( target, [ object1 ], [ objectN ])
+  + **target** Một đối tượng sẽ nhận các thuộc tính mới nếu các đối tượng bổ sung được truyền vào hoặc sẽ mở rộng vùng tên jQuery nếu nó là đối số duy nhất.
+  + **object1**: An đối tượng chứa các thuộc tính bổ sung để hợp nhất.
+  + **object n**: Các đối tượng bổ sung có chứa các thuộc tính để hợp nhất.
+>**version added: 1.1.4** jQuery.extend( [ deep ], target, object1, [ objectN ] )
+  + **deep:** Nếu đúng, quá trình hợp nhất sẽ trở thành đệ quy. 
+  + **target** Các đối tượng để mở rộng. Nó sẽ nhận được các thuộc tính mới. 
+  + **object1**: An đối tượng chứa các thuộc tính bổ sung để hợp nhất.
+  + **object n**: Các đối tượng bổ sung có chứa các thuộc tính để hợp nhất.
+>**Hợp nhất hai đối tượng ```modifying the first```**
+```javascript
+var object1 = {
+  apple: 0,
+  banana: {weight: 52, price: 100},
+  cherry: 97
+};
+var object2 = {
+  banana: {price: 200},
+  durian: 100
+};
+$.extend(object1, object2);
+```
+**Result:** ```object1 === {apple: 0, banana: {price: 200}, cherry: 97, durian: 100}```
+
+>**Hợp nhất hai đối tượng Merge two objects ```recursively```, ```modifying the first```**
+
+```javascript
+var object1 = {
+  apple: 0,
+  banana: {weight: 52, price: 100},
+  cherry: 97
+};
+var object2 = {
+  banana: {price: 200},
+  durian: 100
+};
+
+$.extend(true, object1, object2);
+```
+**Result:** ```object1 === {apple: 0, banana: {weight: 52, price: 200}, cherry: 97, durian: 100}```
+>**Hợp nhất settings and options, modifying settings**
+
+```javascript
+var settings = { validate: false, limit: 5, name: "foo" };
+var options = { validate: true, name: "bar" };
+jQuery.extend(settings, options);
+```
+**Result:** ```settings == { validate: true, limit: 5, name: "bar" }```
+```javascript
+settings == { validate: true, limit: 5, name: "bar" }
+empty == { validate: true, limit: 5, name: "bar" }
+```
+**Hợp nhất các giá trị mặc định và tùy chọn mà không sửa đổi các giá trị mặc định. Đây là một mẫu phát triển plugin phổ biến**
+```javascript
+var empty = {}
+var defaults = { validate: false, limit: 5, name: "foo" };
+var options = { validate: true, name: "bar" };
+var settings = $.extend(empty, defaults, options);
+```
+**Result:** ```settings == { validate: true, limit: 5, name: "bar" }```
+
 ##### 1. Cung cấp quyền truy cập công khai vào Setting Plugin Default:
 
 - Phương thức ```$.extend()``` bây giờ sẽ recurse thông qua tất cả các đối tượng lồng nhau để cung cấp cho chúng ta một phiên bản hợp nhất của cả các giá trị defaults và các options được truyền, cho các options được ưu tiên vượt qua.
