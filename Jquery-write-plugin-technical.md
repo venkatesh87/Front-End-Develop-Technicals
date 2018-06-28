@@ -52,7 +52,7 @@ jQuery.extend(settings, options);
 settings == { validate: true, limit: 5, name: "bar" }
 empty == { validate: true, limit: 5, name: "bar" }
 ```
-**Hợp nhất các giá trị mặc định và tùy chọn mà không sửa đổi các giá trị mặc định. Đây là một mẫu phát triển plugin phổ biến**
+>**Hợp nhất các giá trị mặc định và tùy chọn mà không sửa đổi các giá trị mặc định. Đây là một mẫu phát triển plugin phổ biến**
 ```javascript
 var empty = {}
 var defaults = { validate: false, limit: 5, name: "foo" };
@@ -82,7 +82,7 @@ $.fn.hilight.defaults = {
 };
 ```
 
->Bây giờ người dùng có thể bao gồm một dòng như thế này trong kịch bản của họ:
+>**Bây giờ người dùng có thể bao gồm một dòng như thế này trong kịch bản của họ:**
 ```javascript
 // This needs only be called once(một lần) and does not
 // have to be called from within a "ready" block
@@ -93,19 +93,14 @@ $.fn.hilight.defaults.foreground = "blue";
 ```javascript
 $( "#myDiv" ).hilight();
 ```
-
->As you can see, we've allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want(Như bạn có thể thấy, chúng tôi đã cho phép người dùng viết một dòng mã để thay đổi màu nền trước mặc định của plugin. Và người dùng vẫn có thể ghi đè có chọn lọc giá trị mặc định mới này khi họ muốn):
+- As you can see, we've allowed the user to write a single line of code to alter the default foreground color of the plugin. And users can still selectively override this new default value when they want(Như bạn có thể thấy, chúng tôi đã cho phép người dùng viết một dòng mã để thay đổi màu nền trước mặc định của plugin. Và người dùng vẫn có thể ghi đè có chọn lọc giá trị mặc định mới này khi họ muốn):
 ```javascript
 // Override plugin default foreground color.
 $.fn.hilight.defaults.foreground = "blue";
- 
 // ...
- 
 // Invoke plugin using new defaults.
 $( ".hilightDiv" ).hilight();
- 
 // ...
- 
 // Override default by passing options to plugin method.
 $( "#green" ).hilight({
     foreground: "green"
@@ -139,7 +134,6 @@ $.fn.hilight.format = function( txt ) {
 >Javascript Code:
 ```javascript
 jQuery.fn.superGallery = function( options ) {
- 
     // Bob's default settings:
     var defaults = {
         textColor: "#000",
@@ -188,17 +182,12 @@ var settings = $.extend( true, {}, defaults, options );
 >Javascript Code:
 ```javascript
 var defaults = {
- 
     // We define an empty anonymous function so that
     // we don't need to check its existence before calling it.
     onImageShow : function() {},
- 
     // ... rest of settings ...
- 
 };
- 
 // Later on in the plugin:
- 
 nextButton.on( "click", showNextImage );
  
 function showNextImage() {
@@ -213,18 +202,117 @@ function showNextImage() {
 }
 ```
 
->Javascript Code:
+>**Cú pháp cơ bản để tạo một jQuery Plugin**:
+```javascript
+$.fn.your_function_name = function() {
+  //your code write here
+}
+```
+
+```javascript
+$('#1st_link').mouseover(function(){
+	$(this).css('color', 'red');
+	$(this).css('font-size', '30px');
+});
+$('#1st_link').mouseout(function(){
+	$(this).css('color', 'white');
+	$(this).css('font-size', '15px');
+});
+```
+
+```javascript
+$.fn.highlight_link = function() {
+	this.mouseover(function(){
+		$(this).css('color', 'red');
+		$(this).css('font-size', '30px');
+	});
+	this.mouseout(function(){
+		$(this).css('color', 'white');
+		$(this).css('font-size', '15px');
+	});
+}
+```
+**```$``` là viết tắt của jQuery**
+**```fn``` là viết tắt của prototype**: Nếu viết đầy đủ ra sẽ thế này
+```javascript
+window.jQuery.prototype.highlight_link = function(){};
+```
+- Để sử dụng plugin trên ta gọi như sau:
+```javascript
+$('#1st_link').highlight_link();
+```
+
+**>Để phương thức plugin trên có thể kết nối chúng ta thêm dòng mã trả về đối tượng jQuery gốc như sau**
+
+```javascript
+$.fn.highlight_link = function() {
+	this.mouseover(function(){
+		...
+	});
+	this.mouseout(function(){
+		...
+	});
+    return this;
+}
+```
+**>Đầu tiên ta thêm vào các tham số mặc định như sau:**
+```javascript
+(function ( $ ) {
+    $.fn.highlight_link = function() {
+    	var defaults = {
+        	mouseover_color: 'red',
+            mouseover_size: '30px',
+            mouseout_color: 'white',
+            mouseout_size: '15px'
+        };
+        var settings = defaults;
+        this.mouseover(function(){
+            $(this).css('color', settings.mouseover_color);
+            $(this).css('font-size', settings.mouseover_size);
+        });
+        this.mouseout(function(){
+            $(this).css('color', settings.mouseout_color);
+            $(this).css('font-size', settings.mouseout_size);
+        });
+        return this;
+    }
+}( jQuery ));
+```
+
+**>Chấp nhận các tham số người dùng truyền vào.**
+
+```javascript
+(function ( $ ) {
+    $.fn.highlight_link = function(options) {
+    	var defaults = {
+        	mouseover_color: 'red',
+            mouseover_size: '30px',
+            mouseout_color: 'white',
+            mouseout_size: '15px'
+        };
+        var settings = $.extend(defaults, options);
+        this.mouseover(function(){
+            $(this).css('color', settings.mouseover_color);
+            $(this).css('font-size', settings.mouseover_size);
+        });
+        this.mouseout(function(){
+            $(this).css('color', settings.mouseout_color);
+            $(this).css('font-size', settings.mouseout_size);
+        });
+        return this;
+    }
+}( jQuery ));
+```
+
+```javascript
+$('#1st_link').highlight_link({
+	  mouseover_color: '#FFFF00',
+    mouseover_size: '50px',
+    mouseout_color: '#333333',
+    mouseout_size: '15px'
+});
+```
+
 ```javascript
 
 ```
-
->Javascript Code:
-```javascript
-
-```
-
->Javascript Code:
-```javascript
-
-```
-
