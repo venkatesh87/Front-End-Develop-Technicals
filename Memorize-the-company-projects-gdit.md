@@ -954,7 +954,23 @@ III/ Cấu hình:
 ```
 
 **11. 20170718 Koufu**
-- Text.
+
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_1.jpg)
+    + Về độ rộng hiển thì đang giả định giá trị tối thiểu là ```1280px×800px```
+    + Điểm khác biệt khi hiển thị smartphone
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_2.jpg)
+    + Hãy chú ý đến cách thức hiển thị. Hơn nữa, hoạt động click, wheel, vv.. sẽ mất đi. 
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_3.jpg)
+    + Di chuyển tự động trong khoảng 2~3 giây. ※Có khả năng sẽ thay đổi thành chuyển bằng click
+    + Khi xem top page một lần nữa từ end page chẳng hạn thì sẽ mất đi phần đã apply và hiển thị ở trạng thái này từ khởi tạo.
+    + Lưu cookie ở timing đã xem top page rồi phán đoán có/không có cookie. 
+    + Open và Close bằng thao tác click và mouse wheel
+    + Open và Close, Nội dung sẽ được chuyển đổi bằng tab.
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_4.jpg)
+    + 
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_5.jpg)
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_6.jpg)
+  
 
 >JavaScript Code:
 ```javascript
