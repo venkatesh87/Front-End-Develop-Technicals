@@ -953,7 +953,7 @@ III/ Cấu hình:
 })(jQuery);
 ```
 
-**11. 20180511 Foreign Language Tokyo**
+**11. 20170718 Koufu**
 - Text.
 
 >JavaScript Code:
@@ -961,7 +961,7 @@ III/ Cấu hình:
 
 ```
 
-**12. 20171211 Chiba Kun’s Hiroba FE**
+**12. 20180508 ChartJS**
 - Text.
 
 >JavaScript Code:
@@ -969,7 +969,7 @@ III/ Cấu hình:
 
 ```
 
-**13. 20170718 Koufu**
+**13. 20180511 Foreign Language Tokyo**
 - Text.
 
 >JavaScript Code:
@@ -977,7 +977,7 @@ III/ Cấu hình:
 
 ```
 
-**14. 20180508 ChartJS**
+**14. 20171211 Chiba Kun’s Hiroba FE**
 - Text.
 
 >JavaScript Code:
