@@ -251,6 +251,15 @@ function myFunction() {
 14
 ```
 
+>**indexOf() Array**: Phương thức ```indexOf()``` tìm kiếm mảng cho mục được chỉ định và trả về vị trí(position) của nó.
+```javascript
+function myFunction() {
+  var fruits = ["Banana", "Orange", "Apple", "Mango"];
+  var a = fruits.indexOf("Apple");
+  document.getElementById("demo").innerHTML = a;
+}
+```
+**==> Result:** 2
 **7. lastIndexOf():** 
 - ```string.lastIndexOf(searchvalue, start)```
 - ```searchvalue```: Cần thiết. Chuỗi để tìm kiếm
