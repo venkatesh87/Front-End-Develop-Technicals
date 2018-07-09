@@ -145,7 +145,38 @@ function myFunction() {
 Lemon,Apple
 ```
 
-**4. split():** 
+**4. splice():** The splice() method adds/removes items to/from an array, and returns the removed item(s).
+
+```javascript
+array.splice(index, howmany, item1, ....., itemX)
+```
+
+>**Case 1**
+```javascript
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 1, "Lemon", "Kiwi");
+```
+
+>**Result 1**
+
+- At position 2, remove 2 items:
+
+```javascript
+Banana,Orange,Lemon,Kiwi,Mango
+```
+
+>**Case 2**
+```javascript
+var fruits = ["Banana", "Orange", "Apple", "Mango", "Kiwi"];
+fruits.splice(2, 2);
+```
+
+>**Result 2**
+```javascript
+Banana,Orange,Kiwi
+```
+
+**5. split():** 
 - Phương thức ```split()``` được sử dụng để chia một chuỗi thành một mảng các chuỗi con, và trả về mảng mới.
 - Nếu một chuỗi rỗng ("") được sử dụng làm dấu tách, chuỗi được phân chia giữa mỗi ký tự.
 - ```string.split(separator, limit)```
@@ -189,7 +220,7 @@ function myFunction() {
 ```javascript
 H,w are y,u d,ing t,day?
 ```
-**5. join():** 
+**6. join():** 
 
 - Phương thức ```join()``` kết hợp các phần tử của một mảng vào một chuỗi, và trả về chuỗi.
 - Các phần tử sẽ được phân tách bằng một dấu tách quy định. Dấu tách mặc định là dấu phẩy (,).
@@ -207,7 +238,7 @@ function myFunction() {
 Banana,Orange,Apple,Mango
 ```
 
-**6. indexOf():** 
+**7. indexOf():** 
 - ```string.indexOf(searchvalue, start)```
 - ```searchvalue```: Cần thiết. Chuỗi để tìm kiếm
 - ```start```: Default  0. Tại vị trí nào để bắt đầu tìm kiếm
@@ -260,7 +291,7 @@ function myFunction() {
 }
 ```
 **==> Result:** 2
-**7. lastIndexOf():** 
+**8. lastIndexOf():** 
 - ```string.lastIndexOf(searchvalue, start)```
 - ```searchvalue```: Cần thiết. Chuỗi để tìm kiếm
 - ```start```: Vị trí bắt đầu tìm kiếm (tìm kiếm ngược). Nếu bỏ qua, giá trị mặc định là chiều dài của chuỗi
@@ -290,7 +321,7 @@ function myFunction() {
 }
 ```
 
-**8. charAt():** 
+**9. charAt():** 
 
 ```javascript
 
@@ -299,17 +330,7 @@ function myFunction() {
 ```javascript
 
 ```
-**9. charCodeAt():** 
-
-```javascript
-
-```
->Result:
-```javascript
-
-```
-
-**10. concat():** 
+**10. charCodeAt():** 
 
 ```javascript
 
@@ -319,7 +340,7 @@ function myFunction() {
 
 ```
 
-**11. endsWith():** 
+**11. concat():** 
 
 ```javascript
 
@@ -329,7 +350,7 @@ function myFunction() {
 
 ```
 
-**12. fromCharCode():** 
+**12. endsWith():** 
 
 ```javascript
 
@@ -339,7 +360,7 @@ function myFunction() {
 
 ```
 
-**13. includes():** 
+**13. fromCharCode():** 
 
 ```javascript
 
@@ -349,7 +370,7 @@ function myFunction() {
 
 ```
 
-**14. localeCompare():** 
+**14. includes():** 
 
 ```javascript
 
@@ -359,7 +380,7 @@ function myFunction() {
 
 ```
 
-**15. match():** 
+**15. localeCompare():** 
 
 ```javascript
 
@@ -369,7 +390,7 @@ function myFunction() {
 
 ```
 
-**16. repeat():** 
+**16. match():** 
 
 ```javascript
 
@@ -379,7 +400,7 @@ function myFunction() {
 
 ```
 
-**17. replace():** 
+**17. repeat():** 
 
 ```javascript
 
@@ -389,7 +410,7 @@ function myFunction() {
 
 ```
 
-**18. search():** 
+**18. replace():** 
 
 ```javascript
 
@@ -399,7 +420,7 @@ function myFunction() {
 
 ```
 
-**19. startsWith():** 
+**19. search():** 
 
 ```javascript
 
@@ -409,7 +430,7 @@ function myFunction() {
 
 ```
 
-**20. toLocaleLowerCase():** 
+**20. startsWith():** 
 
 ```javascript
 
@@ -419,7 +440,7 @@ function myFunction() {
 
 ```
 
-**21. toLocaleUpperCase():** 
+**21. toLocaleLowerCase():** 
 
 ```javascript
 
@@ -429,7 +450,7 @@ function myFunction() {
 
 ```
 
-**22. toLowerCase():** 
+**22. toLocaleUpperCase():** 
 
 ```javascript
 
@@ -439,7 +460,7 @@ function myFunction() {
 
 ```
 
-**23. toString():** 
+**23. toLowerCase():** 
 
 ```javascript
 
@@ -449,7 +470,7 @@ function myFunction() {
 
 ```
 
-**24. toUpperCase():** 
+**24. toString():** 
 
 ```javascript
 
@@ -459,7 +480,7 @@ function myFunction() {
 
 ```
 
-**25. trim():** 
+**25. toUpperCase():** 
 
 ```javascript
 
@@ -469,7 +490,17 @@ function myFunction() {
 
 ```
 
-**26. valueOf():** 
+**26. trim():** 
+
+```javascript
+
+```
+>Result:
+```javascript
+
+```
+
+**27. valueOf():** 
 
 ```javascript
 
