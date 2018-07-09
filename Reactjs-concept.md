@@ -30,13 +30,12 @@ app.listen(8000);
 app.get("/", function(req, res){
 	res.render("index");
 });
-
 ```
+
 >React code index.ejs Khoa Pham
 ```javascript
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>[:. Grunt Project Layout .:]</title>
   <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
@@ -126,7 +125,6 @@ app.get("/", function(req, res){
   <script src="/libs/browser.min.js"></script>
   <script src="/libs/react-app.js" type="text/babel"></script>
 </body>
-
 </html>
 
 ```
