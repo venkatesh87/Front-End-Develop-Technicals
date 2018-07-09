@@ -43,16 +43,7 @@ app.get("/", function(req, res){
   <meta name="description" content="mô tả website">
   <meta name="keywords" content="những từ khóa của website bạn">
   <meta name="author" content="daodc">
-  <meta name="robots" content="noindex,follow">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="robots" content="index,nofollow">
   <meta name="robots" content="index,follow">
-  <!-- Usage in Social Media (Open Graph, Twitter Cards, and Schema.org -->
-  <meta property="og:url" content="http://www.project.me" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Your Website Title" />
-  <meta property="og:description" content="Your description" />
-  <meta property="og:image" content="http://www.project.me/app/images/pictures/ban_dao.jpg" />
   <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE">
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
