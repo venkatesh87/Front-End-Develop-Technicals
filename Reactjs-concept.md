@@ -33,6 +33,7 @@ app.get("/", function(req, res){
 ```
 
 >React code index.ejs Khoa Pham
+
 ```javascript
 <!DOCTYPE html>
 <html>
