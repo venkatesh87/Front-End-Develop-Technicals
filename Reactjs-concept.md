@@ -119,7 +119,7 @@ app.get("/", function(req, res){
     <hr />
   </div>
   
-  <!-- <script src="./node_modules/react-dom/dist/react-dom.min.js"></script>
+  <script src="./node_modules/react-dom/dist/react-dom.min.js"></script>
   <script src="./node_modules/react/dist/react.min.js"></script> -->
   <script src="/libs/react.min.js"></script>
   <script src="/libs/react-dom.min.js"></script>
