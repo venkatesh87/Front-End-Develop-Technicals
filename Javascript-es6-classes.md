@@ -2,7 +2,7 @@
 
 - Class trong javascript được giới thiệu trong ECMAScript 2015 chủ yếu là các cú pháp cải tiến, thừa kế và dựa trên nền tảng có sẵn có trong Javascript. Cú pháp trong class không giới thiệu về một mô hình thừa kế hướng đối tượng mới cho Javascript (nghĩa là cải tiến những cái có sẵn chứ không phải là đột phá tạo ra một mô hình mới).
 - Các ```class``` trong Javascript cung cấp cú pháp đơn giản và rõ ràng rành mạch hơn rất nhiều để tạo object và đối ứng với tính chất thừa kế, cái vốn có trong các ngôn ngữ hướng đối tượng.
-
+___
 #### Định nghĩa class
 - Thực tế các class giống như một một "function đặc biệt", và cũng giống như bạn có thể định nghĩa hàm biểu thức (function expressions)  và khai báo hàm (function declarations), cú pháp class có hai thành phần: biểu thức class (class expressions) và khai báo lớp (class declarations).
 
@@ -151,7 +151,7 @@ speak(); // global object
 let eat = Animal.eat;
 eat(); // global object
 ```
-
+___
 #### Tạo lớp con với extends
 - Từ khóa ```extends``` được sử dụng trong ```class declarations``` hoặc ```class expressions``` để tạo ra một class con kế thừa từ một class sẵn có (class cha).
 
@@ -219,7 +219,7 @@ Object.setPrototypeOf(Dog.prototype, Animal);// Nếu bạn không làm điều 
 var d = new Dog('Mitzie'); // đối tượng của class Dog
 d.speak(); // Mitzie makes a noise.
 ```
-
+___
 #### Species
 - Bạn có thể muốn trả về các đối tượng ```Array``` trong mảng của class ```MyArray```. Mô hình species sẽ cho phép bạn ghi đè lên các hàm khởi tạo mặc định.
 
@@ -237,7 +237,7 @@ var mapped = a.map(x => x * x);
 console.log(mapped instanceof MyArray); // false
 console.log(mapped instanceof Array);   // true
 ```
-
+___
 #### Gọi class cha sử dụng super
 - Từ khóa ```super``` dùng để gọi một hàm có sẵn ở đối tượng cha.
 
@@ -264,7 +264,7 @@ l.speak();
 // Fuzzy makes a noise.
 // Fuzzy roars.
 ```
-
+___
 #### Mix-ins
 - Tập hợp các class con hoặc mix-ins được gọi là khuôn mẫu cho các class. Trong ECMAScript một class chỉ có thể có một lớp cha, vì vậy để thừa kế từ tập hợp các class (kế thừa nhiều class) là điều không thể. Các chức năng phải được cung cấp bởi lớp mà nó kế thừa (cung cấp bởi lớp cha).
 
