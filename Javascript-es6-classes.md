@@ -1,4 +1,4 @@
-**Reference: ** https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Classes
+**Reference:** https://developer.mozilla.org/vi/docs/Web/JavaScript/Reference/Classes
 
 - Class trong javascript được giới thiệu trong ECMAScript 2015 chủ yếu là các cú pháp cải tiến, thừa kế và dựa trên nền tảng có sẵn có trong Javascript. Cú pháp trong class không giới thiệu về một mô hình thừa kế hướng đối tượng mới cho Javascript (nghĩa là cải tiến những cái có sẵn chứ không phải là đột phá tạo ra một mô hình mới).
 - Các ```class``` trong Javascript cung cấp cú pháp đơn giản và rõ ràng rành mạch hơn rất nhiều để tạo object và đối ứng với tính chất thừa kế, cái vốn có trong các ngôn ngữ hướng đối tượng.
