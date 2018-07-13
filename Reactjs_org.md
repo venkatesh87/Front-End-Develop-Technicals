@@ -26,7 +26,7 @@ ReactDOM.render(
 );
 ```
 
-**3.JavaScript expression**
+**3. JavaScript expression**
 
 ```javascript
 function getName(user){
@@ -45,7 +45,7 @@ ReactDOM.render(
 );
 ```
 
-**4.JSX is an Expression Too**
+**4. JSX is an Expression Too**
 
 ```javascript
 function getGreeting(user) {
@@ -82,7 +82,7 @@ const element6 = (
 );
 ```
 
-**7.JSX Represents Objects**
+**7. JSX Represents Objects**
 
 - These two examples are identical:
 
@@ -120,7 +120,7 @@ const element9 = {
 const element10 = <h1>Hello, world</h1>;
 ```
 
-**1.Rendering an Element into the DOM**
+**1. Rendering an Element into the DOM**
 
 ```javascript
 <div id='root'></div>
@@ -128,7 +128,7 @@ const element11 = <h1>Hello, world</h1>;
 ReactDOM.render(element11, document.getElementById('root'));
 ```
 
-**2.Updating the Rendered Element**
+**2. Updating the Rendered Element**
 
 ```javascript
 function tick(){
@@ -148,7 +148,7 @@ setInterval(tick, 1000);
 ---
 - Các thành phần cho phép bạn tách giao diện người dùng thành các phần độc lập, có thể tái sử dụng và suy nghĩ về từng phần riêng biệt. Trang này giới thiệu ý tưởng về các thành phần.
 
-**1.Functional and ```Class Components```**
+**1. Functional and ```Class Components```**
 
 - Cách đơn giản nhất để định nghĩa một Components là viết một Functional JavaScript:
 
@@ -311,7 +311,7 @@ function Comment(props) {
 }
 ```
 
-**4.Props are Read-Only**
+**4. Props are Read-Only**
 
 - Consider this sum function:
 
@@ -575,7 +575,7 @@ ReactDOM.render(
 **4. Using State Correctly**
 - Có ba điều bạn nên biết về ```setState()```.
 
-**4.1 Do Not Modify State Directly**
+**4.1. Do Not Modify State Directly**
 ```javascript
 // Wrong
 this.state.comment = 'Hello';
@@ -587,7 +587,7 @@ this.setState({comment: 'Hello'});
 ```
 - Nơi duy nhất bạn có thể gán this.state là hàm tạo.
 
-**4.2 State Updates May Be Asynchronous(Cập nhật nhà nước có thể không đồng bộ)**
+**4.2. State Updates May Be Asynchronous(Cập nhật nhà nước có thể không đồng bộ)**
 
 - React có thể thực hiện nhiều đợt setState () gọi thành một bản cập nhật duy nhất cho hiệu suất.
 - Bởi vì this.props và this.state có thể được cập nhật không đồng bộ, bạn không nên dựa vào các giá trị của chúng để tính trạng thái tiếp theo.
@@ -617,7 +617,7 @@ this.setState(function(prevState, props) {
 ```
 + State Updates are Merged(Cập nhật trạng thái được hợp nhất)
 
-**4.3 State Updates are Merged**
+**4.3. State Updates are Merged**
 - Khi bạn gọi setState(), React sẽ kết hợp đối tượng mà bạn cung cấp vào trạng thái hiện tại.
 - State của bạn có thể chứa một số biến độc lập:
 
