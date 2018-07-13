@@ -1,6 +1,5 @@
 ### I. Hello World
 ---
->JavaScript Code:
 ```javascript
 ReactDOM.render(
   <h1>Hello World</h1>,
@@ -10,12 +9,13 @@ ReactDOM.render(
 
 ### II. Introducing JSX
 ---
-**.1.Khai báo biến**
+**1.Khai báo biến**
 
 ```javascript
 const element = <h1>Hello, world!</h1>;
+```
 
-**2.Embedding Expressions in JSX(Nhúng biểu thức trong JSX)**
+**2. Embedding Expressions in JSX(Nhúng biểu thức trong JSX)**
 
 ```javascript
 const name = 'Dang Cong Dao';
@@ -129,6 +129,7 @@ ReactDOM.render(element11, document.getElementById('root'));
 ```
 
 **2.Updating the Rendered Element**
+
 ```javascript
 function tick(){
   const element12 = (
@@ -146,7 +147,9 @@ setInterval(tick, 1000);
 ### IV. Components and Props
 ---
 - Các thành phần cho phép bạn tách giao diện người dùng thành các phần độc lập, có thể tái sử dụng và suy nghĩ về từng phần riêng biệt. Trang này giới thiệu ý tưởng về các thành phần.
+
 **1.Functional and ```Class Components```**
+
 - Cách đơn giản nhất để định nghĩa một Components là viết một Functional JavaScript:
 
 ```javascript
@@ -211,6 +214,7 @@ ReactDOM.render(
 ```
 
 **3. Extracting Components: Trích xuất thành phần**
+
 - Đừng sợ chia thành phần thành các thành phần nhỏ hơn.
 
 ```javascript
@@ -367,11 +371,11 @@ setInterval(tick, 1000);
 
 **1. Converting a Function to a Class(Chuyển đổi một Function thành một Class)**
 - Bạn có thể chuyển đổi component function như Clock thành một Class theo năm bước:
-  + **Step 1:** Tạo một Class ES6, có cùng tên, Kế thừa(extends) React.Component.
-  + **Step 2:** Thêm một phương thức rỗng vào nó được gọi là render().
-  + **Step 3:** Di chuyển phần thân body của function vào phương thức render().
-  + **Step 4:** Thay thế các props bằng this.props trong phần render().
-  + **Step 5:** Xóa khai báo hàm rỗng còn lại.
+  >**Step 1:** Tạo một Class ES6, có cùng tên, Kế thừa(extends) React.Component.
+  >**Step 2:** Thêm một phương thức rỗng vào nó được gọi là render().
+  >**Step 3:** Di chuyển phần thân body của function vào phương thức render().
+  >**Step 4:** Thay thế các props bằng this.props trong phần render().
+  >**Step 5:** Xóa khai báo hàm rỗng còn lại.
 
 ```javascript
 class Clock extends React.Component {
@@ -391,7 +395,7 @@ class Clock extends React.Component {
 
 **2. Adding Local State to a Class(Thêm trạng thái cục bộ vào một Class)**
 - Chúng tôi sẽ chuyển ngày từ props sang state theo ba bước:
-+ **Step 1:** Thay thế this.props.date bằng this.state.date trong phương thức render ():
+>**Step 1:** Thay thế this.props.date bằng this.state.date trong phương thức render ():
   
 ```javascript
 class Clock extends React.Component {
@@ -405,7 +409,7 @@ class Clock extends React.Component {
   }
 }
 ```
-**Step 2:** Thêm một class constructor gán giá trị this.state ban đầu:
+>**Step 2:** Thêm một class constructor gán giá trị this.state ban đầu:
 
 ```javascript
 class Clock extends React.Component {
@@ -428,7 +432,7 @@ class Clock extends React.Component {
 - Một constructor có thể sử dụng từ khóa ```super``` để gọi tới hàm ```constructor``` của ```class``` cha.
 - Các Class ```components``` phải luôn gọi hàm ```constructor``` cơ sở với ```props```.
 
-**Step 3:** Loại bỏ date khỏi phần tử <Clock />:
+>**Step 3:** Loại bỏ date khỏi phần tử <Clock />:
 
 ```javascript
 ReactDOM.render(
