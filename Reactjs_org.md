@@ -1266,7 +1266,300 @@ function NumberList(props) {
 }
 ```
 
-### IX. 
+### IX. Forms
+---
+- Các phần tử form HTML hoạt động hơi khác một chút so với các phần tử DOM khác trong React, bởi vì các phần tử biểu mẫu tự nhiên giữ một số trạng thái bên trong. Ví dụ: biểu mẫu này ở dạng HTML thuần túy chấp nhận một tên duy nhất:
+
+```javascript
+<form>
+  <label>
+    Name:
+    <input type="text" name="name" />
+  </label>
+  <input type="submit" value="Submit" />
+</form>
+```
+
+**1. Controlled Components**
+
+- Trong HTML, các phần tử form như ```<input>```, ```<textarea>``` và ```<select>``` thường duy trì state của riêng chúng và cập nhật nó dựa trên đầu vào của người dùng. Trong React, state có thể thay đổi thường được lưu giữ trong thuộc tính state của các components và chỉ được cập nhật với ```setState()```.
+
+- Chúng ta có thể kết hợp cả hai bằng cách làm cho trạng thái React trở thành “nguồn duy nhất của sự thật”. Sau đó thành phần React biểu hiện một ```form``` cũng điều khiển những gì xảy ra trong form đó trên đầu vào của người dùng tiếp theo. Phần tử ```form``` đầu vào có giá trị được kiểm soát bởi React theo cách này được gọi là ```controlled component```.
+
+- Ví dụ, nếu chúng ta muốn làm cho ví dụ trước đó ghi lại tên khi nó được gửi, chúng ta có thể viết biểu mẫu dưới dạng một ```controlled component```:
+
+```javascript
+class NameForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('A name was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Name:
+          <input type="text" value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+```
+
+- Vì thuộc tính value được đặt trên phần tử form của chúng ta, giá trị được hiển thị sẽ luôn là ```this.state.value```, làm cho React cho biết nguồn gốc của sự thật. Vì ```handleChange``` chạy trên mọi phím tắt để cập nhật trạng thái React, giá trị được hiển thị sẽ cập nhật như kiểu người dùng.
+
+- Với một ```controlled component```, mọi đột biến state sẽ có một hàm điều khiển liên quan. Điều này làm cho nó dễ dàng để sửa đổi hoặc xác thực đầu vào của người dùng. Ví dụ, nếu chúng ta muốn thực thi các tên đó được viết bằng tất cả các chữ hoa, chúng ta có thể viết ```handleChange``` như sau:
+
+```javascript
+handleChange(event) {
+  this.setState({value: event.target.value.toUpperCase()});
+}
+```
+
+**2. The textarea Tag**
+
+- Trong HTML, phần tử ```<textarea>``` định nghĩa văn bản của nó bằng con của nó:
+  
+```javascript
+<textarea>
+  Hello there, this is some text in a text area
+</textarea>
+```
+
+- Trong React, ```<textarea>``` sử dụng thuộc tính value thay thế. Bằng cách này, một biểu mẫu sử dụng ```<textarea>``` có thể được viết rất giống với một form sử dụng đầu vào một dòng:
+  
+```javascript
+class EssayForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: 'Please write an essay about your favorite DOM element.'
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('An essay was submitted: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Essay:
+          <textarea value={this.state.value} onChange={this.handleChange} />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+```
+
+- Lưu ý rằng ```this.state.value``` được khởi tạo trong constructor, do đó vùng văn bản bắt đầu với một số văn bản trong nó.
+
+**3. The select Tag**
+
+- Trong HTML, ```<select>``` tạo danh sách thả xuống. Ví dụ: HTML này tạo danh sách các loại hương vị thả xuống:
+  
+```javascript
+<select>
+  <option value="grapefruit">Grapefruit</option>
+  <option value="lime">Lime</option>
+  <option selected value="coconut">Coconut</option>
+  <option value="mango">Mango</option>
+</select>
+```
+
+- Lưu ý rằng tùy chọn Dừa được chọn lúc đầu, vì thuộc tính đã chọn. Phản ứng, thay vì sử dụng thuộc tính đã chọn này, sử dụng thuộc tính giá trị trên thẻ chọn gốc. Điều này thuận tiện hơn trong một thành phần được kiểm soát bởi vì bạn chỉ cần cập nhật nó ở một nơi. Ví dụ:
+
+```javascript
+class FlavorForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {value: 'coconut'};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({value: event.target.value});
+  }
+
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Pick your favorite flavor:
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    );
+  }
+}
+```
+
+- Nói chung, điều này làm cho nó để ```<input type = "text">```, ```<textarea>``` và ```<select>``` tất cả hoạt động rất giống nhau - tất cả đều chấp nhận thuộc tính ```value``` mà bạn có thể sử dụng để triển khai thành phần được kiểm soát.
+
+- **Note**: Bạn có thể chuyển mảng vào thuộc tính ```value```, cho phép bạn chọn nhiều tùy chọn trong thẻ ```select```:
+  
+```javascript
+<select multiple={true} value={['B', 'C']}>
+```
+
+**4. The file input Tag**
+- Trong HTML, ```<input type = "file">``` cho phép người dùng chọn một hoặc nhiều tệp từ bộ nhớ thiết bị của họ được tải lên máy chủ hoặc được JavaScript điều khiển thông qua ```File API```.
+
+```javascript
+<input type="file" />
+```
+- Bởi vì giá trị của nó là chỉ đọc, nó là một thành phần ```uncontrolled``` được trong React. Nó được thảo luận cùng với các thành phần không được kiểm soát khác sau này trong tài liệu.
+
+**5. Handling Multiple Inputs**
+
+- Khi bạn cần xử lý nhiều phần tử ```input``` được ```controlled```, bạn có thể thêm một thuộc tính ```name``` cho mỗi phần tử và cho phép hàm xử lý chọn việc cần làm dựa trên giá trị của ```event.target.name```.
+
+```javascript
+class Reservation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isGoing: true,
+      numberOfGuests: 2
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  render() {
+    return (
+      <form>
+        <label>
+          Is going:
+          <input
+            name="isGoing"
+            type="checkbox"
+            checked={this.state.isGoing}
+            onChange={this.handleInputChange} />
+        </label>
+        <br />
+        <label>
+          Number of guests:
+          <input
+            name="numberOfGuests"
+            type="number"
+            value={this.state.numberOfGuests}
+            onChange={this.handleInputChange} />
+        </label>
+      </form>
+    );
+  }
+}
+```
+
+- Lưu ý cách chúng tôi đã sử dụng cú pháp tên thuộc tính được tính toán ES6 để cập nhật khóa trạng thái tương ứng với tên đầu vào đã cho:
+
+```javascript
+this.setState({
+  [name]: value
+});
+```
+
+- Nó tương đương với mã ES5 này:
+
+```javascript
+var partialState = {};
+partialState[name] = value;
+this.setState(partialState);
+```
+
+- Ngoài ra, vì ```setState()``` tự động hợp nhất một trạng thái một phần vào trạng thái hiện tại, chúng ta chỉ cần gọi nó với các phần đã thay đổi.
+
+**5. Controlled Input Null Value**
+
+- Chỉ định giá trị chống đỡ trên một ```controlled component``` ngăn người dùng thay đổi đầu vào trừ khi bạn muốn. Nếu bạn đã chỉ định giá trị nhưng đầu vào vẫn có thể chỉnh sửa được, có thể bạn đã vô tình đặt ```value``` thành ```undefined``` hoặc ```null```.
+
+- Các mã sau đây chứng minh điều này. (Đầu vào bị khóa lúc đầu nhưng có thể chỉnh sửa được sau một thời gian trễ ngắn).
+
+```javascript
+ReactDOM.render(<input value="hi" />, mountNode);
+
+setTimeout(function() {
+  ReactDOM.render(<input value={null} />, mountNode);
+}, 1000);
+```
+
+
+```javascript
+
+```
+
+
+
+```javascript
+
+```
+
+
+
+```javascript
+
+```
+
+
+```javascript
+
+```
+
+
+```javascript
+
+```
+### X. Lifting State Up
 ---
 - .
 >JavaScript Code:
@@ -1274,7 +1567,7 @@ function NumberList(props) {
 
 ```
 
-### X. 
+### XI. Composition vs Inheritance: Thành phần vs Thừa kế
 ---
 - .
 >JavaScript Code:
