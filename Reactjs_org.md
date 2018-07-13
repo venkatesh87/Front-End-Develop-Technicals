@@ -685,26 +685,585 @@ ReactDOM.render(
 
 ### VI. Handling Events: Xử lý sự kiện
 ---
-- .
->JavaScript Code:
-```javascript
+**HTML:**
 
+```javascript
+<button onclick="activateLasers()">
+  Activate Lasers
+</button>
 ```
 
-### VII. Conditional Rendering(Hiển thị có điều kiện)
----
-- .
->JavaScript Code:
+**hơi khác trong React:**
+
 ```javascript
+<button onClick={activateLasers}>
+  Activate Lasers
+</button>
+```
+- Một khác biệt nữa là bạn không thể trả về ```false``` để ngăn chặn hành vi mặc định trong React. Bạn phải gọi ```preventDefault``` một cách rõ ràng. Ví dụ: với HTML thuần túy, để ngăn chặn hành vi liên kết mặc định của việc mở một trang mới, bạn có thể viết:
+
+```javascript
+<a href="#" onclick="console.log('The link was clicked.'); return false">
+  Click me
+</a>
+```
+- Trong React, đây có thể là:
+
+```javascript
+function ActionLink() {
+  function handleClick(e) {
+    e.preventDefault();
+    console.log('The link was clicked.');
+  }
+
+  return (
+    <a href="#" onClick={handleClick}>
+      Click me
+    </a>
+  );
+}
+```
+
+- Khi sử dụng React, bạn thường không cần phải gọi ```addEventListener``` để thêm người nghe vào một phần tử ```DOM``` sau khi nó được tạo ra. Thay vào đó, chỉ cần cung cấp một trình lắng nghe khi phần tử ban đầu được hiển thị.
+
+- Khi bạn định nghĩa một thành phần sử dụng một ```class ES6```, một mẫu chung là cho trình xử lý sự kiện là một phương thức trên lớp. Ví dụ: thành phần ```Toggle``` này hiển thị nút cho phép người dùng chuyển đổi giữa trạng thái “BẬT” và “TẮT”:
+
+```javascript
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+
+    // This binding is necessary to make `this` work in the callback
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.setState(prevState => ({
+      isToggleOn: !prevState.isToggleOn
+    }));
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
+      </button>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Toggle />,
+  document.getElementById('root')
+);
+```
+
+- Nếu liên kết gọi điện thoại làm phiền bạn, có hai cách bạn có thể giải quyết vấn đề này. Nếu bạn đang sử dụng cú pháp các trường công khai thử nghiệm, bạn có thể sử dụng các trường lớp để ràng buộc đúng các cuộc gọi lại:
+
+```javascript
+class LoggingButton extends React.Component {
+  // This syntax ensures `this` is bound within handleClick.
+  // Warning: this is *experimental* syntax.
+  handleClick = () => {
+    console.log('this is:', this);
+  }
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        Click me
+      </button>
+    );
+  }
+}
+```
+
+- Nếu bạn không sử dụng cú pháp trường lớp, bạn có thể sử dụng ```arrow function``` trong gọi lại:
+
+```javascript
+class LoggingButton extends React.Component {
+  handleClick() {
+    console.log('this is:', this);
+  }
+
+  render() {
+    // This syntax ensures `this` is bound within handleClick
+    return (
+      <button onClick={(e) => this.handleClick(e)}>
+        Click me
+      </button>
+    );
+  }
+}
+```
+
+- Passing Arguments to ```Event Handlers```(Chuyển đối số cho trình xử lý sự kiện)
+- Bên trong một vòng lặp nó là phổ biến để muốn vượt qua một tham số thêm vào một xử lý sự kiện. Ví dụ: nếu id là ID hàng, một trong các cách sau sẽ hoạt động:
+
+```javascript
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+```
+- Hai dòng trên là tương đương, và sử dụng các ```arrow function``` và ```Function.prototype.bind``` tương ứng.
+
+### VII. Conditional Rendering(Hiển thị có điều kiện)
+- Hãy xem xét hai thành phần sau:
+
+```javascript
+function UserGreeting(props) {
+  return <h1>Welcome back!</h1>;
+}
+
+function GuestGreeting(props) {
+  return <h1>Please sign up.</h1>;
+}
+```
+
+- Chúng tôi sẽ tạo thành phần ```Greeting``` hiển thị một trong các thành phần này tùy thuộc vào việc người dùng có đăng nhập hay không:
+
+```javascript
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+```
+
+- Ví dụ này ám một lời chào khác nhau tùy thuộc vào giá trị của ```isLoggedIn prop```.
+
+**1. Element Variables(Biến phần tử)**
+- Bạn có thể sử dụng các biến để lưu trữ các phần tử. Điều này có thể giúp bạn điều kiện hiển thị một phần của thành phần trong khi phần còn lại của đầu ra không thay đổi.
+- Xem xét hai thành phần mới này đại diện cho nút Đăng xuất và Đăng nhập:
+
+```javascript
+function LoginButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Login
+    </button>
+  );
+}
+
+function LogoutButton(props) {
+  return (
+    <button onClick={props.onClick}>
+      Logout
+    </button>
+  );
+}
+```
+
+- Trong ví dụ dưới đây, chúng ta sẽ tạo một thành phần có trạng thái được gọi là ```LoginControl```.
+- Nó sẽ hiển thị ```<LoginButton />``` hoặc ```<LogoutButton />``` tùy thuộc vào trạng thái hiện tại của nó. Nó cũng sẽ hiển thị ```<Greeting />``` từ ví dụ trước:
+
+```javascript
+class LoginControl extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
+  }
+
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
+  }
+
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
+  }
+
+  render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+
+    if (isLoggedIn) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;
+    } else {
+      button = <LoginButton onClick={this.handleLoginClick} />
+    }
+
+    return (
+      <div>
+        <Greeting isLoggedIn={isLoggedIn} />
+        {button}
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <LoginControl />,
+  document.getElementById('root')
+);
+```
+
+**2. Inline If with Logical && Operator(Inline Nếu với Logical && Operator)**
+
+- Bạn có thể nhúng bất kỳ biểu thức nào trong JSX bằng cách gói chúng trong các dấu ngoặc nhọn. Điều này bao gồm toán tử ```logic && JavaScript```. Nó có thể thuận tiện cho điều kiện bao gồm một phần tử:
+
+```javascript
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+
+const messages = ['React', 'Re: React', 'Re:Re: React'];
+ReactDOM.render(
+  <Mailbox unreadMessages={messages} />,
+  document.getElementById('root')
+);
+```
+
+- Nó hoạt động bởi vì trong JavaScript, ```true && expression``` luôn luôn đánh giá ```expression```, và ```false && expression``` luôn luôn đánh giá ```false```.
+- Do đó, nếu điều kiện là ```true```, phần tử ngay sau && sẽ xuất hiện trong đầu ra. Nếu nó ```false```, React sẽ bỏ qua và bỏ qua nó.
+- Một phương pháp khác để điều kiện nội dung dựng hình nội tuyến là sử dụng điều kiện toán tử ```condition ? true : false```.
+- Trong ví dụ dưới đây, chúng tôi sử dụng nó để điều kiện hiển thị một khối văn bản nhỏ.
+
+```javascript
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
+}
+```
+
+- Nó cũng có thể được sử dụng cho các biểu thức lớn hơn mặc dù nó ít rõ ràng hơn những gì đang xảy ra:
+
+```javascript
+render() {
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      {isLoggedIn ? (
+        <LogoutButton onClick={this.handleLogoutClick} />
+      ) : (
+        <LoginButton onClick={this.handleLoginClick} />
+      )}
+    </div>
+  );
+}
+```
+
+**3. Preventing Component from Rendering**(Ngăn Component khỏi Rendering)
+
+- Trong ví dụ bên dưới, ```<WarningBanner />``` được hiển thị tùy thuộc vào giá trị của ```prop``` được gọi là cảnh báo. Nếu giá trị của giá trị giả là ```false```, thì thành phần sẽ không hiển thị:
+
+```javascript
+function WarningBanner(props) {
+  if (!props.warn) {
+    return null;
+  }
+
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
+}
+
+class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {showWarning: true};
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
+
+  handleToggleClick() {
+    this.setState(prevState => ({
+      showWarning: !prevState.showWarning
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? 'Hide' : 'Show'}
+        </button>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <Page />,
+  document.getElementById('root')
+);
 
 ```
 
 ### VIII. Lists and Keys: Danh sách và khóa
 ---
-- .
->JavaScript Code:
-```javascript
+- Với đoạn mã dưới đây, chúng ta sử dụng hàm map() để lấy một mảng các số và nhân đôi giá trị của chúng. Chúng ta gán mảng mới được ```map()``` trả về cho biến được nhân đôi và ghi nó:
 
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) => number * 2);
+console.log(doubled);
+```
+
+- Mã này ghi nhật ký ```[2, 4, 6, 8, 10]``` vào bảng điều khiển.
+- 1.Rendering Multiple Components: Hiển thị nhiều components
+- Bạn có thể xây dựng các bộ sưu tập các phần tử và bao gồm chúng trong JSX bằng cách sử dụng các dấu ngoặc nhọn ```{}```.
+- Dưới đây, chúng ta lặp qua mảng số bằng cách sử dụng hàm JavaScript ```map()```. Chúng tôi trả về một phần tử ```<li>``` cho mỗi mục. Cuối cùng, chúng ta gán mảng kết quả của các phần tử cho ```listItems```:
+  
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li>{number}</li>
+);
+```
+
+- Chúng tôi bao gồm toàn bộ mảng ```listItems``` bên trong phần tử ```<ul>``` và hiển thị nó cho ```DOM```:
+
+```javascript
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
+```
+  
+**2. Basic List Component**
+  
+- Thông thường, bạn sẽ hiển thị danh sách bên trong một thành phần.
+- Chúng ta có thể cấu trúc lại ví dụ trước đó thành một thành phần chấp nhận một mảng các số và xuất ra một danh sách các phần tử không có thứ tự.
+
+```javascript
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li>{number}</li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+- Hãy gán một khóa cho các mục danh sách của chúng tôi bên trong ```numbers.map()``` và sửa vấn đề quan trọng còn thiếu.
+
+```javascript
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <li key={number.toString()}>
+      {number}
+    </li>
+  );
+  return (
+    <ul>{listItems}</ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+**3. Keys**
+
+- ```Keys``` giúp React xác định những mục nào đã thay đổi, được thêm vào hoặc bị xóa. Các phím nên được trao cho các phần tử bên trong mảng để cung cấp cho các yếu tố một bản sắc ổn định:
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>
+    {number}
+  </li>
+);
+```
+
+- Cách tốt nhất để chọn khóa là sử dụng một chuỗi xác định duy nhất một mục danh sách trong số các anh chị em của nó. Thông thường, bạn sẽ sử dụng ```ID``` từ dữ liệu của mình dưới dạng khóa:
+
+```javascript
+const todoItems = todos.map((todo) =>
+  <li key={todo.id}>
+    {todo.text}
+  </li>
+);
+```
+
+- Khi bạn không có ```ID``` ổn định cho các mục được hiển thị, bạn có thể sử dụng chỉ mục mục làm khóa làm phương sách cuối cùng:
+
+```javascript
+const todoItems = todos.map((todo, index) =>
+  // Only do this if items have no stable IDs
+  <li key={index}>
+    {todo.text}
+  </li>
+```
+
+**4. Extracting Components with Keys**
+
+- Example: Incorrect Key Usage
+
+```javascript
+function ListItem(props) {
+  const value = props.value;
+  return (
+    // Wrong! There is no need to specify the key here:
+    <li key={value.toString()}>
+      {value}
+    </li>
+  );
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    // Wrong! The key should have been specified here:
+    <ListItem value={number} />
+  );
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+- Example: Correct Key Usage
+
+```javascript
+function ListItem(props) {
+  // Correct! There is no need to specify the key here:
+  return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    // Correct! Key should be specified inside the array.
+    <ListItem key={number.toString()}
+              value={number} />
+
+  );
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ReactDOM.render(
+  <NumberList numbers={numbers} />,
+  document.getElementById('root')
+);
+```
+
+**5. Keys Must Only Be Unique Among Siblings: Chìa khóa chỉ phải duy nhất trong số các anh chị em**
+
+- Các phím được sử dụng trong các mảng phải là duy nhất trong số các anh chị em của chúng. Tuy nhiên, chúng không cần phải là duy nhất toàn cầu. Chúng ta có thể sử dụng các khóa giống nhau khi chúng ta tạo ra hai mảng khác nhau:
+
+```javascript
+function Blog(props) {
+  const sidebar = (
+    <ul>
+      {props.posts.map((post) =>
+        <li key={post.id}>
+          {post.title}
+        </li>
+      )}
+    </ul>
+  );
+  const content = props.posts.map((post) =>
+    <div key={post.id}>
+      <h3>{post.title}</h3>
+      <p>{post.content}</p>
+    </div>
+  );
+  return (
+    <div>
+      {sidebar}
+      <hr />
+      {content}
+    </div>
+  );
+}
+
+const posts = [
+  {id: 1, title: 'Hello World', content: 'Welcome to learning React!'},
+  {id: 2, title: 'Installation', content: 'You can install React from npm.'}
+];
+ReactDOM.render(
+  <Blog posts={posts} />,
+  document.getElementById('root')
+);
+```
+
+**6.Embedding map() in JSX: Nhúng bản đồ () vào JSX **
+
+- Trong các ví dụ trên, chúng tôi đã khai báo một biến listItems riêng biệt và bao gồm nó trong JSX:
+
+```javascript
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    <ListItem key={number.toString()}
+              value={number} />
+
+  );
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
+}
+```
+
+- JSX cho phép nhúng bất kỳ biểu thức nào trong các dấu ngoặc nhọn để chúng ta có thể inline kết quả ```map()```:
+
+```javascript
+function NumberList(props) {
+  const numbers = props.numbers;
+  return (
+    <ul>
+      {numbers.map((number) =>
+        <ListItem key={number.toString()}
+                  value={number} />
+
+      )}
+    </ul>
+  );
+}
 ```
 
 ### IX. 
