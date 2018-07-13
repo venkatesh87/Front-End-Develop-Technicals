@@ -370,11 +370,17 @@ setInterval(tick, 1000);
 ```
 
 **1. Converting a Function to a Class(Chuyển đổi một Function thành một Class)**
-- Bạn có thể chuyển đổi component function như Clock thành một Class theo năm bước:
+
+**Bạn có thể chuyển đổi component function như Clock thành một Class theo năm bước:**
+
   >**Step 1:** Tạo một Class ES6, có cùng tên, Kế thừa(extends) React.Component.
+  
   >**Step 2:** Thêm một phương thức rỗng vào nó được gọi là render().
+  
   >**Step 3:** Di chuyển phần thân body của function vào phương thức render().
+  
   >**Step 4:** Thay thế các props bằng this.props trong phần render().
+  
   >**Step 5:** Xóa khai báo hàm rỗng còn lại.
 
 ```javascript
@@ -395,6 +401,7 @@ class Clock extends React.Component {
 
 **2. Adding Local State to a Class(Thêm trạng thái cục bộ vào một Class)**
 - Chúng tôi sẽ chuyển ngày từ props sang state theo ba bước:
+
 >**Step 1:** Thay thế this.props.date bằng this.state.date trong phương thức render ():
   
 ```javascript
@@ -409,6 +416,7 @@ class Clock extends React.Component {
   }
 }
 ```
+
 >**Step 2:** Thêm một class constructor gán giá trị this.state ban đầu:
 
 ```javascript
