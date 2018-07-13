@@ -9,7 +9,7 @@ ReactDOM.render(
 
 ### II. Introducing JSX
 ---
-**1.Khai báo biến**
+**1. Khai báo biến**
 
 ```javascript
 const element = <h1>Hello, world!</h1>;
