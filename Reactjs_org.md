@@ -1229,7 +1229,7 @@ ReactDOM.render(
 );
 ```
 
-**6. Embedding ```map()``` in JSX: Nhúng ```map()``` vào JSX **
+**6. Embedding ```map()``` in JSX: Nhúng ```map()``` vào JSX**
 
 - Trong các ví dụ trên, chúng tôi đã khai báo một biến ```listItems``` riêng biệt và bao gồm nó trong JSX:
 
