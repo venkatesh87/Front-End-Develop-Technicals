@@ -93,12 +93,12 @@ User.defaultProps = {}
 
 **3. Khi ```Props``` thay đổi**
 
-Cập nhật giá trị cho ```props```
-Gọi hàm ```componentWillReceiveProps()```
-Gọi hàm ```shouldComponentUpdate()```
-Gọi hàm ```componentWillUpdate()``` – với điều kiện hàm trên ```return true```
-Gọi hàm ```render()```
-Gọi hàm ```componetDidUpdate()```
+- Cập nhật giá trị cho ```props```
+- Gọi hàm ```componentWillReceiveProps()```
+- Gọi hàm ```shouldComponentUpdate()```
+- Gọi hàm ```componentWillUpdate()``` – với điều kiện hàm trên ```return true```
+- Gọi hàm ```render()```
+- Gọi hàm ```componetDidUpdate()```
 
 **4. Khi Unmount component**
 
