@@ -1,6 +1,6 @@
 Referencer: [viblo.asia](https://viblo.asia/p/tim-hieu-cac-method-cua-component-trong-react-js-voi-es6-bxjvZYpBkJZ)
 
-#Tìm hiểu các method của component trong React js với ES6
+# Tìm hiểu các method của component trong React js với ES6
 
 ### I. Khái niệm Component
 ---
