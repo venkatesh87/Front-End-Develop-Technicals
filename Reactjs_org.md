@@ -581,6 +581,7 @@ ReactDOM.render(
   + Nếu component Clock bị loại bỏ khỏi DOM, React gọi móc nối vòng đời componentWillUnmount() để bộ hẹn giờ bị dừng.
   
 **4. Using State Correctly**
+
 - Có ba điều bạn nên biết về ```setState()```.
 
 **4.1. Do Not Modify State Directly**
