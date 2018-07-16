@@ -373,13 +373,13 @@ setInterval(tick, 1000);
 
 **Bạn có thể chuyển đổi component function như Clock thành một Class theo năm bước:**
 
-  >**Step 1:** Tạo một Class ES6, có cùng tên, Kế thừa(extends) React.Component.
+  >**Step 1:** Tạo một Class ES6, có cùng tên, Kế thừa```(extends)``` ```React.Component```.
   
-  >**Step 2:** Thêm một phương thức rỗng vào nó được gọi là render().
+  >**Step 2:** Thêm một phương thức rỗng vào nó được gọi là ```render()```.
   
-  >**Step 3:** Di chuyển phần thân body của function vào phương thức render().
+  >**Step 3:** Di chuyển phần thân body của function vào phương thức ```render()```.
   
-  >**Step 4:** Thay thế các props bằng this.props trong phần render().
+  >**Step 4:** Thay thế các ```props``` bằng ```this.props``` trong phần ```render()```.
   
   >**Step 5:** Xóa khai báo hàm rỗng còn lại.
 
@@ -396,13 +396,14 @@ class Clock extends React.Component {
 }
 ```
 
-- Đồng hồ bây giờ được định nghĩa là một Class chứ không phải là một function.
-- Phương thức render sẽ được gọi mỗi lần cập nhật xảy ra, nhưng miễn là chúng ta trả <Clock /> vào cùng một nút DOM, chỉ có một cá thể duy nhất của class Clock sẽ được sử dụng.
+- Đồng hồ bây giờ được định nghĩa là một ```Class``` chứ không phải là một function.
+- Phương thức ```render``` sẽ được gọi mỗi lần cập nhật xảy ra, nhưng miễn là chúng ta trả ```<Clock />``` vào cùng một nút DOM, chỉ có một cá thể duy nhất của ```class Clock``` sẽ được sử dụng.
 
 **2. Adding Local State to a Class(Thêm trạng thái cục bộ vào một Class)**
-- Chúng tôi sẽ chuyển ngày từ props sang state theo ba bước:
 
->**Step 1:** Thay thế this.props.date bằng this.state.date trong phương thức render ():
+- Chúng tôi sẽ chuyển ngày từ ```props``` sang ```state``` theo ba bước:
+
+>**Step 1:** Thay thế ```this.props.date``` bằng ```this.state.date``` trong phương thức ```render()```:
   
 ```javascript
 class Clock extends React.Component {
@@ -417,7 +418,7 @@ class Clock extends React.Component {
 }
 ```
 
->**Step 2:** Thêm một class constructor gán giá trị this.state ban đầu:
+>**Step 2:** Thêm một class ```constructor``` gán giá trị ```this.state``` ban đầu:
 
 ```javascript
 class Clock extends React.Component {
@@ -449,7 +450,7 @@ ReactDOM.render(
 );
 ```
 
-- Sau đó chúng tôi sẽ thêm mã bộ hẹn giờ vào chính component đó
+- Sau đó chúng tôi sẽ thêm mã bộ hẹn giờ vào chính ```component``` đó
 
 ```javascript
 class Clock extends React.Component {
@@ -574,11 +575,11 @@ ReactDOM.render(
 ```
 
 - Bây giờ đồng hồ ve mỗi giây.
-  + Khi <Clock /> được chuyển tới ReactDOM.render (), React gọi constructor hàm tạo của component Clock. Vì Clock cần hiển thị thời gian hiện tại, nó khởi tạo this.state với một đối tượng bao gồm cả thời gian hiện tại. Sau đó chúng tôi sẽ cập nhật trạng thái này this state.
-  + Sau đó, React gọi phương thức render() của thành phần Clock. Đây là cách React tìm hiểu những gì sẽ được hiển thị trên màn hình. Sau đó, hãy cập nhật DOM để phù hợp với kết xuất hiển thị của Đồng hồ.
-  + Khi đầu ra Clock được chèn vào trong DOM, React gọi móc nối vòng đời componentDidMount(). Bên trong nó, thành phần Clock yêu cầu trình duyệt thiết lập bộ hẹn giờ để gọi phương thức tick() của thành phần sau mỗi giây.
-  + Mỗi giây trình duyệt gọi phương thức tick (). Bên trong nó, thành phần Clock lên lịch cập nhật giao diện người dùng bằng cách gọi setState() với một đối tượng có chứa thời gian hiện tại. Nhờ có cuộc gọi setState(), React biết trạng thái đã thay đổi, và gọi phương thức render () một lần nữa để tìm hiểu những gì nên có trên màn hình. Lần này, this.state.date trong phương thức render () sẽ khác nhau, và do đó đầu ra render sẽ bao gồm thời gian cập nhật. Phản ứng cập nhật DOM tương ứng. React biết trạng thái đã thay đổi, và gọi phương thức render () một lần nữa để tìm hiểu những gì nên có trên màn hình. Lần này, this.state.date trong phương thức render() sẽ khác nhau, và do đó đầu ra render sẽ bao gồm thời gian cập nhật. Phản ứng cập nhật DOM tương ứng.
-  + Nếu component Clock bị loại bỏ khỏi DOM, React gọi móc nối vòng đời componentWillUnmount() để bộ hẹn giờ bị dừng.
+  + Khi ```<Clock />``` được chuyển tới ```ReactDOM.render()```, React gọi ```constructor``` hàm tạo của ```component Clock```. Vì ```Clock``` cần hiển thị thời gian hiện tại, nó khởi tạo ```this.state``` với một đối tượng bao gồm cả thời gian hiện tại. Sau đó chúng tôi sẽ cập nhật trạng thái này ```this state```.
+  + Sau đó, React gọi phương thức ```render()``` của thành phần ```Clock```. Đây là cách React tìm hiểu những gì sẽ được hiển thị trên màn hình. Sau đó, hãy cập nhật DOM để phù hợp với kết xuất hiển thị của Đồng hồ.
+  + Khi đầu ra ```Clock``` được chèn vào trong DOM, React gọi móc nối vòng đời ```componentDidMount()```. Bên trong nó, thành phần Clock yêu cầu trình duyệt thiết lập bộ hẹn giờ để gọi phương thức ```tick()``` của thành phần sau mỗi giây.
+  + Mỗi giây trình duyệt gọi phương thức tick (). Bên trong nó, thành phần Clock lên lịch cập nhật giao diện người dùng bằng cách gọi ```setState()``` với một đối tượng có chứa thời gian hiện tại. Nhờ có cuộc gọi ```setState()```, React biết trạng thái đã thay đổi, và gọi phương thức ```render()``` một lần nữa để tìm hiểu những gì nên có trên màn hình. Lần này, this.state.date trong phương thức render () sẽ khác nhau, và do đó đầu ra render sẽ bao gồm thời gian cập nhật. Phản ứng cập nhật DOM tương ứng. React biết trạng thái đã thay đổi, và gọi phương thức ```render()``` một lần nữa để tìm hiểu những gì nên có trên màn hình. Lần này, ```this.state.date``` trong phương thức ```render()``` sẽ khác nhau, và do đó đầu ra ```render``` sẽ bao gồm thời gian cập nhật. Phản ứng cập nhật DOM tương ứng.
+  + Nếu component ```Clock``` bị loại bỏ khỏi DOM, React gọi móc nối vòng đời ```componentWillUnmount()``` để bộ hẹn giờ bị dừng.
   
 **4. Using State Correctly**
 
@@ -627,7 +628,7 @@ this.setState(function(prevState, props) {
 + State Updates are Merged(Cập nhật trạng thái được hợp nhất)
 
 **4.3. State Updates are Merged**
-- Khi bạn gọi setState(), React sẽ kết hợp đối tượng mà bạn cung cấp vào trạng thái hiện tại.
+- Khi bạn gọi ```setState()```, React sẽ kết hợp đối tượng mà bạn cung cấp vào trạng thái hiện tại.
 - State của bạn có thể chứa một số biến độc lập:
 
 ```javascript
@@ -1534,46 +1535,292 @@ setTimeout(function() {
 }, 1000);
 ```
 
-
-```javascript
-
-```
-
-
-
-```javascript
-
-```
-
-
-
-```javascript
-
-```
-
-
-```javascript
-
-```
-
-
-```javascript
-
-```
 ### X. Lifting State Up
 ---
-- .
->JavaScript Code:
-```javascript
 
+- Nâng State lên
+- Thông thường, một số thành phần cần phản ánh cùng một dữ liệu thay đổi. Chúng tôi khuyên bạn nên nâng trạng thái được chia sẻ lên tổ tiên chung gần nhất của chúng. Hãy xem cách hoạt động của tính năng này.
+- Trong phần này, chúng tôi sẽ tạo ra một máy tính nhiệt độ để tính toán liệu nước sẽ sôi ở nhiệt độ đã cho hay không.
+- Chúng ta sẽ bắt đầu với một thành phần có tên ```BoilingVerdict```. Nó chấp nhận nhiệt độ ```celsius``` như một ```prop```, và ```prints``` liệu nó có đủ để đun sôi nước hay không:
+
+```javascript
+function BoilingVerdict(props) {
+  if (props.celsius >= 100) {
+    return <p>The water would boil.</p>;
+  }
+  return <p>The water would not boil.</p>;
+}
+```
+
+- Tiếp theo, chúng ta sẽ tạo một thành phần có tên là ```Calculator```. Nó ám chỉ một ```<input>``` cho phép bạn nhập nhiệt độ, và giữ giá trị của nó trong ```this.state.temperature```.
+
+- Ngoài ra, nó ám ```BoilingVerdict``` cho giá trị đầu vào hiện tại.
+
+```javascript
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+    this.setState({temperature: e.target.value});
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    return (
+      <fieldset>
+        <legend>Enter temperature in Celsius:</legend>
+        <input
+          value={temperature}
+          onChange={this.handleChange} />
+
+        <BoilingVerdict
+          celsius={parseFloat(temperature)} />
+
+      </fieldset>
+    );
+  }
+}
+```
+
+**1. Adding a Second Input**: Thêm đầu vào thứ hai
+
+- Yêu cầu mới của chúng tôi là, ngoài đầu vào ```Celsius```, chúng tôi cung cấp đầu vào ```Fahrenheit``` và chúng được giữ đồng bộ.
+- Chúng ta có thể bắt đầu bằng cách giải nén một thành phần ```TemperatureInput``` từ ```Calculator```. Chúng tôi sẽ thêm một quy mô mới chống đỡ cho nó có thể là ```"c"``` hoặc ```"f"```:
+
+```javascript
+const scaleNames = {
+  c: 'Celsius',
+  f: 'Fahrenheit'
+};
+
+class TemperatureInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.state = {temperature: ''};
+  }
+
+  handleChange(e) {
+    this.setState({temperature: e.target.value});
+  }
+
+  render() {
+    const temperature = this.state.temperature;
+    const scale = this.props.scale;
+    return (
+      <fieldset>
+        <legend>Enter temperature in {scaleNames[scale]}:</legend>
+        <input value={temperature}
+               onChange={this.handleChange} />
+      </fieldset>
+    );
+  }
+}
+```
+
+- Bây giờ chúng ta có thể thay đổi ```Calculator``` để hiển thị hai đầu vào nhiệt độ riêng biệt:
+
+```javascript
+class Calculator extends React.Component {
+  render() {
+    return (
+      <div>
+        <TemperatureInput scale="c" />
+        <TemperatureInput scale="f" />
+      </div>
+    );
+  }
+}
+```
+
+- Hiện tại, chúng tôi có hai yếu tố đầu vào, nhưng khi bạn nhập nhiệt độ vào một trong hai thiết bị này, thiết bị còn lại không cập nhật. Điều này mâu thuẫn với yêu cầu của chúng tôi: chúng tôi muốn giữ chúng đồng bộ.
+- Chúng tôi cũng không thể hiển thị ```BoilingVerdict``` từ ```Calculator```. ```Calculator``` không biết nhiệt độ hiện tại vì nó được ẩn bên trong ```TemperatureInput```.
+
+**2. Writing Conversion Functions**
+
+- Đầu tiên, chúng ta sẽ viết hai hàm để chuyển đổi từ ```Celsius``` sang ```Fahrenheit``` và ngược lại:
+
+```javascript
+function toCelsius(fahrenheit) {
+  return (fahrenheit - 32) * 5 / 9;
+}
+
+function toFahrenheit(celsius) {
+  return (celsius * 9 / 5) + 32;
+}
+```
+
+- Hai hàm này chuyển đổi các số. Chúng ta sẽ viết một hàm khác có nhiệt độ chuỗi và hàm chuyển đổi làm đối số và trả về một chuỗi. Chúng tôi sẽ sử dụng nó để tính toán giá trị của một đầu vào dựa trên đầu vào khác.
+- Nó trả về một chuỗi rỗng trên một nhiệt độ không hợp lệ, và nó giữ cho đầu ra được làm tròn đến vị trí thập phân thứ ba:
+
+```javascript
+function tryConvert(temperature, convert) {
+  const input = parseFloat(temperature);
+  if (Number.isNaN(input)) {
+    return '';
+  }
+  const output = convert(input);
+  const rounded = Math.round(output * 1000) / 1000;
+  return rounded.toString();
+}
 ```
 
 ### XI. Composition vs Inheritance: Thành phần vs Thừa kế
 ---
-- .
->JavaScript Code:
-```javascript
+- Thành phần vs Thừa kế.
+- Trong phần này, chúng tôi sẽ xem xét một số vấn đề mà các nhà phát triển mới để React thường tiếp cận được để thừa kế và cho thấy cách chúng tôi có thể giải quyết chúng với bố cục.
 
+**1. tainment**
+
+- Một số thành phần không biết con cái của họ trước thời hạn. Điều này đặc biệt phổ biến cho các thành phần như ```Sidebar``` hoặc ```Dialog``` đại diện cho "hộp" chung.
+- Chúng tôi khuyên các thành phần như vậy nên sử dụng biện pháp chống đỡ ```children``` đặc biệt để truyền các phần tử con trực tiếp vào đầu ra của chúng:
+
+```javascript
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
 ```
+
+- Điều này cho phép các thành phần khác truyền con tùy ý cho chúng bằng cách lồng ghép ```JSX```:
+
+```javascript
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        Welcome
+      </h1>
+      <p className="Dialog-message">
+        Thank you for visiting our spacecraft!
+      </p>
+    </FancyBorder>
+  );
+}
+```
+
+- Bất kỳ thứ gì bên trong thẻ <FancyBorder> JSX đều được chuyển vào thành phần FancyBorder dưới dạng một phần tử con. Vì FancyBorder hiển thị {props.children} bên trong một <div>, các phần tử được truyền xuất hiện trong đầu ra cuối cùng.
+- Trong khi điều này ít phổ biến hơn, đôi khi bạn có thể cần nhiều "lỗ hổng" trong một thành phần. Trong những trường hợp như vậy, bạn có thể đưa ra quy ước của riêng bạn thay vì sử dụng trẻ em:
+  
+```javascript
+function SplitPane(props) {
+  return (
+    <div className="SplitPane">
+      <div className="SplitPane-left">
+        {props.left}
+      </div>
+      <div className="SplitPane-right">
+        {props.right}
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <SplitPane
+      left={
+        <Contacts />
+      }
+      right={
+        <Chat />
+      } />
+  );
+}
+```
+
+- Các phần tử phản ứng như <Contacts /> và <Chat /> chỉ là các đối tượng, vì vậy bạn có thể chuyển chúng thành các đạo cụ như bất kỳ dữ liệu nào khác. Cách tiếp cận này có thể nhắc nhở bạn về “các khe” trong các thư viện khác nhưng không có giới hạn về những gì bạn có thể truyền làm các props trong React.
+
+**2. Specialization**: Chuyên môn
+
+- Đôi khi chúng tôi nghĩ về các thành phần như là "trường hợp đặc biệt" của các thành phần khác. Ví dụ, chúng ta có thể nói rằng một ```WelcomeDialog``` là một trường hợp đặc biệt của ```Dialog```.
+- Trong React, điều này cũng đạt được theo thành phần, trong đó một thành phần "cụ thể" hơn làm cho một component "chung chung" hơn và cấu hình nó với các ```props```
+
+```javascript
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        {props.title}
+      </h1>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+    </FancyBorder>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <Dialog
+      title="Welcome"
+      message="Thank you for visiting our spacecraft!" />
+
+  );
+}
+```
+
+- Thành phần hoạt động tốt như nhau đối với các components được định nghĩa là các classes:
+
+```javascript
+function Dialog(props) {
+  return (
+    <FancyBorder color="blue">
+      <h1 className="Dialog-title">
+        {props.title}
+      </h1>
+      <p className="Dialog-message">
+        {props.message}
+      </p>
+      {props.children}
+    </FancyBorder>
+  );
+}
+
+class SignUpDialog extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.state = {login: ''};
+  }
+
+  render() {
+    return (
+      <Dialog title="Mars Exploration Program"
+              message="How should we refer to you?">
+        <input value={this.state.login}
+               onChange={this.handleChange} />
+
+        <button onClick={this.handleSignUp}>
+          Sign Me Up!
+        </button>
+      </Dialog>
+    );
+  }
+
+  handleChange(e) {
+    this.setState({login: e.target.value});
+  }
+
+  handleSignUp() {
+    alert(`Welcome aboard, ${this.state.login}!`);
+  }
+}
+```
+**3. So What About Inheritance?**
+
+- Tại Facebook, chúng tôi sử dụng React trong hàng nghìn thành phần và chúng tôi đã không tìm thấy bất kỳ trường hợp sử dụng nào mà chúng tôi khuyên bạn nên tạo phân cấp thừa kế thành phần.
+
+- Props và bố cục cung cấp cho bạn tất cả sự linh hoạt mà bạn cần để tùy chỉnh giao diện và hành vi của một thành phần theo cách rõ ràng và an toàn. Hãy nhớ rằng các thành phần có thể chấp nhận các đạo cụ tùy ý, bao gồm các giá trị nguyên thủy, các phần tử phản ứng hoặc các hàm.
+
+- Nếu bạn muốn sử dụng lại chức năng không phải giao diện người dùng giữa các thành phần, chúng tôi khuyên bạn nên trích xuất nó thành một mô-đun JavaScript riêng biệt. Các thành phần có thể nhập nó và sử dụng hàm, đối tượng hoặc lớp đó mà không mở rộng nó.
 
 
