@@ -977,7 +977,83 @@ III/ Cấu hình:
 
 ```
 
-**12. 20180508 ChartJS**
+**12. 20180612 Your Life in Hyogo**
+
+**Request :**
+- Bản đồ thế giới & đồng hồ thế giới
+- HTML sẽ tạo: world_clock.html
+- Về đồng hồ thì nhờ các bạn tạo theo hình thức là sử dụng JavaScript, và dựa vào thời gian tiêu chuẩn để hiển thị đồng hồ của các quốc gia.
+ ![Your Life in Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/world_clock.jpg)
+**Hướng dẫn :**
+>Case 1:
+```javascript
+// TimeZone
+$.fn.timeZoneClock = function(utc_offset) {
+
+  clock = this;
+
+  function getTime() {
+    var date = new Date();
+    // convert to millisecond
+    // add local time zone offset
+    // get UTC time in millisecond
+    // getTimezoneOffset() method returns the time difference between UTC time and local time, in minutes
+    var nowUTC = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
+    date.setTime(nowUTC + (utc_offset * 60 * 60 * 1000));
+    var hour = date.getHours();
+    return {
+      hour: appendZero(hour),
+      minute: appendZero(date.getMinutes()),
+      second: appendZero(date.getSeconds())
+    }
+  }
+
+  function appendZero(num) {
+    if (num < 10) { return "0" + num }
+    return num
+  }
+
+  function updateTime(clock_id) {
+    var now = getTime();
+    clock = $.find('#' + clock_id);
+    $(clock).find('.reality_time').html("<span class='hour'>" + now.hour + "</span>:<span class='minute'>" + now.minute + "</span>:<span class='second'>" + now.second + "</span>");
+  }
+
+  var clock_id = $(this).attr('id');
+
+  updateTime(clock_id);
+
+  setInterval(
+    function() {
+        updateTime(clock_id)
+    },1000
+  );
+}
+
+var timeZoneUTC = {
+  paris: '2',
+  hong_kong: '8',
+  australia: '8',
+  washington: '-4',
+  brazil: '-3',
+  hyogo: '9'
+};
+
+// Clock Area
+$('#clock_1').timeZoneClock(timeZoneUTC.paris);
+$('#clock_2').timeZoneClock(timeZoneUTC.hong_kong);
+$('#clock_3').timeZoneClock(timeZoneUTC.australia);
+$('#clock_4').timeZoneClock(timeZoneUTC.washington);
+$('#clock_5').timeZoneClock(timeZoneUTC.brazil);
+$('#clock_6').timeZoneClock(timeZoneUTC.hyogo);
+```
+
+>Case 2:
+```javascript
+
+```
+
+**13. 20180508 ChartJS**
 - Text.
 
 >JavaScript Code:
@@ -985,7 +1061,7 @@ III/ Cấu hình:
 
 ```
 
-**13. 20180511 Foreign Language Tokyo**
+**14. 20180511 Foreign Language Tokyo**
 - Text.
 
 >JavaScript Code:
@@ -993,15 +1069,7 @@ III/ Cấu hình:
 
 ```
 
-**14. 20171211 Chiba Kun’s Hiroba FE**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**15. **
+**15. 20171211 Chiba Kun’s Hiroba FE**
 - Text.
 
 >JavaScript Code:
@@ -1050,6 +1118,14 @@ III/ Cấu hình:
 ```
 
 **21. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**22. **
 - Text.
 
 >JavaScript Code:
