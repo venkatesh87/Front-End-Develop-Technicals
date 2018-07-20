@@ -983,7 +983,9 @@ III/ Cấu hình:
 - Bản đồ thế giới & đồng hồ thế giới
 - HTML sẽ tạo: world_clock.html
 - Về đồng hồ thì nhờ các bạn tạo theo hình thức là sử dụng JavaScript, và dựa vào thời gian tiêu chuẩn để hiển thị đồng hồ của các quốc gia.
+
  ![Your Life in Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/world_clock.jpg)
+ 
 **Hướng dẫn :**
 >Case 1:
 ```javascript
@@ -1049,6 +1051,64 @@ $('#clock_6').timeZoneClock(timeZoneUTC.hyogo);
 ```
 
 >Case 2:
+
+**Step 1**
+- Thứ tự đầu tiên của doanh nghiệp là để có được thời gian địa phương hiện tại. Trong JavaScript, điều này có thể dễ dàng thực hiện bằng cách khởi tạo một đối tượng ```Date()``` mà không có bất kỳ đối số nào:
+
+```javascript
+// tạo đối tượng Date cho vị trí hiện tại 
+d = new Date();
+```
+
+- Thể hiện thời gian ```local``` này là số ```mili giây``` kể từ ngày 1 tháng 1 năm 1970, bằng cách gọi phương thức ```getTime()``` của đối tượng ```Date()```:
+
+```javascript
+// Chuyển đổi sang millisecond kể từ ngày 1 tháng 1 năm 1970 
+localTime = d.getTime();
+```
+
+```javascript
+
+```
+
+**Step 2**
+
+- Tiếp theo, tìm múi giờ địa phương bù đắp(offset) với ```Date()``` của đối tượng ```getTimezoneOffset()``` phương pháp. Theo mặc định, phương thức này trả về chênh lệch múi giờ theo phút, do đó, chuyển đổi giá trị này thành mili giây để thao tác dễ dàng hơn:
+
+```javascript
+// lấy giá trị UTC cục bộ và chuyển thành msec 
+localOffset = d.getTimezoneOffset () * 60000;
+```
+
+- Lưu ý rằng giá trị trả về âm từ hàm ```getTimezoneOffset()``` cho biết vị trí hiện tại nằm trước UTC, trong khi giá trị dương cho biết vị trí nằm sau UTC.
+- **Note**: 1000 mili giây = 1 giây, và 1 phút = 60 giây. Do đó, chuyển đổi phút thành mili giây liên quan đến nhân với 60 * 1000 = 60000.
+
+```javascript
+
+```
+
+**Step 3**
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+**Step 4**
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+**Step 5**
+
 ```javascript
 
 ```
