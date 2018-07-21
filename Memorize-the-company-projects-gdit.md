@@ -1083,36 +1083,75 @@ localOffset = d.getTimezoneOffset () * 60000;
 - Lưu ý rằng giá trị trả về âm từ hàm ```getTimezoneOffset()``` cho biết vị trí hiện tại nằm trước UTC, trong khi giá trị dương cho biết vị trí nằm sau UTC.
 - **Note**: 1000 mili giây = 1 giây, và 1 phút = 60 giây. Do đó, chuyển đổi phút thành mili giây liên quan đến nhân với 60 * 1000 = 60000.
 
-```javascript
-
-```
-
 **Step 3**
+- Có được thời gian UTC hiện tại, bằng cách thêm chênh lệch múi giờ local(địa phương) vào giờ local(địa phương).
 
 ```javascript
-
+// lấy thời gian tính theo giờ UTC trong mili giây 
+utc = localTime + localOffset;
 ```
+
+- Tại thời điểm này, biến utc chứa thời gian UTC hiện tại. Tuy nhiên, giá trị thời gian này được biểu thị bằng số mili giây kể từ ngày 1 tháng 1 năm 1970. Giữ nguyên giá trị này trong thời điểm này bởi vì vẫn còn một vài tính toán để thực hiện.
 
 ```javascript
 
 ```
 
 **Step 4**
+- Một khi bạn đã có được thời gian UTC, có được điểm đến UTC của thành phố đích trong giờ, chuyển đổi nó thành mili giây và thêm nó vào thời gian UTC.
 
 ```javascript
-
+// lấy và thêm thời gian bù giờ UTC của điểm đến 
+// ví dụ, Bombay 
+// là UTC + 5,5 giờ
+offset = 5.5;   
+bombay = utc + (3600000*offset);
 ```
 
-```javascript
-
-```
+- **Note**: Trong trường hợp bạn đang tự hỏi làm thế nào tôi đến 3600000 như nhân tố nhân, nhớ rằng 1000 millseconds = 1 giây, và 1 giờ = 3600 giây. Do đó, chuyển đổi giờ thành mili giây liên quan đến nhân với 3600 * 1000 = 3600000.
 
 **Step 5**
+- Thay đổi giá trị thời gian được tính trong bước trước thành chuỗi ```date/time``` có thể đọc được bằng cách khởi tạo đối tượng ```new Date()``` object với nó và gọi phương thức ```toLocaleString()``` của đối tượng.
 
 ```javascript
-
+// chuyển đổi giá trị msec thành chuỗi ngày
+nd = new Date(bombay); 
+document.writeln("Bombay time is " + nd.toLocaleString() + "<br>");
+And you're done!
 ```
 
+```javascript
+// function to calculate local time
+// in a different city
+// given the city's UTC offset
+function calcTime(city, offset) {
+
+    // create Date object for current location
+    d = new Date();
+    
+    // convert to msec
+    // add local time zone offset 
+    // get UTC time in msec
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    
+    // create new Date object for different city
+    // using supplied offset
+    nd = new Date(utc + (3600000*offset));
+    
+    // return time as a string
+    return "The local time in " + city + " is " + nd.toLocaleString();
+
+}
+
+// get Bombay time
+alert(calcTime('Bombay', '+5.5'));
+
+// get Singapore time
+alert(calcTime('Singapore', '+8'));
+
+// get London time
+alert(calcTime('London', '+1'));
+```
 **13. 20180508 ChartJS**
 - Text.
 
