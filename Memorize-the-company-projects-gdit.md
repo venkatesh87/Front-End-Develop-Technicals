@@ -1154,11 +1154,65 @@ alert(calcTime('London', '+1'));
 ```
 
 **13. 20180719_Gotokyo ```localStorage()```**
-- Text.
+**Request :**
+■ Nội dung tác nghiệp
+- Muốn thiết đặt button đồng ý cho phép get cookie ở phía trên phần header của site tham khảo nên hãy tạo function để có thể coding bằng JS
+https://www.gotokyo.org/en/index.html
 
+■ Dự định về JS
+- HTML thì generate bằng JS (Không thay đổi template)
+- Generating destination (đích generate) thì sử dụng prependTo(), giá trị khởi tạo thì lấy #tmp_wrapper
+- Khi nhấn button 同意/đồng ý thì nó bị mất đi
+- Sử dụng Local storage chứ không phải cookie
+
+■ Điều kiện
+- Hãy tạo theo hình thức là function hóa
+
+ ![Your Life in Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_localStorage.jpg)
 >JavaScript Code:
 ```javascript
+(function($) {
 
+   $.gd.localCookie = function(options) {
+     var defaults = {
+         selector: '#tmp_local_button',
+         template: '<div id="tmp_local_bar"><div class="container"><p class="txt">このサイトのクッキーを使用してユーザー体験を向上させています。引き続き閲覧する場合は、当サイトでクッキー使用のアクセプトをお願いします。 詳細については、<a href="/ja/cookie-policy/" class="cookies_link">クッキーポリシー</a>をご覧ください。</p><a href="javascript:void(0);" id="tmp_local_button">同意</a></div></div>',
+         target: '#tmp_wrapper'
+       },
+       st = $.extend(defaults, options),
+       t = this,
+       userExperience = localStorage.getItem('user_experience');
+
+     //Init
+     $(window).on('load', function() {
+       init();
+       bind();
+     });
+
+     function init() {
+       if (userExperience == null) {
+         $(st.template).prependTo(st.target);
+         $('body').addClass('format_local_active');
+       }
+     }
+
+     function bind() {
+       $(document).on('click', st.selector, function() {
+         action();
+       });
+     }
+
+     function action() {
+       if (userExperience == null) {
+         localStorage.setItem('user_experience', true);
+         var template = $(st.template)[0].id;
+         $('#' + template).hide();
+         $('body').removeClass('format_local_active');
+       }
+     }
+
+   }
+ })(jQuery);
 ```
 
 **13. 20180508 ChartJS**
