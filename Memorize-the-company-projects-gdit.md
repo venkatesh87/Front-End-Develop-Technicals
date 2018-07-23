@@ -1152,6 +1152,15 @@ alert(calcTime('Singapore', '+8'));
 // get London time
 alert(calcTime('London', '+1'));
 ```
+
+**13. 20180719_Gotokyo ```localStorage()```**
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
 **13. 20180508 ChartJS**
 - Text.
 
