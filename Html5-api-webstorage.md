@@ -1,5 +1,7 @@
 ### HTML5 Web Storage
 ---
+**Reference**: https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
+
 > **1. Local Storage**
 
 ```javascripts
