@@ -983,7 +983,8 @@ III/ Cấu hình:
 - Bản đồ thế giới & đồng hồ thế giới
 - HTML sẽ tạo: world_clock.html
 - Về đồng hồ thì nhờ các bạn tạo theo hình thức là sử dụng JavaScript, và dựa vào thời gian tiêu chuẩn để hiển thị đồng hồ của các quốc gia.
-
+- ```getTime()```: Trả về số mili giây kể từ 1970/01/01.
+- ```setTime()```: Thêm số mili giây vào ngày 1 tháng 1 năm 1970 và hiển thị ngày và giờ mới
  ![Your Life in Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/world_clock.jpg)
  
 **Hướng dẫn :**
