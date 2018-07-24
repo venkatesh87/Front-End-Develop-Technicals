@@ -4,17 +4,20 @@
 /*
 A (very) WIP collection of optimized/recommended jQuery plugin patterns
 from @addyosmani, @cowboy, @ajpiano and others.
+
 Disclaimer:
 -----------------------
 Whilst the end-goal of this gist is to provide a list of recommended patterns, this
 is still very much a work-in-progress. I am not advocating the use of anything here 
 until we've had sufficient time to tweak and weed out what the most useful patterns
 are (and what needs to straight-out be avoided). Please keep in mind if re-sharing.
+
 But..why do you/we care about this again?:
 -----------------------
 Shiz like this https://github.com/zenorocha/jquery-boilerplate
 (related comments from adam and ralph here:  
 https://github.com/zenorocha/jquery-boilerplate/issues/11).
+
 Notes from me:
 -----------------------
 I'm working on a collection of (proven) jQuery plugin patterns that we can 
@@ -27,9 +30,11 @@ Please feel free to suggest patterns and alternatives. If you've been mentioned
 below and would like to improve (or even suggest removal) of a pattern, go for 
 it. I just want us to push something concrete that can be used at the end of the 
 day.
+
 Credits:
 ----------------------
 All those listed
+
 Dude..wasting time with this:
 ----------------------
 If you think this is an uber waste of time..feel free to say. I currently think
