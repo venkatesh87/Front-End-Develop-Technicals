@@ -1169,7 +1169,19 @@ https://www.gotokyo.org/en/index.html
 - Hãy tạo theo hình thức là function hóa
 
  ![Your Life in Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_localStorage.jpg)
->JavaScript Code:
+ 
+**Web Storage**
+- Web Storage ứng dụng web có thể lưu trữ dữ liệu cục bộ trong trình duyệt của người dùng.
+- ```window.localStorage```: Lưu trữ dữ liệu không có ngày hết hạn.
+**Đoạn này có tác dụng kiểm tra trình duyệt có hỗ trợ không.
+```javascript
+if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+} else {
+    // Sorry! No Web Storage support..
+}
+```
+
 ```javascript
 (function($) {
 
