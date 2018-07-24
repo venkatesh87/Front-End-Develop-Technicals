@@ -22,3 +22,5 @@
 
 
 1. [JQuery Write Plugin Technical](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-write-plugin-technical.md)
+
+1. [jQuery Plugin Patterns](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-write-plugin-patterns.md)
