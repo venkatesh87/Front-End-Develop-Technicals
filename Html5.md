@@ -4,7 +4,7 @@
 
 1. [HTML5 Drag and Drop](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Html5-api-drag-drop.md)
 
-1. [HTML5 Web Storage](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Html5-webstorage.md)
+1. [HTML5 Web Storage](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Html5-api-webstorage.md)
 
 1. [HTML5 Web Workers](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Html5-api-webwokers.md)
 
