@@ -1,5 +1,16 @@
 #### Advanced Plugin Concepts
 ---
+>**$.fn**
+```$``` là viết tắt của jQuery
+```fn``` là viết tắt của prototype
+>**Nếu viết đầy đủ ra sẽ thế này**
+```javascript
+window.jQuery.prototype.highlight_link = function(){};
+```
+>**Để sử dụng plugin trên ta gọi như sau:**
+```javascript
+$('#1st_link').highlight_link();
+```
 >**Version added: 1.0** jQuery.extend( target, [ object1 ], [ objectN ])
   + **target** Một đối tượng sẽ nhận các thuộc tính mới nếu các đối tượng bổ sung được truyền vào hoặc sẽ mở rộng vùng tên jQuery nếu nó là đối số duy nhất.
   + **object1**: An đối tượng chứa các thuộc tính bổ sung để hợp nhất.
