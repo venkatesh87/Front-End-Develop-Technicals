@@ -987,7 +987,103 @@ III/ Cấu hình:
  ![Your Life in Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/world_clock.jpg)
  
 **Hướng dẫn :**
->Case 1:
+
+>**Case 2:**
+
+**Step 1**
+- Thứ tự đầu tiên của doanh nghiệp là để có được thời gian địa phương hiện tại. Trong JavaScript, điều này có thể dễ dàng thực hiện bằng cách khởi tạo một đối tượng ```Date()``` mà không có bất kỳ đối số nào:
+
+```javascript
+// tạo đối tượng Date cho vị trí hiện tại 
+d = new Date();
+```
+
+- Thể hiện thời gian ```local``` này là số ```mili giây``` kể từ ngày 1 tháng 1 năm 1970, bằng cách gọi phương thức ```getTime()``` của đối tượng ```Date()```:
+
+```javascript
+// Chuyển đổi sang millisecond kể từ ngày 1 tháng 1 năm 1970 
+localTime = d.getTime();
+```
+
+**Step 2**
+
+- Tiếp theo, tìm múi giờ địa phương bù đắp(offset) với ```Date()``` của đối tượng ```getTimezoneOffset()``` phương pháp. Theo mặc định, phương thức này trả về chênh lệch múi giờ theo phút, do đó, chuyển đổi giá trị này thành mili giây để thao tác dễ dàng hơn:
+
+```javascript
+// lấy giá trị UTC cục bộ và chuyển thành msec 
+localOffset = d.getTimezoneOffset () * 60000;
+```
+
+- Lưu ý rằng giá trị trả về âm từ hàm ```getTimezoneOffset()``` cho biết vị trí hiện tại nằm trước UTC, trong khi giá trị dương cho biết vị trí nằm sau UTC.
+- **Note**: 1000 mili giây = 1 giây, và 1 phút = 60 giây. Do đó, chuyển đổi phút thành mili giây liên quan đến nhân với 60 * 1000 = 60000.
+
+**Step 3**
+- Có được thời gian UTC hiện tại, bằng cách thêm chênh lệch múi giờ local(địa phương) vào giờ local(địa phương).
+
+```javascript
+// lấy thời gian tính theo giờ UTC trong mili giây 
+utc = localTime + localOffset;
+```
+
+- Tại thời điểm này, biến utc chứa thời gian UTC hiện tại. Tuy nhiên, giá trị thời gian này được biểu thị bằng số mili giây kể từ ngày 1 tháng 1 năm 1970. Giữ nguyên giá trị này trong thời điểm này bởi vì vẫn còn một vài tính toán để thực hiện.
+
+**Step 4**
+- Một khi bạn đã có được thời gian UTC, có được điểm đến UTC của thành phố đích trong giờ, chuyển đổi nó thành mili giây và thêm nó vào thời gian UTC.
+
+```javascript
+// lấy và thêm thời gian bù giờ UTC của điểm đến 
+// ví dụ, Bombay 
+// là UTC + 5,5 giờ
+offset = 5.5;   
+bombay = utc + (3600000*offset);
+```
+
+- **Note**: Trong trường hợp bạn đang tự hỏi làm thế nào tôi đến 3600000 như nhân tố nhân, nhớ rằng 1000 millseconds = 1 giây, và 1 giờ = 3600 giây. Do đó, chuyển đổi giờ thành mili giây liên quan đến nhân với 3600 * 1000 = 3600000.
+
+**Step 5**
+- Thay đổi giá trị thời gian được tính trong bước trước thành chuỗi ```date/time``` có thể đọc được bằng cách khởi tạo đối tượng ```new Date()``` object với nó và gọi phương thức ```toLocaleString()``` của đối tượng.
+
+```javascript
+// chuyển đổi giá trị msec thành chuỗi ngày
+nd = new Date(bombay); 
+document.writeln("Bombay time is " + nd.toLocaleString() + "<br>");
+And you're done!
+```
+
+```javascript
+// function to calculate local time
+// in a different city
+// given the city's UTC offset
+function calcTime(city, offset) {
+
+    // create Date object for current location
+    d = new Date();
+    
+    // convert to msec
+    // add local time zone offset 
+    // get UTC time in msec
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    
+    // create new Date object for different city
+    // using supplied offset
+    nd = new Date(utc + (3600000*offset));
+    
+    // return time as a string
+    return "The local time in " + city + " is " + nd.toLocaleString();
+
+}
+
+// get Bombay time
+alert(calcTime('Bombay', '+5.5'));
+
+// get Singapore time
+alert(calcTime('Singapore', '+8'));
+
+// get London time
+alert(calcTime('London', '+1'));
+```
+
+>**Case 2:**
 ```javascript
 // TimeZone
 $.fn.timeZoneClock = function(utc_offset) {
@@ -1049,108 +1145,172 @@ $('#clock_4').timeZoneClock(timeZoneUTC.washington);
 $('#clock_5').timeZoneClock(timeZoneUTC.brazil);
 $('#clock_6').timeZoneClock(timeZoneUTC.hyogo);
 ```
-
->Case 2:
-
-**Step 1**
-- Thứ tự đầu tiên của doanh nghiệp là để có được thời gian địa phương hiện tại. Trong JavaScript, điều này có thể dễ dàng thực hiện bằng cách khởi tạo một đối tượng ```Date()``` mà không có bất kỳ đối số nào:
-
+>HTML
 ```javascript
-// tạo đối tượng Date cho vị trí hiện tại 
-d = new Date();
+<div class="clock_list">
+  <div class="clock_item">
+    <div class="clock_inner time_zome" id="clock_1">
+      <p class="country_name">パリ</p>
+      <p class="reality_time" id="paris_time">
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+      </p>
+    </div>
+  </div>
+  <div class="clock_item">
+    <div class="clock_inner time_zome" id="clock_2">
+      <p class="country_name">香港</p>
+      <p class="reality_time" id="hong_kong_time">
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+      </p>
+    </div>
+  </div>
+  <div class="clock_item">
+    <div class="clock_inner time_zome" id="clock_3">
+      <p class="country_name">西オーストラリア州</p>
+      <p class="reality_time" id="australia_time">
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+      </p>
+    </div>
+  </div>
+  <div class="clock_item">
+    <div class="clock_inner time_zome" id="clock_4">
+      <p class="country_name">ワシントン州</p>
+      <p class="reality_time" id="washington_time">
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+      </p>
+    </div>
+  </div>
+  <div class="clock_item">
+    <div class="clock_inner time_zome" id="clock_5">
+      <p class="country_name">ブラジルパラナ州</p>
+      <p class="reality_time" id="brazil_time">
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+      </p>
+    </div>
+  </div>
+  <div class="clock_item">
+    <div class="clock_inner time_zome" id="clock_6">
+      <p class="country_name">兵庫</p>
+      <p class="reality_time" id="hyogo_time">
+        <span class="hour"></span>:
+        <span class="minute"></span>:
+        <span class="second"></span>
+      </p>
+    </div>
+  </div>
+</div>
 ```
 
-- Thể hiện thời gian ```local``` này là số ```mili giây``` kể từ ngày 1 tháng 1 năm 1970, bằng cách gọi phương thức ```getTime()``` của đối tượng ```Date()```:
+>**Case 3:**
 
 ```javascript
-// Chuyển đổi sang millisecond kể từ ngày 1 tháng 1 năm 1970 
-localTime = d.getTime();
-```
+(function($) {
+  $.fn.showClock = function() {
+    offset = $(this).attr('rel');
+    $(this).simpleClock(offset)
+  }
+})(jQuery);
 
-```javascript
+(function($) {
+  $.fn.simpleClock = function(utc_offset) {
+    var language = $('html').attr('lang');
+    switch (language) {
+      case "de":
+        var weekdays = ["So.", "Mo.", "Di.", "Mi.", "Do.", "Fr.", "Sa."];
+        var months = ["Jan.", "Feb.", "Mär.", "Apr.", "Mai", "Juni", "Juli", "Aug.", "Sep.", "Okt.", "Nov.", "Dez."];
+        break;
+      case "es":
+        var weekdays = ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"];
+        var months = ["Ene", "Feb", "Mar", "Abr", "Mayo", "Jun", "Jul", "Ago", "Sept", "Oct", "Nov", "Dic"];
+        break;
+      case "fr":
+        var weekdays = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"];
+        var months = ["Jan", "Fév", "Mars", "Avr", "Mai", "Juin", "Juil", "Août", "Sept", "Oct", "Nov", "Déc"];
+        break;
+      case "cn":
+        var weekdays = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var months = ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"];
+        break;
+      case "in":
+        var weekdays = ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरूवार", "शुक्रवार", "शनिवार"];
+        var months = ["जनवरी", "फरवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्टूबर", "नवंबर", "दिसंबर"];
+        break;
+      default:
+        var weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"];
+        break
+    }
+    clock = this;
 
-```
+    function getTime() {
+      var date = new Date();
+      var nowUTC = date.getTime() + date.getTimezoneOffset() * 60 * 1000;
+      date.setTime(nowUTC + (utc_offset * 60 * 60 * 1000));
+      var hour = date.getHours();
+      if (language == "en") {
+        suffix = (hour >= 12) ? 'p.m.' : 'a.m.';
+        hour = (hour > 12) ? hour - 12 : hour;
+        hour = (hour == '00') ? 12 : hour
+      }
+      return {
+        day: weekdays[date.getDay()],
+        date: date.getDate(),
+        month: months[date.getMonth()],
+        year: date.getFullYear(),
+        hour: appendZero(hour),
+        minute: appendZero(date.getMinutes()),
+        second: appendZero(date.getSeconds())
+      }
+    }
 
-**Step 2**
+    function appendZero(num) {
+      if (num < 10) { return "0" + num }
+      return num
+    }
 
-- Tiếp theo, tìm múi giờ địa phương bù đắp(offset) với ```Date()``` của đối tượng ```getTimezoneOffset()``` phương pháp. Theo mặc định, phương thức này trả về chênh lệch múi giờ theo phút, do đó, chuyển đổi giá trị này thành mili giây để thao tác dễ dàng hơn:
+    function refreshTime(clock_id) {
+      var now = getTime();
+      clock = $.find('#' + clock_id);
+      $(clock).find('.date').html(now.day + ', ' + now.date + '. ' + now.month + ' ' + now.year);
+      $(clock).find('.time').html("<span class='hour'>" + now.hour + "</span>:<span class='minute'>" + now.minute + "</span>:<span class='second'>" + now.second + "</span>");
+      if (typeof(suffix) != "undefined") {
+        $(clock).find('.time').append('<strong>' + suffix + '</strong>')
+      }
+    }
+    var clock_id = $(this).attr('id');
+    refreshTime(clock_id);
+    setInterval(function() { refreshTime(clock_id) }, 1000)
+  }
+})(jQuery);
 
-```javascript
-// lấy giá trị UTC cục bộ và chuyển thành msec 
-localOffset = d.getTimezoneOffset () * 60000;
-```
-
-- Lưu ý rằng giá trị trả về âm từ hàm ```getTimezoneOffset()``` cho biết vị trí hiện tại nằm trước UTC, trong khi giá trị dương cho biết vị trí nằm sau UTC.
-- **Note**: 1000 mili giây = 1 giây, và 1 phút = 60 giây. Do đó, chuyển đổi phút thành mili giây liên quan đến nhân với 60 * 1000 = 60000.
-
-**Step 3**
-- Có được thời gian UTC hiện tại, bằng cách thêm chênh lệch múi giờ local(địa phương) vào giờ local(địa phương).
-
-```javascript
-// lấy thời gian tính theo giờ UTC trong mili giây 
-utc = localTime + localOffset;
-```
-
-- Tại thời điểm này, biến utc chứa thời gian UTC hiện tại. Tuy nhiên, giá trị thời gian này được biểu thị bằng số mili giây kể từ ngày 1 tháng 1 năm 1970. Giữ nguyên giá trị này trong thời điểm này bởi vì vẫn còn một vài tính toán để thực hiện.
-
-```javascript
-
-```
-
-**Step 4**
-- Một khi bạn đã có được thời gian UTC, có được điểm đến UTC của thành phố đích trong giờ, chuyển đổi nó thành mili giây và thêm nó vào thời gian UTC.
-
-```javascript
-// lấy và thêm thời gian bù giờ UTC của điểm đến 
-// ví dụ, Bombay 
-// là UTC + 5,5 giờ
-offset = 5.5;   
-bombay = utc + (3600000*offset);
-```
-
-- **Note**: Trong trường hợp bạn đang tự hỏi làm thế nào tôi đến 3600000 như nhân tố nhân, nhớ rằng 1000 millseconds = 1 giây, và 1 giờ = 3600 giây. Do đó, chuyển đổi giờ thành mili giây liên quan đến nhân với 3600 * 1000 = 3600000.
-
-**Step 5**
-- Thay đổi giá trị thời gian được tính trong bước trước thành chuỗi ```date/time``` có thể đọc được bằng cách khởi tạo đối tượng ```new Date()``` object với nó và gọi phương thức ```toLocaleString()``` của đối tượng.
-
-```javascript
-// chuyển đổi giá trị msec thành chuỗi ngày
-nd = new Date(bombay); 
-document.writeln("Bombay time is " + nd.toLocaleString() + "<br>");
-And you're done!
-```
-
-```javascript
-// function to calculate local time
-// in a different city
-// given the city's UTC offset
-function calcTime(city, offset) {
-
-    // create Date object for current location
-    d = new Date();
-    
-    // convert to msec
-    // add local time zone offset 
-    // get UTC time in msec
-    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-    
-    // create new Date object for different city
-    // using supplied offset
-    nd = new Date(utc + (3600000*offset));
-    
-    // return time as a string
-    return "The local time in " + city + " is " + nd.toLocaleString();
-
+$(document).ready(function() {
+  $('.clock.big').each(function() { 
+    $(this).showClock() 
+  });
 }
-
-// get Bombay time
-alert(calcTime('Bombay', '+5.5'));
-
-// get Singapore time
-alert(calcTime('Singapore', '+8'));
-
-// get London time
-alert(calcTime('London', '+1'));
+```
+>HTML
+```javascript
+<div class="clock big" id="abc" rel="9"> 
+  <h2>Current local time in<br><span class="text-muted">Japan, Asia/Tokyo</span></h2> 
+  <div class="date"></div> 
+  <div class="time">
+      <span class="hour"></span>:
+      <span class="minute"></span>:
+      <span class="second"></span>
+      <strong>AM</strong>
+  </div> 
+</div>
 ```
 
 **13. 20180719_Gotokyo ```localStorage()```**
@@ -1161,9 +1321,9 @@ https://www.gotokyo.org/en/index.html
 
 ■ Dự định về JS
 - HTML thì generate bằng JS (Không thay đổi template)
-- Generating destination (đích generate) thì sử dụng prependTo(), giá trị khởi tạo thì lấy #tmp_wrapper
+- Generating destination (đích generate) thì sử dụng ```prependTo()```, giá trị khởi tạo thì lấy ```#tmp_wrapper```
 - Khi nhấn button 同意/đồng ý thì nó bị mất đi
-- Sử dụng Local storage chứ không phải cookie
+- Sử dụng Local Storage chứ không phải cookie
 
 ■ Điều kiện
 - Hãy tạo theo hình thức là function hóa
