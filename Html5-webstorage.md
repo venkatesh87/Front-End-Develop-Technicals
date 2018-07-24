@@ -1,6 +1,6 @@
 ### HTML5 Web Storage
 ---
-> **1.localStorage**
+> **1. Local Storage**
 
 ```javascripts
 // Lưu dữ liệu vào local store hiện tại
