@@ -1,9 +1,7 @@
 #### jQuery Plugin Patterns
 ---
 
-/*
-A (very) WIP collection of optimized/recommended jQuery plugin patterns
-from @addyosmani, @cowboy, @ajpiano and others.
+- A (very) WIP collection of optimized/recommended jQuery plugin patterns from @addyosmani, @cowboy, @ajpiano and others.
 
 Disclaimer:
 -----------------------
@@ -15,21 +13,12 @@ are (and what needs to straight-out be avoided). Please keep in mind if re-shari
 But..why do you/we care about this again?:
 -----------------------
 Shiz like this https://github.com/zenorocha/jquery-boilerplate
-(related comments from adam and ralph here:  
-https://github.com/zenorocha/jquery-boilerplate/issues/11).
+(related comments from adam and ralph here: https://github.com/zenorocha/jquery-boilerplate/issues/11).
 
 Notes from me:
 -----------------------
-I'm working on a collection of (proven) jQuery plugin patterns that we can 
-recommend to others. I understand that ideally developers shouldn't 
-*need* boilerplate code nor patterns for this type of thing given we have 
-an excellent guide already, however, because there is enough variation in 
-how plugins are implemented to warrant work put into this, I'm happy to 
-explore the idea for now.
-Please feel free to suggest patterns and alternatives. If you've been mentioned 
-below and would like to improve (or even suggest removal) of a pattern, go for 
-it. I just want us to push something concrete that can be used at the end of the 
-day.
+I'm working on a collection of (proven) jQuery plugin patterns that we can recommend to others. I understand that ideally developers shouldn't 
+*need* boilerplate code nor patterns for this type of thing given we have an excellent guide already, however, because there is enough variation in how plugins are implemented to warrant work put into this, I'm happy to explore the idea for now. Please feel free to suggest patterns and alternatives. If you've been mentioned below and would like to improve (or even suggest removal) of a pattern, go for it. I just want us to push something concrete that can be used at the end of the day.
 
 Credits:
 ----------------------
@@ -37,10 +26,7 @@ All those listed
 
 Dude..wasting time with this:
 ----------------------
-If you think this is an uber waste of time..feel free to say. I currently think
-it would offer something useful to developers looking for direction, but that's
-not to say I'm right at all.
-*/
+If you think this is an uber waste of time..feel free to say. I currently think it would offer something useful to developers looking for direction, but that's not to say I'm right at all.
 
 ```javascript
 /*
