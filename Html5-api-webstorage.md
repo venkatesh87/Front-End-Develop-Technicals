@@ -3,6 +3,7 @@
 **Reference**: 
 - https://www.taniarascia.com/how-to-use-local-storage-with-javascript/
 - https://www.smashingmagazine.com/2010/10/local-storage-and-how-to-use-it/
+- https://medium.com/@mariusc23/using-local-storage-to-detect-content-changes-on-refresh-350523a9e313
 
 > **1. Local Storage**
 
