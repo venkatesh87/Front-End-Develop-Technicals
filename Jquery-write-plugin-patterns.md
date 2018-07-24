@@ -37,7 +37,6 @@ it would offer something useful to developers looking for direction, but that's
 not to say I'm right at all.
 */
 
-
 ```javascript
 /*
 **********************************************************
