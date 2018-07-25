@@ -3,6 +3,7 @@
 >**$.fn**
 
 ```$``` là viết tắt của jQuery
+
 ```fn``` là viết tắt của prototype
 
 >**Nếu viết đầy đủ ra sẽ thế này**
