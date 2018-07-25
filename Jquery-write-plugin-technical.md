@@ -1,16 +1,23 @@
 #### Advanced Plugin Concepts
 ---
 >**$.fn**
+- Ví dụ ```show()``` và ```hide()``` là 2 hàm nằm trong ```jQuery.fn```
 ```$``` là viết tắt của jQuery
+
 ```fn``` là viết tắt của prototype
+
 >**Nếu viết đầy đủ ra sẽ thế này**
+
 ```javascript
 window.jQuery.prototype.highlight_link = function(){};
 ```
+
 >**Để sử dụng plugin trên ta gọi như sau:**
+
 ```javascript
 $('#1st_link').highlight_link();
 ```
+
 >**Version added: 1.0** jQuery.extend( target, [ object1 ], [ objectN ])
   + **target** Một đối tượng sẽ nhận các thuộc tính mới nếu các đối tượng bổ sung được truyền vào hoặc sẽ mở rộng vùng tên jQuery nếu nó là đối số duy nhất.
   + **object1**: An đối tượng chứa các thuộc tính bổ sung để hợp nhất.
@@ -324,6 +331,231 @@ $('#1st_link').highlight_link({
 });
 ```
 
-```javascript
+**Viết một plugin đơn giản**
 
+```javascript
+(function( $ ) {
+  $.myFunction = function() {
+    // viết code vào đây
+  };
+  $.fn.myPlugin = function() {
+    // viết phần code của plugin vào đây
+  };
+})( jQuery ); 
+```
+
+```javascript
+(function( $ ) {
+  $.say = function(x) {
+    alert(x);
+  };
+
+  $.fn.makeBlue = function() {
+    return this.css("color", "blue");
+  };
+})( jQuery ); 
+
+$.say("Hello the world!");
+$(".abc").makeBlue().show();
+```
+
+**Duy trì đặc tính gọi dạng chuỗi của jQuery**
+
+**Truyền tham số**
+
+- Khi viết hàm với jQuery, ta thường định nghĩa tham số default và cho phép người dùng plugin có thể truyền tham số vào hàm, nếu user không truyền vào hay truyền thiếu thì các tham số có giá trị mặc định. Trong trường hợp này ta sử dụng hàm có sẵn $.extend mà jQuery cung cấp:
+
+- ```$.extend``` nhận 2 hoặc nhiềm tham số, nó có nhiệm vụ thêm các method và các biến của tham số từ thứ 2 trở đi vào tham số thứ 1. Phương thức này có tác dụng trộn các đối tượng với nhau và gán kết quả vào đối tượng đầu tiên truyền vào tham số. Các thuộc tính bị trùng của đối tượng đầu tiên sẽ bị ghi đè bởi các đối tượng phía sau.
+```javascript
+defaults = { size: 3 };
+options = { height: 6 };
+var opts = $.extend(defaults, options)
+// opts == defaults == { size: 3, height: 6 }
+// options == { height: 6 };
+```
+
+- Ta thường đặt tham số thứ nhất là ```{}``` để không bị ảnh hưởng tới tham số gốc.
+
+```javascript
+defaults = { size: 3 };
+options = { height: 6 };
+var opts = $.extend( {}, defaults, options)
+// opts == { size: 3, height: 6 }
+// defaults == { size: 3 };
+// options == { height: 6 };
+```
+
+- Ví dụ đơn giản sử dụng ```$.extend```:
+
+```javascript
+(function($) {
+
+  $.fn.textHover = function(options) {
+
+    var defaultVal = {
+      Text: 'Your mouse is over',
+      ForeColor: 'red',
+      BackColor: 'gray'
+    };
+
+    var obj = $.extend(defaultVal, options);
+
+    return this.each(function() {
+
+      var selObject = $(this);
+
+      var oldText = selObject.text();
+      var oldBgColor = selObject.css("background-color");
+      var oldColor = selObject.css("color");
+
+      selObject.hover(function() {
+          selObject.text(obj.Text);
+          selObject.css("background-color", obj.BackColor);
+          selObject.css("color", obj.ForeColor);
+        },
+        function() {
+          selObject.text(oldText);
+          selObject.css("background-color", oldBgColor);
+          selObject.css("color", oldColor);
+        }
+      );
+    });
+  }
+})(jQuery);
+```
+
+**Nếu sử dụng hiệu ứng chuyển động không cần plugin, mã javascript sẽ như sau:**
+
+```javascript
+$(document).ready(function() {
+    $('ul#menu li a').mouseover(function() {
+        $(this).animate( { paddingLeft:"20px" }, 300);
+    }).mouseout(function() {
+        $(this).animate( { paddingLeft:"0" }, 300);
+    });
+});   
+```
+
+**Cấu trúc cơ bản của plugin như sau:**
+
+```javascript
+//Bạn cần đặt function quanh $ để tránh trường hợp bị trùng lặp
+(function($) {
+  // Thông báo phương thức tới jQuery
+  $.fn.extend({
+
+    //Đây là phần bạn viết tên plugin
+    neoanimatemenu: function() {
+
+      // Kiểm tra từng element và xử lý
+      return this.each(function() {
+
+        //Thêm mã xử lý ở đây
+
+      });
+    }
+  });
+})(jQuery);
+```
+- Nhưng nếu viết plugin, chúng ta sẽ chỉ cần gọi:
+
+```javascript
+$(document).ready(function() {
+  $('#menu').neoAnimateMenu({
+    padding: 20
+  })
+});
+```
+
+**Thêm các lựa chọn mặc định cho plugin:**
+
+```javascript
+(function($) {
+  $.fn.extend({
+
+    // truyền biến options vào hàm
+    neoAnimateMenu: function(options) {
+
+      // Đặt các giá trị mặc định, sử dụng dấu phẩy để chia từng giá trị
+      var defaults = {
+        padding: 20,
+        mouseOverColor: '#000000',
+        mouseOutColor: '#ffffff'
+      }
+
+      var options = $.extend(defaults, options);
+
+      return this.each(function() {
+        var opts = options;
+
+        //Thêm mã xử lý ở đây
+        alert(opts.padding);
+
+      });
+    }
+  });
+
+})(jQuery);
+```
+
+**Từ cấu trúc trên, chúng ta sẽ sửa thành plugin neoAnimateMenu như sau:**
+
+```javascript
+(function($) {
+  $.fn.extend({
+
+    neoAnimateMenu: function(options) {
+
+      // Đặt các giá trị mặc định
+      var defaults = {
+        animatePadding: 60
+      };
+
+      var options = $.extend(defaults, options);
+
+      return this.each(function() {
+        var opts = options;
+
+        // Đặt tên biến cho element (ul)
+        var obj = $(this);
+
+        // Lấy tất cả thẻ li trong ul
+        var items = $("li a", obj);
+
+        // Thêm sự kiện mouseover và mouseout vào thẻ a
+        items.mouseover(function() {
+          // lúc này this chính là thẻ a
+          $(this).animate({ paddingLeft: opts.animatePadding }, 500);
+        }).mouseout(function() {
+          $(this).animate({ paddingLeft: '0' }, 500);
+        });
+      });
+    }
+  });
+})(jQuery);
+```
+
+```javascript
+(function($) {
+  $.fn.extend({
+
+    fnexample: function(options) {
+      var defaults = {
+        paddingLeft: 20,
+        mouseOverColor: '#000000',
+        mouseOutColor: '#ffffff'
+      }
+
+      var options = $.extend(defaults, options);
+
+      return this.each(function() {
+        var opts = options;
+        $(this).click(function() {
+          alert(opts.paddingLeft);
+        }).css('padding-left', opts.paddingLeft);
+      });
+    }
+  });
+
+})(jQuery);
 ```
