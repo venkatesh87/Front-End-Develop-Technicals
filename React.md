@@ -12,5 +12,5 @@
 
 #### [6. Một số chú ý React JS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Reactjs-remark.md)
 
-#### [6. Build App ReactJS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Reactjs-build-app.md)
+#### [7. Build App ReactJS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Reactjs-build-app.md)
 
