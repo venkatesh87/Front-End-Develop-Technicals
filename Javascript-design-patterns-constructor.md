@@ -4,7 +4,7 @@
 
 - Đối với lập trình hướng đối tượng trong JavaScript, cách đơn giản nhất để tạo mới một object là sử dụng function kết hợp với từ khoá new. Bên trong hàm khởi tạo này, từ khoá this dùng để chỉ tới đối tượng mới. Thông thường, hàm khởi tạo được viết hoa chữ cái đầu tiên, dùng để phân biệt với các hàm số thông thường.
 
-**>1. Constructor cơ bản**
+**1. Constructor cơ bản**
 --- 
 ```javascript
 function Animal(name, leg) {
