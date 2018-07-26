@@ -276,7 +276,7 @@ var newObject = new Object();
 ```javascript
 
 ```
-## VIII. Facade Pattern
+## Facade Pattern
 **1. Object Creation**
 ```javascript
 
@@ -311,7 +311,7 @@ var newObject = new Object();
 ```javascript
 
 ```
-## IX. Factory Pattern
+## Factory Pattern
 **1. Object Creation**
 ```javascript
 
@@ -346,7 +346,7 @@ var newObject = new Object();
 ```javascript
 
 ```
-## X. Mixin Pattern
+## Mixin Pattern
 **1. Object Creation**
 ```javascript
 
@@ -381,7 +381,7 @@ var newObject = new Object();
 ```javascript
 
 ```
-## XI. Decorator Pattern
+## Decorator Pattern
 **1. Object Creation**
 ```javascript
 
@@ -416,7 +416,7 @@ var newObject = new Object();
 ```javascript
 
 ```
-## XII. Flyweight Pattern
+## Flyweight Pattern
 **1. Object Creation**
 ```javascript
 
