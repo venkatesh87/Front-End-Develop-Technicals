@@ -1,4 +1,4 @@
-#### I. JavaScript Design Pattern - Constructor Pattern
+#### I. JavaScript Design Pattern Genneral
 ---
 **Reference**: https://addyosmani.com/resources/essentialjsdesignpatterns/book/#summarytabledesignpatterns
 
@@ -16,7 +16,7 @@
   1. [Decorator Pattern](#decorator-pattern)
   1. [Flyweight Pattern](#flyweight-pattern)
 
-**I. Constructor Pattern**
+## Constructor Pattern
 --- 
 **1. Object Creation**
 - Ba cách phổ biến để tạo các đối tượng mới trong JavaScript như sau:
@@ -67,40 +67,7 @@ var newObject = new Object();
 ```javascript
 
 ```
-**II. Module Pattern**
---- 
-**1. Object Creation**
-```javascript
-
-```
-
-**1. Object Creation**
-```javascript
-
-```
-
-**1. Object Creation**
-```javascript
-
-```
-
-**1. Object Creation**
-```javascript
-
-```
-
-**1. Object Creation**
-```javascript
-
-```
-
-**1. Object Creation**
-```javascript
-
-```
-```
-
-**III. Revealing Module Pattern**
+## II. Module Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -132,7 +99,8 @@ var newObject = new Object();
 
 ```
 
-**IV. Observer Pattern**
+
+##III. Revealing Module Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -164,7 +132,7 @@ var newObject = new Object();
 
 ```
 
-**V. Mediator Pattern**
+## IV. Observer Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -196,7 +164,7 @@ var newObject = new Object();
 
 ```
 
-**VI. Prototype Pattern**
+## V. Mediator Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -228,7 +196,7 @@ var newObject = new Object();
 
 ```
 
-**VII. Command Pattern**
+## VI. Prototype Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -260,7 +228,7 @@ var newObject = new Object();
 
 ```
 
-**VIII. Facade Pattern**
+## VII. Command Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -292,7 +260,7 @@ var newObject = new Object();
 
 ```
 
-**IX. Factory Pattern**
+## VIII. Facade Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -324,7 +292,7 @@ var newObject = new Object();
 
 ```
 
-**X. Mixin Pattern**
+## IX. Factory Pattern
 --- 
 **1. Object Creation**
 ```javascript
@@ -356,13 +324,45 @@ var newObject = new Object();
 
 ```
 
-**XI. Decorator Pattern**
+## X. Mixin Pattern
+--- 
+**1. Object Creation**
+```javascript
+
+```
+
+**1. Object Creation**
+```javascript
+
+```
+
+**1. Object Creation**
+```javascript
+
+```
+
+**1. Object Creation**
+```javascript
+
+```
+
+**1. Object Creation**
+```javascript
+
+```
+
+**1. Object Creation**
+```javascript
+
+```
+
+## XI. Decorator Pattern
 --- 
 ```javascript
 
 ```
 
-**XII. Flyweight Pattern**
+## XII. Flyweight Pattern
 --- 
 **1. Object Creation**
 ```javascript
