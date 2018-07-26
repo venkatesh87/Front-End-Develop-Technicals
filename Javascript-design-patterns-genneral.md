@@ -2,19 +2,19 @@
 ---
 **Reference**: https://addyosmani.com/resources/essentialjsdesignpatterns/book/#summarytabledesignpatterns
 
-[I. Constructor Pattern](#constructor-pattern)
-[II. Module Pattern](#module-pattern)
-[III. Revealing Module Pattern](#revealing-module-pattern)
-[IV. Singleton Pattern](#singleton-pattern)
-[V. Observer Pattern](#observer-pattern)
-[VI. Mediator Pattern](#mediator-pattern)
-[VII. Prototype Pattern](#prototype-attern)
-[VIII. Command Pattern](#command-pattern)
-[IX. Facade Pattern](#facade-pattern)
-[X. Factory Pattern](#factory-pattern)
-[XI. Mixin Pattern](#mixin-pattern)
-[XII. Decorator Pattern](#decorator-pattern)
-[XIII. Flyweight Pattern](#flyweight-pattern)
+1. [I. Constructor Pattern](#constructor-pattern)
+1. [II. Module Pattern](#module-pattern)
+1. [III. Revealing Module Pattern](#revealing-module-pattern)
+1. [IV. Singleton Pattern](#singleton-pattern)
+1. [V. Observer Pattern](#observer-pattern)
+1. [VI. Mediator Pattern](#mediator-pattern)
+1. [VII. Prototype Pattern](#prototype-attern)
+1. [VIII. Command Pattern](#command-pattern)
+1. 1. 1. [IX. Facade Pattern](#facade-pattern)
+1. 1. [X. Factory Pattern](#factory-pattern)
+1. [XI. Mixin Pattern](#mixin-pattern)
+1. [XII. Decorator Pattern](#decorator-pattern)
+1. [XIII. Flyweight Pattern](#flyweight-pattern)
 
 ## I. Constructor Pattern
 --- 
