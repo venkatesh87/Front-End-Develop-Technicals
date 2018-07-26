@@ -8,7 +8,7 @@
 1. [Singleton Pattern](#singleton-pattern)
 1. [Observer Pattern](#observer-pattern)
 1. [Mediator Pattern](#mediator-pattern)
-1. [Prototype Pattern](#prototype-attern)
+1. [Prototype Pattern](#prototype-pattern)
 1. [Command Pattern](#command-pattern)
 1. [Facade Pattern](#facade-pattern)
 1. [Factory Pattern](#factory-pattern)
@@ -17,7 +17,6 @@
 1. [Flyweight Pattern](#flyweight-pattern)
 
 ## Constructor Pattern
---- 
 **1. Object Creation**
 - Ba cách phổ biến để tạo các đối tượng mới trong JavaScript như sau:
 
@@ -33,8 +32,6 @@ var newObject = Object.create( Object.prototype );
 var newObject = new Object();
 ```
 ## Module Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -70,8 +67,6 @@ var newObject = new Object();
 
 ```
 ## Revealing Module Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -107,8 +102,6 @@ var newObject = new Object();
 
 ```
 ## Singleton Pattern
----
-
 **1. Object Creation**
 ```javascript
 
@@ -144,8 +137,6 @@ var newObject = new Object();
 
 ```
 ## Observer Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -181,8 +172,6 @@ var newObject = new Object();
 
 ```
 ## Mediator Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -218,8 +207,6 @@ var newObject = new Object();
 
 ```
 ## Prototype Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -255,8 +242,6 @@ var newObject = new Object();
 
 ```
 ## Command Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -292,8 +277,6 @@ var newObject = new Object();
 
 ```
 ## VIII. Facade Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -329,8 +312,6 @@ var newObject = new Object();
 
 ```
 ## IX. Factory Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -366,8 +347,6 @@ var newObject = new Object();
 
 ```
 ## X. Mixin Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -403,8 +382,6 @@ var newObject = new Object();
 
 ```
 ## XI. Decorator Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
@@ -440,8 +417,6 @@ var newObject = new Object();
 
 ```
 ## XII. Flyweight Pattern
---- 
-
 **1. Object Creation**
 ```javascript
 
