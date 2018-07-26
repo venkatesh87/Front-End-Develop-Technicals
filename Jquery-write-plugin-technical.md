@@ -85,18 +85,18 @@ var settings = $.extend(empty, defaults, options);
 >Javascript Code:
 ```javascript
 // Plugin definition.
-$.fn.hilight = function( options ) {
-    // Extend our default options with those provided.
-    // Note that the first argument to extend is an empty(Lưu ý rằng đối số đầu tiên extend là rỗng)
-    // object – this is to keep from overriding our "defaults" object.(object - điều này là để tránh ghi đè đối tượng "defaults" của chúng)
-    var opts = $.extend( {}, $.fn.hilight.defaults, options );
-    // Our plugin implementation code goes here.(Mã triển khai plugin của chúng tôi xuất hiện ở đây)
+$.fn.hilight = function(options) {
+  // Extend our default options with those provided.
+  // Note that the first argument to extend is an empty(Lưu ý rằng đối số đầu tiên extend là rỗng)
+  // object – this is to keep from overriding our "defaults" object.(object - điều này là để tránh ghi đè đối tượng "defaults" của chúng)
+  var opts = $.extend({}, $.fn.hilight.defaults, options);
+  // Our plugin implementation code goes here.(Mã triển khai plugin của chúng tôi xuất hiện ở đây)
 };
- 
+
 // Plugin defaults – added as a property on our plugin function.(Plugin defaults: được thêm dưới dạng thuộc tính trên chức năng plugin của chúng)
 $.fn.hilight.defaults = {
-    foreground: "red",
-    background: "yellow"
+  foreground: "red",
+  background: "yellow"
 };
 ```
 
@@ -121,7 +121,7 @@ $( ".hilightDiv" ).hilight();
 // ...
 // Override default by passing options to plugin method.
 $( "#green" ).hilight({
-    foreground: "green"
+  foreground: "green"
 });
 ```
 ##### 2. Provide Public Access to Secondary Functions as Applicable(Cung cấp quyền truy cập công khai vào các hàm phụ như có thể áp dụng):
@@ -129,95 +129,96 @@ $( "#green" ).hilight({
 >Javascript Code:
 ```javascript
 // Plugin definition.
-$.fn.hilight = function( options ) {
-    // Iterate and reformat each matched element.
-    return this.each(function() {
-        var elem = $( this );
-        // ...
-        var markup = elem.html();
-        // Call our format function.
-        markup = $.fn.hilight.format( markup );
-        elem.html( markup );
-    });
- 
+$.fn.hilight = function(options) {
+  // Iterate and reformat each matched element.
+  return this.each(function() {
+    var elem = $(this);
+    // ...
+    var markup = elem.html();
+    // Call our format function.
+    markup = $.fn.hilight.format(markup);
+    elem.html(markup);
+  });
+
 };
- 
+
 // Define our format function.
-$.fn.hilight.format = function( txt ) {
-    return "<strong>" + txt + "</strong>";
+$.fn.hilight.format = function(txt) {
+  return "<strong>" + txt + "</strong>";
 };
 ```
 ##### 3. Bob and Sue:
 
 >Javascript Code:
 ```javascript
-jQuery.fn.superGallery = function( options ) {
-    // Bob's default settings:
-    var defaults = {
-        textColor: "#000",
-        backgroundColor: "#fff",
-        fontSize: "1em",
-        delay: "quite long",
-        getTextFromTitle: true,
-        getTextFromRel: false,
-        getTextFromAlt: false,
-        animateWidth: true,
-        animateOpacity: true,
-        animateHeight: true,
-        animationDuration: 500,
-        clickImgToGoToNext: true,
-        clickImgToGoToLast: false,
-        nextButtonText: "next",
-        previousButtonText: "previous",
-        nextButtonTextColor: "red",
-        previousButtonTextColor: "red"
-    };
- 
-    var settings = $.extend( {}, defaults, options );
- 
-    return this.each(function() {
-        // Plugin code would go here...
-    });
- 
+jQuery.fn.superGallery = function(options) {
+  // Bob's default settings:
+  var defaults = {
+    textColor: "#000",
+    backgroundColor: "#fff",
+    fontSize: "1em",
+    delay: "quite long",
+    getTextFromTitle: true,
+    getTextFromRel: false,
+    getTextFromAlt: false,
+    animateWidth: true,
+    animateOpacity: true,
+    animateHeight: true,
+    animationDuration: 500,
+    clickImgToGoToNext: true,
+    clickImgToGoToLast: false,
+    nextButtonText: "next",
+    previousButtonText: "previous",
+    nextButtonTextColor: "red",
+    previousButtonTextColor: "red"
+  };
+
+  var settings = $.extend({}, defaults, options);
+
+  return this.each(function() {
+    // Plugin code would go here...
+  });
+
 };
 ```
 
 >Javascript Code:
 ```javascript
 var defaults = {
-    wrapperAttrs : {
-        class: "gallery-wrapper"
-    },
-    // ... rest of settings ...
+  wrapperAttrs: {
+    class: "gallery-wrapper"
+  },
+  // ... rest of settings ...
 };
- 
+
 // We can use the extend method to merge options/settings as usual:
 // But with the added first parameter of TRUE to signify a DEEP COPY:
-var settings = $.extend( true, {}, defaults, options );
+var settings = $.extend(true, {}, defaults, options);
 ```
 ##### 4. Provide Callback Capabilities:
 - Callback là gì? - Một Callback về cơ bản là một hàm được gọi sau, thường được kích hoạt(```triggered```) bởi một event. Nó được chuyển như một đối số(argument), thường là lời gọi khởi tạo của một thành phần, trong trường hợp này là một plugin jQuery.
 >Javascript Code:
 ```javascript
 var defaults = {
-    // We define an empty anonymous function so that
-    // we don't need to check its existence before calling it.
-    onImageShow : function() {},
-    // ... rest of settings ...
+  // We define an empty anonymous function so that
+  // we don't need to check its existence before calling it.
+  onImageShow: function() {},
+  // ... rest of settings ...
 };
 // Later on in the plugin:
-nextButton.on( "click", showNextImage );
- 
+nextButton.on("click", showNextImage);
+
 function showNextImage() {
- 
-    // Returns reference to the next image node
-    var image = getNextImage();
- 
-    // Stuff to show the image here...
- 
-    // Here's the callback:
-    settings.onImageShow.call( image );
+
+  // Returns reference to the next image node
+  var image = getNextImage();
+
+  // Stuff to show the image here...
+
+  // Here's the callback:
+  settings.onImageShow.call(image);
 }
+a
 ```
 
 >**Cú pháp cơ bản để tạo một jQuery Plugin**:
@@ -229,25 +230,25 @@ $.fn.your_function_name = function() {
 
 ```javascript
 $('#1st_link').mouseover(function(){
-	$(this).css('color', 'red');
-	$(this).css('font-size', '30px');
+  $(this).css('color', 'red');
+  $(this).css('font-size', '30px');
 });
 $('#1st_link').mouseout(function(){
-	$(this).css('color', 'white');
-	$(this).css('font-size', '15px');
+  $(this).css('color', 'white');
+  $(this).css('font-size', '15px');
 });
 ```
 
 ```javascript
 $.fn.highlight_link = function() {
-	this.mouseover(function(){
-		$(this).css('color', 'red');
-		$(this).css('font-size', '30px');
-	});
-	this.mouseout(function(){
-		$(this).css('color', 'white');
-		$(this).css('font-size', '15px');
-	});
+  this.mouseover(function(){
+    $(this).css('color', 'red');
+    $(this).css('font-size', '30px');
+  });
+  this.mouseout(function(){
+    $(this).css('color', 'white');
+    $(this).css('font-size', '15px');
+  });
 }
 ```
 **```$``` là viết tắt của jQuery**
@@ -264,62 +265,62 @@ $('#1st_link').highlight_link();
 
 ```javascript
 $.fn.highlight_link = function() {
-	this.mouseover(function(){
-		...
-	});
-	this.mouseout(function(){
-		...
-	});
+  this.mouseover(function(){
+    ...
+  });
+  this.mouseout(function(){
+    ...
+  });
     return this;
 }
 ```
 **>Đầu tiên ta thêm vào các tham số mặc định như sau:**
 ```javascript
-(function ( $ ) {
-    $.fn.highlight_link = function() {
-    	var defaults = {
-        	mouseover_color: 'red',
-            mouseover_size: '30px',
-            mouseout_color: 'white',
-            mouseout_size: '15px'
-        };
-        var settings = defaults;
-        this.mouseover(function(){
-            $(this).css('color', settings.mouseover_color);
-            $(this).css('font-size', settings.mouseover_size);
-        });
-        this.mouseout(function(){
-            $(this).css('color', settings.mouseout_color);
-            $(this).css('font-size', settings.mouseout_size);
-        });
-        return this;
-    }
-}( jQuery ));
+(function($) {
+  $.fn.highlight_link = function() {
+    var defaults = {
+      mouseover_color: 'red',
+      mouseover_size: '30px',
+      mouseout_color: 'white',
+      mouseout_size: '15px'
+    };
+    var settings = defaults;
+    this.mouseover(function() {
+      $(this).css('color', settings.mouseover_color);
+      $(this).css('font-size', settings.mouseover_size);
+    });
+    this.mouseout(function() {
+      $(this).css('color', settings.mouseout_color);
+      $(this).css('font-size', settings.mouseout_size);
+    });
+    return this;
+  }
+}(jQuery));
 ```
 
 **>Chấp nhận các tham số người dùng truyền vào.**
 
 ```javascript
-(function ( $ ) {
-    $.fn.highlight_link = function(options) {
-    	var defaults = {
-        	mouseover_color: 'red',
-            mouseover_size: '30px',
-            mouseout_color: 'white',
-            mouseout_size: '15px'
-        };
-        var settings = $.extend(defaults, options);
-        this.mouseover(function(){
-            $(this).css('color', settings.mouseover_color);
-            $(this).css('font-size', settings.mouseover_size);
-        });
-        this.mouseout(function(){
-            $(this).css('color', settings.mouseout_color);
-            $(this).css('font-size', settings.mouseout_size);
-        });
-        return this;
-    }
-}( jQuery ));
+(function($) {
+  $.fn.highlight_link = function(options) {
+    var defaults = {
+      mouseover_color: 'red',
+      mouseover_size: '30px',
+      mouseout_color: 'white',
+      mouseout_size: '15px'
+    };
+    var settings = $.extend(defaults, options);
+    this.mouseover(function() {
+      $(this).css('color', settings.mouseover_color);
+      $(this).css('font-size', settings.mouseover_size);
+    });
+    this.mouseout(function() {
+      $(this).css('color', settings.mouseout_color);
+      $(this).css('font-size', settings.mouseout_size);
+    });
+    return this;
+  }
+}(jQuery));
 ```
 
 ```javascript
@@ -558,4 +559,107 @@ $(document).ready(function() {
   });
 
 })(jQuery);
+```
+
+```javascript
+(function($) {
+  $.fn.fpmenu = function(param) {
+    //xử lý tham số mặc định
+    param = $.extend({
+      //các lớp của icon đóng - mở menu. Dùng font awesome 
+      btnClasses: 'fa fa-list-ul',
+      btnCloseClasses: 'fa fa-times',
+
+      //hiệu ứng và thời gian thực hiện hiệu ứng
+      animEffect: 'swing',
+      animSpeed: 500
+    }, param);
+
+    //mặc định ẩn menu
+    this.each(function(idx, el) {
+      $(el).addClass('fpmenu fp-hide').height($(window).height());
+    });
+
+    //hiển thị nút đóng - mở menu
+    $('<i class="fp-btn ' + param.btnClasses + '"></i>').appendTo('body');
+
+    //thuộc tính cờ cho biết menu đang đóng hay mở
+    Object.defineProperty(this, 'isOpen', { value: false, writable: true });
+
+    //xử lý sự kiện người dùng nhấn đóng - mở menu
+    var _self = this;
+    $('i.fp-btn').click(function(e) {
+      e.preventDefault();
+      if (!$(_self).is(':animated')) {
+        if (_self.isOpen) {
+          $(_self).animate({ opacity: 0 }, param.animSpeed, param.animEffect, function() {
+            $(this).addClass('fp-hide');
+            $('i.fp-btn').removeClass(param.btnCloseClasses).addClass(param.btnClasses);
+          });
+        } else {
+          $(_self).removeClass('fp-hide')
+            .animate({ opacity: 1 }, param.animSpeed, param.animEffect, function() {
+              $('i.fp-btn').removeClass(param.btnClasses).addClass(param.btnCloseClasses);
+            });
+        }
+        _self.isOpen = !_self.isOpen;
+      }
+    });
+
+    return this;
+  }
+})(jQuery);
+```
+
+```javascript
+(function($){
+ $.fn.popup = function(options) {
+    var defaults = {
+        width: "300px",
+        height: "200px",
+        title: "Title"
+    };
+    var options = $.extend(defaults, options);
+ 
+    $("body").append("<div id='background'></div>");
+ 
+    var $this=$(this);
+ 
+    $this.prepend("<div class='popuptitle'>"+options.title+"<a href='#' class='close'>x</a></div>");
+ 
+    $this.addClass("popup");
+    $this.width(options.width).height(options.height);
+    $this.hide();
+ 
+    $(".close").click(function (e) {
+        closePopup();
+        e.preventDefault();
+    });
+ 
+    $("#background").click(function () {
+        closePopup();
+    });
+    return this;
+ };
+ 
+ $.fn.openPopup = function() {
+    var dheight = document.body.clientHeight;
+    var dwidth = document.body.clientWidth;
+ 
+    $("#background").width(dwidth).height(dheight);
+ 
+    $("#background").fadeTo("slow",0.8);
+ 
+    $(this).css("top", (dheight-$(this).height())/2);
+    $(this).css("left",(dwidth-$(this).width())/2);
+ 
+    $(this).fadeIn();
+    return this;
+ };
+})(jQuery);
+ 
+ function closePopup(){
+    $("#background").fadeOut();
+    $(".popup").hide();
+}
 ```
