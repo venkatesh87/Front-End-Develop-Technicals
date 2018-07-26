@@ -106,6 +106,8 @@
 
 1. [JavaScript Design Patterns Module](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-module.md)
 
+1. [JavaScript Design Patterns Module](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-genneral.md)
+
 1. [Javascript Patterns](http://shichuan.github.io/javascript-patterns/)
 
 #### III.Write Plugin JS
