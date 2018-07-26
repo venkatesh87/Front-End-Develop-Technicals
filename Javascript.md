@@ -102,7 +102,11 @@
 
 1. [Javascript Design Patterns Myself](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-myself.md)
 
-1.[Javascript Patterns](http://shichuan.github.io/javascript-patterns/)
+1. [JavaScript Object Creation: Patterns and Best Practices](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-constructor.md)
+
+1. [JavaScript Object Creation: Patterns and Best Practices](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-design-patterns-module.md)
+
+1. [Javascript Patterns](http://shichuan.github.io/javascript-patterns/)
 
 #### III.Write Plugin JS
 ---
