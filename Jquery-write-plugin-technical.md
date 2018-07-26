@@ -261,7 +261,7 @@ window.jQuery.prototype.highlight_link = function(){};
 $('#1st_link').highlight_link();
 ```
 
-**>Để phương thức plugin trên có thể kết nối chúng ta thêm dòng mã trả về đối tượng jQuery gốc như sau**
+>**Để phương thức plugin trên có thể kết nối chúng ta thêm dòng mã trả về đối tượng jQuery gốc như sau**
 
 ```javascript
 $.fn.highlight_link = function() {
@@ -274,7 +274,9 @@ $.fn.highlight_link = function() {
     return this;
 }
 ```
-**>Đầu tiên ta thêm vào các tham số mặc định như sau:**
+
+>**Đầu tiên ta thêm vào các tham số mặc định như sau:**
+
 ```javascript
 (function($) {
   $.fn.highlight_link = function() {
@@ -298,7 +300,7 @@ $.fn.highlight_link = function() {
 }(jQuery));
 ```
 
-**>Chấp nhận các tham số người dùng truyền vào.**
+> **Chấp nhận các tham số người dùng truyền vào.**
 
 ```javascript
 (function($) {
