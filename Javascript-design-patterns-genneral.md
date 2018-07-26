@@ -16,7 +16,7 @@
   1. [Decorator Pattern](#decorator-pattern)
   1. [Flyweight Pattern](#flyweight-pattern)
 
-## Constructor Pattern
+## I. Constructor Pattern
 --- 
 **1. Object Creation**
 - Ba cách phổ biến để tạo các đối tượng mới trong JavaScript như sau:
@@ -100,7 +100,7 @@ var newObject = new Object();
 ```
 
 
-##III. Revealing Module Pattern
+## III. Revealing Module Pattern
 --- 
 **1. Object Creation**
 ```javascript
