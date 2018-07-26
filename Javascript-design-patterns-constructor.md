@@ -23,7 +23,7 @@ console.log(bird.about());// => Bird has 2 legs
 ```
 - Trong ví dụ trên, đối tượng sử dụng hàm khởi tạo **Animal** sẽ có 2 thuộc tính (name, leg) và 1 phương thức (about). Tuy nhiên, cách trên có nhược điểm là khó để kế thừa và phương thức about sẽ phải định nghĩa lại đối với mỗi đối tượng. Để khắc phục nhược điểm trên, ta có cách thứ hai là sử dụng **Prototypes**.
 
-**1. Constructor với Prototypes**
+**2. Constructor với Prototypes**
 --- 
 - Trong JavaScript, mọi object (bao gồm **function**) đều tồn tại thuộc tính **prototype** - cũng là một object. Khi sử dụng hàm khởi tạo để tạo mới một object, mọi thuộc tính trong **prototype** đều được kế thừa cho các đối tượng mới.
 
@@ -43,7 +43,7 @@ console.log(dog.about()); // => Dog has 4 legs
 console.log(bird.about());// => Bird has 2 legs
 ```
 
-**1. Constructor với từ khoá class**
+**3. Constructor với từ khoá class**
 --- 
 - Từ khoá **class** thực chất là một hàm số đặc biệt. Sử dụng **class** cho phép khởi tạo đối tượng mới một cách trực quan, và gần với khái niệm class trong các ngôn ngữ lập trình khác như C++, Java,...
 
