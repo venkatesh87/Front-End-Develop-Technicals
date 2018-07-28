@@ -18,6 +18,11 @@ npm install -g win-node-env
 
 ### II. App: React Universal Blog
 ---
+**Reference:**
+
+- https://www.sitepoint.com/building-a-react-universal-blog-app-a-step-by-step-guide/
+- https://github.com/sitepoint-editors/react-universal-blog
+
 **Getting Started**
 
 1. Node.js for package management and server-side rendering
