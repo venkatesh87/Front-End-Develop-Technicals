@@ -376,7 +376,7 @@ Gọi hàm componentWillUnmount()
 ### III. Vòng đời của một React Component
 ---
 
-[life-cycle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/life-cycle.png)
+![life-cycle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/life-cycle.png)
 
 **1. constructor(props)**
 
