@@ -18,14 +18,6 @@ npm install -g win-node-env
 
 ### II. App: React Universal Blog
 ---
-**1.**
-
-```javascript
-
-```
-
-### III. App: React Universal Blog
----
 **Getting Started**
 
 1. Node.js for package management and server-side rendering
@@ -35,6 +27,10 @@ npm install -g win-node-env
 5. React Hot Loader for hot loading in development
 6. Flux for data flow
 7. Cosmic JS for content management
+
+### III. App: React Universal Blog
+---
+**1.**
 
 ```javascript
 
