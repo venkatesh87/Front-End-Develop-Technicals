@@ -26,7 +26,7 @@ npm install -g win-node-env
 
 ### III. App: React Universal Blog
 ---
-**1. Getting Started**
+**Getting Started**
 
 1. Node.js for package management and server-side rendering
 2. React for UI views
