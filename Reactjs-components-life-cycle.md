@@ -2,8 +2,7 @@
 
 1. https://viblo.asia/p/vong-doi-cua-component-trong-react-gGJ59XaJlX2
 1. https://viblo.asia/p/vong-doi-cua-mot-component-trong-reactjs-voi-es6-aWj531qPZ6m
-1.
-1.
+1. https://viblo.asia/p/vong-doi-cua-mot-react-component-RQqKLMRzZ7z
 
 ### I. Vòng đời của component trong React
 ---
@@ -377,7 +376,7 @@ Gọi hàm componentWillUnmount()
 ### III. Vòng đời của một React Component
 ---
 
-[HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/life-cycle.png)
+[life-cycle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/life-cycle.png)
 
 **1. constructor(props)**
 
