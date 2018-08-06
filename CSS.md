@@ -12,6 +12,8 @@
 
 1. [Rule image css html](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Rule-image-css-html.md)
 
+1. [Css-shape-outside](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-shape-outside.md)
+
 ```javascripts 
 forgot~p 
 ```
