@@ -1,5 +1,5 @@
 ## Shape outside
-
+---
 **Referencer:**
 
 1. https://css-tricks.com/almanac/properties/s/shape-outside/
@@ -9,9 +9,6 @@
 
 ### I. Title
 ---
-**1. Mounting**
-
--  Content
 
 ![life-cycle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/life-cycle.png)
 
