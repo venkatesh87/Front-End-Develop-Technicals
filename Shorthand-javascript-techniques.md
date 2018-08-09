@@ -44,7 +44,7 @@ if (variable1 !== null || variable1 !== undefined || variable1 !== '') {
 }
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 var variable2 = variable1  || '';
@@ -83,7 +83,7 @@ skillSet['Javascript library'] = 'jQuery';
 skillSet['Other'] = 'Usability and accessibility';
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 var skillSet = {
@@ -187,7 +187,7 @@ if ( a != true ) {
 }
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 var a;
@@ -209,7 +209,7 @@ function myFunction( myString, myNumber, myObject, myArray, myBoolean ) {
 myFunction( "String", 1, [], {}, true );
 ```
 
-** Shorthand (looks long but only because I have console.log’s in there!):**
+**Shorthand (looks long but only because I have console.log’s in there!):**
 
 ```javascript
 function myFunction() {
@@ -231,7 +231,7 @@ myFunction( "String", 1, [], {}, true );
 for (var i = 0; i < allImgs.length; i++)
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 for(var i in allImgs)
@@ -260,7 +260,7 @@ function logArrayElements(element, index, array) {
 "myString".charAt(0);
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 "myString"[0]; // Returns 'm'
@@ -280,7 +280,7 @@ if (!(ret == undefined)) {
 }
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 return ret || fum('g2g');
@@ -305,7 +305,7 @@ if (z == 3) {
 
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 function x() {console.log('x')};function y() {console.log('y')};var z = 3;
@@ -339,7 +339,7 @@ switch (something) {
 
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 var cases = {
@@ -363,7 +363,7 @@ if (cases[something]) {
 for (var i = 0; i < 10000; i++) {
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 for (var i = 0; i < 1e7; i++) {
@@ -384,7 +384,7 @@ while (i & lt; 9) {
 
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 var i = 9;
@@ -411,7 +411,7 @@ while (i++) {
 if( myvar==1 || myvar==5 || myvar==7 || myvar==22 ) alert('yeah')
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 if([1,5,7,22].indexOf(myvar)!=-1) alert('yeah baby!')
@@ -438,7 +438,7 @@ if (type === 'aligator') {
 
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 var types = {
@@ -464,7 +464,7 @@ func();
 Math.floor(4.9) === 4  //true
 ```
 
-** Shorthand:**
+**Shorthand:**
 
 ```javascript
 ~~4.9 === 4  //true
