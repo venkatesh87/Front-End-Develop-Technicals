@@ -27,7 +27,7 @@ x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
 ```
 >**2. JavaScript Window Screen**
 
-- The window.screen object can be written without the window prefix.(Đối tượng window.screen có thể được viết mà không có tiền tố cửa sổ.)
+- The window.screen object can be written without the window prefix.(Đối tượng window.screen có thể được viết mà không có tiền tố ```window```.)
 
 ```javascript
 screen.width
