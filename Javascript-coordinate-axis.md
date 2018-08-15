@@ -1,4 +1,4 @@
-### I. JS Coordinate Axis
+### I. JS Coordinate Axis Tọa độ
 ---
 
 ### 1. Math.PI
