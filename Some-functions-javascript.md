@@ -162,3 +162,12 @@ function myFunction() {
 (((t = document.documentElement) || (t = document.body.parentNode))
   && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
   ```
+**10. requestAnimationFrame():** 
+
+- ```window.requestAnimationFrame(callback);```
+
+**11. cancelAnimationFrame():**
+
+- ```window.cancelAnimationFrame(requestID);```
+
+- 
