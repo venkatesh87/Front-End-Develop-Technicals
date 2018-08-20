@@ -157,6 +157,8 @@
 
 1. [W3schools](https://www.w3schools.com/js/)
 
+1. [Javascriptkit](http://www.javascriptkit.com/javatutors/)
+
 #### V. Tool Code Javascript Online
 ---
 
