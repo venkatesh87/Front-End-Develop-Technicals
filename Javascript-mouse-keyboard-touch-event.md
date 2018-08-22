@@ -692,3 +692,70 @@ if (window.PointerEvent) {
 }
 ```
 
+>**```mousewheel```**:
+
+- https://developer.mozilla.org/en-US/docs/Web/Events/wheel
+- http://bassta.bg/2013/05/smooth-page-scrolling-with-tweenmax/
+
+>**Smooth page scrolling with TweenMax**
+
+- Đầu tiên, chúng ta phải bao gồm jQuery, TweenMax và ScrollToPlugin. Chúng tôi đang thực hiện điều này thông qua CDN:
+- Hãy thiết lập một số biến:
+
+```
+var $window = $(window);
+var scrollTime = 1.2;
+var scrollDistance = 170;
+```
+- Biến đầu tiên là ```window object```. Chúng tôi cần cả hai để nghe nó cho sự kiện scroll(scroll event) và để tạo hiệu ứng cho nó. Biến ```scrollTime``` sẽ được sử dụng để xác định thời gian của animate và ```scrollDistance``` để tính toán số lượng cuộn.
+- Tiếp theo, chúng ta phải lắng nghe mouse scroll event:
+
+```javascript
+$window.on("mousewheel DOMMouseScroll", function(event){
+	event.preventDefault();	
+	var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+});
+```
+- Chúng tôi sử dụng ```event.preventDefault()``` để ngăn cuộn mặc định. Những gì chúng ta cần là delta sự kiện - nó sẽ cho chúng ta biết người dùng đã cuộn bao nhiêu. Khi chúng tôi biết điều này, chúng tôi có thể tính toán vị trí cửa sổ mới:
+
+```javascript
+var scrollTop = $window.scrollTop();
+var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+```
+
+- Chúng ta hãy tạo hiệu ứng cửa sổ cho vị trí mới này:
+
+```javascript
+TweenMax.to($window, scrollTime, {
+	scrollTo : { y: finalScroll, autoKill:true },
+	ease: Power1.easeOut,
+	overwrite: 5							
+});
+```
+
+- Đó là tất cả! Đây là mã cuối cùng:
+
+```javascript
+$(function(){	
+
+        var $window = $(window);
+	var scrollTime = 1.2;
+	var scrollDistance = 170;
+
+	$window.on("mousewheel DOMMouseScroll", function(event){
+
+		event.preventDefault();	
+
+		var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+		var scrollTop = $window.scrollTop();
+		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+		TweenMax.to($window, scrollTime, {
+			scrollTo : { y: finalScroll, autoKill:true },
+				ease: Power1.easeOut,
+				overwrite: 5							
+			});
+
+	});
+});
+```
