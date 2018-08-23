@@ -368,9 +368,4053 @@ $(document).ready(function() {
   + Chỉ cho hiển thị từ ban đầu phần catch copy, rồi dần dần image khác sẽ được hiện ra.
   + Nhờ các bạn nhận thức về phần Responsive, nhưng khi hiển thị Smartphone thì không hoạt động cũng được.
 - ![Image of Iwate](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-iwate.jpg)
+
+#### Version 1
+
+**>Demo 1**
+
 >JavaScript Code:
 ```javascript
+var header = document.getElementById('header');
+var logoCenter = document.querySelector('.logo_center');
+var Animation2 = {
+  init: function() {
+    header.addEventListener('webkitAnimationEnd', Animation2.ShowLogo);
+    header.addEventListener('animationend', Animation2.ShowLogo);
 
+    logoCenter.addEventListener('webkitAnimationEnd', Animation2.showGrid);
+    logoCenter.addEventListener('animationend', Animation2.showGrid);
+  },
+  prepareGrid: function(e) {
+    $('.frame').not('.logo_center').addClass('prepare');
+  },
+  showGrid: function(e) {
+    var arr = [];
+    for (var i = 0; i < $('.frame').length - 1; i++) {
+      arr[i] = i;
+    }
+    shuffle(arr);
+    $('.frame').each(function(index) {
+      $(this).find('img').css({
+        'animation-delay': (arr[index] * 120) + 'ms'
+      });
+      if (arr[index] == arr.length - 1) {
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.showEmergency);
+        $(this)[0].addEventListener('animationend', Animation2.showEmergency);
+
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.showMoutain);
+        $(this)[0].addEventListener('animationend', Animation2.showMoutain);
+
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.showCricle);
+        $(this)[0].addEventListener('animationend', Animation2.showCricle);
+
+        $('.menu_primary')[0].addEventListener('webkitAnimationEnd', Animation2.showPrimary);
+        $('.menu_primary')[0].addEventListener('animationend', Animation2.showPrimary);
+      }
+    });
+    setTimeout(function() {
+      $('.frame').not('.logo_center').addClass('start');
+      $('.frame').not('.logo_center').find('img').addClass('fadeIn')
+    }, 50)
+  },
+  ShowLogo: function() {
+    setTimeout(function() {
+      $('.logo_center').addClass('fadeIn');
+    }, 200)
+  },
+  showPrimary: function() {
+    setTimeout(function() {
+      $('.menu_primary .list').addClass('fadeInUpSmall');
+    }, 80)
+  },
+  showEmergency: function() {
+    $('.emergency_panel').addClass('fadeInDownSmall');
+  },
+  showMoutain: function() {
+    $('.menu_primary').addClass('showMoutain');
+  },
+  showCricle: function() {
+    $('.link_primary').addClass('active');
+    $('.link_cr').addClass('bounceIn');
+  }
+}
+$(window).on('load', function() {
+  Animation2.init();
+});
+
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
+```
+
+>CSS Code:
+```javascript
+#header {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  background-color: #ffffff;
+}
+
+.logo_center {
+  opacity: 0;
+}
+
+@keyframes logo {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.logo_center.active {
+  -webkit-animation-name: logo;
+  animation-name: logo;
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#frame-grid .logo_center a:before,
+#frame-grid .logo_center a:after {
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.frame:not(.logo_center) img {
+  opacity: 0;
+}
+
+.frame.start img {
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(.7, 0, .3, 1);
+  animation-duration: .9s;
+}
+
+.logo_center figure:before {
+  /* content: ''; */
+  position: absolute;
+  bottom: 15px;
+  width: 40px;
+  height: 375px;
+  left: 135px;
+  z-index: 9;
+  background-color: #ffffff;
+}
+
+.show_logo img {
+  opacity: 1;
+}
+
+.show_logo figure:before {
+  /*animation: show_text 2.4s 1;
+  -webkit-animation: show_text 2.4s 1;
+  -moz-animation: show_text 2.4s 1;
+  animation-fill-mode: forwards;*/
+}
+
+@keyframes show_text {
+  0% {
+    height: 375px;
+  }
+  50% {
+    height: 375px;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+}
+```
+>HTML Code:
+```javascript
+<div id="wrapper">
+  <header id="header" class="fadeInDown">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+            <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+          </picture>
+        </a>
+      </h1>
+      <ul class="navigation_sp">
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_marker">&nbsp;</i>
+            </span>
+            <span class="nav_text">アクセス</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_phone">&nbsp;</i>
+            </span>
+            <span class="nav_text">直通電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_nav">&nbsp;</i>
+            </span>
+            <span class="nav_text">メニュー</span>
+          </a>
+        </li>
+      </ul>
+      <div class="top_header">
+        <div class="search_panel">
+          <label>サイト内検索</label>
+          <div class="search_action">
+            <form class="search_form" action="" method="">
+              <input type="text" placeholder="Google カスタム検索">
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="setting">
+          <ul class="clearfix">
+            <li><a href="#">文字サイズ・色合い変更</a></li>
+            <li><a href="#">音声読み上げ</a></li>
+            <li><a href="#">Foreign Language</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end header-->
+  <main id="main-content">
+    <div class="container">
+      <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+      <div id="frame-grid-wrapper">
+        <div id="frame-grid">
+          <div class="emergency_panel clearfix">
+            <label>緊急情報</label>
+            <a href="#">弾道ミサイル落下時の行動等について</a>
+          </div>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame logo_center">
+            <a href="#">
+              <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+            </a>
+          </article>
+        </div>
+      </div>
+      <div class="link_primary">
+          <a href="#" class="link_cr">
+            <span class="icons_people">&nbsp;</span>
+            <span class="txt">県民向け<br/>
+            情報</span>
+          </a>
+          <a href="#" class="link_cr">
+            <span class="icons_build">&nbsp;</span>
+            <span class="txt">事業者<br/>
+            情報</span>
+          </a>
+          <a href="#" class="link_cr">
+            <span class="icons_camera">&nbsp;</span>
+            <span class="txt">魅力・観光<br/>
+            情報</span>
+          </a>
+        </div>
+        <div class="menu_primary">
+          <div class="list">
+            <a href="#"><span>復興のその先へ</span></a>
+            <a href="#"><span>移住定住応援</span></a>
+            <a href="#"><span>仕事・就職応援</span></a>
+          </div>
+        </div>
+        <div class="action_control">
+            <button class="button_slider button_play">PLAY</button>
+            <button class="button_slider button_pause">STOP</button>
+        </div>
+        <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+    </div>
+  </main>
+  <!--end main-->
+  <footer id="footer" class="fadeInUp">
+    <div class="footer_top">
+      <div class="container">
+        <h2 class="logo_footer">岩手県庁</h2>
+        <address class="address_footer">
+          <span>法人番号：4000020030007</span>
+          <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+          <span>電話番号：019-651-3111（総合案内）</span>
+        </address>
+      </div>
+    </div>
+    <div class="footer_copyright">
+      <div class="container"><p>Copyright © Iwate Prefecture Government All Rights Reserved.</p></div>
+    </div>
+  </footer>
+  <!--end footer-->
+</div>
+```
+
+**>Demo 2**
+
+>JavaScript Code:
+```javascript
+var logoCenter = document.querySelector('.logo_center'),
+  logoCenter_a = document.querySelector('.logo_center a'),
+  animationEndEvent = (function detectAnimationEndEvent() {
+    var el = document.createElement('div')
+    var eventNames = {
+      'animation': 'animationend',
+      'WebkitAnimation': 'webkitAnimationEnd',
+      'MozAnimation': 'animationend',
+      'OAnimation': 'oanimationend',
+      'msAnimation': 'MSAnimationEnd'
+    }
+    for (var i in eventNames) {
+      if (el.style[i] !== undefined) {
+        return eventNames[i]
+      }
+    }
+    return false
+  })(),
+  animationStartEvent = (function detectAnimationStartEvent() {
+    var el = document.createElement('div')
+    var eventNames = {
+      'animation': 'animationstart',
+      'WebkitAnimation': 'webkitAnimationStart',
+      'MozAnimation': 'animationstart',
+      'OAnimation': 'oanimationstart',
+      'msAnimation': 'MSAnimationStart'
+    }
+    for (var i in eventNames) {
+      if (el.style[i] !== undefined) {
+        return eventNames[i]
+      }
+    }
+    return false
+  })();
+var Animation2 = {
+  init: function() {
+    $('#wrapper').addClass('ready');
+    logoCenter_a.addEventListener(animationEndEvent, Animation2.showGrid);
+
+    logoCenter_a.addEventListener(animationStartEvent, Animation2.prepareGrid);
+
+    logoCenter_a.className += ' show_logo';
+
+    logoCenter.addEventListener(animationEndEvent, Animation2.showHeaderFooter);
+
+  },
+  prepareGrid: function(e) {
+    $('.frame').not('.logo_center').addClass('prepare');
+  },
+  showGrid: function(e) {
+    var arr = [];
+    for (var i = 0; i < $('.frame').length - 1; i++) {
+      arr[i] = i;
+    }
+    shuffle(arr);
+    $('.frame').not('.logo_center').each(function(index) {
+      $(this).find('img').css({
+        'animation-delay': (arr[index] * 200) + 'ms'
+      });
+      if (arr[index] == arr.length - 1) {
+
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.pulseLogo);
+        $(this)[0].addEventListener('animationend', Animation2.pulseLogo);
+
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.showEmergency);
+        $(this)[0].addEventListener('animationend', Animation2.showEmergency);
+
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.showMoutain);
+        $(this)[0].addEventListener('animationend', Animation2.showMoutain);
+
+        $(this)[0].addEventListener('webkitAnimationEnd', Animation2.showCricle);
+        $(this)[0].addEventListener('animationend', Animation2.showCricle);
+
+        $('.menu_primary')[0].addEventListener('webkitAnimationEnd', Animation2.showPrimary);
+        $('.menu_primary')[0].addEventListener('animationend', Animation2.showPrimary);
+
+      }
+    });
+    setTimeout(function() {
+      $('.frame').not('.logo_center').addClass('start');
+      $('.frame').not('.logo_center').find('img').addClass('zoomIn')
+    }, 400)
+  },
+  pulseLogo: function() {
+    $('.logo_center').addClass('pulse');
+  },
+  showHeaderFooter: function(e) {
+    if ($('.logo_center').hasClass('pulse')) {
+      $('#header').addClass('active');
+      $('#footer').addClass('active');
+    }
+  },
+  showPrimary: function() {
+    $('.menu_primary .list').addClass('fadeInUpSmall');
+  },
+  showEmergency: function() {
+    $('.emergency_panel').addClass('fadeInDownSmall');
+  },
+  showMoutain: function() {
+    $('.menu_primary').addClass('showMoutain');
+  },
+  showCricle: function() {
+    $('.link_primary').addClass('active');
+    $('.link_cr').addClass('bounceIn');
+  }
+}
+$(window).on('load', function() {
+  setTimeout(function() {
+    Animation2.init();
+  }, 400)
+});
+
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
+```
+>CSS Code:
+```javascript
+@media(min-width: 376px) {
+  /* Ready state */
+  #wrapper.ready #header {
+    transition: 0.6s ease all;
+    -webkit-transition: 0.6s ease all;
+    -moz-transition: 0.6s ease all;
+  }
+  #wrapper.ready #header .logo {
+    transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+    -moz-transition: 0.5s ease all;
+    /*     transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s; */
+  }
+  #wrapper.ready #header .logo img {
+    transition: opacity 0.3s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
+    -moz-transition: opacity 0.3s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
+    -webkit-transition: opacity 0.3s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
+    /*     transition-delay: 2s;
+    -webkit-transition-delay: 1.8s;
+    -o-transition-delay: 2s; */
+  }
+  #wrapper.ready #footer .footer_container {
+    transition: 0.6s ease all;
+    -webkit-transition: 0.6s ease all;
+    -moz-transition: 0.6s ease all;
+  }
+  #wrapper.ready .logo_center img {
+    -webkit-transition: 1s ease opacity;
+    -o-transition: 1s ease opacity;
+    transition: 1s ease opacity;
+  }
+  /* Header */
+  #header {
+    transform: translate(0, -101%);
+    -moz-transform: translate(0, -101%);
+    -webkit-transform: translate(0, -101%);
+    position: relative;
+    z-index: 99;
+  }
+  #header.active {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+  }
+  #header .logo {
+    background-color: #ffffff;
+    transform: translate(-50%, 0);
+    -moz-transform: translate(-5%, 0);
+    -webkit-transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  #header .logo img {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  #header.active .logo {
+    transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    opacity: 1;
+  }
+  #header.active .logo img {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  /* Footer */
+  #footer {
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+  }
+  #footer .footer_container {
+    transform: translate(0, 65px);
+    -moz-transform: translate(0, 65px);
+    -webkit-transform: translate(0, 65px);
+    opacity: 0;
+  }
+  #footer.active .footer_container {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    opacity: 1;
+  }
+  /* Grid */
+  #frame-grid .logo_center a:before {
+    background-position: right bottom;
+  }
+  #frame-grid .logo_center a:after {
+    background-position: left top;
+  }
+  #frame-grid .logo_center a:before,
+  #frame-grid .logo_center a:after {
+    width: 0;
+    -webkit-transition: 0.8s ease all;
+    -o-transition: 0.8s ease all;
+    transition: 0.8s ease all;
+  }
+  #frame-grid .logo_center.pulse a:before,
+  #frame-grid .logo_center.pulse a:after {
+    width: 58px;
+  }
+  .logo_center img {
+    opacity: 0;
+  }
+  .frame:not(.logo_center) img {
+    opacity: 0;
+  }
+  .frame.start img {
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 500ms;
+  }
+  .logo_center .light {
+    content: '';
+    position: absolute;
+    bottom: 15px;
+    width: 40px;
+    height: 375px;
+    left: 135px;
+    z-index: 9;
+    background-color: #ffffff;
+  }
+  .show_logo img {
+    opacity: 1;
+  }
+  .show_logo .light {
+    animation: show_text 2.4s 1;
+    -webkit-animation: show_text 2.4s 1;
+    -moz-animation: show_text 2.4s 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes show_text {
+    0% {
+      height: 375px;
+    }
+    50% {
+      height: 375px;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+
+  @-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+
+  @-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+  }
+}
+```
+>HTML Code:
+```javascript
+<div id="wrapper">
+  <header id="header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+            <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+          </picture>
+        </a>
+      </h1>
+      <ul class="navigation_sp">
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_marker">&nbsp;</i>
+            </span>
+            <span class="nav_text">アクセス</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_phone">&nbsp;</i>
+            </span>
+            <span class="nav_text">直通電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_nav">&nbsp;</i>
+            </span>
+            <span class="nav_text">メニュー</span>
+          </a>
+        </li>
+      </ul>
+      <div class="top_header">
+        <div class="search_panel">
+          <label>サイト内検索</label>
+          <div class="search_action">
+            <form class="search_form" action="" method="">
+              <input type="text" placeholder="Google カスタム検索">
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="setting">
+          <ul class="clearfix">
+            <li><a href="#">文字サイズ・色合い変更</a></li>
+            <li><a href="#">音声読み上げ</a></li>
+            <li><a href="#">Foreign Language</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end header-->
+  <main id="main-content">
+    <div class="container">
+      <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+      <div id="frame-grid-wrapper">
+        <div id="frame-grid">
+          <div class="emergency_panel clearfix">
+            <label>緊急情報</label>
+            <a href="#">弾道ミサイル落下時の行動等について</a>
+          </div>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame logo_center">
+            <a href="#">
+              <span class="light">&nbsp;</span>
+              <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="link_primary">
+      <a href="#" class="link_cr">
+        <span class="icons_people">&nbsp;</span>
+        <span class="txt">県民向け<br/>
+        情報</span>
+      </a>
+      <a href="#" class="link_cr">
+        <span class="icons_build">&nbsp;</span>
+        <span class="txt">事業者<br/>
+        情報</span>
+      </a>
+      <a href="#" class="link_cr">
+        <span class="icons_camera">&nbsp;</span>
+        <span class="txt">魅力・観光<br/>
+        情報</span>
+      </a>
+    </div>
+    <div class="menu_primary">
+      <div class="list">
+        <a href="#"><span>復興のその先へ</span></a>
+        <a href="#"><span>移住定住応援</span></a>
+        <a href="#"><span>仕事・就職応援</span></a>
+      </div>
+    </div>
+    <div class="action_control">
+        <button class="button_slider button_play">PLAY</button>
+        <button class="button_slider button_pause">STOP</button>
+    </div>
+    <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+  </main>
+  <!--end main-->
+  <footer id="footer">
+    <div class="footer_container">
+      <div class="footer_top">
+        <div class="container">
+          <h2 class="logo_footer">岩手県庁</h2>
+          <address class="address_footer">
+            <span>法人番号：4000020030007</span>
+            <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+            <span>電話番号：019-651-3111（総合案内）</span>
+          </address>
+        </div>
+      </div>
+      <div class="footer_copyright">
+        <div class="container"><p>Copyright © Iwate Prefecture Government All Rights Reserved.</p></div>
+      </div>
+    </div>
+  </footer>
+  <!--end footer-->
+</div>
+```
+
+**>Demo 3**
+
+>JavaScript Code:
+```javascript
+var page = 0;
+var photo_default_size = 18;
+var max_w_photos, max_h_photos;
+var gallery = $('#frame-grid');
+var win = $(window);
+var frame_item = document.querySelectorAll('#frame-grid .frame');
+var Gallery = {
+  Selector: {
+    loading: '.loading',
+    loading_wrap: '.loading-logo',
+    loading_outline: '.logo-outline'
+  },
+  init: function() {
+    Gallery.loadingScreen();
+  },
+  loadingScreen: function() {
+    $(window).on("resize", function() {
+      if ($(window).width() > 480) {
+        $(Gallery.Selector.loading_outline).removeAttr('style');
+        TweenLite.to($(".logo-outline"), 2, {
+          height: 0,
+          ease: Power1.easeInOut,
+          onComplete: function() {
+            TweenLite.to($(Gallery.Selector.loading), 1, {
+              yPercent: -100,
+              ease: Power2.easeInOut,
+              delay: 0.1,
+              onComplete: function() {
+                TweenLite.set($(Gallery.Selector.loading), { autoAlpha: 0, yPercent: 100 });
+                Gallery.header();
+                Gallery.footer();
+                setTimeout(function() {
+                  Gallery.showPhotos();
+                  $('.frame').eq(17).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showEmergency);
+
+                  $('.frame').eq(17).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showMoutain);
+
+                  $('.frame').eq(17).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showCricle);
+
+                  $('.menu_primary')[0].addEventListener('webkitAnimationEnd', Gallery.showPrimary);
+                  $('.menu_primary')[0].addEventListener('animationend', Gallery.showPrimary);
+
+                }, 350);
+              }
+            });
+          }
+        });
+      }
+    }).resize();
+    if ($(window).width() < 480) {
+      Gallery.header();
+      Gallery.footer();
+    }
+  },
+  header: function() {
+    $('#header').addClass('fadeInDown');
+  },
+  footer: function() {
+    $('#footer').addClass('fadeInUp');
+  },
+  logo: function() {
+
+  },
+  showPhotos: function() {
+    win.on('resize', function(e) {
+      var width = win.width(),
+        height = win.height();
+      // How many photos can we fit on one line?
+      max_w_photos = Math.ceil(width / photo_default_size);
+      // Let's do the same with the height:
+      max_h_photos = Math.ceil(height / photo_default_size);
+    }).resize();
+    // Animate the images from the top-left
+    var photos = gallery.find('.frame a img');
+    for (var i = 0; i < max_w_photos + max_h_photos; i++) {
+      var j = i;
+      // Loop through all the lines
+      for (var l = 0; l < max_h_photos; l++) {
+        // If the photo is not of the current line, stop.
+        if (j < l * max_w_photos) break;
+        // Schedule a timeout. It is wrapped in an anonymous
+        // function to preserve the value of the j variable
+        (function(j) {
+          setTimeout(function() {
+            photos.eq(j).addClass('show');
+            $(this).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.sknewLine);
+          }, i * 50);
+          if (l == max_w_photos - 1) {
+            $(this).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showEmergency);
+          }
+        })(j);
+        // Increment the counter so it points to the photo
+        // to the left on the line below
+        j += max_w_photos - 1;
+      }
+    }
+  },
+  showPrimary: function() {
+    $('.menu_primary .list').addClass('fadeInUpSmall');
+  },
+  showEmergency: function() {
+    $('.emergency_panel').addClass('fadeInDownSmall');
+  },
+  showMoutain: function() {
+    $('.menu_primary').addClass('showMoutain');
+  },
+  showCricle: function() {
+    $('.link_primary').addClass('active');
+    $('.link_cr').addClass('bounceIn');
+  },
+  sknewLine: function() {
+    setTimeout(function() {
+      $('.line_sknew').addClass('logo_center');
+    }, 500)
+  }
+}
+
+$(document).ready(function() {
+  Gallery.init();
+});
+```
+>CSS Code:
+```javascript
+@font-face {
+  font-family: 'a-otf_jomin_stdl';
+  src: url('/fonts/jominstd-light.woff2') format('woff2'),
+  url('/fonts/jominstd-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#header,
+#footer {
+  position: relative;
+  z-index: 50;
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#header .logo {
+  background-color: #ffffff;
+}
+
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.loading img {
+  max-width: inherit;
+}
+
+.loading .loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+
+.loading-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  -webkit-transform: translate(-50%, -70%);
+}
+
+.logo-outline {
+  position: absolute;
+  width: 230px;
+  height: 412px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+}
+
+.loadingtitle {
+  position: fixed;
+  font-family: 'a-otf_jomin_stdl';
+  font-size: 43px;
+  line-height: 45px;
+  width: 100%;
+  text-align: center;
+  top: 65vh;
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  color: #a7811a;
+  z-index: 105;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.loadingtitle span {
+  display: inline-block;
+  transform: translateY(24px);
+  -webkit-transform: translateY(24px);
+  /* opacity: 0;
+  visibility: hidden; */
+}
+
+.frame img {
+  /* opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); */
+  opacity: 0;
+  float: left;
+  background-size: cover;
+  background-position: center center;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.frame a img.show:hover {
+  opacity: 0.9 !important;
+}
+
+.frame a img.show {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@media(max-width: 480px) {
+  .loading {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+```
+
+>HTML Code:
+```javascript
+<div id="wrapper">
+  <div class="loading">
+    <div class="loading-logo">
+      <img src="img/front/loading.png" width="230" height="412" alt="ひと・まち・しあわせ輝く">
+      <div class="logo-outline">
+        <img src="img/front/loading-outline.png" width="230" height="412" alt="ひと・まち・しあわせ輝く">
+      </div>
+    </div>
+  </div>
+  <header id="header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+            <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+          </picture>
+        </a>
+      </h1>
+      <ul class="navigation_sp">
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_marker">&nbsp;</i>
+            </span>
+            <span class="nav_text">アクセス</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_phone">&nbsp;</i>
+            </span>
+            <span class="nav_text">直通電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_nav">&nbsp;</i>
+            </span>
+            <span class="nav_text">メニュー</span>
+          </a>
+        </li>
+      </ul>
+      <div class="top_header">
+        <div class="search_panel">
+          <label>サイト内検索</label>
+          <div class="search_action">
+            <form class="search_form" action="" method="">
+              <input type="text" placeholder="Google カスタム検索">
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="setting">
+          <ul class="clearfix">
+            <li><a href="#">文字サイズ・色合い変更</a></li>
+            <li><a href="#">音声読み上げ</a></li>
+            <li><a href="#">Foreign Language</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end header-->
+  <main id="main-content">
+    <div class="container">
+      <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+      <div id="frame-grid-wrapper">
+        <div id="frame-grid">
+          <div class="emergency_panel clearfix">
+            <label>緊急情報</label>
+            <a href="#">弾道ミサイル落下時の行動等について</a>
+          </div>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame line_sknew">
+            <a href="#">
+              <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+            </a>
+          </article>
+        </div>
+      </div>
+      <div class="link_primary">
+        <a href="#" class="link_cr">
+          <span class="icons_people">&nbsp;</span>
+          <span class="txt">県民向け<br/>
+          情報</span>
+        </a>
+        <a href="#" class="link_cr">
+          <span class="icons_build">&nbsp;</span>
+          <span class="txt">事業者<br/>
+          情報</span>
+        </a>
+        <a href="#" class="link_cr">
+          <span class="icons_camera">&nbsp;</span>
+          <span class="txt">魅力・観光<br/>
+          情報</span>
+        </a>
+      </div>
+      <div class="menu_primary">
+        <div class="list">
+          <a href="#"><span>復興のその先へ</span></a>
+          <a href="#"><span>移住定住応援</span></a>
+          <a href="#"><span>仕事・就職応援</span></a>
+        </div>
+      </div>
+      <div class="action_control">
+        <button class="button_slider button_play">PLAY</button>
+        <button class="button_slider button_pause">STOP</button>
+      </div>
+      <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+    </div>
+  </main>
+  <!--end main-->
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="container">
+        <h2 class="logo_footer">岩手県庁</h2>
+        <address class="address_footer">
+          <span>法人番号：4000020030007</span>
+          <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+          <span>電話番号：019-651-3111（総合案内）</span>
+        </address>
+      </div>
+    </div>
+    <div class="footer_copyright">
+      <div class="container">
+        <p>Copyright © Iwate Prefecture Government All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!--end footer-->
+</div>
+```
+
+**Scale Wrapper**
+
+```javascript
+var ScaleIsotope = {
+	wrapper : $('#frame-grid-wrapper'),
+	child : $('#frame-grid'),
+	keep_width: 1624,
+	calculate : function () {
+		if ($(window).width() > 480){
+			if (ScaleIsotope.wrapper.width() < ScaleIsotope.keep_width){
+				var scale = ScaleIsotope.wrapper.width() / ScaleIsotope.keep_width,
+					height = ScaleIsotope.child.height() * scale;
+				console.log(scale);
+				console.log(ScaleIsotope.child.height());
+				ScaleIsotope.child.css({
+					'transform' : 'scale(' + scale + ')'
+				});
+				ScaleIsotope.wrapper.css({
+					'height' : height + 1
+				})
+			}else{
+				ScaleIsotope.child.css({
+					'transform' : 'scale(1)'
+				});
+				ScaleIsotope.wrapper.css({
+					'height' : 'auto'
+				})
+			}
+		}else{
+			ScaleIsotope.child.css({
+				'transform' : 'scale(1)'
+			});
+			ScaleIsotope.wrapper.css({
+				'height' : 'auto'
+			})
+		}
+	}
+}
+
+$(window).on('load',function () {
+	var grid = $('#frame-grid').isotope({
+		itemSelector: '.frame',
+	})
+	ScaleIsotope.calculate();
+});
+
+$(window).on('resize',function() {
+	ScaleIsotope.calculate();
+})
+```
+
+#### Version 2
+
+**>Demo 1**
+
+>JavaScript Code:
+```javascript
+var tw = new TimelineMax(),
+  tw2 = new TimelineMax(),
+  control = $('#btn_animation_control'),
+  Animation = {
+    handle: {
+      main: new TimelineMax(),
+      two: new TimelineMax(),
+      dot: new TimelineMax(),
+      image: new Array(),
+    },
+    control: $('#btn_animation_control'),
+    init: function() {
+      Animation.show_header_and_footer();
+      Animation.logo_center();
+      Animation.control.on('click', Animation.control_handle);
+    },
+    //Show logo
+    logo_center: function() {
+      Animation.handle.main.to('.logo_center', 1.5, {
+        opacity: 1,
+        ease: Power2.easeIn,
+        onComplete: function() {
+          Animation.grid();
+        }
+      });
+    },
+    // Show grid
+    grid: function() {
+      var arr = [];
+      for (var i = 0; i < $('.frame').length - 1; i++) {
+        arr[i] = i;
+      }
+      shuffle(arr);
+      for (var j = 0; j < arr.length; j++) {
+        Animation.handle.image[j] = new TimelineMax();
+        Animation.show_image(Animation.handle.image[j], $('.frame').not('.logo_center').eq(arr[j]).find('img'), j);
+      }
+    },
+    show_image: function(tw, selector, index) {
+      var position = {
+        time: 0,
+      }
+      tw.delay(index * 0.2).to(position, 0.4, {
+        time: 1,
+        ease: Power2.easeIn,
+        onUpdate: function() {
+          selector.css({
+            'opacity': position.time,
+          })
+        },
+        onComplete: function() {
+          if (index == $('.frame').length - 2) {
+            Animation.show_inside_content();
+          }
+        }
+      });
+    },
+    show_inside_content: function() {
+      var position = {
+        height: 0,
+        emergency_y: -30,
+        emergency_opacity: 0,
+      };
+      Animation.handle.main.to(position, 0.6, {
+        height: 145,
+        emergency_y: 0,
+        emergency_opacity: 1,
+        ease: Power2.easeOut,
+        onUpdate: function() {
+          $('.menu_primary').css({
+            'height': position.height,
+          });
+          $('.emergency_panel').css({
+            '-webkit-transform': 'translate3d(0,' + position.emergency_y + '%,0)',
+            'transform': 'translate3d(0,' + position.emergency_y + '%,0)',
+            'opacity': position.emergency_opacity
+          });
+        },
+        onStart: function() {
+          $('.link_primary').css({
+            'opacity': 1
+          });
+          Animation.bounce(Animation.handle.dot, $('.link_primary .link_cr'));
+        }
+      });
+      Animation.show_three_btn();
+    },
+    show_three_btn: function() {
+      var position = {
+        y: 40,
+        opacity: 0
+      };
+      Animation.handle.main.to(position, 0.4, {
+        y: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('.menu_primary .list').css({
+            '-webkit-transform': 'translate3d(0,' + position.y + '%,0)',
+            'transform': 'translate3d(0,' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+        },
+        onComplete: function() {
+          $('#btn_animation_control').attr('disabled', true);
+        }
+      });
+    },
+    show_header_and_footer: function() {
+      var position = {
+        y: 101,
+        opacity: 0
+      };
+      Animation.handle.main.to(position, 0.5, {
+        y: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('#footer').css({
+            '-webkit-transform': 'translate3d(0,' + position.y + '%,0)',
+            'transform': 'translate3d(0,' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+          $('#header').css({
+            '-webkit-transform': 'translate3d(0,-' + position.y + '%,0)',
+            'transform': 'translate3d(0,-' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+        }
+      });
+    },
+    show_logo: function() {
+      var position = {
+          x: -50,
+          opacity: 0
+        },
+        img_pos = {
+          scale: 1.2,
+          opacity: 0
+        };
+      Animation.handle.main.to(position, 0.5, {
+        x: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('#header .logo').css({
+            '-webkit-transform': 'translate3d(' + position.x + '%,0,0)',
+            'transform': 'translate3d(' + position.x + '%,0,0)',
+            'opacity': position.opacity
+          });
+        }
+      });
+      Animation.handle.main.to(img_pos, 0.5, {
+        scale: 1,
+        opacity: 1,
+        onUpdate: function() {
+          $('#header .logo img').css({
+            '-webkit-transform': 'scale3d(' + img_pos.scale + ',' + img_pos.scale + ',' + img_pos.scale + ')',
+            'transform': 'scale3d(' + img_pos.scale + ',' + img_pos.scale + ',' + img_pos.scale + ')',
+            'opacity': img_pos.opacity
+          });
+        }
+      });
+    },
+    // Handle control
+    bounce: function(tw, selector) {
+
+      tw.to(selector, 0.01, {
+        scale: 0.5,
+        ease: Elastic.easeOut.config(1, 0.3),
+        onUpdate: function() {
+          selector.css({
+            'opacity': 1
+          })
+        }
+      });
+      tw.to(selector, 0.02, { scale: 1.8, delay: 0.02, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.04, { scale: 1.2, delay: 0.02, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.02, { scale: 2.8, delay: 0.03, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.04, { scale: 1.6, delay: 0.01, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.02, { scale: 1, delay: 0.01, ease: Elastic.easeOut.config(1, 0.3) });
+    },
+    control_handle: function() {
+      Animation.handle.main.paused(!Animation.handle.main.paused());
+      Animation.handle.two.paused(!Animation.handle.two.paused());
+      Animation.handle.dot.paused(!Animation.handle.dot.paused());
+      for (var i = 0; i < Animation.handle.image.length; i++) {
+        Animation.handle.image[i].paused(!Animation.handle.image[i].paused());
+      }
+      Animation.control.text(Animation.handle.main.paused() ? "PLAY" : "STOP");
+      Animation.control.toggleClass('button_pause');
+      Animation.control.toggleClass('button_play');
+    },
+  };
+
+$(window).on('load', function() {
+  Animation.init();
+});
+
+function getCurrentPositionByTime(start, end, start_time, end_time, current_time) {
+  return start + (end - start) * current_time / (end_time - start_time);
+}
+
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
+```
+
+>CSS Code:
+```javascript
+@media (min-width: 376px) {
+  #header {
+    position: relative;
+    z-index: 1;
+    transform: translate(0, -101%);
+    -moz-transform: translate(0, -101%);
+    -webkit-transform: translate(0, -101%);
+    opacity: 0;
+  }
+  #footer {
+    opacity: 0;
+    transform: translate3d(0, 101%, 0);
+    -webkit-transform: translate3d(0, 101%, 0);
+  }
+  .logo {
+    background-color: #ffffff;
+  }
+  .logo_center {
+    opacity: 0;
+  }
+  @keyframes logo {
+    0% {
+      opacity: 0;
+      transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      -moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .logo_center.active {
+    -webkit-animation-name: logo;
+    animation-name: logo;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  #frame-grid .logo_center a:before,
+  #frame-grid .logo_center a:after {
+    -webkit-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+  }
+  .frame:not(.logo_center) img {
+    opacity: 0;
+  }
+  .frame.start img {
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.7, 0, .3, 1);
+    animation-duration: .9s;
+  }
+  .logo_center figure:before {
+    /* content: ''; */
+    position: absolute;
+    bottom: 15px;
+    width: 40px;
+    height: 375px;
+    left: 135px;
+    z-index: 9;
+    background-color: #ffffff;
+  }
+
+  .show_logo img {
+    opacity: 1;
+  }
+  .show_logo figure:before {
+    /*animation: show_text 2.4s 1;
+    -webkit-animation: show_text 2.4s 1;
+    -moz-animation: show_text 2.4s 1;
+    animation-fill-mode: forwards;*/
+  }
+
+  @keyframes show_text {
+    0% {
+      height: 375px;
+    }
+    50% {
+      height: 375px;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+
+  @-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+  }
+}
+```
+
+>HTML Code:
+```javascript
+<div id="wrapper">
+  <header id="header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+            <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+          </picture>
+        </a>
+      </h1>
+      <ul class="navigation_sp">
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_marker">&nbsp;</i>
+            </span>
+            <span class="nav_text">アクセス</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_phone">&nbsp;</i>
+            </span>
+            <span class="nav_text">直通電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_nav">&nbsp;</i>
+            </span>
+            <span class="nav_text">メニュー</span>
+          </a>
+        </li>
+      </ul>
+      <div class="top_header">
+        <div class="search_panel">
+          <label>サイト内検索</label>
+          <div class="search_action">
+            <form class="search_form" action="" method="">
+              <input type="text" placeholder="Google カスタム検索">
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="setting">
+          <ul class="clearfix">
+            <li><a href="#">文字サイズ・色合い変更</a></li>
+            <li><a href="#">音声読み上げ</a></li>
+            <li><a href="#">Foreign Language</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end header-->
+  <main id="main-content">
+    <div class="container">
+      <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+      <div id="frame-grid-wrapper">
+        <div id="frame-grid">
+          <div class="emergency_panel clearfix">
+            <label>緊急情報</label>
+            <a href="#">弾道ミサイル落下時の行動等について</a>
+          </div>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame logo_center">
+            <a href="#">
+              <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+            </a>
+          </article>
+        </div>
+      </div>
+      <div class="link_primary">
+          <a href="#" class="link_cr">
+            <span class="icons_people">&nbsp;</span>
+            <span class="txt">県民向け<br/>
+            情報</span>
+          </a>
+          <a href="#" class="link_cr">
+            <span class="icons_build">&nbsp;</span>
+            <span class="txt">事業者<br/>
+            情報</span>
+          </a>
+          <a href="#" class="link_cr">
+            <span class="icons_camera">&nbsp;</span>
+            <span class="txt">魅力・観光<br/>
+            情報</span>
+          </a>
+        </div>
+        <div class="menu_primary">
+          <div class="list">
+            <a href="#"><span>復興のその先へ</span></a>
+            <a href="#"><span>移住定住応援</span></a>
+            <a href="#"><span>仕事・就職応援</span></a>
+          </div>
+        </div>
+        <div class="action_control">
+            <button id="btn_animation_control" class="button_slider button_pause">STOP</button>
+        </div>
+        <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+    </div>
+  </main>
+  <!--end main-->
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="container">
+        <h2 class="logo_footer">岩手県庁</h2>
+        <address class="address_footer">
+          <span>法人番号：4000020030007</span>
+          <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+          <span>電話番号：019-651-3111（総合案内）</span>
+        </address>
+      </div>
+    </div>
+    <div class="footer_copyright">
+      <div class="container"><p>Copyright © Iwate Prefecture Government All Rights Reserved.</p></div>
+    </div>
+  </footer>
+  <!--end footer-->
+</div>
+```
+
+**>Demo 2**
+
+>JavaScript Code:
+```javascript
+var tw = new TimelineMax(),
+  tw2 = new TimelineMax(),
+  control = $('#btn_animation_control'),
+  Animation = {
+    handle: {
+      main: new TimelineMax(),
+      two: new TimelineMax(),
+      dot: new TimelineMax(),
+      image: new Array(),
+    },
+    control: $('#btn_animation_control'),
+    init: function() {
+      Animation.start();
+      Animation.control.on('click', Animation.control_handle);
+    },
+    //Show logo
+    start: function() {
+      Animation.handle.main.to('.logo_center', 1.5, {
+        opacity: 1,
+        ease: Power2.easeIn,
+        onComplete: function() {
+          Animation.grid();
+        }
+      });
+    },
+    // Show grid
+    grid: function() {
+      var arr = [];
+      for (var i = 0; i < $('.frame').length - 1; i++) {
+        arr[i] = i;
+      }
+      shuffle(arr);
+      for (var j = 0; j < arr.length; j++) {
+        Animation.handle.image[j] = new TimelineMax();
+        Animation.show_image(Animation.handle.image[j], $('.frame').not('.logo_center').eq(arr[j]).find('img'), j);
+      }
+    },
+    show_image: function(tw, selector, index) {
+      var position = {
+        time: 0,
+        zoom: 0.3
+      }
+      tw.delay(index * 0.2).to(position, 0.4, {
+        time: 1,
+        zoom: 1,
+        ease: Power2.easeOut,
+        onUpdate: function() {
+          selector.css({
+            'opacity': position.time,
+            '-webkit-transform': 'scale3d(' + position.zoom + ',' + position.zoom + ',' + position.zoom + ')',
+            'transform': 'scale3d(' + position.zoom + ',' + position.zoom + ',' + position.zoom + ')',
+          })
+        },
+        onComplete: function() {
+          if (index == $('.frame').length - 2) {
+            Animation.pulse_logo();
+          }
+        }
+      });
+    },
+    pulse_logo: function() {
+      var position = {
+        zoom: 100
+      }
+      Animation.handle.main.to(position, 0.4, {
+        zoom: 105,
+        ease: Power2.easeOut,
+        onStart: function() {
+          Animation.handle.two.to(".logo_center .skew", 0.8, {
+            width: 58,
+            ease: Power2.easeOut
+          })
+        },
+        onUpdate: function() {
+          var zoom = position.zoom / 100;
+          $('.logo_center').css({
+            '-webkit-transform': 'scale3d(' + zoom + ',' + zoom + ',' + zoom + ')',
+            'transform': 'scale3d(' + zoom + ',' + zoom + ',' + zoom + ')',
+          });
+        }
+      });
+      Animation.handle.main.to(position, 0.4, {
+        zoom: 100,
+        ease: Power2.easeOut,
+        onUpdate: function() {
+          var zoom = position.zoom / 100;
+          $('.logo_center').css({
+            '-webkit-transform': 'scale3d(' + zoom + ',' + zoom + ',' + zoom + ')',
+            'transform': 'scale3d(' + zoom + ',' + zoom + ',' + zoom + ')',
+          });
+        }
+      });
+      Animation.show_inside_content();
+    },
+    show_inside_content: function() {
+      var position = {
+        height: 0,
+        emergency_y: -30,
+        emergency_opacity: 0,
+      };
+      Animation.handle.main.to(position, 0.6, {
+        height: 145,
+        emergency_y: 0,
+        emergency_opacity: 1,
+        ease: Power2.easeOut,
+        onUpdate: function() {
+          $('.menu_primary').css({
+            'height': position.height,
+          });
+          $('.emergency_panel').css({
+            '-webkit-transform': 'translate3d(0,' + position.emergency_y + '%,0)',
+            'transform': 'translate3d(0,' + position.emergency_y + '%,0)',
+            'opacity': position.emergency_opacity
+          });
+        },
+        onStart: function() {
+          $('.link_primary').css({
+            'opacity': 1
+          });
+          Animation.bounce(Animation.handle.dot, $('.link_primary .link_cr'));
+        }
+      });
+      Animation.show_three_btn();
+    },
+    show_three_btn: function() {
+      var position = {
+        y: 40,
+        opacity: 0
+      };
+      Animation.handle.main.to(position, 0.4, {
+        y: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('.menu_primary .list').css({
+            '-webkit-transform': 'translate3d(0,' + position.y + '%,0)',
+            'transform': 'translate3d(0,' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+        }
+      });
+      Animation.show_header_and_footer();
+    },
+    show_header_and_footer: function() {
+      var position = {
+        y: 101,
+        opacity: 0
+      };
+      Animation.handle.main.to(position, 0.5, {
+        y: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('#footer').css({
+            '-webkit-transform': 'translate3d(0,' + position.y + '%,0)',
+            'transform': 'translate3d(0,' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+          $('#header').css({
+            '-webkit-transform': 'translate3d(0,-' + position.y + '%,0)',
+            'transform': 'translate3d(0,-' + position.y + '%,0)',
+          });
+        }
+      });
+      Animation.show_logo();
+    },
+    show_logo: function() {
+      var position = {
+          x: -50,
+          opacity: 0
+        },
+        img_pos = {
+          scale: 1.2,
+          opacity: 0
+        };
+      Animation.handle.main.to(position, 0.5, {
+        x: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('#header .logo').css({
+            '-webkit-transform': 'translate3d(' + position.x + '%,0,0)',
+            'transform': 'translate3d(' + position.x + '%,0,0)',
+            'opacity': position.opacity
+          });
+        }
+      });
+      Animation.handle.main.to(img_pos, 0.5, {
+        scale: 1,
+        opacity: 1,
+        onUpdate: function() {
+          $('#header .logo img').css({
+            '-webkit-transform': 'scale3d(' + img_pos.scale + ',' + img_pos.scale + ',' + img_pos.scale + ')',
+            'transform': 'scale3d(' + img_pos.scale + ',' + img_pos.scale + ',' + img_pos.scale + ')',
+            'opacity': img_pos.opacity
+          });
+        },
+        onComplete: function() {
+          $('#btn_animation_control').attr('disabled', true);
+        }
+      });
+    },
+    // Handle control
+    bounce: function(tw, selector) {
+      var position = {
+        percent: 0
+      }
+      // tw.to(position,0.3,{
+      // 	percent: 100,
+      // 	onUpdate: function(){
+      // 		var scale = 1,
+      // 			opacity = 1;
+      // 		if (position.percent <= 20){
+      // 			scale = getCurrentPositionByTime(0.3,1.1,0,20,position.percent);
+      // 		}else if (position.percent <= 40){
+      // 			scale = getCurrentPositionByTime(1.1,0.9,20,40,position.percent);
+      // 		}else if (position.percent <= 60){
+      // 			scale = getCurrentPositionByTime(0.9,1.03,40,60,position.percent);
+      // 		}else if (position.percent <= 80){
+      // 			scale = getCurrentPositionByTime(1.03,0.97,60,80,position.percent);
+      // 		}else if (position.percent < 100){
+      // 			scale = getCurrentPositionByTime(0.97,1,80,100,position.percent);
+      // 		}
+      // 		if (position.percent < 60){
+      // 			opacity = getCurrentPositionByTime(0,1,0,60,position.percent);
+      // 		}
+      // 		selector.css({
+      // 			'-webkit-transform': 'scale3d('+scale+','+scale+','+scale+')',
+      // 			'transform': 'scale3d('+scale+','+scale+','+scale+')',
+      // 			'opacity': opacity
+      // 		})
+      // 	}
+      // })
+      tw.to(selector, 0.01, {
+        scale: 0.5,
+        ease: Elastic.easeOut.config(1, 0.3),
+        onUpdate: function() {
+          selector.css({
+            'opacity': 1
+          })
+        }
+      });
+      tw.to(selector, 0.02, { scale: 1.8, delay: 0.02, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.04, { scale: 1.2, delay: 0.02, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.02, { scale: 2.8, delay: 0.03, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.04, { scale: 1.6, delay: 0.01, ease: Elastic.easeOut.config(1, 0.3) });
+      tw.to(selector, 0.02, { scale: 1, delay: 0.01, ease: Elastic.easeOut.config(1, 0.3) });
+    },
+    control_handle: function() {
+      Animation.handle.main.paused(!Animation.handle.main.paused());
+      Animation.handle.two.paused(!Animation.handle.two.paused());
+      Animation.handle.dot.paused(!Animation.handle.dot.paused());
+      for (var i = 0; i < Animation.handle.image.length; i++) {
+        Animation.handle.image[i].paused(!Animation.handle.image[i].paused());
+      }
+      Animation.control.text(Animation.handle.main.paused() ? "PLAY" : "STOP");
+      Animation.control.toggleClass('button_pause');
+      Animation.control.toggleClass('button_play');
+    },
+  };
+
+$(window).on('load', function() {
+  Animation.init();
+});
+
+function getCurrentPositionByTime(start, end, start_time, end_time, current_time) {
+  return start + (end - start) * current_time / (end_time - start_time);
+}
+
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
+```
+
+>CSS Code:
+```javascript
+@media(min-width: 376px) {
+  /* Ready state */
+  #wrapper.ready #header {
+    transition: 0.6s ease all;
+    -webkit-transition: 0.6s ease all;
+    -moz-transition: 0.6s ease all;
+  }
+  #wrapper.ready #header .logo {
+    transition: 0.5s ease all;
+    -webkit-transition: 0.5s ease all;
+    -moz-transition: 0.5s ease all;
+    /*     transition-delay: 1s;
+    -webkit-transition-delay: 1s;
+    -o-transition-delay: 1s; */
+  }
+  #wrapper.ready #header .logo img {
+    transition: opacity 0.3s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
+    -moz-transition: opacity 0.3s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
+    -webkit-transition: opacity 0.3s ease-in-out 0.5s, transform 0.3s ease-in-out 0.5s;
+    /*     transition-delay: 2s;
+    -webkit-transition-delay: 1.8s;
+    -o-transition-delay: 2s; */
+  }
+  #wrapper.ready #footer .footer_container {
+    transition: 0.6s ease all;
+    -webkit-transition: 0.6s ease all;
+    -moz-transition: 0.6s ease all;
+  }
+  #wrapper.ready .logo_center img {
+    -webkit-transition: 1s ease opacity;
+    -o-transition: 1s ease opacity;
+    transition: 1s ease opacity;
+  }
+  /* Header */
+  #header {
+    transform: translate(0, -101%);
+    -moz-transform: translate(0, -101%);
+    -webkit-transform: translate(0, -101%);
+    position: relative;
+    z-index: 99;
+  }
+  #header.active {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+  }
+  #header .logo {
+    background-color: #ffffff;
+    transform: translate(-50%, 0);
+    -moz-transform: translate(-5%, 0);
+    -webkit-transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  #header .logo img {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    -moz-opacity: 0;
+    -khtml-opacity: 0;
+    opacity: 0;
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+  #header.active .logo {
+    transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    opacity: 1;
+  }
+  #header.active .logo img {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    -moz-opacity: 1;
+    -khtml-opacity: 1;
+    opacity: 1;
+    transform: scale(1);
+    -moz-transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  /* Footer */
+  #footer {
+    position: relative;
+    z-index: 99;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(0, 101%, 0);
+    -webkit-transform: translate3d(0, 101%, 0);
+  }
+  /* Grid */
+  #frame-grid .logo_center .top_skew,
+  #frame-grid .logo_center a:before {
+    background-position: right bottom;
+  }
+  #frame-grid .logo_center .bottom_skew,
+  #frame-grid .logo_center a:after {
+    background-position: left top;
+  }
+  #frame-grid .logo_center .skew {
+    width: 0;
+  }
+  #frame-grid .logo_center a:before,
+  #frame-grid .logo_center a:after {
+    width: 0;
+    -webkit-transition: 0.8s ease all;
+    -o-transition: 0.8s ease all;
+    transition: 0.8s ease all;
+  }
+  #frame-grid .logo_center.pulse a:before,
+  #frame-grid .logo_center.pulse a:after {
+    width: 58px;
+  }
+  #frame-grid .logo_center {
+    opacity: 0;
+  }
+  #frame-grid .frame:not(.logo_center) img {
+    opacity: 0;
+  }
+  .frame.start img {
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-duration: 500ms;
+  }
+  .show_logo img {
+    opacity: 1;
+  }
+  .show_logo .light {
+    animation: show_text 2.4s 1;
+    -webkit-animation: show_text 2.4s 1;
+    -moz-animation: show_text 2.4s 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes show_text {
+    0% {
+      height: 375px;
+    }
+    50% {
+      height: 375px;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+
+  @-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+
+  @-webkit-keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      -webkit-transform: scale3d(0.3, 0.3, 0.3);
+      transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .zoomIn {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+  }
+}
+```
+
+>HTML Code:
+```javascript
+<div id="wrapper">
+  <header id="header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+            <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+          </picture>
+        </a>
+      </h1>
+      <ul class="navigation_sp">
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_marker">&nbsp;</i>
+            </span>
+            <span class="nav_text">アクセス</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_phone">&nbsp;</i>
+            </span>
+            <span class="nav_text">直通電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_nav">&nbsp;</i>
+            </span>
+            <span class="nav_text">メニュー</span>
+          </a>
+        </li>
+      </ul>
+      <div class="top_header">
+        <div class="search_panel">
+          <label>サイト内検索</label>
+          <div class="search_action">
+            <form class="search_form" action="" method="">
+              <input type="text" placeholder="Google カスタム検索">
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="setting">
+          <ul class="clearfix">
+            <li><a href="#">文字サイズ・色合い変更</a></li>
+            <li><a href="#">音声読み上げ</a></li>
+            <li><a href="#">Foreign Language</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end header-->
+  <main id="main-content">
+    <div class="container">
+      <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+      <div id="frame-grid-wrapper">
+        <div id="frame-grid">
+          <div class="emergency_panel clearfix">
+            <label>緊急情報</label>
+            <a href="#">弾道ミサイル落下時の行動等について</a>
+          </div>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame logo_center">
+            <a href="#">
+              <span class="skew top_skew"></span>
+              <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+              <span class="skew bottom_skew"></span>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame double">
+            <a href="#">
+              <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+            </a>
+          </article>
+        </div>
+      </div>
+    </div>
+    <div class="link_primary">
+      <a href="#" class="link_cr">
+        <span class="icons_people">&nbsp;</span>
+        <span class="txt">県民向け<br/>
+        情報</span>
+      </a>
+      <a href="#" class="link_cr">
+        <span class="icons_build">&nbsp;</span>
+        <span class="txt">事業者<br/>
+        情報</span>
+      </a>
+      <a href="#" class="link_cr">
+        <span class="icons_camera">&nbsp;</span>
+        <span class="txt">魅力・観光<br/>
+        情報</span>
+      </a>
+    </div>
+    <div class="menu_primary">
+      <div class="list">
+        <a href="#"><span>復興のその先へ</span></a>
+        <a href="#"><span>移住定住応援</span></a>
+        <a href="#"><span>仕事・就職応援</span></a>
+      </div>
+    </div>
+    <div class="action_control">
+      <button id="btn_animation_control" class="button_slider button_pause">STOP</button>
+    </div>
+    <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+  </main>
+  <!--end main-->
+  <footer id="footer">
+    <div class="footer_container">
+      <div class="footer_top">
+        <div class="container">
+          <h2 class="logo_footer">岩手県庁</h2>
+          <address class="address_footer">
+            <span>法人番号：4000020030007</span>
+            <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+            <span>電話番号：019-651-3111（総合案内）</span>
+          </address>
+        </div>
+      </div>
+      <div class="footer_copyright">
+        <div class="container">
+          <p>Copyright © Iwate Prefecture Government All Rights Reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--end footer-->
+</div>
+```
+
+**>Demo 3**
+
+>JavaScript Code:
+```javascript
+var page = 0;
+var gallery = $('#frame-grid');
+var frame_item = document.querySelectorAll('#frame-grid .frame');
+var Gallery = {
+  Selector: {
+    loading: '.loading',
+    loading_wrap: '.loading-logo',
+    loading_outline: '.logo-outline'
+  },
+  init: function() {
+    Gallery.loadingScreen();
+  },
+  loadingScreen: function() {
+    if ($(window).width() > 480) {
+      $(Gallery.Selector.loading_outline).removeAttr('style');
+      TweenLite.to($(".logo-outline"), 1.5, {
+        height: 0,
+        ease: Power1.easeInOut,
+        onComplete: function() {
+          TweenLite.to($(Gallery.Selector.loading), 0.3, {
+            yPercent: -100,
+            ease: Power1.easeInOut,
+            delay: 0.05,
+            onComplete: function() {
+              TweenLite.set($(Gallery.Selector.loading), { autoAlpha: 0, yPercent: 100 });
+              setTimeout(function() {
+                Gallery.execute();
+              }, 200);
+            }
+          });
+        }
+      });
+    } else {
+      Gallery.execute();
+    }
+  },
+  header: function() {
+    $('#header').addClass('fadeInDown');
+  },
+  footer: function() {
+    $('#footer').addClass('fadeInUp');
+  },
+  logo: function() {
+
+  },
+  showPhotos: function() {
+    // Animate the images from the top-left
+    var photos = gallery.find('.frame a');
+    console.log($('.frame').length);
+    for (var j = 0; j < $('.frame').length; j++) {
+      (function(j) {
+        setTimeout(function() {
+          photos.eq(j).addClass('show');
+        }, j * 40);
+      })(j);
+    }
+  },
+  showPrimary: function() {
+    $('.menu_primary .list').addClass('fadeInUpSmall');
+  },
+  showEmergency: function() {
+    $('.emergency_panel').addClass('fadeInDownSmall');
+  },
+  showMoutain: function() {
+    $('.menu_primary').addClass('showMoutain');
+  },
+  showCricle: function() {
+    $('.link_primary').addClass('active');
+    $('.link_cr').addClass('bounceIn');
+  },
+  execute: function() {
+    Gallery.showPhotos();
+    Gallery.header();
+    Gallery.footer();
+    $('.frame').eq(17).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showEmergency);
+
+    $('.frame').eq(17).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showMoutain);
+
+    $('.frame').eq(17).on('transitionend webkitTransitionEnd oTransitionEnd', Gallery.showCricle);
+
+    $('.menu_primary')[0].addEventListener('webkitAnimationEnd', Gallery.showPrimary);
+    $('.menu_primary')[0].addEventListener('animationend', Gallery.showPrimary);
+  }
+}
+
+$(document).ready(function() {
+  Gallery.init();
+});
+```
+
+>CSS Code:
+```javascript
+@font-face {
+  font-family: 'a-otf_jomin_stdl';
+  src: url('/fonts/jominstd-light.woff2') format('woff2'),
+  url('/fonts/jominstd-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#header,
+#footer {
+  position: relative;
+  z-index: 50;
+  opacity: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+#header .logo {
+  background-color: #ffffff;
+}
+
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 101;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.loading img {
+  max-width: inherit;
+}
+
+.loading .loader {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+}
+
+.loading-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%);
+  -webkit-transform: translate(-50%, -70%);
+}
+
+.logo-outline {
+  position: absolute;
+  width: 230px;
+  height: 412px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #fff;
+}
+
+.loadingtitle {
+  position: fixed;
+  font-family: 'a-otf_jomin_stdl';
+  font-size: 43px;
+  line-height: 45px;
+  width: 100%;
+  text-align: center;
+  top: 65vh;
+  transform: translateY(50%);
+  -webkit-transform: translateY(50%);
+  color: #a7811a;
+  z-index: 105;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.loadingtitle span {
+  display: inline-block;
+  transform: translateY(24px);
+  -webkit-transform: translateY(24px);
+  /* opacity: 0;
+  visibility: hidden; */
+}
+
+.frame a {
+  opacity: 0;
+  float: left;
+  background-size: cover;
+  background-position: center center;
+
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.frame a.show:hover {
+  opacity: 0.9 !important;
+}
+
+.frame a.show {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  transform: scale(1);
+}
+
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@media(max-width: 480px) {
+  .loading {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+```
+
+>HTML Code:
+```javascript
+<div id="wrapper">
+<div class="loading">
+  <div class="loading-logo">
+    <img src="img/front/loading.png" width="230" height="412" alt="ひと・まち・しあわせ輝く">
+    <div class="logo-outline">
+      <img src="img/front/loading-outline.png" width="230" height="412" alt="ひと・まち・しあわせ輝く">
+    </div>
+  </div>
+</div>
+<header id="header">
+  <div class="container">
+    <h1 class="logo">
+              <a href="#">
+                <picture>
+                  <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+                  <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+                </picture>
+              </a>
+            </h1>
+    <ul class="navigation_sp">
+      <li>
+        <a href="#">
+                  <span class="symbol">
+                    <i class="icons_marker">&nbsp;</i>
+                  </span>
+                  <span class="nav_text">アクセス</span>
+                </a>
+      </li>
+      <li>
+        <a href="#">
+                  <span class="symbol">
+                    <i class="icons_phone">&nbsp;</i>
+                  </span>
+                  <span class="nav_text">直通電話</span>
+                </a>
+      </li>
+      <li>
+        <a href="#">
+                  <span class="symbol">
+                    <i class="icons_nav">&nbsp;</i>
+                  </span>
+                  <span class="nav_text">メニュー</span>
+                </a>
+      </li>
+    </ul>
+    <div class="top_header">
+      <div class="search_panel">
+        <label>サイト内検索</label>
+        <div class="search_action">
+          <form class="search_form" action="" method="">
+            <input type="text" placeholder="Google カスタム検索">
+            <button type="submit" class="btn_search">Search</button>
+          </form>
+        </div>
+      </div>
+      <div class="setting">
+        <ul class="clearfix">
+          <li><a href="#">文字サイズ・色合い変更</a></li>
+          <li><a href="#">音声読み上げ</a></li>
+          <li><a href="#">Foreign Language</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<!--end header-->
+<main id="main-content">
+  <div class="container">
+    <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+    <div id="frame-grid-wrapper">
+      <div id="frame-grid">
+        <div class="emergency_panel clearfix">
+          <label>緊急情報</label>
+          <a href="#">弾道ミサイル落下時の行動等について</a>
+        </div>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame logo_center">
+          <a href="#">
+            <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+          </a>
+        </article>
+        <article class="frame">
+          <a href="#">
+            <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+          </a>
+        </article>
+      </div>
+    </div>
+    <div class="link_primary">
+      <a href="#" class="link_cr">
+                  <span class="icons_people">&nbsp;</span>
+                  <span class="txt">県民向け<br/>
+                  情報</span>
+                </a>
+      <a href="#" class="link_cr">
+                  <span class="icons_build">&nbsp;</span>
+                  <span class="txt">事業者<br/>
+                  情報</span>
+                </a>
+      <a href="#" class="link_cr">
+                  <span class="icons_camera">&nbsp;</span>
+                  <span class="txt">魅力・観光<br/>
+                  情報</span>
+                </a>
+    </div>
+    <div class="menu_primary">
+      <div class="list">
+        <a href="#"><span>復興のその先へ</span></a>
+        <a href="#"><span>移住定住応援</span></a>
+        <a href="#"><span>仕事・就職応援</span></a>
+      </div>
+    </div>
+    <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+  </div>
+</main>
+<!--end main-->
+<footer id="footer">
+  <div class="footer_top">
+    <div class="container">
+      <h2 class="logo_footer">岩手県庁</h2>
+      <address class="address_footer">
+        <span>法人番号：4000020030007</span>
+        <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+        <span>電話番号：019-651-3111（総合案内）</span>
+      </address>
+    </div>
+  </div>
+  <div class="footer_copyright">
+    <div class="container">
+      <p>Copyright © Iwate Prefecture Government All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+<!--end footer-->
+</div>
+```
+
+**>Demo 4**
+
+>JavaScript Code:
+```javascript
+var tw = new TimelineMax(),
+  tw2 = new TimelineMax(),
+  control = $('#btn_animation_control'),
+  Animation = {
+    handle: {
+      main: new TimelineMax(),
+      two: new TimelineMax(),
+      dot: new TimelineMax(),
+      image: new Array(),
+    },
+    control: $('#btn_animation_control'),
+    init: function() {
+      Animation.show_header_and_footer();
+      Animation.logo_center();
+      Animation.control.on('click', Animation.control_handle);
+    },
+    //Show logo
+    logo_center: function() {
+      Animation.handle.main.to('.logo_center', 1.5, {
+        opacity: 1,
+        ease: Power2.easeIn,
+        onComplete: function() {
+          Animation.grid();
+        }
+      });
+    },
+    // Show grid
+    grid: function() {
+      var arr = [];
+      for (var i = 0; i < $('.frame').length - 1; i++) {
+        arr[i] = i;
+      }
+      shuffle(arr);
+      for (var j = 0; j < arr.length; j++) {
+        Animation.handle.image[j] = new TimelineMax();
+        Animation.show_image(Animation.handle.image[j], $('.frame').not('.logo_center').eq(arr[j]).find('img'), j);
+      }
+    },
+    show_image: function(tw, selector, index) {
+      var position = {
+        time: 0,
+      }
+      tw.delay(index * 0.2).to(position, 0.4, {
+        time: 1,
+        ease: Power2.easeIn,
+        onUpdate: function() {
+          selector.css({
+            'opacity': position.time,
+          })
+        },
+        onComplete: function() {
+          if (index == $('.frame').length - 2) {
+            Animation.show_inside_content();
+          }
+        }
+      });
+    },
+    show_inside_content: function() {
+      var position = {
+        height: 0,
+        emergency_y: -30,
+        emergency_opacity: 0,
+      };
+      Animation.handle.main.to(position, 0.6, {
+        height: 145,
+        emergency_y: 0,
+        emergency_opacity: 1,
+        ease: Power2.easeOut,
+        onUpdate: function() {
+          $('.menu_primary').css({
+            'height': position.height,
+          });
+          $('.emergency_panel').css({
+            '-webkit-transform': 'translate3d(0,' + position.emergency_y + '%,0)',
+            'transform': 'translate3d(0,' + position.emergency_y + '%,0)',
+            'opacity': position.emergency_opacity
+          });
+        },
+        onStart: function() {
+          $('.link_primary').css({
+            'opacity': 1
+          });
+          Animation.bounce(Animation.handle.dot, $('.link_primary .link_cr'));
+        }
+      });
+      Animation.show_three_btn();
+    },
+    show_three_btn: function() {
+      var position = {
+        y: 40,
+        opacity: 0
+      };
+      Animation.handle.main.to(position, 0.4, {
+        y: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('.menu_primary .list').css({
+            '-webkit-transform': 'translate3d(0,' + position.y + '%,0)',
+            'transform': 'translate3d(0,' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+        },
+        onComplete: function() {
+          $('#btn_animation_control').attr('disabled', true);
+        }
+      });
+    },
+    show_header_and_footer: function() {
+      var position = {
+        y: 101,
+        opacity: 0
+      };
+      Animation.handle.main.to(position, 0.5, {
+        y: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('#footer').css({
+            '-webkit-transform': 'translate3d(0,' + position.y + '%,0)',
+            'transform': 'translate3d(0,' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+          $('#header').css({
+            '-webkit-transform': 'translate3d(0,-' + position.y + '%,0)',
+            'transform': 'translate3d(0,-' + position.y + '%,0)',
+            'opacity': position.opacity
+          });
+        }
+      });
+    },
+    show_logo: function() {
+      var position = {
+          x: -50,
+          opacity: 0
+        },
+        img_pos = {
+          scale: 1.2,
+          opacity: 0
+        };
+      Animation.handle.main.to(position, 0.5, {
+        x: 0,
+        opacity: 1,
+        onUpdate: function() {
+          $('#header .logo').css({
+            '-webkit-transform': 'translate3d(' + position.x + '%,0,0)',
+            'transform': 'translate3d(' + position.x + '%,0,0)',
+            'opacity': position.opacity
+          });
+        }
+      });
+      Animation.handle.main.to(img_pos, 0.5, {
+        scale: 1,
+        opacity: 1,
+        onUpdate: function() {
+          $('#header .logo img').css({
+            '-webkit-transform': 'scale3d(' + img_pos.scale + ',' + img_pos.scale + ',' + img_pos.scale + ')',
+            'transform': 'scale3d(' + img_pos.scale + ',' + img_pos.scale + ',' + img_pos.scale + ')',
+            'opacity': img_pos.opacity
+          });
+        }
+      });
+    },
+    // Handle control
+    bounce: function(tw, selector) {
+
+      var position = {
+        opacity: 0,
+      }
+      tw.to(position, 0.4, {
+        opacity: 1,
+        ease: Power2.easeIn,
+        onUpdate: function() {
+          selector.css({
+            'opacity': position.opacity,
+          })
+        },
+      });
+    },
+    control_handle: function() {
+      Animation.handle.main.paused(!Animation.handle.main.paused());
+      Animation.handle.two.paused(!Animation.handle.two.paused());
+      Animation.handle.dot.paused(!Animation.handle.dot.paused());
+      for (var i = 0; i < Animation.handle.image.length; i++) {
+        Animation.handle.image[i].paused(!Animation.handle.image[i].paused());
+      }
+      Animation.control.text(Animation.handle.main.paused() ? "PLAY" : "STOP");
+      Animation.control.toggleClass('button_pause');
+      Animation.control.toggleClass('button_play');
+    },
+  };
+
+$(window).on('load', function() {
+  Animation.init();
+});
+
+function getCurrentPositionByTime(start, end, start_time, end_time, current_time) {
+  return start + (end - start) * current_time / (end_time - start_time);
+}
+
+function shuffle(a) {
+  var j, x, i;
+  for (i = a.length - 1; i > 0; i--) {
+    j = Math.floor(Math.random() * (i + 1));
+    x = a[i];
+    a[i] = a[j];
+    a[j] = x;
+  }
+}
+```
+
+>CSS Code:
+```javascript
+@media (min-width: 376px) {
+  #header {
+    position: relative;
+    z-index: 1;
+    transform: translate(0, -101%);
+    -moz-transform: translate(0, -101%);
+    -webkit-transform: translate(0, -101%);
+    opacity: 0;
+  }
+  #footer {
+    opacity: 0;
+    transform: translate3d(0, 101%, 0);
+    -webkit-transform: translate3d(0, 101%, 0);
+  }
+  .logo {
+    background-color: #ffffff;
+  }
+  .logo_center {
+    opacity: 0;
+  }
+  @keyframes logo {
+    0% {
+      opacity: 0;
+      transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -webkit-transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      -moz-transform: scale(1);
+      -webkit-transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .logo_center.active {
+    -webkit-animation-name: logo;
+    animation-name: logo;
+    -webkit-animation-duration: 0.7s;
+    animation-duration: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  #frame-grid .logo_center a:before,
+  #frame-grid .logo_center a:after {
+    -webkit-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+  }
+  .frame:not(.logo_center) img {
+    opacity: 0;
+  }
+  .frame.start img {
+    animation-fill-mode: forwards;
+    animation-timing-function: cubic-bezier(.7, 0, .3, 1);
+    animation-duration: .9s;
+  }
+  .logo_center figure:before {
+    /* content: ''; */
+    position: absolute;
+    bottom: 15px;
+    width: 40px;
+    height: 375px;
+    left: 135px;
+    z-index: 9;
+    background-color: #ffffff;
+  }
+
+  .show_logo img {
+    opacity: 1;
+  }
+  .show_logo figure:before {
+    /*animation: show_text 2.4s 1;
+    -webkit-animation: show_text 2.4s 1;
+    -moz-animation: show_text 2.4s 1;
+    animation-fill-mode: forwards;*/
+  }
+
+  @keyframes show_text {
+    0% {
+      height: 375px;
+    }
+    50% {
+      height: 375px;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+
+  @-webkit-keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  @keyframes pulse {
+    from {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+
+    50% {
+      -webkit-transform: scale3d(1.05, 1.05, 1.05);
+      transform: scale3d(1.05, 1.05, 1.05);
+    }
+
+    to {
+      -webkit-transform: scale3d(1, 1, 1);
+      transform: scale3d(1, 1, 1);
+    }
+  }
+
+  .pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    animation-fill-mode: forwards;
+  }
+}
+```
+
+>HTML Code:
+```javascript
+<div id="wrapper">
+  <header id="header">
+    <div class="container">
+      <h1 class="logo">
+        <a href="#">
+          <picture>
+            <source media="(max-width: 650px)" srcset="./img/front/sp_logo.png" width="152" height="88">
+            <img src="./img/front/logo.png" alt="logo" width="200" height="200">
+          </picture>
+        </a>
+      </h1>
+      <ul class="navigation_sp">
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_marker">&nbsp;</i>
+            </span>
+            <span class="nav_text">アクセス</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_phone">&nbsp;</i>
+            </span>
+            <span class="nav_text">直通電話</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="symbol">
+              <i class="icons_nav">&nbsp;</i>
+            </span>
+            <span class="nav_text">メニュー</span>
+          </a>
+        </li>
+      </ul>
+      <div class="top_header">
+        <div class="search_panel">
+          <label>サイト内検索</label>
+          <div class="search_action">
+            <form class="search_form" action="" method="">
+              <input type="text" placeholder="Google カスタム検索">
+              <button type="submit" class="btn_search">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="setting">
+          <ul class="clearfix">
+            <li><a href="#">文字サイズ・色合い変更</a></li>
+            <li><a href="#">音声読み上げ</a></li>
+            <li><a href="#">Foreign Language</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!--end header-->
+  <main id="main-content">
+    <div class="container">
+      <img src="./img/front/grid/mobile.jpg" class="show_on_mobile" alt="">
+      <div id="frame-grid-wrapper">
+        <div id="frame-grid">
+          <div class="emergency_panel clearfix">
+            <label>緊急情報</label>
+            <a href="#">弾道ミサイル落下時の行動等について</a>
+          </div>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img1.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img2.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img3.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img4.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img5.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img6.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img7.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame logo_center">
+            <a href="#">
+              <figure><img src="./img/front/grid/logo_center.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img8.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img9.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img10.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img11.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img12.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img13.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img14.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img15.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img16.jpg" alt=""></figure>
+            </a>
+          </article>
+          <article class="frame">
+            <a href="#">
+              <figure><img src="./img/front/grid/img17.jpg" alt=""></figure>
+            </a>
+          </article>
+        </div>
+      </div>
+      <div class="link_primary">
+        <a href="#" class="link_cr">
+            <span class="icons_people">&nbsp;</span>
+            <span class="txt">県民向け<br/>
+            情報</span>
+          </a>
+        <a href="#" class="link_cr">
+            <span class="icons_build">&nbsp;</span>
+            <span class="txt">事業者<br/>
+            情報</span>
+          </a>
+        <a href="#" class="link_cr">
+            <span class="icons_camera">&nbsp;</span>
+            <span class="txt">魅力・観光<br/>
+            情報</span>
+          </a>
+      </div>
+      <div class="menu_primary">
+        <div class="list">
+          <a href="#"><span>復興のその先へ</span></a>
+          <a href="#"><span>移住定住応援</span></a>
+          <a href="#"><span>仕事・就職応援</span></a>
+        </div>
+      </div>
+      <div class="action_control">
+        <button id="btn_animation_control" class="button_slider button_pause">STOP</button>
+      </div>
+      <img src="./img/front/footer_bottom.png" class="show_on_mobile bottom" alt="">
+    </div>
+  </main>
+  <!--end main-->
+  <footer id="footer">
+    <div class="footer_top">
+      <div class="container">
+        <h2 class="logo_footer">岩手県庁</h2>
+        <address class="address_footer">
+          <span>法人番号：4000020030007</span>
+          <span>〒020-8570 岩手県盛岡市内丸10番1号</span>
+          <span>電話番号：019-651-3111（総合案内）</span>
+        </address>
+      </div>
+    </div>
+    <div class="footer_copyright">
+      <div class="container">
+        <p>Copyright © Iwate Prefecture Government All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <!--end footer-->
+</div>
 ```
 
 **6. 20171012 HTML5 Landing Page**
