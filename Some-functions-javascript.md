@@ -164,10 +164,64 @@ function myFunction() {
   ```
 **10. requestAnimationFrame():** 
 
-- ```window.requestAnimationFrame(callback);```
+- **sectionSyntax**: ```window.requestAnimationFrame(callback);```
+- ```window.requestAnimationFrame()``` cho trình duyệt biết rằng bạn muốn thực hiện một animation và yêu cầu trình duyệt gọi một hàm được chỉ định để cập nhật một animation trước khi vẽ lại lần tiếp theo. Phương thức nhận một cuộc gọi lại như một đối số được gọi trước khi repaint.
+
+- **callback**: Một tham số chỉ định một hàm để gọi khi đó là thời gian để cập nhật hoạt ảnh của bạn cho lần lặp lại tiếp theo. Gọi lại có một đối số duy nhất, một ```DOMHighResTimeStamp```, cho biết thời gian hiện tại (thời gian được trả về từ ```performance.now ()```) khi ```requestAnimationFrame()``` bắt đầu kích hoạt các cuộc gọi lại.
+
+- **Return value**: Giá trị số nguyên dài, id yêu cầu, xác định duy nhất mục nhập trong danh sách gọi lại. Đây là giá trị khác 0, nhưng bạn không thể đưa ra bất kỳ giả định nào khác về giá trị của nó. Bạn có thể chuyển giá trị này tới ```window.cancelAnimationFrame()``` để hủy yêu cầu gọi lại làm mới.
+
+```javascript
+var start = null;
+var element = document.getElementById('SomeElementYouWantToAnimate');
+element.style.position = 'absolute';
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  var progress = timestamp - start;
+  element.style.left = Math.min(progress / 10, 200) + 'px';
+  if (progress < 2000) {
+    window.requestAnimationFrame(step);
+  }
+}
+
+window.requestAnimationFrame(step);
+```
+
 
 **11. cancelAnimationFrame():**
 
-- ```window.cancelAnimationFrame(requestID);```
+- **Syntax**: ```window.cancelAnimationFrame(requestID);```
 
-- 
+- **Parameters**: requestID: Giá trị ID được trả về bởi lệnh gọi đến window.requestAnimationFrame () đã yêu cầu gọi lại.
+
+```javascript
+var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+  window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+var cancelAnimationFrame = window.cancelAnimationFrame || window.mozCancelAnimationFrame;
+
+var start = window.mozAnimationStartTime; // Only supported in FF. Other browsers can use something like Date.now().
+
+var myReq;
+
+function step(timestamp) {
+  var progress = timestamp - start;
+  d.style.left = Math.min(progress / 10, 200) + 'px';
+  if (progress < 2000) {
+    myReq = requestAnimationFrame(step);
+  }
+}
+myReq = requestAnimationFrame(step);
+
+cancelAnimationFrame(myReq);
+```
+
+**AnimationEnd**
+
+https://www.sitepoint.com/css3-animation-javascript-event-handlers/
+http://blogs.sitepointstatic.com/examples/tech/animation-api/index.html
+https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
+http://blog.teamtreehouse.com/using-jquery-to-detect-when-css3-animations-and-transitions-end
+https://mxstbr.blog/2015/06/animation-events/
+https://developer.mozilla.org/en-US/docs/Web/Events/animationend
