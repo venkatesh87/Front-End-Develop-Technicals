@@ -159,6 +159,10 @@
 
 1. [Javascriptkit](http://www.javascriptkit.com/javatutors/)
 
+1. [Exploringjs](http://exploringjs.com/impatient-js/) (New)
+
+1. [PDF Exploringjs](http://exploringjs.com/impatient-js/downloads/impatient-js-preview-book.pdf) (New)
+
 #### V. Tool Code Javascript Online
 ---
 
