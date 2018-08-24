@@ -127,11 +127,11 @@ $('#load-data').click(function(e) {
 });
 ```
 
-1. **url : chuỗi chứa đường dẫn tới file cần lấy và trả về dữ liệu
-2. **type : phương thức gửi đi tương tự như của ```<form>```, mặc định là ```GET``` nếu như các bạn không truyền vào.
-3. **dataType : xác định dữ liệu trả về thuộc dạng nào? Nếu các bạn không truyền thì jQuery tự động nhận biết kiểu dữ liệu (script, html, json…). Tuy nhiên, tôi khuyến cáo các bạn nên truyền vào đầy đủ để nhận dữ liệu chính xác nhất. Và thông dụng nhất chính là ```html```.
-4. **data : truyền dữ liệu sang đường dẫn chỉ định để thực hiện xử lý và trả về dữ liệu. Tương tự như cách truyền dữ liệu của phương thức ```post()```.
-5.**done()** : ở loạt các bài viết hướng dẫn các bài viết về kĩ thuật Ajax với phương thức ``` ajax() ``` trước đây trên Internet. Thay vì dùng ```done()``` chúng ta sẽ dùng thuộc tính ```success``` trong đối tượng truyền vào ```ajax()``` nhưng từ các phiên bản mới hơn của jQuery. Họ khuyến cáo chúng ta nên sử dụng các phương thức như ```done() , fail() , always()``` (Tương ứng: Hoàn thành, thất bại và luôn luôn thực hiện). Nên tùy vào nhu cầu mà bạn xài phương thức tương ứng. Và nên nhớ là đi kèm với phương thức ```ajax()``` hoặc lưu vào một tên biến rồi dùng sau để nhận kết quả trả về.
+- **url** : chuỗi chứa đường dẫn tới file cần lấy và trả về dữ liệu
+- **type** : phương thức gửi đi tương tự như của ```<form>```, mặc định là ```GET``` nếu như các bạn không truyền vào.
+- **dataType** : xác định dữ liệu trả về thuộc dạng nào? Nếu các bạn không truyền thì jQuery tự động nhận biết kiểu dữ liệu (script, html, json…). Tuy nhiên, tôi khuyến cáo các bạn nên truyền vào đầy đủ để nhận dữ liệu chính xác nhất. Và thông dụng nhất chính là ```html```.
+- **data** : truyền dữ liệu sang đường dẫn chỉ định để thực hiện xử lý và trả về dữ liệu. Tương tự như cách truyền dữ liệu của phương thức ```post()```.
+- **done()** : ở loạt các bài viết hướng dẫn các bài viết về kĩ thuật Ajax với phương thức ``` ajax() ``` trước đây trên Internet. Thay vì dùng ```done()``` chúng ta sẽ dùng thuộc tính ```success``` trong đối tượng truyền vào ```ajax()``` nhưng từ các phiên bản mới hơn của jQuery. Họ khuyến cáo chúng ta nên sử dụng các phương thức như ```done() , fail() , always()``` (Tương ứng: Hoàn thành, thất bại và luôn luôn thực hiện). Nên tùy vào nhu cầu mà bạn xài phương thức tương ứng. Và nên nhớ là đi kèm với phương thức ```ajax()``` hoặc lưu vào một tên biến rồi dùng sau để nhận kết quả trả về.
 
 ```javascript
 jQuery.ajax({
