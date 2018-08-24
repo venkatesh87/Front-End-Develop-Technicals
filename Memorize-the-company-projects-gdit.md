@@ -5433,41 +5433,58 @@ if (typeof(Storage) !== "undefined") {
 ```
 
 **13. 20170215 Hyogo**
+
 1. Output text data và file image đang được setting ở JSON.
+
  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_1.JPG)
+ 
  - Nội dung thì làm theo sample cũng được. Cấu tạo thì hãy tham chiếu sheet 「JSON」
  ※Data dùng để chạy thực tế thì phía GD sẽ chèn vào nên nhờ các bạn tạo trước bằng image thích hợp.
 2. Hiển thị những phần bên dưới khi click vào image (youtube) 
+
 ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_2.JPG)
+
 3. Hiển thị youtube
   - Chỉ trường hợp đang mô tả URL vào node 「youtube_url」 của file JSON, thì hãy set để hiển thị Player của Youtube ở phần đã triển khai sau khi click vào image và có thể replay trong trường hợp đó.
 4. Trường hợp chèn youtube thì sẽ hiển thị icon ở nơi hiển thị image thumbnail 
+
 ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_3.JPG)
+
 5. Hiển thị image khởi tạo thì đến 20 cái
  - Hãy sử dụng HTML đã gửi
 ※Trường hợp data dưới 20 cái thì không hiển thị button More, Khung hiển thị thì cũng chỉ hiển thị số lượng cần thiết
 6. Hiển thị 20 cái tiếp theo bằng cách click vào nút More
+
  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_4.JPG)
+ 
 7. Trình tự hiển thị image thì hiển thị theo random
  - Hiển thị theo random ở mỗi lần load
 8. Setting radom thì cố gắng set để có thể setting bằng đối số khi tham chiếu file javascript (Tham chiếu sheet「JS」)
  - ```<script type="text/javascript" src="/cms8341/shared/js/setting_gallery.js?random=1"></script>```
+ 
   ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_5.JPG)
+  
 9. Phương pháp hiển thị từng image-video
  - Dự định hiển thị list sẽ chia ra trên dưới, space hiển thị title-Summary statement và image được zoom out sẽ được chèn vào
  - Size image
  + Ngang : 400 px
  + Dọc : Không giới hạn (Điều chỉnh tự động cho phù hợp với chiều ngang)
+ 
  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_6.JPG)
+ 
 10. Trường hợp video
  - Button replay được hiển thị trên image được zoom out, nên có thể replay video youtube trên page. Hơn nữa, khi nhấn button hiển thị zoom out của toolbar bên dưới thì sẽ link đến page video tương ứng của youtube.
+ 
  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_7.JPG)
+ 
  - Trường hợp JS OFF thì không thể nhìn thấy được. Hiển thị message thông báo việc không được hiển thị trongg trường hợp JS OFF, và liệt kê link của image
+ 
 11. Title
  - Khi Mouse on vào image thì Title sẽ được hiển thị
  - Size image: Khi hiển thị list, image đã đăng ký sẽ được trimming theo hình vuông
  - Trường hợp video: Dự định sẽ hiển thị "Icon video" ở trên thumbnail
  - Số lượng hiển thị: Dự định là trên Top page 20 image sẽ được hiển thị, khi nhấn nút "More" thì sẽ hiển thị 20 image tiếp theo.
+ 
  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_7.JPG)
 
 >JavaScript Code:
