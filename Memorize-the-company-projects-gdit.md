@@ -5432,12 +5432,1085 @@ if (typeof(Storage) !== "undefined") {
  })(jQuery);
 ```
 
-**13. 20180508 ChartJS**
-- Text.
+**13. 20170215 Hyogo**
+1. Output text data và file image đang được setting ở JSON.
+ ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_1.JPG)
+ - Nội dung thì làm theo sample cũng được. Cấu tạo thì hãy tham chiếu sheet 「JSON」
+ ※Data dùng để chạy thực tế thì phía GD sẽ chèn vào nên nhờ các bạn tạo trước bằng image thích hợp.
+2. Hiển thị những phần bên dưới khi click vào image (youtube) 
+![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_2.JPG)
+3. Hiển thị youtube
+  - Chỉ trường hợp đang mô tả URL vào node 「youtube_url」 của file JSON, thì hãy set để hiển thị Player của Youtube ở phần đã triển khai sau khi click vào image và có thể replay trong trường hợp đó.
+4. Trường hợp chèn youtube thì sẽ hiển thị icon ở nơi hiển thị image thumbnail 
+![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_3.JPG)
+5. Hiển thị image khởi tạo thì đến 20 cái
+ - Hãy sử dụng HTML đã gửi
+※Trường hợp data dưới 20 cái thì không hiển thị button More, Khung hiển thị thì cũng chỉ hiển thị số lượng cần thiết
+6. Hiển thị 20 cái tiếp theo bằng cách click vào nút More
+ ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_4.JPG)
+7. Trình tự hiển thị image thì hiển thị theo random
+ - Hiển thị theo random ở mỗi lần load
+8. Setting radom thì cố gắng set để có thể setting bằng đối số khi tham chiếu file javascript (Tham chiếu sheet「JS」)
+ - ```<script type="text/javascript" src="/cms8341/shared/js/setting_gallery.js?random=1"></script>```
+  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_5.JPG)
+9. Phương pháp hiển thị từng image-video
+ - Dự định hiển thị list sẽ chia ra trên dưới, space hiển thị title-Summary statement và image được zoom out sẽ được chèn vào
+ - Size image
+ + Ngang : 400 px
+ + Dọc : Không giới hạn (Điều chỉnh tự động cho phù hợp với chiều ngang)
+ ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_6.JPG)
+10. Trường hợp video
+ - Button replay được hiển thị trên image được zoom out, nên có thể replay video youtube trên page. Hơn nữa, khi nhấn button hiển thị zoom out của toolbar bên dưới thì sẽ link đến page video tương ứng của youtube.
+ ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_7.JPG)
+ - Trường hợp JS OFF thì không thể nhìn thấy được. Hiển thị message thông báo việc không được hiển thị trongg trường hợp JS OFF, và liệt kê link của image
+11. Title
+ - Khi Mouse on vào image thì Title sẽ được hiển thị
+ - Size image: Khi hiển thị list, image đã đăng ký sẽ được trimming theo hình vuông
+ - Trường hợp video: Dự định sẽ hiển thị "Icon video" ở trên thumbnail
+ - Số lượng hiển thị: Dự định là trên Top page 20 image sẽ được hiển thị, khi nhấn nút "More" thì sẽ hiển thị 20 image tiếp theo.
+ ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_7.JPG)
 
 >JavaScript Code:
 ```javascript
+//CMS-8341用JS
 
+(function($) {
+
+  $(function() {
+    /*init*/
+    init();
+  });
+
+  var gallery = $('.js_render_gallery');
+  var galleryList = $('.js_render_gallery_list');
+  var photo = '.js_photo';
+  var photoTarget = '.js_photo_target';
+  var photoRender = '.js_photo_render';
+  var photoClose = '.js_photo_close';
+  var loadMore = $('.js_loadmore');
+  var loadDing = $('.js_loading');
+  var javascript = $("#settingGallery");
+  var count = 0;
+  var items = [];
+  var players = [];
+  var random = javascript.attr('src').split('?')[1];
+  random = parseInt(random.replace(/^\D+/g, ''));
+  var limit = javascript.attr('src').split('?')[2];
+  limit = parseInt(limit.replace(/^\D+/g, ''));
+  var _start = 0;
+  var _end = limit;
+
+  /* Initialize */
+  var init = function() {
+    loadDing.show();
+    loadMore.hide();
+    _fetchData(_start, limit);
+    _bind();
+  };
+
+  /* Fetch data from JSON */
+  var _fetchData = function(_start, _end, _callback) {
+    $.getJSON('/cms8341/shared/gallery/js/gallery.json', function(data) {
+      loadDing.hide();
+      items = _getData(random, data['items']);
+      _renderData(_start, _end, items);
+    });
+  };
+
+  var _renderData = function(_start, _end, _items) {
+    if (count > _items.length) {
+      return false;
+    } else {
+      if (_items.length > _end) {
+        loadMore.show();
+      } else {
+        _end = _items.length;
+        loadMore.hide();
+      }
+      if (_items.length >= _end) {
+        for (var i = _start; i < _end; i++) {
+          galleryList.append(_fetchItem(_items[i]));
+        }
+      }
+    }
+  };
+
+  /* Bind Event */
+  var _bind = function() {
+    /* Show Preview detail */
+    gallery.on('click', photoTarget, function() {
+      var _this = $(this);
+      _fetchDetail(_this);
+      _renderPreview(_this);
+      return false;
+    });
+
+    /* Close Preview detail */
+    gallery.on('click', photoClose, function() {
+      _closePreview($(this));
+      return false;
+    });
+
+    /* Show more gallery items */
+    loadMore.on('click', function() {
+      _start += limit;
+      _end = _start + limit;
+      count += limit;
+      _scrollTop(loadMore.offset().top, 1000);
+      _renderData(_start, _end, items);
+    });
+
+  };
+
+  /* Fetch Detail from @data */
+  var _fetchDetail = function(_this, _callback) {
+    var _id = _this.data('id');
+    var _title = _this.data('title');
+    var _imageUrl = _this.data('image');
+    var _summary = _this.data('summary');
+    var _movie = _this.data('movie');
+    var _youtubeUrl = _this.data('youtube');
+    var _photoAppend = _this.closest(photo).find(photoRender);
+    var _typeMedia = '';
+    if (_movie == 'movie') {
+      _typeMedia = '<iframe class="js_media" width="400" height="225" id="' + _id + '" src="' + _youtubeUrl + '" frameborder="0" allowfullscreen=""></iframe>';
+    } else {
+      _typeMedia = '<img class="js_media" src="/cms8341/' + _imageUrl + '" width="400" height="300">';
+    }
+    var _tmp = '<div class="img_gallery_cnt">';
+    _tmp += '<p class="img">';
+    _tmp += '<span class="js_loading_item load">';
+    _tmp += '<span class="loader_image"></span>';
+    _tmp += '</span>';
+    _tmp += _typeMedia;
+    _tmp += '</p>';
+    _tmp += '<div class="cnt">';
+    _tmp += '<p class="ttl">' + _title + '</p>';
+    _tmp += '<p class="txt">' + _summary + '</p>';
+    _tmp += '</div>';
+    _tmp += '<p class="close js_photo_close">';
+    _tmp += '<a href="#"><img src="/cms8341/shared/templates/free/images/contents/img_gallery_close_btn.png" width="40" height="40" alt="close"></a>';
+    _tmp += '</p>';
+    _tmp += '</div>';
+
+    if (!_photoAppend.hasClass('append')) {
+      _photoAppend.addClass('append').html(_tmp);
+    }
+
+  };
+
+  /* Fetch item from JSON */
+  var _fetchItem = function(_item) {
+    var _titleItem = _item['title'];
+    var _detail = _item['detail'];
+    var _thumb_image_path = _item['thumb_image_path'];
+    _movie = _item['isyoutube'] ? 'movie' : '';
+
+    var _tmpItem = '<li class="photo js_photo ' + _movie + '">';
+    _tmpItem += '<p class="thumb">';
+    _tmpItem += '<a class="js_photo_target" data-id="' + _item['id'] + '" data-title="' + _detail['title'] + '" data-image="' + _detail['image_path'] + '" data-summary="' + _detail['summary'] + '" data-movie="' + _movie + '" data-youtube="' + _detail['youtube_url'] + '" href="#">';
+    _tmpItem += '<img src="' + _item['thumb_image_path'] + '" width="239" height="239" />';
+    _tmpItem += '<span>' + _titleItem + '</span>';
+    _tmpItem += '</a>';
+    _tmpItem += '</p>';
+    _tmpItem += '<div class="photo_render js_photo_render">';
+    _tmpItem += '</div>';
+    _tmpItem += '</li>';
+    return _tmpItem;
+  };
+
+  /*Show preview Detail */
+  var _renderPreview = function(_this) {
+    var _photoAppend = _this.closest(photo).find(photoRender);
+    var _media = _photoAppend.find('.js_media');
+
+    if (!_this.closest(photo).hasClass('active')) {
+      var _loadingInItem = _photoAppend.find('.js_loading_item');
+      var _height = _photoAppend.outerHeight();
+
+      $(photo).removeClass('active');
+      /* Reset Height for animate */
+      _photoAppend.css('height', 0);
+      /* Set New Height */
+      _photoAppend.animate({ height: _height }, 500);
+      /* First loading */
+      if (typeof(_media.attr('style')) == 'undefined') {
+        _loadingInItem.show();
+        _media.on("load", function() {
+          setTimeout(function() {
+            _loadingInItem.hide();
+            _media.css('opacity', 1);
+            _scrollTop(_this.offset().top - (_height / 2 + 80), 300);
+          }, 200);
+        });
+      } else {
+        /* Second loading */
+        _scrollTop(_this.offset().top - (_height / 2 + 80), 300);
+      }
+      _this.closest(photo).addClass('active');
+      if (_media[0]['localName'] == 'iframe') {
+        _onYouTubePlayerAPIReady(_media);
+      }
+      _onPlayerStateChange(_this);
+    }
+
+  };
+
+  /*Close preview Detail */
+  var _closePreview = function(_this) {
+    _this.closest(photo).find(photoRender).animate({ height: 0 }, 500);
+    setTimeout(function() {
+      /* Reset Height for auto */
+      _this.closest(photo).find(photoRender).css('height', 'auto');
+      _this.closest(photo).removeClass('active');
+    }, 510);
+    _onPlayerStateChange(_this);
+  };
+
+  /*Get DATA @default or @random */
+  var _getData = function(_type, _data) {
+    if (_type == 1) {
+      // Is random
+      var newItems = _data;
+      var tmp, current, top = newItems.length;
+      if (top) {
+        while (--top) {
+          current = Math.floor(Math.random() * (top + 1));
+          tmp = newItems[current];
+          newItems[current] = newItems[top];
+          newItems[top] = tmp;
+        }
+        _data = newItems;
+      }
+    } else {
+      _data = _data;
+    }
+    return _data;
+  };
+
+  var _scrollTop = function(_offset, _time) {
+    $('html, body').animate({
+      scrollTop: _offset
+    }, _time);
+  };
+
+  var _onYouTubePlayerAPIReady = function(_video) {
+    if (!_video.hasClass('active')) {
+      for (var i = 0; i < _video.length; i++) {
+        var t = new YT.Player($(_video[i]).attr('id'), {});
+        players.push(t);
+      }
+      _video.addClass('active');
+    }
+  };
+
+  var _onPlayerStateChange = function(_this) {
+    var temp = _this.data('youtube');
+    for (var i = 0; i < players.length; i++) {
+      if (players[i].a.src != temp) players[i].stopVideo();
+    }
+  }
+
+})(jQuery);
+```
+
+>HTML Code:
+```javascript
+<div id="tmp_gallery_container">
+  <ul class="img_gallery_list js_render_gallery_list">
+                    
+  </ul>
+  <p class="more_btn2 js_loadmore"><a href="javascript:void(0)">More</a></p>
+</div>
+```
+
+>Json data:
+```javascript
+{
+  "items": [
+  {
+    "id": 0,
+    "title": "Title 1",
+    "thumb_image_path": "/cms8341/shared/gallery/images/1.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 1",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/1.jpg",
+      "youtube_url": ""
+
+    }
+  },
+  {
+    "id": 1,
+    "title": "Title 2",
+    "thumb_image_path": "/cms8341/shared/gallery/images/2.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 2",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/2.jpg",
+      "youtube_url": "https://www.youtube.com/embed/pUAe9qpuAMA?enablejsapi=1"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Title 3",
+    "thumb_image_path": "/cms8341/shared/gallery/images/3.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 3",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/3.jpg",
+      "youtube_url": "https://www.youtube.com/embed/i_yLpCLMaKk?enablejsapi=1"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Title 4",
+    "thumb_image_path": "/cms8341/shared/gallery/images/4.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 4",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/4.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 4,
+    "title": "Title 5",
+    "thumb_image_path": "/cms8341/shared/gallery/images/5.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 5",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/5.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 5,
+    "title": "Title 6",
+    "thumb_image_path": "/cms8341/shared/gallery/images/6.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 6",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/6.jpg",
+      "youtube_url": "https://www.youtube.com/embed/qrV0DhHnMzs?enablejsapi=1"
+    }
+  },
+  {
+    "id": 6,
+    "title": "Title 7",
+    "thumb_image_path": "/cms8341/shared/gallery/images/7.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 7",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/7.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 7,
+    "title": "Title 8",
+    "thumb_image_path": "/cms8341/shared/gallery/images/8.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 8",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/8.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 8,
+    "title": "Title 9",
+    "thumb_image_path": "/cms8341/shared/gallery/images/9.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 9",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/9.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 9,
+    "title": "Title 10",
+    "thumb_image_path": "/cms8341/shared/gallery/images/10.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 10",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/10.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 10,
+    "title": "Title 11",
+    "thumb_image_path": "/cms8341/shared/gallery/images/11.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 11",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/11.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 11,
+    "title": "Title 12",
+    "thumb_image_path": "/cms8341/shared/gallery/images/12.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 12",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/12.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 12,
+    "title": "Title 13",
+    "thumb_image_path": "/cms8341/shared/gallery/images/13.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 13",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/13.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 13,
+    "title": "Title 14",
+    "thumb_image_path": "/cms8341/shared/gallery/images/14.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 14",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/14.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 14,
+    "title": "Title 15",
+    "thumb_image_path": "/cms8341/shared/gallery/images/15.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 15",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/15.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 15,
+    "title": "Title 16",
+    "thumb_image_path": "/cms8341/shared/gallery/images/16.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 16",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/16.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 16,
+    "title": "Title 17",
+    "thumb_image_path": "/cms8341/shared/gallery/images/17.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 17",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/17.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 17,
+    "title": "Title 18",
+    "thumb_image_path": "/cms8341/shared/gallery/images/18.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 18",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/18.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 18,
+    "title": "Title 19",
+    "thumb_image_path": "/cms8341/shared/gallery/images/19.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 19",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/19.jpg",
+      "youtube_url": "https://www.youtube.com/embed/pUAe9qpuAMA?enablejsapi=1"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Title 20",
+    "thumb_image_path": "/cms8341/shared/gallery/images/20.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 20",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/20.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 20,
+    "title": "Title 21",
+    "thumb_image_path": "/cms8341/shared/gallery/images/21.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 21",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/21.jpg",
+      "youtube_url": "https://www.youtube.com/embed/1UgKvfYy5hE?enablejsapi=1"
+    }
+  },
+  {
+    "id": 21,
+    "title": "Title 22",
+    "thumb_image_path": "/cms8341/shared/gallery/images/22.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 22",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/22.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 22,
+    "title": "Title 23",
+    "thumb_image_path": "/cms8341/shared/gallery/images/23.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 23",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/23.jpg",
+      "youtube_url": "https://www.youtube.com/embed/Eqx90_j2moc?enablejsapi=1"
+    }
+  },
+  {
+    "id": 23,
+    "title": "Title 24",
+    "thumb_image_path": "/cms8341/shared/gallery/images/24.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 24",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/24.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 24,
+    "title": "Title 25",
+    "thumb_image_path": "/cms8341/shared/gallery/images/25.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 25",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/25.jpg",
+      "youtube_url": "https://www.youtube.com/embed/hZ1wvuqUBMU?enablejsapi=1"
+    }
+  },
+  {
+    "id": 25,
+    "title": "Title 26",
+    "thumb_image_path": "/cms8341/shared/gallery/images/26.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 26",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/26.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 26,
+    "title": "Title 27",
+    "thumb_image_path": "/cms8341/shared/gallery/images/27.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 27",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/27.jpg",
+      "youtube_url": "https://www.youtube.com/embed/ES7WDcrlkek?enablejsapi=1"
+    }
+  },
+  {
+    "id": 27,
+    "title": "Title 28",
+    "thumb_image_path": "/cms8341/shared/gallery/images/28.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 28",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/28.jpg",
+      "youtube_url": "https://www.youtube.com/embed/Co1XkCJhAp8?enablejsapi=1"
+    }
+  },
+  {
+    "id": 28,
+    "title": "Title 29",
+    "thumb_image_path": "/cms8341/shared/gallery/images/29.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 29",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/29.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 29,
+    "title": "Title 30",
+    "thumb_image_path": "/cms8341/shared/gallery/images/30.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 30",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/30.jpg",
+      "youtube_url": "https://www.youtube.com/embed/lLO2-XaO9Xc?enablejsapi=1"
+    }
+  },
+  {
+    "id": 30,
+    "title": "Title 31",
+    "thumb_image_path": "/cms8341/shared/gallery/images/31.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 31",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/31.jpg",
+      "youtube_url": ""
+
+    }
+  },
+  {
+    "id": 31,
+    "title": "Title 32",
+    "thumb_image_path": "/cms8341/shared/gallery/images/32.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 32",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/32.jpg",
+      "youtube_url": "https://www.youtube.com/embed/4H6PeCmmabo?enablejsapi=1"
+    }
+  },
+  {
+    "id": 32,
+    "title": "Title 33",
+    "thumb_image_path": "/cms8341/shared/gallery/images/33.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 33",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/33.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 33,
+    "title": "Title 34",
+    "thumb_image_path": "/cms8341/shared/gallery/images/34.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 34",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/34.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 34,
+    "title": "Title 35",
+    "thumb_image_path": "/cms8341/shared/gallery/images/35.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 35",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/35.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 35,
+    "title": "Title 36",
+    "thumb_image_path": "/cms8341/shared/gallery/images/36.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 36",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/36.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 36,
+    "title": "Title 37",
+    "thumb_image_path": "/cms8341/shared/gallery/images/37.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 37",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/37.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 37,
+    "title": "Title 38",
+    "thumb_image_path": "/cms8341/shared/gallery/images/38.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 38",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/38.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 38,
+    "title": "Title 39",
+    "thumb_image_path": "/cms8341/shared/gallery/images/39.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 39",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/39.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 39,
+    "title": "Title 40",
+    "thumb_image_path": "/cms8341/shared/gallery/images/40.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 40",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/40.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 40,
+    "title": "Title 41",
+    "thumb_image_path": "/cms8341/shared/gallery/images/41.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 41",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/41.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 41,
+    "title": "Title 42",
+    "thumb_image_path": "/cms8341/shared/gallery/images/42.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 42",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/42.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 42,
+    "title": "Title 43",
+    "thumb_image_path": "/cms8341/shared/gallery/images/43.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 43",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/43.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 43,
+    "title": "Title 44",
+    "thumb_image_path": "/cms8341/shared/gallery/images/44.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 44",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/44.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 44,
+    "title": "Title 45",
+    "thumb_image_path": "/cms8341/shared/gallery/images/45.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 45",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/45.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 45,
+    "title": "Title 46",
+    "thumb_image_path": "/cms8341/shared/gallery/images/46.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 46",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/46.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 46,
+    "title": "Title 47",
+    "thumb_image_path": "/cms8341/shared/gallery/images/47.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 47",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/47.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 47,
+    "title": "Title 48",
+    "thumb_image_path": "/cms8341/shared/gallery/images/48.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 48",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/48.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 48,
+    "title": "Title 49",
+    "thumb_image_path": "/cms8341/shared/gallery/images/49.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 49",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/49.jpg",
+      "youtube_url": "https://www.youtube.com/embed/9ctLe3h_x6o?enablejsapi=1"
+    }
+  },
+  {
+    "id": 49,
+    "title": "Title 50",
+    "thumb_image_path": "/cms8341/shared/gallery/images/50.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 50",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/50.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 50,
+    "title": "Title 51",
+    "thumb_image_path": "/cms8341/shared/gallery/images/51.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 51",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/51.jpg",
+      "youtube_url": "https://www.youtube.com/embed/Df6Sqo1HeB0?enablejsapi=1"
+    }
+  },
+  {
+    "id": 51,
+    "title": "Title 52",
+    "thumb_image_path": "/cms8341/shared/gallery/images/52.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 52",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/52.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 52,
+    "title": "Title 53",
+    "thumb_image_path": "/cms8341/shared/gallery/images/53.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 53",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/53.jpg",
+      "youtube_url": "https://www.youtube.com/embed/mff3eE7uTOM?enablejsapi=1"
+    }
+  },
+  {
+    "id": 53,
+    "title": "Title 54",
+    "thumb_image_path": "/cms8341/shared/gallery/images/54.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 54",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/54.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 54,
+    "title": "Title 55",
+    "thumb_image_path": "/cms8341/shared/gallery/images/55.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 55",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/55.jpg",
+      "youtube_url": "https://www.youtube.com/embed/Timy8PIuO8s?enablejsapi=1"
+    }
+  },
+  {
+    "id": 55,
+    "title": "Title 56",
+    "thumb_image_path": "/cms8341/shared/gallery/images/56.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 56",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/56.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 56,
+    "title": "Title 57",
+    "thumb_image_path": "/cms8341/shared/gallery/images/57.jpg",
+    "isyoutube": true,
+    "detail":
+    {
+      "title": "Title 57",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/57.jpg",
+      "youtube_url": "https://www.youtube.com/embed/c2RV-2dAX98?enablejsapi=1"
+    }
+  },
+  {
+    "id": 57,
+    "title": "Title 58",
+    "thumb_image_path": "/cms8341/shared/gallery/images/58.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 58",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/58.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 58,
+    "title": "Title 59",
+    "thumb_image_path": "/cms8341/shared/gallery/images/59.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 59",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/59.jpg",
+      "youtube_url": ""
+    }
+  },
+  {
+    "id": 59,
+    "title": "Title 60",
+    "thumb_image_path": "/cms8341/shared/gallery/images/60.jpg",
+    "isyoutube": false,
+    "detail":
+    {
+      "title": "Title 60",
+      "summary": "images summary texttexttexttexttexttexttexttexttexttexttexttexttexttexttext",
+      "image_path": "/shared/gallery/images/60.jpg",
+      "youtube_url": ""
+    }
+  }]
+}
 ```
 
 **14. 20180511 Foreign Language Tokyo**
@@ -5456,7 +6529,7 @@ if (typeof(Storage) !== "undefined") {
 
 ```
 
-**16. **
+**16. 20180508 ChartJS**
 - Text.
 
 >JavaScript Code:
