@@ -408,3 +408,107 @@ element.addEventListener(animationIteration, doSomething, false);
 element.addEventListener(animationEnd, doSomething, false);
 ```
 
+**18. Detect the End of CSS Animations and Transitions with JavaScript**
+- CSS cho phép bạn tạo các hiệu ứng động với các hiệu ứng chuyển tiếp và các khung hình chính mà chỉ có thể thực hiện được với JavaScript hoặc Flash. Thật không may, với CSS không có cách nào để thực hiện gọi lại khi hoạt ảnh hoàn tất. Với JavaScript, bạn có thể phát hiện phần cuối của quá trình chuyển đổi CSS hoặc hoạt ảnh và sau đó kích hoạt một chức năng.
+**Phát hiện và thực hiện khi chuyển tiếp kết thúc bằng jQuery**
+- Sử dụng JavaScript, chúng tôi có thể phát hiện sự kiện chuyển đổi; tuy nhiên đối với trình duyệt chéo, hỗ trợ chúng tôi cần bao gồm các tiền tố của trình duyệt khác.
+- Sau đó gắn kết sự kiện với một hàm của jQuery, đảm bảo rằng nó chỉ chạy một lần (nó không thể xử lý sự kiện sau khi nó chạy một lần). (Đọc thêm về một chức năng)
+
+```javascript
+$(".button").click(function() {
+  $(this).addClass("animate");
+  $(this).one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend",
+    function(event) {
+      // Do something when the transition ends
+    });
+});
+```
+
+**Phát hiện tên thuộc tính sự kiện được hỗ trợ**
+- Chúng tôi sẽ giới thiệu một hàm, whichTransitionEvent, để phát hiện tên thuộc tính sự kiện được hỗ trợ; gán một biến, trong trường hợp này là transitionEvent, để giữ tên thuộc tính sự kiện; và chuyển biến làm đối số đầu tiên của một hàm.
+
+```javascript
+// Function from David Walsh: http://davidwalsh.name/css-animation-callback
+function whichTransitionEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var transitions = {
+    "transition"      : "transitionend",
+    "OTransition"     : "oTransitionEnd",
+    "MozTransition"   : "transitionend",
+    "WebkitTransition": "webkitTransitionEnd"
+  }
+
+  for (t in transitions){
+    if (el.style[t] !== undefined){
+      return transitions[t];
+    }
+  }
+}
+
+var transitionEvent = whichTransitionEvent();
+
+$(".button").click(function(){
+  $(this).addClass("animate");
+  $(this).one(transitionEvent,
+              function(event) {
+    // Do something when the transition ends
+  });
+});
+```
+
+**Detect when animations (keyframes) end**
+
+```javascript
+function whichAnimationEvent(){
+  var t,
+      el = document.createElement("fakeelement");
+
+  var animations = {
+    "animation"      : "animationend",
+    "OAnimation"     : "oAnimationEnd",
+    "MozAnimation"   : "animationend",
+    "WebkitAnimation": "webkitAnimationEnd"
+  }
+
+  for (t in animations){
+    if (el.style[t] !== undefined){
+      return animations[t];
+    }
+  }
+}
+
+var animationEvent = whichAnimationEvent();
+
+$(".button").click(function(){
+  $(this).addClass("animate");
+  $(this).one(animationEvent,
+              function(event) {
+    // Do something when the animation ends
+  });
+});
+```
+
+**Vanilla JavaScript**
+
+```javascript
+var button = document.querySelector(".button"),
+  transitionEvent = whichTransitionEvent();
+
+button.addEventListener("click", function() {
+  if (button.classList) {
+    button.classList.add("animate");
+  } else {
+    button.className += " " + "animate";
+  }
+
+  button.addEventListener(transitionEvent, customFunction);
+});
+
+function customFunction(event) {
+  button.removeEventListener(transitionEvent, customFunction);
+
+  // Do something when the transition ends
+}
+```
