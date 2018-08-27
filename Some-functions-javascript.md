@@ -217,11 +217,194 @@ myReq = requestAnimationFrame(step);
 cancelAnimationFrame(myReq);
 ```
 
-**AnimationEnd**
+**12. Làm thế nào để nắm bắt các sự kiện CSS3 Animation trong JavaScript**
+- CSS3 Animation được thực hiện trơn tru và nhanh chóng nhưng không giống như JavaScript, bạn không có kiểm soát theo từng khung hình. May mắn thay, bạn có thể áp dụng các trình xử lý sự kiện cho bất kỳ phần tử nào để xác định trạng thái hoạt ảnh. Điều này cho phép kiểm soát chi tiết như chơi các hình động khác nhau theo thứ tự.
+```javascript
+#anim.enable {
+  -webkit -animation: flash 1 s ease 3;
+  -moz-animation: flash 1 s ease 3;
+  -ms-animation: flash 1 s ease 3;
+  -o-animation: flash 1 s ease 3;
+  animation: flash 1 s ease 3;
+}
 
-https://www.sitepoint.com/css3-animation-javascript-event-handlers/
-http://blogs.sitepointstatic.com/examples/tech/animation-api/index.html
-https://jonsuh.com/blog/detect-the-end-of-css-animations-and-transitions-with-javascript/
-http://blog.teamtreehouse.com/using-jquery-to-detect-when-css3-animations-and-transitions-end
-https://mxstbr.blog/2015/06/animation-events/
-https://developer.mozilla.org/en-US/docs/Web/Events/animationend
+/* animation */
+@ - webkit - keyframes flash {
+  50 % { opacity: 0; }
+}
+
+@ - moz - keyframes flash {
+  50 % { opacity: 0; }
+}
+
+@ - ms - keyframes flash {
+  50 % { opacity: 0; }
+}
+
+@ - o - keyframes flash {
+  50 % { opacity: 0; }
+}
+
+@keyframes flash {
+  50 % { opacity: 0; }
+}
+```
+- Khi lớp **enable** được **applied ** cho phần tử với ID **anim**, Animation  có tên ```flash``` được chạy ba lần. Mỗi lần lặp lại kéo dài một giây trong đó phần tử mất dần sau đó.
+
+**13. animationstart**
+
+- Sự kiện ```animationstart``` được kích hoạt khi animation bắt đầu lần đầu tiên.
+
+```javascript
+var anim = document.getElementById("anim");
+anim.addEventListener("animationstart", AnimationListener, false);
+```
+
+**14. animationiteration**: Lặp lại
+
+- Sự kiện animation được kích hoạt ở đầu mỗi lần lặp lại hoạt ảnh mới, tức là mỗi lần lặp lại trừ lần lặp đầu tiên.
+
+```javascript
+anim.addEventListener("animationiteration", AnimationListener, false);
+```
+
+```javascript
+
+```
+
+```javascript
+
+```
+
+**15. AnimationEnd**
+
+- Sự kiện Animation được kích hoạt khi hoạt ảnh kết thúc.
+
+```javascript
+anim.addEventListener("animationend", AnimationListener, false);
+```
+>**HTML**
+```javascript
+<pre id="log">Event information log
+=====================
+</pre>
+```
+
+>**javascript**
+```javascript
+var
+  anim = document.getElementById("anim"),
+  log = document.getElementById("log"),
+  pfx = ["webkit", "moz", "MS", "o", ""];
+
+// button click event
+anim.addEventListener("click", ToggleAnimation, false);
+
+// animation listener events
+PrefixedEvent(anim, "AnimationStart", AnimationListener);
+PrefixedEvent(anim, "AnimationIteration", AnimationListener);
+PrefixedEvent(anim, "AnimationEnd", AnimationListener);
+
+
+// apply prefixed event handlers
+function PrefixedEvent(element, type, callback) {
+  for (var p = 0; p < pfx.length; p++) {
+    if (!pfx[p]) type = type.toLowerCase();
+    element.addEventListener(pfx[p]+type, callback, false);
+  }
+}
+
+// handle animation events
+function AnimationListener(e) {
+  LogEvent("Animation '"+e.animationName+"' type '"+e.type+"' at "+e.elapsedTime.toFixed(2)+" seconds");
+  if (e.type.toLowerCase().indexOf("animationend") >= 0) {
+    LogEvent("Stopping animation...");
+    ToggleAnimation();
+  }
+}
+
+// start/stop animation
+function ToggleAnimation(e) {
+  var on = (anim.className != "");
+  LogEvent("Animation is " +(on ? "disabled.\n" : "enabled."));
+  anim.textContent = "Click to "+(on ? "start" : "stop")+" animation";
+  anim.className = (on ? "" : "enable");
+  if (e) e.preventDefault();
+};
+
+// log event in the console
+function LogEvent(msg) {
+  log.textContent += msg + "\n";
+  var ot = log.scrollHeight - log.clientHeight;
+  if (ot > 0) log.scrollTop = ot;
+}
+
+```
+
+**16. Browser Compatibility**
+
+```javascript
+var pfx = ["webkit", "moz", "MS", "o", ""];
+function PrefixedEvent(element, type, callback) {
+  for (var p = 0; p < pfx.length; p++) {
+    if (!pfx[p]) type = type.toLowerCase();
+    element.addEventListener(pfx[p]+type, callback, false);
+  }
+}
+```
+
+```javascript
+// animation listener events
+PrefixedEvent(anim, "AnimationStart", AnimationListener);
+PrefixedEvent(anim, "AnimationIteration", AnimationListener);
+PrefixedEvent(anim, "AnimationEnd", AnimationListener);
+```
+
+**17. Sự kiện hoạt ảnh CSS3 trong JavaScript**
+- Có 3 sự kiện hoạt ảnh CSS3 mà bạn có thể liên kết trong JavaScript:
+- ```animationstart```: kích hoạt khi Animation bắt đầu.
+- ```animationiteration```: kích hoạt khi vòng lặp Animation bắt đầu lại.
+- ```animationend```: kích hoạt khi một Animation kết thúc (chú ý, không bao giờ kích hoạt các Animation vô hạn)
+**Prefixing**
+- Họ sẽ lưu phiên bản tiền tố chính xác trong các biến animationStart, animationIteration và animationEnd toàn cục, mà sau đó bạn có thể sử dụng để ràng buộc sự kiện.
+
+```javascript
+// Initialise needed variables
+var prefixes = ["webkit", "moz", "MS", "o"];
+var elem = document.createElement('div');
+
+// Animation Start
+window.animationStart = "animationstart";
+for (var i = 0; i < prefixes.length; i++) {
+  if (elem.style[prefixes[i] + "AnimationStart"] !== undefined) {
+    window.animationStart = prefixes[i] + "AnimationStart";
+    break;
+  }
+}
+
+// Animation Iteration
+window.animationIteration = "animationiteration";
+for (var i = 0; i < prefixes.length; i++) {
+  if (elem.style[prefixes[i] + "AnimationIteration"] !== undefined) {
+    window.animationIteration = prefixes[i] + "AnimationIteration";
+    break;
+  }
+}
+
+// Animation End
+window.animationEnd = "animationend";
+for (var i = 0; i < prefixes.length; i++) {
+  if (elem.style[prefixes[i] + "AnimationEnd"] !== undefined) {
+    window.animationEnd = prefixes[i] + "AnimationEnd";
+    break;
+  }
+}
+```
+- Bây giờ chúng ta chỉ cần ràng buộc sự kiện, gọi hàm doSomething khi nó kích hoạt:
+
+```javascript
+element.addEventListener(animationStart, doSomething, false);
+element.addEventListener(animationIteration, doSomething, false);
+element.addEventListener(animationEnd, doSomething, false);
+```
+
