@@ -62,25 +62,21 @@ $(document).ready(function() {
 ```
 
 >**Object**
----
 ```javascript
 
 ```
 
 >**Array**
----
 ```javascript
 
 ```
 
 >**Function**
----
 ```javascript
 
 ```
 
 >**Condition**
----
 ```javascript
 
 ```
