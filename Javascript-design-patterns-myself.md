@@ -1,7 +1,7 @@
 #### I. Javascript Design Patterns myself
 ---
 
->**Design Paterns 1**
+>**Design Paterns Plugin**
 
 ```javascript
 var name = document.querySelectorAll('#name');
@@ -60,8 +60,27 @@ $(document).ready(function() {
 });
 
 ```
->**Design Paterns 2**
 
+>**Object**
+---
+```javascript
+
+```
+
+>**Array**
+---
+```javascript
+
+```
+
+>**Function**
+---
+```javascript
+
+```
+
+>**Condition**
+---
 ```javascript
 
 ```
