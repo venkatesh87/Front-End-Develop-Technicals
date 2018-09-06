@@ -88,6 +88,7 @@ var Navigation = {
 
 **2. **
 - Text.
+```javascript
 $(document).ready(function() {
     App.init();
     var currentSlide = 0;
@@ -190,6 +191,8 @@ $(document).ready(function() {
     
     Animation.init();
 });
+```
+
 >JavaScript Code:
 ```javascript
 
