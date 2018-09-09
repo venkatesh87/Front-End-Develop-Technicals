@@ -204,6 +204,10 @@ $('.my_modal').modal();'
 $('.my_modal').modal();'
 ```
 
+## Tổng hợp link Bootstrap Menu:
+
+1. https://mobirise.com/bootstrap-menu/bootstrap-dropdown-menu-hover.html
+
 ## Refer:
 
 1. http://sortedarray.com/breakdown-of-bootstrap-plugin/
@@ -211,3 +215,4 @@ $('.my_modal').modal();'
 2. https://octobercms.com/docs/ui/foundation
 
 3. http://jbeurel.github.io/bootstrap-annotated-source/docs/modal.html
+
