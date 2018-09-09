@@ -1,3 +1,15 @@
+## Tổng hợp link Bootstrap Menu:
+
+1. https://mobirise.com/bootstrap-menu/bootstrap-dropdown-menu-hover.html
+
+## Refer:
+
+1. http://sortedarray.com/breakdown-of-bootstrap-plugin/
+
+2. https://octobercms.com/docs/ui/foundation
+
+3. http://jbeurel.github.io/bootstrap-annotated-source/docs/modal.html
+
 Most of the Bootstrap javascript plugins like Modal, Dropdown and others, share the same basic template. I wanted to extract that template out from their js plugin and explain each part individually. Here is the basic template extracted from modal.js.
 
 ```javascript
@@ -203,16 +215,3 @@ $('.my_modal').modal();'
 ```javascript
 $('.my_modal').modal();'
 ```
-
-## Tổng hợp link Bootstrap Menu:
-
-1. https://mobirise.com/bootstrap-menu/bootstrap-dropdown-menu-hover.html
-
-## Refer:
-
-1. http://sortedarray.com/breakdown-of-bootstrap-plugin/
-
-2. https://octobercms.com/docs/ui/foundation
-
-3. http://jbeurel.github.io/bootstrap-annotated-source/docs/modal.html
-
