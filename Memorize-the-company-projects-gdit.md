@@ -6554,12 +6554,36 @@ if (typeof(Storage) !== "undefined") {
 
 ```
 
-**17. **
-- Text.
+**17. 20180917 Shizuoka Tourist**
+
+- Sử dụng **e.target** ```(!($(e.target).hasClass('accordion_checked') || $(e.target).parents('.accordion_checked').length))``` để loại trừ các phần tử này khỏi ```click```.
+
+![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_accordion.jpg)
 
 >JavaScript Code:
 ```javascript
+(function($) {
+    $(function() {
+        $('.accordion .accordion_heading').click(function(e) {
+            if (!($(e.target).hasClass('accordion_checked') || $(e.target).parents('.accordion_checked').length)) {
+                var dropDown = $(this).closest('.accordion_item').find('.accordion_sub');
 
+                $(this).closest('.accordion').find('.accordion_sub').not(dropDown).slideUp();
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                } else {
+                    $(this).closest('.accordion').find('.accordion_heading.active').removeClass('active');
+                    $(this).addClass('active');
+                }
+
+                dropDown.stop(false, true).slideToggle();
+
+                e.preventDefault();
+            }
+        });
+    });
+})(jQuery);
 ```
 
 **18. **
