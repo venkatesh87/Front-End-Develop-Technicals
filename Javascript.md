@@ -47,8 +47,6 @@
 
 1. [Media Queries](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Media-queries.md)
 
-1. [Some functions javascript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Some-functions-javascript.md)
-
 1. [CRUD Table](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Crud-table.md)
 
 1. [Javascript Document](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-document.md)
