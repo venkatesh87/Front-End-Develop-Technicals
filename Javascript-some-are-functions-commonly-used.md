@@ -83,7 +83,19 @@ if (window.scrollY) {
 window.scrollByPages(1);
 ```
 
-**6. MouseEvent ```screen```, ```screenX```, ```screenY``` Property**
+**6. clientWidth, clientHeight**
+- Lấy chiều rộng và chiều cao của họp bao gồm phần ```padding```, không bao gồm ```border```.
+
+```javascript
+function myFunction() {
+  var elmnt = document.getElementById("myDIV");
+  var txt = "Height including padding: " + elmnt.clientHeight + "px<br>";
+  txt += "Width including padding: " + elmnt.clientWidth + "px";
+  document.getElementById("demo").innerHTML = txt;
+}
+```
+
+**7. MouseEvent ```screen```, ```screenX```, ```screenY``` Property**
 
 >**screen**
 - Returns a reference to the screen object associated with the window. The screen object, implementing the Screen interface, is a special object for inspecting properties of the screen on which the current window is being rendered.
@@ -107,7 +119,7 @@ lLoc = window.screenX
 lLoc = window.screenY
 ```
 
->**6. MouseEvent ```clientX```, ```clientY```**
+>**8. MouseEvent ```clientX```, ```clientY```**
 
 >**MouseEvent clientX**
 - The ```clientX``` property returns the horizontal coordinate (according to the client area) of the mouse pointer when a mouse event was triggered.
@@ -155,7 +167,7 @@ function showCoords(event) {
 }
 ```
 
->**7. ```pageXOffset```, ```pageYOffset```**
+>**9. ```pageXOffset```, ```pageYOffset```**
 - Các thuộc tính ```pageXOffset``` và ```pageYOffset``` trả về các pixel mà document hiện tại đã được ```cuộn``` ```từ góc trên``` ```bên trái``` của ```cửa sổ```, ```theo chiều ngang``` và ```theo chiều dọc```.
 - Thuộc tính pageXOffset và pageYOffset bằng với thuộc tính scrollX và scrollY.
 - ```window.pageXOffset```, ```window.pageYOffset```
@@ -197,7 +209,7 @@ function myFunction() {
 }
 ```
 
->**9. ```scrollTop```**
+>**10. ```scrollTop```**
 - Thuộc tính ```scrollTop``` đặt hoặc trả về số lượng pixel mà nội dung của phần tử được cuộn theo chiều dọc.
 
 ```javascript
@@ -225,7 +237,7 @@ function myFunction() {
 }
 ```
 
->**12. ```scrollLeft```**
+>**11. ```scrollLeft```**
 - Sử dụng thuộc tính ```scrollLeft``` để đặt hoặc trả lại số pixel mà nội dung của phần tử được cuộn theo chiều ngang.
 ```javascript
 <div id="myDIV" onscroll="myFunction()">
@@ -240,7 +252,7 @@ function myFunction() {
 }
 ```
 
->**13. ```scrollBy```**
+>**12. ```scrollBy```**
 - Phương thức ```scrollBy()``` cuộn ```document``` theo số pixel được chỉ định.
 - window.scrollBy(xnum, ynum)
 
@@ -254,7 +266,7 @@ function scrollWin() {
 }
 ```
 
-**14. ```getBoundingClientRect()```**
+**13. ```getBoundingClientRect()```**
 - rect is a DOMRect object with eight properties: ```left```, ```top```, ```right```, ```bottom```, ```x```, ```y```, ```width```, ```height```.
 ```javascript
 var rect = obj.getBoundingClientRect();
@@ -273,7 +285,7 @@ var rect = obj.getBoundingClientRect();
   && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
 ```
 
-**15. indexOf():** 
+**14. indexOf():** 
 
 >**indexOf() String**: Phương thức ```indexOf()``` trả về vị trí của lần xuất hiện đầu tiên của một giá trị được chỉ định trong một chuỗi.
 ```javascript
@@ -295,7 +307,7 @@ function myFunction() {
 ```
 **==> Result:** 2
 
-**16. splice():** The splice() method adds/removes items to/from an array, and returns the removed item(s).
+**15. splice():** The splice() method adds/removes items to/from an array, and returns the removed item(s).
 
 ```javascript
 array.splice(index, howmany, item1, ....., itemX)
@@ -325,7 +337,7 @@ fruits.splice(2, 2);
 ```javascript
 Banana,Orange,Kiwi
 ```
-**17. document.getElementsByClassName():** Get all elements with the specified class name
+**16. document.getElementsByClassName():** Get all elements with the specified class name
 
 >**HTML**
 ```javascript
@@ -342,7 +354,7 @@ function myFunction() {
 }
 ```
 
-**18. document.getElementsByTagName():** Get all elements in the document with the specified tag name.
+**17. document.getElementsByTagName():** Get all elements in the document with the specified tag name.
 
 >**HTML**
 ```javascript
@@ -365,7 +377,7 @@ function myFunction() {
 }
 ```
 
-**19. document.querySelectorAll():** Get all elements in the document with class="elements"
+**18. document.querySelectorAll():** Get all elements in the document with class="elements"
 
 >**HTML**
 ```javascript
@@ -381,7 +393,7 @@ function myFunction() {
 }
 ```
 
-**20. document.createElement():** Create a <button> element
+**19. document.createElement():** Create a <button> element
 
 >**JS**
 ```javascript
@@ -389,7 +401,7 @@ var element= document.createElement("div");
 document.body.appendChild(element);
 ```
 
-**21. getAttribute():** Get the value of the class attribute of an ```<h1>``` element
+**20. getAttribute():** Get the value of the class attribute of an ```<h1>``` element
 
 >**HTML**
 ```javascript
@@ -407,7 +419,7 @@ function myFunction() {
 }
 ```
 
-**22. setAttribute():** Add the class attribute with the value of "democlass" to a ```<h1>``` element
+**21. setAttribute():** Add the class attribute with the value of "democlass" to a ```<h1>``` element
 
 >**HTML**
 ```javascript
@@ -423,7 +435,7 @@ function myFunction() {
 }
 ```
 
-**23. getBoundingClientRect():** 
+**22. getBoundingClientRect():** 
 - rect is a DOMRect object with eight properties: left, top, right, bottom, x, y, width, height
 - Kết quả là hình chữ nhật nhỏ nhất chứa toàn bộ phần tử, với các thuộc tính chỉ đọc, ```left, top, right, bottom, x, y, width, height``` mô tả toàn bộ hộp viền theo pixel. Các thuộc tính khác với ```width``` và ```height``` có liên quan đến phía trên cùng bên trái của chế độ xem.
 - Các hộp viền trống sẽ bị bỏ qua hoàn toàn. Nếu tất cả các hộp biên của phần tử trống, thì hình chữ nhật được trả về với chiều rộng và chiều cao bằng không và ở trên cùng và bên trái là phía trên cùng bên trái của hộp viền cho hộp CSS đầu tiên (theo thứ tự nội dung) cho thành phần.
@@ -437,7 +449,7 @@ function myFunction() {
 (((t = document.documentElement) || (t = document.body.parentNode))
   && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
   ```
-**24. requestAnimationFrame():** 
+**23. requestAnimationFrame():** 
 
 - **sectionSyntax**: ```window.requestAnimationFrame(callback);```
 - ```window.requestAnimationFrame()``` cho trình duyệt biết rằng bạn muốn thực hiện một animation và yêu cầu trình duyệt gọi một hàm được chỉ định để cập nhật một animation trước khi vẽ lại lần tiếp theo. Phương thức nhận một cuộc gọi lại như một đối số được gọi trước khi repaint.
@@ -463,8 +475,7 @@ function step(timestamp) {
 window.requestAnimationFrame(step);
 ```
 
-
-**25. cancelAnimationFrame():**
+**24. cancelAnimationFrame():**
 
 - **Syntax**: ```window.cancelAnimationFrame(requestID);```
 
@@ -492,7 +503,7 @@ myReq = requestAnimationFrame(step);
 cancelAnimationFrame(myReq);
 ```
 
-**26. Làm thế nào để nắm bắt các sự kiện CSS3 Animation trong JavaScript**
+**25. Làm thế nào để nắm bắt các sự kiện CSS3 Animation trong JavaScript**
 - CSS3 Animation được thực hiện trơn tru và nhanh chóng nhưng không giống như JavaScript, bạn không có kiểm soát theo từng khung hình. May mắn thay, bạn có thể áp dụng các trình xử lý sự kiện cho bất kỳ phần tử nào để xác định trạng thái hoạt ảnh. Điều này cho phép kiểm soát chi tiết như chơi các hình động khác nhau theo thứ tự.
 ```javascript
 #anim.enable {
@@ -526,7 +537,7 @@ cancelAnimationFrame(myReq);
 ```
 - Khi lớp **enable** được **applied ** cho phần tử với ID **anim**, Animation  có tên ```flash``` được chạy ba lần. Mỗi lần lặp lại kéo dài một giây trong đó phần tử mất dần sau đó.
 
-**27. animationstart**
+**26. animationstart**
 
 - Sự kiện ```animationstart``` được kích hoạt khi animation bắt đầu lần đầu tiên.
 
@@ -535,7 +546,7 @@ var anim = document.getElementById("anim");
 anim.addEventListener("animationstart", AnimationListener, false);
 ```
 
-**28. animationiteration**: Lặp lại
+**27. animationiteration**: Lặp lại
 
 - Sự kiện animation được kích hoạt ở đầu mỗi lần lặp lại hoạt ảnh mới, tức là mỗi lần lặp lại trừ lần lặp đầu tiên.
 
@@ -543,7 +554,7 @@ anim.addEventListener("animationstart", AnimationListener, false);
 anim.addEventListener("animationiteration", AnimationListener, false);
 ```
 
-**29. AnimationEnd**
+**28. AnimationEnd**
 
 - Sự kiện Animation được kích hoạt khi hoạt ảnh kết thúc.
 
@@ -608,7 +619,7 @@ function LogEvent(msg) {
 
 ```
 
-**30. Browser Compatibility**
+**29. Browser Compatibility**
 
 ```javascript
 var pfx = ["webkit", "moz", "MS", "o", ""];
@@ -627,7 +638,7 @@ PrefixedEvent(anim, "AnimationIteration", AnimationListener);
 PrefixedEvent(anim, "AnimationEnd", AnimationListener);
 ```
 
-**31. Sự kiện hoạt ảnh CSS3 trong JavaScript**
+**30. Sự kiện hoạt ảnh CSS3 trong JavaScript**
 - Có 3 sự kiện hoạt ảnh CSS3 mà bạn có thể liên kết trong JavaScript:
 - ```animationstart```: kích hoạt khi Animation bắt đầu.
 - ```animationiteration```: kích hoạt khi vòng lặp Animation bắt đầu lại.
@@ -675,7 +686,7 @@ element.addEventListener(animationIteration, doSomething, false);
 element.addEventListener(animationEnd, doSomething, false);
 ```
 
-**18. Detect the End of CSS Animations and Transitions with JavaScript**
+**31. Detect the End of CSS Animations and Transitions with JavaScript**
 - CSS cho phép bạn tạo các hiệu ứng động với các hiệu ứng chuyển tiếp và các khung hình chính mà chỉ có thể thực hiện được với JavaScript hoặc Flash. Thật không may, với CSS không có cách nào để thực hiện gọi lại khi hoạt ảnh hoàn tất. Với JavaScript, bạn có thể phát hiện phần cuối của quá trình chuyển đổi CSS hoặc hoạt ảnh và sau đó kích hoạt một chức năng.
 **Phát hiện và thực hiện khi chuyển tiếp kết thúc bằng jQuery**
 - Sử dụng JavaScript, chúng tôi có thể phát hiện sự kiện chuyển đổi; tuy nhiên đối với trình duyệt chéo, hỗ trợ chúng tôi cần bao gồm các tiền tố của trình duyệt khác.
