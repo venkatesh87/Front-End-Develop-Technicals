@@ -12,7 +12,7 @@
 
 1. [JQuery Gallery Photo Json](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-gallery-photo-json.md)
 
-1. [Function jQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Function-jquery.md)
+1. [Jquery Some Are Functions Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-some-are-functions-commonly-used.md)
 
 1. [Breakdown Of Bootstrap Plugin](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Breakdown-of-bootstrap-plugin.md)
 
