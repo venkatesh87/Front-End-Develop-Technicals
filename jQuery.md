@@ -23,6 +23,6 @@
 1. [JQuery JSON](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-json.md)
 
 
-1. [JQuery Write Plugin Technical](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-write-plugin-technical.md)
+1. [JQuery Technical Writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-technical-writing.md)
 
 1. [jQuery Plugin Patterns](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-write-plugin-patterns.md)
