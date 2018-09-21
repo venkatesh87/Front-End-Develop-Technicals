@@ -8,8 +8,6 @@
 
 1. [JQuery Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-mouse-keyboard-touch-event.md)
 
-1. [JQuery  Coordinate Axis](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-coordinate-axis.md)
-
 1. [JQuery Gallery Photo Json](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-gallery-photo-json.md)
 
 1. [JQuery Some Are Functions Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-some-are-functions-commonly-used.md)

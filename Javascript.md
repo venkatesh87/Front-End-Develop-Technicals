@@ -19,8 +19,6 @@
 
 1. [Javascript Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-mouse-keyboard-touch-event.md)
 
-1. [Javascript Coordinate Axis](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-coordinate-axis.md)
-
 1. [Shorthand JavaScript Techniques](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Shorthand-javascript-techniques.md)
 
 1. [Function JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Function-javascript.md)
