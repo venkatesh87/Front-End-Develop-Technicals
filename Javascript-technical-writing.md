@@ -334,7 +334,7 @@ popSwitcher(demo3, '-emphasis');
 - var random = jsonContent["featured"][Math.floor(Math.random()*jsonContent["featured"].length)];
 ```
 
-## 11. Is it correct to use JavaScript Array.sort() method for shuffling?(Nó là đúng để sử dụng phương pháp JavaScript Array.sort () cho xáo trộn không?)
+### 11. Is it correct to use JavaScript ```Array.sort()``` method for shuffling?(Nó là đúng để sử dụng phương pháp JavaScript Array.sort () cho xáo trộn không?)
 
 [stackoverflow shuffling random](http://stackoverflow.com/questions/962802/is-it-correct-to-use-javascript-array-sort-method-for-shuffling#962890)
 
@@ -445,8 +445,8 @@ console.log(shuffle(myArray));
 ```javascript
 
 ```
-### 14. Code writing techniques
+### 14. Code writing techniques map function
 
-### 15. Code writing techniques
+### 15. Code writing techniques setTimeout(function(){ alert("Hello"); }, 3000);
 
 ### 16. Code writing techniques
