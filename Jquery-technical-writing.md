@@ -1,7 +1,7 @@
 #### JQuery Technical Writing
 ---
 
-**1. **
+**1. Funtion map function**
 
 >JavaScript Code:
 ```javascript
