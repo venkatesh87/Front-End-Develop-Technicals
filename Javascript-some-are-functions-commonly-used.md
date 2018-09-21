@@ -95,21 +95,6 @@ function myFunction() {
 }
 ```
 
-**Move html-element to click-position**
-```
-var theThing = document.querySelector("#thing");
-var container = document.querySelector("#contentContainer");
-
-container.addEventListener("click", function(event) {
-	var xPosition = event.clientX - container.getBoundingClientRect().left - (theThing.clientWidth / 2);
-	var yPosition = event.clientY - container.getBoundingClientRect().top - (theThing.clientHeight / 2);
-	// in case of a wide border, the boarder-width needs to be considered in the formula above
-	theThing.style.left = xPosition + "px";
-	theThing.style.top = yPosition + "px";
-	}
-);
-```
-
 **7. MouseEvent ```screen```, ```screenX```, ```screenY``` Property**
 
 >**screen**
@@ -282,7 +267,19 @@ function scrollWin() {
 ```
 
 **13. ```getBoundingClientRect()```**
+
+- top – Tọa độ Y cho cạnh phần tử trên cùng.
+
+- left – Tọa độ X cho cạnh phần tử bên trái.
+
+- right – Tọa độ X cho cạnh phần tử bên phải.
+
+- bottom – Tọa độ Y cho cạnh phần tử đáy.
+
+- ![coords](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/coords.png)
+
 - rect is a DOMRect object with eight properties: ```left```, ```top```, ```right```, ```bottom```, ```x```, ```y```, ```width```, ```height```.
+
 ```javascript
 var rect = obj.getBoundingClientRect();
 ```
@@ -298,6 +295,74 @@ var rect = obj.getBoundingClientRect();
 // For scrollY
 (((t = document.documentElement) || (t = document.body.parentNode))
   && typeof t.scrollTop == 'number' ? t : document.body).scrollTop
+```
+
+**Move html-element to click-position**
+```
+var theThing = document.querySelector("#thing");
+var container = document.querySelector("#contentContainer");
+
+container.addEventListener("click", function(event) {
+ var xPosition = event.clientX - container.getBoundingClientRect().left - (theThing.clientWidth / 2);
+ var yPosition = event.clientY - container.getBoundingClientRect().top - (theThing.clientHeight / 2);
+ // in case of a wide border, the boarder-width needs to be considered in the formula above
+ theThing.style.left = xPosition + "px";
+  theThing.style.top = yPosition + "px";
+});
+```
+
+**elementFromPoint(x, y)**
+- Cuộc gọi đến ```document.elementFromPoint(x, y)``` trả về phần tử lồng nhau nhất ở tọa độ cửa sổ (x, y).
+- Cú pháp là: ```let elem = document.elementFromPoint(x, y);```
+- mã bên dưới làm nổi bật và xuất ra thẻ của phần tử hiện đang ở giữa cửa sổ:
+
+```javascript
+let centerX = document.documentElement.clientWidth / 2;
+let centerY = document.documentElement.clientHeight / 2;
+
+let elem = document.elementFromPoint(centerX, centerY);
+
+elem.style.background = "red";
+alert(elem.tagName);
+```
+
+**Document coordinates**
+- Các toạ độ tương đối tài liệu bắt đầu từ góc trên bên trái của tài liệu, không phải là cửa sổ.
+
+- Trong CSS, các tọa độ cửa sổ tương ứng với ```position:fixed```, trong khi tọa độ tài liệu tương tự như ```position:absolute``` ở trên cùng.
+
+- Chúng ta có thể sử dụng ```position:absolute``` và ```top/left``` để đặt một cái gì đó tại một vị trí nhất định của tài liệu, để nó vẫn còn đó trong một cuộn trang. Nhưng trước tiên chúng ta cần tọa độ đúng.
+
+- Để rõ ràng, chúng tôi sẽ gọi các tọa độ **window** ```(clientX, clientY)``` và tọa độ **document** ```(pageX, pageY)```
+
+**Khi trang không được **scroll**, thì tọa độ **window ** và tọa độ **document** thực sự giống nhau. Điểm số của chúng không khớp với nhau:**
+- ![document-window-coordinates-zero](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/document-window-coordinates-zero.png)
+
+**Và nếu chúng ta scroll nó, sau đó (clientX, clientY) thay đổi, bởi vì chúng liên quan đến cửa sổ, nhưng (pageX, pageY) vẫn giữ nguyên.**
+- Đây là cùng một trang sau cuộn dọc:
+
+- ![document-window-coordinates-scroll](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/document-window-coordinates-scroll.png)
+- ```clientY``` của tiêu đề "Từ bài viết nổi bật hôm nay" đã trở thành 0, bởi vì phần tử hiện ở trên đầu cửa sổ.
+- ```clientX``` không thay đổi, vì chúng ta không cuộn theo chiều ngang.
+- các tọa độ ```pageX``` và ```pageY``` của phần tử vẫn như cũ, vì chúng liên quan đến tài liệu.
+
+**Nhận tọa độ tài liệu**
+- Không có phương pháp chuẩn nào để lấy tọa độ tài liệu của một phần tử. Nhưng thật dễ dàng để viết nó.
+- Hai hệ tọa độ được kết nối theo công thức:
+- ```pageY = clientY + chiều cao của phần dọc được cuộn ra của tài liệu.```
+- ```pageX = clientX + chiều rộng của phần ngang được cuộn ra của tài liệu.```
+- Hàm ```getCoords(elem)``` sẽ lấy các tọa độ cửa sổ từ ```elem.getBoundingClientRect()``` và thêm cuộn hiện tại vào chúng:
+
+```
+// get document coordinates of the element
+function getCoords(elem) {
+  let box = elem.getBoundingClientRect();
+
+  return {
+    top: box.top + pageYOffset,
+    left: box.left + pageXOffset
+  };
+}
 ```
 
 **14. indexOf():** 
