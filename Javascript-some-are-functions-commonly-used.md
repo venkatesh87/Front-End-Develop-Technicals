@@ -336,12 +336,14 @@ alert(elem.tagName);
 - Để rõ ràng, chúng tôi sẽ gọi các tọa độ **window** ```(clientX, clientY)``` và tọa độ **document** ```(pageX, pageY)```
 
 **Khi trang không được **scroll**, thì tọa độ **window ** và tọa độ **document** thực sự giống nhau. Điểm số của chúng không khớp với nhau:**
+
 - ![document window coordinates zero](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/document-window-coordinates-zero.png)
 
 **Và nếu chúng ta scroll nó, sau đó (clientX, clientY) thay đổi, bởi vì chúng liên quan đến cửa sổ, nhưng (pageX, pageY) vẫn giữ nguyên.**
 - Đây là cùng một trang sau cuộn dọc:
 
 - ![document window coordinates scroll](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/document-window-coordinates-scroll.png)
+
 - ```clientY``` của tiêu đề "Từ bài viết nổi bật hôm nay" đã trở thành 0, bởi vì phần tử hiện ở trên đầu cửa sổ.
 - ```clientX``` không thay đổi, vì chúng ta không cuộn theo chiều ngang.
 - các tọa độ ```pageX``` và ```pageY``` của phần tử vẫn như cũ, vì chúng liên quan đến tài liệu.
