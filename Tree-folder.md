@@ -83,6 +83,10 @@
 
 │   ├── [Text Effect](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Text-effect.md)
 
+│   ├── [Plugin SVG](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Plugin-svg.md)
+
+│   ├── [Plugin CSS New Style](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Plugin-css-new-style.md)
+
 │   └── [DataTable](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/DataTable.md)
 
 
