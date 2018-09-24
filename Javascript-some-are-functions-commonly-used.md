@@ -47,6 +47,7 @@ document.getElementById("demo").innerHTML = "Screen Height: " + screen.height;
 ```
 
 **3. ```jQuery Dimensions```**
+
 ![jQuery Dimensions](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_jquerydim.gif)
 - **width():** phương thức thiết lập hoặc trả về chiều rộng của một phần tử (không bao gồm padding, border và margin).
 - **height():** phương thức thiết lập hoặc trả về chiều cao của một phần tử (không bao gồm padding, border và margin).
