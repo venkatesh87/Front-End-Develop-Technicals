@@ -42,6 +42,8 @@
 
 │   │   ├── [Niigata Tourism](https://www.niigata-kankou.or.jp/)
 
+│   │   ├── [Nagano](https://www.pref.nagano.lg.jp/police/index.html)
+
 │   │   ├── [Booking System]()
 
 │   │   ├── [Oita(Phía Nhật phát triển](https://www.city.oita.oita.jp/index.html)
