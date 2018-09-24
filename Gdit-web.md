@@ -42,7 +42,15 @@
 
 │   │   ├── [Niigata Tourism](https://www.niigata-kankou.or.jp/)
 
-│   │   ├── [Nagano](https://www.pref.nagano.lg.jp/police/index.html)
+│   │   ├── [Nagano](https://www.pref.nagano.lg.jp/)
+
+│   │   ├── [Nagano kensei](https://www.pref.nagano.lg.jp/kensei/gaiyo/chiji/index.html)
+
+│   │   ├── [Nagano gikai](https://www.pref.nagano.lg.jp/gikai/chosa/index.html)
+
+│   │   ├── [Nagano police](https://www.pref.nagano.lg.jp/police/index.html)
+
+│   │   ├── [Nagano kyoiku](https://www.pref.nagano.lg.jp/kyoiku/kyoiku/index.html)
 
 │   │   ├── [Booking System]()
 
