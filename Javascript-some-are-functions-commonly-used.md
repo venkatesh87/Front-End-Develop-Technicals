@@ -48,6 +48,27 @@ document.getElementById("demo").innerHTML = "Screen Height: " + screen.height;
 
 **3. What is the difference, between ```window```, ```screen```, and ```document``` in Javascript?**
 
+- **window:** 
+
+  + Là gốc đối tượng JavaScript chính.
+  + Là đối tượng chung trong trình duyệt.
+  + Bạn có thể truy cập nó dưới dạng ```window``` trong hầu hết các trường hợp (trong trình duyệt).
+  + ```window.screen``` là một đối tượng thông tin nhỏ về kích thước màn hình vật lý.
+  + Là global object thực sự.
+  + ```window.screen``` là một đối tượng thông tin nhỏ về kích thước màn hình vật lý.
+
+  + ```$(window).width()```: chiều rộng của cửa sổ trình duyệt, nó có thể thay đổi với trình duyệt.
+  + ```window.screen.width ```: nó phụ thuộc vào chiều rộng màn hình của bạn, nó là một giá trị cố định.
+  + https://www.w3schools.com/jsref/obj_window.asp
+  
+- **screen:** 
+
+  + screen là màn hình, nó chứa các thuộc tính về màn hình của người dùng.
+  
+- **document:** 
+  + Là DOM
+  + ```window.document``` hoặc chỉ tài liệu là đối tượng chính của mô hình đối tượng tài liệu có thể nhìn thấy (hoặc tốt hơn: rendered) / DOM.
+  
 **4. ```jQuery Dimensions```**
 
 ![jQuery Dimensions](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_jquerydim.gif)
