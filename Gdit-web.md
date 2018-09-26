@@ -52,6 +52,12 @@
 
 │   │   ├── [Nagano kyoiku](https://www.pref.nagano.lg.jp/kyoiku/kyoiku/index.html)
 
+│   │   ├── [Metro Tokyo](http://www.metro.tokyo.jp/search/index.html)
+
+│   │   ├── [Metro Tokyo Tosei](http://www.metro.tokyo.jp/tosei/hodohappyo/press/index.html)
+
+│   │   ├── [Omura City](http://pub.copy.omura.cms8341.jp/)
+
 │   │   ├── [Booking System]()
 
 │   │   ├── [Oita(Phía Nhật phát triển](https://www.city.oita.oita.jp/index.html)
