@@ -1,13 +1,17 @@
 #### I.Document Link Local
 ---
 
+1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
+
+1. [Javascript Some Are Functions Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-some-are-functions-commonly-used.md)
+
+1. [Javascript Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-mouse-keyboard-touch-event.md)
+
 1. [Javascript Slideshow](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-slideshow.md)
 
 1. [Flex Those JavaScript Array Muscles](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-flex-those-javaScript-array-muscles.md)
 
 1. [JavaScript On Youtube TEDU](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-on-youtube.md)
-
-1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
 1. [Javascript 21 Tips Useful](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-21-tips-useful.md)
 
@@ -16,8 +20,6 @@
 1. [JavaScript study](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-study.md)
 
 1. [Javascript - Exercises, Practice, Solution](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-exercises-practice-solution.md)
-
-1. [Javascript Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-mouse-keyboard-touch-event.md)
 
 1. [Shorthand JavaScript Techniques](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Shorthand-javascript-techniques.md)
 
@@ -70,8 +72,6 @@
 1. [Javascript Ajax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-ajax.md)
 
 1. [Javascript JSON](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-json.md)
-
-1. [Javascript Some Are Functions Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-some-are-functions-commonly-used.md)
 
 1. [Javascript introduction to functional](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-introduction-to-functional.md)
 
