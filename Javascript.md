@@ -3,6 +3,8 @@
 
 1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
+1. [Javascript-technical-writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
+
 1. [Javascript Some Are Functions Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-some-are-functions-commonly-used.md)
 
 1. [Javascript Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-mouse-keyboard-touch-event.md)
