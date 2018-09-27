@@ -2,11 +2,11 @@
 
 1. [Tips And Tricks JQuery](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-jquery.md)
 
+1. [JQuery Technical Writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-technical-writing.md)
+
 1. [JQuery Some Are Functions Commonly Used](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-some-are-functions-commonly-used.md)
 
 1. [JQuery Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-mouse-keyboard-touch-event.md)
-
-1. [JQuery Technical Writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-technical-writing.md)
 
 1. [jQuery Function Constructor Concept](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-function-constructor-concept.md)
 
