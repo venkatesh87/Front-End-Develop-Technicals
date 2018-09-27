@@ -6,6 +6,8 @@
 
 1. [JQuery Mouse, Keyboard, Touch event](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-mouse-keyboard-touch-event.md)
 
+1. [JQuery Technical Writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-technical-writing.md)
+
 1. [jQuery Function Constructor Concept](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-function-constructor-concept.md)
 
 1. [JQuery Objects](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-objects.md)
@@ -19,7 +21,5 @@
 1. [JQuery Ajax](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-ajax.md)
 
 1. [JQuery JSON](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-json.md)
-
-1. [JQuery Technical Writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-technical-writing.md)
 
 1. [jQuery Plugin Patterns](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Jquery-write-plugin-patterns.md)
