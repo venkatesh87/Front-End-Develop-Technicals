@@ -6586,12 +6586,75 @@ if (typeof(Storage) !== "undefined") {
 })(jQuery);
 ```
 
-**18. **
-- Text.
+**18. 20180926 Tokyo Form Search**
+- Nhờ các bạn tạo JS liên quan đến form search của Tokyo. Tokyo thì có thay đổi spec chỗ Search nên sẽ chỉnh sửa phần Search đã có. Nhờ các bạn dựa vào file để tạo JS để có được nội dung như bên dưới
+
+▼Nội dung request
+Tại phần「ファイル形式の指定/chỉ định format file」hãy chỉnh sửa giống như bên dưới
+
+---------
+Trường hợp lấy Microsoft Word (.doc)　làm đối tượng tìm kiếm
+<input type="hidden" name="filetype" value="doc">
+
+Trường hợp loại trừ Microsoft Word (.doc) 　ra khỏi đối tượng tìm kiếm
+<input type="hidden" name="filetype" value="-doc">
+
+※pdf, xls cũng tương tự, trường hợp loại bỏ thì gắn - ở value
+---------
+
+※Khi set làm đối tượng search và loại bỏ khỏi đối tượng search thì từng value được setting vào, nhưng hãy làm thế nào đó để những giá trị đó không truyền vào Search.
+Về chỉnh sửa HTML thì hãy cho chúng tôi biết chỗ đã chỉnh sửa
+
+■ URL tương ứng
+http://www.metro.tokyo.jp/search/index.html
+http://www.metro.tokyo.jp/tosei/hodohappyo/press/index.html
+
+>HTML Code:
+```javascript
+<p>
+    <input type="hidden" id="filetype_val" name="filetype" value="">
+    <select id="label_as_filetype" name="as_filetype">
+        <option selected="selected" value="">すべての形式</option>
+        <option value="doc">Microsoft Word (.doc)</option>
+        <option value="xls">Microsoft Excel (.xls)</option>
+        <option value="pdf">Adobe Acrobat PDF (.pdf)</option>
+    </select> を
+    <select id="scope_search" title="検索対象範囲" name="as_ft">
+        <option selected="selected" value="i">検索対象にする</option>
+        <option value="e">検索対象から除く</option>
+    </select>
+</p>
+```
 
 >JavaScript Code:
 ```javascript
-
+//Search target
+$('#label_as_filetype').on('change', function() {
+    var value = $(this).find('option:selected').val();
+    var type_search = $('#scope_search').find('option:selected').val();
+    if (value != '') {
+        if (type_search == 'e') {
+            $('#filetype_val').val('-' + value);
+        } else if (type_search == 'i') {
+            $('#filetype_val').val(value);
+        }
+    } else {
+        $('#filetype_val').val('');
+    }
+});
+$('#scope_search').on('change', function() {
+    var value_scope = $(this).find('option:selected').val();
+    var type_file = $('#label_as_filetype').find('option:selected').val();
+    if (type_file != '') {
+        if (value_scope == 'e') {
+            $('#filetype_val').val('-' + type_file);
+        } else if (value_scope == 'i') {
+            $('#filetype_val').val(type_file);
+        }
+    } else {
+        $('#filetype_val').val('');
+    }
+});
 ```
 
 **19. **
