@@ -54,13 +54,15 @@ var freezeVp = function(e) {
 
 **- Case 4:**
 
-```
+```javascript
 #container {width: 400px;height: 400px;position: relative;background: yellow;}
 #animate {width: 50px;height: 50px;position: absolute; background-color: red;}
 <button onclick="myMove()">Click Me</button>
 <div id ="container">
 <div id ="animate"></div>
+```
 
+```javascript
 function myMove() {
   var elem = document.getElementById("animate");   
   var pos = 0;
@@ -78,7 +80,7 @@ function myMove() {
 ```
 **- Case 5:**
 
-```
+```javascript
 function checkCookies() {
     var text = "";
     if (navigator.cookieEnabled == true) {
@@ -92,16 +94,17 @@ function checkCookies() {
 
 **- Case 6:** Khi gọi một function trong function thì hãy bỏ cặp dấu ngoặc này () đi, ```displayDate```, ```frame```.
 
-```
+```javascript
 document.getElementById("myBtn").addEventListener("click", displayDate);
 function displayDate(){
-	 document.getElementById('demo').innerHTML = Date();
+  document.getElementById('demo').innerHTML = Date();
 }
 ```
 
 ## 2. Check length element :
 
 **- Case 1: length-of-a-javascript-string**
+
 ```javascript
 var str = "Hello World!";
 var n = str.length;
@@ -134,6 +137,7 @@ Object.keys(myObject).length
 ### Length of a JavaScript object (or associative array)
 
 **- The most robust answer:**
+
 ```javascript
 var myArray = new Object();
 myArray["firstname"] = "Gareth";
@@ -150,11 +154,13 @@ Object.size = function(obj) {
 // Get the size of an object
 var size = Object.size(myArray);
 ```
+
 **- Here's an update as of 2016 and widespread deployment of ES5 and beyond. For IE9+ and all other modern ES5+ capable browsers, you can use Object.keys() so the above code just becomes:**
 
 ```javascript
 var size = Object.keys(myObj).length;
 ```
+
 **- If you know you don't have to worry about hasOwnProperty checks, you can do this very simply:**
 
 ```javascript
@@ -166,6 +172,7 @@ Object.keys(myArray).length
 ```javascript
 Object.keys(obj).length
 ```
+
 ## 4. Array :
 
 ## 5. API Youtube :
