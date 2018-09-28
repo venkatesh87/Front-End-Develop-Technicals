@@ -1,4 +1,4 @@
-1. [Tips And Tricks CSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips_and_tricks_css.md)
+1. [Tips And Tricks CSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-and-tricks-css.md)
 
 1. [Pseudo Classes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Pseudo-classes.md)
 
