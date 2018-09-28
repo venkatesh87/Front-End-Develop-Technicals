@@ -57,13 +57,15 @@ var freezeVp = function(e) {
 
 **- Case 4:**
 
-```
+```javascript
 #container {width: 400px;height: 400px;position: relative;background: yellow;}
 #animate {width: 50px;height: 50px;position: absolute; background-color: red;}
 <button onclick="myMove()">Click Me</button>
 <div id ="container">
 <div id ="animate"></div>
+```
 
+```javascript
 function myMove() {
   var elem = document.getElementById("animate");   
   var pos = 0;
@@ -81,7 +83,7 @@ function myMove() {
 ```
 **- Case 5:**
 
-```
+```javascript
 function checkCookies() {
     var text = "";
     if (navigator.cookieEnabled == true) {
@@ -95,10 +97,10 @@ function checkCookies() {
 
 **- Case 6:** Khi gọi một function trong function thì hãy bỏ cặp dấu ngoặc này () đi, ```displayDate```, ```frame```.
 
-```
+```javascript
 document.getElementById("myBtn").addEventListener("click", displayDate);
 function displayDate(){
-	 document.getElementById('demo').innerHTML = Date();
+  document.getElementById('demo').innerHTML = Date();
 }
 ```
 
