@@ -453,8 +453,31 @@ $('ul.account > li').bind('click',function(e){
 });
 ```
 
+#### 9. Flexible position Up/Bottom dropdown menu:
+<hr />
 
-#### 9. Scroll Effect Element:
+ ```javascript
+// =============================================================================
+// Bootstrap dropdown list position (Up/Bottom)
+// =============================================================================
+$('.container-sortable .table > tbody > tr > td').on('click', '[data-toggle=dropdown]', function() {
+    var dropmenu = $(this).next('.dropdown-menu');
+    dropmenu.css({
+        visibility: "hidden",
+        display: "block"
+    });
+    // Necessary to remove class each time so we don't unwantedly use dropup's offset top
+    dropmenu.parent().removeClass("dropup");
+    // Determine whether bottom of menu will be below window at current scroll position
+    if (dropmenu.offset().top + dropmenu.outerHeight() > $(window).innerHeight() + $(window).scrollTop()) {
+        dropmenu.parent().addClass("dropup");
+    }
+    // Return dropdown menu to fully hidden state
+    dropmenu.removeAttr("style");
+});
+```
+
+#### 10. Scroll Effect Element:
 <hr />
 
 >**Case 1:** 
@@ -486,7 +509,7 @@ jQuery('.to_animate_child_blocks').each(function() {
 });
 ```
 
-#### 10. Ajax:
+#### 11. Ajax:
 <hr />
 
 >**Case 1:** 
@@ -510,7 +533,7 @@ if (username != '') {
 
 ```
 
-#### 11. Process input search on header, header use position: fixed and run on device smartphone :
+#### 12. Process input search on header, header use position: fixed and run on device smartphone :
 <hr />
 
 ![Images](https://github.com/daodc/Front-End-Develop-Technical/wiki/jQuery)
@@ -526,7 +549,7 @@ $(document).on('blur', 'select, input, textarea', function() {
 });
 ```
 
-#### 12. Checkbox append value to element need show.
+#### 13. Checkbox append value to element need show.
 <hr />
 
 **HTML:** 
@@ -607,7 +630,7 @@ var _removeValueCheck = function(_this, _id) {
 };
 ```
 
-#### 13. Get atribute id ascending for element :
+#### 14. Get atribute id ascending for element :
 <hr />
 
 ```javascript
@@ -618,7 +641,7 @@ function getAtributeTable() {
 }
 ```
 
-#### 14. Combine event ```mouseover``` and ```click```:
+#### 15. Combine event ```mouseover``` and ```click```:
 <hr />
 
 ```javascript
@@ -632,7 +655,7 @@ $('.address-table tbody tr td .action-link').on('mouseover click', '.ic-rating',
 });
 ```
 
-#### 15. Bootstrap dropdown list auto position (Up/Bottom):
+#### 16. Bootstrap dropdown list auto position (Up/Bottom):
 <hr />
 
 ```javascript
@@ -653,7 +676,7 @@ $('.container-sortable .table > tbody > tr > td').on('click', '[data-toggle=drop
 });
 ```
 
-#### 16. Remove One Row And All Row :
+#### 17. Remove One Row And All Row :
 <hr />
 
 ```javascript
@@ -677,7 +700,7 @@ var _removeAllRow = function(_this) {
   _this.html('');
 };
 ```
-#### 17. Handle event click and click again:
+#### 18. Handle event click and click again:
 <hr />
 
 ```javascript
@@ -697,7 +720,7 @@ $('.address-table tbody tr').each(function() {
 });
 ```
 
-#### 18. Use jQuery to hide a DIV when the user clicks outside of it:
+#### 19. Use jQuery to hide a DIV when the user clicks outside of it:
 
 > **Case 1:**
 
@@ -766,7 +789,7 @@ $(document).click(function(e) {
 });
 ```
 
-#### 19. Function:
+#### 20. Function:
 <hr />
 
 > **prop:** 
@@ -813,7 +836,7 @@ $('#allcb').change(function() {
 });
 ```
 
-#### 20.Rendering a simple list of products with jQuery:
+#### 21.Rendering a simple list of products with jQuery:
 
 ```javascript
 var products = [
@@ -876,7 +899,7 @@ function productListJustJquery(products, element) {
 }
 ```
 
-#### 21.How to Dynamically Trim Text Using jQuery
+#### 22.How to Dynamically Trim Text Using jQuery
 
 ```javascript
 $(document).ready(function($) {
@@ -889,7 +912,7 @@ $(document).ready(function($) {
 });
 ```
 
-#### 22.jQuery Snippets: Getting the Current Year
+#### 23.jQuery Snippets: Getting the Current Year
 
 > **HTML:**
 
@@ -904,7 +927,7 @@ $(function() {
   $('.currentyear').text(thisyear);
 });
 ```
-#### 23.jQuery Snippets: How to Conditionally Enable Submit
+#### 24.jQuery Snippets: How to Conditionally Enable Submit
 
 > **HTML:**
 
@@ -919,7 +942,7 @@ $('#name').keyup(function() {
 });
 ```
 
-#### 24.jQuery Snippets: Using jQuery to Check All Boxes
+#### 25.jQuery Snippets: Using jQuery to Check All Boxes
 
 > **HTML:**
 
@@ -951,7 +974,7 @@ $("A[href='#uncheck-all']").click(function() {
 });
 ```
 
-#### 25.How to Use jQuery to Check if Cookies are Enabled
+#### 26.How to Use jQuery to Check if Cookies are Enabled
 
 > **JS:**
 
@@ -984,7 +1007,7 @@ Cookies enabled: true
 ```javascript
 Cookies enabled: false
 ```
-#### XX.How to Use jQuery to Create a Sticky Navigation on Scroll
+#### 27.How to Use jQuery to Create a Sticky Navigation on Scroll
 
 ```javascript
 $(window).scroll(function() {
@@ -996,7 +1019,7 @@ $(window).scroll(function() {
 });
 ```
 
-#### 26.How to Use jQuery’s Keystroke Methods:
+#### 28.How to Use jQuery’s Keystroke Methods:
 
 > **.keypress():**
 
@@ -1015,7 +1038,7 @@ $("textarea").keyup(function(){
   ("textarea").css("color", "blue");
 })
 ```
-#### 27.How to Use jQuery’s Keystroke Methods:
+#### 29.How to Use jQuery’s Keystroke Methods:
 
 ```javascript
 $(document).ready(function(){
@@ -1024,7 +1047,7 @@ $(document).ready(function(){
 });
 ```
 
-#### 28.How to Use jQuery to Create Blinking Text:
+#### 30.How to Use jQuery to Create Blinking Text:
 
 ```javascript
 function blink(selector){
@@ -1039,7 +1062,7 @@ $(document).ready(function(){
  blink('.blink'); 
 });
 ```
-#### 29.How to Disable Right-Click Menu Using jQuery:
+#### 31.How to Disable Right-Click Menu Using jQuery:
 
 ```javascript
 $(document).bind("contextmenu",function(e){
@@ -1048,7 +1071,7 @@ $(document).bind("contextmenu",function(e){
 });
 ```
 
-#### 30.How to Detect Browser Using jQuery
+#### 32.How to Detect Browser Using jQuery
 
 ```javascript
 function _setBrowser()
@@ -1081,7 +1104,7 @@ function _setBrowser()
 };
 ```
 
-#### 31.How to Use jQuery to Set Textarea Max Length
+#### 33.How to Use jQuery to Set Textarea Max Length
 
 > **HTML:**
 ```javascript
@@ -1105,7 +1128,7 @@ $(document).ready(function() {
 });
 ```
 
-#### 32.How to Dynamically Open External Links in New Window
+#### 34.How to Dynamically Open External Links in New Window
 
 ```javascript
 $('a').each(function() {
@@ -1120,7 +1143,7 @@ $('a').each(function() {
 });
 ```
 
-#### 33.jQuery Snippets: How to Add/Remove Classes After Delay
+#### 35.jQuery Snippets: How to Add/Remove Classes After Delay
 
 ```javascript
 var header = $('#header');
@@ -1130,7 +1153,7 @@ setTimeout(function() {
 }, 4000);
 ```
 
-#### 34.Remove all inline styles
+#### 36.Remove all inline styles
 
 > **Remove all inline styles from the HTML page:**
 ```javascript
@@ -1145,7 +1168,7 @@ $(document).ready(function() {
   $("div").removeAttr("style");
 });
 ```
-#### 35.How to Use jQuery to Search and Replace HTML
+#### 37.How to Use jQuery to Search and Replace HTML
 ```javascript
 $(function() {
   $(":contains(FIND)").not(":has(:contains(FIND))").each(function() {
@@ -1156,7 +1179,7 @@ $(function() {
   });
 });
 ```
-#### 36.How to Use jQuery’s .blur() Method
+#### 38.How to Use jQuery’s .blur() Method
 > **HTML:**
 ```javascript
 <input type=”text” class=”email”>
@@ -1167,7 +1190,7 @@ $(“.email”).blur(function() {
   $(this).fadeOut();
 })
 ```
-#### 37.Set/Get/Delete Cookies with jQuery
+#### 39.Set/Get/Delete Cookies with jQuery
 > **Set cookies:**
 ```javascript
 function setCookie(name, value, expires, path, domain, secure) {
@@ -1208,7 +1231,7 @@ function deleteCookie(name, path, domain) {
 }
 ```
 
-#### 37. Change DIV background color randomly
+#### 40. Change DIV background color randomly
 > **Set cookies:**
 ```javascript
 $(document).ready(function() {
@@ -1223,7 +1246,7 @@ function changeColor() {
 }
 ```
 
-#### 38. 
+#### 41 jQuery with table add, edit, remove. 
 > **Set cookies:**
 ```javascript
 
