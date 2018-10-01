@@ -20,10 +20,8 @@
 
 #### [10. Destructuring](http://exploringjs.com/es6/ch_destructuring.html)
 
-# React Links!
+#### [11. Pretty nice cheatsheet of common patterns](https://buff.ly/2R6bHF5)
 
-#### [Pretty nice cheatsheet of common patterns](https://buff.ly/2R6bHF5)
+#### [12. Last call for create-react-app v2](https://buff.ly/2DGs88p)
 
-#### [Last call for create-react-app v2](https://buff.ly/2DGs88p)
-
-#### [Compound components](https://buff.ly/2DevfnV)
+#### [14. Compound components](https://buff.ly/2DevfnV)
