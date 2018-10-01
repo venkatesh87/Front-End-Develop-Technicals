@@ -19,3 +19,11 @@
 #### [9. ReactJS Animation](https://github.com/drcmda/react-spring)
 
 #### [10. Destructuring](http://exploringjs.com/es6/ch_destructuring.html)
+
+# React Links!
+
+#### [Pretty nice cheatsheet of common patterns](https://buff.ly/2R6bHF5)
+
+#### [Last call for create-react-app v2](https://buff.ly/2DGs88p)
+
+#### [Compound components](https://buff.ly/2DevfnV)
