@@ -566,3 +566,6 @@ img.sticky {
 }
 ```
 
+**8. Filter**
+
+[Apply A filter to a background image](https://css-tricks.com/apply-a-filter-to-a-background-image/)
