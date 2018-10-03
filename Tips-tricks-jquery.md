@@ -151,6 +151,22 @@ $(window).scroll(function() {
   }
 });
 ```
+
+>** Opacity and translate Heading when scroll
+
+```javascript
+function heading() {
+  $(window).on('scroll', function() {
+    var scroll = $(this).scrollTop();
+
+    $('.heading.animated').css({
+      opacity: (1 - (scroll / 30) / 10),
+      transform: 'translate3d(0, ' + scroll / 1.5 + 'px, 0)'
+    });
+  });
+}
+```
+
 #### 2. Function jQuery:
 <hr />
 > siblings(): Lấy thành phần con cùng cấp của mỗi thành phần trong một bộ chọn phù hợp(Tức là tất cả các thành phần anh chị em cùng cấp với ```<li>``` có class="second" đều đã được chọn, riêng chính nó thì không.) 
