@@ -585,7 +585,7 @@ img.sticky {
 </div>
 ```
 
->HTML
+>CSS
 ```javascript
 .mod-ad-slider__body-inner {
     position: relative;
@@ -623,6 +623,3 @@ img.sticky {
   }
 }
 ```
-
-
-
