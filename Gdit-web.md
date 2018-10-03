@@ -66,6 +66,8 @@
 
 │   │   ├── [Oita(Phía Nhật phát triển](https://www.city.oita.oita.jp/index.html)
 
+│   │   ├── [Kobe City](http://www.city.kobe.lg.jp/other/arukikata/design_guideline/guideline/K1.html)
+
 │   │   └── [Booking System Admin]()
 
 │   ├── [Out Site]
