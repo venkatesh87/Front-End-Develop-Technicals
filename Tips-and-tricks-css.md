@@ -281,14 +281,14 @@ html{
   **1.4. Position**
 
   >HTML
-  ```
+  ```javascript
   <div>Hover!</div>
   <div class="o-hide"><p>0</p></div>
    <div>0</div>
   ```
 
   >CSS
-  ```
+  ```javascript
   div {
     height: 60px;
     padding: 60px 0;
@@ -314,7 +314,7 @@ html{
   ```
 
   >JS
-  ```
+  ```javascript
   var count = 0;
   var oHide = document.querySelector(".o-hide");
   var firstDiv = document.querySelector("div:nth-child(1)");
@@ -330,14 +330,14 @@ html{
   **1.5. Clip-path**
 
   >HTML
-  ```
+  ```javascript
   <div>Hover!</div>
   <div class="o-hide">0</div>
   <div>0</div>
   ```
 
   >CSS
-  ```
+  ```javascript
   div {
     height: 60px;
     padding: 60px 0;
@@ -358,7 +358,7 @@ html{
   ```
 
   >JS
-  ```
+  ```javascript
   var count = 0;
   var oHide = document.querySelector(".o-hide");
   var firstDiv = document.querySelector("div:nth-child(1)");
@@ -373,7 +373,7 @@ html{
   **2 .Equal item tag ```<li>```**
 
   >CSS
-  ```
+  ```javascript
   li{
     padding:8px 0;
     width:339px;
@@ -566,6 +566,63 @@ img.sticky {
 }
 ```
 
-**8. Filter**
+**9. Filter**
 
 [Apply A filter to a background image](https://css-tricks.com/apply-a-filter-to-a-background-image/)
+
+**10. Cách làm khoảng mờ ngoài vùng container của Slideshow**
+- Ví dụ như slider slick
+
+>HTML
+```javascript
+<div class="mod-ad-slider__body-inner">
+  <div class="mod-ad-slider__slider-overlay mod-ad-slider__slider-overlay--left"></div>
+  <div class="mod-ad-slider__slider-wrapper">
+    <div class="mod-ad-slider__slider slick-initialized slick-slider">
+    </div>
+  </div>
+  <div class="mod-ad-slider__slider-overlay mod-ad-slider__slider-overlay--right"></div>
+</div>
+```
+
+>HTML
+```javascript
+.mod-ad-slider__body-inner {
+    position: relative;
+}
+.mod-ad-slider__slider-overlay--left {
+    left: 0;
+}
+.mod-ad-slider__slider-overlay--right {
+    right: 0;
+}
+.mod-ad-slider__slider-overlay{
+  z-index: 2;
+  display: block;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.mod-ad-slider__slider-wrapper {
+  margin-right: auto;
+  margin-left: auto;
+}
+@media screen and (min-width: 1260px){
+  .mod-ad-slider__slider-wrapper {
+    width: 1140px;
+  }
+  .mod-ad-slider__slider-overlay {
+    width: calc((100% - 1140px) / 2);
+  }
+}
+@media screen and (min-width: 901px){
+  .mod-ad-slider__slider-wrapper {
+    width: 90.47619%;
+  }
+  .mod-ad-slider__slider-overlay {
+    width: calc((100% - 90.47619%) / 2);
+  }
+}
+```
+
+
+
