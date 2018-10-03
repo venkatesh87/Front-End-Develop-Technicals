@@ -46,6 +46,16 @@
 
 │   │   ├── [Hellonavi](http://hellonavi.jp/)
 
+│   │   ├── [pref.hyogo](https://web.pref.hyogo.lg.jp/)
+
+│   │   ├── [Glode Miyazaki](http://www.glode.com/explore-miyazaki/index.html)
+
+│   │   ├── [hyogo-tourism](http://www.hyogo-tourism.jp/)
+
+│   │   ├── [Sports yamanashi](https://www.sports-camp.pref.yamanashi.jp/index.html)
+
+│   │   ├── [yamanashi kankou](http://www.yamanashi-kankou.jp/rekitabi/index.html)
+
 │   │   ├── [Nagano](https://www.pref.nagano.lg.jp/)
 
 │   │   ├── [Nagano kensei](https://www.pref.nagano.lg.jp/kensei/gaiyo/chiji/index.html)
