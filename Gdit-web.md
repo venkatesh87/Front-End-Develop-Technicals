@@ -42,6 +42,10 @@
 
 │   │   ├── [Niigata Tourism](https://www.niigata-kankou.or.jp/)
 
+│   │   ├── [Hyogo HIA](http://www.hyogo-ip.or.jp/index.html)
+
+│   │   ├── [Hellonavi](http://hellonavi.jp/)
+
 │   │   ├── [Nagano](https://www.pref.nagano.lg.jp/)
 
 │   │   ├── [Nagano kensei](https://www.pref.nagano.lg.jp/kensei/gaiyo/chiji/index.html)
@@ -56,7 +60,7 @@
 
 │   │   ├── [Metro Tokyo Tosei](http://www.metro.tokyo.jp/tosei/hodohappyo/press/index.html)
 
-│   │   ├── [Omura City](http://pub.copy.omura.cms8341.jp/)
+│   │   ├── [Omura City](https://www.city.omura.nagasaki.jp/)
 
 │   │   ├── [Booking System]()
 
