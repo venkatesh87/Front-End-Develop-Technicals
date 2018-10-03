@@ -105,6 +105,16 @@ var BackTop = {
 }
 BackTop.init();
 ```
+
+```javascript
+$('a.page-scroll').on('click', function(event) {
+  var $anchor = $(this);
+  $('html, body').stop().animate({
+    scrollTop: $($anchor.attr('href')).offset().top - 50
+  }, 1000, 'easeInOutExpo');
+  event.preventDefault();
+});
+```
 >**Scroll/Follow Sidebar**
 ```javascript
 $(function() {
