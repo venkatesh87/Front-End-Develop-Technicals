@@ -10,6 +10,12 @@
 
 │   │   ├── [BEM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Bem.md)
 
+│   │   ├── [OOCSS](http://oocss.org/)
+
+│   │   ├── [CSS Workflow](https://vimeo.com/15982903)
+
+│   │   ├── [Pattern-Primer](https://github.com/adactio/Pattern-Primer)
+
 │   │   ├── [Atomit](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Atomit.md)
 
 │   │   ├── [SUITCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Suitcss.md)
