@@ -1,4 +1,11 @@
-#### 1. CSS multiline text with ellipsis
+
+#### 1. 5 Tips for Super fast CSS
+---
+**Reference :**
+
+1. [5 tips for super-fast CSS](https://www.creativebloq.com/how-to/5-tips-for-super-fast-css)
+
+#### 2. CSS multiline text with ellipsis
 ---
 **Reference :**
 
@@ -34,9 +41,9 @@ h2 {
 }
 ```
 
-#### 2. Thuộc tính css3 mới: 
+#### 3. Thuộc tính css3 mới: 
 
-#### 2. 1 CSS background-blend-mode Property
+#### 3. 1 CSS background-blend-mode Property
 
 ```javascript
 div { 
@@ -55,7 +62,7 @@ div {
 background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge|saturation|color|luminosity;
 ```
 
-#### 2. 2. object-fit
+#### 3. 2. object-fit
 
 ```html
 <div class="image">
@@ -69,28 +76,28 @@ background-blend-mode: normal|multiply|screen|overlay|darken|lighten|color-dodge
 object-fit: | contain | cover | none | scale-down
 ```
 
-#### 2. 3. object-position
+#### 3. 3. object-position
 
 ```javascript
 
 ```
-#### 2. 4. image-orientation
+#### 3. 4. image-orientation
 
 ```javascript
 
 ```
-#### 2.5. image-rendering
+#### 3.5. image-rendering
 
 ```javascript
 
 ```
-#### 2.6. image-resolution
+#### 3.6. image-resolution
 
 ```javascript
 
 ```
 
-#### 3. width fit-content
+#### 4. width fit-content
 
 ```javascript 
 .center ul{
@@ -101,7 +108,7 @@ object-fit: | contain | cover | none | scale-down
 } 
 ```
 
-#### 4. ```-webkit-overflow-scrolling``` Khi style ```scroll``` cho một phần tử với ```overflow: auto``` thì nên để giá trị này vào:
+#### 5. ```-webkit-overflow-scrolling``` Khi style ```scroll``` cho một phần tử với ```overflow: auto``` thì nên để giá trị này vào:
 - Thuộc tính CSS ```-webkit-overflow-scrolling``` kiểm soát xem thiết bị cảm ứng có sử dụng cuộn dựa trên động lượng cho một phần tử đã cho hay không..
 
 ```javascript 
@@ -115,9 +122,9 @@ object-fit: | contain | cover | none | scale-down
 } 
 ```
 
-#### 5 Flexbox Techniques You Need to Know About
+#### 6. Flexbox Techniques You Need to Know About
 
-#### 1. Mobile
+#### 7. Mobile
 ---
 
 >**1. Nếu làm Responsive cho Mobile thì nên set các thuộc tính dưới đây:**
@@ -135,7 +142,7 @@ html{
     -webkit-tap-highlight-color: transparent;
 }
 
->**1. Nếu làm Popop up cho Mobile, thì nên set thuộc tính này trong vùng scroll**
+>**8. Nếu làm Popop up cho Mobile, thì nên set thuộc tính này trong vùng scroll**
 2. 
 .modal{
   -webkit-overflow-scrolling: touch;
