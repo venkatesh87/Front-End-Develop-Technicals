@@ -10,8 +10,6 @@
 
 1. [Scooped-corners-in-2018](https://css-tricks.com/scooped-corners-in-2018/)
 
-1. [5 tips for super-fast CSS](https://www.creativebloq.com/how-to/5-tips-for-super-fast-css)
-
 1. [Rule image css html](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Rule-image-css-html.md)
 
 1. [Css-shape-outside](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-shape-outside.md)
