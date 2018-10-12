@@ -1,5 +1,7 @@
 1. [Tips And Tricks CSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-and-tricks-css.md)
 
+1. [CSS Standard](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-standard.md)
+
 1. [Pseudo Classes](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Pseudo-classes.md)
 
 1. [CSS Gradient](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-gradient.md)
