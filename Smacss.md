@@ -1,2 +1,4 @@
-## Smacss
----
+## SMACSS
+- Author name: Jonathan Snook.
+####. I 
+
