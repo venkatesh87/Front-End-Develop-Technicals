@@ -6658,11 +6658,52 @@ $('#scope_search').on('change', function() {
 ```
 
 **19. **
-- Text.
+- **Xử lý sự kiên click khi switch từ window sang smartphone mà ko bị lỗi**
+- Có sử dụng hàm ```off()``` để tắt sự kiện click. Sau đó bật lên lại.
+- Về hàm ```resize``` thì gọi lại function, hàm này có tác dụng như sau.
+
+- ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/clear_click.png)
 
 >JavaScript Code:
 ```javascript
-
+function dropdown_sp(){
+    var interview_list = $('.interview_article_list');
+    var tmp_drop = '<div class="dropdown_menu"></div>';
+    var interview_item = $('.interview_article_list .interview_article_item').eq(4);
+    if ($(window).width() < 480) {
+        interview_item.after(tmp_drop);
+        $('.interview_article_list .interview_article_item').each(function() {
+            $(this).find('a').off('click');
+            $(this).find('a').on('click', function(e){
+                if(!$(this).hasClass('active')){
+                    $('.interview_article_list .interview_article_item a').removeClass('active');
+                    $(this).addClass('active');
+                    $('.dropdown_menu').empty();
+                    var item_list = $(this).parent().find('.interview_sub').html();
+                    var interview_sub = $(this).parent().find('.interview_sub').clone().html(item_list);
+                    $('.dropdown_menu').prepend(interview_sub).slideDown(300);
+                } else {
+                    $('.dropdown_menu').slideUp(300);
+                    $(this).removeClass('active');
+                }
+                e.preventDefault();
+            });
+        });
+    }
+    else{
+        $('.dropdown_menu').remove();
+    }
+}
+dropdown_sp();
+var timer = false;
+$(window).resize(function(){
+    if (timer !== false) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+        dropdown_sp();
+    }, 200);
+});
 ```
 
 **20. **
