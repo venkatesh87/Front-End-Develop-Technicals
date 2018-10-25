@@ -6657,7 +6657,7 @@ $('#scope_search').on('change', function() {
 });
 ```
 
-**19. **
+**19. 20181025 KDDI**
 - **Xử lý sự kiên click khi switch từ window sang smartphone mà ko bị lỗi**
 - Có sử dụng hàm ```off()``` để tắt sự kiện click. Sau đó bật lên lại.
 - Về hàm ```resize``` thì gọi lại function, hàm này có tác dụng như sau.
