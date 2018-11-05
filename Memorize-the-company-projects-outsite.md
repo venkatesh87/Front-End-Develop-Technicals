@@ -50,7 +50,7 @@ if($(window).width()<=1000){
 }
 ```
 
-**ForEach**: item sẽ hiểu từng thẻ ```<li>```.
+**2. ForEach**: item sẽ hiểu từng thẻ ```<li>```.
 >JavaScript Code:
 ```javascript
 var Navigation = {
@@ -84,9 +84,8 @@ var Navigation = {
 }
 ```
 
-**TweenMax:** Thuộc tính ```autoAlpha: 0``` tương đương với ```opacity: 0```.
+**3. TweenMax:** Thuộc tính ```autoAlpha: 0``` tương đương với ```opacity: 0```.
 
-**2. **
 - Text.
 ```javascript
 $(document).ready(function() {
@@ -198,15 +197,7 @@ $(document).ready(function() {
 
 ```
 
-**3. **
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**4. **
+**4. Hệ Thống Cảnh Báo Thiên Tai**
 - Text.
 
 >JavaScript Code:
@@ -311,6 +302,14 @@ $(document).ready(function() {
 ```
 
 **17. **
+- Text.
+
+>JavaScript Code:
+```javascript
+
+```
+
+**18. **
 - Text.
 
 >JavaScript Code:
