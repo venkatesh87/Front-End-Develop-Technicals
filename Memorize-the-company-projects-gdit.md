@@ -6586,7 +6586,7 @@ if (typeof(Storage) !== "undefined") {
 })(jQuery);
 ```
 
-**18. 20180926 Tokyo Form Search**
+**18. 20180926 Tokyo Form Search 1st request**
 - Nhờ các bạn tạo JS liên quan đến form search của Tokyo. Tokyo thì có thay đổi spec chỗ Search nên sẽ chỉnh sửa phần Search đã có. Nhờ các bạn dựa vào file để tạo JS để có được nội dung như bên dưới
 
 ▼Nội dung request
@@ -6656,8 +6656,304 @@ $('#scope_search').on('change', function() {
     }
 });
 ```
+**19. 20180926 Tokyo Form Search 2nd request**
+- Nhờ các bạn set để khi nhấn checkbox「分野」thì「ファイル形式の指定/Chỉ định format file (Selectbox file type và 検索対象にする(Set thành đối tượng search)＆除く(loại trừ khỏi đối tượng search)」được disabled
+- Khi set「ファイル形式の指定/Chỉ định format file (Selectbox file type」là những mục khác「すべての形式」thì các checkbox của「分野」trở thành disabled
+- Ngoài ra, khi bị disabled hãy thay đổi từng area thành màu xám
 
-**19. 20181025 KDDI**
+- ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_1.jpg)
+- ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_2.jpg)
+- ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_3.jpg)
+
+>JavaScript Code:
+```javascript
+(function($) {
+  $(function() {
+    //FileType Disable 
+    var categoryType = [];
+    $('input[name="CATEGORY_press_category"]').change(function() {
+      if ($(this).prop('checked') == true) {
+        categoryType.push($(this).attr('id'));
+      } else {
+        categoryType.splice(categoryType.indexOf($(this).attr('id')), 1);
+      }
+      disableFieldType();
+    });
+
+    function disableFieldType() {
+      var select = $('select[name="as_filetype"]');
+      if (categoryType.length > 0) {
+        select.parents('tr').first().children().addClass('disable');
+        select.prop('disabled', 'disabled');
+        $('select[name="as_ft"]').prop('disabled', 'disabled');
+      } else {
+        select.parents('tr').first().children().removeClass('disable');
+        select.prop('disabled', false);
+        $('select[name="as_ft"]').prop('disabled', false);
+      }
+    }
+
+    $('select[name="as_filetype"]').change(function() {
+      var txt = $(this).find('option:selected').text(),
+        input = $('input[name="CATEGORY_press_category"]');
+      if (txt != 'すべての形式') {
+        input.parents('tr').first().children().addClass('disable');
+        input.attr("disabled", true);
+      } else {
+        input.parents('tr').first().children().removeClass('disable');
+        input.attr("disabled", false);
+      }
+    });
+  });
+})(jQuery);
+```
+
+>HTML Code:
+```javascript
+<div id="tmp_press_enquete">
+  <form id="tmp_press_search2" action="https://search.metro.tokyo.lg.jp/" method="get">
+    <input type="hidden" value="JP" name="temp">
+    <input type="hidden" value="u" name="ie">
+    <input type="hidden" value="t" name="ord">
+    <input type="hidden" value="www.metro.tokyo.jp/tosei/hodohappyo/press" name="sitesearch">
+    <input id="tmp_gsa_required2" type="hidden" value="" name="requiredfields">
+    <table>
+      <tbody>
+        <tr>
+          <th>
+            <label for="label_keyword">キーワード</label>
+            <br class="sp_none">
+            <span class="txt_red">（必須）</span></th>
+          <td>
+            <p>検索方法を選んで、検索するキーワードを入力して下さい。</p>
+            <p class="press_textbox">
+              <input id="label_keyword" maxlength="512" name="kw">
+            </p>
+            <div id="tmp_press_keyword_check" class="ujs">
+              <fieldset>
+                <legend>検索範囲</legend>
+                <label for="tmp_pm_flg"><span class="press_keywordbox"><input id="tmp_pm_flg" type="radio" value="完全一致" name="pm_flg">完全一致</span></label>
+                <label for="tmp_am_flg"><span class="press_keywordbox"><input id="tmp_am_flg" type="radio" checked="checked" value="あいまい" name="pm_flg">あいまい</span></label>
+              </fieldset>
+            </div>
+          </td>
+        </tr>
+        <tr class="ujs">
+          <th>分野</th>
+          <td>
+            <p>検索したい分野を選んで下さい。</p>
+            <fieldset>
+              <legend>分野</legend>
+              <label for="label_press_category1"><span class="press_checkbox">                 <input id="label_press_category1" type="checkbox" value="イベント" name="CATEGORY_press_category">イベント</span></label>
+              <label for="label_press_category2"><span class="press_checkbox">                 <input id="label_press_category2" type="checkbox" value="募集" name="CATEGORY_press_category">募集</span></label>
+              <label for="label_press_category3"><span class="press_checkbox">                 <input id="label_press_category3" type="checkbox" value="お知らせ" name="CATEGORY_press_category">お知らせ</span></label>
+              <label for="label_press_category4"><span class="press_checkbox">                 <input id="label_press_category4" type="checkbox" value="計画・財政" name="CATEGORY_press_category">計画・財政</span></label>
+              <label for="label_press_category5"><span class="press_checkbox">                 <input id="label_press_category5" type="checkbox" value="審議会等の動き" name="CATEGORY_press_category">審議会等の動き</span></label>
+              <label for="label_press_category6"><span class="press_checkbox">                 <input id="label_press_category6" type="checkbox" value="調査結果" name="CATEGORY_press_category">調査結果</span></label>
+            </fieldset>
+          </td>
+        </tr>
+        <tr class="ujs">
+          <th>掲載年月日</th>
+          <td>
+            <p>検索したい年月日を指定して下さい。</p>
+            <div class="form_select_box">
+              <select title="掲載開始年" name="start_year" class="form_year">
+                <option selected="selected" value="">年</option>
+                <option value="2018">平成30(2018)年</option>
+                <option value="2017">平成29(2017)年</option>
+                <option value="2016">平成28(2016)年</option>
+                <option value="2015">平成27(2015)年</option>
+                <option value="2014">平成26(2014)年</option>
+                <option value="2013">平成25(2013)年</option>
+              </select>
+              <select title="掲載開始月" name="start_month" class="form_month">
+                <option selected="selected" value="">月</option>
+                <option value="01">1月</option>
+                <option value="02">2月</option>
+                <option value="03">3月</option>
+                <option value="04">4月</option>
+                <option value="05">5月</option>
+                <option value="06">6月</option>
+                <option value="07">7月</option>
+                <option value="08">8月</option>
+                <option value="09">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+              </select>
+            </div>
+            <span class="form_select_txt"><img alt="から" src="http://www.metro.tokyo.jp/shared/templates/press/images/form_txt_img.jpg"></span>
+            <div class="form_select_box">
+              <select title="掲載終了年" name="end_year" class="form_year last">
+                <option selected="selected" value="">年</option>
+                <option value="2018">平成30(2018)年</option>
+                <option value="2017">平成29(2017)年</option>
+                <option value="2016">平成28(2016)年</option>
+                <option value="2015">平成27(2015)年</option>
+                <option value="2014">平成26(2014)年</option>
+                <option value="2013">平成25(2013)年</option>
+              </select>
+              <select title="掲載終了月" name="end_month" class="form_month last">
+                <option selected="selected" value="">月</option>
+                <option value="01">1月</option>
+                <option value="02">2月</option>
+                <option value="03">3月</option>
+                <option value="04">4月</option>
+                <option value="05">5月</option>
+                <option value="06">6月</option>
+                <option value="07">7月</option>
+                <option value="08">8月</option>
+                <option value="09">9月</option>
+                <option value="10">10月</option>
+                <option value="11">11月</option>
+                <option value="12">12月</option>
+              </select>
+            </div>
+          </td>
+        </tr>
+        <tr class="ujs">
+          <th>
+            <label for="label_as_filetype2">ファイル形式の指定</label>
+          </th>
+          <td>
+            <p>
+              <input id="filetype_val2" type="hidden" value="" name="filetype">
+              <select title="ファイル形式の指定" id="label_as_filetype2" name="as_filetype">
+                <option selected="selected" value="">すべての形式</option>
+                <option value="doc">Microsoft Word (.doc)</option>
+                <option value="docx">Microsoft Word (.docx)</option>
+                <option value="xls">Microsoft Excel (.xls)</option>
+                <option value="xlsx">Microsoft Excel (.xlsx)</option>
+                <option value="pdf">Adobe Acrobat PDF (.pdf)</option>
+                <option value="ppt">Microsoft PowerPoint (.ppt)</option>
+                <option value="pptx">Microsoft PowerPoint (.pptx)</option>
+              </select> を
+              <select title="検索対象範囲" id="scope_search2" name="as_ft">
+                <option selected="selected" value="i">検索対象にする</option>
+                <option value="e">検索対象から除く</option>
+              </select>
+            </p>
+            <p><span class="txt_small"><span class="txt_red"><strong>※</strong></span>「すべての形式」を「検索対象から除く」ことはできません。</span>
+              <br>
+              <span class="txt_small"><span class="txt_red"><strong>※</strong></span>「分野」と「ファイル形式の指定」を同時に絞り込むことはできません。</span>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="press_key_center">
+      <div id="tmp_search_btn">
+        <label>
+          <input type="submit" value="検索">
+        </label>
+      </div>
+      <input id="tmp_clear_btn" type="reset" value="クリア">
+    </div>
+  </form>
+  <script type="text/javascript">
+  (function($) {
+    $(function() {
+      $('#tmp_press_search2').submit(function() {
+        if ($('#tmp_press_search2 input[name="kw"]').val() == '') {
+          alert("キーワードを入力してください");
+          return false;
+        } else {
+          //データ取得　変数設定
+          var error = Array(); //エラー
+          var pressCategory = '';
+          var pressCategoryTmp = $('#tmp_press_search2 input[name="press_category"]:checked');
+          var start = '';
+          var startYear = $('select[name="start_year"]').val();
+          var startMonth = $('select[name="start_month"]').val();
+          var end = '';
+          var endYear = $('select[name="end_year"]').val();
+          var endMonth = $('select[name="end_month"]').val();
+          var requiredField = '';
+
+          //初期化
+          if ($("#tmp_gsa_date1").length) $("#tmp_gsa_date1").remove();
+          if ($("#tmp_gsa_date2").length) $("#tmp_gsa_date2").remove();
+          //完全一致 or あいまい
+          if ($('input[name="pm_flg"]:checked').val() == '完全一致') {
+            var qVal = '"' + $('#tmp_press_search2 input[name="kw"]').val() + '"';
+            qVal = qVal.replace(/^""/, '"').replace(/""$/, '"'); //「""」の付与
+          } else {
+            var qVal = $('#tmp_press_search2 input[name="kw"]').val().replace(/"/g, ''); //完全一致用の「"」削除
+          }
+
+          //キーワード入れ込み
+          $('#tmp_press_search2 input[name="kw"]').val(qVal);
+          //分野
+          if (pressCategoryTmp.length) {
+            $(pressCategoryTmp).each(function() {
+              pressCategory += 'press_category:' + $(this).val() + '|';
+            });
+            pressCategory = pressCategory.replace(/\|$/, "");
+          }
+          //掲載年月日
+          if (startYear != '' || startMonth != '' || endYear != '' || endMonth != '') {
+            error['date'] = '';
+            //開始年月日
+            if (startYear != '' && startMonth != '') {
+              start = startYear + '' + startMonth + '01';
+            } else if (startYear == '' && startMonth == '') {} else {
+              error['date'] += '開始年月は両方指定してください\n';
+            }
+            //終了年月日
+            if (endYear != '' && endMonth != '') {
+              var endDt = new Date(endYear, endMonth, 0);
+              var endDay = endDt.getDate();
+              end = endYear + '' + endMonth + '' + endDay;
+            } else if (endYear == '' && endMonth == '') {} else {
+              error['date'] += '終了年月は両方指定してください\n';
+            }
+            //エラーが無ければデータ入れ込み
+            if (error['date'] == '') {
+              $('#tmp_press_search2').append('<input type="hidden" name="start_dt" value="' + start + '" id="tmp_gsa_date1">').append('<input type="hidden" name="end_dt" value="' + end + '" id="tmp_gsa_date2">');
+            } else {
+              alert(error['date']);
+              return false;
+            }
+          }
+          //requiredfieldまとめ
+          if (pressCategory != '') {
+            if (requiredField != '') requiredField += '.';
+            requiredField += '(' + pressCategory + ')';
+          }
+          $('#tmp_press_search2').find('input[name="requiredfields"]').val(requiredField);
+        }
+        //Search target
+        var value = $('#label_as_filetype2').find('option:selected').val();
+        var type_search = $('#scope_search2').find('option:selected').val();
+        if (value != '') {
+          if (type_search == 'e') {
+            $('#filetype_val2').val('-' + value);
+          } else if (type_search == 'i') {
+            $('#filetype_val2').val(value);
+          }
+        } else {
+          $('#filetype_val2').val('');
+        }
+        var value_scope = $('#scope_search2').find('option:selected').val();
+        var type_file = $('#label_as_filetype2').find('option:selected').val();
+        if (type_file != '') {
+          if (value_scope == 'e') {
+            $('#filetype_val2').val('-' + type_file);
+          } else if (value_scope == 'i') {
+            $('#filetype_val2').val(type_file);
+          }
+        } else {
+          $('#filetype_val2').val('');
+        }
+      });
+    });
+  })(jQuery);
+  </script>
+</div>
+```
+
+**20. 20181025 KDDI**
 - **Xử lý sự kiên click khi switch từ window sang smartphone mà ko bị lỗi**
 - Có sử dụng hàm ```off()``` để tắt sự kiện click. Sau đó bật lên lại.
 - Về hàm ```resize``` thì gọi lại function, hàm này có tác dụng như sau.
@@ -6704,14 +7000,6 @@ $(window).resize(function(){
         dropdown_sp();
     }, 200);
 });
-```
-
-**20. **
-- Text.
-
->JavaScript Code:
-```javascript
-
 ```
 
 **21. **
