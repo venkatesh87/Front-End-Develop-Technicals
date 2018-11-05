@@ -6661,9 +6661,9 @@ $('#scope_search').on('change', function() {
 - Khi set「ファイル形式の指定/Chỉ định format file (Selectbox file type」là những mục khác「すべての形式」thì các checkbox của「分野」trở thành disabled
 - Ngoài ra, khi bị disabled hãy thay đổi từng area thành màu xám
 
-- ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_1.jpg)
-- ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_2.jpg)
-- ![HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_3.jpg)
+- ![Check, Select, Search](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_1.jpg)
+- ![Check, Select, Search](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_2.jpg)
+- ![Check, Select, Search](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img_search_tko_3.jpg)
 
 >JavaScript Code:
 ```javascript
