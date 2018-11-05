@@ -7002,12 +7002,51 @@ $(window).resize(function(){
 });
 ```
 
-**21. **
+**21. Progress Bar Start/Stop**
 - Text.
+
+>HTML Code:
+```javascript
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
+    <span class="sr-only">60% Complete</span>
+  </div>
+</div>
+```
 
 >JavaScript Code:
 ```javascript
+function progressBar(){
+  var width = 5;
+  var slide_interval;
+  var elem = $('.progress-bar');
+  function next_slide() {
+    if (width >= 100) {
+      clearInterval(slide_interval);
+    } else {
+      width++; 
+      elem.animate({width: width + '%'}, 100); 
+    }
+  }
+  function pause_slide(){
+    clearInterval(slide_interval);
+  }
+  function play_slide(){
+    slide_interval = setInterval(next_slide, 100);
+  }
 
+  $('.time-ctrl').on('click', function(e){
+    if(!$(this).hasClass('pause')){
+      $(this).addClass('pause');
+      play_slide();
+    }
+    else{
+      $(this).removeClass('pause');
+      pause_slide();
+    }
+    e.preventDefault();
+  });
+}
 ```
 
 **22. **
