@@ -198,7 +198,7 @@ $(document).ready(function() {
 ```
 
 **4. Hệ Thống Cảnh Báo Thiên Tai**
-- Text.
+- https://www.windy.com/?2018-11-07-09,17.811,109.863,5
 
 >JavaScript Code:
 ```javascript
