@@ -1,6 +1,8 @@
 #### I.Document Link Local
 ---
 
+1. [33 Concepts Every JavaScript Developer Should Know ](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-33-js-concepts-master.md)
+
 1. [Tips and Tricks JavaScript](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tips-tricks-javascript.md)
 
 1. [Javascript Technical Writing](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-technical-writing.md)
