@@ -249,17 +249,42 @@ function renderData() {
 }
 ```
 
-**6. **
-
+**6. Chú ý về $(window).width() > 640)**
+- ```$(window).width() > 640)```: Phải để ngoài ```$(window).scroll()```
 >JavaScript Code:
 ```javascript
-
+$(window).scroll(function() {
+  if ($(window).width() > 640) {
+    if ($(window).scrollTop() > offset.top) {
+      menuFollow.selector.sideBar.stop().animate({
+          marginTop: $(window).scrollTop() - offset.top + topPadding
+      }, 650);
+    } else {
+      menuFollow.selector.sideBar.stop().animate({
+          marginTop: 0
+      });
+    }
+  }
+});
 ```
 
-**7. **
-
+**7. Phán quyết vị trí được nhấp**
+- Ẩn khi focus ngoài vùng dropdown được hiển thị.
 >JavaScript Code:
 ```javascript
+$('#headerCorporateLogo').on("click", function() {
+  $('.userMenu').stop(true, true).slideToggle();
+});
+$(document).on('click', function(e) {
+  // ２．クリックされた場所の判定
+  // console.log($(e.target).closest('#headerCorporateLogo').length );
+  // console.log($(e.target).closest('.userMenu').length);
+  // console.log(!$(e.target).closest('#headerCorporateLogo').length && !$(e.target).closest('.userMenu').length);
+
+  if(!$(e.target).closest('#headerCorporateLogo').length && !$(e.target).closest('.userMenu').length){
+      $('.userMenu').fadeOut();
+  }
+});
 
 ```
 
