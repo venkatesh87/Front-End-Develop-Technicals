@@ -422,6 +422,31 @@ $('.map-thumb .switch-map').click(function(e) {
 });
       
 ```
+##### 5. ```e.target``` jQuery. 
+---
+```javascript
+$('#headerCorporateLogo').on("click", function() {
+  $('.userMenu').stop(true, true).slideToggle();
+});
+
+$('#headerBtnSettings').on("click", function() {
+  $('.settingsMenu').stop(true, true).slideToggle();
+});
+
+$(document).on('click', function(e) {
+  // ２．クリックされた場所の判定
+  // console.log($(e.target).closest('#headerCorporateLogo').length );
+  // console.log($(e.target).closest('.userMenu').length);
+  // console.log(!$(e.target).closest('#headerCorporateLogo').length && !$(e.target).closest('.userMenu').length);
+
+  if(!$(e.target).closest('#headerCorporateLogo').length && !$(e.target).closest('.userMenu').length){
+    $('.userMenu').fadeOut();
+  }
+  if(!$(e.target).closest('#headerBtnSettings').length && !$(e.target).closest('.settingsMenu').length){
+    $('.settingsMenu').fadeOut();
+  }
+});
+```
 
 #### 5. Show selected text value dropdown:
 <hr />
