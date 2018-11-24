@@ -493,10 +493,7 @@ $(document).ready(function() {
       function update(data) {
         instance2.update(data);
       }
-      function convertToPercent (num) {
-        return (num - min) / (max - min) * 100;
-      }
-      var updateRange = (direction) => {
+      var updateRange = function(direction) {
         from += step * direction;
         if (from < min) {
             from = min;
@@ -509,7 +506,7 @@ $(document).ready(function() {
       };
       var playTimer;
       function play() {
-        playTimer = setTimeout( _ => {
+        playTimer = setTimeout(function(){
           if ( from == max ) {
             pause();
           } else {
@@ -640,8 +637,44 @@ $(document).ready(function() {
   });
 
 });
+
 ```
 **Xử lý loading**
+```javascript
+// Action loading popup login, registry
+$('#form-login').submit(function(e){
+    $('.modal-login .login-inner').addClass('loading');
+    function popLoading(){
+      $('.modal-login .login-inner').removeClass('loading');
+    }
+    setTimeout(function() {
+      popLoading();
+    }, 2500);
+    //$('#form-login').submit();
+    e.preventDefault();
+});
+```
+
+```javascript
+//create AutoComplete UI component
+$("#search-top").kendoAutoComplete({
+    dataSource: data,
+    filter: "startswith",
+    separator: ", "
+}).keypress(function(e) {
+  if (event.keyCode === 13) {
+    $('.page-content').addClass('loading');
+    function doneLoading(){
+      $('.page-content').removeClass('loading');
+    }
+    setTimeout(function() {
+      doneLoading();
+    }, 2500);
+    return false;
+    //$(this).closest('form').trigger('submit');
+  }
+});
+```
 **Xử lý ionRangeSlider play/pause**
 
 **5. **
