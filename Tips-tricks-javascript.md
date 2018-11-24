@@ -322,3 +322,10 @@ function myFunction() {
 ```javascript
 
 ```
+
+##### 6. Keyboard
+---
+>**```window.pageYOffset```**
+```javascript
+
+```
