@@ -78,6 +78,14 @@
 
 │   │   ├── [Kobe City](http://www.city.kobe.lg.jp/other/arukikata/design_guideline/guideline/K1.html)
 
+│   │   ├── [Global Design IT](http://pattern.globaldesignit.vn/vn)
+
+│   │   ├── [Global Design IT](http://pattern.globaldesignit.vn/jp)
+
+│   │   ├── **ID:** pattern-gdit
+
+│   │   ├── **Pass:** Qr92cxDq
+
 │   │   └── [Booking System Admin]()
 
 │   ├── [Out Site]
