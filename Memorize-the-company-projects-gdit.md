@@ -6957,7 +6957,6 @@ $('#scope_search').on('change', function() {
 - **Xử lý sự kiên click khi switch từ window sang smartphone mà ko bị lỗi**
 - Có sử dụng hàm ```off()``` để tắt sự kiện click. Sau đó bật lên lại.
 - Về hàm ```resize``` thì gọi lại function, hàm này có tác dụng như sau.
-
 - ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/clear_click.png)
 
 >JavaScript Code:
@@ -7049,7 +7048,7 @@ function progressBar(){
 }
 ```
 
-**22. **
+**22. 20181204_Advertisement_Xd**
 - Text.
 
 >JavaScript Code:
@@ -7057,12 +7056,21 @@ function progressBar(){
 
 ```
 
-**22. **
-- Text.
-
+**22. 20181109_Go_Tokyo_Convert_English**
+- **Về scroll ở footer khi ở SP**: Về navigation được hiển thị ở footer khi về SP, vì có trường hợp menu trình duyệt chẳng hạn như Safari cản trở, không thể tap được nên「trường hợp scroll xuống dưới」thì không cho hiển thị, 「Trường hợp scroll lên trên」thì hiển thị. Tôi gửi các bạn sample, nhưng nhờ các bạn bổ sung cơ chế giống như mô tả bên dưới (dự án khác)
+- ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/scroll-up-down.jpg)
 >JavaScript Code:
 ```javascript
-
+var old_position = 0;
+$(window).on('scroll', function() {
+var current = (window.scrollY) ? window.scrollY : window.pageYOffset;
+  if (current > 100 && current > old_position && current < $('#tmp_wrapper').outerHeight()- $(window).height()) {
+    $('#tmp_navi_sticky').addClass('hidden');
+  } else {
+    $('#tmp_navi_sticky').removeClass('hidden');
+  }
+  old_position = current;
+});
 ```
 
 **23. **
