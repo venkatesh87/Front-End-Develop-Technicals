@@ -7,7 +7,7 @@ Welcome to the Front-End-Develop-Technical wiki!
 3. [Front End Technical](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tree-folder.md)
 4. [Coding Convention](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Coding-convention.md)
 5. [Web Follow](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Web-follow.md)
-
+6. [Web Performance Test](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Web-performance-test.md)
 
 # WorkFlow Front End
 
