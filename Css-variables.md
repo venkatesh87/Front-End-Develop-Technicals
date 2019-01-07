@@ -14,6 +14,6 @@
 1. [rauldronca](https://codepen.io/rauldronca/pen/WMayrP)
 1. [stunning-hover-effects-with-css-variables](https://blog.prototypr.io/stunning-hover-effects-with-css-variables-f855e7b95330)
 1. [Theming with variables globals and locals](https://css-tricks.com/theming-with-variables-globals-and-locals/)
-
+1. [Get code trang zeplin này về CSS Variables](https://zeplin.io/)
 
 
