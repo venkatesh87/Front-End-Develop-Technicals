@@ -14,7 +14,7 @@
 
 1. [Css-shape-outside](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-shape-outside.md)
 
-1. [Css New](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Css-new.md)
+1. [Css New](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-new.md)
 
 ```javascripts 
 forgot~p 
