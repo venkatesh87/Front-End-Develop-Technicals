@@ -4,3 +4,5 @@
 
 1. [Hamburger menu](https://www.nxworld.net/tips/12-css-hamburger-menu-active-effect.html)
 
+1. [New CSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/New_css.md)
+
