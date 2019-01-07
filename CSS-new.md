@@ -1,5 +1,4 @@
-│   ├── [List POST]
+## CSS New
+1. mix-blend-mode
 
-│   │   ├── [mix-blend-mode](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/CSS-new.md)
-
-│   │   └── [ITCSS](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Itcss.md)
+https://developer.mozilla.org/en-US/docs/Web/CSS/mix-blend-mode
