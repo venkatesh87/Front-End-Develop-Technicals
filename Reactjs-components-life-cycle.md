@@ -63,11 +63,11 @@ var Example = React.createClass({
 
 - Sau khi component ```render``` lần đầu tiên, các ```lifecycle methods``` của Updating sẽ được gọi bắt đầu với lần ```render``` thứ hai. Với cơ chế automatic binding của mình thì chắc chắn các component sẽ được render nhiều lần trong ứng dụng của bạn. Có 5 method trong lifecycle updating:
 
-  1.componentWillReceiveProps
-  1.shouldComponentUpdate
-  1.componentWillUpdate
-  1.render
-  1.componentDidUpdate
+  + componentWillReceiveProps
+  + shouldComponentUpdate
+  + componentWillUpdate
+  + render
+  + componentDidUpdate
 
 - Mỗi khi một instance(lời yêu cầu) của component được update, nó sẽ tự động gọi lần lượt 5 methods trên. Updating lifecycle methods đầu tiên là componentWillReceiveProps, khi một instance của component được update, ```componentWillReceiveProps``` sẽ được gọi trước khi ```render```. Có một chú ý ở đây là: ```componentWillReceiveProps``` chỉ được gọi nếu component được nhận một prop:
 
