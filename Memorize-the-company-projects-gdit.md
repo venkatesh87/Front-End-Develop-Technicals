@@ -7074,7 +7074,8 @@ var current = (window.scrollY) ? window.scrollY : window.pageYOffset;
 ```
 
 **23. 20181218_Kanagawa**
-  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koutou_data.jpg)
+**23.1 Request Load file XML:**
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koutou_data.jpg)
 - Chúng tôi còn 1 request muốn nhờ các bạn tạo về JS, không biết có thể nhờ các bạn tạo theo spec bên dưới được không?
 ▼Khái quát
 Lưu sẵn nhiều data (mã tổ chức, path image, text data) vào XML, và dựa vào data thống nhất với mã tổ chức được mô tả ở tag meta trong HTML, ghi đè lên nơi tương ứng của HTML (Về cơ bản, chúng tôi muốn lưu sẵn data của trường học vào XML, rồi lấy mã tổ chức làm key, sau đó get và hiển thị image chẳng hạn)
@@ -7189,6 +7190,120 @@ Lưu sẵn nhiều data (mã tổ chức, path image, text data) vào XML, và d
         })
     }
 })(jQuery);
+```
+
+**23.2 Banner Slick with button switch PC/SP: **
+
+>JavaScript Code:
+```javascript
+if ($('.banner_list').length) {
+    /*Slick Switch PC/SP*/
+    var mc = localStorage.getItem('pc');
+    var pc_to_sp = false;
+    var first_sp = false;
+    var first_pc = false;
+    var slide_three = $(".js_slide_three");
+    var slide_three_sp = $('<ul class="banner_list js_slide_three">' + $(".js_slide_three").html() + '</ul>');
+    var slickSwitch = {
+        pc: function() {
+            slide_three_sp.detach();
+            $('.js_three_parent').append(slide_three);
+            if (!first_pc){
+                first_pc = true;
+                slide_three.slick({
+                    dots: true,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    focusOnSelect: false,
+                    autoplay: true
+                });
+                moveControlSlick();
+                controlPlay();
+            }
+        },
+        sp: function() {
+            if (!mc) {
+                slide_three.detach();
+                $('.js_three_parent').append(slide_three_sp);
+                if (!first_sp){
+                    first_sp = true;
+                    slide_three_sp.slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        focusOnSelect: true,
+                        autoplay: true
+                    });
+                    moveControlSlick();
+                    controlPlay();
+                }
+            } else {
+                slickSwitch.pc();
+            }
+        }
+    }
+    if ($(window).width() > 640) {
+        slickSwitch.pc();
+    } else {
+        slickSwitch.pc();
+        pc_to_sp = true;
+        slickSwitch.sp();
+    }
+    function moveControlSlick(){
+        $('.main_banner .slick-dots').wrap('<div class="slick_control"></div>');
+        $('.slick_control').prepend('<button type="button" class="slick-stop" data-role="none" role="button" tabindex="0"><span>STOP</span></button>');
+        $('.slick-stop').on('click', function() {
+			if ($(this).hasClass('slick-play')) {
+				$('.main_banner .slick-slider').slick("slickPlay");
+				$(this).removeClass('slick-play');
+				$(this).find('span').text('STOP');
+			} else {
+				$('.main_banner .slick-slider').slick("slickPause");
+				$(this).addClass('slick-play');
+				$(this).find('span').text('START');
+			}
+		})
+    }
+
+    function controlPlay(){
+        //$(".js_slide_three").slick("slickPlay");
+        $('.slick_control .btn_play').on('click', function() {
+            if ($(this).hasClass('paused')) {
+                $(this).removeClass('paused');
+                $('.js_slide_three').slick("slickPlay");
+            } else {
+                $(this).addClass('paused');
+                $('.js_slide_three').slick("slickPause");
+            }
+        });
+    }
+    var currentWidth = $(window).width();
+    $(window).on('resize', function() {
+        if (currentWidth != $(window).width()) {
+            if ($(window).width() > 640) {
+                slickSwitch.pc();
+            } else {
+                slickSwitch.sp();
+                if (pc_to_sp == false){
+                    pc_to_sp = true;
+                }
+            }
+            currentWidth = $(window).width();
+        }
+    });
+    $('#tmp_switch_pc_style').on('click', function() {
+        slickSwitch.pc();
+        location.reload();
+    });
+    $('#tmp_switch_sp_style').on('click', function() {
+        slickSwitch.sp();
+        location.reload();
+    });
+}
 ```
 
 **24. **
