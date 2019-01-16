@@ -7073,12 +7073,122 @@ var current = (window.scrollY) ? window.scrollY : window.pageYOffset;
 });
 ```
 
-**23. **
-- Text.
+**23. 20181218_Kanagawa**
+  - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koutou_data.jpg)
+- Chúng tôi còn 1 request muốn nhờ các bạn tạo về JS, không biết có thể nhờ các bạn tạo theo spec bên dưới được không?
+▼Khái quát
+Lưu sẵn nhiều data (mã tổ chức, path image, text data) vào XML, và dựa vào data thống nhất với mã tổ chức được mô tả ở tag meta trong HTML, ghi đè lên nơi tương ứng của HTML (Về cơ bản, chúng tôi muốn lưu sẵn data của trường học vào XML, rồi lấy mã tổ chức làm key, sau đó get và hiển thị image chẳng hạn)
 
+▼Ví dụ XML
+Đính kèm
+※Về inq_flg, sau khi xác định spec thì bên chúng tôi sẽ tạo nên các bạn không cần đối ứng
+
+▼Ví dụ tag meta trong HTML
+```javascript
+<meta name="department" content="010010010" />
+```
+※Chứa data giống với department_code của XML
+
+▼Nơi ghi đè trong HTML
+\000100_GD_神奈川県教育委員会_テンプレート\cms8341\upload\top\top_a.html
+```javascript
+1. #tmp_hlogo .logo img / logo_path
+2. #tmp_hlogo .en_name text / department_en
+```
+**koutou_data.xml: ** /cms8341/shared/xml/koutou_data.xml
+
+>XML Code:
+```javascript
+<?xml version="1.0" encoding="utf-8"?>
+<school_data>
+    <item>
+        <department_code>010010010</department_code>
+        <department_en>sample school</department_en>
+        <logo_path>/cms8341/shared/images/logo.png</logo_path>
+        <inq_flg>1</inq_flg><!-- true=1, false=0 -->
+    </item>
+    <item>
+        <department_code>010010020</department_code>
+        <department_en>sample2 school</department_en>
+        <logo_path>/cms8341/shared/images/logo.png</logo_path>
+        <inq_flg>1</inq_flg><!-- true=1, false=0 -->
+    </item>
+</school_data>
+```
+
+>HTML Code:
+```javascript
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>ページタイトル</title>
+    <meta name="department" content="010010020" />
+</head>
+<body class="format_top no_javascript">
+    <div id="tmp_wrapper">
+        <div id="tmp_header">
+            <div class="container">
+                <div id="tmp_hlogo">
+                    <h1>
+                        <span class="logo"><img src="/cms8341/shared/images/logo.png" alt="" /></span>
+                        <span class="text">
+                            <span class="prefecture">神奈川県立</span>
+                            <span class="name">〇〇高等学校</span>
+                            <span class="en_name" lang="en" xml:lang="en">〇〇〇〇〇〇 HIGH SCHOOL</span>
+                        </span>
+                    </h1>
+                </div>
+                <div class="right_cnt">
+                    <div id="tmp_means">
+                        <ul id="tmp_setting">
+                            <li><a href="/cms8341/#" class="setting_link">文字サイズ・色合い変更</a></li>
+                            <li><a href="/cms8341/#" class="setting_map">アクセス</a></li>
+                        </ul>
+                    </div>
+                    <div id="tmp_search">
+                        <form action="/cms8341/#" id="tmp_gsearch">
+                            <label class="query_label" for="tmp_query">ページ内検索</label>
+                            <div id="tmp_wrap_query">
+                                <input id="tmp_query" class="query_area" size="31" name="q" />
+                            </div>
+                            <p class="query_submit"><input id="tmp_func_sch_btn" type="submit" name="sa" value="検索" /> </p>
+                        </form>
+                    </div>
+                </div>
+                <div id="tmp_sma_menu">
+                    <a href="javacript:void(0);" class="sma_menu_open"><span>メニュー</span></a>
+                    <a href="javacript:void(0);" class="close_btn">閉じる</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/cms8341/shared/js/main.js"></script>
+</body>
+</html>
+```
 >JavaScript Code:
 ```javascript
-
+(function($){
+    if ($('meta[name="department"]').length){
+        var cnt = $('meta[name="department"]').attr('content');
+        $.ajax({
+            'url' : '/cms8341/shared/xml/koutou_data.xml',
+            'success': function(results){
+                var dom = $(results);
+                dom.find('item').each(function(){
+                    if (cnt == $(this).find('department_code').text().trim()){
+                        $('#tmp_hlogo .logo img').attr('src',$(this).find('logo_path').text());
+                        $('#tmp_hlogo .en_name').text($(this).find('department_en').text());
+                    }
+                })
+            }
+        })
+    }
+})(jQuery);
 ```
 
 **24. **
