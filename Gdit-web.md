@@ -84,6 +84,8 @@
 
 │   │   ├── [Miyazaki](https://www.kanko-miyazaki.jp/index.html)
 
+│   │   ├── [Fuefuki](https://www.city.fuefuki.yamanashi.jp/index.html)
+
 │   │   ├── **ID:** pattern-gdit
 
 │   │   ├── **Pass:** Qr92cxDq
