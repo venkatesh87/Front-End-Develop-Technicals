@@ -82,6 +82,8 @@
 
 │   │   ├── [Global Design IT](http://pattern.globaldesignit.vn/jp)
 
+│   │   ├── [Miyazaki](https://www.kanko-miyazaki.jp/index.html)
+
 │   │   ├── **ID:** pattern-gdit
 
 │   │   ├── **Pass:** Qr92cxDq
