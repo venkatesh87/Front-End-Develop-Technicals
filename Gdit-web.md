@@ -86,6 +86,8 @@
 
 │   │   ├── [Fuefuki](https://www.city.fuefuki.yamanashi.jp/index.html)
 
+│   │   ├── [Travel Hyogo](http://www.travelhyogo.org.e.aas.hp.transer.com/discover/photo/index.html)
+
 │   │   ├── **ID:** pattern-gdit
 
 │   │   ├── **Pass:** Qr92cxDq
