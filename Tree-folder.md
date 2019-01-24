@@ -183,3 +183,12 @@
 
 │   ├── [Develop On Tool Chrome](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tool_dev_on_chrome.md)
 
+├── **[Japan Language]**
+
+│   ├── https://bikae.net/ngu-phap/tong-hop-ngu-phap-n5
+
+│   ├── https://www.vnjpclub.com/minna-no-nihongo
+
+│   ├── https://mina.mazii.net/#/alphabet
+
+│   ├── https://japanesetest4you.com/jlpt-n5-grammar-list
