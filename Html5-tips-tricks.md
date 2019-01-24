@@ -41,6 +41,8 @@
 - poster: Xác định hình đại diện cho video.
 - preload: Xác định việc tải video khi tải trang.
 
+> **Plugin Video HTML5:** http://www.mediaelementjs.com/
+
 > **2. Details/Summary**
 
 ```javascripts
