@@ -44,6 +44,10 @@
 
 1.  https://medium.muz.li/muzli-choices-in-design-for-2016-f7777541f8c3#.anrvhvigx
 
+1. https://cesis.co/ts/?theme=cesis
+
+1. https://thefoxwp.wpengine.com/
+
 #### II. Hệ Technique
 
 1.  http://coliss.com/
