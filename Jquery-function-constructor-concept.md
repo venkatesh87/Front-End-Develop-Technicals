@@ -48,8 +48,9 @@ $(document).ready(function() {
 });
 ```
 
-#### 5. App function
+#### 5. Function ```window```
 ---
+- Scroll down header slide up, Scroll Up header slide down.
 - Kiểm tra xem thử ```window``` có hàm ```tt_sticky``` hay chưa. Nếu chưa có thì gán ```function``` cho nó.
 
 ```javascript
@@ -81,7 +82,7 @@ if ('function' !== typeof(window['tt_sticky'])) {
         } else {
           menuposition = jc('#header_container').offset().top + menu_content_offset;
         }
-      })
+      });
       jc(window).scroll(function(event) {
         if (jc(window).scrollTop() > menuposition) {
           jc('.tt_sticky').addClass('tt_stuck');
