@@ -1,4 +1,5 @@
-[Pan, Pinch, Press, Rotate, Swipe, Tap: Hammerjs](http://hammerjs.github.io/)
+- [TouchSwipe JQuery Plugin](https://github.com/daodc/TouchSwipe-Jquery-Plugin)
+- [Pan, Pinch, Press, Rotate, Swipe, Tap: Hammerjs](http://hammerjs.github.io/)
 
 ### Swipper viết theo kiểu object
 
