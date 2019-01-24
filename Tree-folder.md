@@ -75,7 +75,7 @@
 
 │   ├── [Tooltip](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tooltip.md)
 
-│   ├── [Swipper](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Swipper.md)
+│   ├── [TouchSwipe Swipper](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Swipper.md)
 
 │   ├── [Image Hover](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Image-effect.md)
 
