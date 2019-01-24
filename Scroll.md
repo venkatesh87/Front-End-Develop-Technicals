@@ -1,6 +1,7 @@
 ##### Scroll Effect Element
 ---
 - [Scrollmagic](http://scrollmagic.io/)
+- [prinzhorn](http://prinzhorn.github.io/skrollr/)
 
 ##### Parallax scrolling
 ---
