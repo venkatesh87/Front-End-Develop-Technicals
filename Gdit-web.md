@@ -89,6 +89,7 @@
 │   │   ├── [Travel Hyogo](http://www.travelhyogo.org.e.aas.hp.transer.com/discover/photo/index.html)
 
 │   │   ├── [Gotokyo](https://www.gotokyo.org/en/index.html)
+
 │   │   ├── [Gotokyo](https://www.gotokyo.org/en/spot/54/index.html)
 
 │   │   ├── **ID:** pattern-gdit
