@@ -107,4 +107,8 @@
   http://ianmcburnie.github.io/mindpatterns/accordion/
 
   https://medium.com/salesforce-ux/7-things-every-designer-needs-to-know-about-accessibility-64f105f0881b#.cn3f15fgp
+  
+##### 6. Checklist Accessibility with HTML5.
+
+  https://a11yproject.com/checklist
 
