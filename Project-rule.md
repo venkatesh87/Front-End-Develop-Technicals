@@ -18,8 +18,10 @@
 
 10. [Images](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Images.md)
 
-11. [Process Loading](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Process-loading.md)
+11. [Images](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Images.md)
 
-12. [Unit CSS %, EM, REM](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Unit-percent-em-rem-in-web.md)
+12. [Process Loading](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Process-loading.md)
 
-13. [Memorize The Company Projects](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Memorize-the-company-projects.md)
+13. [Make Favicon and Apple Touch Icon](https://www.favicon-generator.org/)
+
+14. [Memorize The Company Projects](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Memorize-the-company-projects.md)
