@@ -181,6 +181,8 @@
 
 │   ├── [Mockup, Wireframe software](https://cacoo.com/templates/wireframe-software)
 
+│   ├── [Make Favicon & Apple Icon](https://www.favicon-generator.org)
+
 │   ├── [Develop On Tool Chrome](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tool_dev_on_chrome.md)
 
 ├── **[Japan Language]**
