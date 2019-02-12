@@ -7306,19 +7306,69 @@ if ($('.banner_list').length) {
 }
 ```
 
-**24. **
+**24. Gotokyo Convert English Popup Instagram**
 - Text.
+
+>HTML Code:
+```javascript
+
+```
 
 >JavaScript Code:
 ```javascript
 
 ```
 
-**25. **
-- Text.
-
+**25. Recruit Popup**
+- Refer: http://www.ut-h.co.jp/recruit/fresher/number/
+- Use plugin:
+  + http://vodkabears.github.io/remodal/
+  + Slick
+  
 >JavaScript Code:
 ```javascript
+/* number.js */
+$(function() {
+
+  var $document = $(document);
+
+  // 繝｢繝ｼ繝繝ｫ繧ｦ繧｣繝ｳ繝峨え險ｭ螳�
+  var mordalWindow = (function() {
+    var $carousel;
+    var slideTarget = 0;
+    var instance = $('.modal-window').remodal({
+      hashTracking: false
+    });
+    var $closeButton = $('<button class="close" data-remodal-action="close"></button>');
+    $('a[data-slide-target]').on('click', function(e) {
+      slideTarget = parseInt($(e.currentTarget).data('slide-target'), 10);
+    });
+    $document.on('opened', '.remodal', function(e) {
+      $target = $(e.currentTarget);
+      $closeButton.appendTo($target);
+      $carousel = $target.find('.modal-carousel');
+      // 繝｢繝ｼ繝繝ｫ繧ｦ繧｣繝ｳ繝峨え蜀�き繝ｫ繝ｼ繧ｻ繝ｫ險ｭ螳�
+      if ($carousel.length) {
+        setTimeout(function() {
+          $carousel.slick({
+            initialSlide: slideTarget,
+            dots: true,
+            draggable: false,
+            autoplay: false,
+            adaptiveHeight: true
+          });
+        }, 50);
+      }
+    });
+    $document.on('closed', '.remodal', function(e) {
+      if ($carousel.length) {
+        $carousel.slick('unslick');
+        $carousel = null;
+      }
+    });
+  })();
+
+});
 
 ```
 
