@@ -7316,7 +7316,74 @@ if ($('.banner_list').length) {
 
 >JavaScript Code:
 ```javascript
+$('.ins_lists').each(function(i){
+    var colsize = 12;
+    $(this).find("li").each(function(i){
+        if (i>=colsize){
+            $(this).addClass('ins_hidden_item');}
+    });
+	var hiddenItem = $(this).find('.ins_hidden_item');
+	if(hiddenItem.length){
+		$(this).find('.ins_hidden_item').insertAfter(this).wrapAll("<ul class='ins_lists ins_hidden'></ul>");
+	} else {
+		$('#tmp_instagram .btn_showmore_wrap').css('display','none');
+	}
+});
+if ($('.section_instagram').length){
+    $('.section_instagram .btn_showmore_wrap .btn_showmore').on('click',function(){
+        $('.section_instagram .ins_hidden').first().slideDown(400);
+        $('.section_instagram .ins_hidden').first().removeClass('ins_hidden');
+        if (!$('.section_instagram .ins_hidden').length){
+            $(this).parents('.btn_showmore_wrap').slideUp(400)
+        }
+		return false;
+    });
 
+    var slides = $('<div class="ins_modal"><div class="ins_modal_cnt"><a href="javascript:void(0);" class="ins_modal_close">Close</a><div class="ins_slides"></div></div></div>'),
+        slide_temp = '<div class="ins_slide">' +
+                        '<a href="<%--link--%>">' +
+                            '<div class="image"><img src="<%--image--%>" alt=""><div class="ins_icon">Instagram Icon</div></div>' +
+                            '<div class="cnt">' +
+                                '<div class="text_upper">' +
+                                    '<span class="name"><%--username--%></span>' +
+                                    '<span class="number"><%--number--%> / <%--count--%></span>' +
+                                '</div>' +
+                                '<div class="text_lower">&nbsp;' +
+                                '</div>' +
+                            '</div>' +
+                        '</a>' +
+                    '</div>';
+    var len = $('.section_instagram .inst_modal').length;
+    $('.section_instagram .inst_modal').each(function(index){
+        var slide_item = slide_temp;
+        slide_item = slide_item.replace('<%--link--%>',$(this).find('a').attr('href'));
+        slide_item = slide_item.replace('<%--image--%>',$(this).prev().find('img').attr('src'));
+        slide_item = slide_item.replace('<%--username--%>',$(this).find('a').text());
+        slide_item = slide_item.replace('<%--number--%>',index + 1);
+        slide_item = slide_item.replace('<%--count--%>',len);
+        slides.find('.ins_slides').append(slide_item);
+    })
+    $('.section_instagram .ins_inner').append(slides);
+    $('.section_instagram .ins_slides').slick();
+    $('.section_instagram .ins_items a').on('click',function(){
+        var index = $('.section_instagram .ins_items .ins_item').index($(this));
+        $('.section_instagram .ins_slides').slick('slickGoTo',index,true);
+        slides.addClass('active');
+    });
+    slides.on('click',function(e){
+        var _target = $(e.target);
+        if (_target.hasClass('ins_modal_cnt') || _target.parents('.ins_modal_cnt').length){
+            if (_target.hasClass('ins_modal_close') || _target.parents('.ins_modal_close').length){
+                slides.removeClass('active');
+            }
+        }else{
+            slides.removeClass('active');
+        }
+    })
+    $('.ins_modal').on('touchmove',function(){
+        return false;
+    })
+}
 ```
 
 **25. Recruit Popup**
