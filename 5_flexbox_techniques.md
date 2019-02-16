@@ -174,3 +174,21 @@ footer{
    flex: 0 0 auto;
 }
 ```
+
+#### 6. Grid with flex
+
+```javascript
+
+```
+
+#### 7. ý nghĩa của flex-flow column
+
+```javascript
+
+```
+
+#### 8. Equal height item with flex
+
+```javascript
+
+```
