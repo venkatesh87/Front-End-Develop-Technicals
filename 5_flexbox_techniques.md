@@ -177,6 +177,8 @@ footer{
 
 #### 6. Flex centering item and ziczac column
 
+![Image flex ziczac](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/css-flex-ziczac.jpg)
+
 ```javascript
 .intro-list {
   padding: 0;
