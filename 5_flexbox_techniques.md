@@ -179,6 +179,99 @@ footer{
 
 ![Image flex ziczac](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/css-flex-ziczac.jpg)
 
+>**HTML**
+
+```javascript
+<div class="intro-list">
+  <div class="intro-item">
+    <div class="intro-flex">
+      <div class="intro-col">
+        <div class="intro-caption">
+          <h3 class="intro-heading">
+            <a href="#">Tổng quan</a>
+          </h3>
+          <p class="para-intro">Trung tâm đào tạo thiết kế chuyên nghiệp iDesign với sứ mệnh đào tạo và cung cấp nguồn nhân lực chất lượng cao cho ngành thiết kế đồ họa, thiết kế web và thiết kế nội thất cho thị trường Đà Nẵng và khu vực miền trung. Đồng thời tạo ra cơ hội việc làm cho các bạn trẻ đam mê chuyên ngành thiết kế.</p>
+          <p>Với mong muốn tạo ra các đội ngũ chuyên nghiệp trong các lĩnh vực này, iDesign cam kết đem đến các chương trình đào tạo chất lượng, hiệu quả và giúp các bạn trẻ có được việc làm ổn định và phát triển nghề nghiệp lâu dài.</p>
+          <p>Chúng tôi cam kết: Đã học là có việc làm.</p>
+        </div>
+      </div>
+      <div class="intro-col">
+        <figure class="figure-image">
+          <img src="app/images/photos/img_intro_1.jpg" alt="" width="550" height="364">
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!--end intro-item-->
+  <div class="intro-item">
+    <div class="intro-flex">
+      <div class="intro-col">
+        <div class="intro-caption">
+          <h3 class="intro-heading">
+            <a href="#">Ưu điểm của iDesign</a>
+          </h3>
+          <ul class="info_list">
+            <li><a href="#">Học để làm việc</a></li>
+            <li><a href="#">Làm việc với các chuyên gia</a></li>
+            <li><a href="#">Cập nhật kiến thức, công nghệ mới nhất</a></li>
+            <li><a href="#">Có kinh nghiệm làm dự án khi đang học</a></li>
+            <li><a href="#">Thời gian học ngắn, chi phí ít, biết nhiều</a></li>
+            <li><a href="#">Cam kết hỗ trợ tìm việc cho đến khi có việc làm</a></li>
+            <li><a href="#">Bảo đảm nghề nghiệp trong 3 năm sau tốt nghiệp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="intro-col">
+        <figure class="figure-image">
+          <img src="app/images/photos/img_intro_2.jpg" alt="" width="550" height="364">
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!--end intro-item-->
+  <div class="intro-item">
+    <div class="intro-flex">
+      <div class="intro-col">
+        <div class="intro-caption">
+          <h3 class="intro-heading">
+            <a href="#">Đội ngũ giảng viên</a>
+          </h3>
+          <p class="para-intro">Đội ngũ giảng viên quy tụ những chuyên gia làm việc lâu năm trong ngành thiết kế và có nhiều kinh nghiệm trong các lĩnh vực thu hút nhân lực hiện nay. </p>
+          <p>Các giáo viên hầu hết có thâm niên thực hiện dự án liên quan đến khóa học và có kinh nghiệm truyền đạt, hướng dẫn để giúp bạn dễ dàng tiếp cận các kiến thức, kỹ năng và kinh nghiệm.</p>
+        </div>
+      </div>
+      <div class="intro-col">
+        <figure class="figure-image">
+          <img src="app/images/photos/img_intro_3.jpg" alt="" width="550" height="364">
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!--end intro-item-->
+  <div class="intro-item">
+    <div class="intro-flex">
+      <div class="intro-col">
+        <div class="intro-caption">
+          <h3 class="intro-heading">
+            <a href="#">Phương pháp giảng dạy</a>
+          </h3>
+          <p class="para-intro">Phương pháp giảng dạy đa phương thức, kết hợp giữa lý thuyết, thực hành, rèn luyện kỹ năng và chia sẻ kinh nghiệm từ các chuyên gia.</p>
+          <p>Với quan điểm trên chúng tôi tin tưởng sẽ giúp được nhiều bạn trẻ thành công trong việc lựa chọn và phát triển nghề nghiệp, đồng thời góp phần giải quyết những khó khăn về nhân lực cho ngành thiết kế hiện nay.</p>
+        </div>
+      </div>
+      <div class="intro-col">
+        <figure class="figure-image">
+          <img src="app/images/photos/img_intro_4.jpg" alt="" width="550" height="364">
+        </figure>
+      </div>
+    </div>
+  </div>
+  <!--end intro-item-->
+</div>
+<!--end intro-list-->
+```
+
+>**Css**
 ```javascript
 .intro-list {
   padding: 0;
