@@ -175,19 +175,66 @@ footer{
 }
 ```
 
-#### 6. Grid with flex
+#### 6. Flex centering item and ziczac column
+
+```javascript
+.intro-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  .intro-item {
+    margin: 0 -22px;
+    padding: 30px 0;
+    .intro-flex {
+      @include flexbox();
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      align-items: center;
+      justify-content: center;
+      .intro-col{
+        padding: 0 22px;
+        float: left;
+        width: 49.8%;
+        @media (max-width: 1180px) {
+          padding: 0 15px;
+        }
+        @media (max-width: 690px) {
+          width: 100%;
+          float: none;
+        }
+      }
+    }
+    &:nth-child(even) {
+      .intro-flex {
+        flex-direction: row-reverse;
+      }
+    }
+    @media (max-width: 1180px) {
+      margin: 0 -15px;
+    }
+    @media (max-width: 1050px) {
+      padding: 20px 0;
+    }
+    @media (max-width: 690px) {
+      padding: 0 0 10px;
+    }
+  }
+}
+```
+
+#### 7. Grid with flex
 
 ```javascript
 
 ```
 
-#### 7. ý nghĩa của flex-flow column
+#### 8. ý nghĩa của flex-flow column
 
 ```javascript
 
 ```
 
-#### 8. Equal height item with flex
+#### 9. Equal height item with flex
 
 ```javascript
 
