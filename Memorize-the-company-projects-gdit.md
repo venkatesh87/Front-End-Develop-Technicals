@@ -7817,7 +7817,8 @@ if($('.gallery-region').length){
 
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target-popup.jpg)
-- Chỉ click vùng bên trong, loại vùng bên ngoài đi.
+
+**Chỉ click vùng bên trong, loại vùng bên ngoài đi.**
 
 >JavaScript Code:
 ```javascript
