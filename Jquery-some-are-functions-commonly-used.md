@@ -1,11 +1,47 @@
 #### Some common Javascript functions
 ---
 
-**1. e.target**
+**1. Event Click**
+
+**Định nghĩa:** 
+Là một dạng hàm chờ sẽ được thực thi khi được trigger. 
+Việc trigger này sẽ được thực hiện thông qua các listener hay còn gọi là EventListener. 
+Hàm được thực thi được gọi là Event Handler.
+
+**Các lưu ý khi làm việc với event:**
+- Có thể add nhiều hơn 1 event handler vào cùng 1 element trong cùng 1 kiểu sự kiện ví dụ: 2 “click” event.
+- Có 2 cách khác nhau để add Event Handler vào element là dung trực tiếp hàm shortcut build sẵn như ```click, hover``` hoặc là dùng ```.on()```.
+- Đối với hover thì ko sử dụng ```.on()``` được. Nếu muốn sử dụng thì phải chia là 2 event riêng biệt là mouseenter và mouseleave.
+- Khuyến khích sử dụng .on() khi add một event.
+- Các event handler sẽ được attach vào trong DOM tại thời điểm mà lệnh attach được gọi. Khi thao tác trên phần tử đã được gắn EventListener như ```append,detach,remove```,… thì cũng phải nắm rõ vấn đề này. Nếu ko các EventListener có thể bị xóa đi dẫn đến việc tính năng hoạt động ko đúng như mong muốn.
+
+- **Ưu điểm:**
+  - Xử lý được các custom event.
+  - Xử lý trigger event cho các phần tử con bên trong thông qua listener của ở cha.
+  - Quy chuẩn code chung về event được lựa chọn từ nhiều bên.
+  
+**Hàm .off(events,[selector][data],handler);**
+- Giúp xóa EventListener ra khỏi đối tượng. Hàm này có thể xóa cụ thể 1 handler nào đó nếu được chỉ đích danh.
+
+**2. Event trong Handler**
+- ```e.target```
 - ```var $target = $(e.currentTarget);```
+- Thường được sử dụng để xác định vị trí nhấp chuột và nó hay được gắn trong các sự kiện ```click```, ```hover```, ```mouse``` ...
 
+- **Định nghĩa:** Là ```Object``` có thể sử dụng dùng để điều khiển event.
+ví dụ: ```.on(event,function(e){});``` -> ```e``` là Object ```f.Event``` dùng để điều khiển ```event```.
+- **Các điểm lưu ý khi làm việc với ```e```**:
+- ```e.data``` mang giá trị được truyền vào khi khai báo event.
+- ```e.preventDefault():``` dùng để dừng hoạt động event.
+- Để prevent(ngăn chặn) việc scroll trên mobile ta có thể prevent sự kiện touchstart và touchmove.
+- ```e.target``` chứa DOM trực tiếp nhận event đó. 
+Lưu ý đây là DOM ko phải danh sách DOM. Trong trường hợp muốn sử dụng các hàm JQuery thì chuyển hóa nó bằng $(e.target).
+- e.originalEvent : Object event gốc của JavaScript. Trong trường hợp muốn truy xuất, đặc biệt là các event đặc biệt của mobile thì nên chú ý ở đây.
+- Ngoài ra, trong ```e``` còn chứa các thuộc tính liên quan đến tọa độ điểm được click như ```pageX```, ```pageY```, ```clientX```, ```clientY```, ```offsetX```, ```offsetY```, ```screenX```, ```screenY```, hoặc thời điểm nhận event như timestamp(dấu thời gian).
 ```javascript
-
+$(document).on('click', function(e) {
+  var $target = $(e.currentTarget);
+});
 ```
 
 **1. self**
