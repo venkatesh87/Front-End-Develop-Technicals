@@ -7595,7 +7595,12 @@ if ($('.remodal').length) {
 - Reference site: https://www.tetratone.jp/
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-1.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-2.jpg)
-
+- Chú ý: Có 2 biến container_pc : ```$(".gallery-region-inner")```, ```container_sp : null```, biến ```container_sp``` ban đầu được gắn ```null``` nhưng sau được gáṇ clone từ ```container_pc```. Khi về SmartPhone thì 
+- ```detach()```:  Phương thức ```detach()``` loại bỏ các phần tử được chọn, bao gồm tất cả các nút văn bản và nút con. Tuy nhiên, nó giữ dữ liệu và sự kiện.
+  + Phương pháp này cũng giữ một bản sao của các phần tử bị loại bỏ, cho phép chúng được kiểm tra lại sau đó.
+  + **Tip:** Để xóa các thành phần và dữ liệu và sự kiện của nó, thay vào đó, hãy sử dụng phương thức ```remove()```.
+  + **Tip:** Để chỉ xóa nội dung khỏi các thành phần đã chọn, hãy sử dụng phương thức ```empty()```.
+  
 >Include JS:
 ```javascript
 <script type="text/javascript" src="../js/TweenMax.min.js"></script>
@@ -7810,8 +7815,8 @@ if($('.gallery-region').length){
 
 **27. 20190121 Hyogo Video Archives**
 
-- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-1.jpg)
-- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-2.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target-popup.jpg)
 - Chỉ click vùng bên trong, loại vùng bên ngoài đi.
 
 >JavaScript Code:
