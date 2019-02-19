@@ -7592,6 +7592,7 @@ if ($('.remodal').length) {
 ```
 
 **27. Hover rotationY Image**
+
 - Reference site: https://www.tetratone.jp/
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-1.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-2.jpg)
@@ -7818,7 +7819,7 @@ if($('.gallery-region').length){
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target-popup.jpg)
 
-**Chỉ click vùng bên trong, loại vùng bên ngoài đi.**
+>**Chỉ click vùng bên trong, loại vùng bên ngoài đi.**
 
 >JavaScript Code:
 ```javascript
