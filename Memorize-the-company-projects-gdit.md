@@ -7808,12 +7808,66 @@ if($('.gallery-region').length){
 }
 ```
 
-**27. **
-- Text.
+**27. 20190121 Hyogo Video Archives**
+
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-1.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-2.jpg)
+- Chỉ click vùng bên trong, loại vùng bên ngoài đi.
 
 >JavaScript Code:
 ```javascript
+var toogleMapnavi = {
+  init: function() {
+    toogleMapnavi.bind();
+  },
+  bind: function() {
+    $('#tmp_means .setting_link').on('click', function() {
+      $('#tmp_header .section_map_list').toggle();
+      if ($('body').hasClass('map_open')) {
+        $('body').removeClass('map_open');
+      } else {
+        $('body').addClass('map_open');
+      }
+    });
+    $('#tmp_header .section_map_list .btn_exits').click(function () {
+      $('#tmp_header .section_map_list').fadeOut(100);
+      $('body').removeClass('map_open');
+    });
+    $('#tmp_wrapper').click(function (event) {
+      var target = $(event.target);
+      if (!(target.parents('#tmp_header').length || target.attr('id') == 'tmp_header')){
+        $('.model_pc #tmp_header .section_map_list').fadeOut(100);
+        $('body').removeClass('map_open');
+      }else if ((target.parents('.section_map_list').length || target.hasClass('section_map_list')) && (!(target.parents('#tmp_header .section_map_list .container').length || target.hasClass('#tmp_header .section_map_list .container')))){
+        $('.model_pc #tmp_header .section_map_list').fadeOut(100);
+        $('body').removeClass('map_open');
+      }
+    });
+    $(document).click(function(event) {
+      var target = $(event.target);
+      //if you click on anything except the modal itself or the "open modal" link, close the modal
+      if (!(target.parents('#tmp_header').length || target.attr('id') == 'tmp_header')){
+        $('body').removeClass('spmenu_open');
+        $('#tmp_sma_menu').removeClass('active');
+        $('#tmp_sma_menu').slideUp();
+        $('.sma_menu_open').removeClass('active');
+        $('#tmp_sma_search').removeClass('active');
+        $('#tmp_sma_search').slideUp();
+        $('.sma_search_open').removeClass('active');
+      } else if ((target.parents('.section_map_list').length || target.hasClass('section_map_list')) && (!(target.parents('#tmp_header .section_map_list .container').length || target.hasClass('#tmp_header .section_map_list .container')))){
+        $('body').removeClass('spmenu_open');
+        $('#tmp_sma_menu').removeClass('active');
+        $('#tmp_sma_menu').slideUp();
+        $('.sma_menu_open').removeClass('active');
+        $('#tmp_sma_search').removeClass('active');
+        $('#tmp_sma_search').slideUp();
+        $('.sma_search_open').removeClass('active');
+      }
+    });
+  },
+};
 
+toogleMapnavi.init();
 ```
 
 **28. **
