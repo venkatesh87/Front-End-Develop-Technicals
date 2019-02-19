@@ -7394,6 +7394,12 @@ if ($('.section_instagram').length){
   + http://vodkabears.github.io/remodal/
   + Slick
   
+>Include JS:
+```javascript
+<script type="text/javascript" src="../js/remodal.min.js"></script>
+<script type="text/javascript" src="../js/slick.min.js"></script>
+```
+
 >HTML Code:
 ```javascript
 // Grid
@@ -7480,12 +7486,326 @@ $(function() {
 
 ```
 
-**26. **
-- Text.
+**26. 20181204_Advertisement_Xd**
+
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-ads.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-detail-ads.jpg)
+
+>Include JS:
+```javascript
+<script type="text/javascript" src="../js/remodal.min.js"></script>
+<script type="text/javascript" src="../js/slick.min.js"></script>
+```
+
+>HTML:
+```javascript
+<div class="flexible">
+  <div class="flexible is-parent photos-card large wow slideInUp">
+    <div class="flexible is-child">
+      <a data-remodal-target="remodal-popup" href="#" class="card-inner card-first">
+        <span class="font-level-1">全員</span>
+        <span class="font-level-5">クリエ</span>
+        <span class="font-level-5">イター。</span>
+      </a>
+    </div>
+  </div>
+  <div class="flexible is-parent is-vertical">
+    <div class="flexible is-child photos-card flex-half wow slideInUp">
+      <a data-remodal-target="remodal-popup" href="#" class="card-inner">
+        <span class="font-level-6">未経験</span>
+        <span class="font-level-6">80％</span>
+      </a>
+    </div>
+    <div class="flexible is-child photos-card flex-half wow slideInUp">
+      <a href="#" data-remodal-target="remodal-popup" class="card-inner">
+        <span class="font-level-6">平均</span>
+        <span class="font-level-6">29歳</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="remodal" data-remodal-id="remodal-popup" role="dialog">
+  <button data-remodal-action="close" class="remodal-close" aria-label="Close">&nbsp;</button>
+  <div class="remodal-content">
+    <div class="remodal-inner">
+      <div class="remodal-sliders">
+        <div class="remodal-slide">
+          <h3 class="remodal-title">全員クリエイター。</h3>
+          <p class="remodal-text">ダミーテキストダミーテキストダミーテキストダミーテキストダミ</p>
+        </div>
+        <div class="remodal-slide">
+          <h3 class="remodal-title">未経験80％</h3>
+          <p class="remodal-text">ダミーテキストダミーテキストダミーテキストダミーテキストダミ</p>
+        </div>
+        <div class="remodal-slide">
+          <h3 class="remodal-title">平均29歳</h3>
+          <p class="remodal-text">ダミーテキストダミーテキストダミーテキストダミーテキストダミ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end remodal-->
+```
 
 >JavaScript Code:
 ```javascript
+if ($('.remodal').length) {
+  var $slidersPop = $('.remodal-sliders');
+  if ($slidersPop.length) {
+      $slidersPop.slick({
+        dots: true,
+        draggable: true,
+        autoplay: false,
+        adaptiveHeight: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '<button class="slick-prev slick-arrow" aria-label="Previous" type="button"></button>',
+        nextArrow: '<button class="slick-next slick-arrow" aria-label="Next" type="button"></button>'
+      });
+      $slidersPop.on('init', function(event, slick) {
+          moveControlSlick();
+      });
+  }
 
+  function moveControlSlick() {
+      var next = $('.remodal-sliders .slick-next');
+      var prev = $('.remodal-sliders .slick-prev');
+      var parent = $('.remodal .remodal-content');
+      parent.prepend(next);
+      parent.prepend(prev);
+  }
+  moveControlSlick();
+  var $document = $(document);
+  $('.photos-grid .photos-row .flexible a').on('click', function(e) {
+      var index = $('.photos-grid .photos-row .flexible a').index($(this));
+      $slidersPop.slick('slickGoTo', index, true);
+      $slidersPop.slick('setPosition');
+  });
+  $document.on('opening', '.remodal', function() {
+      setTimeout(function() {
+          $slidersPop.slick('setPosition');
+      }, 50);
+  });
+}
+```
+
+**27. Hover rotationY Image**
+- Reference site: https://www.tetratone.jp/
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-1.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-2.jpg)
+
+>Include JS:
+```javascript
+<script type="text/javascript" src="../js/TweenMax.min.js"></script>
+<script type="text/javascript" src="../js/imagesloaded.pkgd.min.js"></script>
+<script type="text/javascript" src="../js/isotope.pkgd.min.js"></script>
+```
+
+>HTML Code:
+```javascript
+<div class="gallery-region">
+  <div class="gallery-region-inner">
+    <ul class="gallery-album">
+      <li class="gallery-album-item">
+        <figure class="figure-album">
+          <div class="figure-image">
+            <a href="#">
+              <img src="../img/gallery/img-people.jpg" alt="" width="351" height="433">
+              <span class="overlay"></span>
+              <span class="overlay-text-wrap">
+                <span class="overlay-text">
+                  ●●●●●●●●●●●●●<br />●●●●●●●●●●●●●
+                </span>
+              </span>
+            </a>
+          </div>
+          <figcaption class="figure-caption">
+            <p class="phonetic-name">YAMADA TARO</p>
+            <h2 class="native-name"><a href="#">山田 太郎</a></h2>
+            <p class="position-people"><a href="#">ディレクター / 0000年入社</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <!--end gallery-album-item-->
+      <li class="gallery-album-item">
+        <figure class="figure-album">
+          <div class="figure-image">
+            <a href="#">
+              <img src="../img/gallery/img-people.jpg" alt="" width="351" height="433">
+              <span class="overlay"></span>
+              <span class="overlay-text-wrap">
+                <span class="overlay-text">
+                  ●●●●●●●●●●●●●<br />●●●●●●●●●●●●●
+                </span>
+              </span>
+            </a>
+          </div>
+          <figcaption class="figure-caption">
+            <p class="phonetic-name">YAMADA TARO</p>
+            <h2 class="native-name"><a href="#">山田 太郎</a></h2>
+            <p class="position-people"><a href="#">ディレクター / 0000年入社</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <!--end gallery-album-item-->
+      <li class="gallery-album-item">
+        <figure class="figure-album">
+          <div class="figure-image">
+            <a href="#">
+              <img src="../img/gallery/img-people.jpg" alt="" width="351" height="433">
+              <span class="overlay"></span>
+              <span class="overlay-text-wrap">
+                <span class="overlay-text">
+                  ●●●●●●●●●●●●●<br />●●●●●●●●●●●●●
+                </span>
+              </span>
+            </a>
+          </div>
+          <figcaption class="figure-caption">
+            <p class="phonetic-name">YAMADA TARO</p>
+            <h2 class="native-name"><a href="#">山田 太郎</a></h2>
+            <p class="position-people"><a href="#">ディレクター / 0000年入社</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <!--end gallery-album-item-->
+      <li class="gallery-album-item">
+        <figure class="figure-album">
+          <div class="figure-image">
+            <a href="#">
+              <img src="../img/gallery/img-people.jpg" alt="" width="351" height="433">
+              <span class="overlay"></span>
+              <span class="overlay-text-wrap">
+                <span class="overlay-text">
+                  ●●●●●●●●●●●●●<br />●●●●●●●●●●●●●
+                </span>
+              </span>
+            </a>
+          </div>
+          <figcaption class="figure-caption">
+            <p class="phonetic-name">YAMADA TARO</p>
+            <h2 class="native-name"><a href="#">山田 太郎</a></h2>
+            <p class="position-people"><a href="#">ディレクター / 0000年入社</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <!--end gallery-album-item-->
+      <li class="gallery-album-item">
+        <figure class="figure-album">
+          <div class="figure-image">
+            <a href="#">
+              <img src="../img/gallery/img-people.jpg" alt="" width="351" height="433">
+              <span class="overlay"></span>
+              <span class="overlay-text-wrap">
+                <span class="overlay-text">
+                  ●●●●●●●●●●●●●<br />●●●●●●●●●●●●●
+                </span>
+              </span>
+            </a>
+          </div>
+          <figcaption class="figure-caption">
+            <p class="phonetic-name">YAMADA TARO</p>
+            <h2 class="native-name"><a href="#">山田 太郎</a></h2>
+            <p class="position-people"><a href="#">ディレクター / 0000年入社</a></p>
+          </figcaption>
+        </figure>
+      </li>
+      <!--end gallery-album-item-->
+    </ul>
+    <!--end gallery-album-->
+  </div>
+</div>
+<!--end gallery-region-->
+```
+
+>JavaScript Code:
+```javascript
+// masonry people page
+if($('.gallery-region').length){
+  var peopleWork = {
+    container_pc : $(".gallery-region-inner"),
+    container_sp : null,
+    swiper : null,
+    init: function(){
+      peopleWork.container_sp = peopleWork.container_pc.clone();
+      peopleWork.isotope();
+      peopleWork.container_pc.on('mouseenter','.figure-album',peopleWork.in);
+      peopleWork.container_pc.on('mouseleave','.figure-album',peopleWork.out);
+      peopleWork.mediaHandler();
+    },
+    isotope: function(){
+      function ourStory() {
+        peopleWork.container_pc.isotope({
+          itemSelector: '.gallery-album-item',
+          masonry: {
+            columnWidth: peopleWork.container_pc.width() / 2,
+            gutter: 0
+          }
+        });
+      }
+      peopleWork.container_pc.imagesLoaded(ourStory);
+      $window.resize(ourStory);
+    },
+    in: function(){
+      console.log('a')
+      var image = $(this).find('.figure-image'),
+          tl = new TimelineMax(),
+          overlay = $(this).find('.overlay'),
+          index = peopleWork.container_pc.find('.figure-album').index($(this));
+      if (index % 2 == 1){
+        tl.to(image, 0.5, {opacity: 1,scaleX:0.9,rotationY:-7})
+          .to(overlay, 0.4, {opacity: 1, ease:Quad.easeInOut},"-=0.3");
+      }else{
+        tl.to(image, 0.5, {opacity: 1,scaleX:0.9,rotationY:7})
+          .to(overlay, 0.4, {opacity: 1, ease:Quad.easeInOut},"-=0.3");
+      }
+    },
+    out: function(){
+      console.log('b')
+      var image = $(this).find('.figure-image'),
+          overlay = $(this).find('.overlay'),
+          tl = new TimelineMax();
+      tl.to(image, 0.5, {opacity: 1,scaleX:1,rotationY:0})
+      .to(overlay, 0.4, {opacity: 0, ease:Quad.easeInOut},"-=0.3");
+    },
+    mediaHandler: function(){
+      var mql = window.matchMedia('(max-width: 767px)');
+      function triggerScreen(e){
+          if (e.matches){
+            peopleWork.container_pc.detach();
+            $('.gallery-region').append(peopleWork.container_sp);
+            if (peopleWork.swiper == null){
+              peopleWork.container_sp.addClass('swiper-container');
+              peopleWork.container_sp.find('.gallery-album').addClass('swiper-wrapper');
+              peopleWork.container_sp.find('.gallery-album-item').addClass('swiper-slide');
+              peopleWork.swiper = new Swiper(peopleWork.container_sp,{
+                loop: true,
+                effect:"coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView:"auto",
+                coverflowEffect:{
+                  rotate:30,
+                  stretch:100,
+                  depth:120,
+                  modifier:true,
+                  slideShadows:false
+                }
+              });
+            }
+          }else{
+            peopleWork.container_sp.detach();
+            $('.gallery-region').append(peopleWork.container_pc);
+          }
+      }
+      mql.addListener(triggerScreen);
+      triggerScreen(mql);
+    }
+  }
+  peopleWork.init();
+}
 ```
 
 **27. **
