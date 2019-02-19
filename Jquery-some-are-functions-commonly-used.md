@@ -1,6 +1,41 @@
 #### Some common Javascript functions
 ---
 
+**1. e.target**
+- ```var $target = $(e.currentTarget);```
+
+```javascript
+
+```
+
+**1. self**
+- ```var $self = $(this);```
+```javascript
+
+```
+
+**1. hasClass()**
+
+- Phương thức ```hasClass()``` kiểm tra nếu bất kỳ phần tử được chọn nào có tên ```class``` được chỉ định.
+- Nếu có trả về ```true```, ngược lại trả về ```false```.
+
+>**Case 1:**
+```javascript
+var flgAnimate = $(this).hasClass('animatable');
+if (flgAnimate) {
+  $(this).removeClass('animatable');
+  animate_text();
+}
+```
+
+>**Case 2:**
+```javascript
+if (!$('#play_button').hasClass('disable')) {
+  $('#play_button').addClass('disable');
+  stopVideo();
+}
+```
+
 **1. one()**
 - one(): Chèn một hoặc nhiều sự kiện cho một thành phần được chọn, xác định một function để chạy khi xảy ra một sự kiện.
 
