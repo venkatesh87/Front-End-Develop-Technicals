@@ -7387,11 +7387,52 @@ if ($('.section_instagram').length){
 ```
 
 **25. Recruit Popup**
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-detail.jpg)
 - Refer: http://www.ut-h.co.jp/recruit/fresher/number/
 - Use plugin:
   + http://vodkabears.github.io/remodal/
   + Slick
   
+>HTML Code:
+```javascript
+// Grid
+<div class="tpl-elem-fade active">
+  <a href="#" data-remodal-target="number-modal" data-slide-target="0" class="number-card large left"><span class="illust illust-1">社員数 15,000名以上</span></a>
+  <a href="#" data-remodal-target="number-modal" data-slide-target="1" class="number-card right"><span class="illust illust-2">エントリー制度を活用して管理職になった人数 342名</span></a>
+  <a href="#" data-remodal-target="number-modal" data-slide-target="2" class="number-card right"><span class="illust illust-3">新卒社員文理比率 60.3％　39.7％</span></a>
+</div>
+
+// Popup
+<div class="modal-window remodal remodal-is-initialized remodal-is-opened" data-remodal-id="number-modal" tabindex="-1">
+  <div class="sec-carousel modal-carousel slick-initialized slick-slider slick-dotted" role="toolbar">
+    <div aria-live="polite" class="slick-list">
+      <div class="slick-track" role="listbox">
+        <div class="modal-carousel-slide slick-slide slick-cloned" tabindex="-1" role="option" aria-describedby="slick-slide211" style="width: 750px;" data-slick-index="-1" aria-hidden="true">
+          <h4 class="std-title">奨学金返済支援制度 <br class="only-sp">120万円</h4>
+          <p class="std-text">
+            奨学金を借りている4年制大学卒の学生に対し、奨学金返済の為に【月に2万円】給与に上乗せしていく制度です。本制度の導入により初任給が大手同業他社よりも高水準になります。更に最大5年間補助を受けられる為【総額120万円】の補助を受けられます！ＵＴグループの安定した経営基盤があるからこそ実施できる制度です。
+          </p>
+        </div>
+        <div class="modal-carousel-slide slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide30" style="width: 750px;" data-slick-index="0" aria-hidden="false">
+          <h4 class="std-title">社員数 15,000名以上</h4>
+          <p class="std-text">
+            現在ＵＴ社員数はおよそ15,000名。2021年までには社員数を29,000名まで増やすという挑戦をしています。「日本全土に仕事をつくる」というビジョンを、全社を持って体現していきます。
+          </p>
+        </div>
+        <div class="modal-carousel-slide slick-slide" tabindex="-1" role="option" aria-describedby="slick-slide31" style="width: 750px;" data-slick-index="1" aria-hidden="true">
+          <h4 class="std-title">エントリー制度を活用して管理職になった人数 342名</h4>
+          <p class="std-text">
+            エントリー制度とは重要な役職ポストを年に1回、立候補者の中から決定する業界初の制度です。 この制度を通じて、熱意と資質を備えた数多くの幹部社員が誕生しています。 この制度の導入によって社員一人ひとりの成長が会社の成長へと繋がり、そして、会社の成長が社員の成長へと繋がる好循環を実現しています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="close" data-remodal-action="close"></button>
+</div>
+```
+
 >JavaScript Code:
 ```javascript
 /* number.js */
