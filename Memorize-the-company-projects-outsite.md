@@ -677,14 +677,86 @@ $("#search-top").kendoAutoComplete({
 ```
 **Xử lý ionRangeSlider play/pause**
 
-**5. **
-- Text.
+**5. 20181114 Bukken Web**
+
+**5.1 Chỉ click trong vùng dropdown, ngoài vùng dropdown thì ẩn**
+- ```$(e.target)```: Có nghĩa là tại cái vị trí con trỏ chuột ```click```.
+- ```closest()```: Phương thức trả về tổ tiên đầu tiên của phần tử được chọn.
+- ```$("span").closest("ul").css({"color": "red", "border": "2px solid red"})```: Trả về phần tử ```ul```.
 
 >JavaScript Code:
 ```javascript
+$('#headerCorporateLogo').on("click", function() {
+  $('.userMenu').slideToggle();
+  var $this = $(this);
+  if ($this.hasClass('active')){
+    $('#headerCorporateLogo').parents('.header-aside').find('div.userMenu').slideUp();
+    $('#headerCorporateLogo').removeClass('active');
+  }
+  else{
+    $('#headerCorporateLogo').parents('.header-aside').find('div.userMenu').slideDown();
+    $('#headerCorporateLogo').removeClass('active');
+    $('div.userMenu').slideDown();
+    $this.addClass('active');
+  }
+});
+$(document).on('click', function(e) {
+  //2. Xác định vị trí nhấp
+  console.log($(e.target).closest('#headerCorporateLogo').length );
+  console.log($(e.target).closest('.userMenu').length);
+  console.log(!$(e.target).closest('#headerCorporateLogo').length && !$(e.target).closest('.userMenu').length);
 
+  if(!$(e.target).closest('#headerCorporateLogo').length && !$(e.target).closest('.userMenu').length){
+      $('.userMenu').fadeOut();
+  }
+});
 ```
 
+**5.2 Move Element**
+
+>JavaScript Code:
+```javascript
+// move status
+function moveStatus(){
+	$('.result-list .result-item').each(function(){
+		var status_list = $(this).find('.company-information .company-above .status-list');
+		var status_list_pos = $(this).find('.company-name .status-list');
+		var company_name = $(this).find('.company-name');
+		var company_above = $(this).find('.company-information .company-above');
+		if($(window).width() < 390){
+	  	company_name.append(status_list);
+		}
+		else{
+	  	company_above.append(status_list_pos);
+		}
+	});
+}
+moveStatus();
+// move search result
+function moveSearch(){
+	var search_result = $('.search-result');
+	var result_wrap = $('.result-wrap');
+	var search_sort = $('.panel-result .search-sort');
+	if($(window).width() < 390){
+  	result_wrap.append(search_result);
+	}
+	else{
+		search_sort.prepend(search_result);
+	}
+}
+moveSearch();
+// Function resize mobile
+var timer = false;
+$(window).resize(function(){
+    if (timer !== false) {
+        clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+			moveStatus();
+			moveSearch();
+    }, 200);
+});
+```
 **6. **
 - Text.
 
