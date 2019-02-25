@@ -7894,27 +7894,25 @@ toogleMapnavi.init();
 var BackToTop = {
   selector: {
     linkToTop: $('.pnavi a'),
-    windowWidth: $(window).width(),
     scrollBottom: $(window).scrollTop() + $(window).height(),
-    heightFooter: $('#tmp_footer').height() + 79,
-    heightDocument: $(document).height()
+    heightDocument: $(document).height() - $('#tmp_footer').height() - 91,
+    heightFooter: $('#tmp_footer').height()
   },
   init: function() {
     BackToTop.calPos();
+    $(window).scroll(function() {
+      BackToTop.selector.scrollBottom = $(window).scrollTop() + $(window).height();
+      BackToTop.calPos();
+    });
     BackToTop.scrollToTop();
-    BackToTop.updatePosition();
   },
   calPos: function() {
-    $(window).scroll(function() {
-      if ($(window).scrollTop() > (BackToTop.selector.heightDocument - BackToTop.selector.heightFooter)) {
-        BackToTop.selector.linkToTop.parent().css({ bottom: '225px' });
-      } else {
-        BackToTop.selector.linkToTop.parent().css({ bottom: '15px' });
-      }
-    });
-  },
-  updatePosition: function() {
-    BackToTop.calPos();
+    BackToTop.selector.scrollBottom = $(window).scrollTop() + $(window).height();
+    if (BackToTop.selector.scrollBottom > (BackToTop.selector.heightDocument)) {
+      BackToTop.selector.linkToTop.parent().css({ bottom: (BackToTop.selector.heightFooter + 20) });
+    } else {
+      BackToTop.selector.linkToTop.parent().css({ bottom: '15px' });
+    }
   },
   scrollToTop: function() {
     BackToTop.selector.linkToTop.on('click', function(e) {
