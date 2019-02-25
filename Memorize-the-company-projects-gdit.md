@@ -7877,7 +7877,7 @@ var toogleMapnavi = {
 toogleMapnavi.init();
 ```
 
-**28. **
+**28. 20190129_Kofu_City_Subsite_Female**
 - Text.
 
 >JavaScript Code:
@@ -7885,12 +7885,47 @@ toogleMapnavi.init();
 
 ```
 
-**29. **
-- Text.
+**29. 20190225_Hello_Navi_Shizuoka**
+- BackToTop.
 
 >JavaScript Code:
 ```javascript
-
+// Back Top
+var BackToTop = {
+  selector: {
+    linkToTop: $('.pnavi a'),
+    windowWidth: $(window).width(),
+    scrollBottom: $(window).scrollTop() + $(window).height(),
+    heightFooter: $('#tmp_footer').height() + 79,
+    heightDocument: $(document).height()
+  },
+  init: function() {
+    BackToTop.calPos();
+    BackToTop.scrollToTop();
+    BackToTop.updatePosition();
+  },
+  calPos: function() {
+    $(window).scroll(function() {
+      if ($(window).scrollTop() > (BackToTop.selector.heightDocument - BackToTop.selector.heightFooter)) {
+        BackToTop.selector.linkToTop.parent().css({ bottom: '225px' });
+      } else {
+        BackToTop.selector.linkToTop.parent().css({ bottom: '15px' });
+      }
+    });
+  },
+  updatePosition: function() {
+    BackToTop.calPos();
+  },
+  scrollToTop: function() {
+    BackToTop.selector.linkToTop.on('click', function(e) {
+      $('html,body').animate({
+        scrollTop: 0
+      }, 300, "swing")
+      return false;
+    });
+  }
+};
+BackToTop.init();
 ```
 
 **30. **
