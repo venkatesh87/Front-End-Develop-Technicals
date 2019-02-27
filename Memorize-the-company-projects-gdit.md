@@ -7924,7 +7924,69 @@ BackToTop.init();
 
 >JavaScript Code:
 ```javascript
+/* ファーストビュー
+ *********************************************************/
+function setBgImg(object) {
+  //画像サイズ取得
+  var imgW = object.width();
+  var imgH = object.height();
 
+  //ウィンドウサイズ取得
+  var winW = $(window).width();
+  var winH = $(window).height();
+
+  //幅・高さの拡大率取得
+  var scaleW = winW / imgW;
+  var scaleH = winH / imgH;
+
+  //幅・高さの拡大率の大きいものを取得
+  var fixScale = Math.max(scaleW, scaleH);
+
+  //画像の幅高さを設定
+  var setW = imgW * fixScale;
+  var setH = imgH * fixScale;
+
+  //画像の位置を設定
+  var moveX = Math.floor((winW - setW) / 2);
+  var moveY = Math.floor((winH - setH) / 2);
+  //設定した数値でスタイルを適用
+  object.css({
+    'width': setW,
+    'height': setH
+  });
+}
+setBgImg($('#tmp_top_gallery .main_visual .visual_img img'));
+```
+
+>**2. Move element item menu**:
+
+>JavaScript Code:
+```javascript
+var moveNavPC = function() {
+  var gnaviPcObj = $('#tmp_gnavi');
+  var gnaviSpObj = $('#tmp_sma_gnavi ul');
+  gnaviSpObj.find('> li').each(function(i) {
+    $(this).appendTo(gnaviPcObj.find('ul'));
+  });
+}
+var moveNavSP = function() {
+  var gnaviPcObj = $('#tmp_gnavi');
+  var gnaviSpObj = $('#tmp_sma_gnavi ul');
+  gnaviPcObj.find('> ul > li').each(function(i) {
+    $(this).appendTo(gnaviSpObj);
+  });
+}
+var switchMove = function() {
+  if ($(window).width() < 480) {
+    moveNavSP();
+  } else {
+    moveNavPC();
+  }
+}
+switchMove();
+$(window).resize(function() {
+  switchMove();
+});
 ```
 
 >**2. Full Background**:
@@ -7932,6 +7994,35 @@ BackToTop.init();
 >JavaScript Code:
 ```javascript
 
+```
+
+>**2. Full height main visual**:
+
+>JavaScript Code:
+```javascript
+var fullMainVisualPC = function() {
+  var hghHeading = $('#tmp_heading');
+  var hghRest = $(window).height() - $('#tmp_wrap_gnavi').height();
+  hghHeading.css('height', hghRest);
+  setBgImg($('#tmp_top_gallery .main_visual .visual_img img'));
+};
+var fullMainVisualSP = function() {
+  var hghHeading = $('#tmp_heading');
+  var hghRest = $(window).height() - $('#tmp_header').height();
+  hghHeading.css('height', hghRest);
+  setBgImg($('#tmp_top_gallery .main_visual .visual_img img'));
+};
+var switchDevice = function() {
+  if ($(window).width() < 480) {
+    fullMainVisualSP();
+  } else {
+    fullMainVisualPC();
+  }
+}
+switchDevice();
+$(window).resize(function() {
+  switchDevice();
+});
 ```
 
 >**3. Caculator Height**:
