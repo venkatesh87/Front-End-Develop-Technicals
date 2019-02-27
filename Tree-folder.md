@@ -33,6 +33,12 @@
 
 │   │   └── [ES6](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/ES6.md)
 
+│   ├── **[Technique]**
+
+│   │   ├── [Technique Full Background](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Technique-to-handle-full-background.md)
+
+│   │   └── [Technique Image Flexible](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Technique-to-handle-image-flexible.md)
+
 │   ├── **[keyword to resolve the problem]**
 
 │   │   ├── [keyword HTML](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Keyword-to-resolve-the-problem-html.md)
