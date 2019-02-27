@@ -7878,14 +7878,6 @@ toogleMapnavi.init();
 ```
 
 **28. 20190129_Kofu_City_Subsite_Female**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**29. 20190225_Hello_Navi_Shizuoka**
 - BackToTop.
 
 >JavaScript Code:
@@ -7924,6 +7916,29 @@ var BackToTop = {
   }
 };
 BackToTop.init();
+```
+
+**29. 20190225_Hello_Navi_Shizuoka**
+
+>**1. Full Image Slideshow**:
+
+>JavaScript Code:
+```javascript
+
+```
+
+>**2. Full Background**:
+
+>JavaScript Code:
+```javascript
+
+```
+
+>**3. Caculator Height**:
+
+>JavaScript Code:
+```javascript
+
 ```
 
 **30. **
