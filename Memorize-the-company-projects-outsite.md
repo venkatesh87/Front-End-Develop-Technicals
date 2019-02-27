@@ -757,8 +757,16 @@ $(window).resize(function(){
     }, 200);
 });
 ```
-**6. **
-- Text.
+**6. 20190114_DingTea**
+
+**Multiple modal bootstrap.**
+
+>JavaScript Code:
+```javascript
+
+```
+
+**Event block out scroll body when open modal**
 
 >JavaScript Code:
 ```javascript
