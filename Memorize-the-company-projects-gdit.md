@@ -7941,7 +7941,7 @@ BackToTop.init();
 
 ```
 
-**30. **
+**30.**
 - Text.
 
 >JavaScript Code:
