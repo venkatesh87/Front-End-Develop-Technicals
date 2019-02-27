@@ -760,17 +760,63 @@ $(window).resize(function(){
 **6. 20190114_DingTea**
 
 **Multiple modal bootstrap.**
+>JavaScript Code:
+```javascript
+//Trigger next modal
+  $('.link-login-modal').on( 'click', function() {
+    $('.modal-login').modal('show');
+    $('.modal-registries').modal('hide');
+    $('.modal-forgot-password').modal('hide');
+  });
+  $('.link-registration').on( 'click', function() {
+    $('.modal-login').modal('hide');
+    $('.modal-registries').modal('show');
+    $('.modal-forgot-password').modal('hide');
+  });
+  $('.forgot-password-link').on( 'click', function() {
+    $('.modal-login').modal('hide');
+    $('.modal-registries').modal('hide');
+    $('.modal-forgot-password').modal('show');
+  });
+```
 
+**data-backdrop="static"**
+>JavaScript Code:
+```javascript
+<div class="modal fade modal-general modal-form modal-forgot-password" data-backdrop="static" id="forgot-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+```
+
+**Event block out scroll body when open modal**
 >JavaScript Code:
 ```javascript
 
 ```
 
-**Event block out scroll body when open modal**
-
+**Add smooth scrolling to page anchors**
 >JavaScript Code:
 ```javascript
+// Add smooth scrolling to all links
+$(".click-scroll").on('click', function(event) {
 
+  // Make sure this.hash has a value before overriding default behavior
+  if (this.hash !== "") {
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 800, function(){
+ 
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  } // End if
+});
 ```
 
 **7. **
