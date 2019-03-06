@@ -7921,7 +7921,7 @@ BackToTop.init();
 **29. 20190225_Hello_Navi_Shizuoka**
 
 >**1. Full Image Slideshow**:
-
+- Trường hợp này nó bị lỗi nếu chuyển đổi switch PC và SP vì nếu lúc trên SP mà chuyển về PC thì window width nó hiểu là SP nên ko tính full image được
 >JavaScript Code:
 ```javascript
 /* ファーストビュー
