@@ -7503,7 +7503,7 @@ if($('.gallery-region').length){
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-scroll-down.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-stop-scrolling.jpg)
 - ```if (!callback || typeof callback !== 'function') return;```: cái này là cái callback đó. Nó nhận dạng là nếu truyền tham số ```function callback``` thì hàm mới chạy còn ko thì dừng ở đó.
-
+- Refer: https://gomakethings.com/detecting-when-a-visitor-has-stopped-scrolling-with-vanilla-javascript/
 >JavaScript Code:
 ```javascript
 // Detecting when a visitor has stopped scrolling with vanilla JavaScript
