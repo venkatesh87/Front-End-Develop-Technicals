@@ -1,7 +1,8 @@
 #### I. Memorize the company project GDIT
 ---
 
-**1. File ```gd.js```**
+### 1. File ```gd.js```
+---
 - ```$.gd``` có nghĩa là
 
 >JavaScript Code:
@@ -49,7 +50,8 @@ $.gd = {
 }
 ```
 
-**2. NIIGATA PREFECTURE Project**
+### 2. NIIGATA PREFECTURE Project
+---
 - **Screen slide animation**
 - ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-1.jpg)
 - ![slide 3, 4](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-2.jpg)
@@ -303,7 +305,8 @@ $(document).ready(function() {
   });
 });
 ```
-**3. Hướng dẫn kỹ thuật di dời các phần tử khi về thiết bị smartphone**
+### 3. Hướng dẫn kỹ thuật di dời các phần tử khi về thiết bị smartphone**
+---
 - Pankuzu.
 - Header
 - Footer
@@ -314,8 +317,8 @@ $(document).ready(function() {
 
 ```
 
-**4. Javascript Nerima Project**
-
+###4. Javascript Nerima Project**
+---
 **▼ Phần sẽ tạo**
 
     - Tạo HTML dùng để demo cho quận Nerima
@@ -360,8 +363,8 @@ $(document).ready(function() {
 ```javascript
 
 ```
-
-**5. 20180411_Iwate**
+###5. 20180411_Iwate**
+---
 - **Request:** 
   + Project name: HTML demo dùng để giới thiệu về tỉnh Iwate
   + Làm giống https://nssg.jp/
@@ -4417,7 +4420,8 @@ function shuffle(a) {
 </div>
 ```
 
-**6. 20171012 HTML5 Landing Page**
+### 6. 20171012 HTML5 Landing Page
+---
 - **Sơ đồ di chuyển màn hình**.
 [HTML5 Landing Page](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/html5-landing-1.jpg)
 - **Full Screen**.
@@ -4443,7 +4447,8 @@ function shuffle(a) {
 
 ```
 
-**7. 20171122 Minoh City**
+### 7. 20171122 Minoh City
+---
 - **Main Visual**: 
   + Tại image background, số lượng setting tối đa thì hãy hiển thị bằng chuyển đổi fade 5 image.
   + Trường hợp height của image lớn hơn size image được đề xuất thì sẽ là 556px, trường hợp Width lớn thì sẽ là trạng thái hiển thị cắt phía trái phải của image, trường hợp nhỏ thì sẽ được phóng to hiển thị cho khớp với height 556px.
@@ -4488,8 +4493,8 @@ function shuffle(a) {
 ```javascript
 
 ```
-**8. 20180313 Booking HTML5 RakuRaKu**
-
+### 8. 20180313 Booking HTML5 RakuRaKu
+---
 - abc
 
 >JavaScript Code:
@@ -4497,7 +4502,8 @@ function shuffle(a) {
 
 ```
 
-**9. 20180509 Plugin SmartPhone**
+### 9. 20180509 Plugin SmartPhone
+---
 
 **Nội dung**
 - Xác định breakpoint
@@ -4677,7 +4683,8 @@ function shuffle(a) {
 })(jQuery);
 ```
 
-**10. Zoomer_Plugin**
+### 10. Zoomer_Plugin
+---
 **10.1. Yêu cầu**: Khi hiển thị SP, tạo style, JS có thể phóng to image trong phần content bằng tab.
 - **Tham khảo**
   + http://migo-media.com/zoomer-mobile/
@@ -4716,7 +4723,7 @@ function shuffle(a) {
   
 1.	$.gd.zoomer();  
 
-III/ Cấu hình:
+**III/ Cấu hình:**
 
 >JavaScript Code:
 ```javascript
@@ -4997,8 +5004,8 @@ III/ Cấu hình:
 })(jQuery);
 ```
 
-**11. 20170718 Koufu**
-
+### 11. 20170718 Koufu
+---
   - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koufu_1.jpg)
     + Về độ rộng hiển thì đang giả định giá trị tối thiểu là ```1280px×800px```
     + Điểm khác biệt khi hiển thị smartphone
@@ -5021,8 +5028,8 @@ III/ Cấu hình:
 
 ```
 
-**12. 20180612 Your Life in Hyogo**
-
+### 12. 20180612 Your Life in Hyogo
+---
 **Request :**
 - Bản đồ thế giới & đồng hồ thế giới
 - HTML sẽ tạo: world_clock.html
@@ -5358,7 +5365,8 @@ $(document).ready(function() {
 </div>
 ```
 
-**13. 20180719_Gotokyo ```localStorage()```**
+### 13. 20180719_Gotokyo ```localStorage()```
+---
 **Request :**
 ■ Nội dung tác nghiệp
 - Muốn thiết đặt button đồng ý cho phép get cookie ở phía trên phần header của site tham khảo nên hãy tạo function để có thể coding bằng JS
@@ -5432,8 +5440,8 @@ if (typeof(Storage) !== "undefined") {
  })(jQuery);
 ```
 
-**13. 20170215 Hyogo**
-
+### 14. 20170215 Hyogo
+---
 1. Output text data và file image đang được setting ở JSON.
 
  ![Hyogo](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hyogo_gallery_1.JPG)
@@ -6530,7 +6538,8 @@ if (typeof(Storage) !== "undefined") {
 }
 ```
 
-**14. 20180511 Foreign Language Tokyo**
+### 15. 20180511 Foreign Language Toky
+---
 - Text.
 
 >JavaScript Code:
@@ -6538,7 +6547,8 @@ if (typeof(Storage) !== "undefined") {
 
 ```
 
-**15. 20171211 Chiba Kun’s Hiroba FE**
+### 16. 20171211 Chiba Kun’s Hiroba FE
+---
 - Text.
 
 >JavaScript Code:
@@ -6546,7 +6556,8 @@ if (typeof(Storage) !== "undefined") {
 
 ```
 
-**16. 20180508 ChartJS**
+### 17. 20180508 ChartJS
+---
 - Text.
 
 >JavaScript Code:
@@ -6554,7 +6565,8 @@ if (typeof(Storage) !== "undefined") {
 
 ```
 
-**17. 20180917 Shizuoka Tourist**
+### 18. 20180917 Shizuoka Tourist
+---
 
 - Sử dụng **e.target** ```(!($(e.target).hasClass('accordion_checked') || $(e.target).parents('.accordion_checked').length))``` để loại trừ các phần tử này khỏi ```click```.
 
@@ -6586,7 +6598,8 @@ if (typeof(Storage) !== "undefined") {
 })(jQuery);
 ```
 
-**18. 20180926 Tokyo Form Search 1st request**
+### 19. Tokyo Form Search 1st request
+---
 - Nhờ các bạn tạo JS liên quan đến form search của Tokyo. Tokyo thì có thay đổi spec chỗ Search nên sẽ chỉnh sửa phần Search đã có. Nhờ các bạn dựa vào file để tạo JS để có được nội dung như bên dưới
 
 ▼Nội dung request
@@ -6656,7 +6669,10 @@ $('#scope_search').on('change', function() {
     }
 });
 ```
-**19. 20180926 Tokyo Form Search 2nd request**
+
+### 20. 20180926 Tokyo Form Search 2nd request
+---
+
 - Nhờ các bạn set để khi nhấn checkbox「分野」thì「ファイル形式の指定/Chỉ định format file (Selectbox file type và 検索対象にする(Set thành đối tượng search)＆除く(loại trừ khỏi đối tượng search)」được disabled
 - Khi set「ファイル形式の指定/Chỉ định format file (Selectbox file type」là những mục khác「すべての形式」thì các checkbox của「分野」trở thành disabled
 - Ngoài ra, khi bị disabled hãy thay đổi từng area thành màu xám
@@ -6953,7 +6969,8 @@ $('#scope_search').on('change', function() {
 </div>
 ```
 
-**20. 20181025 KDDI**
+### 21. 20181025 KDDI
+---
 - **Xử lý sự kiên click khi switch từ window sang smartphone mà ko bị lỗi**
 - Có sử dụng hàm ```off()``` để tắt sự kiện click. Sau đó bật lên lại.
 - Về hàm ```resize``` thì gọi lại function, hàm này có tác dụng như sau.
@@ -7001,7 +7018,9 @@ $(window).resize(function(){
 });
 ```
 
-**21. Progress Bar Start/Stop**
+### 22. Progress Bar Start/Stop
+---
+
 - Text.
 
 >HTML Code:
@@ -7048,446 +7067,9 @@ function progressBar(){
 }
 ```
 
-**22. 20181204_Advertisement_Xd**
-- Text.
-
->JavaScript Code:
-```javascript
-
-```
-
-**22. 20181109_Go_Tokyo_Convert_English**
-- **Về scroll ở footer khi ở SP**: Về navigation được hiển thị ở footer khi về SP, vì có trường hợp menu trình duyệt chẳng hạn như Safari cản trở, không thể tap được nên「trường hợp scroll xuống dưới」thì không cho hiển thị, 「Trường hợp scroll lên trên」thì hiển thị. Tôi gửi các bạn sample, nhưng nhờ các bạn bổ sung cơ chế giống như mô tả bên dưới (dự án khác)
-- ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/scroll-up-down.jpg)
->JavaScript Code:
-```javascript
-var old_position = 0;
-$(window).on('scroll', function() {
-var current = (window.scrollY) ? window.scrollY : window.pageYOffset;
-  if (current > 100 && current > old_position && current < $('#tmp_wrapper').outerHeight()- $(window).height()) {
-    $('#tmp_navi_sticky').addClass('hidden');
-  } else {
-    $('#tmp_navi_sticky').removeClass('hidden');
-  }
-  old_position = current;
-});
-```
-
-**23. 20181218_Kanagawa**
-**23.1 Request Load file XML:**
-- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koutou_data.jpg)
-- Chúng tôi còn 1 request muốn nhờ các bạn tạo về JS, không biết có thể nhờ các bạn tạo theo spec bên dưới được không?
-▼Khái quát
-Lưu sẵn nhiều data (mã tổ chức, path image, text data) vào XML, và dựa vào data thống nhất với mã tổ chức được mô tả ở tag meta trong HTML, ghi đè lên nơi tương ứng của HTML (Về cơ bản, chúng tôi muốn lưu sẵn data của trường học vào XML, rồi lấy mã tổ chức làm key, sau đó get và hiển thị image chẳng hạn)
-
-▼Ví dụ XML
-Đính kèm
-※Về inq_flg, sau khi xác định spec thì bên chúng tôi sẽ tạo nên các bạn không cần đối ứng
-
-▼Ví dụ tag meta trong HTML
-```javascript
-<meta name="department" content="010010010" />
-```
-※Chứa data giống với department_code của XML
-
-▼Nơi ghi đè trong HTML
-\000100_GD_神奈川県教育委員会_テンプレート\cms8341\upload\top\top_a.html
-```javascript
-1. #tmp_hlogo .logo img / logo_path
-2. #tmp_hlogo .en_name text / department_en
-```
-**koutou_data.xml: ** /cms8341/shared/xml/koutou_data.xml
-
->XML Code:
-```javascript
-<?xml version="1.0" encoding="utf-8"?>
-<school_data>
-    <item>
-        <department_code>010010010</department_code>
-        <department_en>sample school</department_en>
-        <logo_path>/cms8341/shared/images/logo.png</logo_path>
-        <inq_flg>1</inq_flg><!-- true=1, false=0 -->
-    </item>
-    <item>
-        <department_code>010010020</department_code>
-        <department_en>sample2 school</department_en>
-        <logo_path>/cms8341/shared/images/logo.png</logo_path>
-        <inq_flg>1</inq_flg><!-- true=1, false=0 -->
-    </item>
-</school_data>
-```
-
->HTML Code:
-```javascript
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta http-equiv="Content-Script-Type" content="text/javascript" />
-    <title>ページタイトル</title>
-    <meta name="department" content="010010020" />
-</head>
-<body class="format_top no_javascript">
-    <div id="tmp_wrapper">
-        <div id="tmp_header">
-            <div class="container">
-                <div id="tmp_hlogo">
-                    <h1>
-                        <span class="logo"><img src="/cms8341/shared/images/logo.png" alt="" /></span>
-                        <span class="text">
-                            <span class="prefecture">神奈川県立</span>
-                            <span class="name">〇〇高等学校</span>
-                            <span class="en_name" lang="en" xml:lang="en">〇〇〇〇〇〇 HIGH SCHOOL</span>
-                        </span>
-                    </h1>
-                </div>
-                <div class="right_cnt">
-                    <div id="tmp_means">
-                        <ul id="tmp_setting">
-                            <li><a href="/cms8341/#" class="setting_link">文字サイズ・色合い変更</a></li>
-                            <li><a href="/cms8341/#" class="setting_map">アクセス</a></li>
-                        </ul>
-                    </div>
-                    <div id="tmp_search">
-                        <form action="/cms8341/#" id="tmp_gsearch">
-                            <label class="query_label" for="tmp_query">ページ内検索</label>
-                            <div id="tmp_wrap_query">
-                                <input id="tmp_query" class="query_area" size="31" name="q" />
-                            </div>
-                            <p class="query_submit"><input id="tmp_func_sch_btn" type="submit" name="sa" value="検索" /> </p>
-                        </form>
-                    </div>
-                </div>
-                <div id="tmp_sma_menu">
-                    <a href="javacript:void(0);" class="sma_menu_open"><span>メニュー</span></a>
-                    <a href="javacript:void(0);" class="close_btn">閉じる</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript" src="/cms8341/shared/js/main.js"></script>
-</body>
-</html>
-```
->JavaScript Code:
-```javascript
-(function($){
-    if ($('meta[name="department"]').length){
-        var cnt = $('meta[name="department"]').attr('content');
-        $.ajax({
-            'url' : '/cms8341/shared/xml/koutou_data.xml',
-            'success': function(results){
-                var dom = $(results);
-                dom.find('item').each(function(){
-                    if (cnt == $(this).find('department_code').text().trim()){
-                        $('#tmp_hlogo .logo img').attr('src',$(this).find('logo_path').text());
-                        $('#tmp_hlogo .en_name').text($(this).find('department_en').text());
-                    }
-                })
-            }
-        })
-    }
-})(jQuery);
-```
-
-**23.2 Banner Slick with button switch PC/SP: **
-
->JavaScript Code:
-```javascript
-if ($('.banner_list').length) {
-    /*Slick Switch PC/SP*/
-    var mc = localStorage.getItem('pc');
-    var pc_to_sp = false;
-    var first_sp = false;
-    var first_pc = false;
-    var slide_three = $(".js_slide_three");
-    var slide_three_sp = $('<ul class="banner_list js_slide_three">' + $(".js_slide_three").html() + '</ul>');
-    var slickSwitch = {
-        pc: function() {
-            slide_three_sp.detach();
-            $('.js_three_parent').append(slide_three);
-            if (!first_pc){
-                first_pc = true;
-                slide_three.slick({
-                    dots: true,
-                    arrows: false,
-                    infinite: true,
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    focusOnSelect: false,
-                    autoplay: true
-                });
-                moveControlSlick();
-                controlPlay();
-            }
-        },
-        sp: function() {
-            if (!mc) {
-                slide_three.detach();
-                $('.js_three_parent').append(slide_three_sp);
-                if (!first_sp){
-                    first_sp = true;
-                    slide_three_sp.slick({
-                        dots: true,
-                        arrows: false,
-                        infinite: true,
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        focusOnSelect: true,
-                        autoplay: true
-                    });
-                    moveControlSlick();
-                    controlPlay();
-                }
-            } else {
-                slickSwitch.pc();
-            }
-        }
-    }
-    if ($(window).width() > 640) {
-        slickSwitch.pc();
-    } else {
-        slickSwitch.pc();
-        pc_to_sp = true;
-        slickSwitch.sp();
-    }
-    function moveControlSlick(){
-        $('.main_banner .slick-dots').wrap('<div class="slick_control"></div>');
-        $('.slick_control').prepend('<button type="button" class="slick-stop" data-role="none" role="button" tabindex="0"><span>STOP</span></button>');
-        $('.slick-stop').on('click', function() {
-			if ($(this).hasClass('slick-play')) {
-				$('.main_banner .slick-slider').slick("slickPlay");
-				$(this).removeClass('slick-play');
-				$(this).find('span').text('STOP');
-			} else {
-				$('.main_banner .slick-slider').slick("slickPause");
-				$(this).addClass('slick-play');
-				$(this).find('span').text('START');
-			}
-		})
-    }
-
-    function controlPlay(){
-        //$(".js_slide_three").slick("slickPlay");
-        $('.slick_control .btn_play').on('click', function() {
-            if ($(this).hasClass('paused')) {
-                $(this).removeClass('paused');
-                $('.js_slide_three').slick("slickPlay");
-            } else {
-                $(this).addClass('paused');
-                $('.js_slide_three').slick("slickPause");
-            }
-        });
-    }
-    var currentWidth = $(window).width();
-    $(window).on('resize', function() {
-        if (currentWidth != $(window).width()) {
-            if ($(window).width() > 640) {
-                slickSwitch.pc();
-            } else {
-                slickSwitch.sp();
-                if (pc_to_sp == false){
-                    pc_to_sp = true;
-                }
-            }
-            currentWidth = $(window).width();
-        }
-    });
-    $('#tmp_switch_pc_style').on('click', function() {
-        slickSwitch.pc();
-        location.reload();
-    });
-    $('#tmp_switch_sp_style').on('click', function() {
-        slickSwitch.sp();
-        location.reload();
-    });
-}
-```
-
-**24. Gotokyo Convert English Popup Instagram**
-- Text.
-
->HTML Code:
-```javascript
-
-```
-
->JavaScript Code:
-```javascript
-$('.ins_lists').each(function(i){
-    var colsize = 12;
-    $(this).find("li").each(function(i){
-        if (i>=colsize){
-            $(this).addClass('ins_hidden_item');}
-    });
-	var hiddenItem = $(this).find('.ins_hidden_item');
-	if(hiddenItem.length){
-		$(this).find('.ins_hidden_item').insertAfter(this).wrapAll("<ul class='ins_lists ins_hidden'></ul>");
-	} else {
-		$('#tmp_instagram .btn_showmore_wrap').css('display','none');
-	}
-});
-if ($('.section_instagram').length){
-    $('.section_instagram .btn_showmore_wrap .btn_showmore').on('click',function(){
-        $('.section_instagram .ins_hidden').first().slideDown(400);
-        $('.section_instagram .ins_hidden').first().removeClass('ins_hidden');
-        if (!$('.section_instagram .ins_hidden').length){
-            $(this).parents('.btn_showmore_wrap').slideUp(400)
-        }
-		return false;
-    });
-
-    var slides = $('<div class="ins_modal"><div class="ins_modal_cnt"><a href="javascript:void(0);" class="ins_modal_close">Close</a><div class="ins_slides"></div></div></div>'),
-        slide_temp = '<div class="ins_slide">' +
-                        '<a href="<%--link--%>">' +
-                            '<div class="image"><img src="<%--image--%>" alt=""><div class="ins_icon">Instagram Icon</div></div>' +
-                            '<div class="cnt">' +
-                                '<div class="text_upper">' +
-                                    '<span class="name"><%--username--%></span>' +
-                                    '<span class="number"><%--number--%> / <%--count--%></span>' +
-                                '</div>' +
-                                '<div class="text_lower">&nbsp;' +
-                                '</div>' +
-                            '</div>' +
-                        '</a>' +
-                    '</div>';
-    var len = $('.section_instagram .inst_modal').length;
-    $('.section_instagram .inst_modal').each(function(index){
-        var slide_item = slide_temp;
-        slide_item = slide_item.replace('<%--link--%>',$(this).find('a').attr('href'));
-        slide_item = slide_item.replace('<%--image--%>',$(this).prev().find('img').attr('src'));
-        slide_item = slide_item.replace('<%--username--%>',$(this).find('a').text());
-        slide_item = slide_item.replace('<%--number--%>',index + 1);
-        slide_item = slide_item.replace('<%--count--%>',len);
-        slides.find('.ins_slides').append(slide_item);
-    })
-    $('.section_instagram .ins_inner').append(slides);
-    $('.section_instagram .ins_slides').slick();
-    $('.section_instagram .ins_items a').on('click',function(){
-        var index = $('.section_instagram .ins_items .ins_item').index($(this));
-        $('.section_instagram .ins_slides').slick('slickGoTo',index,true);
-        slides.addClass('active');
-    });
-    slides.on('click',function(e){
-        var _target = $(e.target);
-        if (_target.hasClass('ins_modal_cnt') || _target.parents('.ins_modal_cnt').length){
-            if (_target.hasClass('ins_modal_close') || _target.parents('.ins_modal_close').length){
-                slides.removeClass('active');
-            }
-        }else{
-            slides.removeClass('active');
-        }
-    })
-    $('.ins_modal').on('touchmove',function(){
-        return false;
-    })
-}
-```
-
-**25. Recruit Popup**
-- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup.jpg)
-- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-detail.jpg)
-- Refer: http://www.ut-h.co.jp/recruit/fresher/number/
-- Use plugin:
-  + http://vodkabears.github.io/remodal/
-  + Slick
-  
->Include JS:
-```javascript
-<script type="text/javascript" src="../js/remodal.min.js"></script>
-<script type="text/javascript" src="../js/slick.min.js"></script>
-```
-
->HTML Code:
-```javascript
-// Grid
-<div class="tpl-elem-fade active">
-  <a href="#" data-remodal-target="number-modal" data-slide-target="0" class="number-card large left"><span class="illust illust-1">社員数 15,000名以上</span></a>
-  <a href="#" data-remodal-target="number-modal" data-slide-target="1" class="number-card right"><span class="illust illust-2">エントリー制度を活用して管理職になった人数 342名</span></a>
-  <a href="#" data-remodal-target="number-modal" data-slide-target="2" class="number-card right"><span class="illust illust-3">新卒社員文理比率 60.3％　39.7％</span></a>
-</div>
-
-// Popup
-<div class="modal-window remodal remodal-is-initialized remodal-is-opened" data-remodal-id="number-modal" tabindex="-1">
-  <div class="sec-carousel modal-carousel slick-initialized slick-slider slick-dotted" role="toolbar">
-    <div aria-live="polite" class="slick-list">
-      <div class="slick-track" role="listbox">
-        <div class="modal-carousel-slide slick-slide slick-cloned" tabindex="-1" role="option" aria-describedby="slick-slide211" style="width: 750px;" data-slick-index="-1" aria-hidden="true">
-          <h4 class="std-title">奨学金返済支援制度 <br class="only-sp">120万円</h4>
-          <p class="std-text">
-            奨学金を借りている4年制大学卒の学生に対し、奨学金返済の為に【月に2万円】給与に上乗せしていく制度です。本制度の導入により初任給が大手同業他社よりも高水準になります。更に最大5年間補助を受けられる為【総額120万円】の補助を受けられます！ＵＴグループの安定した経営基盤があるからこそ実施できる制度です。
-          </p>
-        </div>
-        <div class="modal-carousel-slide slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide30" style="width: 750px;" data-slick-index="0" aria-hidden="false">
-          <h4 class="std-title">社員数 15,000名以上</h4>
-          <p class="std-text">
-            現在ＵＴ社員数はおよそ15,000名。2021年までには社員数を29,000名まで増やすという挑戦をしています。「日本全土に仕事をつくる」というビジョンを、全社を持って体現していきます。
-          </p>
-        </div>
-        <div class="modal-carousel-slide slick-slide" tabindex="-1" role="option" aria-describedby="slick-slide31" style="width: 750px;" data-slick-index="1" aria-hidden="true">
-          <h4 class="std-title">エントリー制度を活用して管理職になった人数 342名</h4>
-          <p class="std-text">
-            エントリー制度とは重要な役職ポストを年に1回、立候補者の中から決定する業界初の制度です。 この制度を通じて、熱意と資質を備えた数多くの幹部社員が誕生しています。 この制度の導入によって社員一人ひとりの成長が会社の成長へと繋がり、そして、会社の成長が社員の成長へと繋がる好循環を実現しています。
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <button class="close" data-remodal-action="close"></button>
-</div>
-```
-
->JavaScript Code:
-```javascript
-/* number.js */
-$(function() {
-
-  var $document = $(document);
-
-  // 繝｢繝ｼ繝繝ｫ繧ｦ繧｣繝ｳ繝峨え險ｭ螳�
-  var mordalWindow = (function() {
-    var $carousel;
-    var slideTarget = 0;
-    var instance = $('.modal-window').remodal({
-      hashTracking: false
-    });
-    var $closeButton = $('<button class="close" data-remodal-action="close"></button>');
-    $('a[data-slide-target]').on('click', function(e) {
-      slideTarget = parseInt($(e.currentTarget).data('slide-target'), 10);
-    });
-    $document.on('opened', '.remodal', function(e) {
-      $target = $(e.currentTarget);
-      $closeButton.appendTo($target);
-      $carousel = $target.find('.modal-carousel');
-      // 繝｢繝ｼ繝繝ｫ繧ｦ繧｣繝ｳ繝峨え蜀�き繝ｫ繝ｼ繧ｻ繝ｫ險ｭ螳�
-      if ($carousel.length) {
-        setTimeout(function() {
-          $carousel.slick({
-            initialSlide: slideTarget,
-            dots: true,
-            draggable: false,
-            autoplay: false,
-            adaptiveHeight: true
-          });
-        }, 50);
-      }
-    });
-    $document.on('closed', '.remodal', function(e) {
-      if ($carousel.length) {
-        $carousel.slick('unslick');
-        $carousel = null;
-      }
-    });
-  })();
-
-});
-
-```
-
-**26. 20181204_Advertisement_Xd**
-
+### 23. 20181204_Advertisement_Xd
+---
+**23.1 Popup:**
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-ads.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-detail-ads.jpg)
 
@@ -7591,7 +7173,108 @@ if ($('.remodal').length) {
 }
 ```
 
-**27. Hover rotationY Image**
+### 23.2 Recruit Popup
+---
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/grid-popup-detail.jpg)
+- Refer: http://www.ut-h.co.jp/recruit/fresher/number/
+- Use plugin:
+  + http://vodkabears.github.io/remodal/
+  + Slick
+  
+>Include JS:
+```javascript
+<script type="text/javascript" src="../js/remodal.min.js"></script>
+<script type="text/javascript" src="../js/slick.min.js"></script>
+```
+
+>HTML Code:
+```javascript
+// Grid
+<div class="tpl-elem-fade active">
+  <a href="#" data-remodal-target="number-modal" data-slide-target="0" class="number-card large left"><span class="illust illust-1">社員数 15,000名以上</span></a>
+  <a href="#" data-remodal-target="number-modal" data-slide-target="1" class="number-card right"><span class="illust illust-2">エントリー制度を活用して管理職になった人数 342名</span></a>
+  <a href="#" data-remodal-target="number-modal" data-slide-target="2" class="number-card right"><span class="illust illust-3">新卒社員文理比率 60.3％　39.7％</span></a>
+</div>
+
+// Popup
+<div class="modal-window remodal remodal-is-initialized remodal-is-opened" data-remodal-id="number-modal" tabindex="-1">
+  <div class="sec-carousel modal-carousel slick-initialized slick-slider slick-dotted" role="toolbar">
+    <div aria-live="polite" class="slick-list">
+      <div class="slick-track" role="listbox">
+        <div class="modal-carousel-slide slick-slide slick-cloned" tabindex="-1" role="option" aria-describedby="slick-slide211" style="width: 750px;" data-slick-index="-1" aria-hidden="true">
+          <h4 class="std-title">奨学金返済支援制度 <br class="only-sp">120万円</h4>
+          <p class="std-text">
+            奨学金を借りている4年制大学卒の学生に対し、奨学金返済の為に【月に2万円】給与に上乗せしていく制度です。本制度の導入により初任給が大手同業他社よりも高水準になります。更に最大5年間補助を受けられる為【総額120万円】の補助を受けられます！ＵＴグループの安定した経営基盤があるからこそ実施できる制度です。
+          </p>
+        </div>
+        <div class="modal-carousel-slide slick-slide slick-current slick-active" tabindex="-1" role="option" aria-describedby="slick-slide30" style="width: 750px;" data-slick-index="0" aria-hidden="false">
+          <h4 class="std-title">社員数 15,000名以上</h4>
+          <p class="std-text">
+            現在ＵＴ社員数はおよそ15,000名。2021年までには社員数を29,000名まで増やすという挑戦をしています。「日本全土に仕事をつくる」というビジョンを、全社を持って体現していきます。
+          </p>
+        </div>
+        <div class="modal-carousel-slide slick-slide" tabindex="-1" role="option" aria-describedby="slick-slide31" style="width: 750px;" data-slick-index="1" aria-hidden="true">
+          <h4 class="std-title">エントリー制度を活用して管理職になった人数 342名</h4>
+          <p class="std-text">
+            エントリー制度とは重要な役職ポストを年に1回、立候補者の中から決定する業界初の制度です。 この制度を通じて、熱意と資質を備えた数多くの幹部社員が誕生しています。 この制度の導入によって社員一人ひとりの成長が会社の成長へと繋がり、そして、会社の成長が社員の成長へと繋がる好循環を実現しています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="close" data-remodal-action="close"></button>
+</div>
+```
+
+>JavaScript Code:
+```javascript
+/* number.js */
+$(function() {
+
+  var $document = $(document);
+
+  // 繝｢繝ｼ繝繝ｫ繧ｦ繧｣繝ｳ繝峨え險ｭ螳�
+  var mordalWindow = (function() {
+    var $carousel;
+    var slideTarget = 0;
+    var instance = $('.modal-window').remodal({
+      hashTracking: false
+    });
+    var $closeButton = $('<button class="close" data-remodal-action="close"></button>');
+    $('a[data-slide-target]').on('click', function(e) {
+      slideTarget = parseInt($(e.currentTarget).data('slide-target'), 10);
+    });
+    $document.on('opened', '.remodal', function(e) {
+      $target = $(e.currentTarget);
+      $closeButton.appendTo($target);
+      $carousel = $target.find('.modal-carousel');
+      // 繝｢繝ｼ繝繝ｫ繧ｦ繧｣繝ｳ繝峨え蜀�き繝ｫ繝ｼ繧ｻ繝ｫ險ｭ螳�
+      if ($carousel.length) {
+        setTimeout(function() {
+          $carousel.slick({
+            initialSlide: slideTarget,
+            dots: true,
+            draggable: false,
+            autoplay: false,
+            adaptiveHeight: true
+          });
+        }, 50);
+      }
+    });
+    $document.on('closed', '.remodal', function(e) {
+      if ($carousel.length) {
+        $carousel.slick('unslick');
+        $carousel = null;
+      }
+    });
+  })();
+
+});
+
+```
+
+**23.3 Hover rotationY Image**
 
 - Reference site: https://www.tetratone.jp/
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-sknew-1.jpg)
@@ -7814,8 +7497,375 @@ if($('.gallery-region').length){
 }
 ```
 
-**27. 20190121 Hyogo Video Archives**
+### 23.4 Khi scrolling down thì ẩn cái Top line đi, nhưng khi dừng lại không scrolling nữa thì hiển thị Top line ra.
+---
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-scroll-normal.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-scroll-down.jpg)
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-stop-scrolling.jpg)
+- ```if (!callback || typeof callback !== 'function') return;```: cái này là cái callback đó. Nó nhận dạng là nếu truyền tham số ```function callback``` thì hàm mới chạy còn ko thì dừng ở đó.
 
+>JavaScript Code:
+```javascript
+// Detecting when a visitor has stopped scrolling with vanilla JavaScript
+var scrollStop = function(callback) {
+  // Make sure a valid callback was provided
+  if (!callback || typeof callback !== 'function') return;
+  // Setup scrolling variable
+  var isScrolling;
+  // Listen for scroll events
+  window.addEventListener('scroll', function(event) {
+    if ($(window).scrollTop() > 100) {
+      $('.format_free .top-line').fadeOut(250);
+    }
+    // Clear our timeout throughout the scroll
+    window.clearTimeout(isScrolling);
+    // Set a timeout to run after scrolling ends
+    isScrolling = setTimeout(function() {
+      // Run the callback
+      callback();
+    }, 250);
+  }, false);
+};
+scrollStop(function () {
+  $('.format_free .top-line').fadeIn(350);
+});
+```
+### 24. 20181109_Go_Tokyo_Convert_English
+---
+- **Về scroll ở footer khi ở SP**: Về navigation được hiển thị ở footer khi về SP, vì có trường hợp menu trình duyệt chẳng hạn như Safari cản trở, không thể tap được nên「trường hợp scroll xuống dưới」thì không cho hiển thị, 「Trường hợp scroll lên trên」thì hiển thị. Tôi gửi các bạn sample, nhưng nhờ các bạn bổ sung cơ chế giống như mô tả bên dưới (dự án khác)
+- ![slide 1, 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/scroll-up-down.jpg)
+>JavaScript Code:
+```javascript
+var old_position = 0;
+$(window).on('scroll', function() {
+var current = (window.scrollY) ? window.scrollY : window.pageYOffset;
+  if (current > 100 && current > old_position && current < $('#tmp_wrapper').outerHeight()- $(window).height()) {
+    $('#tmp_navi_sticky').addClass('hidden');
+  } else {
+    $('#tmp_navi_sticky').removeClass('hidden');
+  }
+  old_position = current;
+});
+```
+
+### 24. 20181218_Kanagawa
+---
+**24.1 Request Load file XML:**
+- ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/koutou_data.jpg)
+- Chúng tôi còn 1 request muốn nhờ các bạn tạo về JS, không biết có thể nhờ các bạn tạo theo spec bên dưới được không?
+▼Khái quát
+Lưu sẵn nhiều data (mã tổ chức, path image, text data) vào XML, và dựa vào data thống nhất với mã tổ chức được mô tả ở tag meta trong HTML, ghi đè lên nơi tương ứng của HTML (Về cơ bản, chúng tôi muốn lưu sẵn data của trường học vào XML, rồi lấy mã tổ chức làm key, sau đó get và hiển thị image chẳng hạn)
+
+▼Ví dụ XML
+Đính kèm
+※Về inq_flg, sau khi xác định spec thì bên chúng tôi sẽ tạo nên các bạn không cần đối ứng
+
+▼Ví dụ tag meta trong HTML
+```javascript
+<meta name="department" content="010010010" />
+```
+※Chứa data giống với department_code của XML
+
+▼Nơi ghi đè trong HTML
+\000100_GD_神奈川県教育委員会_テンプレート\cms8341\upload\top\top_a.html
+```javascript
+1. #tmp_hlogo .logo img / logo_path
+2. #tmp_hlogo .en_name text / department_en
+```
+**koutou_data.xml: ** /cms8341/shared/xml/koutou_data.xml
+
+>XML Code:
+```javascript
+<?xml version="1.0" encoding="utf-8"?>
+<school_data>
+    <item>
+        <department_code>010010010</department_code>
+        <department_en>sample school</department_en>
+        <logo_path>/cms8341/shared/images/logo.png</logo_path>
+        <inq_flg>1</inq_flg><!-- true=1, false=0 -->
+    </item>
+    <item>
+        <department_code>010010020</department_code>
+        <department_en>sample2 school</department_en>
+        <logo_path>/cms8341/shared/images/logo.png</logo_path>
+        <inq_flg>1</inq_flg><!-- true=1, false=0 -->
+    </item>
+</school_data>
+```
+
+>HTML Code:
+```javascript
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <title>ページタイトル</title>
+    <meta name="department" content="010010020" />
+</head>
+<body class="format_top no_javascript">
+    <div id="tmp_wrapper">
+        <div id="tmp_header">
+            <div class="container">
+                <div id="tmp_hlogo">
+                    <h1>
+                        <span class="logo"><img src="/cms8341/shared/images/logo.png" alt="" /></span>
+                        <span class="text">
+                            <span class="prefecture">神奈川県立</span>
+                            <span class="name">〇〇高等学校</span>
+                            <span class="en_name" lang="en" xml:lang="en">〇〇〇〇〇〇 HIGH SCHOOL</span>
+                        </span>
+                    </h1>
+                </div>
+                <div class="right_cnt">
+                    <div id="tmp_means">
+                        <ul id="tmp_setting">
+                            <li><a href="/cms8341/#" class="setting_link">文字サイズ・色合い変更</a></li>
+                            <li><a href="/cms8341/#" class="setting_map">アクセス</a></li>
+                        </ul>
+                    </div>
+                    <div id="tmp_search">
+                        <form action="/cms8341/#" id="tmp_gsearch">
+                            <label class="query_label" for="tmp_query">ページ内検索</label>
+                            <div id="tmp_wrap_query">
+                                <input id="tmp_query" class="query_area" size="31" name="q" />
+                            </div>
+                            <p class="query_submit"><input id="tmp_func_sch_btn" type="submit" name="sa" value="検索" /> </p>
+                        </form>
+                    </div>
+                </div>
+                <div id="tmp_sma_menu">
+                    <a href="javacript:void(0);" class="sma_menu_open"><span>メニュー</span></a>
+                    <a href="javacript:void(0);" class="close_btn">閉じる</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/cms8341/shared/js/main.js"></script>
+</body>
+</html>
+```
+>JavaScript Code:
+```javascript
+(function($){
+    if ($('meta[name="department"]').length){
+        var cnt = $('meta[name="department"]').attr('content');
+        $.ajax({
+            'url' : '/cms8341/shared/xml/koutou_data.xml',
+            'success': function(results){
+                var dom = $(results);
+                dom.find('item').each(function(){
+                    if (cnt == $(this).find('department_code').text().trim()){
+                        $('#tmp_hlogo .logo img').attr('src',$(this).find('logo_path').text());
+                        $('#tmp_hlogo .en_name').text($(this).find('department_en').text());
+                    }
+                })
+            }
+        })
+    }
+})(jQuery);
+```
+
+### 24.2 Banner Slick with button switch PC/SP
+---
+>JavaScript Code:
+```javascript
+if ($('.banner_list').length) {
+    /*Slick Switch PC/SP*/
+    var mc = localStorage.getItem('pc');
+    var pc_to_sp = false;
+    var first_sp = false;
+    var first_pc = false;
+    var slide_three = $(".js_slide_three");
+    var slide_three_sp = $('<ul class="banner_list js_slide_three">' + $(".js_slide_three").html() + '</ul>');
+    var slickSwitch = {
+        pc: function() {
+            slide_three_sp.detach();
+            $('.js_three_parent').append(slide_three);
+            if (!first_pc){
+                first_pc = true;
+                slide_three.slick({
+                    dots: true,
+                    arrows: false,
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    focusOnSelect: false,
+                    autoplay: true
+                });
+                moveControlSlick();
+                controlPlay();
+            }
+        },
+        sp: function() {
+            if (!mc) {
+                slide_three.detach();
+                $('.js_three_parent').append(slide_three_sp);
+                if (!first_sp){
+                    first_sp = true;
+                    slide_three_sp.slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: true,
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        focusOnSelect: true,
+                        autoplay: true
+                    });
+                    moveControlSlick();
+                    controlPlay();
+                }
+            } else {
+                slickSwitch.pc();
+            }
+        }
+    }
+    if ($(window).width() > 640) {
+        slickSwitch.pc();
+    } else {
+        slickSwitch.pc();
+        pc_to_sp = true;
+        slickSwitch.sp();
+    }
+    function moveControlSlick(){
+        $('.main_banner .slick-dots').wrap('<div class="slick_control"></div>');
+        $('.slick_control').prepend('<button type="button" class="slick-stop" data-role="none" role="button" tabindex="0"><span>STOP</span></button>');
+        $('.slick-stop').on('click', function() {
+			if ($(this).hasClass('slick-play')) {
+				$('.main_banner .slick-slider').slick("slickPlay");
+				$(this).removeClass('slick-play');
+				$(this).find('span').text('STOP');
+			} else {
+				$('.main_banner .slick-slider').slick("slickPause");
+				$(this).addClass('slick-play');
+				$(this).find('span').text('START');
+			}
+		})
+    }
+
+    function controlPlay(){
+        //$(".js_slide_three").slick("slickPlay");
+        $('.slick_control .btn_play').on('click', function() {
+            if ($(this).hasClass('paused')) {
+                $(this).removeClass('paused');
+                $('.js_slide_three').slick("slickPlay");
+            } else {
+                $(this).addClass('paused');
+                $('.js_slide_three').slick("slickPause");
+            }
+        });
+    }
+    var currentWidth = $(window).width();
+    $(window).on('resize', function() {
+        if (currentWidth != $(window).width()) {
+            if ($(window).width() > 640) {
+                slickSwitch.pc();
+            } else {
+                slickSwitch.sp();
+                if (pc_to_sp == false){
+                    pc_to_sp = true;
+                }
+            }
+            currentWidth = $(window).width();
+        }
+    });
+    $('#tmp_switch_pc_style').on('click', function() {
+        slickSwitch.pc();
+        location.reload();
+    });
+    $('#tmp_switch_sp_style').on('click', function() {
+        slickSwitch.sp();
+        location.reload();
+    });
+}
+```
+
+### 25 Gotokyo Convert English Popup Instagram
+---
+
+- Text.
+
+>HTML Code:
+```javascript
+
+```
+
+>JavaScript Code:
+```javascript
+$('.ins_lists').each(function(i){
+    var colsize = 12;
+    $(this).find("li").each(function(i){
+        if (i>=colsize){
+            $(this).addClass('ins_hidden_item');}
+    });
+	var hiddenItem = $(this).find('.ins_hidden_item');
+	if(hiddenItem.length){
+		$(this).find('.ins_hidden_item').insertAfter(this).wrapAll("<ul class='ins_lists ins_hidden'></ul>");
+	} else {
+		$('#tmp_instagram .btn_showmore_wrap').css('display','none');
+	}
+});
+if ($('.section_instagram').length){
+    $('.section_instagram .btn_showmore_wrap .btn_showmore').on('click',function(){
+        $('.section_instagram .ins_hidden').first().slideDown(400);
+        $('.section_instagram .ins_hidden').first().removeClass('ins_hidden');
+        if (!$('.section_instagram .ins_hidden').length){
+            $(this).parents('.btn_showmore_wrap').slideUp(400)
+        }
+		return false;
+    });
+
+    var slides = $('<div class="ins_modal"><div class="ins_modal_cnt"><a href="javascript:void(0);" class="ins_modal_close">Close</a><div class="ins_slides"></div></div></div>'),
+        slide_temp = '<div class="ins_slide">' +
+                        '<a href="<%--link--%>">' +
+                            '<div class="image"><img src="<%--image--%>" alt=""><div class="ins_icon">Instagram Icon</div></div>' +
+                            '<div class="cnt">' +
+                                '<div class="text_upper">' +
+                                    '<span class="name"><%--username--%></span>' +
+                                    '<span class="number"><%--number--%> / <%--count--%></span>' +
+                                '</div>' +
+                                '<div class="text_lower">&nbsp;' +
+                                '</div>' +
+                            '</div>' +
+                        '</a>' +
+                    '</div>';
+    var len = $('.section_instagram .inst_modal').length;
+    $('.section_instagram .inst_modal').each(function(index){
+        var slide_item = slide_temp;
+        slide_item = slide_item.replace('<%--link--%>',$(this).find('a').attr('href'));
+        slide_item = slide_item.replace('<%--image--%>',$(this).prev().find('img').attr('src'));
+        slide_item = slide_item.replace('<%--username--%>',$(this).find('a').text());
+        slide_item = slide_item.replace('<%--number--%>',index + 1);
+        slide_item = slide_item.replace('<%--count--%>',len);
+        slides.find('.ins_slides').append(slide_item);
+    })
+    $('.section_instagram .ins_inner').append(slides);
+    $('.section_instagram .ins_slides').slick();
+    $('.section_instagram .ins_items a').on('click',function(){
+        var index = $('.section_instagram .ins_items .ins_item').index($(this));
+        $('.section_instagram .ins_slides').slick('slickGoTo',index,true);
+        slides.addClass('active');
+    });
+    slides.on('click',function(e){
+        var _target = $(e.target);
+        if (_target.hasClass('ins_modal_cnt') || _target.parents('.ins_modal_cnt').length){
+            if (_target.hasClass('ins_modal_close') || _target.parents('.ins_modal_close').length){
+                slides.removeClass('active');
+            }
+        }else{
+            slides.removeClass('active');
+        }
+    })
+    $('.ins_modal').on('touchmove',function(){
+        return false;
+    })
+}
+```
+
+### 26 20190121 Hyogo Video Archives
+---
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target.jpg)
 - ![Image](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-target-popup.jpg)
 
@@ -7877,7 +7927,8 @@ var toogleMapnavi = {
 toogleMapnavi.init();
 ```
 
-**28. 20190129_Kofu_City_Subsite_Female**
+### 28. 20190129_Kofu_City_Subsite_Female
+---
 - BackToTop.
 
 >JavaScript Code:
@@ -7918,38 +7969,39 @@ var BackToTop = {
 BackToTop.init();
 ```
 
-**29. 20190225_Hello_Navi_Shizuoka**
-
->**1. Full Image Slideshow**:
-- Trường hợp này nó bị lỗi nếu chuyển đổi switch PC và SP vì nếu lúc trên SP mà chuyển về PC thì window width nó hiểu là SP nên ko tính full image được
+### 29. 20190225_Hello_Navi_Shizuoka
+---
+>**29.1. Full Image Slideshow**:
+- Trường hợp này nó bị lỗi nếu chuyển đổi switch PC và SP vì nếu lúc trên SP mà chuyển về PC thì window width nó hiểu là SP nên ko tính full image được. Nên hãy thay đổi ```$(window).width();``` thành $('wrapper).width();
+- Refer: http://hellonavi.jp/
 >JavaScript Code:
 ```javascript
-/* ファーストビュー
+/* First view
  *********************************************************/
 function setBgImg(object) {
-  //画像サイズ取得
+  //Get image size
   var imgW = object.width();
   var imgH = object.height();
 
-  //ウィンドウサイズ取得
+  //Get window size
   var winW = $(window).width();
   var winH = $(window).height();
 
-  //幅・高さの拡大率取得
+  //Acquisition of width / height magnification ratio(Mua lại tỷ lệ phóng đại chiều rộng / chiều cao)
   var scaleW = winW / imgW;
   var scaleH = winH / imgH;
 
-  //幅・高さの拡大率の大きいものを取得
+  //Acquire one with a large expansion ratio of width and height(Có được một tỷ lệ mở rộng lớn về chiều rộng và chiều cao)
   var fixScale = Math.max(scaleW, scaleH);
 
-  //画像の幅高さを設定
+  //Set width height of image
   var setW = imgW * fixScale;
   var setH = imgH * fixScale;
 
-  //画像の位置を設定
+  //Set the position of the image(Đặt vị trí của hình ảnh)
   var moveX = Math.floor((winW - setW) / 2);
   var moveY = Math.floor((winH - setH) / 2);
-  //設定した数値でスタイルを適用
+  //Apply style with set number(Áp dụng kiểu với số đã đặt)
   object.css({
     'width': setW,
     'height': setH
@@ -7958,7 +8010,7 @@ function setBgImg(object) {
 setBgImg($('#tmp_top_gallery .main_visual .visual_img img'));
 ```
 
->**2. Move element item menu**:
+>**29.2. Move element item menu**:
 
 >JavaScript Code:
 ```javascript
@@ -7989,14 +8041,7 @@ $(window).resize(function() {
 });
 ```
 
->**2. Full Background**:
-
->JavaScript Code:
-```javascript
-
-```
-
->**2. Full height main visual**:
+>**29.3. Full height main visual**:
 
 >JavaScript Code:
 ```javascript
@@ -8023,13 +8068,6 @@ switchDevice();
 $(window).resize(function() {
   switchDevice();
 });
-```
-
->**3. Caculator Height**:
-
->JavaScript Code:
-```javascript
-
 ```
 
 **30.**
