@@ -8070,8 +8070,10 @@ $(window).resize(function() {
 });
 ```
 
-**30.**
-- Text.
+**30. 20190312_Yamanashi_Kankou_Master_Kitty**: Coding Hello Kitty mode
+- Khi ở PC nhấn button「ふじの国やまなし観光ナビゲーター ハローキティ」, khi ở Tb, SP nhấn button「ハローキティ」thì sẽ gán class 'mode_Kitty' cho body.
+Phần mô tả trong '/mode_kitty/style/kitty.css' đã được load trước trên HTML sẽ được phản ánh và hiển thị sẽ được thay đổi
+Ngoài ra, setting thì sẽ dùng ```localStorage``` và hãy set để có thể lưu giữ khi di chuyển page và khi **readload** lại.
 
 >JavaScript Code:
 ```javascript
