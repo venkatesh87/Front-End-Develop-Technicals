@@ -941,6 +941,18 @@ localStorage.removeItem("key");
 ```
 >**Tạo một cặp name/value ```localStorage``` với name = "lastname" và value = "Smith", sau đó lấy giá trị của "Lastname" và chèn nó vào phần tử với id = "result":**
 
+```javascript
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+```
+
 >**Ví dụ sau đây đếm số lần người dùng đã nhấp vào nút:**
 
 ```javascript
