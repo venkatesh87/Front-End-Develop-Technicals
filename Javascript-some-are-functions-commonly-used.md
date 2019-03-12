@@ -915,3 +915,38 @@ console.log('window.location.hostname: '+window.location.hostname);
 console.log('window.location.pathname: '+window.location.pathname);
 console.log('window.location.href: '+window.location.href);
 ```
+
+**34. localStorage**
+- ```localStorage```: Các thuộc tính ```localStorage``` và ```sessionStorage``` cho phép lưu các cặp ```key```/```value``` trong trình duyệt web.
+- Đối tượng ```localStorage``` lưu trữ dữ liệu không có ngày hết hạn. Dữ liệu sẽ không bị xóa khi đóng trình duyệt và sẽ có sẵn vào ngày, tuần hoặc năm tiếp theo.
+- Thuộc tính localStorage là chỉ đọc.
+**Tip**: Cũng xem thuộc tính ```sessionStorage``` lưu trữ dữ liệu cho một phiên (dữ liệu bị mất khi tab trình duyệt bị đóng).
+
+- Syntax for SAVING data to localStorage: 
+```
+localStorage.setItem("key", "value");
+```
+
+- Syntax for READING data from localStorage:
+```
+var lastname = localStorage.getItem("key");
+```
+
+- Syntax for REMOVING data from localStorage:
+```
+localStorage.removeItem("key");
+```
+>**Tạo một cặp name/value ```localStorage``` với name = "lastname" và value = "Smith", sau đó lấy giá trị của "Lastname" và chèn nó vào phần tử với id = "result":**
+
+>**Ví dụ sau đây đếm số lần người dùng đã nhấp vào nút:**
+```
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+```
