@@ -905,3 +905,13 @@ function customFunction(event) {
   // Do something when the transition ends
 }
 ```
+**34. window.location**
+
+```
+console.log('window.location: '+window.location);
+console.log('window.location.hash xay ra khi click: '+window.location.hash);
+console.log('document.location.protocol: '+document.location.protocol);
+console.log('window.location.hostname: '+window.location.hostname);
+console.log('window.location.pathname: '+window.location.pathname);
+console.log('window.location.href: '+window.location.href);
+```
