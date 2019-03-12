@@ -923,23 +923,27 @@ console.log('window.location.href: '+window.location.href);
 **Tip**: Cũng xem thuộc tính ```sessionStorage``` lưu trữ dữ liệu cho một phiên (dữ liệu bị mất khi tab trình duyệt bị đóng).
 
 - Syntax for SAVING data to localStorage: 
-```
+
+```javascript
 localStorage.setItem("key", "value");
 ```
 
 - Syntax for READING data from localStorage:
-```
+
+```javascript
 var lastname = localStorage.getItem("key");
 ```
 
 - Syntax for REMOVING data from localStorage:
-```
+
+```javascript
 localStorage.removeItem("key");
 ```
 >**Tạo một cặp name/value ```localStorage``` với name = "lastname" và value = "Smith", sau đó lấy giá trị của "Lastname" và chèn nó vào phần tử với id = "result":**
 
 >**Ví dụ sau đây đếm số lần người dùng đã nhấp vào nút:**
-```
+
+```javascript
 // Check browser support
 if (typeof(Storage) !== "undefined") {
   // Store
