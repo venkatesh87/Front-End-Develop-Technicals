@@ -916,7 +916,7 @@ console.log('window.location.pathname: '+window.location.pathname);
 console.log('window.location.href: '+window.location.href);
 ```
 
-**34. localStorage**
+**35. localStorage**
 - ```localStorage```: Các thuộc tính ```localStorage``` và ```sessionStorage``` cho phép lưu các cặp ```key```/```value``` trong trình duyệt web.
 - Đối tượng ```localStorage``` lưu trữ dữ liệu không có ngày hết hạn. Dữ liệu sẽ không bị xóa khi đóng trình duyệt và sẽ có sẵn vào ngày, tuần hoặc năm tiếp theo.
 - Thuộc tính localStorage là chỉ đọc.
