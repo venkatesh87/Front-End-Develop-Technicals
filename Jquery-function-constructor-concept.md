@@ -144,8 +144,25 @@ if ('function' !== typeof(window['tt_sticky'])) {
     calcHeight();
   });
   ```
+  
+### 7. Function Declarations
+---
+```javascript
+function functionName(parameters) {
+  code to be executed
+}
+```
 
-### 7. Build pattern more function for project
+### 8. Function Expression
+---
+```javascript
+var x = function (a, b) {
+  return a * b
+};
+document.getElementById("demo").innerHTML = x(4,5);
+```
+
+### 9. Build pattern more function for project step 1
 ---
 ```javascript
 var _ua = (function(u) {
@@ -381,19 +398,333 @@ $(function() {
 });
 ```
 
-### 8. Function Declarations
+### 10. Build pattern more function for project step 2
 ---
 ```javascript
-function functionName(parameters) {
-  code to be executed
-}
-```
+/**
+ * CyberAgent
+ *
+ * @date 2017-08-16
+ */
 
-### 9. Function Expression
----
-```javascript
-var x = function (a, b) {
-  return a * b
-};
-document.getElementById("demo").innerHTML = x(4,5);
+(function($) {
+  var CA = window.CA || {};
+
+  CA.Top = function() {
+    // Initialize
+    var _init = function _init() {
+      _heroUI();
+      _contentsNavUI();
+    };
+
+    var _heroUI = function _heroUI() {
+      var $hero_carousel = $('#hero_carousel');
+      var $hero_carousel_item = $hero_carousel.find('.hero_carousel_item');
+      var carouse_item_length = $hero_carousel_item.length;
+      var carousel_change_speed = 1000;
+      var carousel_change_interval = 4500;
+      var $hero_carousel_toggleSwitch = $('#hero_carousel_toggleSwitch');
+      var $hero_carousel_pager = $('#hero_carousel_pager');
+      var $hero_carousel_pager_item = $hero_carousel_pager.find('.hero_carousel_pager_item');
+      var $hero_carousel_pager_thumb = $('#hero_carousel_pager_thumb');
+      var $hero_carousel_pager_thumb_list = $('#hero_carousel_pager_thumb_list');
+      var hero_carousel_pager_thumb_width = $hero_carousel_pager_thumb.width();
+      var currentCarouselIndex = 0;
+      var timer = void 0;
+      var autoplayIsEnabled = true;
+      var carouselIsAnimated = false;
+
+      $(window).on('resize', function() {
+        hero_carousel_pager_thumb_width = $hero_carousel_pager_thumb.width();
+      });
+
+      // スワイプ操作
+      $hero_carousel.hammer().on('swipe', function(event) {
+        if (event.gesture.deltaX < 0) {
+          changeCarousel(currentCarouselIndex + 1);
+        }
+        if (event.gesture.deltaX > 0) {
+          changeCarousel(currentCarouselIndex - 1);
+        }
+      });
+
+      $hero_carousel_item.eq(currentCarouselIndex).removeClass('is-ready').addClass('is-current');
+      $hero_carousel_pager_item.eq(currentCarouselIndex).addClass('is-current');
+
+      $hero_carousel_pager_thumb_list.css({ width: hero_carousel_pager_thumb_width * carouse_item_length });
+
+      $hero_carousel_pager.find('li').each(function(i) {
+        $(this).on('click', function() {
+          changeCarousel(i, true);
+        });
+
+        $(this).on('mouseenter', function() {
+          TweenMax.to($hero_carousel_pager_thumb_list, 0.4, {
+            x: hero_carousel_pager_thumb_width * i * -1,
+            ease: Power4.easeOut
+          });
+
+          TweenMax.to($hero_carousel_pager_thumb, 0.4, {
+            x: $hero_carousel_pager.width() / carouse_item_length * i - hero_carousel_pager_thumb_width / 2 + 6,
+            opacity: 1,
+            ease: Power4.easeOut
+          });
+        });
+
+        $(this).on('mouseleave', function() {
+          TweenMax.to($hero_carousel_pager_thumb, 0.3, {
+            opacity: 0,
+            ease: Power4.easeOut
+          });
+        });
+      });
+
+      var mark_play = 'M14.510,14.638 C16.428,13.139 16.428,10.687 14.510,9.188 L3.481,0.571 C1.286,-0.709 0.009,0.111 0.009,3.225 L0.009,20.601 C0.009,24.637 1.896,24.482 3.481,23.254 L14.510,14.638 Z';
+      var mark_pause = 'M17.000,24.000 C15.343,24.000 14.000,22.657 14.000,21.000 L14.000,3.000 C14.000,1.343 15.343,-0.000 17.000,-0.000 C18.657,-0.000 20.000,1.343 20.000,3.000 L20.000,21.000 C20.000,22.657 18.657,24.000 17.000,24.000 ZM3.000,24.000 C1.343,24.000 0.000,22.657 0.000,21.000 L0.000,3.000 C0.000,1.343 1.343,-0.000 3.000,-0.000 C4.657,-0.000 6.000,1.343 6.000,3.000 L6.000,21.000 C6.000,22.657 4.657,24.000 3.000,24.000 Z';
+      var duration = 300;
+      var s = Snap('#hero_carousel_toggleSwitch_svg');
+      var path = s.path(mark_pause).attr({ fill: '#fff' });
+
+      $hero_carousel_toggleSwitch.on('click', function() {
+        if (autoplayIsEnabled) {
+          autoplayIsEnabled = false;
+          controlProgress.reset(currentCarouselIndex);
+          path.animate({ path: mark_play }, duration, mina.backout);
+          stopCarousel();
+        } else {
+          autoplayIsEnabled = true;
+          path.animate({ path: mark_pause }, duration, mina.backout);
+          playCarousel();
+        }
+      });
+
+      // プログレスバー
+      var controlProgress = function() {
+        var _increment = function _increment(index) {
+          var $target = $hero_carousel_pager_item.eq(index).find('.hero_carousel_pager_item_progress');
+          TweenMax.to($target, carousel_change_interval / 1000, {
+            scaleX: 1,
+            ease: Linear.easeNone
+          });
+        };
+
+        var _reset = function _reset(target) {
+          var $target = void 0;
+
+          if (target === 'all') {
+            $target = $('.hero_carousel_pager_item_progress');
+          } else {
+            $target = $hero_carousel_pager_item.eq(target).find('.hero_carousel_pager_item_progress');
+          }
+
+          TweenMax.to($target, 0.4, {
+            scaleX: 0,
+            ease: Power4.easeOut
+          });
+        };
+
+        var _finish = function _finish(index) {
+          var $target = $hero_carousel_pager_item.eq(index).find('.hero_carousel_pager_item_progress');
+
+          var tl = new TimelineMax();
+
+          tl.to($target, 0.7, {
+            scaleX: 1,
+            ease: Power4.easeOut
+          }).set($target, {
+            'transform-origin': 'right'
+          }).to($target, 1.1, {
+            scaleX: 0,
+            ease: Power4.easeOut
+          }).set($target, {
+            'transform-origin': 'left'
+          });
+        };
+
+        return {
+          increment: _increment,
+          reset: _reset,
+          finish: _finish
+        };
+      }();
+
+      // 再生処理
+      var playCarousel = function playCarousel() {
+        controlProgress.increment(currentCarouselIndex);
+
+        timer = setInterval(function() {
+          var nextCarouselIndex = void 0;
+
+          if (currentCarouselIndex === carouse_item_length - 1) {
+            nextCarouselIndex = 0;
+          } else {
+            nextCarouselIndex = currentCarouselIndex + 1;
+          }
+
+          changeCarousel(nextCarouselIndex);
+        }, carousel_change_interval);
+      };
+
+      // 停止処理
+      var stopCarousel = function stopCarousel() {
+        clearInterval(timer);
+      };
+
+      // 切り替え処理
+      var changeCarousel = function changeCarousel(newCarouselIndex, usePager) {
+        var transitionTime = window.innerWidth < 768 ? 1800 : 2200;
+
+        if (newCarouselIndex === currentCarouselIndex || carouselIsAnimated) {
+          return;
+        }
+
+        if (newCarouselIndex >= carouse_item_length) {
+          newCarouselIndex = 0;
+        }
+
+        if (newCarouselIndex < 0) {
+          newCarouselIndex = carouse_item_length - 1;
+        }
+
+        if (currentCarouselIndex === carouse_item_length - 1 && newCarouselIndex === 0) {
+          controlProgress.finish(currentCarouselIndex);
+
+          var tl = new TimelineMax();
+
+          tl.to($('#hero_carousel_pager_progress'), 0.4, {
+            scaleX: 1,
+            ease: Power4.easeOut
+          }).set($('#hero_carousel_pager_progress'), {
+            'transform-origin': 'right'
+          }).to($('#hero_carousel_pager_progress'), 1.1, {
+            delay: 0.7,
+            scaleX: 0,
+            ease: Power4.easeOut
+          }).set($('#hero_carousel_pager_progress'), {
+            'transform-origin': 'left'
+          });
+        } else {
+          if (newCarouselIndex > currentCarouselIndex) {
+            controlProgress.finish(currentCarouselIndex);
+          } else {
+            controlProgress.reset(currentCarouselIndex);
+          }
+
+          TweenMax.to($('#hero_carousel_pager_progress'), 0.4, {
+            scaleX: newCarouselIndex / carouse_item_length,
+            ease: Power4.easeOut
+          });
+        }
+
+        carouselIsAnimated = true;
+
+        var oldCarouselIndex = currentCarouselIndex;
+
+        $hero_carousel_pager_item.eq(oldCarouselIndex).removeClass('is-current');
+        $hero_carousel_pager_item.eq(newCarouselIndex).addClass('is-current');
+
+        var direction = void 0;
+
+        if (currentCarouselIndex === carouse_item_length - 1 && newCarouselIndex === 0 && !usePager) {
+          direction = 'next';
+        } else if (newCarouselIndex > oldCarouselIndex) {
+          direction = 'next';
+        } else {
+          direction = 'prev';
+        }
+
+        stopCarousel();
+
+        if (direction === 'next') {
+          $hero_carousel_item.eq(oldCarouselIndex).removeClass('is-current').addClass('is-prev');
+          $hero_carousel_item.eq(newCarouselIndex).addClass('is-ready-next');
+
+          setTimeout(function() {
+            $hero_carousel_item.eq(newCarouselIndex).removeClass(function(index, className) {
+              return (className.match(/\bis-\S*/g) || []).join(' ');
+            }).addClass('is-current');
+          }, 100);
+        } else if (direction === 'prev') {
+          $hero_carousel_item.eq(oldCarouselIndex).removeClass('is-current').addClass('is-next');
+          $hero_carousel_item.eq(newCarouselIndex).addClass('is-ready-prev');
+
+          setTimeout(function() {
+            $hero_carousel_item.eq(newCarouselIndex).removeClass(function(index, className) {
+              return (className.match(/\bis-\S*/g) || []).join(' ');
+            }).addClass('is-current');
+          }, 100);
+        }
+
+        // WAI-ARIA
+        $hero_carousel_item.eq(oldCarouselIndex).attr({ 'aria-hidden': true });
+        $hero_carousel_item.eq(newCarouselIndex).attr({ 'aria-hidden': false });
+        $hero_carousel_pager_item.eq(oldCarouselIndex).attr({ 'aria-selected': false });
+        $hero_carousel_pager_item.eq(newCarouselIndex).attr({ 'aria-selected': true });
+
+        currentCarouselIndex = newCarouselIndex;
+
+        setTimeout(function() {
+          carouselIsAnimated = false;
+
+          if (autoplayIsEnabled) {
+            playCarousel();
+          }
+        }, transitionTime);
+      };
+
+      playCarousel();
+    };
+
+    var _contentsNavUI = function _contentsNavUI() {
+      var $contentsNav_section = $('.contentsNav_section');
+
+      $contentsNav_section.each(function() {
+        var $this = $(this);
+        var $contentsNav_item = $this.find('.contentsNav_item');
+        var $contentsNav_section_bg = $this.find('.contentsNav_section_bg');
+
+        $contentsNav_item.each(function() {
+          var categoryLabel = $(this).data('category');
+          var $relatedBg = $contentsNav_section_bg.filter('.contentsNav_section_bg-' + categoryLabel);
+          var $relatedVideo = $relatedBg.find('video');
+
+          $(this).on({
+            'mouseenter touchstart': function mouseenterTouchstart() {
+              $this.addClass('is-hovered-' + categoryLabel);
+              $relatedBg.addClass('is-active');
+              playVideo($relatedVideo.get(0));
+            },
+            'mouseleave touchend': function mouseleaveTouchend() {
+              $this.removeClass(function(index, className) {
+                return (className.match(/\bis-hovered-\S+/g) || []).join(' ');
+              });
+              $contentsNav_section_bg.removeClass('is-active');
+              pauseVideo($relatedVideo.get(0));
+            }
+          });
+        });
+      });
+
+      var playVideo = function playVideo(videoElement) {
+        if (!videoElement || !videoElement.paused) {
+          return;
+        }
+        videoElement.play();
+      };
+
+      var pauseVideo = function pauseVideo(videoElement) {
+        if (!videoElement || videoElement.paused) {
+          return;
+        }
+        videoElement.pause();
+      };
+    };
+
+    return {
+      init: _init
+    };
+  }();
+
+  CA.Top.init();
+})(jQuery);
 ```
