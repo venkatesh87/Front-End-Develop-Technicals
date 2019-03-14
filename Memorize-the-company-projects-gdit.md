@@ -8079,22 +8079,24 @@ Ngoài ra, setting thì sẽ dùng ```localStorage``` và hãy set để có th�
 >JavaScript Code **localStorage**:
 ```javascript
 //　LocalStorage
-var oldSrc = $('.sp_kitty_link a img').attr('src');
-console.log(localStorage.getItem("mode_kitty") == 'true');
-if (localStorage.getItem("mode_kitty") == 'true') {
-  // Store
-  $('body').addClass('mode_kitty');
-  $('.hello_link').html('通常モードに切り替える');
-  $('.hello_link').addClass('readload_link');
-  var newSrc = oldSrc.replace('icon_kitty_sp', 'reload_btn');
-  $('.sp_kitty_link a img').attr('src', newSrc);
-} else {
-  $('body').removeClass('mode_kitty');
-  $('.hello_link').html('ふじの国やまなし観光ナビゲーター<br />ハローキティ');
-  $('.hello_link').removeClass('readload_link');
-  var newSrc = oldSrc.replace('reload_btn', 'icon_kitty_sp');
-  $('.sp_kitty_link a img').attr('src', newSrc);
-}
+function checkLocalstorage() {
+  var oldSrc = $('.sp_kitty_link a img').attr('src');
+  if (localStorage.getItem("mode_kitty") == 'true') {
+    // Store
+    $('body').addClass('mode_kitty');
+    $('.hello_link').html('通常モードに切り替える');
+    $('.hello_link').addClass('readload_link');
+    var newSrc = oldSrc.replace('icon_kitty_sp', 'reload_btn');
+    $('.sp_kitty_link a img').attr('src', newSrc);
+  } else {
+    $('body').removeClass('mode_kitty');
+    $('.hello_link').html('ふじの国やまなし観光ナビゲーター<br />ハローキティ');
+    $('.hello_link').removeClass('readload_link');
+    var newSrc = oldSrc.replace('reload_btn', 'icon_kitty_sp');
+    $('.sp_kitty_link a img').attr('src', newSrc);
+  }
+};
+checkLocalstorage();
 $('.hello_link').on('click', function() {
   if (localStorage.getItem("mode_kitty") == null) {
     // Store
@@ -8109,7 +8111,7 @@ $('.hello_link').on('click', function() {
     $(this).html('ふじの国やまなし観光ナビゲーター<br />ハローキティ');
   }
   return false;
-})
+});
 $('.sp_kitty_link').on('click', 'a', function() {
   if (localStorage.getItem("mode_kitty") == null) {
     // Store
@@ -8126,7 +8128,7 @@ $('.sp_kitty_link').on('click', 'a', function() {
     $(this).find('img').attr('src', src);
   }
   return false;
-})
+});
 ```
 
 >**animateView:**
