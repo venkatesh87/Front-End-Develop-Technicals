@@ -820,11 +820,46 @@ $(".click-scroll").on('click', function(event) {
 ```
 
 **7. Dingtea**
-- Text.
+**hasClass**: Một chú ý khi dùng ```hasClass``` nếu điều kiện đúng nó sẽ chạy điều kiện trong lệnh ```if``` nếu điều kiện sai nó sẽ chạy điều kiện trong lệnh ```else```
 
->JavaScript Code:
+>**Case 1**
+
+- ![hasClass](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hasClass-2.jpg)
+
+>JavaScript HTML:
 ```javascript
+<h1>True</h1>
+<p class="intro">This is a paragraph.</p>
+<p>This is another paragraph.</p>
+<button>Does any p element have an "intro" class?</button>
+```
 
+>JavaScript JS:
+```javascript
+$("button").click(function() {
+  alert($("p").hasClass("intro"));
+  if ($("p").hasClass("intro")) {
+    $('p').css('background', '#f00');
+  } else {
+    $('p').css('background', '#ff0');
+  }
+});
+```
+
+>**Case 2**
+
+- ![hasClass](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/hasClass-1.jpg)
+
+>JavaScript JS:
+```javascript
+$("button").click(function() {
+  alert($("p").hasClass("intros"));
+  if ($("p").hasClass("intros")) {
+    $('p').css('background', '#f00');
+  } else {
+    $('p').css('background', '#ff0');
+  }
+});
 ```
 
 **8. **
