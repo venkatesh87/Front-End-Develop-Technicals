@@ -8075,9 +8075,280 @@ $(window).resize(function() {
 Phần mô tả trong '/mode_kitty/style/kitty.css' đã được load trước trên HTML sẽ được phản ánh và hiển thị sẽ được thay đổi
 Ngoài ra, setting thì sẽ dùng ```localStorage``` và hãy set để có thể lưu giữ khi di chuyển page và khi **readload** lại.
 
+>JavaScript Code **localStorage**:
+```javascript
+//　LocalStorage
+var oldSrc = $('.sp_kitty_link a img').attr('src');
+console.log(localStorage.getItem("mode_kitty") == 'true');
+if (localStorage.getItem("mode_kitty") == 'true') {
+  // Store
+  $('body').addClass('mode_kitty');
+  $('.hello_link').html('通常モードに切り替える');
+  $('.hello_link').addClass('readload_link');
+  var newSrc = oldSrc.replace('icon_kitty_sp', 'reload_btn');
+  $('.sp_kitty_link a img').attr('src', newSrc);
+} else {
+  $('body').removeClass('mode_kitty');
+  $('.hello_link').html('ふじの国やまなし観光ナビゲーター<br />ハローキティ');
+  $('.hello_link').removeClass('readload_link');
+  var newSrc = oldSrc.replace('reload_btn', 'icon_kitty_sp');
+  $('.sp_kitty_link a img').attr('src', newSrc);
+}
+$('.hello_link').on('click', function() {
+  if (localStorage.getItem("mode_kitty") == null) {
+    // Store
+    localStorage.setItem("mode_kitty", "true");
+    $(this).addClass('readload_link');
+    $('body').addClass('mode_kitty');
+    $(this).html('通常モードに切り替える');
+  } else {
+    localStorage.removeItem('mode_kitty');
+    $(this).removeClass('readload_link');
+    $('body').removeClass('mode_kitty');
+    $(this).html('ふじの国やまなし観光ナビゲーター<br />ハローキティ');
+  }
+  return false;
+})
+$('.sp_kitty_link').on('click', 'a', function() {
+  if (localStorage.getItem("mode_kitty") == null) {
+    // Store
+    localStorage.setItem("mode_kitty", "true");
+    $('body').addClass('mode_kitty');
+    var src = $(this).find('img').attr('src');
+    src = src.replace('icon_kitty_sp', 'reload_btn');
+    $(this).find('img').attr('src', src);
+  } else {
+    localStorage.removeItem('mode_kitty');
+    $('body').removeClass('mode_kitty');
+    var src = $(this).find('img').attr('src');
+    src = src.replace('reload_btn', 'icon_kitty_sp');
+    $(this).find('img').attr('src', src);
+  }
+  return false;
+})
+```
+
+>**animateView:**
+```javascript
+if ($('.js_animation').length) {
+  $(function() {
+    $('.js_animation').css('visibility', 'hidden');
+    $(window).scroll(function() {
+      var windowHeight = jQuery(window).height(),
+        topWindow = jQuery(window).scrollTop();
+      $('.js_animation').each(function() {
+        var targetPosition = jQuery(this).offset().top;
+        if (topWindow > targetPosition - windowHeight + 100) {
+          jQuery(this).addClass("fadeInDown");
+        }
+      });
+    });
+  });
+}
+```
+
+>JavaScript Code Back Top:
+```javascript
+//==============================================================================
+// ページトップ追従
+$.GFUNC.pageTopFloating = function() {
+  $(".page_panel .pnavi").hide();
+  $(window).on("scroll", function() {
+    if ($(this).scrollTop() > 100) {
+      $(".page_panel .pnavi").stop().fadeIn("fast");
+    } else {
+      $(".page_panel .pnavi").stop().fadeOut("fast");
+    }
+    scrollHeight = $(document).height();
+    scrollPosition = $(window).height() + $(window).scrollTop();
+    footHeight = $("#tmp_footer").innerHeight();
+    if (scrollHeight - scrollPosition <= footHeight) {
+      $(".page_panel .pnavi").css({
+        "position": "absolute",
+        "bottom": footHeight
+      });
+    } else {
+      $(".page_panel .pnavi").css({
+        "position": "fixed",
+        "bottom": "0"
+      });
+    }
+  });
+  $('.page_panel .pnavi').click(function() {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 400);
+    return false;
+  });
+}
+```
+
+- **Call function:** ```$.GFUNC.pageTopFloating();```
+
+>JavaScript Code flexHeight:
+```javascript
+//========================================
+//▼boxの高さ合わせ
+//$.GFUNC.flexHeight(【高さを合わせる要素名】, 【一列の要素数】);
+//========================================
+$.GFUNC.flexHeight = function(obj, col) {
+  if (obj.length > 0) {
+    obj.css("min-height", "0");
+    if (col != 0) {
+      var lgh = obj.length;
+      var lineLen = Math.ceil(lgh / col);
+      var liHiArr = [];
+      var lineHiArr = [];
+
+      for (i = 0; i < lgh; i++) {
+        liHiArr[i] = obj.eq(i).height();
+        if (lineHiArr.length <= Math.floor(i / col) || lineHiArr[Math.floor(i / col)] < liHiArr[i]) {
+          lineHiArr[Math.floor(i / col)] = liHiArr[i];
+        }
+      }
+      obj.each(function(i) {
+        $(this).css('min-height', lineHiArr[Math.floor(i / col)] + 'px');
+      });
+    }
+  }
+}
+```
+
+- **Call function:** ```$.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 3);``` 
+
 >JavaScript Code:
+```javascript
+var setAll = {
+init: function() {
+  $(window).on('load', function() {
+    // set Height Items Ranking 
+    setAll.switchDevice(
+    function() {
+    $.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 3)
+    }, function() {
+    $.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 1);
+    }, function() {
+    $.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 1);
+    });
+    // set Height Items Ranking 
+    setAll.resize(
+    function() {
+    $.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 3)
+    }, function() {
+    $.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 1);
+    }, function() {
+    $.GFUNC.flexHeight($('.ranking_list .ranking_inner'), 1);
+    });
+
+    // Something Event Click
+    setAll.bind();
+
+    // change Image Banner 
+    setAll.switchDevice(
+    function() {
+      setAll.changeImageBanner('sp', 'pc');
+      }, function() {
+      setAll.changeImageBanner('sp', 'pc');
+      }, function() {
+      setAll.changeImageBanner('pc', 'sp');
+    });
+
+    // change Image Banner 
+    setAll.resize(
+    function() {
+      setAll.changeImageBanner('sp', 'pc');
+      }, function() {
+      setAll.changeImageBanner('sp', 'pc');
+      }, function() {
+      setAll.changeImageBanner('pc', 'sp');
+    });
+
+    // Set height Pickup Item Nature & Taste page
+    setAll.switchDevice(
+    function() {
+      $.GFUNC.flexHeight($('.pickup_list .link'), 4);
+      }, function() {
+      $.GFUNC.flexHeight($('.pickup_list .link'), 4);
+      }, function() {
+      $.GFUNC.flexHeight($('.pickup_list .link'), 1);
+    });
+
+    // Set height Pickup Item Nature & Taste page 
+    setAll.resize(
+    function() {
+      $.GFUNC.flexHeight($('.pickup_list .link'), 4);
+      }, function() {
+      $.GFUNC.flexHeight($('.pickup_list .link'), 4);
+      }, function() {
+      $.GFUNC.flexHeight($('.pickup_list .link'), 1);
+    });
+  });
+},
+resize: function(_pc, _tb, _sp) {
+  var tx = false; 
+  var currentWidth = $(window).width();
+  $(window).on('resize', function(){
+    if($(window).width() != currentWidth) {
+      if (tx !== false) {
+      clearTimeout(tx);} 
+      tx = setTimeout(function() {
+        setAll.switchDevice(_pc, _tb, _sp);
+        currentWidth = $(window).width();
+      }, 150);
+    }
+  });
+},
+switchDevice: function(_pc, _tb, _sp) {
+  if($(window).width() >= 1200) {
+    if (typeof(_pc) === 'function') {
+    _pc();
+    return false;
+    }
+  }else if($(window).width() <= 1199 && $(window).width() > 640) {
+    if (typeof _tb === 'function') {
+    _tb();
+    return false;
+    }
+  }else if ($(window).width() <= 640) {
+    if (typeof _sp === 'function') {
+    _sp();
+    return false;
+    }
+  }
+},
+bind: function() {
+/* back to top OR time scroll */
+$('.pnavi, .time_scroll').click(function() {
+  var objAttr = $(this).attr('href');
+  $("html, body").animate({ scrollTop: $(objAttr).offset().top }, 500);
+  return false;
+});
+$('.adver_close').click(function() {
+  if($(this).hasClass('open_ad')){
+    $('.adver_close').removeClass('open_ad').html('× 閉じる');   
+  } else {
+    $('.adver_close').addClass('open_ad').html('広告を開く');
+  }
+  $('.adver_primary').slideToggle();
+  $('#adver_slide').slideToggle();
+});
+},
+changeImageBanner : function(_type, _newType) {
+  $('.content_time img').each(function() {
+    var str = $(this).attr('src');
+    str = str.replace(_type, _newType);
+    $(this).attr('src', str);
+  })
+}
+};
+setAll.init();
+```
+
+>JavaScript Code Back Top:
 ```javascript
 
 ```
+
+
 
 
