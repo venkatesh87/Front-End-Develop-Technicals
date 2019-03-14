@@ -819,7 +819,7 @@ $(".click-scroll").on('click', function(event) {
 });
 ```
 
-**7. **
+**7. Dingtea**
 - Text.
 
 >JavaScript Code:
