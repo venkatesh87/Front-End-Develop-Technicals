@@ -8074,7 +8074,8 @@ $(window).resize(function() {
 - Khi ở PC nhấn button「ふじの国やまなし観光ナビゲーター ハローキティ」, khi ở Tb, SP nhấn button「ハローキティ」thì sẽ gán class 'mode_Kitty' cho body.
 Phần mô tả trong '/mode_kitty/style/kitty.css' đã được load trước trên HTML sẽ được phản ánh và hiển thị sẽ được thay đổi
 Ngoài ra, setting thì sẽ dùng ```localStorage``` và hãy set để có thể lưu giữ khi di chuyển page và khi **readload** lại.
-![localStorage](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-localStorage.jpg)
+
+- ![localStorage](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-localStorage.jpg)
 
 >JavaScript Code **localStorage**:
 ```javascript
