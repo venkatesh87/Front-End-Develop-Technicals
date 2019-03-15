@@ -862,12 +862,34 @@ $("button").click(function() {
 });
 ```
 
-**8. **
-- Text.
-
+**8. Input file image**
+- Chú ý function này có kiểm tra là image thì mới dc upload.
+- Về sự kiện nên chọn là sự kiện ```change()```, đừng để 3 sự kiện cùng một lúc nó sẽ tính 3 lần.
 >JavaScript Code:
 ```javascript
-
+/* Preview upload image avatar */
+var readURL = function((input, event)) {
+  if (input.files && input.files[0]) {
+    var file = input.files[0];
+    var fileType = file['type'];
+    var validImageTypes = ['image/gif', 'image/jpeg', 'image/png'];
+    var reader = new FileReader();
+    var tmppath = URL.createObjectURL(event.target.files[0]);
+    console.log(tmppath);
+    if (!validImageTypes.includes(fileType)) {
+      // invalid file type code goes here.
+      alert('Invalid');
+    }else{
+      reader.onload = function(e) {
+        $('.fileinput .thumbnail > img').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+}
+$('.fileinput .btn-file > input[type=file]').on('change focus click', function (e) {
+  readURL(this, e);
+});
 ```
 
 **9. **
