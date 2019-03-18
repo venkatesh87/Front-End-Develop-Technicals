@@ -7931,6 +7931,25 @@ toogleMapnavi.init();
 ---
 - BackToTop.
 
+>CSS Code:
+```javascript
+#tmp_footer.pnavi {
+  position: fixed;
+  right: 15 px;
+  bottom: 15 px;
+  z - index: 50;
+}
+```
+>HTML Code:
+```javascript
+<div id="tmp_footer">
+  <div class="container">
+    <p class="pnavi"><a href="javascript:vois(0);">Top</a></p>
+  </div>
+  <p class="copyright" lang="en" xml:lang="en">Copyright © Kofu City. All rights reserved.</p>
+</div>
+```
+
 >JavaScript Code:
 ```javascript
 // Back Top
@@ -7938,21 +7957,18 @@ var BackToTop = {
   selector: {
     linkToTop: $('.pnavi a'),
     scrollBottom: $(window).scrollTop() + $(window).height(),
-    heightDocument: $(document).height() - $('#tmp_footer').height() - 91,
+    heightDocument: $(document).height() - $('#tmp_footer').height(),
     heightFooter: $('#tmp_footer').height()
   },
   init: function() {
     BackToTop.calPos();
-    $(window).scroll(function() {
-      BackToTop.selector.scrollBottom = $(window).scrollTop() + $(window).height();
-      BackToTop.calPos();
-    });
+    $(window).scroll(BackToTop.calPos);
     BackToTop.scrollToTop();
   },
   calPos: function() {
     BackToTop.selector.scrollBottom = $(window).scrollTop() + $(window).height();
-    if (BackToTop.selector.scrollBottom > (BackToTop.selector.heightDocument)) {
-      BackToTop.selector.linkToTop.parent().css({ bottom: (BackToTop.selector.heightFooter + 20) });
+    if (BackToTop.selector.scrollBottom > $('#tmp_footer').offset().top) {
+      BackToTop.selector.linkToTop.parent().css({ bottom: BackToTop.selector.scrollBottom - $('#tmp_footer').offset().top + 15 });
     } else {
       BackToTop.selector.linkToTop.parent().css({ bottom: '15px' });
     }
