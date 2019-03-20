@@ -8369,6 +8369,82 @@ setAll.init();
 
 ```
 
+**31. 20190228_Hamamatsu_Subsite**: 
+- Tôi gặp vấn đề với hàm ```$(window).resize()```. Khi sử dụng resize mà bên trong có điều kiên nếu window.width nó ```trigger``` liên tục, kể
+**Resize Chuẩn**
+>JavaScript Code Resize:
+```javascript
+//　Chỉ xử lý một lần khi tải kết thúc màn hình
+//　============================================================================
+//　Xử lý thay đổi kích thước cho từng màn hình
+var tx = false;
+$(window).on('resize', function() {
+  if (tx !== false) {
+    clearTimeout(tx);
+  }
+  tx = setTimeout(function() {
+    // code here
+  }, 150);
+});
+//　Xử lý cho mỗi màn hình thay đổi kích thước kết thúc
+//　============================================================================
+```
 
+**Resize xảy ra lỗi**
+>JavaScript Code Resize xảy ra lỗi:
+```javascript
+//　Chỉ xử lý một lần khi tải kết thúc màn hình
+//　============================================================================
+//　Xử lý thay đổi kích thước cho từng màn hình
+var tx = false;
+$(window).on('resize', function() {
+  if (tx !== false) {
+    clearTimeout(tx);
+  }
+  tx = setTimeout(function() {
+    // code here
+    if ($(window).width() > 640) {
+      slickSwitch.pc();
+    } else {
+      slickSwitch.sp();
+    }
+  }, 150);
+});
+//　Xử lý cho mỗi màn hình thay đổi kích thước kết thúc
+//　============================================================================
+```
 
+**Có một cách tối ưu để giải quyết vấn Resize ở trên là chỉ hiển thị khi Breakpoint dùng ```MediaQueryList.addListener()
+```**
+- Phương thức ```addListener()``` của giao diện ```MediaQueryList``` thêm trình nghe vào ```MediaQueryListener``` sẽ chạy hàm gọi lại tùy chỉnh để đáp ứng thay đổi trạng thái truy vấn phương tiện.
+- Về cơ bản, đây là bí danh cho ```EventTarget.addEventListener()```, cho mục đích tương thích ngược. Các trình duyệt cũ hơn nên sử dụng ```addListener``` thay vì ```addEventListener``` vì ```MediaQueryList``` chỉ kế thừa từ ```EventTarget``` trong các trình duyệt mới hơn.
 
+**Syntax:** ```MediaQueryList.addListener(func)```
+
+**Parameters:** ```func``` 
++ Một tham chiếu chức năng hoặc chức năng đại diện cho chức năng gọi lại mà bạn muốn chạy khi trạng thái truy vấn phương tiện thay đổi.
++ Trong triển khai ban đầu, cuộc gọi lại là một đối tượng ```MediaQueryListListener``` không chuẩn.
++ Trong triển khai mới, cơ chế sự kiện tiêu chuẩn được sử dụng, hàm gọi lại là một hàm tiêu chuẩn và đối tượng sự kiện là ```MediaQueryListEvent```, kế thừa từ Sự kiện.
+
+**Return value:** ```Void```
+
+>JavaScript Code Resize:
+```javascript
+var mql = window.matchMedia('(max-width: 600px)');
+
+function screenTest(e) {
+  if (e.matches) {
+    /* the viewport is 600 pixels wide or less */
+    para.textContent = 'This is a narrow screen — less than 600px wide.';
+    document.body.style.backgroundColor = 'red';
+  } else {
+    /* the viewport is more than than 600 pixels wide */
+    para.textContent = 'This is a wide screen — more than 600px wide.';
+    document.body.style.backgroundColor = 'blue';
+  }
+}
+
+mql.addListener(screenTest);
+```
+
+**Ngoài ra còn có hàm remove:** ```mql.removeListener(screenTest);```
