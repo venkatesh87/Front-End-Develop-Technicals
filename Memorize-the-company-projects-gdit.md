@@ -8429,6 +8429,7 @@ $(window).on('resize', function() {
 **Return value:** ```Void```
 
 >JavaScript Code Resize:
+
 ```javascript
 var mql = window.matchMedia('(max-width: 600px)');
 
