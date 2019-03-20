@@ -1,5 +1,14 @@
 #### I.Document Link Local
 ---
+1. [Developer Mozilla](https://developer.mozilla.org/en-US/docs/Web)
+
+1. [Developer Mozilla resize](https://developer.mozilla.org/en-US/docs/Web/Events/resize)
+
+1. [Developer Mozilla Web API](https://developer.mozilla.org/en-US/docs/Web/API)
+
+1. [Developer Mozilla Web API matchMedia](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia)
+
+1. [Developer Mozilla Web API MediaQueryList.removeListener](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener)
 
 1. [33 Concepts Every JavaScript Developer Should Know ](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Javascript-33-js-concepts-master.md)
 
