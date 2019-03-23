@@ -8449,3 +8449,12 @@ mql.addListener(screenTest);
 ```
 
 **Ngoài ra còn có hàm remove:** ```mql.removeListener(screenTest);```
+
+**>Triggle**
+```javascript
+var labelID;
+$('label').click(function() {
+  labelID = $(this).attr('for');
+  $('#'+labelID).trigger('click');
+});
+```
