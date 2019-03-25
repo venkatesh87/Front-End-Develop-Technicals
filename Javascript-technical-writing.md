@@ -452,8 +452,24 @@ console.log(shuffle(myArray));
 ```javascript
 
 ```
-### 14. Code writing techniques map function
 
-### 15. Code writing techniques setTimeout(function(){ alert("Hello"); }, 3000);
+### 14. Hàm typeof trong Javascript:
+**Thông thường chúng ta có một số loại dữ liệu như sau:**
+- ```number``` - số
+- ```string``` - chuỗi
+- ```object``` - đối tượng
+- ```undefined``` - không xác định
 
-### 16. Code writing techniques
+- Trong PHP để kiểm tra một biến nào đó có tồn tại hay không thì ta dùng hàm ```isset()```, còn trong Javascript thì ta dùng hàm ```typeof``` kết hợp với kiểu dữ liệu ```undefined```, nghĩa là nếu kiểu dữ liệu của một biến nào đó là ```undefined``` thì tức là biến đó chưa được định nghĩa hoặc giá trị của nó không xác định.
+
+```javascript
+if (typeof variable == 'undefined'){
+  document.write("Biến variable không được định nghĩa");
+}
+```
+
+### 15. Code writing techniques map function
+
+### 16. Code writing techniques setTimeout(function(){ alert("Hello"); }, 3000);
+
+### 17. Code writing techniques
