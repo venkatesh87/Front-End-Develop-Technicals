@@ -8450,11 +8450,34 @@ mql.addListener(screenTest);
 
 **Ngoài ra còn có hàm remove:** ```mql.removeListener(screenTest);```
 
-**>Triggle**
+>**Triggle**
 ```javascript
 var labelID;
 $('label').click(function() {
   labelID = $(this).attr('for');
   $('#'+labelID).trigger('click');
 });
+```
+**31. 20190315 Kameoka:**
+- ![Triggle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-4.jpg)
+
+>**Triggle menu Sp**
+- Khi click vào menu sp thì scroll đến section cần hiển thị, hiện tại click vào nó scroll xuống và có lớp overlay. Nên hãy xử lý đóng menu sp và lớp overlay đi. Menu sp thì dc viết một plugin riêng.
+
+>**Js scroll**
+```javascript
+$('.gnavi a[href*="#"]').click(function() {
+  var href = $(this).attr("href");
+  var target = $(href == "#" || href == "" ? 'html' : href);
+  if (href != '#tmp_sma_menu') {
+    var position = target.offset().top; //繝倥ャ繝縺ｮ鬮倥＆蛻�ｽ咲ｽｮ繧偵★繧峨☆
+    $("html, body").animate({ scrollTop: position }, 550, "swing");
+    $('#tmp_sma_menu .close_btn .close_txt').trigger('click');
+    return false;
+  }
+});
+```
+>**JS Triggle**
+```javascript
+$('#tmp_sma_menu .close_btn .close_txt').trigger('click');
 ```
