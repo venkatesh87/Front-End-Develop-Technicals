@@ -8459,7 +8459,7 @@ $('label').click(function() {
 });
 ```
 **31. 20190315 Kameoka:**
-- ![Triggle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-niigata-4.jpg)
+- ![Triggle](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/img-kameo.jpg)
 
 >**Triggle menu Sp**
 - Khi click vào menu sp thì scroll đến section cần hiển thị, hiện tại click vào nó scroll xuống và có lớp overlay. Nên hãy xử lý đóng menu sp và lớp overlay đi. Menu sp thì dc viết một plugin riêng.
