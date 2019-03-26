@@ -2,7 +2,7 @@
 
 **Table of Contents**
 
-1. [How It Works](How-It-Works)
+1. [How It Works](#How-It-Works)
 2. [BEM is an HTML Mirror](#Hang-Up-1)
 3. [When to Define a Block, an Element, and a Modifier](#Hang-Up-2)
 4. [When to Redefine a Block](#Hang-Up-3)
@@ -82,7 +82,7 @@
 </style>
 ```
 
-```javascript
+```
 <!-- DO THIS -->
 <figure class="photo">
   <img class="photo__img" src="me.jpg">
