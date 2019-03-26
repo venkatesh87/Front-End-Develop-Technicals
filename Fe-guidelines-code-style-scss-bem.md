@@ -8,7 +8,7 @@
 4. [When to Redefine a Block](#hang-up-3-when-to-redefine-a-block)
 5. [Blocks in Blocks](#hang-up-4-blocks-in-blocks)
 
-## I. How-It-Works
+## How-It-Works
 
 **Syntax:** **[block]__[element]--[modifier]**
 
