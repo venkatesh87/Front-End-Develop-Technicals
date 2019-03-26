@@ -42,7 +42,7 @@
 </style>
 ```
 
-```javascript
+```
 <!-- DON'T DO THIS -->
 <button class="btn--secondary"></button>
 
