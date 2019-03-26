@@ -4,11 +4,11 @@
 
 1. [How It Works](#How-It-Works)
 2. [BEM is an HTML Mirror](#hang-up-1-bem-is-an-html-mirror)
-3. [When to Define a Block, an Element, and a Modifier](#Hang-Up-2)
-4. [When to Redefine a Block](#Hang-Up-3)
-5. [Blocks in Blocks](#Hang-Up-4)
+3. [When to Define a Block, an Element, and a Modifier](#hang-up-2-when-to-define-a-block-an-element-and-a-modifier)
+4. [When to Redefine a Block](#hang-up-3-when-to-redefine-a-block)
+5. [Blocks in Blocks](#hang-up-4-blocks-in-blocks)
 
-## How-It-Works
+## I. How-It-Works
 
 **Syntax:** **[block]__[element]--[modifier]**
 
