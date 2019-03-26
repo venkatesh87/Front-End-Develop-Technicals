@@ -28,7 +28,7 @@
 
 #### Component With A Modifier
 
-```javascript
+```
 <!-- DO THIS -->
 <button class="btn btn--secondary"></button>
 <style>
@@ -56,7 +56,7 @@
 
 #### Component With Elements
 
-```javascript
+```
 <!-- DO THIS -->
 <figure class="photo">
   <img class="photo__img" src="me.jpg">
@@ -139,7 +139,7 @@
 
 #### Style Elements Based on the Component Modifier
 
-```javascript
+```
 <!-- DO THIS -->
 <figure class="photo photo--highlighted">
   <img class="photo__img" src="me.jpg">
@@ -165,7 +165,7 @@
 
 #### Multi-word Names
 
-```javascript
+```
 <!-- DO THIS -->
 <div class="some-thesis some-thesis--fast-read">
   <div class="some-thesis__some-element"></div>
@@ -266,6 +266,23 @@
 ## Hang-Up #4: Blocks in Blocks
 
 ```javascript
-
+<div class="block">
+  <div class="block__element-one">...</div>
+  <div class="block__element-two new-block">
+    <div class="new-block__element">...</div>
+  </div>
+</div>
 ```
+
+```javascript
+<div class="block">
+  <div class="block__element-one">...</div>
+  <div class="block__new-block">
+    <div class="new-block">
+      <div class="new-block__element">...</div>
+    </div>
+  </div>
+</div>
+```
+
 ---
