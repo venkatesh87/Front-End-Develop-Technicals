@@ -862,7 +862,7 @@ $("button").click(function() {
 });
 ```
 
-**8. Input file image**
+**Input file image**
 - Chú ý function này có kiểm tra là image thì mới dc upload.
 - Về sự kiện nên chọn là sự kiện ```change()```, đừng để 3 sự kiện cùng một lúc nó sẽ tính 3 lần.
 >JavaScript Code:
@@ -892,9 +892,119 @@ $('.fileinput .btn-file > input[type=file]').on('change focus click', function (
 });
 ```
 
-**9. **
-- Text.
+**Khi click vào link tại trang chủ load đến page coń và scroll đến vị trí ```section``` chứa ```id``` trùng với ```href``` thẻ a khi click **
 
+**Case 1**
+---
+
+>HTML link trang chủ:
+```
+<a href="http://localhost:3000/menu.html#menu-highlight-1" class="btn btn-menu-order"><span class="icons-order">&nbsp;</span> Detail</a>
+```
+
+>HTML trang con:
+```
+<div class="menu-trend-item js-menusub-item" id="menu-highlight-3"></div>
+```
+
+>JS Scroll:
+```
+var transfer_page = function(){
+  var url = window.location.href;
+  var id_position = url.substring(url.lastIndexOf('#'));
+  if(id_position.length){
+    $('html, body').animate({scrollTop: $(id_position).offset().top}, 900);
+  }
+}
+```
+
+**Case 2**
+---
+
+**Usage**
+- Example URL: http://www.example.com/index.php?id=1&image=awesome.jpg
+- Calling ```getQueryVariable("id")``` - would return "1".
+- Calling ```getQueryVariable("image")``` - would return "awesome.jpg".
+
+>JavaScript Code:
+```javascript
+function getQueryVariable(variable){
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0; i<vars.length; i++) {
+    var pair = vars[i].split("=");
+    if(pair[0] == variable){
+      return pair[1];
+    }
+  }
+  return(false);
+}
+```
+
+**Case 3**
+---
+
+- Example URL: http://papermashup.com/index.php?id=123&page=home
+
+>JavaScript Code:
+```javascript
+function getUrlVars() {
+  var vars = {};
+  var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+    vars[key] = value;
+  });
+  return vars;
+}
+```
+
+>JavaScript Code:
+```javascript
+var first = getUrlVars()["id"];
+var second = getUrlVars()["page"];
+
+alert(first);
+alert(second);
+```
+
+**Case 4**
+---
+
+>JavaScript Code:
+```
+$.urlParam = function(name){
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+  return results[1] || 0;
+}
+
+// example.com?param1=name&param2=&id=6
+$.urlParam('param1'); // name
+$.urlParam('id');        // 6
+$.urlParam('param2');   // null
+
+//example params with spaces
+http://www.jquery4u.com?city=Gold Coast
+console.log($.urlParam('city'));  
+//output: Gold%20Coast
+
+console.log(decodeURIComponent($.urlParam('city')));  
+//output: Gold Coast
+```
+
+>JavaScript Code:
+```javascript
+$.urlParam = function(name){
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+  if (results==null){
+    return null;
+  }
+  else{
+    return results[1] || 0;
+  }
+}
+```
+
+**Case 5**
+---
 >JavaScript Code:
 ```javascript
 
