@@ -68,6 +68,8 @@
 
 #### IV. Beautiful web
 
+1. http://www.bestjquery.com/themes/?fbclid=IwAR2jj1m0pdvrBIo1-B50RiuFhRoWiee-6TNskITvl4q2J38EjgACGdpfYkg
+
 1.  http://bymattlee.com/
 
 1.  http://trowel.github.io/
@@ -89,3 +91,16 @@
 1. http://dff.mitsugutakahashi.com/
 
 1. https://droledemonsieur.com/
+
+#### V. Hiệu ứng đẹp
+
+1. https://codepen.io/AlikinVV/pen/ywxWBx
+
+
+#### VI. Đục lấy JS
+
+1. http://www.bestjquery.com/webdesign/rfx-inc/?fbclid=IwAR1iTmoAVctq0WAlkziJUlQJ-DOZD8C7WoDZCfBzwuNKgPkqtYZiXLbPYBc
+
+1. http://www.bestjquery.com/webdesign/aquamarine-media/?fbclid=IwAR38-PBejFrIEGscFJrgzYhgicOT4fdp4O0zmqZKxtrnW4fw2puu1o-rEZk
+
+1. http://www.bestjquery.com/webdesign/bruegel-once-in-a-lifetime/?fbclid=IwAR0dOdcxynXd1fniMtYtkIFJ6D1tPCQZRXaiv1eyIP2yEAECxVLtGt6GYdI
