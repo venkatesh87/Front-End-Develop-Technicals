@@ -128,6 +128,8 @@
 
 │   ├── [Sublimetext](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Sublimetext-skill.md)
 
+│   ├── [Visual Studio Code](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Visual-studio-code-skill.md)
+
 
 ├── **[Audio, Mp4, Video]**
 
@@ -188,6 +190,8 @@
 │   ├── [Cut Image Snipping Tool]
 
 │   ├── [Cut Image Screen Presso, Screen Capture]
+
+|   ├── [Lightshot Screenshot](https://app.prntscr.com/en/index.html)
 
 │   ├── [Mockup, Wireframe software](https://cacoo.com/templates/wireframe-software)
 
