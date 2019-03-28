@@ -912,12 +912,17 @@ $('.fileinput .btn-file > input[type=file]').on('change focus click', function (
 var transfer_page = function(){
   var url = window.location.href;
   var id_position = url.substring(url.lastIndexOf('#'));
-  if(id_position.length){
-    $('html, body').animate({scrollTop: $(id_position).offset().top}, 900);
+  if(window.location.href.indexOf("#") > -1){
+    if($(id_position).length){
+      $('html, body').animate({scrollTop: $(id_position).offset().top - distanceHead}, 1500);
+      $(id_position).addClass('active');
+    }
   }
 }
 ```
 
+- ```if(window.location.href.indexOf("#") > -1)```: Kiểm tra điều kiện này để loại bỏ những ```url``` không có dấu ```#``` phía sau. Kiểm tra dòng này giúp cho các page ko có dâu ```#``` phía sau không bị lỗi ```js```.
+- Hàm ```indexOf``` trả về ```-1``` nếu giá trị cần tìm không bao giờ xảy ra.
 **Case 2**
 ---
 
