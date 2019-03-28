@@ -3,7 +3,6 @@
 
 **1. Format code**
 
->JavaScript Code:
 ```javascript
 Alt + Shift + F
 ```
