@@ -124,13 +124,6 @@
 
 ├── **[Skill]**
 
-│   ├── [Photoshop](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Photoshop-skill.md)
-
-│   ├── [Sublimetext](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Sublimetext-skill.md)
-
-│   ├── [Visual Studio Code](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Visual-studio-code-skill.md)
-
-
 ├── **[Audio, Mp4, Video]**
 
 │   ├── [Hover sound](http://rm-labo.com/labo/easyaudioeffects/)
@@ -198,6 +191,12 @@
 │   ├── [Make Favicon & Apple Icon](https://www.favicon-generator.org)
 
 │   ├── [Develop On Tool Chrome](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Tool_dev_on_chrome.md)
+
+│   ├── [Photoshop](https://github.com/daodc/Front-End-Develop-Technicals/edit/master/Photoshop-skill.md)
+
+│   ├── [Sublimetext](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Sublimetext-skill.md)
+
+│   ├── [Visual Studio Code](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Visual-studio-code-skill.md)
 
 ├── **[Japan Language]**
 
