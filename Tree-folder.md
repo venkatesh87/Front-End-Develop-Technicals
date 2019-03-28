@@ -104,9 +104,13 @@
 
 ├── **[API]**
 
+│   ├── [Youtube API](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-youtube.md)
+
 │   ├── [API Facebook](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-facebook.md)
 
-│   ├── [API Google](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-google.md)
+│   ├── [Google Maps API](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-google-map.md)
+
+│   ├── [Google Analytics](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/Api-google-analytics.md)
 
 ├── **[UI/UX]**
 
