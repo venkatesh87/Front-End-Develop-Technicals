@@ -1,4 +1,4 @@
-#### I. API Google
+#### I. API Google Map
 ---
 **Reference:** https://developers.google.com/maps/documentation/javascript/examples/map-geolocation
 
