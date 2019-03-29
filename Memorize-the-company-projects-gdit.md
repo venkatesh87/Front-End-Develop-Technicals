@@ -8481,3 +8481,19 @@ $('.gnavi a[href*="#"]').click(function() {
 ```javascript
 $('#tmp_sma_menu .close_btn .close_txt').trigger('click');
 ```
+
+**20190329 Analytics Google**
+
+Nhờ các bạn điều tra xem dưới dạng đối ứng GDPR,
+khi nhấn button「クッキー使用に同意する/đồng ý sử dụng Cookie」thì sẽ set enable Google Analytics
+tìm hiểu xem việc này có thực hiện được không nhé.
+
+Khi sử dụng localstrage, nhấn 同意する(đồng ý) để lấy thông tin TRUE
+trường hợp là TRUE thì sẽ set enable Analytics, tôi đang dự định làm theo logic kiểu như vậy, 
+nhưng nhờ các bạn điều tra xem trong thực tế có thể thực hiện không
+và có xảy ra ảnh hưởng đến phần đo lường Analytics do việc xử lý phân tích hay không.
+Analytics thì nhờ các bạn get cái mới về để kiểm chứng, test thử.
+
+Có phần nội dung request như trên, các bạn có đối ứng được không?
+Trong ngày hôm nay thực hiện điều tra và test thử và thứ năm tuần sau trả lời lại cho bên kia nhé
+
