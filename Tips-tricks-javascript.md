@@ -348,3 +348,324 @@ $(document).on('click', function(e) {
   }
 });
 ```
+##### 7. 5 Tips to Write Better Conditionals in JavaScript
+---
+- Khi làm việc với JavaScript, chúng tôi xử lý rất nhiều điều kiện, đây là 5 mẹo để bạn viết điều kiện tốt hơn / sạch hơn.
+
+**1. Sử dụng Array.includes cho nhiều tiêu chí**
+- Thoạt nhìn, ví dụ trên có vẻ tốt. Tuy nhiên, điều gì sẽ xảy ra nếu chúng ta nhận được nhiều trái cây màu đỏ hơn, nói cherry và cranberries? Chúng ta sẽ mở rộng tuyên bố với nhiều hơn || ?
+```javascript
+// condition
+function test(fruit) {
+  if (fruit == 'apple' || fruit == 'strawberry') {
+    console.log('red');
+  }
+}
+```
+
+- Chúng ta có thể viết lại điều kiện ở trên bằng cách sử dụng ```Array.includes``` (Array.includes)
+```javascript
+function test(fruit) {
+  // extract conditions to array
+  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+
+  if (redFruits.includes(fruit)) {
+    console.log('red');
+  }
+}
+```
+
+**2. Ít Nesting, trở về sớm**
+- Hãy mở rộng ví dụ trước để bao gồm hai điều kiện nữa:
+  + Nếu không có trái cây cung cấp, ```throw error``` ném lỗi.
+  + Chấp nhận và in số lượng quả nếu vượt quá 10.
+```javascript
+function test(fruit, quantity) {
+  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+
+  // condition 1: fruit must has value
+  if (fruit) {
+    // condition 2: must be red
+    if (redFruits.includes(fruit)) {
+      console.log('red');
+
+      // condition 3: must be big quantity
+      if (quantity > 10) {
+        console.log('big quantity');
+      }
+    }
+  } else {
+    throw new Error('No fruit!');
+  }
+}
+
+// test results
+test(null); // error: No fruits
+test('apple'); // print: red
+test('apple', 20); // print: red, big quantity
+```
+
+- Nhìn vào đoạn mã trên, chúng ta có:
+  + Câu lệnh 1 if / other lọc ra điều kiện không hợp lệ
+  + 3 mức lồng nhau nếu câu lệnh (điều kiện 1, 2 & 3)
+- Một quy tắc chung mà cá nhân tôi tuân theo là trở về sớm khi tìm thấy điều kiện không hợp lệ.
+
+```javascript
+/_ return early when invalid conditions found _/
+
+function test(fruit, quantity) {
+  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+
+  // condition 1: throw error early
+  if (!fruit) throw new Error('No fruit!');
+
+  // condition 2: must be red
+  if (redFruits.includes(fruit)) {
+    console.log('red');
+
+    // condition 3: must be big quantity
+    if (quantity > 10) {
+      console.log('big quantity');
+    }
+  }
+}
+```
+
+- Bằng cách này, chúng ta có một mức độ ít hơn của câu lệnh lồng nhau. Phong cách mã hóa này là tốt đặc biệt là khi bạn có câu lệnh if dài (hãy tưởng tượng bạn cần cuộn xuống phía dưới cùng để biết có một câu lệnh khác, không hay).
+- Chúng ta có thể giảm thêm việc làm tổ nếu, bằng cách đảo ngược các điều kiện và quay lại sớm. Nhìn vào điều kiện 2 dưới đây để xem cách chúng tôi làm điều đó:
+
+```javascript
+/_ return early when invalid conditions found _/
+
+function test(fruit, quantity) {
+  const redFruits = ['apple', 'strawberry', 'cherry', 'cranberries'];
+
+  if (!fruit) throw new Error('No fruit!'); // condition 1: throw error early
+  if (!redFruits.includes(fruit)) return; // condition 2: stop when fruit is not red
+
+  console.log('red');
+
+  // condition 3: must be big quantity
+  if (quantity > 10) {
+    console.log('big quantity');
+  }
+}
+```
+
+- Bằng cách đảo ngược các điều kiện của điều kiện 2, mã của chúng tôi hiện không có câu lệnh lồng nhau. Kỹ thuật này rất hữu ích khi chúng ta có logic dài và chúng ta muốn dừng quá trình tiếp theo khi một điều kiện không được đáp ứng.
+- Tuy nhiên, đó không phải là quy tắc cứng để làm điều này. Hãy tự hỏi, phiên bản này (không lồng nhau) tốt hơn / dễ đọc hơn phiên bản trước (điều kiện 2 với lồng nhau)?
+- Đối với tôi, tôi sẽ chỉ để nó như phiên bản trước (điều kiện 2 với lồng nhau). Đó là vì:
+  + Mã ngắn và thẳng về phía trước, rõ ràng hơn với lồng nhau nếu
+  + Điều kiện đảo ngược có thể phát sinh quá trình suy nghĩ nhiều hơn (tăng tải nhận thức)
+- Do đó, luôn luôn nhắm đến việc ít làm tổ và trở về sớm nhưng đừng lạm dụng nó. Có một bài viết & thảo luận về StackOverflow sẽ nói thêm về chủ đề này nếu bạn quan tâm:
+
+**3. Use Default Function Parameters and Destructuring:** Sử dụng các tham số chức năng mặc định và phá hủy
+
+- Tôi đoán mã bên dưới có thể trông quen thuộc với bạn, chúng tôi luôn cần kiểm tra giá trị null / không xác định và gán giá trị mặc định khi làm việc với JavaScript:
+
+```javascript
+function test(fruit, quantity) {
+  if (!fruit) return;
+  const q = quantity || 1; // if quantity not provided, default to one
+
+  console.log(`We have ${q} ${fruit}!`);
+}
+
+//test results
+test('banana'); // We have 1 banana!
+test('apple', 2); // We have 2 apple!
+```
+
+- Trong thực tế, chúng ta có thể loại bỏ biến ```q``` bằng cách gán các tham số hàm mặc định.
+
+```javascript
+function test(fruit, quantity = 1) { // if quantity not provided, default to one
+  if (!fruit) return;
+  console.log(`We have ${quantity} ${fruit}!`);
+}
+
+//test results
+test('banana'); // We have 1 banana!
+test('apple', 2); // We have 2 apple!
+```
+
+- Dễ dàng hơn nhiều và trực quan phải không? Xin lưu ý rằng mỗi tham số có thể có tham số chức năng mặc định riêng. Ví dụ: chúng ta cũng có thể gán giá trị mặc định cho trái cây:
+
+```
+function test(fruit = 'unknown', quantity = 1).
+```
+- Nếu trái cây của chúng ta là một đối tượng thì sao? Chúng ta có thể gán tham số mặc định?
+```
+function test(fruit) { 
+  // printing fruit name if value provided
+  if (fruit && fruit.name)  {
+    console.log (fruit.name);
+  } else {
+    console.log('unknown');
+  }
+}
+
+//test results
+test(undefined); // unknown
+test({ }); // unknown
+test({ name: 'apple', color: 'red' }); // apple
+```
+- Nhìn vào ví dụ trên, chúng tôi muốn in tên trái cây nếu có hoặc chúng tôi sẽ in không xác định. Chúng ta có thể tránh việc kiểm tra ```fruit && fruit.name``` có điều kiện với tham số chức năng mặc định & hủy.
+
+```javascript
+// destructing - get name property only
+// assign default empty object {}
+function test({name} = {}) {
+  console.log (name || 'unknown');
+}
+
+//test results
+test(undefined); // unknown
+test({ }); // unknown
+test({ name: 'apple', color: 'red' }); // apple
+```
+
+- Dưới đây là một ví dụ về việc sử dụng Lodash:
+```javascript
+// Include lodash library, you will get _
+function test(fruit) {
+  console.log(__.get(fruit, 'name', 'unknown'); // get property name, if not available, assign default value 'unknown'
+}
+
+//test results
+test(undefined); // unknown
+test({ }); // unknown
+test({ name: 'apple', color: 'red' }); // apple
+```
+
+**4. Favor Map / Object Literal than Switch Statement:** Bản đồ ủng hộ / Đối tượng theo nghĩa đen hơn là Tuyên bố chuyển đổi
+- Hãy xem ví dụ dưới đây, chúng tôi muốn in trái cây dựa trên màu sắc:
+
+```javascript
+function test(color) {
+  // use switch case to find fruits in color
+  switch (color) {
+    case 'red':
+      return ['apple', 'strawberry'];
+    case 'yellow':
+      return ['banana', 'pineapple'];
+    case 'purple':
+      return ['grape', 'plum'];
+    default:
+      return [];
+  }
+}
+
+//test results
+test(null); // []
+test('yellow'); // ['banana', 'pineapple']
+```
+
+- Đoạn mã trên có vẻ không có gì sai, nhưng tôi thấy nó khá dài dòng. Kết quả tương tự có thể đạt được với đối tượng bằng chữ với cú pháp sạch hơn:
+
+```javascript
+// use object literal to find fruits in color
+  const fruitColor = {
+    red: ['apple', 'strawberry'],
+    yellow: ['banana', 'pineapple'],
+    purple: ['grape', 'plum']
+  };
+
+function test(color) {
+  return fruitColor[color] || [];
+}
+
+```
+
+- Ngoài ra, bạn có thể sử dụng Bản đồ để đạt được kết quả tương tự:
+
+```javascript
+// use Map to find fruits in color
+  const fruitColor = new Map()
+    .set('red', ['apple', 'strawberry'])
+    .set('yellow', ['banana', 'pineapple'])
+    .set('purple', ['grape', 'plum']);
+
+function test(color) {
+  return fruitColor.get(color) || [];
+}
+```
+
+**TL; DR; Tái cấu trúc cú pháp**
+- Đối với ví dụ trên, chúng ta thực sự có thể cấu trúc lại mã của mình để đạt được kết quả tương tự với ```Array.filter```.
+
+```javascript
+const fruits = [
+    { name: 'apple', color: 'red' }, 
+    { name: 'strawberry', color: 'red' }, 
+    { name: 'banana', color: 'yellow' }, 
+    { name: 'pineapple', color: 'yellow' }, 
+    { name: 'grape', color: 'purple' }, 
+    { name: 'plum', color: 'purple' }
+];
+
+function test(color) {
+  // use Array filter to find fruits in color
+
+  return fruits.filter(f => f.color == color);
+}
+```
+- Luôn có nhiều hơn 1 cách để đạt được kết quả tương tự. Chúng tôi đã chỉ ra 4 với ví dụ tương tự. Viết mã là niềm vui! 5. Sử dụng Array.every
+
+**5. Use Array.every & Array.some for All / Partial Criteria:** Sử dụng Array.every & Array.some cho tất cả / Tiêu chí từng phần
+
+- Mẹo cuối cùng này là về việc sử dụng chức năng Javascript Array mới (nhưng không quá mới) để giảm các dòng mã. Nhìn vào mã dưới đây, chúng tôi muốn kiểm tra xem tất cả các loại trái cây có màu đỏ không:
+
+```javascript
+const fruits = [
+    { name: 'apple', color: 'red' },
+    { name: 'banana', color: 'yellow' },
+    { name: 'grape', color: 'purple' }
+  ];
+
+function test() {
+  let isAllRed = true;
+
+  // condition: all fruits must be red
+  for (let f of fruits) {
+    if (!isAllRed) break;
+    isAllRed = (f.color == 'red');
+  }
+
+  console.log(isAllRed); // false
+}
+```
+- Mã quá dài! Chúng tôi có thể giảm số lượng dòng với Array.every:
+
+```javascript
+const fruits = [
+    { name: 'apple', color: 'red' },
+    { name: 'banana', color: 'yellow' },
+    { name: 'grape', color: 'purple' }
+  ];
+
+function test() {
+  // condition: short way, all fruits must be red
+  const isAllRed = fruits.every(f => f.color == 'red');
+
+  console.log(isAllRed); // false
+}
+```
+- Bây giờ sạch hơn nhiều phải không? Theo cách tương tự, nếu chúng ta muốn kiểm tra xem có bất kỳ quả nào có màu đỏ hay không, chúng ta có thể sử dụng Array.some để đạt được nó trong một dòng.
+
+```javascript
+const fruits = [
+    { name: 'apple', color: 'red' },
+    { name: 'banana', color: 'yellow' },
+    { name: 'grape', color: 'purple' }
+];
+
+function test() {
+  // condition: if any fruit is red
+  const isAnyRed = fruits.some(f => f.color == 'red');
+
+  console.log(isAnyRed); // true
+}
+```
+
+
