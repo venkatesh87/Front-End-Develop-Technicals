@@ -8497,6 +8497,9 @@ Analytics thì nhờ các bạn get cái mới về để kiểm chứng, test t
 Có phần nội dung request như trên, các bạn có đối ứng được không?
 Trong ngày hôm nay thực hiện điều tra và test thử và thứ năm tuần sau trả lời lại cho bên kia nhé
 
+- ![Analytics 1](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/log_analytics-1.jpg)
+- ![Analytics 2](https://github.com/daodc/Front-End-Develop-Technicals/blob/master/images/log_analytics-2.jpg)
+
 >**Chèn Javascript Google analytics vào Header**
 ```javascript
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-Analytics-Key"></script>
