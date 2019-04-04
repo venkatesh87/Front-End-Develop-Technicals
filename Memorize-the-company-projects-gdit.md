@@ -8497,3 +8497,55 @@ Analytics thì nhờ các bạn get cái mới về để kiểm chứng, test t
 Có phần nội dung request như trên, các bạn có đối ứng được không?
 Trong ngày hôm nay thực hiện điều tra và test thử và thứ năm tuần sau trả lời lại cho bên kia nhé
 
+>**Chèn Javascript Google analytics vào Header**
+```javascript
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-Analytics-Key"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-Analytics-Key');
+  window['ga-disable-UA-Analytics-Key'] = true; //Disable google analytics
+</script>
+```
+
+>**Javascript localStorage**
+```javascript
+(function($) {
+    $(function() {
+        var template = $('<div id="tmp_local_bar"><div class="container"><a href="javascript:void(0);" id="tmp_local_button">同意する</a></div></div>');
+        var wrapper = $('#wrapper');
+        wrapper.prepend(template);
+        // localStorage
+        if(!localStorage.analyticToggle){
+            window['ga-disable-UA-Analytics-Key'] = true; //Disable google analytics
+        }
+        else{
+            window['ga-disable-UA-Analytics-Key'] = false; //Enable google analytics
+        }
+        $('#tmp_local_button').on('click', function(){
+            localStorage.analyticToggle = false;
+            window['ga-disable-UA-Analytics-Key'] = false;
+        });
+    });
+})(jQuery);
+```
+3. Chú ý: 
+- Button "同意する" được chèn vào page bằng js.
+- Analytics-Key: Nhập id key mà bạn đăng ký với google analytics.
+- Vô hiệu hóa google analytics: ```window['ga-disable-UA-Analytics-Key'] = true; //Disable google analytics```
+
+>**Javascript Code**
+```javascript
+
+```
+
+>**Javascript Code**
+```javascript
+
+```
+
+>**Javascript Code**
+```javascript
+
+```
