@@ -7929,7 +7929,7 @@ toogleMapnavi.init();
 
 ### 28. 20190129_Kofu_City_Subsite_Female
 ---
-- BackToTop.
+- BackToTop: Chú ý nếu **header** sử dụng **position: fixed** trên trình duyệt **Edge** sẽ bị dựt **header** khi scroll.
 
 >CSS Code:
 ```javascript
@@ -8167,7 +8167,10 @@ if ($('.js_animation').length) {
 }
 ```
 
->JavaScript Code Back Top:
+>**JavaScript Code Back Top:**
+
+- BackToTop: Chú ý nếu **header** sử dụng **position: fixed** trên trình duyệt **Edge** sẽ bị dựt **header** khi scroll.
+
 ```javascript
 //==============================================================================
 // ページトップ追従
