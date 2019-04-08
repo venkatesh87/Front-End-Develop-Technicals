@@ -1008,7 +1008,7 @@ $.urlParam = function(name){
 }
 ```
 
-**Case 5**
+**Store page** Click vào link tiệm target chuyển đến trang google map show vị trí.
 ---
 >JavaScript Code:
 ```javascript
